@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/libs.min.css" rel="stylesheet">
     <link href="css/swiper.min.css" rel="stylesheet">
@@ -10,12 +11,84 @@
     <link href="css/styles.min.css" rel="stylesheet">
     <link href="css/custom.min.css" rel="stylesheet">
     <link href="css/umnyash.min.css" rel="stylesheet">
+
     <title>17 Страница товара</title>
     <meta name="format-detection" content="telephone=no"/>
     <meta name="format-detection" content="address=no"/>
   </head>
   <body>
+    <main>
 
+      <div class="popup">
+        <div class="popup__inner ">
+          <button class="popup__close" type="button">
+            <span class="visually-hidden">Закрыть.</span>
+          </button>
+          <div class="popup__content good-mini-card">
+            <form class="good-mini-card__form" action="#!" method="post">
+              <h2 class="good-mini-card__heading">Gessi Rettangolo Внешние части термостата с 3-мя запорными вентилями, хром</h2>
+              <picture class="good-mini-card__img-wrapper">
+                <source media="(min-width: 768px)" srcset="img/good-mini-card-tablet.jpg">
+                <img class="good-mini-card__img" src="img/good-mini-card.jpg" alt="">
+              </picture>
+              <p class="good-mini-card__price">
+                <span class="visually-hidden">Цена:</span> 6&nbsp;050&nbsp;₽/м<sup>2</sup>
+              </p>
+              <ol class="good-mini-card__breadcrumbs">
+                <li class="good-mini-card__breadcrumbs-item">
+                  <a class="good-mini-card__breadcrumbs-link" href="#!">Gessi</a>
+                </li>
+                <li class="good-mini-card__breadcrumbs-item">
+                  <a class="good-mini-card__breadcrumbs-link" href="#!">Сантехника Gessi Rettangolo</a>
+                </li>
+              </ol>
+              <dl class="good-mini-card__detail">
+                <div class="good-mini-card__detail-item">
+                  <dt class="visually-hidden">Цвет:</dt>
+                  <dd class="good-mini-card__detail-value">Бежевый</dd>
+                </div>
+                <div class="good-mini-card__detail-item">
+                  <dt class="visually-hidden">Размер, см:</dt>
+                  <dd class="good-mini-card__detail-value">40х120</dd>
+                </div>
+              </dl>
+              <div class="good-mini-card__note note">
+                <p class="note__accent"><strong><small>Важно! Плитка продается упаковками</small></strong></p>
+                <p class="note__text">0.99&nbsp;м2 = 9шт = 1 упак</p>
+              </div>
+              <div class="good-mini-card__quantity goods-quantity">
+                <p class="goods-quantity__number-field number-field">
+                  <label class="visually-hidden" for="good-mini-card-quantity">Количество:</label>
+                  <input class="number-field__control" id="good-mini-card-quantity" type="number" name="goods-quantity" min="0" value="100" placeholder="100">
+                  <button class="number-field__button number-field__button--minus" type="button">
+                    <span class="visually-hidden">Убавить</span>
+                  </button>
+                  <button class="number-field__button number-field__button--plus" type="button">
+                    <span class="visually-hidden">Добавить</span>
+                  </button>
+                </p>
+                <label class="goods-quantity__radiobutton radiobutton">
+                  <input class="radiobutton__control visually-hidden" type="radio" name="goods-unit" value="M2" checked>
+                  <span class="radiobutton__label">M2</span>
+                </label>
+                <label class="goods-quantity__radiobutton radiobutton">
+                  <input class="radiobutton__control visually-hidden" type="radio" name="goods-unit" value="M2">
+                  <span class="radiobutton__label">Шт</span>
+                </label>
+                <label class="goods-quantity__radiobutton radiobutton">
+                  <input class="radiobutton__control visually-hidden" type="radio" name="goods-unit" value="M2">
+                  <span class="radiobutton__label">Упак</span>
+                </label>
+              </div>
+              <p class="good-mini-card__total-price">Итого: 160&nbsp;057&nbsp;₽</p>
+              <button class="good-mini-card__submit button button--primary button--small" type="submit">Добавить в корзину</button>
+              <a class="good-mini-card__link" href="#!">Быстрый заказ</a>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </main>
     <script src="js/min/lazyload.min.js"></script>
     <script src="js/libs.min.js"></script>
     <script src="js/min/custom.min.js"></script>

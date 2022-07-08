@@ -1,0 +1,249 @@
+.good-mini-card {
+  padding: 10px 10px 24px;
+  font-family: $basic-font-family;
+
+  @media #{$tablet-desktop} {
+    padding: 48px 54px 26px 28px;
+  }
+}
+
+.good-mini-card__form {
+  display: grid;
+
+  @media #{$desktop} {
+    grid-template-rows: min-content min-content 1fr min-content;
+    grid-template-columns: 161px 1fr 140px 88px 220px;
+    align-items: start;
+    grid-template-areas:
+      "img   heading     heading price price"
+      "img   breadcrumbs note    note  quantity"
+      "img   detail      note    note  quantity"
+      "total total       total   total total"
+      ".     .           link    link  submit";
+  }
+}
+
+.good-mini-card__heading {
+  margin: 0 0 10px;
+  font-family: $accent-font-family;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+
+  @media #{$tablet-desktop} {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  @media #{$desktop} {
+    grid-area: heading;
+    margin-top: 9px;
+    margin-bottom: 26px;
+  }
+}
+
+.good-mini-card__img-wrapper {
+  order: -1;
+  display: block;
+  width: 113px;
+  height: 113px;
+  margin: 0 0 11px;
+
+  @media #{$tablet-desktop} {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 16px;
+  }
+
+  @media #{$desktop} {
+    grid-area: img;
+    margin-bottom: 0;
+  }
+}
+
+.good-mini-card__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  object-position: center;
+}
+
+.good-mini-card__price {
+  font-size: 18px;
+  line-height: 18px;
+  margin: 0 0 10px;
+
+  @media #{$tablet-desktop} {
+    font-size: 26px;
+    line-height: 38px;
+    margin-bottom: 14px;
+  }
+
+  @media #{$desktop} {
+    grid-area: price;
+    justify-self: end;
+    margin-top: 10px;
+    margin-right: 47px;
+  }
+}
+
+.good-mini-card__price sup {
+  font-size: 0.7em;
+
+  @media #{$tablet-desktop} {
+    font-size: 0.6em;
+  }
+}
+
+.good-mini-card__breadcrumbs {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  flex-wrap: wrap;
+  font-size: 14px;
+  line-height: 14px;
+  color: $mini-card-breadcrumbs-color;
+
+  @media #{$tablet-desktop} {
+    margin-bottom: 10px;
+  }
+
+  @media #{$desktop} {
+    grid-area: breadcrumbs;
+    margin-top: 3px;
+  }
+}
+
+.good-mini-card__breadcrumbs-item {
+  flex-shrink: 0;
+  margin: 0 4px 4px 0;
+
+  &::after {
+    content: "/"
+  }
+}
+
+.good-mini-card__breadcrumbs-item:last-child {
+  margin-right: 0;
+
+  &::after {
+    display: none;
+  }
+}
+
+.good-mini-card__breadcrumbs-link {
+  color: $mini-card-breadcrumbs-color;
+}
+
+.good-mini-card__detail {
+  display: flex;
+  padding: 0;
+  margin: 0 0 10px;
+  list-style: none;
+  flex-wrap: wrap;
+  font-size: 16px;
+  line-height: 21px;
+
+  @media #{$desktop} {
+    grid-area: detail;
+    margin-top: 6px;
+  }
+}
+
+.good-mini-card__detail-item {
+  margin: 0 20px 0 0;
+}
+
+.good-mini-card__detail-value {
+  margin: 0;
+}
+
+.good-mini-card__note {
+  margin: 0 0 5px;
+
+  @media #{$tablet-desktop} {
+    margin-bottom: 10px;
+  }
+
+  @media #{$desktop} {
+    grid-area: note;
+    margin-right: 6px;
+  }
+}
+
+.good-mini-card__quantity {
+  margin: 0 0 7px;
+
+  @media #{$tablet-desktop} {
+    margin-bottom: 20px;
+  }
+
+  @media #{$desktop} {
+    grid-area: quantity;
+    margin-bottom: 25px;
+  }
+}
+
+.good-mini-card__total-price {
+  padding: 8px 0 0;
+  border-top: 1px solid $mini-card-total-price-border-color;
+  margin: 0 0 9px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 700;
+
+  @media #{$tablet-desktop} {
+    padding-top: 12px;
+    margin-bottom: 16px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  @media #{$desktop} {
+    grid-area: total;
+    padding-top: 10px;
+    margin-top: 6px;
+    margin-right: 40px;
+    margin-bottom: 19px;
+    text-align: right;
+  }
+}
+
+.good-mini-card__submit {
+  margin: 0 0 11px;
+
+  @media #{$tablet-desktop} {
+    min-width: 220px;
+  }
+
+  @media #{$desktop} {
+    grid-area: submit;
+    margin-bottom: 0;
+  }
+}
+
+.good-mini-card__link {
+  justify-self: center;
+  font-size: 14px;
+  line-height: 18px;
+  color: inherit;
+
+  @media #{$tablet-desktop} {
+    justify-self: stretch;
+    box-sizing: border-box;
+    padding: 14px 20px 13px;
+    border: 1px solid currentColor;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  @media #{$desktop} {
+    grid-area: link;
+    margin-right: 8px;
+  }
+}

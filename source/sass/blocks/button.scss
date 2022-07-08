@@ -1,0 +1,29 @@
+.button {
+  box-sizing: border-box;
+  padding: 11px 10px 9px;
+  border: 1px solid $button-border-color;
+  border-radius: 3px;
+  text-align: center;
+  font-family: $basic-font-family;
+  font-size: 16px;
+  line-height: 20px;
+  color: inherit;
+  background-color: transparent;
+
+  @media #{$tablet-desktop} {
+    padding: 14px 20px 13px;
+  }
+}
+
+.button--small {
+  @media #{$mobile} {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.button--primary {
+  border-color: $primary-button-color;
+  color: $text-color-secondary;
+  background-color: $primary-button-color;
+}

@@ -1,0 +1,50 @@
+.number-field {
+  display: grid;
+  grid-template-columns: 20px 50px 20px;
+  justify-content: center;
+
+  @media #{$tablet-desktop} {
+    grid-template-columns: 20px 62px 20px;
+  }
+}
+
+.number-field__control {
+  padding: 2px 4px 0;
+  border: none;
+  margin: 0 4px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 20px;
+
+  @media #{$tablet-desktop} {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+.number-field__button,
+.number-field__button {
+  position: relative;
+  border: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    bottom: -4px;
+    left: -4px;
+  }
+
+  &--minus {
+    order: -1;
+    background-image: url("../img/icons/button-minus-icon.svg");
+  }
+
+  &--plus {
+    background-image: url("../img/icons/button-plus-icon.svg");
+  }
+}

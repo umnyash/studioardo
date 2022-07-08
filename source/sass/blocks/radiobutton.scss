@@ -1,0 +1,16 @@
+.radiobutton__label {
+  display: inline-block;
+  padding: 0 16px;
+  border: 1px solid $radiobutton-border-color;
+  border-radius: 3px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.radiobutton__control:checked + .radiobutton__label {
+  border-color: $radiobutton-active-color;
+  color: $text-color-secondary;
+  background-color: $radiobutton-active-color;
+}

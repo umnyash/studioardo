@@ -1,0 +1,45 @@
+.note {
+  position: relative;
+  padding: 6px 10px 2px 30px;
+  border: 1px solid $note-border-color;
+  border-radius: 3px;
+  font-size: 13px;
+  line-height: 13px;
+  background-color: $background-color;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 16px;
+    height: 16px;
+    background-image: url("../img/icons/note-icon.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  @media #{$tablet-desktop} {
+    padding-bottom: 2px;
+  }
+}
+
+.note__accent {
+  font-size: 12px;
+  line-height: 13px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.note__accent strong,
+.note__accent small {
+  font: inherit;
+}
+
+.note p {
+  margin: 0 0 6px;
+
+  @media #{$desktop} {
+    margin-bottom: 3px;
+  }
+}

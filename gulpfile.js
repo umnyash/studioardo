@@ -58,7 +58,7 @@ const styles2 = () => {
     .pipe(sync.stream());
 }
 
-exports.styles = styles2;
+exports.styles2 = styles2;
 
 // Images
 
@@ -168,7 +168,7 @@ const scripts2 = () => {
     .pipe(sync.stream());
 }
 
-exports.scripts = scripts2;
+exports.scripts2 = scripts2;
 
 // Clean
 
@@ -202,6 +202,7 @@ const reload = () => {
 // Watcher
 
 const watcher = () => {
+  gulp.watch('source/sass/**/*.scss', gulp.series(styles2));
   gulp.watch('source/sass/**/*.scss', gulp.series(styles));
   gulp.watch('source/js/script.js', gulp.series(scripts));
   gulp.watch('source/*.html', gulp.series(html, reload));

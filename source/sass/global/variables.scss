@@ -1,0 +1,77 @@
+// Viewports
+
+// $narrow-mobile: "(max-width: 359px)";
+$mobile: "(max-width: 767px)";
+// $wide-mobile: "(min-width: 321px) and (max-width: 767px)";
+// $mobile-tablet: "(max-width: 1359px)";
+// $tablet: "(min-width: 768px) and (max-width: 1359px)";
+// $wide-tablet: "(min-width: 769px) and (max-width: 1359px)";
+$tablet-desktop: "(min-width: 768px)";
+$desktop: "(min-width: 1540px)";
+// $wide-desktop: "(min-width: 1361px)";
+
+// Fonts
+
+$basic-font-family: "Roboto", "Arial", sans-serif;
+$accent-font-family: "Playfair Display", "Georgia", "Times New Roman", sans-serif;
+
+// Other
+
+$animation-duration: 80ms;
+
+// Colors
+
+$text-color-secondary: #ffffff;
+$background-color: #ffffff;
+$popup-overlay-color: #5b5555;
+$mini-card-breadcrumbs-color: #c5072b;
+$note-border-color: #e0e0e0;
+$radiobutton-border-color: #c8c8c8;
+$radiobutton-active-color: #42bd98;
+$mini-card-total-price-border-color: #c8c8c8;
+$button-border-color: #c8c8c8;
+$primary-button-color: #d92547;
+
+// $text-color: #000000;
+// $text-color-secondary: #ffffff;
+// $text-color-additional: #444444;
+// $background-color: #ffffff;
+// $background-color-secondary: #f2f2f2;
+// $background-color-accent: #68b738;
+// $error-color: #ff8282;
+
+// $button-hover-background-color: #5eaa2f;
+// $button-secondary-background-color: #f2f2f2;
+// $button-secondary-hover-background-color: #ebebeb;
+// $contacts-lead-text-color: #111111;
+// $copyright-logo-color: #666666;
+// $copyright-logo-hover-color: #68b738;
+// $price-list-name-color: #222222;
+// $price-list-info-heading-color: #111111;
+// $extra-price-list-name-color: #222222;
+// $radiobutton-label-text-color: #222222;
+// $site-navigation-item-border-color: #e6e6e6;
+// $category-line-color: #d9d9d9;
+// $features-section-border-color: #e6e6e6;
+// $features-counter-text-color: #f2f2f2;
+// $demo-section-background-color: #eaeaea;
+// $statistics-value-border-color: #cdcdcd;
+// $separator-transition-wrapper-border-color: #cdcdcd;
+// $separator-transition-wrapper-background-color: #ffffff;
+// $separator-transition-wrapper-background-color-tablet: #dcdcdc;
+// $separator-transition-button-background-color: #ffffff;
+// $separator-transition-button-border-color: #cdcdcd;
+// $separator-transition-button-shadow-basic-color: #000000;
+// $page-footer-item-border-color: #d9d9d9;
+// $socials-icon-color: #666666;
+// $price-list-item-border-color: #ebebeb;
+// $price-list-item-tablet-background-color: #f2f2f2;
+// $price-list-item-detail-line-color: #cdcdcd;
+// $price-list-info-border-color: #f2f2f2;
+// $extra-price-list-item-border-color: #cdcdcd;
+// $form-control-border-color-1: #e7e7e7;
+// $form-control-border-color-2: #cdcdcd;
+// $textfield-icon-color: #222222;
+// $form-group-border-color: #d9d9d9;
+// $radiobutton-border-alter-color: #bababa;
+// $checkbox-border-alter-color: #bababa;
