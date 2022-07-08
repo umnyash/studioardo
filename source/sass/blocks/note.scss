@@ -20,11 +20,11 @@
   }
 
   @media #{$tablet-desktop} {
-    padding-bottom: 2px;
+    padding-bottom: 4px;
   }
 }
 
-.note__accent {
+.note .note__accent {
   font-size: 12px;
   line-height: 13px;
   font-weight: 500;
@@ -38,6 +38,8 @@
 
 .note p {
   margin: 0 0 6px;
+  font-size: 12px;
+  line-height: 13px;
 
   @media #{$desktop} {
     margin-bottom: 3px;
