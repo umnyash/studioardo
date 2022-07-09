@@ -3,26 +3,173 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/libs.min.css" rel="stylesheet">
     <link href="css/swiper.min.css" rel="stylesheet">
-    <link href="css/style.min.css" rel="stylesheet">
-    <link href="css/styles.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <!-- <link href="css/style.min.css" rel="stylesheet"> -->
+    <!-- <link href="css/styles.min.css" rel="stylesheet"> -->
     <link href="css/custom.min.css" rel="stylesheet">
     <link href="css/umnyash.min.css" rel="stylesheet">
+
     <title>18 Коллекция</title>
     <meta name="format-detection" content="telephone=no"/>
     <meta name="format-detection" content="address=no"/>
   </head>
   <body>
+    <main>
 
+      <section class="collection-card">
+        <div class="collection-card__container">
+          <p class="collection-card__class">Коллекция Equipe</p>
+          <h2 class="collection-card__heading heading">Плитка Equipe Matelier</h2>
+          <div class="collection-card__actions">
+            <button class="collection-card__social-button social-button social-button--share" type="button">
+              <span class="visually-hidden">Поделиться</span>
+            </button>
+            <button class="collection-card__social-button social-button social-button--like" type="button">
+              <span class="visually-hidden">Добавить в избранное</span>
+            </button>
+          </div>
+          <div class="collection-card__gallery thumbnail-slider">
+            <div class="thumbnail-slider__full swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <picture class="thumbnail-slider__img-wrapper">
+                    <source media="(min-width: 1020px)" srcset="img/collection-1-laptop.jpg 1x">
+                    <img class="thumbnail-slider__img" src="img/collection-1.jpg" alt="">
+                  </picture>
+                </div>
+                <div class="swiper-slide">
+                  <picture class="thumbnail-slider__img-wrapper">
+                    <source media="(min-width: 1020px)" srcset="img/collection-2-laptop.jpg 1x">
+                    <img class="thumbnail-slider__img" src="img/collection-2.jpg" alt="">
+                  </picture>
+                </div>
+                <div class="swiper-slide">
+                  <picture class="thumbnail-slider__img-wrapper">
+                    <source media="(min-width: 1020px)" srcset="img/collection-3-laptop.jpg 1x">
+                    <img class="thumbnail-slider__img" src="img/collection-3.jpg" alt="">
+                  </picture>
+                </div>
+                <div class="swiper-slide">
+                  <picture class="thumbnail-slider__img-wrapper">
+                    <source media="(min-width: 1020px)" srcset="img/collection-4-laptop.jpg 1x">
+                    <img class="thumbnail-slider__img" src="img/collection-4.jpg" alt="">
+                  </picture>
+                </div>
+              </div>
+            </div>
+            <div class="thumbnail-slider__thumbs swiper" thumbsSlider="">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <picture class="thumbnail-slider__img-wrapper--small">
+                    <source media="(min-width: 1020px)" srcset="img/collection-thumb-1-laptop.jpg 1x">
+                    <img class="thumbnail-slider__img" src="img/collection-thumb-1.jpg" alt="">
+                  </picture>
+                </div>
+                <div class="swiper-slide">
+                  <picture class="thumbnail-slider__img-wrapper--small">
+                    <source media="(min-width: 1020px)" srcset="img/collection-thumb-2-laptop.jpg 1x">
+                    <img class="thumbnail-slider__img" src="img/collection-thumb-2.jpg" alt="">
+                  </picture>
+                </div>
+                <div class="swiper-slide">
+                  <picture class="thumbnail-slider__img-wrapper--small">
+                    <source media="(min-width: 1020px)" srcset="img/collection-thumb-3-laptop.jpg 1x">
+                    <img class="thumbnail-slider__img" src="img/collection-thumb-3.jpg" alt="">
+                  </picture>
+                </div>
+                <div class="swiper-slide">
+                  <picture class="thumbnail-slider__img-wrapper--small">
+                    <source media="(min-width: 1020px)" srcset="img/collection-thumb-4-laptop.jpg 1x">
+                    <img class="thumbnail-slider__img" src="img/collection-thumb-4.jpg" alt="">
+                  </picture>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="collection-card__buttons collection-card__buttons--1">
+            <a class="collection-card__button--catalog button button--primary button--big button--with-icon button--with-icon--pdf" href="#!" download>Скачать каталог</a>
+            <a class="button button--big button--with-icon button--with-icon--phone" href="#!">Задать вопрос</a>
+            <a class="button button--big" href="#!">3D проект в подарок</a>
+          </div>
+          <p class="collection-card__price">Цена от 6&nbsp;050&nbsp;₽/м<sup>2</sup></p>
+          <div class="collection-card__buttons collection-card__buttons--2">
+            <a class="button button--secondary" href="#!">Перейти к товарам</a>
+            <a class="button button--with-icon button--with-icon--play" href="#!">Видеообзор</a>
+          </div>
+          <section class="collection-card__characteristics characteristics">
+            <h3 class="characteristics__heading">Характеристики</h3>
+            <dl class="characteristics__list">
+              <div class="characteristics__item">
+                <dt class="characteristics__key">Бренд</dt>
+                <dd class="characteristics__value">APE</dd>
+              </div>
+              <div class="characteristics__item">
+                <dt class="characteristics__key">Артикул</dt>
+                <dd class="characteristics__value">reusewhite40x120</dd>
+              </div>
+              <div class="characteristics__item">
+                <dt class="characteristics__key">Рисунок</dt>
+                <dd class="characteristics__value">Под камень</dd>
+              </div>
+              <div class="characteristics__item">
+                <dt class="characteristics__key">Поверхность</dt>
+                <dd class="characteristics__value">Матовая</dd>
+              </div>
+              <div class="characteristics__item">
+                <dt class="characteristics__key">Цвет товара</dt>
+                <dd class="characteristics__value">Белый, серый</dd>
+              </div>
+              <div class="characteristics__item">
+                <dt class="characteristics__key">Страна</dt>
+                <dd class="characteristics__value characteristics__value--with-img">
+                  Испания
+                  <img src="../img/flag-spain.svg" width="20" height="15" alt="Флаг Испании">
+                </dd>
+              </div>
+              <div class="characteristics__item">
+                <dt class="characteristics__key">Коллекция</dt>
+                <dd class="characteristics__value">reusewhite40x120</dd>
+              </div>
+              <div class="characteristics__item">
+                <dt class="characteristics__key">Размер, мм</dt>
+                <dd class="characteristics__value">400x1200</dd>
+              </div>
+              <div class="characteristics__item">
+                <dt class="characteristics__key">Тип помещения</dt>
+                <dd class="characteristics__value">reusewhite40x120</dd>
+              </div>
+              <div class="characteristics__item">
+                <dt class="characteristics__key">Стиль</dt>
+                <dd class="characteristics__value">Арт-деко, Классический, Лофт</dd>
+              </div>
+            </dl>
+          </section>
+          <div class="collection-card__text clipbox clipbox--reduced">
+            <div class="clipbox__content">
+              <p>Плитку Equipe Matelier часто используют для гостиной, для кухни, для ванной. Материал данной коллекции имеет форму: прямоугольник, поэтому его часто используют при отделке помещений. Продукция бренда Equipe изготавливается в стране Испания, что говорит о ее высоком качестве.</p>
+              <p>Плитка Equipe Matelier имеет рисунок: однотонный, который хорошо подойдет для интерьеров имеющих стиль: арт-деко, классический, лофт. Купить материал коллекции Matelier бренда Equipe по выгодной цене, можно в шоу-руме по адресу: Москва, ул. Дениса Давыдова, д.4 или через наш интернет-магазин. Мы предоставляем товар высокого качества по приемлемой цене, так как наша компания работает с производителями и поставщиками без посредников. Доставка товара организована по Москве и области. Чтобы заказать товар, оформляйте заявку онлайн или звоните нашим менеджерам по телефону +7 (495) 023-77-75.</p>
+            </div>
+            <button class="clipbox__toggler" type="button">
+              <span class="clipbox__toggler-text">Раскрыть</span>
+              <span class="clipbox__toggler-text">Скрыть</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </main>
     <script src="js/min/lazyload.min.js"></script>
     <script src="js/libs.min.js"></script>
     <script src="js/min/custom.min.js"></script>
     <script src="js/jquery.3.4.1.min.js"></script>
     <script src="js/jquery.cookie.min.js"></script>
     <script src="js/swiper.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="js/scripts.min.js"></script>
-    <script src="js/umnyash.min.js"></script>
+    <script src="js/umnyash.js"></script>
   </body>
 </html>

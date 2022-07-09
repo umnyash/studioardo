@@ -1,24 +1,87 @@
 .button {
+  display: inline-block;
   box-sizing: border-box;
-  padding: 11px 10px 9px;
+  padding: 11px 5px 9px;
   border: 1px solid $button-border-color;
   border-radius: 3px;
   text-align: center;
   font-family: $basic-font-family;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 14px;
+  line-height: 18px;
   color: inherit;
   background-color: transparent;
 
   @media #{$tablet-desktop} {
-    padding: 14px 20px 13px;
+    padding: 14px 20px;
+    font-size: 16px;
+    line-height: 20px;
   }
 }
 
-.button--small {
-  @media #{$mobile} {
-    font-size: 14px;
-    line-height: 18px;
+.button--with-icon {
+  display: grid;
+  min-height: 40px;
+  padding-top: 8px;
+  padding-bottom: 6px;
+  grid-template-columns: min-content auto;
+  grid-auto-flow: column;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+
+  @media #{$tablet-desktop} {
+    min-height: 50px;
+    column-gap: 15px;
+  }
+}
+
+.button--with-icon::before {
+  content: "";
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.button--with-icon--phone::before {
+  width: 17px;
+  height: 17px;
+  background-image: url("../img/icons/phone.svg");
+  transform: translateY(-1px);
+
+  @media #{$tablet-desktop} {
+    width: 21px;
+    height: 21px;
+  }
+}
+
+.button--with-icon--pdf::before {
+  width: 19px;
+  height: 20px;
+  margin: 0 0 0;
+  background-image: url("../img/icons/pdf-icon.svg");
+  transform: translateY(-1px);
+
+  @media #{$tablet-desktop} {
+    width: 27px;
+    height: 27px;
+  }
+}
+
+.button--with-icon--play::before {
+  width: 20px;
+  height: 21px;
+  margin: 0 0 0;
+  background-image: url("../img/icons/play-media-icon.svg");
+  transform: translateY(-1px);
+}
+
+.button--big {
+  display: grid;
+  align-items: center;
+  text-transform: uppercase;
+
+  @media #{$tablet-desktop} {
+    min-height: 60px;
   }
 }
 
@@ -26,4 +89,10 @@
   border-color: $primary-button-color;
   color: $text-color-secondary;
   background-color: $primary-button-color;
+}
+
+.button--secondary {
+  border-color: $secondary-button-color;
+  color: $text-color-secondary;
+  background-color: $secondary-button-color;
 }

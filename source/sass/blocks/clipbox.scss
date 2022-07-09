@@ -1,0 +1,88 @@
+.clipbox {
+  --max-height: 179px;
+
+  @media #{$laptop} {
+    --max-height: 320px;
+  }
+}
+
+.clipbox--big {
+  @media #{$tablet-desktop} { // возможно, на планшетной версии нужно обрезать при меньшей высоте
+    --max-height: 400px;
+  }
+}
+
+.clipbox__content {
+  position: relative;
+  overflow: hidden;
+}
+
+.clipbox__toggler {
+  display: none;
+  width: 100%;
+  padding: 11px 0;
+  border: none;
+  border-top: 1px solid currentColor;
+  align-items: center;
+  text-align: left;
+  font-family: $basic-font-family;
+  font-size: 14px;
+  line-height: 24px;
+  color: currentColor;
+  background-color: transparent;
+
+  &::after {
+    content: "";
+    width: 11px;
+    height: 7px;
+    margin: 0 0 0 7px;
+    background-image: url("../img/icons/arrow-down.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+}
+
+.clipbox--reduced {
+  .clipbox__content {
+    max-height: var(--max-height);
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 77px;
+      background: radial-gradient(100% 100% at 50% 0%, #F4F4F4 0%, rgba(255, 255, 255, 0) 100%),
+                  linear-gradient(to bottom, #ffffff 10px, transparent 15px);
+      transform: matrix(1, 0, 0, -1, 0, 0);
+    }
+  }
+
+  .clipbox__toggler {
+    display: flex;
+  }
+
+  .clipbox__toggler-text:nth-child(2) {
+    display: none;
+  }
+}
+
+.clipbox--expanded {
+  .clipbox__content {
+    max-height: none;
+  }
+
+  .clipbox__toggler {
+    display: flex;
+
+    &::after {
+      transform: rotate(180deg);
+    }
+  }
+
+  .clipbox__toggler-text:first-child {
+    display: none;
+  }
+}
