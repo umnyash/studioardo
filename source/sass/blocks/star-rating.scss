@@ -1,0 +1,42 @@
+.star-rating {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 9px;
+  align-items: center;
+
+  &::after {
+    --star-size: 15px;
+    content: "";
+    width: var(--star-size);
+    height: var(--star-size);
+    background-image: url("../img/icons/star.svg");
+    background-repeat: repeat-x;
+    background-position: left center;
+    background-size: contain;
+    transform: translateY(-1px);
+
+    @media #{$tablet-desktop} {
+      --star-size: 24px;
+    }
+  }
+
+  &--2::after {
+    width: calc(var(--star-size) * 2);
+  }
+
+  &--3::after {
+    width: calc(var(--star-size) * 3);
+  }
+
+  &--4::after {
+    width: calc(var(--star-size) * 4);
+  }
+
+  &--5::after {
+    width: calc(var(--star-size) * 5);
+  }
+
+  @media #{$tablet-desktop} {
+    column-gap: 16px;;
+  }
+}

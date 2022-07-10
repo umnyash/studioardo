@@ -1,0 +1,145 @@
+.advantages {
+  font-family: $basic-font-family;
+  padding: 20px 0;
+  font-size: 16px;
+  line-height: 25px;
+
+  @media #{$tablet-desktop} {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+.advantages__container {
+  padding: 0 10px;
+
+  @media #{$tablet-desktop} {
+    padding: 0 30px;
+  }
+
+  @media #{$laptop-desktop} {
+    padding: 0 35px;
+  }
+
+  @media #{$desktop} {
+    padding: 0 40px;
+  }
+}
+
+.advantages__heading {
+  margin: 0 0 24px;
+
+  @media #{$widemobile-desktop} {
+    margin-bottom: 33px;
+  }
+
+  @media #{$desktop} {
+    margin-bottom: 60px;
+  }
+}
+
+.advantages__list {
+  display: grid;
+  padding: 0;
+  margin: 0 0 10px;
+  list-style: none;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 16px;
+
+  @media #{$widemobile-desktop} {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media #{$tablet-desktop} {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @media #{$laptop-desktop} {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.advantages__item {
+  display: grid;
+  justify-items: center;
+  gap: 28px;
+  padding: 43px 10px 29px;
+  background-color: $advantages-item-background-color;
+
+  &::before {
+    content: "";
+    width: 65px;
+    height: 52px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  &--cart::before {
+    background-image: url("../img/icons/cart.svg");
+  }
+
+  &--box::before {
+    background-image: url("../img/icons/box.svg");
+  }
+
+  &--crown::before {
+    background-image: url("../img/icons/crown.svg");
+  }
+
+  &--wallet::before {
+    background-image: url("../img/icons/wallet.svg");
+  }
+
+  @media #{$narrow-mobile} {
+    padding: 16px 20px;
+    justify-items: start;
+    align-items: center;
+    grid-template-columns: min-content 1fr;
+  }
+
+  @media #{$widemobile-desktop} {
+    text-align: center;
+  }
+
+  @media #{$tablet-desktop} {
+    padding: 35px 30px 35px;
+    gap: 31px;
+  }
+
+  @media #{$desktop} {
+    padding: 35px 50px 35px;
+  }
+}
+
+.advantages__footer {
+  display: flex;
+  padding: 12px 0 14px;
+  flex-direction: column;
+  align-items: center;
+  background-color: $advantages-item-background-color;
+
+  @media #{$tablet-desktop} {
+    display: grid;
+    padding: 23px 0 24px;
+    gap: 10px;
+    justify-items: center;
+  }
+
+  @media #{$desktop} {
+    grid-template-columns: auto auto;
+    gap: 70px;
+    justify-content: center;
+  }
+}
+
+.advantages__text {
+  margin: 0;
+}
+
+.advantages__link {
+  text-decoration: underline;
+  color: $advantages-link-color;
+}
