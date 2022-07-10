@@ -103,3 +103,24 @@ if (clipbox) {
     clipbox.classList.toggle('clipbox--expanded');
   });
 }
+
+// Works Gallery
+
+const worksGallerySlider = document.querySelector('.works-gallery__slider');
+
+if (worksGallerySlider) {
+  let swiper = new Swiper(".works-gallery__slider", {
+    slidesPerView: 'auto',
+    spaceBetween: 5,
+    freeMode: true,
+    navigation: {
+      nextEl: ".works-gallery__slider .swiper-button-next",
+      prevEl: ".works-gallery__slider .swiper-button-prev",
+    },
+    breakpoints: {
+      1020: {
+        spaceBetween: 18,
+      },
+    },
+  });
+}
