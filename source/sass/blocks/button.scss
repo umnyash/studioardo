@@ -111,3 +111,23 @@
 .button--with-shadow {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
 }
+
+.button--gift {
+  &:hover {
+    border-color: $button-gift-hover-border-color;
+  }
+
+  span:first-child {
+    @media #{$tablet-desktop} {
+      display: none;
+    }
+  }
+
+  span:nth-child(2) {
+    display: none;
+
+    @media #{$tablet-desktop} {
+      display: block;
+    }
+  }
+}

@@ -28,11 +28,15 @@
   }
 }
 
-.advantages__heading {
+.advantages .advantages__heading {
   margin: 0 0 24px;
 
   @media #{$widemobile-desktop} {
     margin-bottom: 33px;
+  }
+
+  @media #{$laptop-desktop} {
+    text-align: left;
   }
 
   @media #{$desktop} {
@@ -139,6 +143,7 @@
 
 .advantages__text {
   margin: 0;
+  font: inherit;
 }
 
 .advantages__link {

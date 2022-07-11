@@ -82,6 +82,14 @@
   grid-area: 1 / 1 / 2 / 2;
   padding: 11px 10px 10px;;
   background-color: rgba(14, 14, 14, 0.37);
+
+  @media #{$desktop} {
+    display: flex;
+    padding: 26px 33px 24px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .works-gallery__item-heading {
@@ -91,6 +99,11 @@
   line-height: 20px;
   font-weight: 700;
   text-transform: uppercase;
+
+  @media #{$desktop} {
+    width: auto;
+    margin: 0 40px 0 0;
+  }
 }
 
 .works-gallery__mark {

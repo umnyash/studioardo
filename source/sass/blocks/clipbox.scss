@@ -9,7 +9,7 @@
 .clipbox--big {
   --max-height: 194px;
 
-  @media #{$tablet-desktop} { // возможно, на планшетной версии нужно обрезать при меньшей высоте
+  @media #{$tablet-desktop} {
     --max-height: 400px;
   }
 }

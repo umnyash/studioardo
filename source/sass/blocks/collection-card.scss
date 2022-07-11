@@ -160,6 +160,10 @@
 }
 
 .collection-card__buttons--2 {
+  @media #{$widemobile-desktop} {
+    grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  }
+
   @media #{$tablet-desktop} {
     grid-area: buttons-2;
   }
@@ -168,6 +172,10 @@
     padding-left: 10px;
     columng-gap: 10px;
   }
+}
+
+.collection-card__buttons--2 .button {
+
 }
 
 .collection-card__button--catalog {

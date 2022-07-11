@@ -11,6 +11,8 @@
 
 .contacts-info .contacts-info__heading {
   margin: 0 0 14px;
+  letter-spacing: 0;
+  text-transform: none;
 
   @media #{$laptop-desktop} {
     text-align: left;
