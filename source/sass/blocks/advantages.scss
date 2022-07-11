@@ -22,7 +22,9 @@
   }
 
   @media #{$desktop} {
+    width: 1480px;
     padding: 0 40px;
+    margin: 0 auto;
   }
 }
 

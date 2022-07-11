@@ -107,3 +107,7 @@
   color: $text-color-secondary;
   background-color: $secondary-button-color;
 }
+
+.button--with-shadow {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}

@@ -1,0 +1,41 @@
+.contacts-info {
+  padding: 12px 12px 10px;
+  font-family: $basic-font-family;
+  font-size: 14px;
+  line-height: 24px;
+
+  @media #{$desktop} {
+    padding: 12px 0 10px;
+  }
+}
+
+.contacts-info .contacts-info__heading {
+  margin: 0 0 14px;
+
+  @media #{$laptop-desktop} {
+    text-align: left;
+  }
+}
+
+.contacts-info__text {
+  margin: 0;
+  text-align: center;
+
+  @media #{$laptop-desktop} {
+    text-align: left;
+  }
+}
+
+.contacts-info small {
+  font: inherit;
+  color: $contacts-comment-color;
+}
+
+.contacts-info__tel {
+  color: currentColor;
+}
+
+.contacts-info__link {
+  text-decoration: underline;
+  color: $contacts-link-color;
+}
