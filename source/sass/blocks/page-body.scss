@@ -1,0 +1,9 @@
+.page-body__good-info {
+  @media #{$laptop-desktop} {
+    margin: 0 0 100px;
+  }
+
+  @media #{$desktop} {
+    margin: 0 0 47px;
+  }
+}

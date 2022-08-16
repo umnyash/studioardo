@@ -1,5 +1,5 @@
 .contacts-info {
-  padding: 12px 12px 10px;
+  padding: 0 0 8px;
   font-family: $basic-font-family;
   font-size: 14px;
   line-height: 24px;
@@ -9,12 +9,13 @@
   }
 }
 
-.contacts-info .contacts-info__heading {
+.contacts-info__heading {
   margin: 0 0 14px;
+  text-align: center;
   letter-spacing: 0;
   text-transform: none;
 
-  @media #{$laptop-desktop} {
+  @media #{$tablet-desktop} {
     text-align: left;
   }
 }
@@ -23,7 +24,7 @@
   margin: 0;
   text-align: center;
 
-  @media #{$laptop-desktop} {
+  @media #{$tablet-desktop} {
     text-align: left;
   }
 }

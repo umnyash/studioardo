@@ -1,12 +1,15 @@
 .advantages {
   font-family: $basic-font-family;
-  padding: 20px 0;
+  padding: 28px 0 20px;
   font-size: 16px;
   line-height: 25px;
 
   @media #{$tablet-desktop} {
-    font-size: 24px;
-    line-height: 28px;
+    padding-top: 32px;
+    // font-size: 24px;
+    // line-height: 28px;
+    font-size: 18.58px;
+    line-height: 21.68px;
   }
 }
 
@@ -14,11 +17,11 @@
   padding: 0 10px;
 
   @media #{$tablet-desktop} {
-    padding: 0 30px;
+    padding: 0 15px;
   }
 
   @media #{$laptop-desktop} {
-    padding: 0 35px;
+    // padding: 0 35px;
   }
 
   @media #{$desktop} {
@@ -28,11 +31,12 @@
   }
 }
 
-.advantages .advantages__heading {
-  margin: 0 0 24px;
+.advantages__heading {
+  margin: 0 0 25px;
+  text-align: center;
 
-  @media #{$widemobile-desktop} {
-    margin-bottom: 33px;
+  @media #{$tablet-desktop} {
+    margin-bottom: 39px;
   }
 
   @media #{$laptop-desktop} {
@@ -60,10 +64,12 @@
   @media #{$tablet-desktop} {
     font-size: 16px;
     line-height: 24px;
+    gap: 7px;
   }
 
   @media #{$laptop-desktop} {
     grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
   }
 }
 
@@ -111,12 +117,20 @@
   }
 
   @media #{$tablet-desktop} {
-    padding: 35px 30px 35px;
+    box-sizing: border-box;
+    min-height: 184px;
+    padding: 43px 30px 20px;
+    gap: 20px;
+    align-content: start;
+  }
+
+  @media #{$laptop-desktop} {
+    padding: 36px 48px 10px;
     gap: 31px;
   }
 
   @media #{$desktop} {
-    padding: 35px 50px 35px;
+    padding: 35px 56px;
   }
 }
 
@@ -129,15 +143,29 @@
 
   @media #{$tablet-desktop} {
     display: grid;
-    padding: 23px 0 24px;
-    gap: 10px;
-    justify-items: center;
+    grid-template-columns: 44.6% 1fr;
+    padding: 27px 0 26px;
+    gap: 27px;
+  }
+
+  @media #{$laptop-desktop} {
+    padding-bottom: 24px;
+    grid-template-columns: 44.8% 1fr;
+    gap: 46px;
+    font-size: 24px;
+    line-height: 28px;
   }
 
   @media #{$desktop} {
+    padding-top: 24px;
     grid-template-columns: auto auto;
-    gap: 70px;
-    justify-content: center;
+    gap: 81px;
+  }
+}
+
+.advantages__rating {
+  @media #{$tablet-desktop} {
+    justify-self: end;
   }
 }
 

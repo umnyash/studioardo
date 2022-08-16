@@ -1,8 +1,12 @@
 .good-mini-card {
-  padding: 10px 10px 24px;
+  padding: 10px 10px 20px;
   font-family: $basic-font-family;
 
   @media #{$tablet-desktop} {
+    padding: 20px 20px 30px;
+  }
+
+  @media #{$laptop-desktop} {
     padding: 48px 54px 26px 28px;
   }
 }
@@ -10,21 +14,22 @@
 .good-mini-card__form {
   display: grid;
 
-  @media #{$desktop} {
-    grid-template-rows: min-content min-content 1fr min-content;
+  @media #{$laptop-desktop} {
+    grid-template-rows: min-content min-content min-content 1fr min-content;
     grid-template-columns: 161px 1fr 140px 88px 220px;
     align-items: start;
     grid-template-areas:
-      "img   heading     heading price price"
-      "img   breadcrumbs note    note  quantity"
-      "img   detail      note    note  quantity"
-      "total total       total   total total"
-      ".     .           link    link  submit";
+      "img   heading heading price price"
+      "img   detail  note    note  quantity"
+      "img   detail  note    note  quantity"
+      "img   .       .       .     ."
+      "total total   total   total total"
+      ".     .       link    link  submit";
   }
 }
 
 .good-mini-card__heading {
-  margin: 0 0 10px;
+  margin: 0 0 19px;
   font-family: $accent-font-family;
   font-size: 14px;
   line-height: 18px;
@@ -35,10 +40,10 @@
     line-height: 20px;
   }
 
-  @media #{$desktop} {
+  @media #{$laptop-desktop} {
     grid-area: heading;
-    margin-top: 9px;
-    margin-bottom: 26px;
+    margin-top: 10px;
+    margin-bottom: 29px;
   }
 }
 
@@ -49,14 +54,10 @@
   height: 113px;
   margin: 0 0 11px;
 
-  @media #{$tablet-desktop} {
+  @media #{$laptop-desktop} {
+    grid-area: img;
     width: 150px;
     height: 150px;
-    margin-bottom: 16px;
-  }
-
-  @media #{$desktop} {
-    grid-area: img;
     margin-bottom: 0;
   }
 }
@@ -69,73 +70,65 @@
   object-position: center;
 }
 
+.good-mini-card__price-wrapper {
+  display: flex;
+  margin: 0 0 10px;
+  align-items: center;
+
+  @media #{$laptop-desktop} {
+    grid-area: price;
+    justify-self: end;
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+}
+
 .good-mini-card__price {
+  margin: 0 auto 0 0 ;
   font-size: 18px;
   line-height: 18px;
-  margin: 0 0 10px;
 
   @media #{$tablet-desktop} {
     font-size: 26px;
     line-height: 38px;
-    margin-bottom: 14px;
   }
 
-  @media #{$desktop} {
-    grid-area: price;
-    justify-self: end;
-    margin-top: 10px;
-    margin-right: 47px;
+  @media #{$laptop-desktop} {
+    margin-right: 20px;
+    font-size: 26px;
+    line-height: 38px;
   }
 }
 
 .good-mini-card__price sup {
-  font-size: 0.7em;
-
-  @media #{$tablet-desktop} {
-    font-size: 0.6em;
-    font-weight: 600;
-  }
+  vertical-align: 0.1em;
+  margin-left: 1px;
+  font-size: 0.55em;
+  font-weight: 600;
 }
 
-.good-mini-card__breadcrumbs {
-  display: flex;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  flex-wrap: wrap;
+.good-mini-card__discount-info {
+  display: grid;
+  grid-auto-flow: column;
+  margin: 1px 5px 0 20px;
   font-size: 14px;
-  line-height: 14px;
-  color: $mini-card-breadcrumbs-color;
+  line-height: 1;
 
-  @media #{$tablet-desktop} {
-    margin-bottom: 10px;
-  }
-
-  @media #{$desktop} {
-    grid-area: breadcrumbs;
-    margin-top: 3px;
+  @media #{$laptop-desktop} {
+    grid-auto-flow: row;
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 
-.good-mini-card__breadcrumbs-item {
-  flex-shrink: 0;
-  margin: 0 4px 4px 0;
-
-  &::after {
-    content: "/"
-  }
+.good-mini-card__discount-value {
+  margin: 0 5px 0 0;
+  color: $good-card-discount-value-color;
 }
 
-.good-mini-card__breadcrumbs-item:last-child {
-  margin-right: 0;
-
-  &::after {
-    display: none;
-  }
-}
-
-.good-mini-card__breadcrumbs-link {
-  color: $mini-card-breadcrumbs-color;
+.good-mini-card__old-price {
+  margin: 0 0 0 0.28em;
+  text-decoration-color: $good-card-old-price-line-color;
 }
 
 .good-mini-card__detail {
@@ -147,9 +140,8 @@
   font-size: 16px;
   line-height: 21px;
 
-  @media #{$desktop} {
+  @media #{$laptop-desktop} {
     grid-area: detail;
-    margin-top: 6px;
   }
 }
 
@@ -162,34 +154,28 @@
 }
 
 .good-mini-card__note {
-  margin: 0 0 5px;
+  margin: 0 0 10px;
 
-  @media #{$tablet-desktop} {
-    margin-bottom: 10px;
-  }
-
-  @media #{$desktop} {
+  @media #{$laptop-desktop} {
     grid-area: note;
+    align-self: stretch;
     margin-right: 6px;
+    margin-bottom: 0;
   }
 }
 
-.good-mini-card__quantity {
-  margin: 0 0 7px;
+.good-mini-card__goods-quantity {
+  margin: 0 0 11px;
 
-  @media #{$tablet-desktop} {
-    margin-bottom: 20px;
-  }
-
-  @media #{$desktop} {
+  @media #{$laptop-desktop} {
     grid-area: quantity;
-    margin-bottom: 25px;
+    align-self: stretch;
+    margin-bottom: 0;
   }
 }
 
 .good-mini-card__total-price {
-  padding: 8px 0 0;
-  border-top: 1px solid $mini-card-total-price-border-color;
+  padding: 0;
   margin: 0 0 9px;
   text-align: center;
   font-size: 14px;
@@ -203,47 +189,34 @@
     line-height: 24px;
   }
 
-  @media #{$desktop} {
+  @media #{$laptop-desktop} {
     grid-area: total;
     padding-top: 10px;
-    margin-top: 6px;
-    margin-right: 40px;
+    padding-right: 40px;
+    border-top: 1px solid $mini-card-total-price-border-color;
+    margin-top: 13px;
     margin-bottom: 19px;
     text-align: right;
   }
 }
 
 .good-mini-card__submit {
-  margin: 0 0 11px;
+  margin: 0 0 5px;
 
   @media #{$tablet-desktop} {
-    min-width: 220px;
+    margin-bottom: 10px;
   }
 
-  @media #{$desktop} {
+  @media #{$laptop-desktop} {
     grid-area: submit;
+    justify-self: stretch;
     margin-bottom: 0;
   }
 }
 
 .good-mini-card__link {
-  justify-self: center;
-  font-size: 14px;
-  line-height: 18px;
-  color: inherit;
-
-  @media #{$tablet-desktop} {
+  @media #{$laptop-desktop} {
     justify-self: stretch;
-    box-sizing: border-box;
-    padding: 14px 20px 13px;
-    border: 1px solid currentColor;
-    border-radius: 3px;
-    text-align: center;
-    font-size: 16px;
-    line-height: 20px;
-  }
-
-  @media #{$desktop} {
     grid-area: link;
     margin-right: 8px;
   }

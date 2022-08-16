@@ -1,34 +1,74 @@
 .note {
   position: relative;
-  padding: 6px 10px 2px 30px;
+  padding: 6px 28px 8px;
   border: 1px solid $note-border-color;
   border-radius: 3px;
+  text-align: center;
   font-size: 13px;
   line-height: 13px;
   background-color: $background-color;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    width: 16px;
-    height: 16px;
-    background-image: url("../img/icons/note-icon.svg");
-    background-repeat: no-repeat;
-    background-position: center;
+  @media #{$widemobile-desktop} {
+    padding-right: 3px;
+    padding-bottom: 6px;
+    text-align: left;
   }
 
   @media #{$tablet-desktop} {
-    padding-bottom: 4px;
+    padding: 10px 31px 9px;
+  }
+
+  @media #{$laptop-desktop} {
+    padding: 6px 20px 5px 31px;
   }
 }
 
-.note .note__accent {
+.note__accent {
+  display: grid;
+  margin: 0 0 1px;
+  justify-content: center;
+  column-gap: 10px;
+  grid-auto-flow: column;
   font-size: 12px;
   line-height: 13px;
   font-weight: 500;
   letter-spacing: -0.01em;
+
+  @media #{$widemobile-desktop} {
+    justify-content: start;
+  }
+
+  @media #{$tablet-desktop} {
+    margin-bottom: 7px;
+  }
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 2px;
+  }
+}
+
+.note__accent::before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("../img/icons/note-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @media #{$widemobile-desktop} {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+  }
+
+  @media #{$tablet-desktop} {
+    top: 8px;
+  }
+
+  @media #{$laptop-desktop} {
+    top: 5px;
+  }
 }
 
 .note__accent strong,
@@ -36,12 +76,47 @@
   font: inherit;
 }
 
-.note p {
-  margin: 0 0 6px;
-  font-size: 12px;
-  line-height: 13px;
+.note__accent strong {
+  margin: 0;
+}
+
+.note__text {
+  padding: 0 0 0 26px;
+  margin: 0 0 1px;
+  font: inherit;
+
+  @media #{$widemobile-desktop} {
+    padding-left: 0;
+  }
 
   @media #{$desktop} {
     margin-bottom: 3px;
+  }
+}
+
+.note--alter {
+  padding: 6px 10px 6px 31px;
+  text-align: start;
+
+  .note__accent {
+    justify-content: start;
+  }
+
+  .note__accent::before {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+  }
+
+  .note__text {
+    display: none;
+
+    @media #{$laptop-desktop} {
+      display: block;
+    }
+  }
+
+  @media #{$laptop-desktop} {
+    padding: 5px 10px 6px 32px;
   }
 }

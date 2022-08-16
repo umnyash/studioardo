@@ -13,9 +13,14 @@
     background-repeat: repeat-x;
     background-position: left center;
     background-size: contain;
-    transform: translateY(-1px);
+    transform: translateY(1px);
 
     @media #{$tablet-desktop} {
+      --star-size: 20px;
+      transform: translateY(-1px);
+    }
+
+    @media #{$laptop-desktop} {
       --star-size: 24px;
     }
   }
@@ -37,6 +42,10 @@
   }
 
   @media #{$tablet-desktop} {
-    column-gap: 16px;;
+    column-gap: 12px;
+  }
+
+  @media #{$laptop-desktop} {
+    column-gap: 14px;
   }
 }

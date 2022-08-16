@@ -1,13 +1,21 @@
 .clipbox {
-  --max-height: 179px;
+  --max-height: 205px;
 
-  @media #{$laptop} {
-    --max-height: 320px;
+  @media #{$tablet-desktop} {
+    --max-height: 10000px;
   }
+
+  // @media #{$laptop} {
+  //   --max-height: 320px;
+  // }
 }
 
 .clipbox--big {
-  --max-height: 194px;
+  --max-height: 190px;
+
+  @media #{$widemobile-desktop} {
+    --max-height: 275px;
+  }
 
   @media #{$tablet-desktop} {
     --max-height: 400px;
@@ -22,7 +30,8 @@
 .clipbox__toggler {
   display: none;
   width: 100%;
-  padding: 11px 0;
+  // padding: 11px 0;
+  padding: 0;
   border: none;
   border-top: 1px solid currentColor;
   align-items: center;

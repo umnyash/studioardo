@@ -1,38 +1,45 @@
 .button {
-  display: inline-block;
+  display: grid;
   box-sizing: border-box;
-  padding: 11px 5px 9px;
+  min-height: 40px;
+  padding: 8px 5px 6px;
   border: 1px solid $button-border-color;
   border-radius: 3px;
+  align-items: center;
   text-align: center;
   font-family: $basic-font-family;
   font-size: 14px;
   line-height: 18px;
   color: inherit;
   background-color: transparent;
+  cursor: pointer;
 
   @media #{$tablet-desktop} {
-    padding: 14px 20px;
+    min-height: 50px;
+    padding-top: 10px;
+    padding-bottom: 8px;
     font-size: 16px;
     line-height: 20px;
   }
 }
 
+.button--primary {
+  border-color: $primary-button-color;
+  color: $text-color-secondary;
+  background-color: $primary-button-color;
+}
+
+.button--secondary {
+  border-color: $secondary-button-color;
+  color: $text-color-secondary;
+  background-color: $secondary-button-color;
+}
+
 .button--with-icon {
-  display: grid;
-  min-height: 40px;
-  padding-top: 8px;
-  padding-bottom: 6px;
   grid-template-columns: min-content auto;
   grid-auto-flow: column;
   justify-content: center;
-  align-items: center;
-  column-gap: 10px;
-
-  @media #{$tablet-desktop} {
-    min-height: 50px;
-    column-gap: 15px;
-  }
+  column-gap: 5px;
 }
 
 .button--with-icon::before {
@@ -75,15 +82,24 @@
   transform: translateY(-1px);
 }
 
-.button--alter {
-  display: grid;
-  align-items: center;
-  text-transform: uppercase;
-
-  @media #{$tablet-desktop} {
-    min-height: 60px;
-  }
+.button--with-shadow {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
 }
+
+.button--alter {
+  font-size: 16px;
+  line-height: 18px;
+}
+
+// .button--alter {
+//   display: grid;
+//   align-items: center;
+//   text-transform: uppercase;
+
+//   @media #{$tablet-desktop} {
+//     min-height: 60px;
+//   }
+// }
 
 .button--accent {
   padding: 20px 25px 18px;
@@ -94,22 +110,6 @@
   text-transform: uppercase;
   color: $text-color-secondary;
   background-color: $button-accent-color;
-}
-
-.button--primary {
-  border-color: $primary-button-color;
-  color: $text-color-secondary;
-  background-color: $primary-button-color;
-}
-
-.button--secondary {
-  border-color: $secondary-button-color;
-  color: $text-color-secondary;
-  background-color: $secondary-button-color;
-}
-
-.button--with-shadow {
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .button--gift {

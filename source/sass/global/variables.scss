@@ -2,13 +2,14 @@
 
 // $narrow-mobile: "(max-width: 359px)";
 $mobile: "(max-width: 767px)";
+$mobile-tablet: "(max-width: 1279px)";
 $narrow-mobile: "(max-width: 374px)";
 $wide-mobile: "(min-width: 375px) and (max-width: 767px)";
 $widemobile-desktop: "(min-width: 375px)";
-$tablet: "(min-width: 768px) and (max-width: 1019px)";
+$tablet: "(min-width: 768px) and (max-width: 1279px)"; // 1309
 $tablet-desktop: "(min-width: 768px)";
-$laptop: "(min-width: 1020px) and (max-width: 1509px)";
-$laptop-desktop: "(min-width: 1020px)";
+$laptop: "(min-width: 1280px) and (max-width: 1509px)"; // 1310px
+$laptop-desktop: "(min-width: 1280px)"; // 1310px
 $desktop: "(min-width: 1510px)";
 
 // Fonts
@@ -52,5 +53,7 @@ $select-2-button-border-color: #c8c8c8;
 $select-2-button-active-border-color: #42bd98;
 $select-2-radiobutton-checked-color: #42bd98;
 $good-card-price-link-color: #38a685;
+$good-card-discount-value-color: #d92547;
+$good-card-old-price-line-color: #c5072b;
 $good-card-features-accent-color: #42bd98;
 $button-gift-hover-border-color: #42bd98;
