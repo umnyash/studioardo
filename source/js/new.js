@@ -113,25 +113,25 @@ if (likeButtons) {
 const clipboxes = document.querySelectorAll('.clipbox');
 
 if (clipboxes) {
-  const setClipboxes = () => {
-    clipboxes.forEach((clipbox) => {
-      clipbox.classList.remove('clipbox--reduced');
-      clipbox.classList.remove('clipbox--expanded');
+  const setClipboxMode = (clipbox) => {
+    clipbox.classList.remove('clipbox--reduced');
+    clipbox.classList.remove('clipbox--expanded');
 
-      if (clipbox.offsetHeight > parseInt(getComputedStyle(clipbox).getPropertyValue('--max-height'), 10)) {
-        clipbox.classList.add('clipbox--reduced');
-      }
-
-      clipbox.querySelector('.clipbox__toggler').addEventListener('click', () => {
-        clipbox.classList.toggle('clipbox--reduced');
-        clipbox.classList.toggle('clipbox--expanded');
-      });
-    });
+    if (clipbox.offsetHeight > parseInt(getComputedStyle(clipbox).getPropertyValue('--max-height'), 10)) {
+      clipbox.classList.add('clipbox--reduced');
+    }
   };
 
-  window.addEventListener('resize', setClipboxes);
+  clipboxes.forEach((clipbox) => {
+    clipbox.querySelector('.clipbox__toggler').addEventListener('click', () => {
+      clipbox.classList.toggle('clipbox--reduced');
+      clipbox.classList.toggle('clipbox--expanded');
+    });
 
-  setClipboxes();
+    window.addEventListener('resize', () => setClipboxMode(clipbox));
+
+    setClipboxMode(clipbox);
+  });
 }
 
 const worksGallerySlider = document.querySelector('.works-gallery__slider');
