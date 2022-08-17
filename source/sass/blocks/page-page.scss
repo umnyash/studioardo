@@ -73,3 +73,8 @@
 .page-page .product-img__carousel .item img {
   object-position: center;
 }
+
+.page-page .swiper-button-prev,
+.page-page .swiper-button-next {
+  cursor: pointer;
+}
