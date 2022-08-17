@@ -273,3 +273,21 @@ if (goodQuantityAlterNodes) {
     });
   });
 }
+
+const coverCardWrappers = document.querySelectorAll('.s-popular .container');
+
+if (coverCardWrappers) {
+  coverCardWrappers.forEach((cardWrapper) => {
+    const cards = cardWrapper.querySelectorAll('.card');
+
+    cards.forEach((card) => {
+      card.addEventListener('mouseover', () => {
+        cardWrapper.style.zIndex = 200;
+      });
+
+      card.addEventListener('mouseout', () => {
+        cardWrapper.style.zIndex = 'auto';
+      });
+    });
+  });
+}
