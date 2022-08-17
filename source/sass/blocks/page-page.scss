@@ -74,7 +74,28 @@
   object-position: center;
 }
 
+.page-page .sp-slider {
+  // overflow-x: hidden;
+}
+
 .page-page .swiper-button-prev,
 .page-page .swiper-button-next {
   cursor: pointer;
+}
+
+.page-page .card__button {
+  flex-grow: 1;
+  align-self: stretch;
+}
+
+.page-page .card__btn {
+  align-self: stretch;
+  height: auto;
+  min-height: 40px;
+  border-radius: 3px;
+  flex-grow: 1;
+
+  @media #{$tablet-desktop} {
+    min-height: 44px;
+  }
 }

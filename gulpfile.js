@@ -149,7 +149,7 @@ exports.copy = copy;
 // Scripts
 
 const scripts = () => {
-  return gulp.src('source/js/umnyash.js')
+  return gulp.src('source/js/new.js')
     // .pipe(terser())
     // .pipe(rename('script.min.js'))
     .pipe(gulp.dest('build/js'))
@@ -161,9 +161,9 @@ exports.scripts = scripts;
 // Scripts2
 
 const scripts2 = () => {
-  return gulp.src('source/js/umnyash.js')
+  return gulp.src('source/js/new.js')
     .pipe(terser())
-    .pipe(rename('umnyash.min.js'))
+    .pipe(rename('new.min.js'))
     .pipe(gulp.dest('build/js'))
     .pipe(sync.stream());
 }
