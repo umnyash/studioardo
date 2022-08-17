@@ -23,6 +23,11 @@
   }
 }
 
+.button--simple {
+  padding: 0;
+  border-color: transparent;
+}
+
 .button--primary {
   border-color: $primary-button-color;
   color: $text-color-secondary;

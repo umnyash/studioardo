@@ -30,7 +30,8 @@
   }
 
   @media #{$laptop-desktop} {
-    grid-template-columns: 730px 1fr auto;
+    // grid-template-columns: 730px 1fr auto;
+    grid-template-columns: 58.4% 1fr auto;
     align-items: start;
     row-gap: 40px;
   }
@@ -89,28 +90,26 @@
 }
 
 .good-card__img-wrapper {
+  position: relative;
   display: block;
-  width: 320px;
-  height: 320px;
-  margin: 0 auto 24px;
-
-  @media #{$widemobile-desktop} {
-    width: 375px;
-    height: 375px;
-  }
+  max-width: 100%;
+  margin: 17px 0 20px;
+  overflow-x: hidden;
 
   @media #{$tablet-desktop} {
     grid-column: 1 / 3;
+    margin-top: 32px;
   }
 
   @media #{$laptop-desktop} {
     grid-column: 1 / 2;
+    margin-top: 0;
   }
 
-  @media #{$desktop} {
-    width: 870px;
-    height: 870px;
-  }
+  // @media #{$desktop} {
+  //   width: 870px;
+  //   height: 870px;
+  // }
 }
 
 .good-card__img {
@@ -123,12 +122,8 @@
 
 .good-card__actions {
   display: flex;
-  margin: 0 0 17px;
+  margin: 0;
   justify-content: center;
-
-  @media #{$tablet-desktop} {
-    margin-bottom: 0;
-  }
 
   @media #{$laptop-desktop} {
     margin-top: 7px;
@@ -502,4 +497,25 @@
   @media #{$desktop} {
     margin-right: 6px;
   }
+}
+
+.good-card__labels {
+  position: absolute;
+  top: 15px;
+  right: 13px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  font-family: $basic-font-family;
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 700;
+  color: $text-color-secondary;
+}
+
+.good-card__label {
+  padding: 6px 8px 3px;
+  border-radius: 4.55px;
+  margin: 0 0 0 10px;
+  background-color: $good-card-label-background-color;
 }

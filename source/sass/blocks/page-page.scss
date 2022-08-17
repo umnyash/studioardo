@@ -1,0 +1,67 @@
+.page-page {
+  // overflow-x: hidden;
+}
+
+.page-page .s-popular {
+  @media #{$laptop-desktop} {
+    margin-bottom: -165px;
+  }
+
+  @media #{$desktop} {
+    margin-bottom: -235px;
+  }
+}
+
+// .page-page .s-popular > .container {
+//   z-index: 100;
+// }
+
+// .page-page .s-popular,
+// .page-page .s-popular .container,
+// .page-page .s-popular .sp-slider,
+// .page-page .s-popular .swiper-container,
+// .page-page .s-popular .swiper-wrapper,
+// .page-page .s-popular .swiper-slide {
+//   pointer-events: none;
+// }
+
+.page-page .s-popular .next {
+  @media #{$laptop-desktop} {
+    right: 0;
+  }
+
+  @media #{$desktop} {
+    right: -30px;
+  }
+}
+
+.page-page .s-popular .prev {
+  @media #{$laptop-desktop} {
+    left: 0;
+  }
+
+  @media #{$desktop} {
+    left: -30px;
+  }
+}
+
+
+.page-page .product-img__carousel .item {
+  height: 320px;
+
+  @media #{$widemobile-desktop} {
+    height: 375px;
+  }
+
+  @media #{$tablet-desktop} {
+    height: 538px;
+  }
+
+  @media #{$laptop-desktop} {
+    height: 730px;
+  }
+
+  @media #{$desktop} {
+    height: 870px;
+  }
+}
