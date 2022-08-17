@@ -11,3 +11,35 @@
     margin: 0 0 47px;
   }
 }
+
+.page-body__good-card {
+  margin: 0 0 20px;
+
+  @media #{$tablet-desktop} {
+    margin-bottom: 40px;
+  }
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 80px;
+  }
+
+  @media #{$desktop} {
+    margin-bottom: 60px;
+  }
+}
+
+.page-body__advantages {
+  margin-bottom: 40px;
+
+  @media #{$tablet-desktop} {
+    margin-bottom: 60px;
+  }
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 80px;
+  }
+
+  @media #{$desktop} {
+    margin-bottom: 60px;
+  }
+}
