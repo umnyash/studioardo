@@ -355,6 +355,7 @@
   background-position: center;
   background-size: contain;
   transform: translate(2px, -2px);
+  cursor: pointer;
 
   &::before {
     content: "";

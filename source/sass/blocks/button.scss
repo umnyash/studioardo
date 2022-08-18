@@ -53,31 +53,6 @@
   background-size: contain;
 }
 
-.button--with-icon--phone::before {
-  width: 17px;
-  height: 17px;
-  background-image: url("../img/icons/phone.svg");
-  transform: translateY(-1px);
-
-  @media #{$tablet-desktop} {
-    width: 21px;
-    height: 21px;
-  }
-}
-
-.button--with-icon--pdf::before {
-  width: 19px;
-  height: 20px;
-  margin: 0 0 0;
-  background-image: url("../img/icons/pdf-icon.svg");
-  transform: translateY(-1px);
-
-  @media #{$tablet-desktop} {
-    width: 27px;
-    height: 27px;
-  }
-}
-
 .button--with-icon--play::before {
   width: 20px;
   height: 21px;
@@ -116,22 +91,3 @@
   background-color: $button-accent-color;
 }
 
-.button--gift {
-  &:hover {
-    border-color: $button-gift-hover-border-color;
-  }
-
-  span:first-child {
-    @media #{$tablet-desktop} {
-      display: none;
-    }
-  }
-
-  span:nth-child(2) {
-    display: none;
-
-    @media #{$tablet-desktop} {
-      display: block;
-    }
-  }
-}
