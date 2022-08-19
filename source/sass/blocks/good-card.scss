@@ -30,7 +30,6 @@
   }
 
   @media #{$laptop-desktop} {
-    // grid-template-columns: 730px 1fr auto;
     grid-template-columns: 58.4% 1fr auto;
     align-items: start;
     row-gap: 40px;
@@ -105,11 +104,6 @@
     grid-column: 1 / 2;
     margin-top: 0;
   }
-
-  // @media #{$desktop} {
-  //   width: 870px;
-  //   height: 870px;
-  // }
 }
 
 .good-card__img {

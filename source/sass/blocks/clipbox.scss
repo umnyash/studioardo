@@ -1,13 +1,23 @@
 .clipbox {
-  --max-height: 179px;
+  --max-height: 205px;
 
   @media #{$tablet-desktop} {
-    --max-height: 10000px;
+    --max-height: 400px;
+  }
+}
+
+.clipbox--alter {
+  @media #{$tablet-desktop} {
+    --max-height: 171px;
   }
 
-  // @media #{$laptop} {
-  //   --max-height: 320px;
-  // }
+  @media #{$laptop-desktop} {
+    --max-height: 154px;
+  }
+
+  @media #{$laptop-desktop} {
+    --max-height: 179px;
+  }
 }
 
 .clipbox--big {

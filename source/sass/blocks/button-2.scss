@@ -5,6 +5,8 @@
   padding: 8px 5px 6px;
   border: 1px solid $button-border-color;
   border-radius: 3px;
+  grid-auto-flow: column;
+  justify-content: center;
   align-items: center;
   text-align: center;
   font-family: $basic-font-family;
@@ -15,13 +17,13 @@
   background-color: transparent;
   cursor: pointer;
 
-  // @media #{$tablet-desktop} {
-  //   min-height: 50px;
-  //   padding-top: 10px;
-  //   padding-bottom: 8px;
-  //   font-size: 16px;
-  //   line-height: 20px;
-  // }
+  @media #{$tablet-desktop} {
+    min-height: 60px;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    // font-size: 16px;
+    // line-height: 20px;
+  }
 }
 
 .button-2--alter {
@@ -30,6 +32,23 @@
 
   &:hover {
     border-color: $button-2-alter-hover-border-color;
+  }
+
+  @media #{$laptop-desktop} {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.button-2--big {
+  padding: 20px 25px 18px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+
+  @media #{$laptop-desktop} {
+    padding-right: 30px;
+    padding-left: 30px;
   }
 }
 
@@ -44,6 +63,13 @@
   color: $text-color-secondary;
   background-color: $primary-button-color;
 }
+
+.button-2--accent {
+  border-color: $button-accent-color;
+  color: $text-color-secondary;
+  background-color: $button-accent-color;
+}
+
 
 .button-2--with-icon {
   grid-template-columns: min-content auto;
@@ -79,7 +105,7 @@
   transform: translateY(-1px);
 
   @media #{$tablet-desktop} {
-    width: 27px;
-    height: 27px;
+    width: 28px;
+    height: 28px;
   }
 }

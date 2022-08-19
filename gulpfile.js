@@ -33,7 +33,7 @@ const styles = () => {
       autoprefixer(),
       // csso()
     ]))
-    .pipe(rename('umnyash.css'))
+    .pipe(rename('new.css'))
     .pipe(sourcemap.write('.'))
     .pipe(gulp.dest('build/css'))
     .pipe(sync.stream());
@@ -52,7 +52,7 @@ const styles2 = () => {
       autoprefixer(),
       csso()
     ]))
-    .pipe(rename('umnyash.min.css'))
+    .pipe(rename('new.min.css'))
     .pipe(sourcemap.write('.'))
     .pipe(gulp.dest('build/css'))
     .pipe(sync.stream());

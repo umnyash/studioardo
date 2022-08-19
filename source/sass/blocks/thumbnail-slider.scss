@@ -3,9 +3,12 @@
   grid-template-columns: min-content min-content;
   column-gap: 5px;
 
-  @media #{$laptop-desktop} {
-    column-gap: 10px;
-  }
+  width: 100%;
+  background-color: green;
+
+  // @media #{$laptop-desktop} {
+  //   column-gap: 10px;
+  // }
 }
 
 .thumbnail-slider__full {
@@ -15,15 +18,15 @@
   grid-row: 1 / 2;
   overflow: hidden;
 
-  @media #{$widemobile-desktop} {
-    width: 265px;
-    height: 265px;
-  }
+  // @media #{$widemobile-desktop} {
+  //   width: 265px;
+  //   height: 265px;
+  // }
 
-  @media #{$laptop-desktop} {
-    width: 650px;
-    height: 650px;
-  }
+  // @media #{$laptop-desktop} {
+  //   width: 650px;
+  //   height: 650px;
+  // }
 }
 
 .thumbnail-slider__thumbs {
@@ -33,15 +36,15 @@
   grid-row: 1 / 2;
   overflow: hidden;
 
-  @media #{$widemobile-desktop} {
-    width: 105px;
-    height: 265px;
-  }
+  // @media #{$widemobile-desktop} {
+  //   width: 105px;
+  //   height: 265px;
+  // }
 
-  @media #{$laptop-desktop} {
-    width: 260px;
-    height: 650px;
-  }
+  // @media #{$laptop-desktop} {
+  //   width: 260px;
+  //   height: 650px;
+  // }
 }
 
 .thumbnail-slider__img-wrapper {
@@ -49,15 +52,15 @@
   width: 225px;
   height: 225px;
 
-  @media #{$widemobile-desktop} {
-    width: 265px;
-    height: 265px;
-  }
+  // @media #{$widemobile-desktop} {
+  //   width: 265px;
+  //   height: 265px;
+  // }
 
-  @media #{$laptop-desktop} {
-    width: 650px;
-    height: 650px;
-  }
+  // @media #{$laptop-desktop} {
+  //   width: 650px;
+  //   height: 650px;
+  // }
 }
 
 .thumbnail-slider__img-wrapper--small {
@@ -65,15 +68,15 @@
   width: 90px;
   height: 90px;
 
-  @media #{$widemobile-desktop} {
-    width: 105px;
-    height: 105px;
-  }
+  // @media #{$widemobile-desktop} {
+  //   width: 105px;
+  //   height: 105px;
+  // }
 
-  @media #{$laptop-desktop} {
-    width: 260px;
-    height: 260px;
-  }
+  // @media #{$laptop-desktop} {
+  //   width: 260px;
+  //   height: 260px;
+  // }
 }
 
 .thumbnail-slider__img {

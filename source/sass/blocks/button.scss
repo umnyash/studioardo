@@ -69,25 +69,3 @@
   font-size: 16px;
   line-height: 18px;
 }
-
-// .button--alter {
-//   display: grid;
-//   align-items: center;
-//   text-transform: uppercase;
-
-//   @media #{$tablet-desktop} {
-//     min-height: 60px;
-//   }
-// }
-
-.button--accent {
-  padding: 20px 25px 18px;
-  border-color: $button-accent-color;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: $text-color-secondary;
-  background-color: $button-accent-color;
-}
-

@@ -146,8 +146,11 @@ if (worksGallerySlider) {
       prevEl: ".works-gallery__slider .swiper-button-prev",
     },
     breakpoints: {
-      1020: {
-        spaceBetween: 18,
+      768: {
+        spaceBetween: 19,
+      },
+      1510: {
+        spaceBetween: 10,
       },
     },
   });
