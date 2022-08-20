@@ -44,7 +44,18 @@
         -ms-interpolation-mode:bicubic;
       }
 
-      .content-wrapper {
+      table {
+        mso-table-lspace:0pt;
+        mso-table-rspace:0pt;
+        border-spacing:0px;
+      }
+
+      td {
+        padding:0;
+        margin:0;
+      }
+
+      .signature {
         font-family:"Arial",sans-serif;
         font-size:16px;
         line-height:18.4px;
@@ -54,26 +65,59 @@
         color:#333333;
       }
 
-      .content-body-inner {
-        padding-bottom:38px;
+      .signature__inner {
+        width:700px;
+        background-color:#FFFFFF;
+      }
+
+      .signature__logo {
+        padding-top:46px;
+        padding-right:21px;
+        padding-bottom:21px;
+        padding-left:52px;
+      }
+
+      .signature__logo img {
+        display:block;
+      }
+
+      .signature__body {
+        padding-bottom:40px;
         padding-left:34px;
-        padding-right: 11px;
+        padding-right:11px;
       }
 
-      .employee-position {
-        padding-bottom: 18px;
-        font-family:"Arial",sans-serif;
+      .signature__column-wrapper {
+        font-size:0;
+      }
+
+      .signature__column {
+        vertical-align:top;
+        display:inline-table;
         font-size:16px;
-        line-height:18.4px;
-        -webkit-text-size-adjust:none;
-        -ms-text-size-adjust:none;
-        mso-line-height-rule:exactly;
-        color:#333333;
       }
 
-      .employee-name {
-        padding-top: 1px;
-        padding-bottom: 10px;
+      .signature__column--v-align-middle {
+        vertical-align: middle;
+      }
+
+      .signature__photo {
+        width:150px;
+        padding-right:40px;
+        padding-bottom:10px;
+      }
+
+      .signature__photo img {
+        display:block;
+      }
+
+      .signature__content {
+        width:440px;
+      }
+
+      .signature__person-name {
+        padding-top:1px;
+        padding-bottom:10px;
         font-family:"Arial",sans-serif;
         font-size:18px;
         line-height:20.7px;
@@ -83,29 +127,47 @@
         color:#c61f39;
       }
 
-      .phone {
+      .signature__person-position {
+        padding-bottom:18px;
         font-family:"Arial",sans-serif;
         font-size:16px;
         line-height:18.4px;
-        text-decoration: none;
         -webkit-text-size-adjust:none;
         -ms-text-size-adjust:none;
         mso-line-height-rule:exactly;
         color:#333333;
       }
 
-      .email {
+      .signature__contacts {
+        padding-top:12px;
+        border-top: 1px solid #bfbfbf;
+      }
+
+      .signature__contacts-item {
+        padding-right:28px;
+        padding-bottom:7px;
+      }
+
+      .signature__contacts-item--email {
+        padding-right:23px;
+      }
+
+      .signature__contacts-link {
         font-family:"Arial",sans-serif;
         font-size:16px;
         line-height:18.4px;
-        text-decoration: none;
+        text-decoration:none;
         -webkit-text-size-adjust:none;
         -ms-text-size-adjust:none;
         mso-line-height-rule:exactly;
         color:#333333;
       }
 
-      .address {
+      .signature__icon {
+        vertical-align: middle;
+      }
+
+      .signature__address {
         padding-top: 12px;
         padding-right: 23px;
         padding-bottom: 7px;
@@ -120,9 +182,13 @@
         color:#333333;
       }
 
-      .social-text {
-        padding-top: 8px;
-        padding-right: 10px;
+      .signature__socials {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      .signature__socials-text {
+        padding-right: 11px;
         font-family:"Arial",sans-serif;
         font-size:14px;
         line-height:16.9px;
@@ -132,42 +198,31 @@
         color:#333333;
       }
 
-      .button {
-        padding: 7px 16px;
+      .signature__socials-link {
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+      }
+
+      .signature__socials-link img {
+        vertical-align: middle;
+      }
+
+      .signature__button-wrapper {
+        margin-bottom: 10px;
+      }
+
+      .signature__button-wrapper:not(:last-child) {
+        margin-right: 10px;
+      }
+
+      .signature__button {
+        padding: 6px 16px;
+        border: 1px solid #dcdcdc;
         border-radius: 3px;
       }
 
-      .button-1-wrapper {
-        float: left;
-        margin-right: 10px;
-        margin-bottom: 10px;
-      }
-
-      .button-2-wrapper {
-        float: left;
-        margin-bottom: 10px;
-      }
-
-      .button-1 {
-        background-color: #42bd98;
-      }
-
-      .button-1-text {
-        font-family:"Arial",sans-serif;
-        font-size:14px;
-        line-height:16.1px;
-        text-decoration: none;
-        -webkit-text-size-adjust:none;
-        -ms-text-size-adjust:none;
-        mso-line-height-rule:exactly;
-        color:#ffffff;
-      }
-
-      .button-2 {
-        border: 1px solid #dcdcdc;
-      }
-
-      .button-2-text {
+      .signature__button-text {
         font-family:"Arial",sans-serif;
         font-size:14px;
         line-height:16.1px;
@@ -178,225 +233,110 @@
         color:#333333;
       }
 
-      .icon {
-        vertical-align: middle;
+      .signature__button--primary {
+        border-color: #42bd98;
+        background-color: #42bd98;
       }
 
-      table {
-        mso-table-lspace:0pt;
-        mso-table-rspace:0pt;
-        border-spacing:0px;
-      }
-
-      .content-body {
-        width:700px;
-        background-color:#FFFFFF;
-      }
-
-      td {
-        padding:0;
-        margin:0;
-      }
-
-      .logo-cell {
-        padding-top:46px;
-        padding-right:21px;
-        padding-bottom:21px;
-        padding-left:52px;
-      }
-
-      .photo-column {
-        float:left;
-      }
-
-      .photo-cell {
-        width:150px;
-        padding-right: 40px;
-        margin-bottom: 10px;
-      }
-
-      .logo-cell img,
-      .photo-cell img {
-        display:block;
-      }
-
-      .text-column {
-        float:left;
-      }
-
-      .text-table-wrapper {
-        width:440px;
-      }
-
-      .phone-column {
-        float:left;
-      }
-
-      .email-column {
-        float:left;
-      }
-
-      .social-text-column {
-        float:left;
-      }
-
-      .social-links-column {
-        float:left;
-      }
-
-      .social-link-wrapper {
-        padding-right: 10px;
-      }
-
-      .social-links-column img {
-        vertical-align: middle;
-      }
-
-      .contacts-cell {
-        padding-top: 12px;
-        padding-bottom: 7px;
-        border-top: 1px solid #bfbfbf;
-      }
-
-      .phone-cell {
-        padding-right: 28px;
-      }
-
-      .email-cell {
-        padding-right: 23px;
-      }
-
-      .social {
-        padding-top: 20px;
-        padding-bottom: 20px;
-      }
-
-      @media only screen and (max-width:700px) {
-        *[class="gmail-fix"] {
-          display: none !important;
-        }
-      }
-
-      #outlook a {
-        padding: 0;
-      }
-
-      .button {
-        mso-style-priority: 100 !important;
-        text-decoration: none !important;
+      .signature__button--primary .signature__button-text {
+        color:#ffffff;
       }
     </style>
   </head>
   <body>
     <div>
-      <!--[if gte mso 9]>
-			  <v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="t">
-				  <v:fill type="tile" color="#707070"></v:fill>
-			  </v:background>
-		  <![endif]-->
 
-      <!-- Основная таблица письма -->
-      <table class="content-wrapper" width="100%" cellspacing="0" cellpadding="0" border="0">
+      <table class="signature" width="100%" cellspacing="0" cellpadding="0" border="0">
         <tr>
           <td>
-            <!-- Логотип -->
-            <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+            <table class="signature__inner" cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#ffffff">
               <tr>
                 <td>
-                  <table class="content-body" cellspacing="0" cellpadding="0" align="center" bgcolor="#ffffff">
+
+                  <!--[if mso]><table style="width:700px" cellpadding="0" cellspacing="0"><tr><td style="width:150px" valign="top"><![endif]-->
+                  <table cellspacing="0" cellpadding="0" border="0">
                     <tr>
-                      <td class="logo-cell" align="left">
+                      <td class="signature__logo">
                         <a href="https://www.studioardo.ru" target="_blank">
                           <img src="img/email/email-logo.png" width="114" height="35" border="0" alt="Логотип в виде текста ARDO Studio.">
                         </a>
                       </td>
                     </tr>
                   </table>
-                </td>
-              </tr>
-            </table>
 
-            <!-- Контент -->
-            <table width="100%" cellspacing="0" cellpadding="0" border="0">
-              <tr>
-                <td>
-                  <table class="content-body" cellspacing="0" cellpadding="0" align="center" bgcolor="#ffffff">
+                  <!--[if mso]></td><td style="width:0px"></td><td style="width:440px" valign="top"><![endif]-->
+                  <table class="signature__body signature__column-wrapper" cellspacing="0" cellpadding="0" border="0">
                     <tr>
-                      <td class="content-body-inner" align="left">
-
-                        <!--[if mso]><table style="width:700px" cellpadding="0" cellspacing="0"><tr><td style="width:150px" valign="top"><![endif]-->
-                        <table class="photo-column" cellspacing="0" cellpadding="0" border="0" align="left">
+                      <td>
+                        <table class="signature__column" cellspacing="0" cellpadding="0" border="0">
                           <tr>
-                            <td class="photo-cell" align="left">
+                            <td class="signature__photo">
                               <img src="img/email/email-manager.jpg" width="150" height="220" border="0" alt="Мужчина, сидящий за столом.">
                             </td>
                           </tr>
                         </table>
-
-                        <!--[if mso]></td><td style="width:0px"></td><td style="width:440px" valign="top"><![endif]-->
-                        <table class="text-column" cellspacing="0" cellpadding="0" border="0" align="left">
+                        <table class="signature__column" cellspacing="0" cellpadding="0" border="0">
                           <tr>
-                            <td class="text-table-wrapper">
-                              <table>
+                            <td class="signature__content">
+                              <table cellspacing="0" cellpadding="0" border="0">
                                 <tr>
-                                  <td class="employee-name">
+                                  <td class="signature__person-name">
                                     <b>Павел Захаров</b>
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td class="employee-position">
+                                  <td class="signature__person-position">
                                     Менеджер
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td class="contacts-cell">
-                                    <table class="phone-column" cellspacing="0" cellpadding="0" border="0">
+                                  <td class="signature__contacts signature__column-wrapper">
+                                    <table class="signature__column" cellspacing="0" cellpadding="0" border="0">
                                       <tr>
-                                        <td class="phone-cell">
-                                          <img class="icon" src="img/email/email-phone-icon.png" width="22" height="22" border="0" alt="Значок телефона.">
-                                          <a class="phone" href="tel:+79160259278" target="_blank">89160259278</a>
+                                        <td class="signature__contacts-item signature__contacts-item--phone">
+                                          <img class="signature__icon" src="img/email/email-phone-icon.png" width="22" height="22" border="0" alt="Значок телефона.">
+                                          <a class="signature__contacts-link" href="tel:+79160259278" target="_blank">89160259278</a>
                                         </td>
                                       </tr>
                                     </table>
-
-                                    <table class="email-column" cellspacing="0" cellpadding="0" border="0">
+                                    <table class="signature__column" cellspacing="0" cellpadding="0" border="0">
                                       <tr>
-                                        <td class="email-cell">
-                                          <img class="icon" src="img/email/email-letter-icon.png" width="22" height="22" border="0" alt="Значок конверта.">
-                                          <a class="email" href="mailto:pavel.z@ardostudio.ru" target="_blank">pavel.z@ardostudio.ru</a>
+                                        <td class="signature__contacts-item signature__contacts-item--email">
+                                          <img class="signature__icon" src="img/email/email-letter-icon.png" width="22" height="22" border="0" alt="Значок конверта.">
+                                          <a class="signature__contacts-link" href="mailto:pavel.z@ardostudio.ru" target="_blank">pavel.z@ardostudio.ru</a>
                                         </td>
                                       </tr>
                                     </table>
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td class="address">
-                                    <img class="icon" src="img/email/email-map-marker-icon.png" width="22" height="22" border="0" alt="Значок метки на карте.">
+                                  <td class="signature__address">
+                                    <img class="signature__icon" src="img/email/email-map-marker-icon.png" width="22" height="22" border="0" alt="Значок метки на карте.">
                                     Москва, ул. Дениса Давыдова 4
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td class="social">
-                                    <table class="social-text-column" cellspacing="0" cellpadding="0" border="0">
+                                  <td class="signature__socials signature__column-wrapper">
+                                    <table class="signature__column signature__column--v-align-middle" cellspacing="0" cellpadding="0" border="0">
                                       <tr>
-                                        <td class="social-text">
+                                        <td class="signature__socials-text">
                                           Мы в соцсетях:
                                         </td>
                                       </tr>
                                     </table>
-                                    <table class="social-links-column" cellspacing="0" cellpadding="0" border="0">
+                                    <table class="signature__column signature__column--v-align-middle" cellspacing="0" cellpadding="0" border="0">
                                       <tr>
-                                        <td class="social-link-wrapper">
+                                        <td class="signature__socials-link">
                                           <a href="https://www.youtube.com/channel/UCeCClWuZGmBDn_2L5QmoEyA" target="_blank">
                                             <img src="img/email/email-youtube-icon.png" width="34" height="32" border="0" alt="YouTube.">
                                           </a>
                                         </td>
-                                        <td class="social-link-wrapper">
+                                        <td class="signature__socials-link">
                                           <a href="https://www.pinterest.ru/ardostudio/_created/" target="_blank">
                                             <img src="img/email/email-telegram-icon.png" width="32" height="32" border="0" alt="Pinterest.">
                                           </a>
                                         </td>
-                                        <td class="social-link-wrapper">
+                                        <td class="signature__socials-link">
                                           <a href="https://vk.com/ardo_studio" target="_blank">
                                             <img src="img/email/email-vk-icon.png" width="34" height="32" border="0" alt="VK.">
                                           </a>
@@ -409,20 +349,20 @@
                                   <td>
                                     <table cellspacing="0" cellpadding="0" border="0">
                                       <tr>
-                                        <td>
-                                          <table class="button-1-wrapper" cellspacing="0" cellpadding="0" border="0">
+                                        <td class="signature__column-wrapper">
+                                          <table class="signature__column signature__button-wrapper" cellspacing="0" cellpadding="0" border="0">
                                             <tr>
-                                              <td class="button button-1">
-                                                <a class="button-1-text" href="https://www.studioardo.ru" target="_blank">
+                                              <td class="signature__button signature__button--primary">
+                                                <a class="signature__button-text" href="https://www.studioardo.ru" target="_blank">
                                                   <b>studioardo.ru</b>
                                                 </a>
                                               </td>
                                             </tr>
                                           </table>
-                                          <table class="button-2-wrapper" cellspacing="0" cellpadding="0" border="0">
+                                          <table class="signature__column signature__button-wrapper" cellspacing="0" cellpadding="0" border="0">
                                             <tr>
-                                              <td class="button button-2">
-                                                <a class="button-2-text" href="https://www.studioardo.ru/#js-modal-message" target="_blank">
+                                              <td class="signature__button">
+                                                <a class="signature__button-text" href="https://www.studioardo.ru/#js-modal-message" target="_blank">
                                                   Обратная связь
                                                 </a>
                                               </td>
@@ -437,16 +377,18 @@
                             </td>
                           </tr>
                         </table>
-                        <!--[if mso]></td></tr></table><![endif]-->
                       </td>
                     </tr>
                   </table>
+                  <!--[if mso]></td></tr></table><![endif]-->
+
                 </td>
               </tr>
             </table>
           </td>
         </tr>
       </table>
+
     </div>
   </body>
 </html>
