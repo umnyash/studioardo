@@ -294,3 +294,41 @@ if (coverCardWrappers) {
     });
   });
 }
+
+
+const goodsFilter = document.querySelector('.c-filter');
+
+if (goodsFilter) {
+  const WAITING_LIST_DELAY_TIME = 50;
+
+  const checkFallingOut = (block) => {
+    return (block.getBoundingClientRect().right - goodsFilter.getBoundingClientRect().right > 0);
+  };
+
+  const moveLeft = (block) => {
+    block.style.left = 'auto';
+  };
+
+  const resetShift = (block) => {
+    block.style.left = 0;
+  }
+
+  const selectElements = goodsFilter.querySelectorAll('.form-select');
+
+  selectElements.forEach((select) => {
+    const button = select.querySelector('.form-select__input');
+    const list = select.querySelector('.form-select__list');
+
+    button.addEventListener('click', () => {
+      if (!button.classList.contains('open')) {
+        setTimeout(() => {
+          if (checkFallingOut(list)) {
+            moveLeft(list);
+          }
+        }, WAITING_LIST_DELAY_TIME);
+      } else {
+        resetShift(list);
+      }
+    });
+  });
+}

@@ -181,6 +181,8 @@
 
 .advantages--alter {
   .advantages__heading {
+    margin-bottom: 34px;
+
     @media #{$tablet-desktop} {
       margin-bottom: 36px;
       font-size: 36px;

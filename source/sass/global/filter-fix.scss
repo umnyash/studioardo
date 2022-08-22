@@ -1,0 +1,34 @@
+.form-select__input.open {
+	background-size: 19px;
+	background-image: url("data:image/svg+xml,%3Csvg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='9.42965' cy='9.57763' r='8.68161' fill='white' stroke='%23D5D5D5'/%3E%3Cpath d='M5.03516 11.39862L9.42908 7.75662L13.8219 11.3986' stroke='%23858585'/%3E%3C/svg%3E%0A");
+}
+
+.form-select__input.open:hover  {
+	background-size: 19px;
+	background-image: url("data:image/svg+xml,%3Csvg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='9.42965' cy='9.57763' r='8.68161' fill='%2366C299' stroke='%23D5D5D5'/%3E%3Cpath d='M5.03516 11.39862L9.42908 7.75662L13.8219 11.3986' stroke='%23fff'/%3E%3C/svg%3E%0A");
+}
+
+.form-select__list {
+  scrollbar-gutter: stable;
+  scrollbar-color: #cccccc transparent;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar-track,
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    width: 11px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    background-image: linear-gradient(to right, #cccccc, #cccccc 3px, transparent 3px);
+  }
+}
+
+.c-filter__tags {
+  align-items: center;
+}
+
+.c-filter__btn--submit.loader {
+  background-image: url("../img/icons/loader.svg");
+}

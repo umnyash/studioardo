@@ -79,6 +79,10 @@
   }
 }
 
-.page-page .s-popular [class^="card__label-"] {
+.page-page .card [class^="card__label-"] {
   position: static;
 }
+
+// .page-page .card__label-hits {
+//   width: 35px;
+// }

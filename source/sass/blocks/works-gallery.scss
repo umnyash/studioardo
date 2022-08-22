@@ -56,6 +56,7 @@
 
 .works-gallery__slider {
   margin-left: 21px;
+  overflow-x: hidden;
 
   @media #{$tablet-desktop} {
     margin: 0 0 0 15px;

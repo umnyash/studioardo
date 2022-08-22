@@ -24,6 +24,7 @@
 
   @media #{$laptop-desktop} {
     // padding: 0 35px;
+    grid-template-rows: repeat(6, min-content) 1fr;
     grid-template-columns: 61.6% 1fr auto;
     column-gap: 27px;
     grid-template-areas:
@@ -32,7 +33,8 @@
       "gallery   buttons-2       buttons-2"
       "gallery   characteristics characteristics"
       "gallery   text            text"
-      "buttons-1 text            text";
+      "buttons-1 text            text"
+      ".         text            text";
   }
 
   @media #{$desktop} {
@@ -131,7 +133,7 @@
   }
 
   @media #{$laptop-desktop} {
-    align-self: center;
+    align-self: start;
   }
 
   // @media #{$desktop} {
@@ -143,7 +145,9 @@
   margin: 4px 2px;
 }
 
-.collection-card__gallery {
+.collection-card__gallery.collection-img {
+  width: 100%;
+  overflow-x: hidden;
   margin: 0 0 15px;
   justify-content: center;
 
@@ -159,6 +163,62 @@
 
   @media #{$desktop} {
     margin-top: 27px;
+  }
+}
+
+.collection-card__gallery .collection-img__carousel {
+  margin: 0 0 4px;
+
+  @media #{$tablet-desktop} {
+    margin-bottom: 10px;
+  }
+}
+
+.collection-card__gallery .collection-img__carousel .item {
+  height: 195px;
+  margin: 0;
+
+  @media #{$widemobile-desktop} {
+    height: 230px;
+  }
+
+  @media #{$tablet-desktop} {
+    height: 500px;
+  }
+
+  @media #{$desktop} {
+    height: 565px;
+  }
+}
+
+.collection-card__gallery .collection-img__thumbs {
+  margin: 0 -2px;
+
+  @media #{$tablet-desktop} {
+    margin: 0 -4px;
+  }
+
+  @media #{$desktop} {
+    margin: 0 -5px;
+  }
+}
+
+.collection-card__gallery .collection-img__thumbs .item {
+  height: 36px;
+  margin: 0 2px;
+
+  @media #{$tablet-desktop} {
+    height: 116px;
+    margin: 0 4px;
+  }
+
+  @media #{$laptop-desktop} {
+    height: 118px;
+  }
+
+  @media #{$laptop-desktop} {
+    height: 90px;
+    margin: 0 5px;
   }
 }
 
@@ -255,7 +315,7 @@
   }
 
   @media #{$laptop-desktop} {
-    align-self: center;
+    align-self: start;
     margin-top: 11px;
     margin-right: 20px;
   }

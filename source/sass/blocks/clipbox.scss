@@ -7,6 +7,8 @@
 }
 
 .clipbox--alter {
+  --max-height: 179px;
+
   @media #{$tablet-desktop} {
     --max-height: 171px;
   }
@@ -15,7 +17,7 @@
     --max-height: 154px;
   }
 
-  @media #{$laptop-desktop} {
+  @media #{$desktop} {
     --max-height: 179px;
   }
 }

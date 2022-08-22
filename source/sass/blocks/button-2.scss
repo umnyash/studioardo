@@ -2,7 +2,7 @@
   display: grid;
   box-sizing: border-box;
   min-height: 40px;
-  padding: 8px 5px 6px;
+  padding: 6px 5px 6px;
   border: 1px solid $button-border-color;
   border-radius: 3px;
   grid-auto-flow: column;
@@ -11,7 +11,7 @@
   text-align: center;
   font-family: $basic-font-family;
   font-size: 14px;
-  line-height: 18px;
+  line-height: 17px;
   text-transform: uppercase;
   color: inherit;
   background-color: transparent;
@@ -20,9 +20,14 @@
   @media #{$tablet-desktop} {
     min-height: 60px;
     padding-top: 10px;
-    padding-bottom: 8px;
-    // font-size: 16px;
-    // line-height: 20px;
+    padding-bottom: 7px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  @media #{$desktop} {
+    font-size: 16px;
+    line-height: 21px;
   }
 }
 
@@ -34,9 +39,14 @@
     border-color: $button-2-alter-hover-border-color;
   }
 
-  @media #{$laptop-desktop} {
+  @media #{$tablet-desktop} {
     font-size: 14px;
     line-height: 18px;
+  }
+
+  @media #{$desktop} {
+    font-size: 16px;
+    line-height: 21px;
   }
 }
 
