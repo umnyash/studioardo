@@ -62,7 +62,7 @@
 	    }
     }
   </style>
-  <g>
+  <g class="circles">
     <circle r="10" cx="10" cy="10"></circle>
     <circle r="10" cx="10" cy="10"></circle>
     <circle r="10" cx="10" cy="10"></circle>
