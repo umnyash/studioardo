@@ -3,7 +3,7 @@
   font-family: $basic-font-family;
   background-color: $works-gallery-background-color;
 
-  @media #{$laptop-desktop} {
+  @media #{$tablet-desktop} {
     background-color: transparent;
   }
 }
@@ -29,15 +29,6 @@
     padding-left: 40px;
     margin: 0 auto 10px;
   }
-
-  @media #{$laptop-desktop} {
-    // display: flex;
-    // box-sizing: border-box;
-    // max-width: 1250px;
-    // padding: 0 35px;
-    // margin: 0 auto 60px;
-    // align-items: center;
-  }
 }
 
 .works-gallery__heading {
@@ -61,10 +52,6 @@
   @media #{$tablet-desktop} {
     margin: 0 0 0 15px;
   }
-
-  // @media #{$laptop-desktop} {
-  //   max-width: 1920px;
-  // }
 }
 
 .works-gallery__list {
@@ -92,6 +79,10 @@
   display: grid;
   align-items: end;
   color: $text-color-secondary;
+
+  &:hover {
+    color: $text-color-secondary;
+  }
 }
 
 .works-gallery__overlay {
@@ -120,11 +111,6 @@
   @media #{$tablet-desktop} {
     margin-bottom: 0;
   }
-
-  // @media #{$desktop} {
-  //   width: auto;
-  //   margin: 0 40px 0 0;
-  // }
 }
 
 .works-gallery__mark {

@@ -37,6 +37,10 @@
   border-color: $secondary-button-color;
   color: $text-color-secondary;
   background-color: $secondary-button-color;
+
+  &:hover {
+    color: $text-color-secondary;
+  }
 }
 
 .button--with-icon {

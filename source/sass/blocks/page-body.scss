@@ -39,3 +39,27 @@
     margin-bottom: 60px;
   }
 }
+
+.page-body__collection-examples {
+  margin: 0 0 7px;
+
+  @media #{$desktop} {
+    margin-bottom: 28px;
+  }
+}
+
+.page-body__collection-list {
+  margin-bottom: 50px;
+
+  @media #{$desktop} {
+    margin-bottom: 40px;
+  }
+}
+
+.page-body__collection-card {
+  margin: 0 0 10px;
+
+  @media #{$tablet-desktop} {
+    margin-bottom: 20px;
+  }
+}

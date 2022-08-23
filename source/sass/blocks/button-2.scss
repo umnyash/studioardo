@@ -56,6 +56,10 @@
   line-height: 20px;
   font-weight: 700;
 
+  &:hover {
+    color: $text-color-secondary;
+  }
+
   @media #{$laptop-desktop} {
     padding-right: 30px;
     padding-left: 30px;
@@ -72,6 +76,10 @@
   border-color: $primary-button-color;
   color: $text-color-secondary;
   background-color: $primary-button-color;
+
+  &:hover {
+    color: $text-color-secondary;
+  }
 }
 
 .button-2--accent {

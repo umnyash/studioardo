@@ -74,32 +74,6 @@ if (numberFields) {
   });
 }
 
-const thumbnailSlider = document.querySelector('.thumbnail-slider');
-
-if (thumbnailSlider) {
-  const swiper = new Swiper(".thumbnail-slider__thumbs", {
-    direction: "vertical",
-    spaceBetween: 5,
-    loop: true,
-    slidesPerView: 2.5,
-    freeMode: true,
-    watchSlidesProgress: true,
-    breakpoints: {
-      1020: {
-        spaceBetween: 10,
-        slidesPerView: 2.45,
-      },
-    },
-  });
-
-  const swiper2 = new Swiper(".thumbnail-slider__full", {
-    loop: true,
-    thumbs: {
-      swiper: swiper,
-    },
-  });
-}
-
 const likeButtons = document.querySelectorAll('.social-button--like');
 
 if (likeButtons) {

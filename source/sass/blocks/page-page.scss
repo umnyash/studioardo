@@ -74,15 +74,21 @@
   border-radius: 3px;
   flex-grow: 1;
 
+  @media (max-width: 413px) {
+    width: 43%;
+  }
+
   @media #{$tablet-desktop} {
     min-height: 44px;
   }
 }
 
-.page-page .card [class^="card__label-"] {
+.page-page .card [class^="card__label-"],
+.page-page .card-collection [class^="card__label-"] {
   position: static;
 }
 
-// .page-page .card__label-hits {
-//   width: 35px;
-// }
+.page-page .card .card__title a,
+.page-page .card-collection .card-collection__title {
+  font-family: $additional-font-family;
+}
