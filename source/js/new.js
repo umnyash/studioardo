@@ -159,37 +159,38 @@ if (radioselects) {
     const radioselectButton = radioselect.querySelector('.select-2__button');
     const radiobutton = radioselect.querySelector('.select-2__radiobutton');
 
+    const checkClickOut = (evt) => {
+      if (!evt.target.closest('.select-2')) {
+        closeRadioSelect();
+      }
+    };
+
+    const openRadioSelect = () => {
+      radioselect.classList.add('select-2--open');
+      radiobutton.focus();
+      window.addEventListener('click', checkClickOut);
+    };
+
+    const closeRadioSelect = () => {
+      radioselect.classList.remove('select-2--open');
+      window.removeEventListener('click', checkClickOut);
+    };
+
     radioselectButton.addEventListener('click', () => {
       if (!radioselect.classList.contains('select-2--open')) {
-        radioselect.classList.add('select-2--open');
-        radiobutton.focus();
+        openRadioSelect();
       } else {
-        radioselect.classList.remove('select-2--open');
+        closeRadioSelect();
       }
     });
 
     const radioselectOptionsWrapper = radioselect.querySelector('.select-2__options');
 
-    let focused = false;
-
-    radioselectOptionsWrapper.addEventListener('focusin', () => {
-      focused = true;
-    });
-
-    radioselectOptionsWrapper.addEventListener('focusout', () => {
-      focused = false;
-      setTimeout(() => {
-        if (!focused) {
-          radioselect.classList.remove('select-2--open');
-        }
-      }, 100);
-    });
-
     const radioselectButtonValue = radioselectButton.querySelector('.select-2__button-value');
 
     radioselectOptionsWrapper.addEventListener('click', (evt) => {
       if (evt.target.className === 'select-2__radiobutton-label') {
-        radioselect.classList.remove('select-2--open');
+        closeRadioSelect();
       }
     });
 
@@ -211,33 +212,34 @@ if (goodQuantityAlterNodes) {
     const radiobuttonsWrapper = goodQuantity.querySelector('.goods-quantity__radiobuttons');
     const radiobutton = radiobuttonsWrapper.querySelector('.radiobutton__control');
 
+    const checkClickOut = (evt) => {
+      if (!evt.target.closest('.goods-quantity__radiobuttons')) {
+        hideButtons();
+      }
+    };
+
+    const showButtons = () => {
+      radiobuttonsWrapper.classList.add('goods-quantity__radiobuttons--open');
+      radiobutton.focus();
+      window.addEventListener('click', checkClickOut);
+    };
+
+    const hideButtons = () => {
+      radiobuttonsWrapper.classList.remove('goods-quantity__radiobuttons--open');
+      window.removeEventListener('click', checkClickOut);
+    };
+
     toggler.addEventListener('click', () => {
       if (!radiobuttonsWrapper.classList.contains('goods-quantity__radiobuttons--open')) {
-        radiobuttonsWrapper.classList.add('goods-quantity__radiobuttons--open');
-        radiobutton.focus();
+        showButtons();
       } else {
-        radiobuttonsWrapper.classList.remove('goods-quantity__radiobuttons--open');
+        hideButtons();
       }
-    });
-
-    let focused = false;
-
-    radiobuttonsWrapper.addEventListener('focusin', () => {
-      focused = true;
-    });
-
-    radiobuttonsWrapper.addEventListener('focusout', () => {
-      focused = false;
-      setTimeout(() => {
-        if (!focused) {
-          radiobuttonsWrapper.classList.remove('goods-quantity__radiobuttons--open');
-        }
-      }, 100);
     });
 
     radiobuttonsWrapper.addEventListener('click', (evt) => {
       if (evt.target.className === 'radiobutton__label') {
-        radiobuttonsWrapper.classList.remove('goods-quantity__radiobuttons--open');
+        hideButtons();
       }
     });
 
@@ -268,7 +270,6 @@ if (coverCardWrappers) {
     });
   });
 }
-
 
 const goodsFilter = document.querySelector('.c-filter');
 
