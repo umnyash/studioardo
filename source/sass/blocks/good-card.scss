@@ -92,12 +92,13 @@
   position: relative;
   display: block;
   max-width: 100%;
-  margin: 17px 0 20px;
+  margin: 17px 0 24px;
   overflow-x: hidden;
 
   @media #{$tablet-desktop} {
     grid-column: 1 / 3;
     margin-top: 32px;
+    margin-bottom: 44px;
   }
 
   @media #{$laptop-desktop} {
@@ -159,7 +160,7 @@
   box-shadow: 0px 3px 25px rgba(0, 0, 0, 0.08);
 
   @media #{$widemobile-desktop} {
-    padding: 20px 10px 9px;
+    padding: 20px 12px 9px;
   }
 
   @media #{$tablet-desktop} {
@@ -241,6 +242,7 @@
 
 .good-card__availability-quantity {
   margin: 0 0 9px;
+  font: inherit;
 
   @media #{$tablet-desktop} {
     margin-right: 30px;
@@ -258,7 +260,7 @@
 }
 
 .good-card__availability {
-  padding: 20px 10px 10px;
+  padding: 20px 12px 10px;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   margin: 0 0 10px;
@@ -307,6 +309,7 @@
 
 .good-card__country {
   display: none;
+  font: inherit;
 
   @media #{$desktop} {
     display: block;
@@ -329,6 +332,7 @@
 
 .good-card__vendor-code {
   margin: 0;
+  font: inherit;
 
   @media #{$laptop-desktop} {
     margin-bottom: 10px;
@@ -378,6 +382,7 @@
 }
 
 .good-card__total-price {
+  padding: 0 12px;
   margin: 0 0 15px;
   font-size: 18px;
   line-height: 24px;
@@ -385,7 +390,6 @@
   text-align: center;
 
   @media #{$widemobile-desktop} {
-    padding: 0 12px;
     text-align: left;
   }
 
@@ -463,6 +467,9 @@
 }
 
 .good-card__features-item {
+  margin: 0;
+  font: inherit;
+
   @media #{$widemobile-desktop} {
     width: 85%;
   }
@@ -474,6 +481,7 @@
 
 .good-card__features-accent {
   color: $good-card-features-accent-color;
+  font-weight: 700;
 }
 
 .good-card__features-link {
@@ -532,5 +540,6 @@
   padding: 6px 8px 3px;
   border-radius: 4.55px;
   margin: 0 0 0 10px;
+  font: inherit;
   background-color: $good-card-label-background-color;
 }

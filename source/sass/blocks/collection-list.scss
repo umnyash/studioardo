@@ -1,15 +1,3 @@
 .collection-list__heading {
-  margin: 0 0 34px;
-
-  @media #{$tablet-desktop} {
-    margin-bottom: 36px;
-  }
-
-  @media #{$laptop-desktop} {
-    margin-bottom: 38px;
-  }
-
-  @media #{$desktop} {
-    margin-bottom: 60px;
-  }
+  margin: 0 0 31px;
 }

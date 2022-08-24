@@ -9,18 +9,18 @@
 }
 
 .page-body__good-card {
-  margin: 0 0 20px;
+  margin: 0 0 17px;
 
   @media #{$tablet-desktop} {
-    margin-bottom: 40px;
+    margin-bottom: 14px;
   }
 
   @media #{$laptop-desktop} {
-    margin-bottom: 80px;
+    margin-bottom: 64px;
   }
 
   @media #{$desktop} {
-    margin-bottom: 60px;
+    margin-bottom: 46px;
   }
 }
 
@@ -40,16 +40,48 @@
   }
 }
 
-.page-body__collection-examples {
-  margin: 0 0 7px;
+.page-body__advantages--alter {
+  margin-bottom: 64px;
+
+  @media #{$tablet-desktop} {
+    margin-bottom: 43px;
+  }
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 60px;
+  }
 
   @media #{$desktop} {
-    margin-bottom: 28px;
+    // margin-bottom: 60px;
+  }
+}
+
+.page-body__collection-examples {
+  margin: 0 0 17px;
+
+  @media #{$tablet-desktop} {
+    margin-bottom: 4px;
+  }
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 31px;
+  }
+
+  @media #{$desktop} {
+    margin-bottom: 32px;
   }
 }
 
 .page-body__collection-list {
   margin-bottom: 50px;
+
+  @media #{$tablet-desktop} {
+    margin-bottom: 10px;
+  }
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 13px;
+  }
 
   @media #{$desktop} {
     margin-bottom: 40px;
@@ -57,7 +89,7 @@
 }
 
 .page-body__collection-card {
-  margin: 0 0 10px;
+  margin: 0;
 
   @media #{$tablet-desktop} {
     margin-bottom: 20px;

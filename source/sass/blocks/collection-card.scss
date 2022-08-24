@@ -88,7 +88,10 @@
     margin-bottom: 0;
     font-size: 48px;
     line-height: 59px;
-    letter-spacing: -0.03em;
+  }
+
+  @media #{$desktop} {
+    letter-spacing: 0;
   }
 }
 
@@ -185,7 +188,7 @@
     height: 118px;
   }
 
-  @media #{$laptop-desktop} {
+  @media #{$desktop} {
     height: 90px;
     margin: 0 5px;
   }
@@ -210,7 +213,7 @@
   }
 
   @media #{$laptop-desktop} {
-    margin-top: 16px;
+    margin-top: 23px;
   }
 
   @media #{$desktop} {
@@ -268,7 +271,7 @@
 
   @media #{$laptop-desktop} {
     align-self: start;
-    margin-top: 11px;
+    margin-top: 15px;
     margin-right: 20px;
   }
 }
@@ -279,7 +282,7 @@
 }
 
 .collection-card__characteristics {
-  margin: 0 0 20px;
+  margin: 0 0 16px;
 
   @media #{$tablet-desktop} {
     grid-area: characteristics;
@@ -307,4 +310,5 @@
 
 .collection-card__text p {
   margin: 0 0 19px;
+  font: inherit;
 }

@@ -64,6 +64,8 @@
 
 .good-info__taber .good-info__tab-buttons-item {
   width: auto;
+  margin: 0;
+  font: inherit;
 }
 
 .good-info__tab-buttons-link {
@@ -125,8 +127,15 @@
   list-style: none;
 }
 
+.good-info__tabs-item {
+  margin: 0;
+  font: inherit;
+  color: inherit;
+}
+
 .good-info__tabs-content p {
   margin: 0 0 20px;
+  font: inherit;
 }
 
 .good-info__tel {
@@ -163,7 +172,7 @@
 }
 
 .good-info__footer {
-  padding: 43px 10px 30px;
+  padding: 43px 10px 26px;
 
   @media #{$tablet-desktop} {
     display: grid;

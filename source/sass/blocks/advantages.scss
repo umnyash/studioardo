@@ -78,6 +78,8 @@
   justify-items: center;
   gap: 28px;
   padding: 43px 10px 29px;
+  margin: 0;
+  font: inherit;
   background-color: $advantages-item-background-color;
 
   &::before {

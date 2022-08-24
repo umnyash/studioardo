@@ -9,15 +9,18 @@
 }
 
 .works-gallery__header {
+  display: grid;
   padding: 0 10px;
   margin: 0 0 21px;
+  row-gap: 20px;
+  justify-items: center;
   text-align: center;
 
   @media #{$tablet-desktop} {
-    display: grid;
     padding: 15px;
     grid-template-columns: 1fr auto;
     column-gap: 40px;
+    justify-items: start;
     align-items: center;
     text-align: left;
     margin-bottom: 24px;
@@ -32,14 +35,12 @@
 }
 
 .works-gallery__heading {
-  margin: 0 0 20px;
-
-  @media #{$tablet-desktop} {
-    margin-bottom: 0;
-  }
+  margin: 0;
 }
 
 .works-gallery__link {
+  min-width: 280px;
+
   @media #{$laptop-desktop} {
     margin: 0 0 0 auto;
   }

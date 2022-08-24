@@ -23,6 +23,7 @@
 .contacts-info__text {
   margin: 0;
   text-align: center;
+  font: inherit;
 
   @media #{$tablet-desktop} {
     text-align: left;
