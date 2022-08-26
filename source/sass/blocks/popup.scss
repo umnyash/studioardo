@@ -43,9 +43,24 @@
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
 }
 
 .no-scroll {
   height: 100vh;
   overflow: hidden;
+}
+
+.popup--simple {
+  .popup__inner {
+    max-width: 450px;
+    border-radius: 10px;
+  }
 }

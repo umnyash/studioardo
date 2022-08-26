@@ -17,9 +17,21 @@
   }
 }
 
+.heading--alter {
+  @media #{$tablet-desktop} {
+    font-size: 36px;
+    line-height: 54px;
+  }
+}
+
 .heading--big {
   @media #{$tablet-desktop} {
     font-size: 36px;
+    line-height: 54px;
+  }
+
+  @media #{$desktop} {
+    font-size: 48px;
     line-height: 54px;
   }
 }

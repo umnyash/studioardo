@@ -1,0 +1,29 @@
+.section-header {
+  display: grid;
+  row-gap: 20px;
+  justify-items: center;
+  align-items: start;
+
+  @media #{$tablet-desktop} {
+    grid-template-columns: 1fr auto;
+    column-gap: 80px;
+    justify-items: start;
+  }
+}
+
+.section-header__heading {
+  margin: 0;
+
+  @media #{$mobile} {
+    text-align: center;
+  }
+}
+
+.section-header__button {
+  min-width: 200px;
+
+  @media #{$tablet-desktop} {
+    min-width: 293px;
+    margin-top: 10px;
+  }
+}

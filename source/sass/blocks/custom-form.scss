@@ -1,0 +1,241 @@
+.custom-form {
+  font-family: $additional-font-family;
+  font-size: 16px;
+  line-height: 18.75px;
+}
+
+.custom-form .form__header {
+  max-width: 370px;
+  padding: 40px 10px 0;
+  margin: 0 auto;
+}
+
+.custom-form .form__header p {
+  margin: 0 0 16px;
+  text-align: center;
+  font: inherit;
+}
+
+.custom-form .form__heading {
+  margin: 0 0 18px;
+  text-align: center;
+  font-family: $accent-font-family;
+  font-size: 30px;
+  line-height: 36.5px;
+  font-weight: 400;
+}
+
+.custom-form .form__body {
+  max-width: 330px;
+  padding: 0 10px 22px;
+  margin: 0 auto;
+}
+
+.custom-form .form__textfield-wrapper {
+  margin: 0 0 6px;
+}
+
+.custom-form .form__textfield-label {
+  display: block;
+}
+
+.custom-form .form__textfield {
+  display: block;
+  padding: 4px 0;
+  border-bottom: 1px solid $custom-form-textfield-border-color;
+}
+
+.custom-form .form__textfield--with-icon {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  column-gap: 4px;
+  align-items: center;
+
+  &::before {
+    content: "";
+  }
+}
+
+.custom-form .form__textfield--with-icon--email {
+  &::before {
+    width: 22px;
+    height: 18px;
+    background-color: $special-color;
+    mask-image: url(../img/icons/envelope.svg);
+  }
+}
+
+.custom-form .form__textfield-control {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+.custom-form .form__textfield-control::-webkit-input-placeholder {
+  color: $custom-form-field-placeholder-color;
+  opacity: 1;
+}
+
+.custom-form .form__textfield-control::-moz-placeholder {
+  color: $custom-form-field-placeholder-color;
+  opacity: 1;
+}
+
+.custom-form .form__textfield-control::placeholder {
+  color: $custom-form-field-placeholder-color;
+  opacity: 1;
+}
+
+.custom-form .form__file-field-wrapper {
+  margin: 30px 0 6px;
+}
+
+.custom-form .form__file-field-label {
+  display: block;
+}
+
+.custom-form .form__file-field-label-text {
+  display: block;
+  margin: 0 0 15px;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.custom-form .form__file-field-control {
+  width: 100%;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 16.41px;
+  color: $custom-form-file-field-text-color;
+}
+
+.custom-form .form__file-field-control::file-selector-button {
+  padding: 5px 13px 5px;
+  border: 1px solid $custom-form-file-selector-button-border-color;
+  border-radius: 3px;
+  margin: 0 16px 0 0;
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 14px;
+  color: inherit;
+}
+
+.custom-form .form__submit-wrapper {
+  margin: 30px 0;
+}
+
+.custom-form .form__submit {
+  width: 100%;
+}
+
+.custom-form .form__footer {
+  padding: 17px 10px 40px;
+  border-top: 1px solid $custom-form-footer-border-color;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  text-align: center;
+  background-color: $custom-form-footer-background-color;
+}
+
+.custom-form .form__footer p {
+  margin: 0 0 12px;
+  font: inherit;
+  color: $custom-form-footer-text-color;
+}
+
+.custom-form .form__button-wrapper {
+  display: flex;
+  // justify-content: center;
+  margin: 19px 0 0;
+}
+
+.custom-form .form__button {
+  display: flex;
+  min-width: 220px;
+  min-height: 50px;
+  padding: 10px;
+  border: 1px solid $custom-form-button-border-color;
+  border-radius: 3px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  font-family: $additional-font-family;
+  font-size: 18px;
+  line-height: 21px;
+  color: $basic-text-color;
+  background-color: $custom-form-button-background-color;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.custom-form .form__consent-wrapper {
+  margin: 16px 0;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.custom-form .form__checkbox-label-text {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 10px;
+  align-items: center;
+
+  &::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border: 1px solid $custom-form-button-border-color;
+    border-radius: 3px;
+    margin: 0 0 3px;
+  }
+}
+
+.custom-form .form__checkbox-control:checked + .form__checkbox-label-text::before  {
+  border-color: $special-color;
+  background-color: $special-color;
+  background-image: url("../img/icons/custom-form-checkmark.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.custom-form .form__link {
+  color: $custom-form-link-text-color;
+  text-decoration: underline;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+
+
+
+
+.custom-form--small {
+  .form__header {
+    padding-bottom: 10px;
+  }
+
+  .form__body {
+    padding-top: 11px;
+  }
+
+  .form__submit {
+    min-width: 220px;
+    margin: 0 auto;
+  }
+}
+

@@ -100,3 +100,31 @@
 .page-page .card-collection .card-collection__title {
   font-family: $additional-font-family;
 }
+
+.page-page .page-body__catalog {
+  margin-bottom: 73px;
+}
+
+.page-page .card .card__remove-button {
+  position: absolute;
+  z-index: 300;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  background-image: url("../img/icons/popup-close.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
