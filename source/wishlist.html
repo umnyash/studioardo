@@ -11,21 +11,27 @@
     <link href="css/style.min.css" rel="stylesheet">
     <link href="css/custom.min.css" rel="stylesheet">
     <link href="css/new.css" rel="stylesheet"> <!-- Новые стили -->
-    <title>18 Коллекция</title>
+    <title>Избранное</title>
     <meta name="format-detection" content="telephone=no"/>
     <meta name="format-detection" content="address=no"/>
   </head>
   <body class="page-body">
     <header style="padding:20px;background-color:grey;color:white;">
-      <button type="button" class="button-report">Сообщить нам</button>
-      <button type="button" class="button-order">Заказать образец</button>
-      <p>Попап для отправки на почту, открывается зеленой кнопкой</p>
+      <p style="margin:0">Кнопки для открытия попапов:</p>
+      <button type="button" class="button--popup--report-competitor">Сообщить нам</button>
+      <button type="button" class="button--popup--order-sample">Заказать образец</button>
+      <br><br>
+      <p style="margin:0">* Попап для отправки на почту, открывается зеленой кнопкой</p>
+      <br>
+      <p style="margin:0">* На макете в попапе с формой заказа, был такой же текст как в попапе для отправки избранного...</p>
+      <br>
+      <p style="margin:0">* При необходимости кнопкам формы можно задать лоадер с помощью раннее созданного класса "loader"</p>
     </header>
     <main>
       <div class="center">
         <div class="page-body__section-header section-header">
           <h1 class="section-header__heading heading heading--big">Избранное</h1>
-          <a class="section-header__button button button--secondary button--with-icon button--with-icon--envelope" href="#!">Отправить на почту</a>
+          <a class="section-header__button button button--secondary button--with-icon button--with-icon--envelope button--popup--request" href="#!">Отправить на почту</a>
         </div>
         <div class="page-body__catalog catalog">
           <div class="catalog__row">
@@ -614,7 +620,7 @@
         </div>
       </div>
 
-      <div class="popup popup--simple popup--favorites">
+      <div class="popup popup--simple popup--request">
         <div class="popup__inner ">
           <button class="popup__close" type="button">
             <span class="visually-hidden">Закрыть.</span>
@@ -628,7 +634,7 @@
               <form class="form__body" action="#!" method="post">
                 <div class="form__textfield-wrapper">
                   <label class="form__textfield-label">
-                    <span class="visually-hidden">Email. Обязательно к заполнению.</span>
+                    <span class="visually-hidden">Email.</span>
                     <span class="form__textfield form__textfield--with-icon form__textfield--with-icon--email">
                       <input class="form__textfield-control" name="email" type="email" placeholder="Укажите ваш Email">
                     </span>
@@ -662,7 +668,7 @@
               </div>
               <form class="form__body" action="#!" method="post" enctype="multipart/form-data">
                 <div class="form__textfield-wrapper">
-                  <label class="form__textfield-label">
+                  <label class="form__textfield-label form__textfield-label--required">
                     <span class="visually-hidden">Ваше имя. Обязательно к заполнению.</span>
                     <span class="form__textfield">
                       <input class="form__textfield-control" name="name" type="text" placeholder="Ваше имя">
@@ -670,15 +676,15 @@
                   </label>
                 </div>
                 <div class="form__textfield-wrapper">
-                  <label class="form__textfield-label">
+                  <label class="form__textfield-label form__textfield-label--required">
                     <span class="visually-hidden">Номер вашего телефона. Обязательно к заполнению.</span>
                     <span class="form__textfield">
-                      <input class="form__textfield-control" name="tel" type="phone" required placeholder="Телефон">
+                      <input class="form__textfield-control" name="tel" type="tel" placeholder="Телефон">
                     </span>
                   </label>
                 </div>
                 <div class="form__textfield-wrapper">
-                  <label class="fform__textfield-label">
+                  <label class="form__textfield-label form__textfield-label--required">
                     <span class="visually-hidden">Ссылка на товар. Обязательно к заполнению.</span>
                     <span class="form__textfield">
                       <input class="form__textfield-control" name="link" type="url" placeholder="Ссылка на товар https://">
@@ -733,9 +739,9 @@
               <form class="form__body" action="#!" method="post">
                 <div class="form__textfield-wrapper">
                   <label class="form__textfield-label">
-                    <span class="visually-hidden">Номер вашего телефона. Обязательно к заполнению.</span>
+                    <span class="visually-hidden">Номер вашего телефона.</span>
                     <span class="form__textfield">
-                      <input class="form__textfield-control" name="tel" type="phone" required placeholder="Номер телефона">
+                      <input class="form__textfield-control" name="tel" type="tel" placeholder="Номер телефона">
                     </span>
                   </label>
                 </div>
@@ -751,12 +757,12 @@
                   <label class="form__textfield-label">
                     <span class="visually-hidden">Артикул образца.</span>
                     <span class="form__textfield">
-                      <input class="form__textfield-control" name="VENDOR-CODE" type="text" placeholder="Артикул образца">
+                      <input class="form__textfield-control" name="article-number" type="text" placeholder="Артикул образца">
                     </span>
                   </label>
                 </div>
                 <div class="form__submit-wrapper">
-                  <button class="form__submit button button--secondary button--alter-2 button--with-shadow">Отправить</button>
+                  <button class="form__submit button button--secondary button--alter-2 button--with-shadow">Заказать</button>
                 </div>
               </form>
             </div>
@@ -765,8 +771,8 @@
       </div>
 
     </main>
-    <footer style="height:200px;background-color:grey;">
-
+    <footer style="padding:20px;height:200px;background-color:grey;color:white">
+      Временный footer, чтобы страница не прыгала при наведении курсора на карточки в нижнем ряду
     </footer>
     <script src="js/swiper.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script> <!-- Новый скрипт -->

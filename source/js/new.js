@@ -12,39 +12,57 @@ if (popups) {
 
   let bodyWidth = document.body.clientWidth;
 
+  const openPopup = (popup) => {
+    bodyWidth = document.body.clientWidth;
+
+    popup.classList.add('popup--open');
+    document.body.classList.add('no-scroll');
+    document.addEventListener('keydown', onPopupEscKeydown);
+
+    if (document.body.clientWidth > bodyWidth) {
+      document.body.style.paddingRight = document.body.clientWidth - bodyWidth + 'px';
+    }
+  };
+
+  const closePopup = (popup) => {
+    popup.classList.remove('popup--open');
+    document.body.classList.remove('no-scroll');
+    document.removeEventListener('keydown', onPopupEscKeydown);
+
+    document.body.style.paddingRight = '0';
+  };
+
+  const onPopupEscKeydown = (evt) => {
+    if (isEscEvent(evt)) {
+      evt.preventDefault();
+      closePopup();
+    }
+  };
+
+  const popupRequestOpenButton = document.querySelector('.button--popup--request');
+  const popupRequest = document.querySelector('.popup--request');
+
+  if (popupRequestOpenButton && popupRequest) {
+    popupRequestOpenButton.addEventListener('click', openPopup.bind(null, popupRequest));
+  }
+
+  const popupReportCompetitorOpenButton = document.querySelector('.button--popup--report-competitor');
+  const popupReportCompetitor = document.querySelector('.popup--report-competitor');
+
+  if (popupReportCompetitorOpenButton && popupReportCompetitor) {
+    popupReportCompetitorOpenButton.addEventListener('click', openPopup.bind(null, popupReportCompetitor));
+  }
+
+  const popupOrderSampleOpenButton = document.querySelector('.button--popup--order-sample');
+  const popupOrderSample = document.querySelector('.popup--order-sample');
+
+  if (popupOrderSampleOpenButton && popupOrderSample) {
+    popupOrderSampleOpenButton.addEventListener('click', openPopup.bind(null, popupOrderSample));
+  }
+
   popups.forEach((popup) => {
     const popupCloseButton = popup.querySelector('.popup__close')
-
-    const openPopup = () => {
-      bodyWidth = document.body.clientWidth;
-
-      popup.classList.add('popup--open');
-      document.body.classList.add('no-scroll');
-      document.addEventListener('keydown', onPopupEscKeydown);
-
-      if (document.body.clientWidth > bodyWidth) {
-        document.body.style.paddingRight = document.body.clientWidth - bodyWidth + 'px';
-      }
-    };
-
-    const closePopup = () => {
-      popup.classList.remove('popup--open');
-      document.body.classList.remove('no-scroll');
-      document.removeEventListener('keydown', onPopupEscKeydown);
-
-      document.body.style.paddingRight = '0';
-    };
-
-    const onPopupEscKeydown = (evt) => {
-      if (isEscEvent(evt)) {
-        evt.preventDefault();
-        closePopup();
-      }
-    };
-
-    popupCloseButton.addEventListener('click', closePopup);
-
-    openPopup();
+    popupCloseButton.addEventListener('click', closePopup.bind(null, popup));
   });
 }
 
@@ -303,6 +321,25 @@ if (goodsFilter) {
         }, WAITING_LIST_DELAY_TIME);
       } else {
         resetShift(list);
+      }
+    });
+  });
+}
+
+const smallCustomForms = document.querySelectorAll('.custom-form--small');
+
+if (smallCustomForms) {
+  smallCustomForms.forEach((form) => {
+    const submitButton = form.querySelector('.form__submit');
+    submitButton.style.display = 'none';
+
+    const input = form.querySelector('.form__textfield-control');
+
+    input.addEventListener('input', () => {
+      if (input.value) {
+        submitButton.style.display = 'grid';
+      } else {
+        submitButton.style.display = 'none';
       }
     });
   });

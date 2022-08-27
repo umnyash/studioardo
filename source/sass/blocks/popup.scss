@@ -58,9 +58,21 @@
   overflow: hidden;
 }
 
+// .popup--simple {
+//   .popup__inner {
+//     max-width: 450px;
+//     border-radius: 10px;
+//   }
+// }
+
 .popup--simple {
   .popup__inner {
-    max-width: 450px;
+    width: 450px;
+    max-width: none;
     border-radius: 10px;
+
+    @media (max-width: 470px) {
+      width: 100%;
+    }
   }
 }
