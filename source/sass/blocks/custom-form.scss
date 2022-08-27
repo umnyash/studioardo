@@ -176,6 +176,7 @@
   line-height: 21px;
   color: $basic-text-color;
   background-color: $custom-form-button-background-color;
+  cursor: pointer;
 
   &:hover {
     opacity: 0.8;
