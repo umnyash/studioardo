@@ -100,10 +100,12 @@
   font-family: $additional-font-family;
 }
 
-.page-page .page-body__catalog {
-  max-width: 100%;
-  margin-bottom: 73px;
-  overflow-x: hidden;
+.page-page .catalog__row {
+  margin: 0 -10px;
+
+  @media #{$tablet-desktop} {
+    margin: 0 -15px;
+  }
 }
 
 .page-page .card .card__remove-button {
