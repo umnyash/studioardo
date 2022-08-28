@@ -168,6 +168,14 @@ if (goodInfoTaber) {
       swiper: swiper,
     },
   });
+
+  const tabLinks = document.querySelectorAll('.good-info__tab-buttons-link');
+
+  tabLinks.forEach((link) => {
+    link.addEventListener('click', (evt) => {
+      evt.preventDefault();
+    });
+  });
 }
 
 const radioselects = document.querySelectorAll('.select-2');
