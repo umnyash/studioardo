@@ -11,11 +11,13 @@ if (popups) {
   };
 
   let bodyWidth = document.body.clientWidth;
+  let currentPopup;
 
   const openPopup = (popup) => {
     bodyWidth = document.body.clientWidth;
 
     popup.classList.add('popup--open');
+    currentPopup = popup;
     document.body.classList.add('no-scroll');
     document.addEventListener('keydown', onPopupEscKeydown);
 
@@ -26,6 +28,7 @@ if (popups) {
 
   const closePopup = (popup) => {
     popup.classList.remove('popup--open');
+    currentPopup = null;
     document.body.classList.remove('no-scroll');
     document.removeEventListener('keydown', onPopupEscKeydown);
 
@@ -35,7 +38,7 @@ if (popups) {
   const onPopupEscKeydown = (evt) => {
     if (isEscEvent(evt)) {
       evt.preventDefault();
-      closePopup();
+      closePopup(currentPopup);
     }
   };
 
@@ -43,21 +46,30 @@ if (popups) {
   const popupRequest = document.querySelector('.popup--request');
 
   if (popupRequestOpenButton && popupRequest) {
-    popupRequestOpenButton.addEventListener('click', openPopup.bind(null, popupRequest));
+    popupRequestOpenButton.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      openPopup(popupRequest);
+    });
   }
 
   const popupReportCompetitorOpenButton = document.querySelector('.button--popup--report-competitor');
   const popupReportCompetitor = document.querySelector('.popup--report-competitor');
 
   if (popupReportCompetitorOpenButton && popupReportCompetitor) {
-    popupReportCompetitorOpenButton.addEventListener('click', openPopup.bind(null, popupReportCompetitor));
+    popupReportCompetitorOpenButton.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      openPopup(popupReportCompetitor);
+    });
   }
 
   const popupOrderSampleOpenButton = document.querySelector('.button--popup--order-sample');
   const popupOrderSample = document.querySelector('.popup--order-sample');
 
   if (popupOrderSampleOpenButton && popupOrderSample) {
-    popupOrderSampleOpenButton.addEventListener('click', openPopup.bind(null, popupOrderSample));
+    popupOrderSampleOpenButton.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      openPopup(popupOrderSample);
+    });
   }
 
   popups.forEach((popup) => {
