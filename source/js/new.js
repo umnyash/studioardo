@@ -72,6 +72,12 @@ if (popups) {
     });
   }
 
+  const popupGood = document.querySelector('.popup--good');
+
+  if (popupGood) {
+    openPopup(popupGood);
+  }
+
   popups.forEach((popup) => {
     const popupCloseButton = popup.querySelector('.popup__close')
     popupCloseButton.addEventListener('click', closePopup.bind(null, popup));
