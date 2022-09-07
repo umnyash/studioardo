@@ -82,7 +82,7 @@
   }
 }
 
-.good-info__tab-buttons-item.swiper-slide-thumb-active .good-info__tab-buttons-link {
+.good-info__tab-buttons-item--current .good-info__tab-buttons-link {
   position: relative;
   font-weight: 500;
 
@@ -122,15 +122,22 @@
 }
 
 .good-info__tabs-list {
+  display: grid;
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
 .good-info__tabs-item {
+  visibility: hidden;
+  grid-area: 1 / 1 / 2 / 2;
   margin: 0;
   font: inherit;
   color: inherit;
+
+  &--current {
+    visibility: visible;
+  }
 }
 
 .good-info__tabs-content p {

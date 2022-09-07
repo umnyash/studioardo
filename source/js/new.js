@@ -171,29 +171,28 @@ const goodInfoTaber = document.querySelector('.good-info__taber');
 if (goodInfoTaber) {
   const swiper = new Swiper(".good-info__tab-buttons-wrapper", {
     slidesPerView: 'auto',
-    freeMode: true,
-    watchSlidesProgress: true,
+    freeMode: true
   });
 
-  const swiper2 = new Swiper(".good-info__tabs-wrapper", {
-    spaceBetween: 50,
-    effect: "fade",
-    allowTouchMove: false,
-    fadeEffect: {
-      crossFade: true
-    },
-    thumbs: {
-      swiper: swiper,
-    },
-  });
+  const tabLinks = goodInfoTaber.querySelectorAll('.good-info__tab-buttons-link');
+  const tabs = goodInfoTaber.querySelectorAll('.good-info__tabs-item');
 
-  const tabLinks = document.querySelectorAll('.good-info__tab-buttons-link');
+  let currentTabLink = tabLinks[0];
+  let currentTab = tabs[0];
 
-  tabLinks.forEach((link) => {
-    link.addEventListener('click', (evt) => {
+  for (let i = 0; i < tabLinks.length; i++) {
+    tabLinks[i].addEventListener('click', (evt) => {
       evt.preventDefault();
+
+      currentTab.classList.remove('good-info__tabs-item--current');
+      currentTab = tabs[i];
+      currentTab.classList.add('good-info__tabs-item--current');
+
+      currentTabLink.parentNode.classList.remove('good-info__tab-buttons-item--current');
+      currentTabLink = tabLinks[i];
+      currentTabLink.parentNode.classList.add('good-info__tab-buttons-item--current');
     });
-  });
+  }
 }
 
 const radioselects = document.querySelectorAll('.select-2');
