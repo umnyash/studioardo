@@ -82,6 +82,14 @@ if (popups) {
     const popupCloseButton = popup.querySelector('.popup__close')
     popupCloseButton.addEventListener('click', closePopup.bind(null, popup));
   });
+
+  const openPopupByHash = (hash, popup) => {
+    if (window.location.hash === hash) {
+      openPopup(popup);
+    }
+  };
+
+  document.addEventListener("DOMContentLoaded", openPopupByHash.bind(null, '#js-modal-message', popupOrderSample));
 }
 
 const numberFields = document.querySelectorAll('.number-field');
