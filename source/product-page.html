@@ -22,11 +22,41 @@
           <form class="good-card__form" action="#!" method="post">
             <h2 class="good-card__heading">Керамическая плитка Ape Re-Use White Rect 40x120</h2>
             <div class="good-card__actions">
-              <button class="good-card__social-button social-button social-button--share" type="button">
-                <span class="visually-hidden">Поделиться</span>
-              </button>
-              <button class="good-card__social-button social-button social-button--like" type="button">
+              <div class="good-card__share share">
+                <p class="visually-hidden">Поделиться в:</p>
+                <button class="share__button" type="button" aria-hidden="true"></button>
+                <ul class="share__list">
+                  <li class="share__item">
+                    <a class="share__link" href="#!">
+                      Pinterest
+                      <span class="share__icon-wrapper">
+                        <img src="img/icons/pinterest-share-icon.svg" width="24" height="24" alt="Логотип Pinterest.">
+                      </span>
+                    </a>
+                  </li>
+                  <li class="share__item">
+                    <a class="share__link" href="#!">
+                      Вконтакте
+                      <span class="share__icon-wrapper">
+                        <img src="img/icons/vk-share-icon.png" width="24" height="24" alt="Логотип Вконтакте.">
+                      </span>
+                    </a>
+                  </li>
+                  <li class="share__item">
+                    <a class="share__link" href="#!">
+                      Одноклассники
+                      <span class="share__icon-wrapper">
+                        <img src="img/icons/odnoklassniki-share-icon.png" width="24" height="24" alt="Логотип Одноклассники.">
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <button class="good-card__like like" type="button">
                 <span class="visually-hidden">Добавить в избранное</span>
+                <svg class="like__icon" aria-hidden="true" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="like__figure" d="M3.67.7C2.07.7.77 1.96.77 3.55c0 1.28.5 4.31 5.5 7.38a.57.57 0 0 0 .59 0c4.99-3.07 5.5-6.1 5.5-7.38 0-1.59-1.3-2.87-2.9-2.87-1.6 0-2.9 1.74-2.9 1.74S5.26.69 3.66.69Z" stroke="#333" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
               </button>
             </div>
             <div class="good-card__img-wrapper product-img">

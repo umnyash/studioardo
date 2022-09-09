@@ -81,13 +81,6 @@
   }
 }
 
-.good-card .good-card__social-button {
-  @media #{$desktop} {
-    width: 48px;
-    height: 48px;
-  }
-}
-
 .good-card__img-wrapper {
   position: relative;
   display: block;
@@ -125,7 +118,18 @@
   }
 }
 
-.good-card__social-button {
+.good-card__like {
+  width: 28px;
+  height: 28px;
+  margin: 4px 2px;
+
+  @media #{$tablet-desktop} {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.good-card__share {
   margin: 4px 2px;
 }
 

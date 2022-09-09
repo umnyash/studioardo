@@ -110,12 +110,12 @@ if (numberFields) {
   });
 }
 
-const likeButtons = document.querySelectorAll('.social-button--like');
+const likeButtons = document.querySelectorAll('.like');
 
 if (likeButtons) {
   likeButtons.forEach((likeButton) => {
     likeButton.addEventListener('click', () => {
-      likeButton.classList.toggle('social-button--like-active');
+      likeButton.classList.toggle('like--active');
     });
   });
 }

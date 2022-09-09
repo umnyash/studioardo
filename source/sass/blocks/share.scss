@@ -1,0 +1,119 @@
+.share {
+  position: relative;
+  z-index: 200;
+}
+
+.share__button {
+  display: grid;
+  padding: 0;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid $share-button-border-color;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  transition: border-color $share-transition-duration;
+
+  @media #{$tablet-desktop} {
+    width: 48px;
+    height: 48px;
+  }
+
+  &::before {
+    content: "";
+    width: 55%;
+    height: 55%;
+    background-color: $share-button-icon-color;
+    mask-image: url("../img/icons/share-icon.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    transition: background-color $share-transition-duration;
+  }
+}
+
+.share__list {
+  position: absolute;
+  bottom: -7px;
+  right: 50%;
+  display: grid;
+  row-gap: 10px;
+  padding: 15px;
+  margin: 0;
+  border-radius: 10px;
+  list-style: none;
+  background-color: $background-color;
+  box-shadow: 0 3px 25px rgba(0, 0, 0, 0.08);
+  transform: translate(50%, 100%);
+  opacity: 0;
+  visibility: hidden;
+  transition-property: opacity, visibility;
+  transition-duration: $share-transition-duration;
+
+  @media #{$tablet-desktop} {
+    right: 0;
+    transform: translateY(100%);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
+
+.share__item {
+  margin: 0;
+}
+
+.share__link {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 8px;
+  align-items: center;
+  font-size: 14px;
+  line-height: 20px;
+  color: $basic-text-color;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.share__icon-wrapper {
+  order: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+
+  & * {
+    max-width: 24px;
+    max-height: 24px;
+  }
+}
+
+.share:hover {
+  .share__button {
+    border-color: $share-button-hover-color;
+  
+    &::before {
+      background-color: $share-button-hover-color;
+    }
+  }
+
+  .share__list {
+    opacity: 1;
+    visibility: visible;
+  }
+}

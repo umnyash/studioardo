@@ -1,0 +1,46 @@
+.like {
+  display: grid;
+  padding: 0;
+  place-items: center;
+  border: 1px solid $like-button-border-color;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  transition: border-color $like-transition-duration;
+}
+
+.like__icon {
+  width: 50%;
+  height: 50%;
+  margin: 2px 0 0;
+  transition-property: width, height;
+  transition-duration: $like-transition-duration;
+}
+
+.like__figure {
+  stroke: $like-button-icon-color;
+  transition-property: fill, stroke;
+  transition-duration: $like-transition-duration;
+}
+
+.like--active {
+  border-color: $like-button-active-color;
+
+  .like__figure {
+    stroke: $like-button-active-color;
+    fill: $like-button-active-color;
+  }
+}
+
+.like:not(.like--active):hover {
+  border-color: $like-button-hover-color;
+
+  .like__figure {
+    stroke: $like-button-hover-color;
+  }
+}
+
+.like:active .like__icon {
+  width: 60%;
+  height: 60%;
+}

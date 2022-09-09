@@ -32,9 +32,13 @@ $mini-card-total-price-border-color: #c8c8c8;
 $button-border-color: #c8c8c8;
 $primary-button-color: #d92547;
 $secondary-button-color: #42bd98;
-$social-button-border-color: #c8c8c8;
-$social-button-active-background-color: #d92547;
-$social-button-hover-color: #42bd98;
+$share-button-icon-color: #333333;
+$share-button-border-color: #c8c8c8;
+$share-button-hover-color: #42bd98;
+$like-button-icon-color: #333333;
+$like-button-border-color: #c8c8c8;
+$like-button-active-color: #d92547;
+$like-button-hover-color: #42bd98;
 $weak-text-color: #808080;
 $button-accent-color: #c5072b;
 $works-gallery-background-color: #fafafa;
@@ -65,5 +69,9 @@ $custom-form-button-background-color: #ffffff;
 $custom-form-button-border-color: #c8c8c8;
 $custom-form-file-selector-button-border-color: #c8c8c8;
 $custom-form-link-text-color: #808080;
-
 $special-color: #42bd98;
+
+// Times
+
+$share-transition-duration: 200ms;
+$like-transition-duration: 200ms;
