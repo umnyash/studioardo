@@ -223,7 +223,7 @@
               <div class="good-card__buttons">
                 <button class="good-card__submit button button--secondary button--alter button--with-shadow" type="submit">Добавить в корзину</button>
                 <a class="button" href="#!">Заказать образец</a>
-                <button class="button" type="button">Купить в 1 клик</button>
+                <button class="button button--popup--quick-order" type="button">Купить в 1 клик</button>
               </div>
               <ul class="good-card__features">
                 <li class="good-card__features-item">
@@ -1022,7 +1022,7 @@
           <button class="popup__close" type="button">
             <span class="visually-hidden">Закрыть.</span>
           </button>
-          <div class="popup__content good-mini-card">
+          <div class="popup__content good-mini-card good-mini-card--adaptive">
             <form class="good-mini-card__form" action="#!" method="post">
               <h2 class="good-mini-card__heading">Gessi Rettangolo Внешние части термостата с 3-мя запорными вентилями, хром</h2>
               <picture class="good-mini-card__img-wrapper">
@@ -1056,24 +1056,24 @@
                 <div class="goods-quantity__radiobuttons">
                   <button class="goods-quantity__select-button" type="button">М2</button>
                   <div class="goods-quantity__radiobuttons-inner">
-                    <label class="goods-quantity__radiobutton radiobutton radiobutton--small">
+                    <label class="goods-quantity__radiobutton radiobutton radiobutton--alter">
                       <input class="radiobutton__control visually-hidden" autocomplete="off" type="radio" name="goods-unit" value="m2" checked>
                       <span class="radiobutton__label" aria-hidden="true">M2</span>
                       <span class="visually-hidden">Указать количество в квадратных метрах</span>
                     </label>
-                    <label class="goods-quantity__radiobutton radiobutton radiobutton--small">
+                    <label class="goods-quantity__radiobutton radiobutton radiobutton--alter">
                       <input class="radiobutton__control visually-hidden" autocomplete="off" type="radio" name="goods-unit" value="units">
                       <span class="radiobutton__label" aria-hidden="true">Шт</span>
                       <span class="visually-hidden">Указать количество поштучно</span>
                     </label>
-                    <label class="goods-quantity__radiobutton radiobutton radiobutton--small">
+                    <label class="goods-quantity__radiobutton radiobutton radiobutton--alter">
                       <input class="radiobutton__control visually-hidden" autocomplete="off" type="radio" name="goods-unit" value="packs">
                       <span class="radiobutton__label" aria-hidden="true">Уп<span class="radiobutton__label-extra">ак</span></span>
                       <span class="visually-hidden">Указать количество упаковок</span>
                     </label>
                   </div>
                 </div>
-                <p class="goods-quantity__number-field number-field">
+                <p class="goods-quantity__number-field number-field number-field--alter">
                   <label class="visually-hidden" for="good-mini-card-quantity">Количество:</label>
                   <input class="number-field__control" id="good-mini-card-quantity" type="number" name="goods-quantity" min="0" value="100" placeholder="100">
                   <button class="number-field__button number-field__button--minus" type="button">
@@ -1092,11 +1092,116 @@
         </div>
       </div>
 
+      <div class="popup popup--simple popup--quick-order">
+        <div class="popup__inner ">
+          <button class="popup__close" type="button">
+            <span class="visually-hidden">Закрыть.</span>
+          </button>
+          <div class="popup__content quick-order">
+            <h2 class="quick-order__heading">Купить в 1 клик</h2>
+            <form class="quick-order__form" action="#!" method="post">
+              <div class="quick-order__user-info custom-form">
+                <div class="form">
+                  <div class="form__textfield-wrapper">
+                    <label class="form__textfield-label">
+                      <span class="visually-hidden">Ваше имя.</span>
+                      <span class="form__textfield">
+                        <input class="form__textfield-control" name="name" type="text" placeholder="Ваше имя">
+                      </span>
+                    </label>
+                  </div>
+                  <div class="form__textfield-wrapper">
+                    <label class="form__textfield-label">
+                      <span class="visually-hidden">Ваша фамилия.</span>
+                      <span class="form__textfield">
+                        <input class="form__textfield-control" name="name" type="text" placeholder="Фамилия">
+                      </span>
+                    </label>
+                  </div>
+                  <div class="form__textfield-wrapper">
+                    <label class="form__textfield-label">
+                      <span class="visually-hidden">Номер вашего телефона.</span>
+                      <span class="form__textfield">
+                        <input class="form__textfield-control" name="tel" type="tel" placeholder="Телефон">
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="quick-order__good-info good-mini-card">
+                <div class="good-mini-card__form">
+                  <h3 class="good-mini-card__heading">Gessi Rettangolo Внешние части термостата с 3-мя запорными вентилями, хром</h3>
+                  <picture class="good-mini-card__img-wrapper good-mini-card__img-wrapper--small">
+                    <source media="(min-width: 1280px)" srcset="img/good-mini-card-laptop.jpg">
+                    <img class="good-mini-card__img" src="img/good-mini-card.jpg" alt="">
+                  </picture>
+                  <div class="good-mini-card__price-wrapper">
+                    <p class="good-mini-card__price">
+                      <span class="visually-hidden">Цена:</span> 6&nbsp;050&nbsp;₽/м<sup>2</sup>
+                    </p>
+                    <p class="good-mini-card__discount-info">
+                      <span class="good-mini-card__discount-value">-2&nbsp;050&nbsp;₽</span>
+                      <s class="good-mini-card__old-price">8&nbsp;057&nbsp;₽</s>
+                    </p>
+                  </div>
+                  <div class="good-mini-card__goods-quantity goods-quantity goods-quantity--alter-2">
+                    <div class="goods-quantity__radiobuttons">
+                      <button class="goods-quantity__select-button" type="button">М2</button>
+                      <div class="goods-quantity__radiobuttons-inner">
+                        <label class="goods-quantity__radiobutton radiobutton radiobutton--small">
+                          <input class="radiobutton__control visually-hidden" autocomplete="off" type="radio" name="goods-unit" value="m2" checked>
+                          <span class="radiobutton__label" aria-hidden="true">M2</span>
+                          <span class="visually-hidden">Указать количество в квадратных метрах</span>
+                        </label>
+                        <label class="goods-quantity__radiobutton radiobutton radiobutton--small">
+                          <input class="radiobutton__control visually-hidden" autocomplete="off" type="radio" name="goods-unit" value="units">
+                          <span class="radiobutton__label" aria-hidden="true">Шт</span>
+                          <span class="visually-hidden">Указать количество поштучно</span>
+                        </label>
+                        <label class="goods-quantity__radiobutton radiobutton radiobutton--small">
+                          <input class="radiobutton__control visually-hidden" autocomplete="off" type="radio" name="goods-unit" value="packs">
+                          <span class="radiobutton__label" aria-hidden="true">Уп<span class="radiobutton__label-extra">ак</span></span>
+                          <span class="visually-hidden">Указать количество упаковок</span>
+                        </label>
+                      </div>
+                    </div>
+                    <p class="goods-quantity__number-field number-field">
+                      <label class="visually-hidden" for="good-mini-card-quantity">Количество:</label>
+                      <input class="number-field__control" id="good-mini-card-quantity" type="number" name="goods-quantity" min="0" value="100" placeholder="100">
+                      <button class="number-field__button number-field__button--minus" type="button">
+                        <span class="visually-hidden">Убавить</span>
+                      </button>
+                      <button class="number-field__button number-field__button--plus" type="button">
+                        <span class="visually-hidden">Добавить</span>
+                      </button>
+                    </p>
+                  </div>
+                  <p class="good-mini-card__total-price good-mini-card__total-price--alter">Итого: 160&nbsp;057&nbsp;₽</p>
+                </div>
+              </div>
+              <div class="quick-order__consent consent">
+                <label class="consent__label">
+                  <input class="consent__control visually-hidden" name="consent" type="checkbox" checked>
+                  <span class="consent__label-text">
+                    <span>
+                      Согласие с <a class="consent__link" href="!#" target="_blank">политикой обработки данных</a>
+                    </span>
+                  </span>
+                </label>
+              </div>
+              <div class="quick-order__submit-wrapper">
+                <button class="quick-order__submit button-3 button-3--primary">Заказать</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
     </main>
     <script src="js/jquery.3.4.1.min.js"></script>
     <script src="js/swiper.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script> <!-- Новый скрипт -->
-    <script src="js/new.min.js"></script> <!-- Новый скрипт -->
+    <script src="js/new.js"></script> <!-- Новый скрипт -->
     <script src="js/libs.min.js"></script>
     <script src="js/jquery.cookie.min.js"></script>
     <script src="js/scripts.min.js"></script>

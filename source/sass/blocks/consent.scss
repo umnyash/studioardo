@@ -1,0 +1,44 @@
+.consent {
+  font-family: $additional-font-family;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.consent__label-text {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 10px;
+  align-items: center;
+
+  &::before {
+    content: "";
+    width: 13px;
+    height: 13px;
+    border: 1px solid $custom-form-button-border-color;
+    margin: 0 0 3px;
+    cursor: pointer;
+  }
+}
+
+.consent__control:checked + .consent__label-text::before  {
+  border-color: $consent-checked-color;
+  background-color: $consent-checked-color;
+  background-image: url("../img/icons/checkmark.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.consent__link {
+  color: $consent-link-text-color;
+  text-decoration: underline;
+
+  &:hover {
+    color: $consent-link-text-color;
+    text-decoration: underline;
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}

@@ -20,11 +20,6 @@
   &::-webkit-outer-spin-button {
     appearance: none;
   }
-
-  @media #{$tablet-desktop} {
-    font-size: 24px;
-    line-height: 28px;
-  }
 }
 
 .number-field__button {
@@ -57,4 +52,11 @@
 .number-field--big .number-field__control {
   font-size: 24px;
   line-height: 28px;
+}
+
+.number-field--alter .number-field__control {
+  @media #{$tablet-desktop} {
+    font-size: 24px;
+    line-height: 28px;
+  }
 }

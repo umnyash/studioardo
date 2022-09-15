@@ -1,31 +1,10 @@
 .good-mini-card {
   padding: 10px 10px 20px;
   font-family: $basic-font-family;
-
-  @media #{$tablet-desktop} {
-    padding: 20px 20px 30px;
-  }
-
-  @media #{$laptop-desktop} {
-    padding: 48px 54px 26px 28px;
-  }
 }
 
 .good-mini-card__form {
   display: grid;
-
-  @media #{$laptop-desktop} {
-    grid-template-rows: min-content min-content min-content 1fr min-content;
-    grid-template-columns: 161px 1fr 140px 88px 220px;
-    align-items: start;
-    grid-template-areas:
-      "img   heading heading price price"
-      "img   detail  note    note  quantity"
-      "img   detail  note    note  quantity"
-      "img   .       .       .     ."
-      ".     total   total   total total"
-      ".     .       link    link  submit";
-  }
 }
 
 .good-mini-card__heading {
@@ -34,17 +13,8 @@
   font-size: 14px;
   line-height: 18px;
   font-weight: 700;
-
-  @media #{$tablet-desktop} {
-    font-size: 16px;
-    line-height: 20px;
-  }
-
-  @media #{$laptop-desktop} {
-    grid-area: heading;
-    margin-top: 10px;
-    margin-bottom: 29px;
-  }
+  text-transform: none;
+  letter-spacing: normal;
 }
 
 .good-mini-card__img-wrapper {
@@ -54,11 +24,9 @@
   height: 113px;
   margin: 0 0 11px;
 
-  @media #{$laptop-desktop} {
-    grid-area: img;
-    width: 150px;
-    height: 150px;
-    margin-bottom: 0;
+  &--small {
+    width: 60px;
+    height: 60px;
   }
 }
 
@@ -74,30 +42,12 @@
   display: flex;
   margin: 0 0 10px;
   align-items: center;
-
-  @media #{$laptop-desktop} {
-    grid-area: price;
-    justify-self: end;
-    margin-top: 10px;
-    margin-left: 20px;
-  }
 }
 
 .good-mini-card__price {
   margin: 0 auto 0 0 ;
   font-size: 18px;
   line-height: 18px;
-
-  @media #{$tablet-desktop} {
-    font-size: 26px;
-    line-height: 38px;
-  }
-
-  @media #{$laptop-desktop} {
-    margin-right: 20px;
-    font-size: 26px;
-    line-height: 38px;
-  }
 }
 
 .good-mini-card__price sup {
@@ -113,12 +63,6 @@
   margin: 1px 5px 0 20px;
   font-size: 14px;
   line-height: 1;
-
-  @media #{$laptop-desktop} {
-    grid-auto-flow: row;
-    margin-right: 0;
-    margin-left: 0;
-  }
 }
 
 .good-mini-card__discount-value {
@@ -139,10 +83,6 @@
   flex-wrap: wrap;
   font-size: 16px;
   line-height: 21px;
-
-  @media #{$laptop-desktop} {
-    grid-area: detail;
-  }
 }
 
 .good-mini-card__detail-item {
@@ -155,23 +95,10 @@
 
 .good-mini-card__note {
   margin: 0 0 10px;
-
-  @media #{$laptop-desktop} {
-    grid-area: note;
-    align-self: stretch;
-    margin-right: 6px;
-    margin-bottom: 0;
-  }
 }
 
 .good-mini-card__goods-quantity {
   margin: 0 0 11px;
-
-  @media #{$laptop-desktop} {
-    grid-area: quantity;
-    align-self: stretch;
-    margin-bottom: 0;
-  }
 }
 
 .good-mini-card__total-price {
@@ -182,42 +109,159 @@
   line-height: 24px;
   font-weight: 700;
 
-  @media #{$tablet-desktop} {
-    padding-top: 12px;
-    margin-bottom: 16px;
-    font-size: 18px;
-    line-height: 24px;
-  }
-
-  @media #{$laptop-desktop} {
-    grid-area: total;
+  &--alter {
     padding-top: 10px;
-    padding-right: 40px;
     border-top: 1px solid $mini-card-total-price-border-color;
     margin-top: 13px;
-    margin-bottom: 19px;
-    text-align: right;
+    margin-bottom: 0;
+    text-align: left;
+    font-size: 16px;
+    line-height: 20px;
   }
 }
 
 .good-mini-card__submit {
   margin: 0 0 5px;
-
-  @media #{$tablet-desktop} {
-    margin-bottom: 10px;
-  }
-
-  @media #{$laptop-desktop} {
-    grid-area: submit;
-    justify-self: stretch;
-    margin-bottom: 0;
-  }
 }
 
-.good-mini-card__link {
+
+/// dfffffffff
+
+.good-mini-card--adaptive {
+  @media #{$tablet-desktop} {
+    padding: 20px 20px 30px;
+  }
+
   @media #{$laptop-desktop} {
-    justify-self: stretch;
-    grid-area: link;
-    margin-right: 8px;
+    padding: 48px 54px 26px 28px;
+  }
+
+  .good-mini-card__form {
+    @media #{$laptop-desktop} {
+      grid-template-rows: min-content min-content min-content 1fr min-content;
+      grid-template-columns: 161px 1fr 140px 88px 220px;
+      align-items: start;
+      grid-template-areas:
+        "img   heading heading price price"
+        "img   detail  note    note  quantity"
+        "img   detail  note    note  quantity"
+        "img   .       .       .     ."
+        ".     total   total   total total"
+        ".     .       link    link  submit";
+    }
+  }
+
+  .good-mini-card__heading {
+    @media #{$tablet-desktop} {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    @media #{$laptop-desktop} {
+      grid-area: heading;
+      margin-top: 10px;
+      margin-bottom: 29px;
+    }
+  }
+
+  .good-mini-card__img-wrapper {
+    @media #{$laptop-desktop} {
+      grid-area: img;
+      width: 150px;
+      height: 150px;
+      margin-bottom: 0;
+    }
+  }
+
+  .good-mini-card__price-wrapper {
+    @media #{$laptop-desktop} {
+      grid-area: price;
+      justify-self: end;
+      margin-top: 10px;
+      margin-left: 20px;
+    }
+  }
+
+  .good-mini-card__price {
+    @media #{$tablet-desktop} {
+      font-size: 26px;
+      line-height: 38px;
+    }
+
+    @media #{$laptop-desktop} {
+      margin-right: 20px;
+      font-size: 26px;
+      line-height: 38px;
+    }
+  }
+
+  .good-mini-card__discount-info {
+    @media #{$laptop-desktop} {
+      grid-auto-flow: row;
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+
+  .good-mini-card__detail {
+    @media #{$laptop-desktop} {
+      grid-area: detail;
+    }
+  }
+
+  .good-mini-card__note {
+    @media #{$laptop-desktop} {
+      grid-area: note;
+      align-self: stretch;
+      margin-right: 6px;
+      margin-bottom: 0;
+    }
+  }
+
+  .good-mini-card__goods-quantity {
+    @media #{$laptop-desktop} {
+      grid-area: quantity;
+      align-self: stretch;
+      margin-bottom: 0;
+    }
+  }
+
+  .good-mini-card__total-price {
+    @media #{$tablet-desktop} {
+      padding-top: 12px;
+      margin-bottom: 16px;
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    @media #{$laptop-desktop} {
+      grid-area: total;
+      padding-top: 10px;
+      padding-right: 40px;
+      border-top: 1px solid $mini-card-total-price-border-color;
+      margin-top: 13px;
+      margin-bottom: 19px;
+      text-align: right;
+    }
+  }
+
+  .good-mini-card__submit {
+    @media #{$tablet-desktop} {
+      margin-bottom: 10px;
+    }
+
+    @media #{$laptop-desktop} {
+      grid-area: submit;
+      justify-self: stretch;
+      margin-bottom: 0;
+    }
+  }
+
+  .good-mini-card__link {
+    @media #{$laptop-desktop} {
+      justify-self: stretch;
+      grid-area: link;
+      margin-right: 8px;
+    }
   }
 }

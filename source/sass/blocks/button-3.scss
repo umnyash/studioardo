@@ -1,0 +1,21 @@
+.button-3 {
+  display: grid;
+  box-sizing: border-box;
+  min-height: 40px;
+  padding: 15px;
+  border: 1px solid $button-border-color;
+  align-items: center;
+  text-align: center;
+  font-family: $additional-font-family;
+  font-size: 18px;
+  line-height: 24px;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.button-3--primary {
+  border-color: $primary-button-3-color;
+  color: $text-color-secondary;
+  background-color: $primary-button-3-color;
+}

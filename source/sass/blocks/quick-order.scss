@@ -1,0 +1,43 @@
+.quick-order {
+  padding: 40px 0;
+}
+
+.quick-order__heading {
+  max-width: 330px;
+  padding: 0 10px;
+  margin: 0 auto 26px;
+  text-align: center;
+  font-family: $basic-font-family;
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.quick-order__user-info {
+  max-width: 330px;
+  padding: 0 10px;
+  margin: 0 auto 10px;
+}
+
+.quick-order__good-info {
+  max-width: 330px;
+  margin: 0 auto 20px;
+}
+
+.quick-order__consent {
+  max-width: 330px;
+  padding: 0 10px;
+  margin: 0 auto 20px;
+}
+
+.quick-order__submit-wrapper {
+  max-width: 330px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.quick-order__submit {
+  width: 100%;
+}

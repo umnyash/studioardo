@@ -72,6 +72,16 @@ if (popups) {
     });
   }
 
+  const popupQuickOrderOpenButton = document.querySelector('.button--popup--quick-order');
+  const pupuQuickpOrder = document.querySelector('.popup--quick-order');
+
+  if (popupQuickOrderOpenButton && pupuQuickpOrder) {
+    popupQuickOrderOpenButton.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      openPopup(pupuQuickpOrder);
+    });
+  }
+
   const popupGood = document.querySelector('.popup--good');
 
   if (popupGood) {
@@ -247,7 +257,7 @@ if (radioselects) {
   });
 }
 
-const goodQuantityAlterNodes = document.querySelectorAll('.goods-quantity--alter');
+const goodQuantityAlterNodes = document.querySelectorAll('.goods-quantity--alter, .goods-quantity--alter-2');
 
 if (goodQuantityAlterNodes) {
   goodQuantityAlterNodes.forEach((goodQuantity) => {

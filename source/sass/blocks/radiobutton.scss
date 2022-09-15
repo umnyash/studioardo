@@ -17,16 +17,30 @@
   background-color: $radiobutton-active-color;
 }
 
-.radiobutton--small .radiobutton__label {
-  @media #{$mobile-tablet} {
+.radiobutton--small {
+  .radiobutton__label {
     padding: 0 6px;
     border: none;
     border-radius: 0;
   }
+
+  .radiobutton__label-extra {
+    display: none;
+  }
 }
 
-.radiobutton--small .radiobutton__label-extra {
-  @media #{$mobile-tablet} {
-    display: none;
+.radiobutton--alter {
+  .radiobutton__label {
+    @media #{$mobile-tablet} {
+      padding: 0 6px;
+      border: none;
+      border-radius: 0;
+    }
+  }
+
+  .radiobutton__label-extra {
+    @media #{$mobile-tablet} {
+      display: none;
+    }
   }
 }

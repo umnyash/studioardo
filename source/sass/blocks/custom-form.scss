@@ -24,6 +24,8 @@
   font-size: 30px;
   line-height: 36.5px;
   font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
 }
 
 .custom-form .form__body {
@@ -213,12 +215,21 @@
 }
 
 .custom-form .form__checkbox-control:checked + .form__checkbox-label-text::before  {
-  border-color: $special-color;
-  background-color: $special-color;
   background-image: url("../img/icons/custom-form-checkmark.svg");
   background-repeat: no-repeat;
   background-position: center;
 }
+
+.custom-form .form__checkbox-control--primary:checked + .form__checkbox-label-text::before  {
+  border-color: $accent-color;
+  background-color: $accent-color;
+}
+
+.custom-form .form__checkbox-control--secondary:checked + .form__checkbox-label-text::before  {
+  border-color: $special-color;
+  background-color: $special-color;
+}
+
 
 .custom-form .form__link {
   color: $custom-form-link-text-color;
