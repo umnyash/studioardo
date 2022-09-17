@@ -101,4 +101,15 @@
   margin-bottom: 73px;
 }
 
+.page-body__delivery {
+  margin-bottom: 100px;
 
+  @media #{$tablet-desktop} {
+    margin-bottom: 160px;
+  }
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 200px;
+  }
+
+}
