@@ -1,12 +1,19 @@
 .contacts-info {
-  padding: 0 0 8px;
+  display: grid;
+  row-gap: 5px;
+  align-items: end;
+
+  @media #{$tablet-desktop} {
+    grid-template-columns: 390px 1fr;
+    column-gap: 40px;
+  }
+}
+
+.contacts-info__text-content {
+  margin: 0 0 3px;
   font-family: $basic-font-family;
   font-size: 14px;
   line-height: 24px;
-
-  @media #{$desktop} {
-    padding: 12px 0 10px;
-  }
 }
 
 .contacts-info__heading {
@@ -42,4 +49,13 @@
 .contacts-info__link {
   text-decoration: underline;
   color: $contacts-link-color;
+}
+
+.contacts-info__socials {
+  justify-self: center;
+  margin: 0;
+
+  @media #{$tablet-desktop} {
+    justify-self: start;
+  }
 }

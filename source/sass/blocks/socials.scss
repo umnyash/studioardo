@@ -3,15 +3,19 @@
   padding: 0;
   list-style: none;
   flex-wrap: wrap;
-  justify-content: center;
+  // justify-content: center;
 
   @media #{$tablet-desktop} {
-    justify-content: start;
+    // justify-content: start;
   }
 
   @media #{$tablet} {
-    justify-content: end;
+    // justify-content: end;
   }
+}
+
+.socials__item {
+  margin: 3px;
 }
 
 .socials__link {
@@ -20,7 +24,6 @@
   height: 50px;
   border: 1px solid $socials-link-border-color;
   border-radius: 50%;
-  margin: 2px;
   place-items: center;
 
   @media #{$tablet-desktop} {

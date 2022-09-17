@@ -1,6 +1,12 @@
 .page-body__good-info {
+  margin: 0 0 31px;
+
+  @media #{$tablet-desktop} {
+    margin-bottom: 4px;
+  }
+
   @media #{$laptop-desktop} {
-    margin: 0 0 100px;
+    margin: 0 0 88px;
   }
 
   @media #{$desktop} {
