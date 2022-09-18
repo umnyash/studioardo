@@ -25,7 +25,7 @@
   margin: 0 0 21px 0;
 
   @media #{$laptop-desktop} {
-    margin-bottom: 41px;
+    margin-bottom: 28px; // 41
     margin-left: 0;
   }
 }
@@ -89,7 +89,6 @@
 }
 
 .good-info__tabs-list {
-  display: grid;
   padding: 0 10px;
   margin: 0;
   list-style: none;
@@ -114,7 +113,7 @@
 .good-info__tabs-item {
   position: absolute;
   visibility: hidden;
-  grid-area: 1 / 1 / 2 / 2;
+  // grid-area: 1 / 1 / 2 / 2;
   margin: 0;
   font: inherit;
   color: inherit;
