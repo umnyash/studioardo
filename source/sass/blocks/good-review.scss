@@ -1,0 +1,70 @@
+.good-review {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 28px;
+  align-items: start;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.good-review__avatar {
+  display: grid;
+  width: 68px;
+  height: 68px;
+}
+
+.good-review__avatar-default {
+  grid-area: 1 / 1 / 2 / 2;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  font-family: $accent-font-family;
+  font-size: 36px;
+  line-height: 36px;
+  color: $text-color-secondary;
+  background-color: $special-color;
+}
+
+.good-review__avatar-image {
+  grid-area: 1 / 1 / 2 / 2;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  text-indent: -100vw;
+}
+
+.good-review__comment {
+  padding: 0;
+  margin: 0 0 20px;
+}
+
+.good-review__rating {
+  margin: 0 0 15px;
+}
+
+.good-review__heading {
+  margin: 0 0 7px;
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 500;
+}
+
+.good-review__text {
+  margin: 0 0 7px;
+  font: inherit;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.good-review__author {
+  margin: 0;
+  font: inherit;
+  color: $weak-text-color;
+}

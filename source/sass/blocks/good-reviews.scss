@@ -1,0 +1,24 @@
+.good-reviews__button-wrapper {
+  display: flex;
+  margin: 0 0 20px;
+  flex-wrap: wrap;
+}
+
+.good-reviews__button {
+  min-width: 220px;
+}
+
+.good-reviews__list {
+  display: grid;
+  row-gap: 48px;
+  padding: 40px 0 32px;
+  border-top: 1px solid $reviews-list-border-color;
+  border-bottom: 1px solid $reviews-list-border-color;
+  margin: 0;
+  list-style: none;
+}
+
+.good-reviews__item {
+  max-width: 640px;
+  margin: 0;
+}

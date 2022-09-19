@@ -1,0 +1,63 @@
+.evaluation-buttons {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.evaluation-buttons__group {
+  position: relative;
+  width: 99px;
+  height: 19px;
+  margin: 0;
+  background-image: url("../img/icons/evaluation-star.svg");
+  background-repeat: space no-repeat;
+}
+
+
+.evaluation-buttons__button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  appearance: none;
+  background-repeat: space no-repeat;
+  cursor: pointer;
+
+  &:nth-child(1) {
+    z-index: 5;
+    width: 19px;
+  }
+
+  &:nth-child(2) {
+    z-index: 4;
+    width: 39px;
+  }
+
+  &:nth-child(3) {
+    z-index: 3;
+    width: 59px;
+  }
+
+  &:nth-child(4) {
+    z-index: 2;
+    width: 79px;
+  }
+
+  &:nth-child(5) {
+    z-index: 1;
+    width: 99px;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover,
+  &:checked {
+    background-image: url("../img/icons/evaluation-star-active.svg");
+  }
+
+  &:hover ~ .evaluation-buttons__button {
+    background-image: url("../img/icons/evaluation-star.svg");
+  }
+}

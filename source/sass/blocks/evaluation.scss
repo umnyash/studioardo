@@ -1,0 +1,30 @@
+.evaluation {
+  display: grid;
+}
+
+.evaluation::after {
+  content: "";
+  height: 19px;
+  background-image: url("../img/icons/evaluation-star-active.svg");
+  background-repeat: space no-repeat;
+}
+
+.evaluation--1 {
+  width: 19px;
+}
+
+.evaluation--2 {
+  width: 39px;
+}
+
+.evaluation--3 {
+  width: 59px;
+}
+
+.evaluation--4 {
+  width: 79px;
+}
+
+.evaluation--5 {
+  width: 99px;
+}

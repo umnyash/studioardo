@@ -1,4 +1,6 @@
 .page-body__good-info {
+  position: relative;
+  z-index: 2;
   margin: 0 0 31px;
 
   @media #{$tablet-desktop} {

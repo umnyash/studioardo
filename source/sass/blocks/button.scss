@@ -37,10 +37,6 @@
   border-color: $secondary-button-color;
   color: $text-color-secondary;
   background-color: $secondary-button-color;
-
-  &:not(.loader):hover {
-    color: $text-color-secondary;
-  }
 }
 
 .button--with-icon {
@@ -86,4 +82,19 @@
   min-height: 50px;
   font-size: 16px;
   line-height: 18px;
+}
+
+.button--chameleon {
+  &:hover {
+    border-color: $secondary-button-color;
+    color: $text-color-secondary;
+    background-color: $secondary-button-color;
+  }
+
+  &:active {
+    border-color: $secondary-button-color;
+    color: $text-color-secondary;
+    background-color: $secondary-button-color;
+    opacity: 0.8;
+  }
 }
