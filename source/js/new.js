@@ -361,11 +361,11 @@ if (goodsFilter) {
   });
 }
 
-const smallCustomForms = document.querySelectorAll('.custom-form--small');
+const smallCustomForms = document.querySelectorAll('.custom-form--compact');
 
 if (smallCustomForms) {
   smallCustomForms.forEach((form) => {
-    const submitButton = form.querySelector('.form__submit');
+    const submitButton = form.querySelector('.form__button--submit');
     submitButton.style.display = 'none';
 
     const input = form.querySelector('.form__textfield-control');

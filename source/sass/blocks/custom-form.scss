@@ -142,11 +142,21 @@
 }
 
 .custom-form .form__submit-wrapper {
+  display: flex;
+  flex-wrap: wrap;
   margin: 30px 0;
 }
 
-.custom-form .form__submit {
-  width: 100%;
+.custom-form .form__submit-wrapper--center {
+  justify-content: center;
+}
+
+.custom-form .form__submit-wrapper--mt20 {
+  margin-top: 20px;
+}
+
+.custom-form .form__submit-wrapper--mt40 {
+  margin-top: 40px;
 }
 
 .custom-form .form__footer {
@@ -166,17 +176,28 @@
 
 .custom-form .form__button-wrapper {
   display: flex;
+  justify-content: center;
   margin: 19px 0 0;
 }
 
 .custom-form .form__button {
-  display: flex;
   min-width: 220px;
+}
+
+.custom-form .form__button--wide {
+  width: 100%;
+}
+
+.custom-form .form__cancel-button {
+  margin: 0 0 0 56px;
+}
+
+.custom-form .form-button {
+  display: flex;
   min-height: 50px;
   padding: 10px;
   border: 1px solid $custom-form-button-border-color;
   border-radius: 3px;
-  margin: 0 auto;
   justify-content: center;
   align-items: center;
   font-family: $additional-font-family;
@@ -251,6 +272,10 @@
   margin: 0 0 28px;
 }
 
+.custom-form .form__textarea-wrapper {
+  margin: 0 0 6px;
+}
+
 .custom-form .form__textarea-label {
   position: relative;
   display: block;
@@ -274,29 +299,13 @@
   box-shadow: inset 0 0 0 1000px $background-color;
 }
 
-.custom-form .form__buttons-wrapper {
-  display: flex;
-  align-items: center;
-  margin: 30px 0;
-}
-
-.custom-form--small {
+.custom-form--compact {
   .form__header {
     padding-bottom: 10px;
   }
 
   .form__body {
     padding-top: 11px;
-  }
-
-  .form__submit-wrapper {
-    margin-top: 20px;
-  }
-
-  .form__submit {
-    width: auto;
-    min-width: 220px;
-    margin: 0 auto;
   }
 }
 

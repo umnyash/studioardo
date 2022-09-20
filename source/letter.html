@@ -70,21 +70,21 @@
         background-color:#FFFFFF;
       }
 
-      .signature__logo {
+      .signature__container {
         padding-top:46px;
+        padding-right:11px;
+        padding-bottom:40px;
+        padding-left:34px;
+      }
+
+      .signature__logo {
         padding-right:21px;
         padding-bottom:21px;
-        padding-left:52px;
+        padding-left:18px;
       }
 
       .signature__logo img {
         display:block;
-      }
-
-      .signature__body {
-        padding-bottom:40px;
-        padding-left:34px;
-        padding-right:11px;
       }
 
       .signature__column-wrapper {
@@ -231,6 +231,10 @@
         border-radius:3px;
       }
 
+      .signature__link-button {
+        text-decoration:none;
+      }
+
       .signature__button-text {
         font-family:"Arial",sans-serif;
         font-size:14px;
@@ -261,9 +265,7 @@
           <td>
             <table class="signature__inner" cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#ffffff">
               <tr>
-                <td>
-
-                  <!--[if mso]><table style="width:700px" cellpadding="0" cellspacing="0"><tr><td style="width:150px" valign="top"><![endif]-->
+                <td class="signature__container">
                   <table cellspacing="0" cellpadding="0" border="0">
                     <tr>
                       <td class="signature__logo">
@@ -273,11 +275,10 @@
                       </td>
                     </tr>
                   </table>
-
-                  <!--[if mso]></td><td style="width:0px"></td><td style="width:440px" valign="top"><![endif]-->
                   <table class="signature__body signature__column-wrapper" cellspacing="0" cellpadding="0" border="0">
                     <tr>
                       <td>
+                        <!--[if mso]><table style="width:655px" cellpadding="0" cellspacing="0"><tr><td style="width:150px" valign="top"><![endif]-->
                         <table class="signature__column" cellspacing="0" cellpadding="0" border="0">
                           <tr>
                             <td class="signature__photo">
@@ -285,6 +286,7 @@
                             </td>
                           </tr>
                         </table>
+                        <!--[if mso]></td><td style="width:0px"></td><td style="width:440px" valign="top"><![endif]-->
                         <table class="signature__column" cellspacing="0" cellpadding="0" border="0">
                           <tr>
                             <td class="signature__content">
@@ -370,18 +372,31 @@
                                         <td class="signature__column-wrapper">
                                           <table class="signature__column signature__button-wrapper" cellspacing="0" cellpadding="0" border="0">
                                             <tr>
-                                              <td class="signature__button signature__button--primary">
-                                                <a class="signature__button-text" href="https://www.studioardo.ru" target="_blank">
-                                                  <b>studioardo.ru</b>
+                                              <td>
+                                                <a class="signature__link-button" href="https://www.studioardo.ru" target="_blank">
+                                                  <table cellspacing="0" cellpadding="0" border="0">
+                                                    <tr>
+                                                      <td class="signature__button signature__button--primary">
+                                                        <b class="signature__button-text">studioardo.ru</b>
+                                                      </td>
+                                                    </tr>
+                                                  </table>
                                                 </a>
                                               </td>
                                             </tr>
                                           </table>
+
                                           <table class="signature__column signature__button-wrapper" cellspacing="0" cellpadding="0" border="0">
                                             <tr>
-                                              <td class="signature__button">
-                                                <a class="signature__button-text" href="https://www.studioardo.ru/#js-modal-message" target="_blank">
-                                                  Обратная связь
+                                              <td>
+                                                <a class="signature__link-button" href="https://www.studioardo.ru/#js-modal-message" target="_blank">
+                                                  <table cellspacing="0" cellpadding="0" border="0">
+                                                    <tr>
+                                                      <td class="signature__button">
+                                                        <span class="signature__button-text">Обратная связь</span>
+                                                      </td>
+                                                    </tr>
+                                                  </table>
                                                 </a>
                                               </td>
                                             </tr>
@@ -395,11 +410,10 @@
                             </td>
                           </tr>
                         </table>
+                        <!--[if mso]></td></tr></table><![endif]-->
                       </td>
                     </tr>
                   </table>
-                  <!--[if mso]></td></tr></table><![endif]-->
-
                 </td>
               </tr>
             </table>

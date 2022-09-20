@@ -23,6 +23,19 @@
   }
 }
 
+.button--primitive {
+  border-color: transparent;
+  color: $weak-text-color;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
 .button--simple {
   padding: 3px 10px;
 }
@@ -37,6 +50,10 @@
   border-color: $secondary-button-color;
   color: $text-color-secondary;
   background-color: $secondary-button-color;
+
+  &:hover {
+    color: $text-color-secondary;
+  }
 }
 
 .button--with-icon {
