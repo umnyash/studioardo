@@ -30,3 +30,7 @@
 .good-reviews__item {
   margin: 0;
 }
+
+.good-reviews__item + .good-reviews__item {
+  margin-top: -1px;
+}
