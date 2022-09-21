@@ -46,6 +46,36 @@
   height: auto;
 }
 
+.transportation__regions {
+  display: grid;
+  padding: 0;
+  margin: 20px 0 0;
+  list-style: none;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  gap: 15px 30px;
+  font-family: $additional-font-family;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.transportation__region {
+  display: grid;
+  margin: 0;
+  grid-template-columns: auto 1fr;
+  column-gap: 10px;
+  align-items: center;
+}
+
+.transportation__region-color {
+  width: 20px;
+  height: 20px;
+}
+
+.transportation__region .transportation__region-name {
+  text-decoration: none;
+  color: inherit;
+}
+
 .transportation__info {
   @media #{$laptop-desktop} {
     grid-area: text;
