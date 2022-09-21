@@ -133,6 +133,8 @@ if (likeButtons) {
 const clipboxes = document.querySelectorAll('.clipbox');
 
 if (clipboxes) {
+  let windowWidth = window.innerWidth;
+
   const setClipboxMode = (clipbox) => {
     clipbox.classList.remove('clipbox--reduced');
     clipbox.classList.remove('clipbox--expanded');
@@ -148,7 +150,14 @@ if (clipboxes) {
       clipbox.classList.toggle('clipbox--expanded');
     });
 
-    window.addEventListener('resize', () => setClipboxMode(clipbox));
+    window.addEventListener('resize', () => {
+      if (windowWidth === window.innerWidth) {
+        return;
+      }
+
+      windowWidth = window.innerWidth;
+      setClipboxMode(clipbox);
+    });
 
     setClipboxMode(clipbox);
   });
@@ -201,6 +210,30 @@ if (goodInfoTaber) {
       currentTabLink.parentNode.classList.remove('good-info__tab-buttons-item--current');
       currentTabLink = tabLinks[i];
       currentTabLink.parentNode.classList.add('good-info__tab-buttons-item--current');
+    });
+  }
+}
+
+const goodReviews = document.querySelector('.good-reviews');
+
+if (goodReviews) {
+  const reviewForm = goodReviews.querySelector('.good-reviews__form');
+  const reviewFormShowButtonWrapper = goodReviews.querySelector('.good-reviews__button-wrapper');
+  const reviewFormShowButton = goodReviews.querySelector('.good-reviews__button');
+  const reviewFormHideButton = goodReviews.querySelector('.good-reviews__cancel');
+
+  if (reviewFormShowButtonWrapper && reviewFormShowButton) {
+    reviewFormShowButton.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      reviewForm.classList.remove('good-reviews__form--hidden');
+      reviewFormShowButtonWrapper.classList.add('good-reviews__button-wrapper--hidden');
+    });
+  }
+
+  if (reviewForm && reviewFormHideButton) {
+    reviewFormHideButton.addEventListener('click', () => {
+      reviewForm.classList.add('good-reviews__form--hidden');
+      reviewFormShowButtonWrapper.classList.remove('good-reviews__button-wrapper--hidden');
     });
   }
 }

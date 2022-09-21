@@ -705,7 +705,7 @@
                   <a class="good-info__tab-buttons-link" href="#!">Информация об оплате</a>
                 </li>
                 <li class="good-info__tab-buttons-item swiper-slide">
-                  <a class="good-info__tab-buttons-link" href="#!">Отзывы (<span class="good-info__reviews-count">0</span>)</a>
+                  <a class="good-info__tab-buttons-link" href="#!">Отзывы (<span class="good-info__reviews-count">3</span>)</a>
                 </li>
               </ul>
             </div>
@@ -980,7 +980,7 @@
                     <div class="good-info__reviews-wrapper clipbox">
                       <div class="clipbox__content">
                         <div class="good-reviews">
-                          <div class="good-reviews__form custom-form custom-form--big">
+                          <div class="good-reviews__form good-reviews__form--hidden custom-form custom-form--big">
                             <div class="form">
                               <h3 class="form__heading form__heading--big-margin">Оставить отзыв</h3>
                               <form class="form__body" action="#!" method="post">
@@ -1019,29 +1019,63 @@
                                   </label>
                                 </div>
                                 <div class="form__submit-wrapper form__submit-wrapper--mt40">
-                                  <button class="form__button button">Отправить</button>
-                                  <button class="form__cancel-button button button--primitive">Отменить</button>
+                                  <button class="form__button button button--chameleon" type="submit">Отправить</button>
+                                  <button class="good-reviews__cancel form__cancel-button button button--primitive" type="button">Отменить</button>
                                 </div>
                               </form>
                             </div>
                           </div>
-                          <!-- <div class="good-reviews__button-wrapper">
+                          <div class="good-reviews__button-wrapper">
                             <a class="good-reviews__button button button--chameleon" href="#!">Оставить отзыв</a>
-                          </div> -->
+                          </div>
                           <ul class="good-reviews__list">
                             <li class="good-reviews__item good-review">
-                              <div class="good-review__avatar">
-                                <div class="good-review__avatar-default" aria-hidden="true">И</div>
+                              <div class="good-review__inner">
+                                <div class="good-review__avatar">
+                                  <div class="good-review__avatar-default" aria-hidden="true">И</div>
+                                </div>
+                                <div class="good-review__content">
+                                  <p class="good-review__rating evaluation evaluation--5">
+                                    <span class="visually-hidden">Оценка: <span class="evaluation__value">5</span></span>
+                                  </p>
+                                  <blockquote class="good-review__comment">
+                                    <p class="good-review__heading">Плитка отличная</p>
+                                    <p class="good-review__text">Плитка хорошего качества. Работать с ней комфортно, ложится легко и ровно, да и результат получился очень даже презентабельным</p>
+                                  </blockquote>
+                                  <p class="good-review__author">Ирина</p>
+                                </div>
                               </div>
-                              <div class="good-review__content">
-                                <p class="good-review__rating evaluation evaluation--5">
-                                  <span class="visually-hidden">Оценка: <span class="evaluation__value">5</span></span>
-                                </p>
-                                <blockquote class="good-review__comment">
-                                  <p class="good-review__heading">Плитка отличная</p>
-                                  <p class="good-review__text">Плитка хорошего качества. Работать с ней комфортно, ложится легко и ровно, да и результат получился очень даже презентабельным</p>
-                                </blockquote>
-                                <p class="good-review__author">Ирина</p>
+                            </li>
+                            <li class="good-reviews__item good-review">
+                              <div class="good-review__inner">
+                                <div class="good-review__avatar">
+                                  <div class="good-review__avatar-default" aria-hidden="true">Д</div>
+                                </div>
+                                <div class="good-review__content">
+                                  <blockquote class="good-review__comment">
+                                    <p class="good-review__heading">Отзыв без звёзд</p>
+                                    <p class="good-review__text">Если не выбрали ни одну звезду, вообще не выводим их</p>
+                                  </blockquote>
+                                  <p class="good-review__author">Дмитрий Designer</p>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="good-reviews__item good-review">
+                              <div class="good-review__inner">
+                                <div class="good-review__avatar">
+                                  <div class="good-review__avatar-default" aria-hidden="true">В</div>
+                                  <img class="good-review__avatar-image" src="https://assets.htmlacademy.ru/previews/698/20211009_11c51e8b-150.jpg" alt="Аватарка">
+                                </div>
+                                <div class="good-review__content">
+                                  <p class="good-review__rating evaluation evaluation--4">
+                                    <span class="visually-hidden">Оценка: <span class="evaluation__value">4</span></span>
+                                  </p>
+                                  <blockquote class="good-review__comment">
+                                    <p class="good-review__heading">Аватарки пользователей</p>
+                                    <p class="good-review__text">Также добавил стили для аватарок (при их наличии)</p>
+                                  </blockquote>
+                                  <p class="good-review__author">Верстальщик</p>
+                                </div>
                               </div>
                             </li>
                           </ul>
@@ -1421,7 +1455,7 @@
                 </label>
               </div>
               <div class="quick-order__submit-wrapper">
-                <button class="quick-order__submit button-3 button-3--primary">Заказать</button>
+                <button class="quick-order__submit button-3 button-3--primary" type="submit">Заказать</button>
               </div>
             </form>
           </div>

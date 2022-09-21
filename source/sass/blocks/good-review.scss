@@ -1,10 +1,17 @@
 .good-review {
+  padding: 40px 0 32px;
+  border-top: 1px solid $reviews-list-border-color;
+  border-bottom: 1px solid $reviews-list-border-color;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.good-review__inner {
   display: grid;
+  max-width: 640px;
   grid-template-columns: auto 1fr;
   column-gap: 28px;
   align-items: start;
-  font-size: 14px;
-  line-height: 22px;
 }
 
 .good-review__avatar {

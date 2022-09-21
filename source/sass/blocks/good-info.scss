@@ -139,7 +139,7 @@
 }
 
 .good-info__description {
-  margin: 40px 0 0;
+  margin: 12px 0 0;
 
   @media #{$laptop-desktop} {
     display: grid;
@@ -197,7 +197,7 @@
 }
 
 .good-info__characteristics {
-  margin: 30px 0 0;
+  margin: 2px 0 0;
   font-size: 14px;
   line-height: 20px;
 
@@ -257,7 +257,7 @@
 }
 
 .good-info__payment {
-  margin: 40px 0 0;
+  margin: 12px 0 0;
 
   @media #{$tablet-desktop} {
     font-size: 16px;
@@ -304,7 +304,7 @@
 }
 
 .good-info__reviews {
-  margin: 40px 0 0;
+  margin: 12px 0 0;
 }
 
 .good-info__wrapper {

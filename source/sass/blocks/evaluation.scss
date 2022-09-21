@@ -1,30 +1,43 @@
 .evaluation {
   display: grid;
+  grid-template-areas:
+    "icon";
+}
+
+.evaluation::before {
+  content: "";
+  grid-area: icon;
+  height: 19px;
+  width: 99px;
+  background-image: url("../img/icons/evaluation-star.svg");
+  background-repeat: space no-repeat;
 }
 
 .evaluation::after {
   content: "";
+  grid-area: icon;
+  width: 0;
   height: 19px;
   background-image: url("../img/icons/evaluation-star-active.svg");
   background-repeat: space no-repeat;
 }
 
-.evaluation--1 {
+.evaluation--1::after {
   width: 19px;
 }
 
-.evaluation--2 {
+.evaluation--2::after {
   width: 39px;
 }
 
-.evaluation--3 {
+.evaluation--3::after {
   width: 59px;
 }
 
-.evaluation--4 {
+.evaluation--4::after {
   width: 79px;
 }
 
-.evaluation--5 {
+.evaluation--5::after {
   width: 99px;
 }
