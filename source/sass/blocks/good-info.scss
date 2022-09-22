@@ -21,11 +21,17 @@
 }
 
 .good-info__tab-buttons-wrapper {
+  padding: 0 10px 0 0;
   border-top: 1px solid $good-info-border-color;
   margin: 0 0 21px 0;
 
+  @media #{$tablet-desktop} {
+    padding-right: 15px;
+  }
+
   @media #{$laptop-desktop} {
-    margin-bottom: 28px; // 41
+    padding-right: 0;
+    margin-bottom: 28px;
     margin-left: 0;
   }
 }

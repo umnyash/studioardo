@@ -136,11 +136,21 @@ if (clipboxes) {
   let windowWidth = window.innerWidth;
 
   const setClipboxMode = (clipbox) => {
-    clipbox.classList.remove('clipbox--reduced');
-    clipbox.classList.remove('clipbox--expanded');
+    const content = clipbox.querySelector('.clipbox__content');
 
-    if (clipbox.offsetHeight > parseInt(getComputedStyle(clipbox).getPropertyValue('--max-height'), 10)) {
-      clipbox.classList.add('clipbox--reduced');
+    if (clipbox.classList.contains('clipbox--expanded')) {
+      if (content.offsetHeight <= parseInt(getComputedStyle(clipbox).getPropertyValue('--max-height'), 10)) {
+        clipbox.classList.remove('clipbox--expanded');
+      }
+    } else if (clipbox.classList.contains('clipbox--reduced')) {
+      clipbox.classList.remove('clipbox--reduced');
+      if (content.offsetHeight > parseInt(getComputedStyle(clipbox).getPropertyValue('--max-height'), 10)) {
+        clipbox.classList.add('clipbox--reduced');
+      }
+    } else {
+      if (content.offsetHeight > parseInt(getComputedStyle(clipbox).getPropertyValue('--max-height'), 10)) {
+        clipbox.classList.add('clipbox--reduced');
+      }
     }
   };
 
@@ -150,16 +160,19 @@ if (clipboxes) {
       clipbox.classList.toggle('clipbox--expanded');
     });
 
-    window.addEventListener('resize', () => {
-      if (windowWidth === window.innerWidth) {
-        return;
-      }
+    setClipboxMode(clipbox);
+  });
 
-      windowWidth = window.innerWidth;
+  window.addEventListener('resize', () => {
+    if (windowWidth === window.innerWidth) {
+      return;
+    }
+
+    windowWidth = window.innerWidth;
+
+    clipboxes.forEach((clipbox) => {
       setClipboxMode(clipbox);
     });
-
-    setClipboxMode(clipbox);
   });
 }
 
