@@ -34,3 +34,11 @@
 .good-reviews__item + .good-reviews__item {
   margin-top: -1px;
 }
+
+.good-reviews__pagination {
+  margin: 40px 0 0;
+
+  @media #{$tablet-desktop} {
+    margin-top: 60px;
+  }
+}
