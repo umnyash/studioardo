@@ -1,0 +1,16 @@
+.pagination--alter {
+  background-color: transparent;
+}
+
+.pagination--alter ul {
+  justify-content: start;
+}
+
+.pagination--alter ul li a:hover {
+  color: $special-color;
+}
+
+.pagination--alter ul li.current a {
+  background-color: $special-color;
+  color: $text-color-secondary;
+}

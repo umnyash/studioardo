@@ -36,9 +36,5 @@
 }
 
 .good-reviews__pagination {
-  margin: 40px 0 0;
-
-  @media #{$tablet-desktop} {
-    margin-top: 60px;
-  }
+  margin: 10px 0 0;
 }

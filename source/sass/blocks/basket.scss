@@ -1,3 +1,7 @@
-.basket__final-sum {
-  text-align: right;
+.basket__sum {
+  justify-content: start;
+}
+
+.basket__final-sum .price__discount {
+  margin: 0;
 }
