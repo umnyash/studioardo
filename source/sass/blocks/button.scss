@@ -103,15 +103,15 @@
 
 .button--chameleon {
   &:hover {
-    border-color: $secondary-button-color;
+    border-color: $button-chamelion-color;
     color: $text-color-secondary;
-    background-color: $secondary-button-color;
+    background-color: $button-chamelion-color;
   }
 
   &:active {
-    border-color: $secondary-button-color;
+    border-color: $button-chamelion-color;
     color: $text-color-secondary;
-    background-color: $secondary-button-color;
+    background-color: $button-chamelion-color;
     opacity: 0.8;
   }
 }

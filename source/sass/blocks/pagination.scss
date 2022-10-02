@@ -7,10 +7,10 @@
 }
 
 .pagination--alter ul li a:hover {
-  color: $special-color;
+  color: $pagination-alter-color;
 }
 
 .pagination--alter ul li.current a {
-  background-color: $special-color;
+  background-color: $pagination-alter-color;
   color: $text-color-secondary;
 }
