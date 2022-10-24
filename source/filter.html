@@ -26,6 +26,7 @@
     </style>
   </head>
   <body class="page-body">
+    <div class="preloader preloader--mobile-only"></div>
     <main>
       <div class="filter-page">
         <div class="filter-page__container">
@@ -14022,8 +14023,11 @@
     </main>
     <!-- Скрипт для демонстрации лоадера -->
     <script>
+      const preloader = document.querySelector('.preloader');
+
       document.querySelector('.c-filter__btn--submit').addEventListener('click', (evt) => {
         evt.target.classList.toggle('loader');
+        preloader.classList.toggle('preloader--active');
       })
     </script>
 
