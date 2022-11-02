@@ -344,37 +344,7 @@
 }
 
 .good-card__vendor-code-button {
-  position: relative;
   vertical-align: middle;
-  display: inline-block;
-  width: 13px;
-  height: 17px;
-  padding: 0;
-  border: none;
-  background-color: transparent;
-  background-image: url("../img/icons/vendor-code-icon.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  transform: translate(2px, -2px);
-  cursor: pointer;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: -8px;
-    right: -10px;
-    bottom: -8px;
-    left: -10px;
-  }
-
-  &:hover {
-    opacity: 0.8;
-  }
-
-  &:active {
-    opacity: 0.6;
-  }
 }
 
 .good-card__note {

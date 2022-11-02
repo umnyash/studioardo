@@ -655,60 +655,45 @@
         </div>
       </div>
 
-      <div class="popup popup--simple popup--report-competitor">
+      <div class="popup popup--simple-2 popup--report-competitor">
         <div class="popup__inner ">
           <button class="popup__close" type="button">
             <span class="visually-hidden">Закрыть.</span>
           </button>
-          <div class="popup__content custom-form">
+          <div class="popup__content custom-form-2">
             <div class="form">
               <div class="form__header">
-                <h2 class="form__heading">Нашли товар дешевле?<br> Сообщите нам</h2>
+                <h2 class="form__heading">Нашли товар дешевле?<br> Получите скидку</h2>
                 <p>Пришлите ссылку на&nbsp;аналогичный товар в&nbsp;другом магазине и&nbsp;получите лучшее предложение!</p>
               </div>
               <form class="form__body" action="#!" method="post" enctype="multipart/form-data">
                 <div class="form__textfield-wrapper">
-                  <label class="form__textfield-label form__textfield-label--required">
-                    <span class="visually-hidden">Ваше имя. Обязательно к заполнению.</span>
-                    <span class="form__textfield">
-                      <input class="form__textfield-control" name="name" type="text" placeholder="Ваше имя">
-                    </span>
-                  </label>
-                </div>
-                <div class="form__textfield-wrapper">
-                  <label class="form__textfield-label form__textfield-label--required">
-                    <span class="visually-hidden">Номер вашего телефона. Обязательно к заполнению.</span>
-                    <span class="form__textfield">
-                      <input class="form__textfield-control" name="tel" type="tel" placeholder="Телефон">
-                    </span>
-                  </label>
-                </div>
-                <div class="form__textfield-wrapper">
-                  <label class="form__textfield-label form__textfield-label--required">
-                    <span class="visually-hidden">Ссылка на товар. Обязательно к заполнению.</span>
-                    <span class="form__textfield">
-                      <input class="form__textfield-control" name="link" type="url" placeholder="Ссылка на товар https://">
+                  <label class="form__textfield-label">
+                    <span class="form__textfield form__textfield--error">
+                      <input class="form__textfield-control" name="tel" type="tel" value="Samsung Galaxy" placeholder="+7 (912) 345-67-89">
+                      <span class="form__textfield-label-text">Телефон</span>
                     </span>
                   </label>
                 </div>
                 <div class="form__textfield-wrapper">
                   <label class="form__textfield-label">
-                    <span class="visually-hidden">Ваш Email.</span>
-                    <span class="form__textfield">
-                      <input class="form__textfield-control" name="email" type="email" placeholder="Email">
+                    <span class="form__textfield form__textfield--valid">
+                      <input class="form__textfield-control" name="link" type="url" value="www.petrovich.ru/plitka-futura" placeholder="www.domain.ru">
+                      <span class="form__textfield-label-text">Ссылка на товар</span>
                     </span>
                   </label>
                 </div>
                 <div class="form__file-field-wrapper">
-                  <label class="form__file-field-label">
-                    <span class=form__file-field-label-text>Добавить скриншот экрана товара</span>
-                    <span class="form__file-field">
+                  <p class=form__file-field-description>Если у вас нет ссылки, то можете приложить фото</p>
+                  <span>
+                    <label class="form__file-field">
+                      <span class="form__file-field-button">Загрузить файл</span>
                       <input class="form__file-field-control" name="screenshot" type="file" accept="image/png, image/jpg, image/jpeg, image/webp">
-                    </span>
-                  </label>
+                    </label>
+                  </span>
                 </div>
                 <div class="form__submit-wrapper">
-                  <button class="form__button form__button--wide button button--secondary button--alter-2 button--with-shadow" type="submit">Отправить</button>
+                  <button class="form__button form__button--wide button button--secondary button--alter-2" type="submit">Получить лучшее предложение</button>
                 </div>
                 <div class="form__consent-wrapper">
                   <label class="form__checkbox-label">
@@ -726,44 +711,63 @@
         </div>
       </div>
 
-      <div class="popup popup--simple popup--order-sample">
+      <div class="popup popup--simple-2 popup--order-sample">
         <div class="popup__inner ">
           <button class="popup__close" type="button">
             <span class="visually-hidden">Закрыть.</span>
           </button>
-          <div class="popup__content custom-form">
+          <div class="popup__content custom-form-2">
             <div class="form">
               <div class="form__header">
                 <h2 class="form__heading">Заказать образец</h2>
-                <p>Чтобы сохранить избранные товары, укажите свой e-mail, и&nbsp;мы пришлём список Вам на&nbsp;почту.</p>
               </div>
               <form class="form__body" action="#!" method="post">
+                <article class="form__sample sample">
+                  <header class="sample__header">
+                    <h3 class="sample__heading">Керамогранит Caesar Anima Futura Golden White 60x120 Luc</h3>
+                    <picture class="sample__image-wrapper">
+                      <img class="sample__image" src="img/sample.jpg" width="114" height="160" alt="Фото образца">
+                    </picture>
+                  </header>
+                  <dl class="sample__characteristics">
+                    <dt class="visually-hidden">Страна:</dt>
+                    <dd class="sample__characteristics-value">
+                      <p class="sample__characteristics-country">Испания <img class="sample__characteristics-flag" src="img/flag-spain.svg" width="20" height="15" alt="Флаг Испании"></p>
+                    </dd>
+                    <dt class="visually-hidden">Цвет:</dt>
+                    <dd class="sample__characteristics-value">Бежевый</dd>
+                    <dt class="visually-hidden">Размер:</dt>
+                    <dd class="sample__characteristics-value">40х120</dd>
+                    <dt class="visually-hidden">Поверхность:</dt>
+                    <dd class="sample__characteristics-value">Полированный</dd>
+                  </dl>
+                  <p class="sample__accent-text">Образец</p>
+                  <p class="sample__code">Код: <span>#454entg</span>
+                    <button class="sample__code-button copy-button" type="button" title="Скопировать">
+                      <span class="visually-hidden">Скопировать артикул</span>
+                    </button>
+                  </p>
+                </article>
                 <div class="form__textfield-wrapper">
                   <label class="form__textfield-label">
-                    <span class="visually-hidden">Номер вашего телефона.</span>
                     <span class="form__textfield">
-                      <input class="form__textfield-control" name="tel" type="tel" placeholder="Номер телефона">
+                      <input class="form__textfield-control" name="tel" type="tel" placeholder="+7 (912) 345-67-89">
+                      <span class="form__textfield-label-text">Телефон</span>
                     </span>
                   </label>
                 </div>
-                <div class="form__textfield-wrapper">
-                  <label class="form__textfield-label">
-                    <span class="visually-hidden">Ваш Email.</span>
-                    <span class="form__textfield">
-                      <input class="form__textfield-control" name="email" type="email" placeholder="Укажите ваш Email">
+                <div class="form__submit-wrapper form__submit-wrapper--mt20 form__submit-wrapper--mb20">
+                  <button class="form__button form__button--wide button button--secondary button--alter-2" type="submit">Заказать</button>
+                </div>
+                <div class="form__consent-wrapper form__consent-wrapper--mt20">
+                  <label class="form__checkbox-label">
+                    <input class="form__checkbox-control form__checkbox-control--secondary visually-hidden" name="consent" type="checkbox" checked>
+                    <span class="form__checkbox-label-text">
+                      <span>
+                        Согласие с <a class="form__link" href="!#" target="_blank">политикой обработки данных</a>
+                      </span>
                     </span>
                   </label>
-                </div>
-                <div class="form__textfield-wrapper">
-                  <label class="form__textfield-label">
-                    <span class="visually-hidden">Артикул образца.</span>
-                    <span class="form__textfield">
-                      <input class="form__textfield-control" name="article-number" type="text" placeholder="Артикул образца">
-                    </span>
-                  </label>
-                </div>
-                <div class="form__submit-wrapper">
-                  <button class="form__button form__button--wide button button--secondary button--alter-2 button--with-shadow" type="submit">Заказать</button>
                 </div>
               </form>
             </div>

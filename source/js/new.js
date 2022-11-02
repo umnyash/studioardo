@@ -432,3 +432,11 @@ document.addEventListener("DOMContentLoaded", () => {
     $("body").addClass("opened-modal");
   }
 });
+
+const fileUploadControl = document.querySelector('.form__file-field-control');
+
+if (fileUploadControl) {
+  fileUploadControl.addEventListener('change', () => {
+    fileUploadControl.classList.toggle('form__file-field-control--shown', fileUploadControl.files[0]);
+  });
+}
