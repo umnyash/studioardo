@@ -2,6 +2,7 @@
 
 @import "global/fonts.scss";
 @import "global/variables.scss";
+@import "global/global.scss";
 @import "global/filter-fix.scss";
 
 // Blocks
@@ -53,4 +54,22 @@
 @import "blocks/sample.scss";
 @import "blocks/copy-button.scss";
 @import "blocks/modal-btns.scss";
+
+@import "blocks/cat-menu.scss";
+@import "blocks/m-news2.scss";
+@import "blocks/gallery.scss";
+@import "blocks/manuf.scss";
+@import "blocks/about.scss";
+@import "blocks/m-news.scss";
+@import "blocks/page.scss";
+@import "blocks/brand.scss";
+@import "blocks/brand-collections.scss";
+@import "blocks/brand-similar.scss";
+@import "blocks/brand-gallery.scss";
+@import "blocks/contacts.scss";
+@import "blocks/location.scss";
+@import "blocks/vacancy.scss";
+@import "blocks/location-coop.scss";
+@import "blocks/promo.scss";
+
 @import "helpers/center.scss";
