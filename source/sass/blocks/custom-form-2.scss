@@ -197,12 +197,31 @@
   }
 
   .form__file-field-description {
+    display:flex;
     order: 2;
     width: 200px;
     margin: 0;
     font-size: 12px;
     line-height: 17px;
     color: $custom-form-weak-text-color;
+  }
+
+  .form__file-field-description-delete {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    background-image: url(../img/icons/popup-close.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 3px 5px 3px 0;
+    opacity: 0.8;
+    cursor:pointer;
+  }
+
+  .form__file-field-description-delete:hover {
+    opacity: 0.6;
   }
 
   .form__file-field-button {
@@ -286,6 +305,12 @@
 
   .form__button {
     min-width: 220px;
+  }
+
+  .form__button[disabled] {
+    color: #d2d5db;
+    background: #6c7589;
+    cursor: not-allowed;
   }
 
   .form__button--wide {
