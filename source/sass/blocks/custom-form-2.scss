@@ -861,21 +861,18 @@
     position: relative;
   }
 
-  // .form__section-transportation-info {
-  //   position: relative;
-  //   display: inline;
+  .form__section-link--transportation {
+    position: relative;
 
-  //   &::before {
-  //     content: "";
-  //     position: absolute;
-  //     top: -15px;
-  //     right: -10px;
-  //     bottom: -10px;
-  //     left: 0;
-  //     background-color: red;
-  //     opacity: 0.4;
-  //   }
-  // }
+    &::before {
+      content: "";
+      position: absolute;
+      top: -15px;
+      right: -10px;
+      bottom: -10px;
+      left: 0;
+    }
+  }
 
   .form__section-transportation-table-wrapper {
     position: absolute;
@@ -897,6 +894,7 @@
     }
   }
 
+  .form__section-transportation-table-wrapper:hover,
   .form__section-link--transportation:hover ~ .form__section-transportation-table-wrapper {
     display: block;
   }
