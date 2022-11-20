@@ -60,3 +60,39 @@
     line-height: 28px;
   }
 }
+
+.number-field__button--alter {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  background-color: $number-field-button-alter-background-color;
+  background-position: center;
+
+  @media #{$cart-tablet} {
+    background-color: transparent;
+  }
+}
+
+.number-field__button--alter.number-field__button--minus {
+  background-size: 16px 17px;
+}
+
+.number-field--alter-2 {
+  padding-right: 4px;
+}
+
+// .number-field__button--alter::before {
+//   background-color: $number-field-button-alter-background-color;
+// }
+
+// .number-field__button--alter.number-field__button--plus::before {
+//   background-image: url("../img/icons/button-plus-icon.svg");
+//   background-repeat: no-repeat;
+//   background-position: center;
+// }
+
+// .number-field__button--alter.number-field__button--minus::before {
+//   background-image: url("../img/icons/button-minus-icon.svg");
+//   background-repeat: no-repeat;
+//   background-position: center;
+// }

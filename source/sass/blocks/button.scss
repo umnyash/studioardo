@@ -10,6 +10,7 @@
   font-family: $basic-font-family;
   font-size: 14px;
   line-height: 18px;
+  text-decoration: none;
   color: inherit;
   background-color: transparent;
   cursor: pointer;
@@ -40,6 +41,10 @@
   padding: 3px 10px;
 }
 
+.button--simplest {
+  border: none;
+}
+
 .button--primary {
   border-color: $primary-button-color;
   color: $text-color-secondary;
@@ -54,6 +59,12 @@
   &:hover {
     color: $text-color-secondary;
   }
+}
+
+.button--tertiary {
+  border-color: $tertiary-button-color;
+  color: $text-color-secondary;
+  background-color: $tertiary-button-color;
 }
 
 .button--with-icon {
@@ -101,6 +112,15 @@
   line-height: 18px;
 }
 
+.button--secret {
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px dotted $weak-text-color;
+  border-radius: 10px;
+  text-align: left;
+  color: $weak-text-color;
+}
+
 .button--chameleon {
   &:hover {
     border-color: $button-chamelion-color;
@@ -114,4 +134,8 @@
     background-color: $button-chamelion-color;
     opacity: 0.8;
   }
+}
+
+.button--fw600 {
+  font-weight: 600;
 }

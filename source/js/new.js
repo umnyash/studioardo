@@ -440,3 +440,53 @@ if (fileUploadControl) {
     fileUploadControl.classList.toggle('form__file-field-control--shown', fileUploadControl.files[0]);
   });
 }
+
+const customForm2Elements = document.querySelectorAll('.custom-form-2');
+
+if (customForm2Elements) {
+  const toggleAccordionView = (evt) => {
+    const accordionButton = evt.target.closest('.form__section-heading-button');
+
+    if(!accordionButton) {
+      return;
+    }
+
+    const accordion = accordionButton.closest('.form__section');
+    accordion.classList.toggle('form__section--open');
+  };
+
+  customForm2Elements.forEach((form) => {
+    form.addEventListener('click', toggleAccordionView);
+  });
+}
+
+const promocodeElement = document.querySelector('.custom-form-2--order .form__promocode');
+const promocodeCancelButton = promocodeElement.querySelector('.promocode__cancel-button');
+const promocodeShowButton1 = document.querySelector('.custom-form-2--order .form__footer-promo-button');
+const promocodeShowButton2 = document.querySelector('.custom-form-2--order .form__promocode-button');
+
+if (promocodeElement && promocodeShowButton1 && promocodeShowButton2) {
+  promocodeShowButton1.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    promocodeShowButton1.classList.add('form__footer-promo-button--hidden');
+    promocodeShowButton2.classList.add('form__promocode-button--hidden');
+    promocodeElement.classList.add('form__promocode--show');
+  });
+}
+
+if (promocodeElement && promocodeShowButton1 && promocodeShowButton2) {
+  promocodeShowButton2.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    promocodeShowButton1.classList.add('form__footer-promo-button--hidden');
+    promocodeShowButton2.classList.add('form__promocode-button--hidden');
+    promocodeElement.classList.add('form__promocode--show');
+  });
+}
+
+if (promocodeElement && promocodeCancelButton && promocodeShowButton1 && promocodeShowButton2) {
+  promocodeCancelButton.addEventListener('click', () => {
+    promocodeShowButton1.classList.remove('form__footer-promo-button--hidden');
+    promocodeShowButton2.classList.remove('form__promocode-button--hidden');
+    promocodeElement.classList.remove('form__promocode--show');
+  });
+}

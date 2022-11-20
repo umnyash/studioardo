@@ -26,7 +26,7 @@ const html = () => {
 
 const styles = () => {
   return gulp.src('source/sass/style.scss')
-    .pipe(plumber())
+    // .pipe(plumber())
     .pipe(sourcemap.init())
     .pipe(sass())
     .pipe(postcss([
@@ -45,7 +45,7 @@ exports.styles = styles;
 
 const styles2 = () => {
   return gulp.src('source/sass/style.scss')
-    .pipe(plumber())
+    // .pipe(plumber())
     .pipe(sourcemap.init())
     .pipe(sass())
     .pipe(postcss([

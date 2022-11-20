@@ -52,9 +52,10 @@
   display: block;
   width: 16px;
   height: 16px;
-  background-image: url("../img/icons/note-icon.svg");
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: $special-color;
+  mask-image: url("../img/icons/note-icon.svg");
+  mask-repeat: no-repeat;
+  mask-position: center;
 
   @media #{$widemobile-desktop} {
     position: absolute;
@@ -118,5 +119,23 @@
 
   @media #{$laptop-desktop} {
     padding: 5px 10px 6px 32px;
+  }
+}
+
+.note--simple {
+  padding: 0 0 0 20px;
+  border: none;
+
+  .note__accent {
+    font-size: 12px;
+    line-height: 13px;
+    font-weight: 400;
+    color: $weak-text-color;
+  }
+
+  .note__accent::before {
+    top: -2px;
+    left: 0;
+    background-color: $weak-text-color;
   }
 }

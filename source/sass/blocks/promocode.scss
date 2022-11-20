@@ -1,0 +1,24 @@
+.promocode__body {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: stretch;
+  row-gap: 8px;
+  column-gap: 10px;
+}
+
+.promocode__body .form__textfield-wrapper {
+  margin-bottom: 0;
+}
+
+.promocode__body .form__textfield-control {
+  padding-top: 23px;
+  padding-bottom: 3px;
+}
+
+.promocode__submit {
+  min-width: 107px;
+}
+
+.promocode__cancel-button {
+  grid-column: 1 / -1;
+}

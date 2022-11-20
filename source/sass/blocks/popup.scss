@@ -17,7 +17,6 @@
 }
 
 .popup__inner {
-  position: relative;
   max-width: 400px;
   border-radius: 10px;
   background-color: $background-color;
@@ -28,6 +27,10 @@
     max-width: none;
     border-radius: 0;
   }
+}
+
+.popup .popup__inner {
+  position: relative;
 }
 
 .popup__close {

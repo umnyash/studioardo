@@ -8,6 +8,7 @@
   font-size: 13px;
   line-height: 18px;
   text-transform: uppercase;
+  color: $basic-text-color;
   cursor: pointer;
 }
 
@@ -41,6 +42,30 @@
   .radiobutton__label-extra {
     @media #{$mobile-tablet} {
       display: none;
+    }
+  }
+}
+
+.radiobutton--alter-2 {
+  .radiobutton__label {
+    text-transform: lowercase;
+  }
+
+  .radiobutton__control + .radiobutton__label {
+    padding: 2px 8px;
+  }
+
+  .radiobutton__control:checked + .radiobutton__label {
+    border-color: $radiobutton-active-color;
+    color: $basic-text-color;
+    background-color: transparent;
+  }
+
+  @media #{$cart-tablet} {
+    .radiobutton__control + .radiobutton__label {
+      padding: 1px 11px 3px;
+      font-size: 13px;
+      line-height: 1;
     }
   }
 }

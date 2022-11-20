@@ -11,6 +11,10 @@ $laptop: "(min-width: 1280px) and (max-width: 1509px)";
 $laptop-desktop: "(min-width: 1280px)";
 $desktop: "(min-width: 1510px)";
 
+$cart-tablet: "(min-width: 900px)";
+$cart-desktop: "(min-width: 1440px)";
+$cart-only-tablet: "(max-width: 1439px)";
+
 // Fonts
 
 $basic-font-family: "Roboto", "Arial", sans-serif;
@@ -32,6 +36,7 @@ $mini-card-total-price-border-color: #c8c8c8;
 $button-border-color: #c8c8c8;
 $primary-button-color: #d92547;
 $secondary-button-color: #42bd98;
+$tertiary-button-color: #808080;
 $share-button-icon-color: #333333;
 $share-button-border-color: #c8c8c8;
 $share-button-hover-color: #42bd98;
@@ -87,6 +92,14 @@ $custom-form-2-heading-background-color: #fafafa;
 $custom-form-2-textfield-background-secondary-color: #fafafa;
 $custom-form-2-file-field-background-color: #f2f2f2;
 $sample-accent-text-border-color: #ebebeb;
+$n-cart-form-wrapper-background-color: #f4f4f4;
+$custom-form-2-radiobutton-color: #c8c8c8;
+$order-card-new-price-color: #c5072b;
+$number-field-button-alter-background-color: #f3f3f3;
+$goods-quantity-alter-3-border-color: #c8c8c8;
+$order-good-list-item-border-color: #c8c8c8;
+$like-button-alter-color: #c8c8c8;
+$form-order-footer-total-border-color: #e4e4e4;
 
 // Times
 

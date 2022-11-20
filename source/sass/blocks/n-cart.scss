@@ -1,0 +1,20 @@
+.n-cart {
+
+}
+
+.n-cart__form-wrapper {
+  padding: 16px 0 0;
+  background-color: $n-cart-form-wrapper-background-color;
+}
+
+.n-cart__form-wrapper-center {
+  @media #{$tablet-desktop} {
+    padding: 0 15px;
+  }
+
+  @media #{$cart-desktop} {
+    width: 1420px;
+    padding: 0 40px;
+    margin: 0 auto;
+  }
+}
