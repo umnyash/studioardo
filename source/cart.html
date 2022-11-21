@@ -11,27 +11,52 @@
     <link href="css/style.min.css" rel="stylesheet">
     <link href="css/custom.min.css" rel="stylesheet">
     <link href="css/new.css" rel="stylesheet"> <!-- Новые стили -->
-    <title>Доставка</title>
+    <title>Корзина</title>
     <meta name="format-detection" content="telephone=no"/>
     <meta name="format-detection" content="address=no"/>
   </head>
   <body class="page-body">
-    <main>
-      <div class="n-cart">
-        <div class="n-cart__header">
-          <div class="n-cart__header-top">
-            <div class="n-cart__header-inner">
-
-            </div>
+    <header class="cart-header">
+      <div class="cart-header__top">
+        <div class="cart-header__top-inner">
+          <a class="cart-header__logo logotype" href="#!">
+            <img class="logotype__img" src="img/logo.svg" width="127" height="40" alt="Логотип ARDO studio">
+          </a>
+          <a class="cart-header__tel" href="tel:+74996889385">8 (499) 688-93-85</a>
+          <a class="cart-header__email" href="mailto:zakaz@ardostudio.ru" target="_blank">zakaz@ardostudio.ru</a>
+          <div class="cart-header__socials">
+            <p class="cart-header__socials-text">Помощь в чате</p>
+            <ul class="cart-header__socials-list socials socials--simple">
+              <li class="socials__item">
+                <a class="socials__link" href="#!">
+                  <img src="img/icons/whatsapp-icon.png" alt="WhatsApp">
+                </a>
+              </li>
+              <li class="socials__item">
+                <a class="socials__link" href="#!">
+                  <img src="img/icons/telegram-icon.svg" alt="Telegram">
+                </a>
+              </li>
+            </ul>
           </div>
-          <div class="n-cart__header-bottom">
-            <div class="n-cart__header-inner">
-              <h1>Оформление заказа</h1>
-            </div>
-          </div>
+          <a class="cart-header__top-inner-return return return--adaptive" href="#!">
+            <span class="return__text">Вернуться к покупкам</span>
+          </a>
         </div>
-        <div class="n-cart__form-wrapper">
-          <div class="n-cart__form-wrapper-center">
+      </div>
+      <div class="cart-header__bottom">
+        <div class="cart-header__bottom-inner">
+          <a class="cart-header__bottom-inner-return return" href="#!">
+            <span class="visually-hidden">Вернуться к покупкам</span>
+          </a>
+          <h1 class="cart-header__heading heading">Оформление заказа</h1>
+        </div>
+      </div>
+    </header>
+    <main class="page-body__main">
+      <div class="n-cart">
+        <div class="n-cart__inner">
+          <div class="n-cart__form-wrapper">
             <div class="custom-form-2 custom-form-2--order">
               <div class="form">
                 <form class="form__body" action="#!" method="post">
@@ -77,8 +102,9 @@
                                 <dt class="visually-hidden">Код:</dt>
                                 <dd class="order-good-card__characteristics-value">Код: #454entg
                                   <button class="order-good-card__vendor-code-button copy-button" type="button" title="Скопировать">
-                                  <span class="visually-hidden">Скопировать артикул</span>
-                                </button></dd>
+                                    <span class="visually-hidden">Скопировать артикул</span>
+                                  </button>
+                                </dd>
                                 <dt class="visually-hidden">Количество:</dt>
                                 <dd class="order-good-card__characteristics-value">0.99м2 = 9шт = 1упак</dd>
                               </dl>
@@ -459,6 +485,14 @@
         </div>
       </div>
     </main>
+    <div class="page-body__notification">
+      <div class="notification notification--success">
+        <p class="notification__text">Заказ успешно отправлен</p>
+        <button class="notification__close" type="button">
+          <span class="visually-hidden">Закрыть уведомление</span>
+        </button>
+      </div>
+    </div>
 
     <script src="js/swiper.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script> <!-- Новый скрипт -->

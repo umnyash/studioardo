@@ -41,3 +41,36 @@
     max-height: 36px;
   }
 }
+
+.socials--simple {
+  .socials__item {
+    margin: 0 0 0 5px;
+  }
+
+  .socials__link {
+    width: 21px;
+    height: 21px;
+    border: none;
+  }
+
+  .socials__link * {
+    max-width: 21px;
+    max-height: 21px;
+  }
+
+  @media #{$laptop-desktop} {
+    .socials__item {
+      margin-left: 8px;
+    }
+
+    .socials__link {
+      width: 30px;
+      height: 30px;
+    }
+
+    .socials__link * {
+      max-width: 30px;
+      max-height: 30px;
+    }
+  }
+}

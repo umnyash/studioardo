@@ -1,0 +1,21 @@
+.labels {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-family: $basic-font-family;
+  font-size: 12;
+  line-height: 14px;
+  font-weight: 700;
+}
+
+.labels__item {
+  padding: 4px 6px 2px;
+  border-radius: 3px;
+  font-size: 12;
+  line-height: 14px;
+  font-weight: 700;
+  color: $text-color-secondary;
+  background-color: red;
+  margin: 0 4px 0 0;
+}
+

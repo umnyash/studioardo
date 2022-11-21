@@ -452,7 +452,7 @@
   .form__section-heading {
     display: block;
     box-sizing: border-box;
-    margin: 0 0 15px;
+    margin: 0 0 7px;
     text-align: left;
     font-family: $accent-font-family;
     font-size: 16px;
@@ -683,7 +683,7 @@
 
     @media #{$cart-desktop} {
       grid-template-columns: 860px 400px;
-      padding-bottom: 200px;
+      // padding-bottom: 200px;
       column-gap: 80px;
     }
   }
@@ -700,8 +700,12 @@
     }
   }
 
+  .form__section-header-note {
+    margin: 0;
+  }
+
   .form__actions {
-    margin-top: 90px;
+    margin-top: 100px;
 
     @media #{$cart-desktop} {
       margin-top: 0;

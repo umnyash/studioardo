@@ -69,3 +69,19 @@
     }
   }
 }
+
+.radiobutton--alter-2 {
+  .radiobutton__label {
+    text-transform: lowercase;
+  }
+
+  .radiobutton__control + .radiobutton__label {
+    padding: 2px 8px;
+  }
+
+  .radiobutton__control:checked + .radiobutton__label {
+    border-color: $radiobutton-active-color;
+    color: $basic-text-color;
+    background-color: transparent;
+  }
+}

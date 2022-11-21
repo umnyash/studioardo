@@ -461,7 +461,8 @@ if (customForm2Elements) {
 }
 
 const promocodeElement = document.querySelector('.custom-form-2--order .form__promocode');
-const promocodeCancelButton = promocodeElement.querySelector('.promocode__cancel-button');
+const promocodeCancelButton = document.querySelector('.promocode__cancel-button');
+const promocodeInput = document.querySelector('.form__textfield-control');
 const promocodeShowButton1 = document.querySelector('.custom-form-2--order .form__footer-promo-button');
 const promocodeShowButton2 = document.querySelector('.custom-form-2--order .form__promocode-button');
 
@@ -471,6 +472,7 @@ if (promocodeElement && promocodeShowButton1 && promocodeShowButton2) {
     promocodeShowButton1.classList.add('form__footer-promo-button--hidden');
     promocodeShowButton2.classList.add('form__promocode-button--hidden');
     promocodeElement.classList.add('form__promocode--show');
+    promocodeInput.focus();
   });
 }
 
@@ -480,6 +482,7 @@ if (promocodeElement && promocodeShowButton1 && promocodeShowButton2) {
     promocodeShowButton1.classList.add('form__footer-promo-button--hidden');
     promocodeShowButton2.classList.add('form__promocode-button--hidden');
     promocodeElement.classList.add('form__promocode--show');
+    promocodeInput.focus();
   });
 }
 
@@ -490,3 +493,15 @@ if (promocodeElement && promocodeCancelButton && promocodeShowButton1 && promoco
     promocodeElement.classList.remove('form__promocode--show');
   });
 }
+
+const closeNotification = (evt) => {
+  const notificationCloseButton = evt.target.closest('.notification__close');
+
+  if (!notificationCloseButton) {
+    return;
+  }
+
+  notificationCloseButton.closest('.page-body__notification').remove();
+};
+
+document.body.addEventListener('click', closeNotification);

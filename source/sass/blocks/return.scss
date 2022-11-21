@@ -1,0 +1,45 @@
+.return {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  align-items: center;
+  column-gap: 10px;
+  font-family: $basic-font-family;
+  font-size: 14px;
+  line-height: 18px;
+  color: $weak-text-color;
+
+  &::before {
+    content: "";
+    width: 17px;
+    height: 14px;
+    background-image: url("../img/icons/left-arrow.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  @media #{$laptop-desktop} {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.return--adaptive {
+  .return__text {
+    display: none;
+
+    @media #{$tablet-desktop} {
+      display: block;
+    }
+  }
+}
+

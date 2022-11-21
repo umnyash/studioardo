@@ -109,4 +109,26 @@
   margin-bottom: 73px;
 }
 
+.page-body__main {
+  margin: 0;
+}
 
+
+.page-body__notification {
+  position: fixed;
+  z-index: 100;
+  top: 75%;
+  left: 50%;
+  display: grid;
+  width: 100%;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+
+  @media #{$laptop-desktop} {
+    justify-content: end;
+    width: auto;
+    top: 15px;
+    right: 35px;
+    transform: none;
+  }
+}

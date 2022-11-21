@@ -1,0 +1,20 @@
+.logotypy {
+  display: block;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.logotype__img {
+  width: 89px;
+  height: auto;
+
+  @media #{$laptop-desktop} {
+    width: 127px;
+  }
+}

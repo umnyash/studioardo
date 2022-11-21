@@ -1,13 +1,16 @@
 .n-cart {
-
-}
-
-.n-cart__form-wrapper {
-  padding: 16px 0 0;
   background-color: $n-cart-form-wrapper-background-color;
 }
 
-.n-cart__form-wrapper-center {
+.n-cart__inner {
+  padding: 16px 0 0;
+
+  @media #{$cart-desktop} {
+    padding-bottom: 200px;
+  }
+}
+
+.n-cart__form-wrapper {
   @media #{$tablet-desktop} {
     padding: 0 15px;
   }
@@ -18,3 +21,6 @@
     margin: 0 auto;
   }
 }
+
+
+
