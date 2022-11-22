@@ -58,6 +58,25 @@
 
   &:hover {
     color: $text-color-secondary;
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.button--secondary-2 {
+  border-color: $secondary-button-color;
+  color: $secondary-button-color;
+  background-color: rgba(66, 189, 152, 0.05);
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
   }
 }
 
@@ -107,6 +126,13 @@
 
 .button--with-shadow {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.button--small {
+  @media #{$tablet-desktop} {
+    font-size: 14px;
+    line-height: 16px;
+  }
 }
 
 .button--alter {

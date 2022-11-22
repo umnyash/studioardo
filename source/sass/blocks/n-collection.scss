@@ -1,0 +1,148 @@
+.n-collection {
+  display: grid;
+  box-sizing: border-box;
+  padding: 8px 8px 18px;
+  border-radius: 10px;
+  row-gap: 11px;
+  font-family: $basic-font-family;
+  background-color: $background-color;
+  box-shadow: 0px 3px 25px rgba(0, 0, 0, 0.06);
+}
+
+.n-collection__main {
+  display: grid;
+  padding: 0 10px 10px;
+  grid-template-columns: 1fr auto;
+  row-gap: 10px;
+  column-gap: 20px;
+  align-items: center;
+  border-bottom: 1px solid $good-main-border-color;
+}
+
+.n-collection__extra {
+
+}
+
+.n-collection__heading {
+  margin: 0;
+  grid-column: 1 / 2;
+  font-family: $basic-font-family;
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 500;
+}
+
+.n-collection__link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.n-collection__photo {
+  order: -1;
+  display: grid;
+}
+
+.n-collection__photo-link {
+  grid-area: 1 / 1 / 2 / 2;
+  text-decoration: none;
+}
+
+.n-collection__img-wrapper {
+  display: block;
+  width: 100%;
+  max-width: 327px;
+  height: 255px;
+  margin: 0 auto;
+}
+
+.n-collection__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  object-fit: scale-down;
+  object-position: center;
+}
+
+.n-collection__like {
+  grid-column: 2 / 3;
+  margin: 0;
+  width: 23px;
+  height: 23px;
+}
+
+.n-collection__labels-list {
+  grid-area: 1 / 1 / 2 / 2;
+  align-self: end;
+  margin: 0 0 10px 10px;
+}
+
+.n-collection__characteristics {
+  grid-column: 1 / 3;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 380px;
+  margin: 0;
+  align-items: center;
+  font-size: 12px;
+  line-height: 1;
+  color: $weak-text-color;
+}
+
+.n-collection__characteristics-value {
+  flex-shrink: 0;
+  margin: 0 10px 5px 0;
+}
+
+.n-collection__characteristics-country {
+  display: grid;
+  margin: 0;
+  grid-template-columns: auto 1fr;
+  column-gap: 4px;
+  align-items: center;
+  font: inherit;
+}
+
+.n-collection__characteristics-flag {
+  order: -1;
+  width: 15px;
+  height: 12px;
+  border-radius: 3px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.n-collection__extra {
+  display: grid;
+  padding: 0 10px;
+  grid-template-columns: 1fr auto;
+  row-gap: 10px;
+  column-gap: 20px;
+  align-items: center;
+}
+
+.n-collection__price-code {
+  grid-area: 1 / 1 / 2 / 2;
+  display: grid;
+  row-gap: 8px;
+}
+
+.n-collection__price {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.n-collection__button {
+  align-self: start;
+  display: none;
+  min-width: 106px;
+  min-height: 40px;
+}
+
+.n-collection:hover {
+  .n-collection__button {
+    display: grid;
+  }
+}
+

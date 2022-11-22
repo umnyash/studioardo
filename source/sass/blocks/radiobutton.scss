@@ -70,13 +70,14 @@
   }
 }
 
-.radiobutton--alter-2 {
+.radiobutton--alter-3 {
   .radiobutton__label {
     text-transform: lowercase;
   }
 
   .radiobutton__control + .radiobutton__label {
-    padding: 2px 8px;
+    min-width: 42px;
+    padding: 3px 7px 3px;
   }
 
   .radiobutton__control:checked + .radiobutton__label {

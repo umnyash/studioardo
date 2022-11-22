@@ -129,6 +129,12 @@
     box-shadow: inset 0 0 0 100px $background-color;
     transition-property: border-color, background-color, box-shadow;
     transition-duration: $custom-form-2-transition-duration;
+    appearance: textfield;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      appearance: none;
+    }
   }
 
   .form__textfield-control:focus {

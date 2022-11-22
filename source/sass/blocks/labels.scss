@@ -1,21 +1,44 @@
 .labels {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
+  padding: 0;
+  list-style: none;
   align-items: center;
   font-family: $basic-font-family;
-  font-size: 12;
+  font-size: 12px;
   line-height: 14px;
   font-weight: 700;
 }
 
 .labels__item {
-  padding: 4px 6px 2px;
+  padding: 3px 6px;
   border-radius: 3px;
-  font-size: 12;
+  font-size: 12px;
   line-height: 14px;
   font-weight: 700;
   color: $text-color-secondary;
   background-color: red;
-  margin: 0 4px 0 0;
+  margin: 5px 3px 0 0;
+
+  &--discount {
+    padding-top: 4px;
+    padding-bottom: 2px;
+    font-size: 14px;
+    line-height: 14px;
+    background-color: #d92547;
+  }
+
+  &--new {
+    background-color: rgba(66, 189, 152, 0.6);
+  }
+
+  &--in-stock {
+    background-color: rgba(223, 174, 56, 0.6);
+  }
+
+  &--large-format {
+    background-color: rgba(133, 133, 133, 0.6);
+  }
 }
+
 
