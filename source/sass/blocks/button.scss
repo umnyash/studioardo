@@ -97,6 +97,14 @@
   transform: translateY(-1px);
 }
 
+.button--with-icon--cart::before {
+  width: 17px;
+  height: 15px;
+  // margin: 0 5px 0 0;
+  background-image: url("../img/icons/small-cart.svg");
+  // transform: translateY(-1px);
+}
+
 .button--with-shadow {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
 }
@@ -115,7 +123,7 @@
 .button--secret {
   padding-left: 10px;
   padding-right: 10px;
-  border: 1px dotted $weak-text-color;
+  border: 2px dotted $weak-text-color;
   border-radius: 10px;
   text-align: left;
   color: $weak-text-color;
@@ -138,4 +146,8 @@
 
 .button--fw600 {
   font-weight: 600;
+}
+
+.button--fw700 {
+  font-weight: 700;
 }
