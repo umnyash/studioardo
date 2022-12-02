@@ -414,6 +414,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 11px 17px;
   padding: 0;
+  border: none;
   margin: 0 0 10px;
   list-style: none;
   font-size: 13px;
@@ -514,4 +515,24 @@
   margin: 0 0 0 10px;
   font: inherit;
   background-color: $good-card-label-background-color;
+}
+
+.good-card__features.more-info {
+  @media (max-width: 768px) {
+    position: relative;
+  }
+}
+
+.good-card__features-link.mi-quest {
+  @media (max-width: 768px) {
+    position: static;
+  }
+}
+
+.good-card__features.more-info .mi-hidden {
+  @media (max-width: 768px) {
+    left: 50% !important;
+    right: auto;
+    transform: translateX(-50%);
+  }
 }

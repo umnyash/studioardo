@@ -2896,7 +2896,7 @@ main.fixed {
 
 label.error {
     position: relative;
-    top: -9px;
+    top: -20px;
     color: #c5072b;
     font-size: 14px
 }
@@ -7654,7 +7654,7 @@ label.error {
 }
 
 .location__time {
-    width: 150px
+    width: 145px
 }
 
 .location__email,
@@ -9160,24 +9160,15 @@ label.error {
 }
 
 .card__img img {
+    display: none;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: block;
-    border-radius: 5px;
-    transition: 0.3s linear;
+    height: 100%
 }
-.card__img img:nth-child(2),
-.card__img:hover img:first-child {
-    opacity: 0 !important;
+
+.card__img img.active {
+    display: block
 }
-.card__img:hover img:nth-child(2) {
-    opacity: 1 !important;
-}
+
 .card__info {
     position: relative;
     z-index: 10;
@@ -9423,7 +9414,7 @@ label.error {
 }
 
 .card:hover {
-    z-index: 90;
+    z-index: 200
 }
 
 .card:hover:before {
@@ -10067,7 +10058,7 @@ label.error {
 }
 
 .card-collection:hover {
-    z-index: 90;
+    z-index: 100;
     box-shadow: 0 6px 16px rgba(0, 0, 0, .16)
 }
 
@@ -10746,11 +10737,11 @@ label.error {
     font-weight: 700
 }
 
-/* .basket__header p span:first-child {
+.basket__header p span:first-child {
     margin-right: 5px;
     font-weight: 400;
     opacity: .6
-} */
+}
 
 .basket__item {
     position: relative;
@@ -17445,10 +17436,6 @@ label.error {
     display: none !important
 }
 
-.custom-form label.error {
-	display: block !important
-}
-
 .form-input.error {
     border-bottom-color: #ff5575;
     background: #ffdfdf;
@@ -17665,7 +17652,7 @@ div.form-select__list {
 .form-select__list li .form-checkbox label {
     font-size: 14px;
     padding-left: 23px;
-    width: 100%
+    width: 182px
 }
 
 .form-select__list li:hover {
@@ -18707,18 +18694,26 @@ div.form-select__list {
 .more-info .mi-quest {
     cursor: pointer;
     display: inline-block;
+    /* width: 16px; */
+    /* height: 16px; */
+    /* line-height: 16px; */
+    /* border: 1px solid #c5072b; */
+    /* border-radius: 50%; */
+    /* text-align: center; */
     position: relative;
+    /* font-size: 12px;
+    color: #c5072b */
 }
 
 .more-info .mi-quest .mi-hidden.active {
     display: block
 }
 
-/* .more-info {
+.more-info {
     margin-bottom: 30px;
     color: #858585;
     font-size: 14px
-} */
+}
 
 .product__code {
     font-size: 14px;
@@ -18735,28 +18730,10 @@ div.form-select__list {
     text-align: left;
     top: 50%;
     transform: translateY(-50%);
-    left: -311px;
+    right: -311px;
     color: #333;
     display: none;
     cursor: default
-}
-
-.more-info.more-info_right .mi-hidden {
-	right: -311px;
-	left: 0;
-}
-
-@media (max-width: 1279px) {
-  .more-info .mi-hidden {
-    left: 94px;
-  }
-}
-
-@media (max-width: 766px) {
-  .more-info .mi-hidden {
-    left: -50px !important;
-	top: 0 !important;
-  }
 }
 
 .more-info .mi-hidden a {
@@ -19011,7 +18988,7 @@ ul.sitemap a:hover {
 }
 
 .card-collection:hover {
-    z-index: 90
+    z-index: 200
 }
 
 .card-collection:hover:before {
@@ -19021,7 +18998,7 @@ ul.sitemap a:hover {
 .card-collection:hover .card__hidden {
     display: block;
     opacity: 1;
-    z-index: 90
+    z-index: 1000
 }
 
 .filter__select.filter-field.hidden {
@@ -19416,11 +19393,3 @@ input.filter__submit {
         min-height: 580px;
     }
 }
-
-.header__mobil-fs .calltouch_phone_495_1 a.inh {display:none;}
-.basket__header {margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(0, 0, 0, .05); border-bottom: 0;}
-.basket__header span {font-size: 14px!important; font-weight: normal!important;}
-.basket__header span.basket__bold {font-weight: 700!important;}
-p.basket__price-old {text-decoration: line-through; opacity: 0.6; font-size: 13px!important;}
-a.number-big {width: 40px; height: 34px; text-align: center; vertical-align: middle; padding-top: 10px;}
-.promo.promo-filter {margin-top: 45px; margin-bottom: 45px;}

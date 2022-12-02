@@ -6,8 +6,8 @@
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/libs.min.css" rel="stylesheet">
     <link href="css/swiper.min.css" rel="stylesheet">
-    <link href="css/styles.min.css" rel="stylesheet">
-    <link href="css/style.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <link href="css/custom.min.css" rel="stylesheet">
     <link href="css/new.css" rel="stylesheet"> <!-- Новые стили -->
     <title>17 Страница товара</title>
@@ -225,22 +225,56 @@
                 <a class="button" href="#!">Заказать образец</a>
                 <button class="button button--popup--quick-order" type="button">Купить в 1 клик</button>
               </div>
-              <ul class="good-card__features">
+              <ul class="good-card__features more-info">
                 <li class="good-card__features-item">
                   <b class="good-card__features-accent">Доставка</b> от 2800 руб от 1 дня
-                  <a class="good-card__features-link" href="#!">Подробнее</a>
+                  <!-- <a class="good-card__features-link" href="#!">Подробнее</a> -->
+                  <div class="good-card__features-link mi-quest">Подробнее
+                    <div class="mi-hidden">
+                      <p>АКЦИЯ: при заказе от 300 тыс. руб. доставка <br>
+                         по Москве весом до 1500 кг БЕСПЛАТНО. <br>
+                         Доставка по Москве от 850 до 5500 руб. <br>
+                         Доставка от 1 дня по согласованию с менеджером. <br>
+                         Оплатить доставку можно заранее в офисе, онлайн или при получении заказа на объекте. <br>
+                         Доставка осуществляется до подъезда, разгрузка материалов в услугу не входит. <br>
+                         Более подробно - <a href="/delivery/" target="_blank">тут</a>.
+                      </p>
+                    </div>
+                  </div>
                 </li>
                 <li class="good-card__features-item">
-                  <b class="good-card__features-accent">Безопасная оплата</b><br>
-                  <a class="good-card__features-link" href="https://www.studioardo.ru/payments/">Подробнее</a>
+                  <b class="good-card__features-accent">Безопасная оплата</b>
+                  <br>
+                  <!-- <a class="good-card__features-link" href="https://www.studioardo.ru/payments/">Подробнее</a> -->
+                  <div class="good-card__features-link mi-quest">Подробнее
+                    <div class="mi-hidden">
+                      <p>При работе с карточными данными применяется стандарт защиты информации, разработанный международными платёжными системами Visa, MasterCard, Мир, JCB - Payment Card Industry Data Security Standard (PCI DSS), что обеспечивает безопасную обработку реквизитов Банковской карты Держателя. <br>Более подробно - <a href="/payments/" target="_blank">тут</a>.
+                      </p>
+                    </div>
+                  </div>
                 </li>
                 <li class="good-card__features-item">
                   <b class="good-card__features-accent">В рассрочку или в кредит</b>
-                  <a class="good-card__features-link" href="#!">Подробнее</a>
+                  <br>
+                  <!-- <a class="good-card__features-link" href="#!">Подробнее</a> -->
+                  <div class="good-card__features-link mi-quest">Подробнее
+                    <div class="mi-hidden">
+                      <p>Теперь в АрдоСтудио появилась возможность приобрести все товары ассортимента на сумму до 200 000 рублей в рассрочку под 0% годовых.<br>
+                         Более подробно - <a href="/services/installment/" target="_blank">тут</a>.
+                      </p>
+                    </div>
+                  </div>
                 </li>
                 <li class="good-card__features-item">
                   <b class="good-card__features-accent">Самовывоз</b> завтра, бесплатно
-                  <a class="good-card__features-link" href="#!">Подробнее</a>
+                  <br>
+                  <!-- <a class="good-card__features-link" href="#!">Подробнее</a> -->
+                  <div class="good-card__features-link mi-quest">Подробнее
+                    <div class="mi-hidden">
+                      <p>Склад находится по адресу: Московская область, г.п. Нахабино, ул. Новая д.9, если вы планируете сделать самовывоз, то предварительно необходимо оформить пропуск на склад.<br>Более подробно - <a href="/delivery/" target="_blank">тут</a>.
+                      </p>
+                    </div>
+                  </div>
                 </li>
               </ul>
               <div class="good-card__tabs-content clipbox clipbox--big">
@@ -1500,6 +1534,19 @@
       </div>
 
     </main>
+    <script>
+      const goodCartFeaturesLinks = document.querySelectorAll('.good-card__features-link');
+      goodCartFeaturesLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          console.log('Hello')
+          const popup = link.querySelector('.mi-hidden');
+          setTimeout(() => {
+            popup.classList.add('active');
+            console.log(popup)
+          }, 0);
+        })
+      });
+    </script>
     <script src="js/jquery.3.4.1.min.js"></script>
     <script src="js/swiper.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script> <!-- Новый скрипт -->
