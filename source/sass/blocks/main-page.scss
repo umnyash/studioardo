@@ -1,0 +1,13 @@
+.main-page__wrapper {
+  padding: 0 10px;
+
+  @media #{$tablet-desktop} {
+    padding: 0 15px;
+  }
+
+  @media #{$desktop} {
+    width: 1480px;
+    padding: 0 40px;
+    margin: 0 auto;
+  }
+}
