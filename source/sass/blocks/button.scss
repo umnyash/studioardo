@@ -93,6 +93,25 @@
   column-gap: 5px;
 }
 
+.button--with-icon-reverse {
+  grid-template-columns: auto min-content;
+  grid-auto-flow: column;
+  justify-content: center;
+  column-gap: 10px;
+}
+
+.button--with-icon-reverse::after {
+  content: "";
+  align-self: center;
+  width: 19px;
+  height: 14px;
+  margin: 0;
+  background: url("../img/icons/right-arrow.svg") no-repeat center;
+  transform: translateY(-1px);
+  background-size: contain;
+}
+
+
 .button--with-icon::before {
   content: "";
   background-repeat: no-repeat;

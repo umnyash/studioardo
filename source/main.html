@@ -16,7 +16,7 @@
 </head>
 <body class="main-page__body">
   <h1 class="visually-hidden">Главная страница</h1>
-  <section class="current-offers">
+  <!-- <section class="current-offers">
     <div class="main-page__wrapper">
       <h2 class="visually-hidden">Актуальные предложения</h2>
       <ul class="current-offers__slider">
@@ -59,16 +59,16 @@
         </li>
       </ul>
     </div>
-  </section>
+  </section> -->
 
-  <section class="our-advantages">
+  <section class="main-page__our-advantages our-advantages">
     <h2 class="visually-hidden">Наши преимущества</h2>
-    <div class="main-page__wrapper">
+    <div class="center">
       <ul class="our-advantages__list">
         <li class="our-advantages__item advantages-item">
           Помогаем воплотить <br class="advantages-item__desktop">Ваши идеи в интерьере
           <div class="advantages-item__info">
-            <img src="img/advantage-info.jpg" alt="Ресепшен с девушками.">
+            <img src="img/advantage-info.jpg" alt="Ресепшен с девушками." width="395" height="95">
             <p>
               Для вас в шоу-руме welcome кофе, удобные переговорные зоны для подбора,
               1000 кв.м. с готовыми решениями
@@ -118,5 +118,276 @@
       </ul>
     </div>
   </section>
+
+  <section class="main-page__good-range good-range">
+    <div class="center">
+      <h2 class="good-range__title heading">Выбирайте в одном месте</h2>
+      <ul class="good-range__list">
+        <li class="good-range__item product-item product-item--adaptive">
+          <a class="good-range__link product-item__link" href="#">
+            <picture class="product-item__image">
+              <source media="(min-width: 768px)" srcset="img/range-ceramic.jpg 1x">
+              <img src="img/range-ceramic-mobile.jpg" alt="6-угольная керамическая плитка.">
+            </picture>
+            <h3 class="product-item__title">Керамическая плитка</h3>
+          </a>
+        </li>
+        <li class="good-range__item product-item product-item--adaptive">
+          <a class="good-range__link product-item__link" href="#">
+            <picture class="product-item__image">
+              <source media="(min-width: 768px)" srcset="img/range-porcelain.jpg 1x">
+              <img src="img/range-porcelain-mobile.jpg" alt="Серо-коричневый керамогранит.">
+            </picture>
+            <h3 class="product-item__title">Керамогранит</h3>
+          </a>
+        </li>
+        <li class="good-range__item product-item product-item--adaptive">
+          <a class="good-range__link product-item__link" href="#">
+            <picture class="product-item__image">
+              <source media="(min-width: 768px)" srcset="img/range-mosaic.jpg 1x">
+              <img src="img/range-mosaic-mobile.jpg" alt="Мозаика в бежевых тонах.">
+            </picture>
+            <h3 class="product-item__title">Мозаика</h3>
+          </a>
+        </li>
+        <li class="good-range__item product-item product-item--adaptive">
+          <a class="good-range__link product-item__link" href="#">
+            <picture class="product-item__image">
+              <source media="(min-width: 768px)" srcset="img/range-stone.jpg 1x">
+              <img src="img/range-stone-mobile.jpg" alt="Натуральный камень в коричнево-бежевых тонах.">
+            </picture>
+            <h3 class="product-item__title">Камень</h3>
+          </a>
+        </li>
+        <li class="good-range__item product-item product-item--adaptive">
+          <a class="good-range__link product-item__link" href="#">
+            <picture class="product-item__image">
+              <source media="(min-width: 768px)" srcset="img/range-plumbing.jpg 1x">
+              <img src="img/range-plumbing-mobile.jpg" alt="Смеситель.">
+            </picture>
+            <h3 class="product-item__title">Сантехника</h3>
+          </a>
+        </li>
+        <li class="good-range__item product-item product-item--adaptive">
+          <a class="good-range__link product-item__link" href="#">
+            <picture class="product-item__image">
+              <source media="(min-width: 768px)" srcset="img/range-parquet.jpg 1x">
+              <img src="img/range-parquet-mobile.jpg" alt="Бежевый паркет.">
+            </picture>
+            <h3 class="product-item__title">Паркет</h3>
+            <span class="good-range__sale product-item__sale">-15%</span>
+          </a>
+        </li>
+        <li class="good-range__item product-item product-item--adaptive">
+          <a class="good-range__link product-item__link" href="#">
+            <picture class="product-item__image">
+              <source media="(min-width: 768px)" srcset="img/range-stock.jpg 1x">
+              <img src="img/range-stock-mobile.jpg" alt="Две сервые плитки.">
+            </picture>
+            <h3 class="product-item__title">Новинки</h3>
+          </a>
+        </li>
+        <li class="good-range__item product-item product-item--adaptive">
+          <a class="good-range__link product-item__link" href="#">
+            <picture class="product-item__image">
+              <source media="(min-width: 768px)" srcset="img/range-table.jpg 1x">
+              <img src="img/range-table-mobile.jpg" alt="Стол с мраморной столешницей.">
+            </picture>
+            <h3 class="product-item__title">Столы</h3>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- <section class="products">
+    <div class="center">
+      <h2 class="products__title heading">Сантехника для ценителей эстетики</h2>
+      <ul class="products__list">
+        <li class="products__item product-item">
+          <a class="products__link product-item__link" href="#">
+            <picture class="product-item__image">
+              <img src="img/products-bath.jpg" alt="Белая ванна.">
+            </picture>
+            <h3 class="product-item__title">Ванны</h3>
+          </a>
+        </li>
+        <li class="products__item product-item">
+          <a class="products__link product-item__link" href="#">
+            <picture class="product-item__image">
+              <img src="img/products-toilet.jpg" alt="Белый унитаз.">
+            </picture>
+            <h3 class="product-item__title">Унитазы</h3>
+          </a>
+        </li>
+        <li class="products__item product-item">
+          <a class="products__link product-item__link" href="#">
+            <picture class="product-item__image">
+              <img src="img/products-shower.jpg" alt="Лейка душа.">
+            </picture>
+            <h3 class="product-item__title">Души</h3>
+          </a>
+        </li>
+        <li class="products__item product-item">
+          <a class="products__link product-item__link" href="#">
+            <picture class="product-item__image">
+              <img src="img/products-urinal.jpg" alt="Белый писсуар.">
+            </picture>
+            <h3 class="product-item__title">Писсуары</h3>
+          </a>
+        </li>
+        <li class="products__item product-item">
+          <a class="products__link product-item__link" href="#">
+            <picture class="product-item__image">
+              <img src="img/products-faucet.jpg" alt="Смеситель.">
+            </picture>
+            <h3 class="product-item__title">Смесители</h3>
+          </a>
+        </li>
+        <li class="products__item product-item">
+          <a class="products__link product-item__link" href="#">
+            <picture class="product-item__image">
+              <img src="img/products-sink.jpg" alt="Белая раковина.">
+            </picture>
+            <h3 class="product-item__title">Раковины</h3>
+          </a>
+        </li>
+        <li class="products__item product-item">
+          <a class="products__link product-item__link" href="#">
+            <picture class="product-item__image">
+              <img src="img/products-towelwarmer.jpg" alt="Металлический змеевик.">
+            </picture>
+            <h3 class="product-item__title">Полотенце-сушители</h3>
+          </a>
+        </li>
+        <li class="products__item product-item">
+          <a class="products__link product-item__link" href="#">
+            <picture class="product-item__image">
+              <img src="img/products-bidet.jpg" alt="Белое биде.">
+            </picture>
+            <h3 class="product-item__title">Биде</h3>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section> -->
+
+  <section class="main-page__inspo inspiration artgallery">
+    <div class="center">
+      <div class="inspiration__wrapper">
+        <h2 class="inspiration__title artgallery__title heading">Коллекции для вдохновения</h2>
+        <a href="#" class="inspiration__button artgallery__button button--with-icon-reverse button button--secondary">Перейти в коллекции</a>
+
+        <div class="inspiration__arrows arrows">
+          <button class="inspiration__arrow--back arrows__item arrows__item--back" aria-label="Назад"></button>
+          <button class="inspiration__arrow--next arrows__item arrows__item--next" aria-label="Вперед"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="inspiration__gallery swiper artgallery-swiper">
+      <ul class="swiper-wrapper artgallery-swiper__list">
+        <li class="swiper-slide">
+          <picture class="inspiration__image">
+            <source media="(min-width: 768px)" srcset="img/inspo-1.jpg 1x">
+            <img src="img/inspo-mob-1.jpg" alt="">
+          </picture>
+        </li>
+        <li class="swiper-slide">
+          <picture class="inspiration__image">
+            <source media="(min-width: 768px)" srcset="img/inspo-2.jpg 1x">
+            <img src="img/inspo-mob-2.jpg" alt="">
+          </picture>
+        </li>
+        <li class="swiper-slide">
+          <picture class="inspiration__image">
+            <source media="(min-width: 768px)" srcset="img/inspo-3.jpg 1x">
+            <img src="img/inspo-mob-3.jpg" alt="">
+          </picture>
+        </li>
+        <li class="swiper-slide">
+          <picture class="inspiration__image">
+            <source media="(min-width: 768px)" srcset="img/inspo-4.jpg 1x">
+            <img src="img/inspo-mob-4.jpg" alt="">
+          </picture>
+        </li>
+        <li class="swiper-slide">
+          <picture class="inspiration__image">
+            <source media="(min-width: 768px)" srcset="img/inspo-5.jpg 1x">
+            <img src="img/inspo-mob-5.jpg" alt="">
+          </picture>
+        </li>
+        <li class="swiper-slide">
+          <picture class="inspiration__image">
+            <source media="(min-width: 768px)" srcset="img/inspo-6.jpg 1x">
+            <img src="img/inspo-mob-6.jpg" alt="">
+          </picture>
+        </li>
+        <li class="swiper-slide">
+          <picture class="inspiration__image">
+            <source media="(min-width: 768px)" srcset="img/inspo-7.jpg 1x">
+            <img src="img/inspo-mob-7.jpg" alt="">
+          </picture>
+        </li>
+      </ul>
+
+    </div>
+  </section>
+
+  <section class="main-page__projects projects artgallery">
+    <div class="center">
+      <div class="projects__wrapper">
+        <h2 class="projects__title heading">Реализованные объекты с нашим материалом</h2>
+        <a href="#" class="projects__button artgallery__button button--with-icon-reverse button button--secondary">Заказать визуализацию</a>
+        <div class="projects__arrows arrows">
+          <button class="projects__arrow--back arrows__item arrows__item--back" aria-label="Назад"></button>
+          <button class="projects__arrow--next arrows__item arrows__item--next" aria-label="Вперед"></button>
+        </div>
+      </div>
+    </div>
+      <div class="projects__gallery swiper projects-swiper">
+        <ul class="swiper-wrapper projects-swiper__list">
+          <li class="swiper-slide artgallery-swiper__item">
+            <picture class="projects__gallery">
+              <source media="(min-width: 768px)" srcset="img/projects-1.jpg 1x">
+              <img src="img/projects-mob-1.jpg" alt="">
+            </picture>
+            <p class="projects__category">Частные квартиры и загородные дома</p>
+          </li>
+          <li class="swiper-slide artgallery-swiper__item">
+            <picture class="projects__gallery">
+              <source media="(min-width: 768px)" srcset="img/projects-2.jpg 1x">
+              <img src="img/projects-mob-2.jpg" alt="">
+            </picture>
+            <p class="projects__category">Камень и мозаика</p>
+          </li>
+          <li class="swiper-slide artgallery-swiper__item">
+            <picture class="projects__gallery">
+              <source media="(min-width: 768px)" srcset="img/projects-3.jpg 1x">
+              <img src="img/projects-mob-3.jpg" alt="">
+            </picture>
+            <p class="projects__category">Бассейны, сауны, хаммамы</p>
+          </li>
+          <li class="swiper-slide artgallery-swiper__item">
+            <picture class="projects__gallery">
+              <source media="(min-width: 768px)" srcset="img/projects-4.jpg 1x">
+              <img src="img/projects-mob-4.jpg" alt="">
+            </picture>
+            <p class="projects__category">Бары</p>
+          </li>
+        </ul>
+
+      </div>
+  </section>
+
+  <script src="js/swiper.min.js"></script>
+  <script src="js/swiper-bundle.min.js"></script> <!-- Новый скрипт -->
+  <script src="js/new.js"></script> <!-- Новый скрипт -->
+  <script src="js/jquery.3.4.1.min.js"></script>
+  <script src="js/jquery.cookie.min.js"></script>
+  <script src="js/libs.min.js"></script>
+  <script src="js/min/lazyload.min.js"></script>
+  <script src="js/scripts.min.js"></script>
+  <script src="js/min/custom.min.js"></script>
 </body>
 </html>

@@ -559,3 +559,31 @@ if (goodList) {
   goodList.addEventListener('click', quickOrderGood);
   goodList.addEventListener('click', cancelQuickOrder);
 }
+
+const inspirationGallery = document.querySelector('.inspiration');
+
+if (inspirationGallery) {
+  let swiper = new Swiper(".artgallery-swiper", {
+    slidesPerView: 'auto',
+    spaceBetween: 5,
+    navigation: {
+      nextEl: ".inspiration__arrow--next",
+      prevEl: ".inspiration__arrow--back",
+    },
+  })
+};
+
+const projectsGallery = document.querySelector('.projects');
+
+if (projectsGallery) {
+  let swiper = new Swiper(".projects-swiper", {
+    slidesPerView: 'auto',
+    spaceBetween: 5,
+    navigation: {
+      nextEl: ".projects__arrow--next",
+      prevEl: ".projects__arrow--back",
+    },
+  })
+};
+
+

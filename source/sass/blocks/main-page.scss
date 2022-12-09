@@ -1,13 +1,24 @@
-.main-page__wrapper {
-  padding: 0 10px;
+.main-page__our-advantages,
+.main-page__good-range {
+  margin-bottom: 40px;
 
   @media #{$tablet-desktop} {
-    padding: 0 15px;
+    margin-bottom: 60px;
   }
+}
 
-  @media #{$desktop} {
-    width: 1480px;
-    padding: 0 40px;
-    margin: 0 auto;
+.main-page__inspo {
+  margin-bottom: 60px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 89px;
+  }
+}
+
+.main-page__projects {
+  margin-bottom: 60px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 100px;
   }
 }
