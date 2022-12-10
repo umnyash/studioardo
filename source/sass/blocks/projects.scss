@@ -1,7 +1,3 @@
-.inspiration {
-  position: relative;
-}
-
 .projects__wrapper {
   display: grid;
   grid-template-columns: 1fr min-content;
@@ -43,9 +39,11 @@
   list-style: none;
 }
 
-.projects__gallery  li {
+.projects__gallery-item {
+  position: relative;
   margin: 0;
   width: 301px;
+  background-color: $category-text-bg;
   height: 274px;
 
   @media #{$tablet-desktop} {
@@ -58,13 +56,46 @@
   display: block;
   width: 100%;
   height: 100%;
+  border-radius: 10px;
 }
 
 .projects__image img{
   display: block;
   width: 100%;
   height: 100%;
-  border-radius: 10px;
   object-fit: cover;
   object-position: center;
+}
+
+.projects__category {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: $category-text-bg-40;
+  z-index: 5;
+  padding: 16px 5px 14px;
+  box-sizing: border-box;
+  border-radius: 0 0 10px 10px;
+
+  @media #{$laptop-desktop} {
+    padding: 29px 15px 28px;
+  }
+}
+
+.projects__category-text {
+  font-family: $basic-font-family;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0;
+  text-transform: none;
+  margin: 0;
+  color: $text-color-secondary;
+
+  @media #{$laptop-desktop} {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 31px;
+  }
 }

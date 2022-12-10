@@ -573,6 +573,74 @@ if (inspirationGallery) {
   })
 };
 
+const productsSection = document.querySelector('.products');
+(function() {
+
+  // breakpoint where swiper will be destroyed
+  // and switches to a dual-column layout
+  const breakpoint = window.matchMedia('(min-width: 1440px)');
+  const productsSwiper = document.querySelector('.products-swiper');
+  const productsList = document.querySelector('.products__list');
+  const productSlides = document.querySelectorAll('.products__item');
+
+  // keep track of swiper instances to destroy later
+  let productSwiper;
+  const breakpointChecker = () => {
+
+    // if larger viewport and multi-row layout needed
+    if ( breakpoint.matches === true ) {
+
+      // clean up old instances and inline styles when available
+	  if ( productSwiper !== undefined ) {
+      productsSwiper.destroy(true,true);
+      productsSwiper.classList.remove('swiper');
+      productsList.classList.remove('swiper-wrapper');
+      productSlides.forEach((slide) => {
+        slide.classList.remove('swiper-slide');
+      });
+    }
+
+	  // or/and do nothing
+	  return;
+
+      // else if a small viewport and single column layout needed
+      } else if ( breakpoint.matches === false ) {
+
+        // fire small viewport version of swiper
+        return enableSwiper();
+
+      }
+
+  };
+
+  const enableSwiper = () => {
+    productsSwiper.classList.add('swiper');
+    productsList.classList.add('swiper-wrapper');
+    productSlides.forEach((slide) => {
+      slide.classList.add('swiper-slide');
+    });
+
+    productSwiper = new Swiper ('.products-swiper', {
+      slidesPerView: 'auto',
+      grid: {
+        rows: 2,
+      },
+      spaceBetween: 8,
+      navigation: {
+        nextEl: ".products__arrow--next",
+        prevEl: ".products__arrow--back",
+      },
+    });
+
+  };
+
+  // keep an eye on viewport size changes
+  window.addEventListener('resize', breakpointChecker);
+
+  // kickstart
+  breakpointChecker();
+})();
+
 const projectsGallery = document.querySelector('.projects');
 
 if (projectsGallery) {
@@ -583,6 +651,21 @@ if (projectsGallery) {
       nextEl: ".projects__arrow--next",
       prevEl: ".projects__arrow--back",
     },
+  })
+};
+
+const serviceSwiper = document.querySelector('.n-service');
+
+if (serviceSwiper) {
+  let swiper = new Swiper(".n-service-swiper", {
+    slidesPerView: 'auto',
+    watchOverflow: true,
+    spaceBetween: 5,
+    breakpoints: {
+      1024: {
+        spaceBetween: 20,
+      },
+    }
   })
 };
 

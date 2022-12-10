@@ -7,6 +7,14 @@
   }
 }
 
+.main-page__products {
+  margin-bottom: 40px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 100px;
+  }
+}
+
 .main-page__inspo {
   margin-bottom: 60px;
 
@@ -21,4 +29,8 @@
   @media #{$laptop-desktop} {
     margin-bottom: 100px;
   }
+}
+
+.main-page__n-service {
+  margin-bottom: 40px;
 }

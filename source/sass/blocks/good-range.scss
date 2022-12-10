@@ -27,6 +27,7 @@
 }
 
 .good-range__item {
+  position: relative;
   margin: 0;
 
   &:nth-child(odd) {
