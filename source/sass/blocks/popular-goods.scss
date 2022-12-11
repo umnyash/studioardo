@@ -1,0 +1,65 @@
+.popular-goods__title {
+  margin: 0 0 20px 0;
+
+  @media #{$laptop-desktop} {
+    margin: 0 0 25px 0;
+  }
+}
+
+.popular-goods__list {
+  margin: 0 0 18px 0;
+  padding: 10px 4px 0 9px;
+  list-style: none;
+
+  @media #{$tablet-desktop} {
+    padding: 0;
+  }
+
+  @media #{$laptop-desktop} {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(343px, 1fr));
+    row-gap: 20px;
+    column-gap: 9px;
+    margin: 0 0 40px 0;
+  }
+}
+
+.popular-goods__item {
+  width: 343px;
+  margin: 0;
+
+  @media #{$laptop-desktop} {
+    position: relative;
+    width: 100%;
+
+    &:hover {
+      z-index: 2;
+    }
+  }
+}
+
+.popular-goods__arrows {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 18px 0 40px 0;
+
+  @media #{$laptop-desktop} {
+    display: none;
+  }
+}
+
+.popular-goods__button {
+  @media #{$narrowlaptop-desktop} {
+    width: 240px;
+    margin: 0 auto;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}

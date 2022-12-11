@@ -6,7 +6,7 @@
   }
 }
 
-.n-service__effect-wrapper {
+.n-service__swiper {
   filter: drop-shadow(0px 18px 15px $good-range-shadow-color);
 }
 
@@ -23,7 +23,7 @@
   height: 205px;
   border-radius: 10px;
 
-  @media #{$narrow-laptop} {
+  @media #{$narrowlaptop-desktop} {
     width: 454px;
   }
 }
@@ -68,7 +68,7 @@
   letter-spacing: 0;
   text-transform: uppercase;
 
-  @media #{$narrow-laptop} {
+  @media #{$narrowlaptop-desktop} {
     margin: 0 0 5px 0;
     font-size: 18px;
     line-height: 23px;
@@ -86,7 +86,7 @@
   color: $weak-text-color;
   margin: 0;
 
-  @media #{$narrow-laptop} {
+  @media #{$narrowlaptop-desktop} {
     font-size: 16px;
     line-height: 21px;
   }

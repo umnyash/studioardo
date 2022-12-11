@@ -574,75 +574,77 @@ if (inspirationGallery) {
 };
 
 const productsSection = document.querySelector('.products');
-(function() {
 
-  // breakpoint where swiper will be destroyed
-  // and switches to a dual-column layout
-  const breakpoint = window.matchMedia('(min-width: 1440px)');
-  const productsSwiper = document.querySelector('.products-swiper');
-  const productsList = document.querySelector('.products__list');
-  const productSlides = document.querySelectorAll('.products__item');
+if(productsSection) {
+  (function() {
 
-  // keep track of swiper instances to destroy later
-  let productSwiper;
-  const breakpointChecker = () => {
+    // breakpoint where swiper will be destroyed
+    // and switches to a dual-column layout
+    const breakpoint = window.matchMedia('(min-width: 1440px)');
+    const productsSwiper = document.querySelector('.products-swiper');
+    const productsList = document.querySelector('.products__list');
+    const productSlides = document.querySelectorAll('.products__item');
 
-    // if larger viewport and multi-row layout needed
-    if ( breakpoint.matches === true ) {
+    // keep track of swiper instances to destroy later
+    let productSwiper;
+    const breakpointChecker = () => {
 
-      // clean up old instances and inline styles when available
-	  if ( productSwiper !== undefined ) {
-      productsSwiper.destroy(true,true);
-      productsSwiper.classList.remove('swiper');
-      productsList.classList.remove('swiper-wrapper');
-      productSlides.forEach((slide) => {
-        slide.classList.remove('swiper-slide');
-      });
-    }
+      // if larger viewport and multi-row layout needed
+      if ( breakpoint.matches === true ) {
 
-	  // or/and do nothing
-	  return;
-
-      // else if a small viewport and single column layout needed
-      } else if ( breakpoint.matches === false ) {
-
-        // fire small viewport version of swiper
-        return enableSwiper();
-
+        // clean up old instances and inline styles when available
+      if ( productSwiper !== undefined ) {
+        productsSwiper.destroy(true,true);
+        productsSwiper.classList.remove('swiper');
+        productsList.classList.remove('swiper-wrapper');
+        productSlides.forEach((slide) => {
+          slide.classList.remove('swiper-slide');
+        });
       }
 
-  };
+      // or/and do nothing
+      return;
 
-  const enableSwiper = () => {
-    productsSwiper.classList.add('swiper');
-    productsList.classList.add('swiper-wrapper');
-    productSlides.forEach((slide) => {
-      slide.classList.add('swiper-slide');
-    });
+        // else if a small viewport and single column layout needed
+        } else if ( breakpoint.matches === false ) {
 
-    productSwiper = new Swiper ('.products-swiper', {
-      slidesPerView: 'auto',
-      grid: {
-        rows: 2,
-      },
-      spaceBetween: 8,
-      navigation: {
-        nextEl: ".products__arrow--next",
-        prevEl: ".products__arrow--back",
-      },
-    });
+          // fire small viewport version of swiper
+          return enableSwiper();
 
-  };
+        }
 
-  // keep an eye on viewport size changes
-  window.addEventListener('resize', breakpointChecker);
+    };
 
-  // kickstart
-  breakpointChecker();
-})();
+    const enableSwiper = () => {
+      productsSwiper.classList.add('swiper');
+      productsList.classList.add('swiper-wrapper');
+      productSlides.forEach((slide) => {
+        slide.classList.add('swiper-slide');
+      });
+
+      productSwiper = new Swiper ('.products-swiper', {
+        slidesPerView: 'auto',
+        grid: {
+          rows: 2,
+        },
+        spaceBetween: 8,
+        navigation: {
+          nextEl: ".products__arrow--next",
+          prevEl: ".products__arrow--back",
+        },
+      });
+
+    };
+
+    // keep an eye on viewport size changes
+    window.addEventListener('resize', breakpointChecker);
+
+    // kickstart
+    breakpointChecker();
+  })();
+}
 
 const projectsGallery = document.querySelector('.projects');
-
 if (projectsGallery) {
   let swiper = new Swiper(".projects-swiper", {
     slidesPerView: 'auto',
@@ -655,7 +657,6 @@ if (projectsGallery) {
 };
 
 const serviceSwiper = document.querySelector('.n-service');
-
 if (serviceSwiper) {
   let swiper = new Swiper(".n-service-swiper", {
     slidesPerView: 'auto',
@@ -668,5 +669,78 @@ if (serviceSwiper) {
     }
   })
 };
+
+const popGoodsSection = document.querySelector('.popular-goods');
+
+if(popGoodsSection) {
+
+  (function() {
+    // breakpoint where swiper will be destroyed
+    // and switches to a dual-column layout
+    const breakpoint = window.matchMedia('(min-width: 1280px)');
+    const popGoodsSwiper = document.querySelector('.popular-goods-swiper');
+    const popGoodsList = document.querySelector('.popular-goods__list');
+    const popGoodsSlides = document.querySelectorAll('.popular-goods__item');
+
+    // keep track of swiper instances to destroy later
+    let popGoodSwiper;
+    const breakpointChecker = () => {
+
+      // if larger viewport and multi-row layout needed
+      if ( breakpoint.matches === true ) {
+
+        // clean up old instances and inline styles when available
+      if ( popGoodSwiper !== undefined ) {
+        popGoodsSwiper.destroy(true,true);
+        popGoodsSwiper.classList.remove('swiper');
+        popGoodsList.classList.remove('swiper-wrapper');
+        popGoodsSlides.forEach((slide) => {
+          slide.classList.remove('swiper-slide');
+        });
+      }
+
+      // or/and do nothing
+      return;
+
+        // else if a small viewport and single column layout needed
+        } else if ( breakpoint.matches === false ) {
+
+          // fire small viewport version of swiper
+          return enableSwiper();
+
+        }
+
+    };
+
+    const enableSwiper = () => {
+      popGoodsSwiper.classList.add('swiper');
+      popGoodsList.classList.add('swiper-wrapper');
+      popGoodsSlides.forEach((slide) => {
+        slide.classList.add('swiper-slide');
+      });
+
+      popGoodSwiper = new Swiper ('.popular-goods-swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 3,
+        breakpoints: {
+          768: {
+            spaceBetween: 8,
+          },
+        },
+        navigation: {
+          nextEl: ".popular-goods__arrow--next",
+          prevEl: ".popular-goods__arrow--back",
+        },
+      });
+
+    };
+
+    // keep an eye on viewport size changes
+    window.addEventListener('resize', breakpointChecker);
+
+    // kickstart
+    breakpointChecker();
+  })();
+}
 
 

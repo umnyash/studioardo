@@ -33,4 +33,16 @@
 
 .main-page__n-service {
   margin-bottom: 40px;
+
+  @media #{$narrowlaptop-desktop} {
+    margin-bottom: 60px;
+  }
+}
+
+.main-page__popular-goods {
+  margin-bottom: 60px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 100px;
+  }
 }
