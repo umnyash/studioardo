@@ -743,4 +743,58 @@ if(popGoodsSection) {
   })();
 }
 
+const popGoodList = document.querySelector('.popular-goods__list');
+
+if (popGoodList) {
+  const addGoodToCart = (evt) => {
+    const goodCartButton = evt.target.closest('.good__cart-button');
+
+    if (!goodCartButton) {
+      return;
+    }
+
+    const good = goodCartButton.closest('.good');
+    good.classList.add('good--in-cart');
+  };
+
+  const quickOrderGood = (evt) => {
+    const goodQuickOrderButton = evt.target.closest('.good__quick-order-button');
+
+    if (!goodQuickOrderButton) {
+      return;
+    }
+
+    const good = goodQuickOrderButton.closest('.good');
+    good.classList.add('good--quick-order');
+  };
+
+  const cancelQuickOrder = (evt) => {
+    const goodQuickOrderCancelButton = evt.target.closest('.good__cancel-order');
+
+    if (!goodQuickOrderCancelButton) {
+      return;
+    }
+
+    const good = goodQuickOrderCancelButton.closest('.good');
+    good.classList.remove('good--quick-order');
+  };
+
+  const submitQuickOrder = (evt) => {
+    const goodQuickOrderSubmitButton = evt.target.closest('.good__submit-order');
+
+    if (!goodQuickOrderSubmitButton) {
+      return;
+    }
+
+    const good = goodQuickOrderSubmitButton.closest('.good');
+    good.classList.remove('good--quick-order');
+    good.classList.add('good--in-order');
+  };
+
+  popGoodList.addEventListener('click', submitQuickOrder);
+  popGoodList.addEventListener('click', addGoodToCart);
+  popGoodList.addEventListener('click', quickOrderGood);
+  popGoodList.addEventListener('click', cancelQuickOrder);
+}
+
 
