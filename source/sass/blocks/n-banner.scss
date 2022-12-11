@@ -1,0 +1,142 @@
+.n-banner {
+  display: grid;
+  min-height: 440px;
+  font-family: $basic-font-family;
+  font-size: 14px;
+  line-height: 1.6;
+  color: $text-color-secondary;
+
+  @media #{$tablet-desktop} {
+    min-height: 570px;
+    font-size: 16px;
+    line-height: 1.3;
+  }
+}
+
+.n-banner__img-wrapper {
+  grid-area: 1 / 1 / 2 / 2;
+  width: 100%;
+  height: 100%;
+}
+
+.n-banner__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.n-banner__content-wrapper {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.n-banner__content {
+  height: 100%;
+  padding: 20px 14px;
+
+  @media #{$tablet-desktop} {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+
+  @media #{$desktop} {
+    width: 1480px;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin: 0 auto;
+  }
+}
+
+.n-banner__content-inner {
+  display: grid;
+  height: 100%;
+  max-width: 510px;
+  align-content: end;
+
+  @media #{$tablet-desktop} {
+    align-content: center;
+  }
+}
+
+.n-banner__heading {
+  margin: 0 0 19px;
+  font-family: $accent-font-family;
+  font-size: 26px;
+  line-height: 29px;
+  font-weight: 700;
+
+  @media #{$tablet-desktop} {
+    margin-bottom: 30px;
+    font-size: 36px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+}
+
+.n-banner__text {
+  width: 95%;
+  margin: 0 0 16px;
+  font: inherit;
+
+  @media #{$tablet-desktop} {
+    margin-bottom: 20px
+  }
+}
+
+.n-banner__buttons {
+  display: grid;
+  margin: 38px 0 0;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 4px;
+
+  @media #{$tablet-desktop} {
+    margin-top: 59px;
+    column-gap: 10px;
+  }
+}
+
+.n-banner__video-link {
+  order: -1;
+  display: inline-grid;
+  grid-auto-flow: column;
+  margin: 41px 0;
+  column-gap: 10px;
+  justify-content: start;
+  align-items: center;
+  font-size: 12px;
+  line-height: 1.3;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: inherit;
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  @media #{$tablet-desktop} {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    column-gap: 20px;
+  }
+
+  &::before {
+    content: "";
+    width: 40px;
+    height: 40px;
+    background-image: url('../img/icons/video-play-icon.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    @media #{$tablet-desktop} {
+      width: 79px;
+      height: 79px;
+    }
+  }
+}
