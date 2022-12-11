@@ -797,4 +797,18 @@ if (popGoodList) {
   popGoodList.addEventListener('click', cancelQuickOrder);
 }
 
+const tileSwiper = document.querySelector('.tile-range');
+if (tileSwiper) {
+  let swiper = new Swiper ('.tile-range-swiper', {
+    slidesPerView: 'auto',
+    grid: {
+      rows: 2,
+    },
+    spaceBetween: 10,
+    navigation: {
+      nextEl: ".tile-range__arrow--next",
+      prevEl: ".tile-range__arrow--back",
+    },
+  });
+};
 

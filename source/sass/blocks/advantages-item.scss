@@ -6,6 +6,7 @@
   line-height: 17px;
   color: $card-header-contact-color;
   border-radius: 10px;
+  background-color: $advantage-item-bg;
 
   @media #{$tablet-desktop} {
     font-size: 14px;
@@ -21,6 +22,41 @@
     }
   }
 }
+
+.advantages-item--colourful {
+  &:first-child {
+    background-color: $advantage-item-bg1;
+  }
+  &:nth-child(n + 2) {
+    background-color: $advantage-item-bg2;
+  }
+  &:nth-child(n + 3) {
+    background-color: $advantage-item-bg3;
+  }
+  &:nth-child(n + 4) {
+    background-color: $advantage-item-bg4;
+  }
+  &:last-child {
+    background-color: $advantage-item-bg5;
+  }
+}
+
+.advantages-item--secondary {
+  font-family: $accent-font-family;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: -0.03em;
+  color: $basic-text-color;
+
+  @media #{laptop-desktop} {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+  }
+}
+
+
 
 .advantages-item__mobile {
   display: none;
