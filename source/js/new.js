@@ -559,3 +559,19 @@ if (goodList) {
   goodList.addEventListener('click', quickOrderGood);
   goodList.addEventListener('click', cancelQuickOrder);
 }
+
+const linksElements = document.querySelectorAll('.links');
+
+if (linksElements) {
+  linksElements.forEach((links) => {
+    links.addEventListener('click', (evt) => {
+      const button = evt.target.closest('.links__toggle');
+
+      if (!button) {
+        return;
+      }
+
+      links.classList.toggle('links--open');
+    })
+  });
+}

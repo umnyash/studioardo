@@ -1,0 +1,112 @@
+.product-type {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  row-gap: 7px;
+  font-size: 14px;
+  line-height: 1.3;
+
+  @media #{$tablet-desktop} {
+    row-gap: 0;
+    font-size: 16px;
+  }
+}
+
+.product-type__img-wrapper {
+  width: 100%;
+  height: 160px;
+
+  @media #{$tablet-desktop} {
+    height: 369px;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    overflow: hidden;
+  }
+}
+
+.product-type__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.product-type__text-content {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas:
+    "heading heading price"
+    "link-1  link-2  link-2";
+  align-items: center;
+  row-gap: 7px;
+  column-gap: 15px;
+
+  @media #{$tablet-desktop} {
+    padding: 18px 18px 15px 19px;
+    border: 1px solid $product-type-text-content-border-color;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    grid-template-columns: 1fr auto auto;
+    grid-template-areas:
+      "heading link-1 link-2"
+      "price   link-1 link-2";
+    row-gap: 11px;
+    column-gap: 8px;
+  }
+}
+
+.product-type__heading {
+  grid-area: heading;
+  margin: 0;
+  font-family: $accent-font-family;
+  font-size: 18px;
+  line-height: 24px;
+
+  @media #{$tablet-desktop} {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+.product-type__price-wrapper {
+  grid-area: price;
+  margin: 0;
+  font: inherit;
+}
+
+.product-type__price-part {
+  display: none;
+
+  @media #{$tablet-desktop} {
+    display: inline;
+  }
+}
+
+.product-type__link {
+  grid-area: link-1;
+  justify-self: start;
+  font-size: 12px;
+  line-height: 18px;
+  color: inherit;
+
+  @media #{$tablet-desktop} {
+    min-width: 157px;
+    padding: 15px 18px 12px;
+    border: 1px solid $special-color;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.3;
+  }
+}
+
+.product-type__link--accent {
+  grid-area: link-2;
+  font-weight: 600;
+  color: $special-color;
+
+  @media #{$tablet-desktop} {
+    color: $text-color-secondary;
+    background-color: $special-color;
+  }
+}
