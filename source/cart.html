@@ -271,7 +271,7 @@
                             Адрес доставки
                           </button>
                         </legend>
-                        <div class="form__section-body">
+                        <div class="form__section-body form__section-body--address">
                           <div class="form__section-group form__section-group--address">
                             <div class="form__textfield-wrapper form__textfield-wrapper--wide">
                               <label class="form__textfield-label">
@@ -314,8 +314,14 @@
                               </label>
                             </div>
                           </div>
+                          <div class="form__delivery-self">
+                            <label class="form__checkbox-label">
+                              <input class="form__checkbox-control form__checkbox-control--secondary visually-hidden" name="delivery-self" type="checkbox">
+                              <span class="form__checkbox-label-text">Самовывоз</span>
+                            </label>
+                          </div>
                           <div class="form__section-comment form__section-comment--transportation">
-                            <b class="form__section-comment--accent">Доставка</b> от 800 руб от 1 дня <a class="form__section-link form__section-link--transportation">Подробнее</a>
+                            <b class="form__section-comment--accent">Доставка транспортом</b> от 800 руб от 1 дня <a class="form__section-link form__section-link--transportation">Подробнее</a>
                             <div class="form__section-transportation-table-wrapper">
                               <div class="custom-table">
                                 <div class="custom-table__table-wrapper">
@@ -467,7 +473,7 @@
                       <div class="promocode__body">
                         <div class="form__textfield-wrapper">
                           <label class="form__textfield-label">
-                            <span class="form__textfield">
+                            <span class="form__textfield form__textfield--light">
                               <input class="form__textfield-control" name="promocode" type="text" placeholder="Wintersale">
                               <span class="form__textfield-label-text">Введите промокод</span>
                             </span>

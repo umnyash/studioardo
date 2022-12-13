@@ -104,6 +104,10 @@
     }
   }
 
+  .form__textfield--light .form__textfield-control {
+    border-color: $custom-form-2-textfield-border-light-color;
+  }
+
   .form__textfield--error .form__textfield-control {
     border-color: $custom-form-2-textfield-border-error-color;
   }
@@ -585,6 +589,10 @@
       display: block;
     }
 
+    .form__section-body--address {
+      display: grid;
+    }
+
     .form__section-heading-button::after {
       background-image: url("../img/icons/accordion-button-minus.svg");
     }
@@ -907,5 +915,27 @@
   .form__section-transportation-table-wrapper:hover,
   .form__section-link--transportation:hover ~ .form__section-transportation-table-wrapper {
     display: block;
+  }
+
+  .form__section-body--address {
+    row-gap: 21px;
+    column-gap: 22px;
+    align-items: center;
+
+    .form__delivery-self {
+      justify-self: start;
+    }
+
+    .form__section-comment {
+      margin-top: 0;
+    }
+
+    @media #{$cart-tablet} {
+      grid-template-columns: max-content 1fr;
+
+      .form__section-group {
+        grid-column: 1 / 3;
+      }
+    }
   }
 }
