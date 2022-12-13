@@ -7,6 +7,12 @@
     @media #{$laptop-desktop} {
       padding: 0 50px;
     }
+
+    @media #{$desktop} {
+      width: 1480px;
+      padding: 0 40px;
+      margin: 0 auto;
+    }
   }
 }
 
@@ -69,7 +75,7 @@
 
 
 .main-page__n-subscribe {
-  margin: 0 0 40px 0;
+  margin-bottom: 40px;
 
   @media #{$laptop-desktop} {
     margin-bottom: 52px;
@@ -77,5 +83,13 @@
 
   @media #{$desktop} {
     margin-bottom: 40px;
+  }
+}
+
+.main-page__company-info {
+  margin-bottom: 41px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 60px;
   }
 }

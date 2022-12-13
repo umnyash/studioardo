@@ -34,6 +34,37 @@
   }
 }
 
+.clipbox--small {
+  --max-height: 95px;
+
+  @media #{$tablet-desktop} {
+    --max-height: 132px;
+  }
+
+  @media #{$desktop} {
+    --max-height: 346px;
+  }
+
+  .clipbox__toggler {
+    font-size: 16px;
+    line-height: 1;
+    margin-top: 10px;
+    color: $weak-text-color;
+
+    &::after {
+      display: none;
+    }
+
+    &:hover {
+      color: $clipbox-toggler-alter-color;
+    }
+
+    @media #{$tablet-desktop} {
+      margin-top: 20px;
+    }
+  }
+}
+
 .clipbox--500 {
   --max-height: 500px;
 }
