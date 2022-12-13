@@ -1,9 +1,28 @@
-.main-page__our-advantages,
+.main-page__body {
+  .center {
+    @media #{$tablet-desktop} {
+      padding: 0 30px;
+    }
+
+    @media #{$laptop-desktop} {
+      padding: 0 50px;
+    }
+  }
+}
+
 .main-page__good-range,
 .main-page__tile-range {
   margin-bottom: 40px;
 
   @media #{$tablet-desktop} {
+    margin-bottom: 60px;
+  }
+}
+
+.main-page__our-advantages {
+  margin-bottom: 40px;
+
+  @media #{$desktop} {
     margin-bottom: 60px;
   }
 }
@@ -45,5 +64,18 @@
 
   @media #{$laptop-desktop} {
     margin-bottom: 100px;
+  }
+}
+
+
+.main-page__n-subscribe {
+  margin: 0 0 40px 0;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 52px;
+  }
+
+  @media #{$desktop} {
+    margin-bottom: 40px;
   }
 }

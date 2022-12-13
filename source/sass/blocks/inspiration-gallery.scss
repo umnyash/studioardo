@@ -44,6 +44,14 @@
   margin: 0 0 0 10px;
   padding: 0;
   list-style: none;
+
+  @media #{$tablet-desktop} {
+    margin: 0 0 0 30px;
+  }
+
+  @media #{$laptop-desktop} {
+    margin: 0 0 0 50px;
+  }
 }
 
 .inspiration__gallery li {

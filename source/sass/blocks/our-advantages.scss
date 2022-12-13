@@ -18,6 +18,34 @@
   }
 }
 
+.our-advantages__list--big {
+  gap: 8px;
+
+  @media #{$narrowlaptop-desktop} {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px;
+  }
+
+  .our-advantages__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 14px 27px 15px 10px;
+
+    @media #{$narrowlaptop-desktop} {
+      padding: 19px 20px;
+    }
+  }
+
+  .our-advantages__item::after {
+      right: 9px;
+
+      @media #{$desktop} {
+        top: 12px;
+      }
+  }
+}
+
 .our-advantages__item {
   position: relative;
   margin: 0;
