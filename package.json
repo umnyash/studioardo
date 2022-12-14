@@ -44,6 +44,6 @@
     "source/sass/**/*.scss"
   ],
   "engines": {
-    "node": "16.14.0"
+    "node": "13.0"
   }
 }
