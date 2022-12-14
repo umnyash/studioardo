@@ -560,6 +560,7 @@ if (goodList) {
   goodList.addEventListener('click', cancelQuickOrder);
 }
 
+
 const inspirationGallery = document.querySelector('.inspiration');
 
 if (inspirationGallery) {
@@ -811,4 +812,34 @@ if (tileSwiper) {
     },
   });
 };
+
+
+const linksElements = document.querySelectorAll('.links');
+
+if (linksElements) {
+  linksElements.forEach((links) => {
+    links.addEventListener('click', (evt) => {
+      const button = evt.target.closest('.links__toggle');
+
+      if (!button) {
+        return;
+      }
+
+      links.classList.toggle('links--open');
+    })
+  });
+}
+
+const orderForm = document.querySelector('.custom-form-2--order');
+const formSectionBodyAddress = orderForm.querySelector('.form__section-body--address');
+
+if (orderForm && formSectionBodyAddress) {
+  orderForm.addEventListener('change', (evt) => {
+    const deliverySelfCheckbox = evt.target.closest('.form__checkbox-control');
+    if (!deliverySelfCheckbox) {
+      return;
+    }
+    formSectionBodyAddress.classList.toggle('form__section-body--address--stock', deliverySelfCheckbox.checked);
+  });
+}
 
