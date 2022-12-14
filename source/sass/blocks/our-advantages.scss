@@ -69,3 +69,22 @@
     padding: 17px 20px;
   }
 }
+
+.our-advantages__item:first-child {
+  .advantages-item__info {
+    @media #{$laptop-desktop} {
+      transform: translate(0, -100%);
+    }
+  }
+}
+
+.our-advantages__item:last-child {
+  .advantages-item__info {
+    @media #{$laptop-desktop} {
+      left: auto;
+      right: 0;
+      transform: translate( 0, -100%);
+    }
+  }
+}
+
