@@ -930,12 +930,72 @@
       margin-top: 0;
     }
 
+    .form__info--stock {
+      display: none;
+    }
+
     @media #{$cart-tablet} {
       grid-template-columns: max-content 1fr;
 
       .form__section-group {
         grid-column: 1 / 3;
       }
+
+      .form__info {
+        grid-column: 1 / 3;
+      }
     }
+  }
+
+  .form__section-body--address--stock {
+    row-gap: 17px;
+
+    .form__info--stock {
+      display: block;
+    }
+
+    .form__section-group,
+    .form__section-comment--transportation {
+      display: none;
+    }
+  }
+
+  .form__info {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+
+  .form__info-key-word {
+    font-size: 14px;
+    line-height: 1.3;
+    font-weight: 600;
+  }
+
+  .form__info-address {
+    position: relative;
+    font: inherit;
+    padding: 0 0 0 26px;
+    margin: 10px 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: 0;
+      width: 16px;
+      height: 21px;
+      background-image: url("../img/icons/address-icon.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+  }
+
+  .form__info-comment {
+    display: block;
+    margin: 19px 0 0;
+    font-size: 14px;
+    line-height: 1.3;
+    color: $weak-text-color;
   }
 }

@@ -19,9 +19,9 @@
     <main class="stone-main-page">
       <section class="n-banner">
         <picture class="n-banner__img-wrapper" aria-hidden="true">
-          <source media="(min-width: 1281px)" srcset="img/stone-products-hero-bg-desktop.jpg 1x">
-          <source media="(min-width: 769px)" srcset="img/stone-products-hero-bg-laptop.jpg 1x">
-          <source media="(min-width: 376px)" srcset="img/stone-products-hero-bg-tablet.jpg 1x">
+          <source media="(min-width: 1281px)" srcset="img/stone/hero/stone-products-hero-bg-desktop.jpg 1x">
+          <source media="(min-width: 769px)" srcset="img/stone/hero/stone-products-hero-bg-laptop.jpg 1x">
+          <source media="(min-width: 376px)" srcset="img/stone/hero/stone-products-hero-bg-tablet.jpg 1x">
           <img class="n-banner__img" src="img/stone-products-hero-bg.jpg">
         </picture>
         <div class="n-banner__content-wrapper">
@@ -51,7 +51,7 @@
       <section class="product-types">
         <div class="product-types__inner">
           <h2 class="visually-hidden">Виды изделий из камня</h2>
-          <div class="links">
+          <div class="product-types__menu links">
             <button class="links__toggle" type="button">Тип изделия</button>
             <ul class="products-types__menu links__list">
               <li class="links__item">
@@ -94,132 +94,205 @@
           </div>
           <ul class="product-types__list">
             <li class="product-types__item product-type">
-              <h2 class="product-type__heading">Столешницы</h2>
               <picture class="product-type__img-wrapper">
+                <source media="(min-width: 768px)" srcset="img/stone/types/countertops-tablet.jpg 1x">
                 <img class="product-type__img" src="img/stone/types/countertops.jpg" alt="Столешницы.">
               </picture>
-              <p class="product-type__price">от 4800₽/м2</p>
-              <a class="product-type__primary-link" href="#!">Подробнее</a>
-              <a class="product-type__secondary-link" href="#!">Рассчитать мой вариант</a>
+              <div class="product-type__text-content">
+                <h2 class="product-type__heading">Столешницы</h2>
+                <p class="product-type__price-wrapper">
+                  <span class="product-type__price-part">Цена</span> от <span class="product-type__price">4800</span>₽/м2
+                </p>
+                <a class="product-type__link" href="#!">Подробнее</a>
+                <a class="product-type__link product-type__link--accent" href="#!">Рассчитать мой вариант</a>
+              </div>
             </li>
             <li class="product-types__item product-type">
-              <h2 class="product-type__heading">Подоконники</h2>
               <picture class="product-type__img-wrapper">
+                <source media="(min-width: 768px)" srcset="img/stone/types/window-sills-tablet.jpg 1x">
                 <img class="product-type__img" src="img/stone/types/window-sills.jpg" alt="Подоконники.">
               </picture>
-              <p class="product-type__price">от 4800₽/м2</p>
-              <a class="product-type__primary-link" href="#!">Подробнее</a>
-              <a class="product-type__secondary-link" href="#!">Рассчитать мой вариант</a>
+              <div class="product-type__text-content">
+                <h2 class="product-type__heading">Подоконники</h2>
+                <p class="product-type__price-wrapper">
+                  <span class="product-type__price-part">Цена</span> от <span class="product-type__price">4800</span>₽/м2
+                </p>
+                <a class="product-type__link" href="#!">Подробнее</a>
+                <a class="product-type__link product-type__link--accent" href="#!">Рассчитать мой вариант</a>
+              </div>
             </li>
             <li class="product-types__item product-type">
-              <h2 class="product-type__heading">Лестницы</h2>
               <picture class="product-type__img-wrapper">
+                <source media="(min-width: 768px)" srcset="img/stone/types/stairs-tablet.jpg 1x">
                 <img class="product-type__img" src="img/stone/types/stairs.jpg" alt="Лестницы.">
               </picture>
-              <p class="product-type__price">от 4800₽/м2</p>
-              <a class="product-type__primary-link" href="#!">Подробнее</a>
-              <a class="product-type__secondary-link" href="#!">Рассчитать мой вариант</a>
+              <div class="product-type__text-content">
+                <h2 class="product-type__heading">Лестницы</h2>
+                <p class="product-type__price-wrapper">
+                  <span class="product-type__price-part">Цена</span> от <span class="product-type__price">4800</span>₽/м2
+                </p>
+                <a class="product-type__link" href="#!">Подробнее</a>
+                <a class="product-type__link product-type__link--accent" href="#!">Рассчитать мой вариант</a>
+              </div>
             </li>
             <li class="product-types__item product-type">
-              <h2 class="product-type__heading">Ступени</h2>
               <picture class="product-type__img-wrapper">
-                <img class="product-type__img" src="img/stone/types/stairs.jpg" alt="Ступени.">
+                <source media="(min-width: 768px)" srcset="img/stone/types/steps-tablet.jpg 1x">
+                <img class="product-type__img" src="img/stone/types/steps.jpg" alt="Ступени.">
               </picture>
-              <p class="product-type__price">от 4800₽/м2</p>
-              <a class="product-type__primary-link" href="#!">Подробнее</a>
-              <a class="product-type__secondary-link" href="#!">Рассчитать мой вариант</a>
+              <div class="product-type__text-content">
+                <h2 class="product-type__heading">Ступени</h2>
+                <p class="product-type__price-wrapper">
+                  <span class="product-type__price-part">Цена</span> от <span class="product-type__price">4800</span>₽/м2
+                </p>
+                <a class="product-type__link" href="#!">Подробнее</a>
+                <a class="product-type__link product-type__link--accent" href="#!">Рассчитать мой вариант</a>
+              </div>
             </li>
             <li class="product-types__item product-type">
-              <h2 class="product-type__heading">Столы</h2>
               <picture class="product-type__img-wrapper">
+                <source media="(min-width: 768px)" srcset="img/stone/types/tables-tablet.jpg 1x">
                 <img class="product-type__img" src="img/stone/types/tables.jpg" alt="Столы.">
               </picture>
-              <p class="product-type__price">от 4800₽/м2</p>
-              <a class="product-type__primary-link" href="#!">Подробнее</a>
-              <a class="product-type__secondary-link" href="#!">Рассчитать мой вариант</a>
+              <div class="product-type__text-content">
+                <h2 class="product-type__heading">Столы</h2>
+                <p class="product-type__price-wrapper">
+                  <span class="product-type__price-part">Цена</span> от <span class="product-type__price">4800</span>₽/м2
+                </p>
+                <a class="product-type__link" href="#!">Подробнее</a>
+                <a class="product-type__link product-type__link--accent" href="#!">Рассчитать мой вариант</a>
+              </div>
             </li>
             <li class="product-types__item product-type">
-              <h2 class="product-type__heading">Камины</h2>
               <picture class="product-type__img-wrapper">
+                <source media="(min-width: 768px)" srcset="img/stone/types/fireplaces-tablet.jpg 1x">
                 <img class="product-type__img" src="img/stone/types/fireplaces.jpg" alt="Камины.">
               </picture>
-              <p class="product-type__price">от 4800₽/м2</p>
-              <a class="product-type__primary-link" href="#!">Подробнее</a>
-              <a class="product-type__secondary-link" href="#!">Рассчитать мой вариант</a>
+              <div class="product-type__text-content">
+                <h2 class="product-type__heading">Камины</h2>
+                <p class="product-type__price-wrapper">
+                  <span class="product-type__price-part">Цена</span> от <span class="product-type__price">4800</span>₽/м2
+                </p>
+                <a class="product-type__link" href="#!">Подробнее</a>
+                <a class="product-type__link product-type__link--accent" href="#!">Рассчитать мой вариант</a>
+              </div>
             </li>
             <li class="product-types__item product-type">
-              <h2 class="product-type__heading">Полы</h2>
               <picture class="product-type__img-wrapper">
+                <source media="(min-width: 768px)" srcset="img/stone/types/floors-tablet.jpg 1x">
                 <img class="product-type__img" src="img/stone/types/floors.jpg" alt="Полы.">
               </picture>
-              <p class="product-type__price">от 4800₽/м2</p>
-              <a class="product-type__primary-link" href="#!">Подробнее</a>
-              <a class="product-type__secondary-link" href="#!">Рассчитать мой вариант</a>
+              <div class="product-type__text-content">
+                <h2 class="product-type__heading">Полы</h2>
+                <p class="product-type__price-wrapper">
+                  <span class="product-type__price-part">Цена</span> от <span class="product-type__price">4800</span>₽/м2
+                </p>
+                <a class="product-type__link" href="#!">Подробнее</a>
+                <a class="product-type__link product-type__link--accent" href="#!">Рассчитать мой вариант</a>
+              </div>
             </li>
             <li class="product-types__item product-type">
-              <h2 class="product-type__heading">Фасады</h2>
               <picture class="product-type__img-wrapper">
+                <source media="(min-width: 768px)" srcset="img/stone/types/facades-tablet.jpg 1x">
                 <img class="product-type__img" src="img/stone/types/facades.jpg" alt="Фасады.">
               </picture>
-              <p class="product-type__price">от 4800₽/м2</p>
-              <a class="product-type__primary-link" href="#!">Подробнее</a>
-              <a class="product-type__secondary-link" href="#!">Рассчитать мой вариант</a>
+              <div class="product-type__text-content">
+                <h2 class="product-type__heading">Фасады</h2>
+                <p class="product-type__price-wrapper">
+                  <span class="product-type__price-part">Цена</span> от <span class="product-type__price">4800</span>₽/м2
+                </p>
+                <a class="product-type__link" href="#!">Подробнее</a>
+                <a class="product-type__link product-type__link--accent" href="#!">Рассчитать мой вариант</a>
+              </div>
             </li>
             <li class="product-types__item product-type">
-              <h2 class="product-type__heading">Входные группы</h2>
               <picture class="product-type__img-wrapper">
+                <source media="(min-width: 768px)" srcset="img/stone/types/entrance-groups-tablet.jpg 1x">
                 <img class="product-type__img" src="img/stone/types/entrance-groups.jpg" alt="Входные группы.">
               </picture>
-              <p class="product-type__price">от 4800₽/м2</p>
-              <a class="product-type__primary-link" href="#!">Подробнее</a>
-              <a class="product-type__secondary-link" href="#!">Рассчитать мой вариант</a>
+              <div class="product-type__text-content">
+                <h2 class="product-type__heading">Входные группы</h2>
+                <p class="product-type__price-wrapper">
+                  <span class="product-type__price-part">Цена</span> от <span class="product-type__price">4800</span>₽/м2
+                </p>
+                <a class="product-type__link" href="#!">Подробнее</a>
+                <a class="product-type__link product-type__link--accent" href="#!">Рассчитать мой вариант</a>
+              </div>
             </li>
             <li class="product-types__item product-type">
-              <h2 class="product-type__heading">Барные стойки</h2>
               <picture class="product-type__img-wrapper">
+                <source media="(min-width: 768px)" srcset="img/stone/types/bar-counters-tablet.jpg 1x">
                 <img class="product-type__img" src="img/stone/types/bar-counters.jpg" alt="Барные стойки.">
               </picture>
-              <p class="product-type__price">от 4800₽/м2</p>
-              <a class="product-type__primary-link" href="#!">Подробнее</a>
-              <a class="product-type__secondary-link" href="#!">Рассчитать мой вариант</a>
+              <div class="product-type__text-content">
+                <h2 class="product-type__heading">Барные стойки</h2>
+                <p class="product-type__price-wrapper">
+                  <span class="product-type__price-part">Цена</span> от <span class="product-type__price">4800</span>₽/м2
+                </p>
+                <a class="product-type__link" href="#!">Подробнее</a>
+                <a class="product-type__link product-type__link--accent" href="#!">Рассчитать мой вариант</a>
+              </div>
             </li>
             <li class="product-types__item product-type">
-              <h2 class="product-type__heading">Панно</h2>
               <picture class="product-type__img-wrapper">
+                <source media="(min-width: 768px)" srcset="img/stone/types/panel-tablet.jpg 1x">
                 <img class="product-type__img" src="img/stone/types/panel.jpg" alt="Панно.">
               </picture>
-              <p class="product-type__price">от 4800₽/м2</p>
-              <a class="product-type__primary-link" href="#!">Подробнее</a>
-              <a class="product-type__secondary-link" href="#!">Рассчитать мой вариант</a>
+              <div class="product-type__text-content">
+                <h2 class="product-type__heading">Панно</h2>
+                <p class="product-type__price-wrapper">
+                  <span class="product-type__price-part">Цена</span> от <span class="product-type__price">4800</span>₽/м2
+                </p>
+                <a class="product-type__link" href="#!">Подробнее</a>
+                <a class="product-type__link product-type__link--accent" href="#!">Рассчитать мой вариант</a>
+              </div>
             </li>
             <li class="product-types__item product-type">
-              <h2 class="product-type__heading">Хамамы</h2>
               <picture class="product-type__img-wrapper">
+                <source media="(min-width: 768px)" srcset="img/stone/types/hamams-tablet.jpg 1x">
                 <img class="product-type__img" src="img/stone/types/hamams.jpg" alt="Хамамы.">
               </picture>
-              <p class="product-type__price">от 4800₽/м2</p>
-              <a class="product-type__primary-link" href="#!">Подробнее</a>
-              <a class="product-type__secondary-link" href="#!">Рассчитать мой вариант</a>
+              <div class="product-type__text-content">
+                <h2 class="product-type__heading">Хамамы</h2>
+                <p class="product-type__price-wrapper">
+                  <span class="product-type__price-part">Цена</span> от <span class="product-type__price">4800</span>₽/м2
+                </p>
+                <a class="product-type__link" href="#!">Подробнее</a>
+                <a class="product-type__link product-type__link--accent" href="#!">Рассчитать мой вариант</a>
+              </div>
             </li>
             <li class="product-types__item product-type">
-              <h2 class="product-type__heading">Предметы интерьера</h2>
               <picture class="product-type__img-wrapper">
+                <source media="(min-width: 768px)" srcset="img/stone/types/interior-items-tablet.jpg 1x">
                 <img class="product-type__img" src="img/stone/types/interior-items.jpg" alt="Предметы интерьера.">
               </picture>
-              <p class="product-type__price">от 4800₽/м2</p>
-              <a class="product-type__primary-link" href="#!">Подробнее</a>
-              <a class="product-type__secondary-link" href="#!">Рассчитать мой вариант</a>
+              <div class="product-type__text-content">
+                <h2 class="product-type__heading">Предметы интерьера</h2>
+                <p class="product-type__price-wrapper">
+                  <span class="product-type__price-part">Цена</span> от <span class="product-type__price">4800</span>₽/м2
+                </p>
+                <a class="product-type__link" href="#!">Подробнее</a>
+                <a class="product-type__link product-type__link--accent" href="#!">Рассчитать мой вариант</a>
+              </div>
             </li>
             <li class="product-types__item product-type">
-              <h2 class="product-type__heading">Спец элементы</h2>
               <picture class="product-type__img-wrapper">
+                <source media="(min-width: 768px)" srcset="img/stone/types/special-elements-tablet.jpg 1x">
                 <img class="product-type__img" src="img/stone/types/special-elements.jpg" alt="Спец элементы.">
               </picture>
-              <p class="product-type__price">от 4800₽/м2</p>
-              <a class="product-type__primary-link" href="#!">Подробнее</a>
-              <a class="product-type__secondary-link" href="#!">Рассчитать мой вариант</a>
+              <div class="product-type__text-content">
+                <h2 class="product-type__heading">Спец элементы</h2>
+                <p class="product-type__price-wrapper">
+                  <span class="product-type__price-part">Цена</span> от <span class="product-type__price">4800</span>₽/м2
+                </p>
+                <a class="product-type__link" href="#!">Подробнее</a>
+                <a class="product-type__link product-type__link--accent" href="#!">Рассчитать мой вариант</a>
+              </div>
             </li>
           </ul>
+          <div class="product-types__button-wrapper">
+            <button class="product-types__button button button--secondary-2 button--alter-2 button--fw600" type="button">Смотреть еще изделия из камня</button>
+          </div>
         </div>
       </section>
     </main>
