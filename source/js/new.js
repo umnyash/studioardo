@@ -816,7 +816,6 @@ if (tileSwiper) {
   });
 };
 
-
 const linksElements = document.querySelectorAll('.links');
 
 if (linksElements) {
@@ -834,17 +833,34 @@ if (linksElements) {
 }
 
 const orderForm = document.querySelector('.custom-form-2--order');
-const formSectionBodyAddress = orderForm.querySelector('.form__section-body--address');
 
-if (orderForm && formSectionBodyAddress) {
-  orderForm.addEventListener('change', (evt) => {
-    const deliverySelfCheckbox = evt.target.closest('.form__checkbox-control');
-    if (!deliverySelfCheckbox) {
-      return;
-    }
-    formSectionBodyAddress.classList.toggle('form__section-body--address--stock', deliverySelfCheckbox.checked);
-  });
+if (orderForm) {
+  const formSectionBodyAddress = orderForm.querySelector('.form__section-body--address');
+
+  if (formSectionBodyAddress) {
+    orderForm.addEventListener('change', (evt) => {
+      const deliverySelfCheckbox = evt.target.closest('.form__checkbox-control');
+      if (!deliverySelfCheckbox) {
+        return;
+      }
+      formSectionBodyAddress.classList.toggle('form__section-body--address--stock', deliverySelfCheckbox.checked);
+    });
+  }
 }
+
+const initSelects = (parentNode) => {
+  const selectElements = parentNode.querySelectorAll('.n-select select');
+  if (!selectElements) {
+    return;
+  }
+  selectElements.forEach((select) => {
+    const choices = new Choices(select, {
+      searchEnabled: false,
+    });
+  })
+};
+
+initSelects(document);
 
 
 const brandsSection = document.querySelector('.n-brands');
@@ -914,3 +930,15 @@ if(brandsSection) {
     breakpointChecker();
   })();
 }
+
+const newsSection = document.querySelector('.n-news');
+if (newsSection) {
+  let swiper = new Swiper ('.news-swiper', {
+    slidesPerView: 'auto',
+    spaceBetween: 5,
+    navigation: {
+      nextEl: ".n-news__arrow--next",
+      prevEl: ".n-news__arrow--back",
+    },
+  });
+};
