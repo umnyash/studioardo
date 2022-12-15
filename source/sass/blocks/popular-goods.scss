@@ -9,8 +9,12 @@
 
 .popular-goods__list {
   margin: 0 0 18px 0;
-  padding: 10px 4px 0 9px;
+  padding: 10px 4px 23px 4px;
   list-style: none;
+
+  @media #{$widemobile-desktop} {
+    padding: 10px 4px 0 9px;
+  }
 
   @media #{$tablet-desktop} {
     padding: 0;

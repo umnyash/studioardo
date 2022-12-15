@@ -1,8 +1,11 @@
 .company-info__wrapper {
+  margin-bottom: 41px;
+
   @media #{$laptop-desktop} {
     display: grid;
     grid-template-columns: max-content 1fr;
     column-gap: 56px;
+    margin-bottom: 60px;
   }
 }
 
@@ -50,4 +53,8 @@
       }
     }
   }
+}
+
+.company-info__gallery {
+
 }

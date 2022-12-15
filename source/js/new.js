@@ -721,9 +721,12 @@ if(popGoodsSection) {
       });
 
       popGoodSwiper = new Swiper ('.popular-goods-swiper', {
-        slidesPerView: 'auto',
+        slidesPerView: 1,
         spaceBetween: 3,
         breakpoints: {
+          375: {
+            slidesPerView: 'auto',
+          },
           768: {
             spaceBetween: 8,
           },
@@ -843,3 +846,71 @@ if (orderForm && formSectionBodyAddress) {
   });
 }
 
+
+const brandsSection = document.querySelector('.n-brands');
+
+if(brandsSection) {
+
+  (function() {
+    // breakpoint where swiper will be destroyed
+    // and switches to a dual-column layout
+    const breakpoint = window.matchMedia('(min-width: 768px)');
+    const brandsSwiper = document.querySelector('.brands-swiper');
+    const brandsList = document.querySelector('.n-brands__list');
+    const brandsSlides = document.querySelectorAll('.n-brands__item');
+
+    // keep track of swiper instances to destroy later
+    let brandSwiper;
+    const breakpointChecker = () => {
+
+      // if larger viewport and multi-row layout needed
+      if ( breakpoint.matches === false ) {
+
+        // clean up old instances and inline styles when available
+      if ( brandSwiper !== undefined ) {
+        brandsSwiper.destroy(true,true);
+        brandsSwiper.classList.remove('swiper');
+        brandsList.classList.remove('swiper-wrapper');
+        brandsSlides.forEach((slide) => {
+          slide.classList.remove('swiper-slide');
+        });
+      }
+
+      // or/and do nothing
+      return;
+
+        // else if a small viewport and single column layout needed
+        } else if ( breakpoint.matches === true ) {
+
+          // fire small viewport version of swiper
+          return enableSwiper();
+
+        }
+
+    };
+
+    const enableSwiper = () => {
+      brandsSwiper.classList.add('swiper');
+      brandsList.classList.add('swiper-wrapper');
+      brandsSlides.forEach((slide) => {
+        slide.classList.add('swiper-slide');
+      });
+
+      brandSwiper = new Swiper ('.brands-swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 5,
+        navigation: {
+          nextEl: ".n-brands__arrow--next",
+          prevEl: ".n-brands__arrow--back",
+        },
+      });
+
+    };
+
+    // keep an eye on viewport size changes
+    window.addEventListener('resize', breakpointChecker);
+
+    // kickstart
+    breakpointChecker();
+  })();
+}
