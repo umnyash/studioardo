@@ -1,0 +1,32 @@
+.n-video {
+  position: relative;
+}
+
+.n-video__video {
+  width: 100%;
+  height: auto;
+}
+
+.n-video__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 79px;
+  height: 79px;
+  border: none;
+  background-color: transparent;
+  background-image: url(../img/icons/video-play-icon.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  transform: translate(-50%, -50%);
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}

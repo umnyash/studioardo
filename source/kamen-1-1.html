@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/libs.min.css" rel="stylesheet">
+    <link href="css/choices.min.css" rel="stylesheet">
     <link href="css/swiper.min.css" rel="stylesheet">
     <link href="css/swiper-bundle.min.css" rel="stylesheet">
     <link href="css/styles.min.css" rel="stylesheet">
@@ -15,7 +16,7 @@
     <meta name="format-detection" content="telephone=no"/>
     <meta name="format-detection" content="address=no"/>
   </head>
-  <body class="page-body">
+  <body class="page-body" style="padding-bottom: 400px">
     <main class="stone-main-page">
       <section class="n-banner">
         <picture class="n-banner__img-wrapper" aria-hidden="true">
@@ -48,6 +49,52 @@
           <a class="reference__button button button--alter-4 button--with-icon button--with-icon--download" href="#!" download>Скачать презентацию</a>
         </div>
       </section>
+      <div class="our-advantages-and-badge-widget">
+        <div class="our-advantages-and-badge-widget__inner">
+          <section class="our-advantages-and-badge-widget__our-advantages our-advantages">
+            <h2 class="visually-hidden">Наши преимущества</h2>
+              <ul class="our-advantages__list our-advantages__list--big">
+                <li class="our-advantages__item advantages-item">
+                  <p class="advantages-item__text">Без переплат</p>
+                  <div class="advantages-item__info">
+                    <picture class="advantages-item__illustration">
+                      <img src="img/stone/advantages/stone-advantage-1.jpg" alt="Ресепшен студии Ардо." width="335" height="95">
+                    </picture>
+                    <p>За счет прямых поставок камня из Италии, Испании, России, Греции, Бразилии, Индии и Китая</p>
+                  </div>
+                </li>
+                <li class="our-advantages__item advantages-item">
+                  <p class="advantages-item__text">Точная геометрия изделий</p>
+                  <div class="advantages-item__info">
+                    <picture class="advantages-item__illustration">
+                      <img src="img/stone/advantages/stone-advantage-2.jpg" alt="ЧПУ станок." width="335" height="95">
+                    </picture>
+                    <p>Используем высокоточное итальянское оборудование (ЧПУ станки)</p>
+                  </div>
+                </li>
+                <li class="our-advantages__item advantages-item">
+                  <p class="advantages-item__text">Всё пройдёт, как задумано</p>
+                  <div class="advantages-item__info">
+                    <picture class="advantages-item__illustration">
+                      <img src="img/stone/advantages/stone-advantage-3.jpg" alt="Кладка плитки." width="335" height="95">
+                    </picture>
+                    <p>Мастера со стажем работы с камнем более 10 лет осуществят обработку камня, доставку и установку "под ключ"</p>
+                  </div>
+                </li>
+                <li class="our-advantages__item advantages-item">
+                  <p class="advantages-item__text">Виды изделий неограничены</p>
+                  <div class="advantages-item__info">
+                    <picture class="advantages-item__illustration">
+                      <img src="img/stone/advantages/stone-advantage-4.jpg" alt="Узор из камня." width="335" height="95">
+                    </picture>
+                    <p>Разрабатываем как стандартные, так и нетиповые изделия из камня. Любим работать  с дизайнерами</p>
+                  </div>
+                </li>
+              </ul>
+          </section>
+          <a class="our-advantages-and-badge-widget__badge-widget link badge-widget metrika link__control i-bem badge-widget_js_inited link_js_inited link__control_js_inited" data-bem="{&quot;link&quot;:{},&quot;badge-widget&quot;:{},&quot;metrika&quot;:{&quot;goal&quot;:&quot;BADGE_REVIEWS_CLICK&quot;}}" style="background-image: url(https://avatars.mds.yandex.net/get-altay/1860543/badge_rating_4.7/orig);" role="link" href="//yandex.ru/profile/1245017224?intent=reviews&amp;utm_source=badge&amp;utm_medium=rating&amp;utm_campaign=v1" target="_blank"></a>
+        </div>
+      </div>
       <section class="product-types">
         <div class="product-types__inner">
           <h2 class="visually-hidden">Виды изделий из камня</h2>
@@ -321,30 +368,171 @@
         </div>
       </section>
       <section class="calculation">
-        <div class="calculatin__center">
+        <div class="calculation__center">
           <div class="calculation__inner">
-            <h2 class="calculation__heading">Рассчитайте стоимость вашего изделия прямо сейчас</h2>
-            <div class="calculation__form-wrapper">
-              <h3 class="calculation__form-heading">Введите параметры изделия для расчета</h3>
-              <form class="calculation__form" action="#!" method="post">
-                <select name="variants">
-                  <optgroup label="Группа вариантов 1">
-                    <option value="1">Вариант 1</option>
-                    <option value="2">Вариант 2</option>
-                    <option value="3">Вариант 3</option>
-                  </optgroup>
-                  <optgroup label="Группа вариантов 2">
-                    <option value="4">Вариант 4</option>
-                    <option value="5">Вариант 5</option>
-                    <option value="6">Вариант 6</option>
-                  </optgroup>
-                </select>
-              </form>
+            <picture class="calculation__img-wrapper" aria-hidden="true">
+              <source media="(min-width: 1281px)" srcset="img/calculation-bg-desktop.jpg 1x">
+              <source media="(min-width: 801px)" srcset="img/calculation-bg-laptop.jpg 1x">
+              <img class="calculation__img" src="img/calculation-bg-tablet.jpg" alt="">
+            </picture>
+            <div class="calculation__content">
+              <h2 class="calculation__heading">Рассчитайте стоимость вашего изделия прямо сейчас</h2>
+              <div class="calculation__form calculation-form">
+                <h3 class="calculation-form__heading">Введите параметры изделия для расчета</h3>
+                <div class="calculation-form__body custom-form-2 custom-form-2--calculation">
+                  <div class="form">
+                    <form class="form__body" action="#!" method="post">
+                      <div class="form__select n-select">
+                        <select name="type">
+                          <option value="">Тип изделия</option>
+                          <option>Камень</option>
+                          <option>Мрамор</option>
+                          <option>Гранит</option>
+                          <option>Дерево</option>
+                          <option>Контент</option>
+                        </select>
+                      </div>
+                      <div class="form__select n-select">
+                        <select name="material">
+                          <option value="">Материал</option>
+                          <option>Камень</option>
+                          <option>Мрамор</option>
+                          <option>Гранит</option>
+                          <option>Дерево</option>
+                          <option>Контент</option>
+                        </select>
+                      </div>
+                      <fieldset class="form__section">
+                        <legend class="form__section-heading">Размеры изделия</legend>
+                        <div class="form__textfield-wrapper">
+                          <label class="form__textfield-label">
+                            <span class="form__textfield">
+                              <input class="form__textfield-control" name="length" type="number" min="1" placeholder="100">
+                              <span class="form__textfield-label-text">Длина см</span>
+                            </span>
+                          </label>
+                        </div>
+                        <div class="form__textfield-wrapper">
+                          <label class="form__textfield-label">
+                            <span class="form__textfield">
+                              <input class="form__textfield-control" name="width" type="number" min="1" placeholder="100">
+                              <span class="form__textfield-label-text">Ширина см</span>
+                            </span>
+                          </label>
+                        </div>
+                        <div class="form__textfield-wrapper">
+                          <label class="form__textfield-label">
+                            <span class="form__textfield">
+                              <input class="form__textfield-control" name="name" type="number" min="1" placeholder="100">
+                              <span class="form__textfield-label-text">Площадь м2</span>
+                            </span>
+                          </label>
+                        </div>
+                      </fieldset>
+                      <div class="form__result">
+                        <p class="form__result-price-wrapper">
+                          Итого: <span class="form__result-price">14&nbsp;000</span> ₽
+                        </p>
+                        <p class="form__result-text">Оставьте контактный номер чтобы уточнить детали заказа</p>
+                        <div class="form__textfield-wrapper">
+                          <label class="form__textfield-label">
+                            <span class="form__textfield">
+                              <input class="form__textfield-control" name="tel" type="tel" placeholder="+7 (912) 345-67-89">
+                              <span class="form__textfield-label-text">Телефон</span>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                      <button class="form__submit button button--secondary button--alter-2 button--fw600" type="button">Получить лучшее предложение</button>
+                      <div class="form__consent-wrapper">
+                        <label class="form__checkbox-label">
+                          <input class="form__checkbox-control form__checkbox-control--secondary visually-hidden" name="consent" type="checkbox" checked>
+                          <span class="form__checkbox-label-text">
+                            <span>
+                              Согласие с <a class="form__link" href="!#" target="_blank">политикой обработки данных</a>
+                            </span>
+                          </span>
+                        </label>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
+      <section class="manufacture">
+        <div class="manufacture__content">
+          <h2 class="manufacture__heading heading heading--alter-2">Видео с производства</h2>
+          <div class="manufacture__n-video n-video">
+            <video class="n-video__video" poster="img/video-1-poster.jpg" preload="metadata" width="292" height="174">
+              <source src="uxtesting.mp4" type="video/mp4">
+              <source src="uxtesting.ogv" type="video/ogg">
+              <source src="uxtesting.webm" type="video/webm">
+            </video>
+            <button class="n-video__play" type="button">
+              <span class="visually-hidden">Воспроизвести</span>
+            </button>
+          </div>
+          <p class="manufacture__text">Прозначные процессы, контроль производства и лучшее качество — это все студия ARDO</p>
+        </div>
+        <div class="manufacture__rating company-rating">
+          <h2 class="company-rating__heading">АрдоСтудио</h2>
+          <div class="company-rating__rating star-rating star-rating--alter star-rating--big star-rating--theme--2 star-rating--5">
+            <span class="visually-hidden">Рейтинг</span> 4,9
+          </div>
+          <a class="company-rating__link" href="#!">53 отзывов</a>
+        </div>
+      </section>
+      <section class="clients">
+        <div class="clients__inner">
+          <h2 class="clients__heading heading heading--alter-2">Объекты, где можно увидеть наши изделия из камня:</h2>
+          <ul class="clients__list">
+            <li class="clients__item">
+              <img class="clients__img" src="img/clients/client-1.svg" alt="Береговой – жилой квартал на Москве-реке.">
+            </li>
+            <li class="clients__item">
+              <img class="clients__img" src="img/clients/client-2.png" alt="ПОКЛОННАЯ 9.">
+            </li>
+            <li class="clients__item">
+              <img class="clients__img" src="img/clients/client-3.svg" alt="Серебрянный фонтан – жилой комплекс.">
+            </li>
+            <li class="clients__item">
+              <img class="clients__img" src="img/clients/client-4.svg" alt="Снегири – частная школа.">
+            </li>
+            <li class="clients__item">
+              <img class="clients__img" src="img/clients/client-5.svg" alt="Жуковка XXI.">
+            </li>
+            <li class="clients__item">
+              <img class="clients__img" src="img/clients/client-6.svg" alt="PALMIRA – business-club.">
+            </li>
+            <li class="clients__item">
+              <img class="clients__img" src="img/clients/client-7.svg" alt="ПЕРВЫЙ СЕМЕЙНЫЙ.">
+            </li>
+            <li class="clients__item">
+              <img class="clients__img" src="img/clients/client-8.png" alt="Английский Квартал.">
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="team">
+        <div class="team__inner">
+          <h2 class="team__heading heading heading--alter-2">Люди, которые вкладывают душу  в каждый проект</h2>
+          <picture class="team__img-wrapper">
+            <source media="(min-width: 1281px)" srcset="img/team/team-desktop.jpg 1x">
+            <source media="(min-width: 769px)" srcset="img/team/team-laptop.jpg 1x">
+            <source media="(min-width: 376px)" srcset="img/team/team-tablet.jpg 1x">
+            <img class="team__img" src="img/team/team.jpg" alt="Групповая фотография: 3 мужчины и 4 женщины.">
+          </picture>
+          <div class="team__buttons">
+            <a class="team__button team__button--phone" href="#!">Обсудить ваш проект</a>
+            <a class="team__button team__button--3d" href="#!">Заказать визуализацию</a>
+          </div>
+        </div>
+      </section>
     </main>
+    <script src="js/choices.min.js"></script>
     <script src="js/swiper.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script> <!-- Новый скрипт -->
     <script src="js/new.js"></script> <!-- Новый скрипт -->

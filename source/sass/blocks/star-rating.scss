@@ -62,8 +62,35 @@
   }
 }
 
+.star-rating--big {
+  column-gap: 18px;
+
+  &::after {
+    --star-size: 21px;
+    margin-bottom: 2px;
+
+    @media #{$desktop} {
+      --star-size: 28px;
+    }
+  }
+}
+
+.star-rating--alter {
+  @media #{$desktop} {
+    grid-auto-flow: row;
+    row-gap: 20px;
+    justify-items: center;
+  }
+}
+
 .star-rating--theme--1 {
   &::after {
     filter: brightness(0);
+  }
+}
+
+.star-rating--theme--2 {
+  &::after {
+    filter: brightness(0) invert(100%);
   }
 }

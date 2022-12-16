@@ -1,0 +1,37 @@
+.manufacture {
+  @media #{$desktop} {
+    display: grid;
+    grid-template-columns: 1125px 275px;
+    justify-content: center;
+  }
+}
+
+
+.manufacture__content {
+  padding: 41px 14px 18px;
+  background-color: $background-secondary-color;
+
+  @media #{$desktop} {
+    padding: 60px 30px;
+    border-radius: 10px;
+  }
+}
+
+.manufacture__heading {
+  margin: 0 0 41px;
+  text-align: center;
+}
+
+.manufacture__n-video {
+  width: 100%;
+  max-width: 665px;
+  margin: 0 auto 38px;
+}
+
+.manufacture__text {
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.3;
+}

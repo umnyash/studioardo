@@ -1,0 +1,92 @@
+.calculation__center {
+  padding: 0 7px;
+
+  @media #{$tablet-desktop} {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  @media #{$desktop} {
+    width: 1480px;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin: 0 auto;
+  }
+}
+
+.calculation__inner {
+  display: grid;
+}
+
+.calculation__img-wrapper {
+  grid-area: 1 / 1 / 2 / 2;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: $calculation-background-color;
+
+  @media #{$tablet-desktop} {
+    display: block;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+}
+
+.calculation__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.calculation__content {
+  grid-area: 1 / 1 / 2 / 2;
+
+  @media #{$tablet-desktop} {
+    padding: 68px 30px;
+  }
+
+  @media #{$laptop-desktop} {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 100px;
+    justify-content: space-between;
+    align-items: start;
+  }
+}
+
+.calculation__form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.calculation__heading {
+  // display: none;
+  margin: 0 7px 41px 7px;
+  font-family: $accent-font-family;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: none;
+
+  @media #{$tablet-desktop} {
+    text-align: center;
+    font-size: 36px;
+    line-height: 1.3;
+    letter-spacing: -0.03em;
+  }
+
+  @media #{$laptop-desktop} {
+    text-align: left;
+  }
+
+  @media #{$laptop-desktop} {
+    max-width: 630px;
+    margin-top: 12px;
+    margin-left: 30px;
+    font-size: 48px;
+    line-height: 1.22;
+  }
+}
