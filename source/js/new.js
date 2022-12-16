@@ -605,3 +605,29 @@ const initSelects = (parentNode) => {
 };
 
 initSelects(document);
+
+const anchor = document.querySelector('.n-banner__video-link');
+
+const elementClickHandler = (evt) => {
+  const element = evt.target.closest('a');
+  if (!element) {
+    return;
+  }
+  evt.preventDefault();
+  const blockId = element.getAttribute('href');
+
+  if (blockId && blockId !== '#' && blockId !== '#!') {
+    const block = document.querySelector(blockId);
+
+    if (block) {
+      block.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  }
+};
+
+if (anchor) {
+  anchor.addEventListener('click', elementClickHandler);
+}

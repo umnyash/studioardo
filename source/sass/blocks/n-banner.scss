@@ -14,10 +14,26 @@
 }
 
 .n-banner__img-wrapper {
+  position: relative;
+  z-index: -1;
   grid-area: 1 / 1 / 2 / 2;
   width: 100%;
   height: 100%;
   background-color: $basic-text-color;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+
+    @media #{$tablet-desktop} {
+      background-image: linear-gradient(89.32deg, rgba(0, 0, 0, 0.6) 26.68%, rgba(0, 0, 0, 0) 58.49%);
+    }
+  }
 }
 
 .n-banner__img {
@@ -113,6 +129,7 @@
 
   &:hover,
   &:focus {
+    color: inherit;
     opacity: 0.8;
   }
 

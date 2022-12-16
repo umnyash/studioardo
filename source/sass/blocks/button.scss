@@ -49,6 +49,14 @@
   border-color: $primary-button-color;
   color: $text-color-secondary;
   background-color: $primary-button-color;
+
+  &:hover {
+    color: $text-color-secondary;
+  }
+}
+
+.button--primary-2 {
+  border-color: $special-color;
 }
 
 .button--secondary {
@@ -172,7 +180,6 @@
   text-transform: uppercase;
   border-color: $special-color;
 }
-
 
 .button--secret {
   padding-left: 10px;

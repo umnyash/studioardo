@@ -385,16 +385,16 @@
                       <div class="form__select n-select">
                         <select name="type">
                           <option value="">Тип изделия</option>
-                          <option>Тип 1</option>
+                          <option selected>Тип 1</option>
                           <option>Тип 2</option>
-                          <option>ГТип 3</option>
+                          <option>Тип 3</option>
                         </select>
                       </div>
                       <div class="form__select n-select">
                         <select name="material">
                           <option value="">Материал</option>
                           <option>Камень</option>
-                          <option>Мрамор</option>
+                          <option selected>Мрамор</option>
                           <option>Гранит</option>
                           <option>Дерево</option>
                           <option>Контент</option>
@@ -404,40 +404,45 @@
                         <legend class="form__section-heading">Размеры изделия</legend>
                         <div class="form__textfield-wrapper">
                           <label class="form__textfield-label">
-                            <span class="form__textfield">
-                              <input class="form__textfield-control" name="length" type="number" min="1" placeholder="100">
+                            <span class="form__textfield form__textfield--valid">
+                              <input class="form__textfield-control" name="length" type="number" min="1" value="20" placeholder="100">
                               <span class="form__textfield-label-text">Длина см</span>
                             </span>
                           </label>
                         </div>
                         <div class="form__textfield-wrapper">
                           <label class="form__textfield-label">
-                            <span class="form__textfield">
-                              <input class="form__textfield-control" name="width" type="number" min="1" placeholder="100">
+                            <span class="form__textfield form__textfield--valid">
+                              <input class="form__textfield-control" name="width" type="number" min="1" value="150" placeholder="100">
                               <span class="form__textfield-label-text">Ширина см</span>
                             </span>
                           </label>
                         </div>
                         <div class="form__textfield-wrapper">
                           <label class="form__textfield-label">
-                            <span class="form__textfield">
-                              <input class="form__textfield-control" name="name" type="number" min="1" placeholder="100">
+                            <span class="form__textfield form__textfield--valid">
+                              <input class="form__textfield-control" name="name" type="number" min="1" value="3000" placeholder="100">
                               <span class="form__textfield-label-text">Площадь м2</span>
                             </span>
                           </label>
                         </div>
                       </fieldset>
-                      <button class="form__submit button button--secondary button--alter-2 button--fw600" type="button">Получить лучшее предложение</button>
-                      <div class="form__consent-wrapper">
-                        <label class="form__checkbox-label">
-                          <input class="form__checkbox-control form__checkbox-control--secondary visually-hidden" name="consent" type="checkbox" checked>
-                          <span class="form__checkbox-label-text">
-                            <span>
-                              Согласие с <a class="form__link" href="!#" target="_blank">политикой обработки данных</a>
+                      <div class="form__result">
+                        <p class="form__result-price-wrapper">
+                          Итого: <span class="form__result-price">14&nbsp;000</span> ₽
+                        </p>
+                        <p class="form__result-text">Оставьте контактный номер чтобы уточнить детали заказа</p>
+                        <div class="form__textfield-wrapper">
+                          <label class="form__textfield-label">
+                            <span class="form__textfield form__textfield--valid">
+                              <input class="form__textfield-control" name="tel" type="tel" value="+7 (912) 345-67-89" placeholder="+7 (912) 345-67-89">
+                              <span class="form__textfield-label-text">Телефон</span>
                             </span>
-                          </span>
-                        </label>
+                          </label>
+                        </div>
                       </div>
+                      <button class="form__submit button button--secondary button--alter-2 button--fw600" type="button">Получить лучшее предложение</button>
+                      <p class="form__notice form__notice--error">Ошибка отправки формы</p>
                     </form>
                   </div>
                 </div>

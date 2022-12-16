@@ -1,0 +1,55 @@
+.stone-main-page__banner {
+  margin: 0 0 10px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 53px;
+  }
+}
+
+.stone-main-page__reference {
+  margin: 0 0 10px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 37px;
+  }
+}
+
+.stone-main-page__advantages-and-widget {
+  margin: 0 0 40px;
+}
+
+.stone-main-page__product-types {
+  margin: 0 0 60px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 100px;
+  }
+}
+
+.stone-main-page__ratings {
+  margin: 0 0 60px;
+}
+
+.stone-main-page__calculation {
+  margin: 0 0 40px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 100px;
+  }
+}
+
+.stone-main-page__manufacture {
+  margin: 0 0 60px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 105px;
+  }
+}
+
+.stone-main-page__clients {
+  margin: 0 0 50px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 100px;
+  }
+}

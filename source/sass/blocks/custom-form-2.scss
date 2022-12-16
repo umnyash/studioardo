@@ -681,6 +681,37 @@
       opacity: 0.6;
     }
   }
+
+  .form__notice {
+    padding: 7px 5px 6px;
+    margin: 0 0 16px;
+    font-size: 14px;
+    line-height: 18px;
+
+    &--success {
+      display: inline-grid;
+      grid-auto-flow: column;
+      column-gap: 10px;
+      justify-content: center;
+      align-items: center;
+      background-color: $background-secondary-color;
+
+      &::before {
+        content: "";
+        width: 18px;
+        height: 13px;
+        background-image: url(../img/icons/checkmark-2.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: translate(-2px, -2px);
+      }
+    }
+
+    &--error {
+      text-align: center;
+      background-color: $custom-form-2-notice-error-color;
+    }
+  }
 }
 
 
@@ -1043,7 +1074,6 @@
   }
 
   .form__result {
-    // display: none;
     padding: 19px 14px;
     border-radius: 6px;
     margin: 10px 0 29px;
@@ -1083,5 +1113,9 @@
 
   .form__checkbox-label-text {
     justify-content: center;
+  }
+
+  .form__notice {
+    width: 100%;
   }
 }
