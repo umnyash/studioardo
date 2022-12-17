@@ -7,7 +7,7 @@
 }
 
 .n-subscribe__wrapper {
-  padding: 40px 0;
+  padding: 42px 0 40px;
 
   @media #{$tablet-desktop} {
     display: grid;
@@ -33,7 +33,7 @@
 .n-subscribe__logo {
   display: block;
   width: 62px;
-  height: 54px;
+  height: 55px;
   margin-bottom: 20px;
 
   @media #{$tablet-desktop} {
@@ -124,7 +124,7 @@
   display: grid;
   grid-template-columns: 1fr auto;
   column-gap: 10px;
-  align-items: center;
+  align-items: start;
   border-bottom: 1px solid $custom-table-header-border-color;
 
   &:focus-within {
@@ -154,11 +154,12 @@
 }
 
 .n-subscribe__submit {
+  align-self: start;
   width: 19px;
   height: 14px;
+  padding: 0;
   border-radius: 50%;
   border: none;
-  align-self: center;
   background-color: transparent;
   background-image: url("../img/icons/black-right-arrow.svg");
   background-repeat: no-repeat;

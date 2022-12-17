@@ -31,7 +31,7 @@
 
 .popular-goods__item {
   width: 343px;
-  height: 384px;
+  height: auto;
   margin: 0;
 
   @media #{$laptop-desktop} {

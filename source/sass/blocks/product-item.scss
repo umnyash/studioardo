@@ -5,6 +5,7 @@
   background: $background-color;
   border-radius: 10px;
   border: 1px solid $product-border-color;
+  transition: 0.3s linear;
 
   &:hover {
     border: 1px solid $button-hover-color;

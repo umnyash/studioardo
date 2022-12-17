@@ -17,50 +17,140 @@
 <body class="main-page__body">
   <main>
     <h1 class="visually-hidden">Главная страница</h1>
-    <!-- <section class="current-offers">
-      <div class="main-page__wrapper">
+    <section class="main-page__current-offers current-offers">
         <h2 class="visually-hidden">Актуальные предложения</h2>
         <ul class="current-offers__slider">
-          <li>
-            <h3>Летнее предложение! -45%</h3>
-            <p>Скидки до -45% на керамогранит и керамическую плитку до 31 июля</p>
-            <a class="" href="#">Перейти к товарам</a>
+          <li class="current-offers__slide offers-slide current-offers__slide--active">
+            <div class="current-offers__content">
+              <div class="center">
+                  <h3 class="offers-slide__title">Летнее предложение! -45%</h3>
+                  <p class="offers-slide__text">Скидки до -45% на керамогранит и керамическую плитку до 31 июля</p>
+                  <a class="offers-slide__button button button--secondary button--alter-2 button--fw500" href="#">Перейти к товарам</a>
+                </div>
+              </div>
+              <picture class="offers-slide__image-wrapper">
+                <source media="(min-width: 1510px)" srcset="img/current-off-desktop-1.jpg 1x">
+                <source media="(min-width: 1280px)" srcset="img/current-off-laptop-1.jpg 1x">
+                <source media="(min-width: 768px)" srcset="img/current-off-tablet-1.jpg 1x">
+                <img class="offers-slide__img" src="img/current-off-mobile-1.jpg" alt="" width="375" height="452">
+              </picture>
           </li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li class="current-offers__slide offers-slide">
+            <div class="current-offers__content">
+              <div class="center">
+                  <h3 class="offers-slide__title">Комфортное место для выбора материалов</h3>
+                  <p class="offers-slide__text">Шоу-рум 1000 м2. Удобные переговорные и итальянский welcome-кофе</p>
+                  <a class="offers-slide__button button button--secondary button--alter-2 button--fw50" href="#">Перейти к товарам</a>
+                </div>
+              </div>
+              <picture class="offers-slide__image-wrapper">
+                <source media="(min-width: 1510px)" srcset="img/current-off-desktop-2.jpg 1x">
+                <source media="(min-width: 1280px)" srcset="img/current-off-laptop-2.jpg 1x">
+                <source media="(min-width: 768px)" srcset="img/current-off-tablet-2.jpg 1x">
+                <img class="offers-slide__img" src="img/current-off-mobile-2.jpg" alt="" width="375" height="452">
+              </picture>
+          </li>
+          <li class="current-offers__slide offers-slide">
+            <div class="current-offers__content">
+              <div class="center">
+                  <h3 class="offers-slide__title">Панно из мозаики по вашему эскизу</h3>
+                  <p class="offers-slide__text">Произведение искусства в единичном экземпляре у вас дома</p>
+                  <a class="offers-slide__button button button--secondary button--alter-2 button--fw50" href="#">Перейти к товарам</a>
+                </div>
+              </div>
+              <picture class="offers-slide__image-wrapper">
+                <source media="(min-width: 1510px)" srcset="img/current-off-desktop-3.jpg 1x">
+                <source media="(min-width: 1280px)" srcset="img/current-off-laptop-3.jpg 1x">
+                <source media="(min-width: 768px)" srcset="img/current-off-tablet-3.jpg 1x">
+                <img class="offers-slide__img" src="img/current-off-mobile-3.jpg" alt="" width="375" height="452">
+              </picture>
+          </li>
+          <li class="current-offers__slide offers-slide">
+            <div class="current-offers__content">
+              <div class="center">
+                  <h3 class="offers-slide__title">Изделия из камня по индивидуальному дизайну</h3>
+                  <p class="offers-slide__text">Сделают интерьер неповторимым и придадут шарм природного материала.</p>
+                  <a class="offers-slide__button button button--secondary button--alter-2 button--fw50" href="#">Перейти к товарам</a>
+                </div>
+              </div>
+              <picture class="offers-slide__image-wrapper">
+                <source media="(min-width: 1510px)" srcset="img/current-off-desktop-4.jpg 1x">
+                <source media="(min-width: 1280px)" srcset="img/current-off-laptop-4.jpg 1x">
+                <source media="(min-width: 768px)" srcset="img/current-off-tablet-4.jpg 1x">
+                <img class="offers-slide__img" src="img/current-off-mobile-4.jpg" alt="" width="375" height="452">
+              </picture>
+          </li>
+          <li class="current-offers__slide offers-slide">
+            <div class="current-offers__content">
+              <div class="center">
+                  <h3 class="offers-slide__title">Панно из мозаики</h3>
+                  <p class="offers-slide__text">Новые поступления </p>
+                  <a class="offers-slide__button button button--secondary button--alter-2 button--fw50" href="#">Перейти к товарам</a>
+                </div>
+              </div>
+              <picture class="offers-slide__image-wrapper">
+                <source media="(min-width: 1510px)" srcset="img/current-off-desktop-3.jpg 1x">
+                <source media="(min-width: 1280px)" srcset="img/current-off-laptop-3.jpg 1x">
+                <source media="(min-width: 768px)" srcset="img/current-off-tablet-3.jpg 1x">
+                <img class="offers-slide__img" src="img/current-off-mobile-3.jpg" alt="" width="375" height="452">
+              </picture>
+          </li>
+          <li class="current-offers__slide offers-slide">
+            <div class="current-offers__content">
+              <div class="center">
+                  <h3 class="offers-slide__title">Отобрали лучшие коллекции на выставках Европы и предлагаем Вам </h3>
+                  <p class="offers-slide__text">5 000 позиций керамики и сантехникив в наличии и более 90 эксклюзивных брендов</p>
+                  <a class="offers-slide__button button button--secondary button--alter-2 button--fw50" href="#">Перейти к товарам</a>
+                </div>
+              </div>
+              <picture class="offers-slide__image-wrapper">
+                <source media="(min-width: 1510px)" srcset="img/current-off-desktop-5.jpg 1x">
+                <source media="(min-width: 1280px)" srcset="img/current-off-laptop-5.jpg 1x">
+                <source media="(min-width: 768px)" srcset="img/current-off-tablet-5.jpg 1x">
+                <img class="offers-slide__img" src="img/current-off-mobile-5.jpg" alt="" width="375" height="452">
+              </picture>
+          </li>
         </ul>
 
-        <ul class="current-offers__tabs-list">
-          <li class="current-offers__tabs-item tab-item">
-            <h3 class="tab-item__title">Спец предложение!</h3>
-            <p class="tab-item__text">Скидки до -45% </p>
-          </li>
-          <li class="current-offers__tabs-item tab-item">
-            <h3 class="tab-item__title">Керамика и сантехника</h3>
-            <p class="tab-item__text">Лучшие коллекции Европы</p>
-          </li>
-          <li class="current-offers__tabs-item tab-item">
-            <h3 class="tab-item__title">Шоу-рум</h3>
-            <p class="tab-item__text">1000 м2</p>
-          </li>
-          <li class="current-offers__tabs-item tab-item">
-            <h3 class="tab-item__title">Изделия из камня</h3>
-            <p class="tab-item__text">Индивидуальное производство</p>
-          </li>
-          <li class="current-offers__tabs-item tab-item">
-            <h3 class="tab-item__title">Панно из мозаики</h3>
-            <p class="tab-item__text">По вашему эскизу</p>
-          </li>
-          <li class="current-offers__tabs-item current-offers__tabs-item--active tab-item">
-            <h3 class="tab-item__title">Паркет и доска</h3>
-            <p class="tab-item__text">Премиальное качество</p>
-          </li>
-        </ul>
-      </div>
-    </section> -->
+        <div class="center current-offers__tabs-wrapper">
+          <div class="current-offers__wrapper">
+            <div class="swiper offers-tabs-swiper">
+              <ul class="current-offers__tabs-list swiper-wrapper" role="tablist">
+                <li class="current-offers__tabs-item current-offers__tabs-item--active swiper-slide">
+                  <h3 class="current-offers__tabs-title">Спец предложение!</h3>
+                  <p class="current-offers__tabs-text">Скидки до -45% </p>
+                </li>
+                <li class="current-offers__tabs-item swiper-slide">
+                  <h3 class="current-offers__tabs-title">Керамика и сантехника</h3>
+                  <p class="current-offers__tabs-text">Лучшие коллекции Европы</p>
+                </li>
+                <li class="current-offers__tabs-item swiper-slide">
+                  <h3 class="current-offers__tabs-title">Шоу-рум</h3>
+                  <p class="current-offers__tabs-text">1000 м2</p>
+                </li>
+                <li class="current-offers__tabs-item swiper-slide">
+                  <h3 class="current-offers__tabs-title">Изделия из камня</h3>
+                  <p class="current-offers__tabs-text">Индивидуальное производство</p>
+                </li>
+                <li class="current-offers__tabs-item swiper-slide">
+                  <h3 class="current-offers__tabs-title">Панно из мозаики</h3>
+                  <p class="current-offers__tabs-text">По вашему эскизу</p>
+                </li>
+                <li class="current-offers__tabs-item swiper-slide">
+                  <h3 class="current-offers__tabs-title">Паркет и доска</h3>
+                  <p class="current-offers__tabs-text">Премиальное качество</p>
+                </li>
+              </ul>
+            </div>
+            <div class="current-offers__arrows arrows arrows--alter">
+              <button class="current-offers__arrow current-offers__arrow--back arrows__item arrows__item--alter arrows__item--back" type="button" aria-label="Назад"></button>
+              <button class="current-offers__arrow current-offers__arrow--next arrows__item arrows__item--alter" type="button" aria-label="Вперед"></button>
+            </div>
+            <div class="current-offers__dots">
+            </div>
+          </div>
+        </div>
+    </section>
 
     <section class="main-page__our-advantages our-advantages">
       <h2 class="visually-hidden">Наши преимущества</h2>
@@ -226,7 +316,7 @@
             <ul class="swiper-wrapper n-service__list">
               <li class="n-service__item swiper-slide">
                 <div class="n-service__category">
-                  <h3 class="n-service__category-title">Индивидуальные изделия камня</h3>
+                  <h3 class="n-service__category-title">Индивидуальные изделия из камня</h3>
                   <p class="n-service__category-text">Сделают интерьер неповторимым</p>
                 </div>
                 <picture class="n-service__image">
@@ -265,76 +355,93 @@
           <h2 class="tile-range__title heading">Отобрали лучшее из многообразия плитки</h2>
           <div class="tile-range__arrows">
             <div class="arrows">
-              <button class="tile-range__arrow tile-range__arrow--back arrows__item arrows__item--back" aria-label="Назад"></button>
-              <button class="tile-range__arrow tile-range__arrow--next arrows__item arrows__item--next" aria-label="Вперед"></button>
+              <button class="tile-range__arrow tile-range__arrow--back arrows__item arrows__item--back" type="button" aria-label="Назад"></button>
+              <button class="tile-range__arrow tile-range__arrow--next arrows__item arrows__item--next" type="button" aria-label="Вперед"></button>
             </div>
           </div>
 
           <div class="tile-range__swiper swiper tile-range-swiper">
             <ul class="tile-range__list swiper-wrapper">
               <li class="tile-range__item swiper-slide">
-                <div class="tile-range__category">
-                  <h3 class="tile-range__category-text">Итальянская плитка</h3>
-                </div>
-                <picture class="tile-range__image">
-                  <img src="img/tile-range-1.jpg" alt="">
-                </picture>
+                <a href="#">
+                  <div class="tile-range__category">
+                    <h3 class="tile-range__category-text">Итальянская плитка</h3>
+                  </div>
+                  <picture class="tile-range__image">
+                    <img src="img/tile-range-1.jpg" alt="">
+                  </picture>
+                </a>
               </li>
               <li class="tile-range__item swiper-slide">
-                <div class="tile-range__category">
-                  <h3 class="tile-range__category-text">Испанская плитка</h3>
-                </div>
-                <picture class="tile-range__image">
-                  <img src="img/tile-range-5.jpg" alt="">
-                </picture>
+                <a href="#">
+                  <div class="tile-range__category">
+                    <h3 class="tile-range__category-text">Испанская плитка</h3>
+                  </div>
+                  <picture class="tile-range__image">
+                    <img src="img/tile-range-5.jpg" alt="">
+                  </picture>
+                </a>
               </li>
               <li class="tile-range__item swiper-slide">
-                <div class="tile-range__category">
-                  <h3 class="tile-range__category-text">Португальская плитка</h3>
-                </div>
-                <picture class="tile-range__image">
-                  <img src="img/tile-range-2.jpg" alt="">
-                </picture>
+                <a href="#">
+                  <div class="tile-range__category">
+                    <h3 class="tile-range__category-text">Португальская плитка</h3>
+                  </div>
+                  <picture class="tile-range__image">
+                    <img src="img/tile-range-2.jpg" alt="">
+                  </picture>
+                </a>
               </li>
               <li class="tile-range__item swiper-slide">
-                <div class="tile-range__category">
-                  <h3 class="tile-range__category-text">Итальянская плитка</h3>
-                </div>
-                <picture class="tile-range__image">
-                  <img src="img/tile-range-6.jpg" alt="">
-                </picture>
+                <a href="#">
+
+                  <div class="tile-range__category">
+                    <h3 class="tile-range__category-text">Итальянская плитка</h3>
+                  </div>
+                  <picture class="tile-range__image">
+                    <img src="img/tile-range-6.jpg" alt="">
+                  </picture>
+                </a>
               </li>
               <li class="tile-range__item swiper-slide">
-                <div class="tile-range__category">
-                  <h3 class="tile-range__category-text">Плитка под мрамор</h3>
-                </div>
-                <picture class="tile-range__image">
-                  <img src="img/tile-range-3.jpg" alt="">
-                </picture>
+                <a href="#">
+                  <div class="tile-range__category">
+                    <h3 class="tile-range__category-text">Плитка под мрамор</h3>
+                  </div>
+                  <picture class="tile-range__image">
+                    <img src="img/tile-range-3.jpg" alt="">
+                  </picture>
+                </a>
               </li>
               <li class="tile-range__item swiper-slide">
-                <div class="tile-range__category">
-                  <h3 class="tile-range__category-text">Плитка под дерево</h3>
-                </div>
-                <picture class="tile-range__image">
-                  <img src="img/tile-range-7.jpg" alt="">
-                </picture>
+                <a href="#">
+                  <div class="tile-range__category">
+                    <h3 class="tile-range__category-text">Плитка под дерево</h3>
+                  </div>
+                  <picture class="tile-range__image">
+                    <img src="img/tile-range-7.jpg" alt="">
+                  </picture>
+                </a>
               </li>
               <li class="tile-range__item swiper-slide">
-                <div class="tile-range__category">
-                  <h3 class="tile-range__category-text">Матовая плитка</h3>
-                </div>
-                <picture class="tile-range__image">
-                  <img src="img/tile-range-4.jpg" alt="">
-                </picture>
+                <a href="#">
+                  <div class="tile-range__category">
+                    <h3 class="tile-range__category-text">Матовая плитка</h3>
+                  </div>
+                  <picture class="tile-range__image">
+                    <img src="img/tile-range-4.jpg" alt="">
+                  </picture>
+                </a>
               </li>
               <li class="tile-range__item swiper-slide">
-                <div class="tile-range__category">
-                  <h3 class="tile-range__category-text">Глянцевая плитка</h3>
-                </div>
-                <picture class="tile-range__image">
-                  <img src="img/tile-range-8.jpg" alt="">
-                </picture>
+                <a href="#">
+                  <div class="tile-range__category">
+                    <h3 class="tile-range__category-text">Глянцевая плитка</h3>
+                  </div>
+                  <picture class="tile-range__image">
+                    <img src="img/tile-range-8.jpg" alt="">
+                  </picture>
+                </a>
               </li>
             </ul>
           </div>
@@ -348,8 +455,8 @@
           <h2 class="products__title heading">Сантехника для ценителей эстетики</h2>
           <div class="products__arrows">
             <div class="arrows">
-              <button class="products__arrow products__arrow--back arrows__item arrows__item--back" aria-label="Назад"></button>
-              <button class="products__arrow products__arrow--next arrows__item arrows__item--next" aria-label="Вперед"></button>
+              <button class="products__arrow products__arrow--back arrows__item arrows__item--back" type="button" aria-label="Назад"></button>
+              <button class="products__arrow products__arrow--next arrows__item arrows__item--next" type="button" aria-label="Вперед"></button>
             </div>
           </div>
           <div class="products__swiper products-swiper">
@@ -1221,8 +1328,8 @@
         </div>
         <div class="popular-goods__arrows">
           <div class="arrows">
-            <button class="popular-goods__arrow popular-goods__arrow--back arrows__item arrows__item--back" aria-label="Назад"></button>
-            <button class="popular-goods__arrow popular-goods__arrow--next arrows__item arrows__item--next" aria-label="Вперед"></button>
+            <button class="popular-goods__arrow popular-goods__arrow--back arrows__item arrows__item--back" type="button" aria-label="Назад"></button>
+            <button class="popular-goods__arrow popular-goods__arrow--next arrows__item arrows__item--next" type="button" aria-label="Вперед"></button>
           </div>
         </div>
         <a href="#" class="popular-goods__button button button--alter-2 button--fw500 button--lnh21">Перейти в каталог</a>
@@ -1402,8 +1509,8 @@
             </ul>
           </div>
           <div class="n-brands__arrows arrows arrows--alter">
-            <button class="n-brands__arrow n-brands__arrow--back arrows__item arrows__item--back" aria-label="Назад"></button>
-            <button class="n-brands__arrow n-brands__arrow--next arrows__item" aria-label="Вперед"></button>
+            <button class="n-brands__arrow n-brands__arrow--back arrows__item arrows__item--alter arrows__item--back" type="button" aria-label="Назад"></button>
+            <button class="n-brands__arrow n-brands__arrow--next arrows__item arrows__item--alter" type="button" aria-label="Вперед"></button>
           </div>
         </div>
         <a class="n-brands__button button button--with-icon-reverse" href="#">
@@ -1419,8 +1526,8 @@
           <a href="#" class="inspiration__button button--with-icon-reverse button button--secondary">Перейти в коллекции</a>
 
           <div class="inspiration__arrows arrows">
-            <button class="inspiration__arrow inspiration__arrow--back arrows__item arrows__item--back" aria-label="Назад"></button>
-            <button class="inspiration__arrow inspiration__arrow--next arrows__item arrows__item--next" aria-label="Вперед"></button>
+            <button class="inspiration__arrow inspiration__arrow--back arrows__item arrows__item--back" type="button" aria-label="Назад"></button>
+            <button class="inspiration__arrow inspiration__arrow--next arrows__item arrows__item--next" type="button" aria-label="Вперед"></button>
           </div>
         </div>
       </div>
@@ -1480,11 +1587,10 @@
           <h2 class="projects__title heading">Реализованные объекты с нашим материалом</h2>
           <a href="#" class="projects__button button--with-icon-reverse button button--secondary">Заказать визуализацию</a>
           <div class="projects__arrows arrows">
-            <button class="projects__arrow projects__arrow--back arrows__item arrows__item--back" aria-label="Назад"></button>
-            <button class="projects__arrow projects__arrow--next arrows__item arrows__item--next" aria-label="Вперед"></button>
+            <button class="projects__arrow projects__arrow--back arrows__item arrows__item--back" type="button" aria-label="Назад"></button>
+            <button class="projects__arrow projects__arrow--next arrows__item arrows__item--next" type="button" aria-label="Вперед"></button>
           </div>
         </div>
-      </div>
         <div class="projects__gallery swiper projects-swiper">
           <ul class="swiper-wrapper projects-swiper__list">
             <li class="projects__gallery-item swiper-slide">
@@ -1526,6 +1632,7 @@
           </ul>
 
         </div>
+      </div>
     </section>
 
     <section class="main-page__n-news n-news">
@@ -1533,8 +1640,8 @@
         <div class="n-news__wrapper">
           <h2 class="n-news__title heading">Последние новости из мира интерьера Ардо Студио</h2>
           <div class="n-news__arrows arrows">
-            <button class="n-news__arrow n-news__arrow--back arrows__item arrows__item--back" aria-label="Назад"></button>
-            <button class="n-news__arrow n-news__arrow--next arrows__item arrows__item--next" aria-label="Вперед"></button>
+            <button class="n-news__arrow n-news__arrow--back arrows__item arrows__item--back" type="button" aria-label="Назад"></button>
+            <button class="n-news__arrow n-news__arrow--next arrows__item arrows__item--next" type="button" aria-label="Вперед"></button>
           </div>
 
           <div class="n-news__swiper swiper news-swiper">

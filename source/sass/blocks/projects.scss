@@ -1,7 +1,7 @@
 .projects__wrapper {
   display: grid;
   grid-template-columns: 1fr min-content;
-  margin: 0 0 20px 0;
+  margin: 0 0 18px 0;
 
   @media #{$laptop-desktop} {
     margin: 0 0 40px 0;
@@ -9,9 +9,10 @@
 }
 
 .projects__title {
-  grid-column: 1/2;
+  grid-column: 1/3;
   grid-row: 1/2;
-  margin: 0 0 20px 0;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.03em;
 
   @media #{$tablet-desktop} {
     margin: 0 0 25px 0;
@@ -21,16 +22,24 @@
 .projects__button {
   grid-column: 1/2;
   grid-row: 2/3;
-  width: max-content;
-  padding: 10px 14px 10px 15px;
+  width: 242px;
+  padding: 10px 14px 10px;
   font-size: 16px;
   line-height: 21px;
+
+  @media #{$tablet-desktop} {
+    width: 221px;
+  }
 }
 
 .projects__arrows {
   grid-column: 2/3;
   grid-row: 2/3;
   align-self: center;
+}
+
+.projects__gallery {
+  border-radius: 10px;
 }
 
 .projects__gallery ul {
@@ -43,8 +52,9 @@
   position: relative;
   margin: 0;
   width: 301px;
+  height: auto;
   background-color: $category-text-bg;
-  height: 274px;
+  border-radius: 10px;
 
   @media #{$tablet-desktop} {
     width: 550px;
@@ -56,13 +66,13 @@
   display: block;
   width: 100%;
   height: 100%;
-  border-radius: 10px;
 }
 
 .projects__image img{
   display: block;
   width: 100%;
   height: 100%;
+  border-radius: 10px;
   object-fit: cover;
   object-position: center;
 }

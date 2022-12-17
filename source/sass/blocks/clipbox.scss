@@ -49,14 +49,9 @@
     font-size: 16px;
     line-height: 1;
     margin-top: 10px;
-    color: $weak-text-color;
 
     &::after {
       display: none;
-    }
-
-    &:hover {
-      color: $clipbox-toggler-alter-color;
     }
 
     @media #{$tablet-desktop} {

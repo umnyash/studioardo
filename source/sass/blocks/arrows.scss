@@ -40,14 +40,14 @@
 
 .arrows--alter {
   display: block;
+}
 
-  .arrows__item {
-    border-color: $background-color;
-    background-color: $background-color;
-    background-image: url("../../img/icons/slider-arrow-right.svg");
+.arrows__item--alter {
+  border-color: $background-color;
+  background-color: $background-color;
+  background-image: url("../../img/icons/slider-arrow-right.svg");
 
-    &:hover {
-      border-color: $secondary-button-color;
-    }
+  &:hover {
+    border-color: $secondary-button-color;
   }
 }

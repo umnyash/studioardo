@@ -71,10 +71,16 @@
 }
 
 .advantages-item__laptop{
-
-
   @media #{$laptop-desktop} {
     display: none;
+  }
+}
+
+.advantages-item__desktop {
+  display: none;
+
+  @media #{$desktop} {
+    display: initial;
   }
 }
 

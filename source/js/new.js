@@ -808,10 +808,15 @@ if (tileSwiper) {
     grid: {
       rows: 2,
     },
-    spaceBetween: 10,
+    spaceBetween: 8,
     navigation: {
       nextEl: ".tile-range__arrow--next",
       prevEl: ".tile-range__arrow--back",
+    },
+    breakpoints: {
+      768: {
+        spaceBetween: 10,
+      },
     },
   });
 };
@@ -939,6 +944,34 @@ if (newsSection) {
     navigation: {
       nextEl: ".n-news__arrow--next",
       prevEl: ".n-news__arrow--back",
+    },
+  });
+};
+
+const offersSection = document.querySelector('.current-offers');
+if (offersSection) {
+  let tabSwiper = new Swiper ('.offers-tabs-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    navigation: {
+      nextEl: ".current-offers__arrow--next",
+      prevEl: ".current-offers__arrow--back",
+    },
+    pagination: {
+      el: '.current-offers__dots',
+      bulletActiveClass: 'current-offers__dot--current',
+      bulletClass: 'current-offers__dot',
+      clickable: true,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+      },
+      // 1510: {
+      //   spaceBetween: 10,
+      // },
     },
   });
 };
