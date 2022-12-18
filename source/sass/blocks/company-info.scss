@@ -7,6 +7,10 @@
     column-gap: 56px;
     margin-bottom: 60px;
   }
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 47px;
+  }
 }
 
 .company-info__image {
@@ -24,6 +28,12 @@
   @media #{$tablet-desktop} {
     margin: 0 0 20px 0;
     letter-spacing: 0;
+  }
+
+  @media #{$laptop-desktop} {
+    margin: 0 0 25px 0;
+    font-size: 24px;
+    line-height: 1.3;
   }
 }
 
@@ -58,6 +68,6 @@
 
 .company-info {
   .clipbox--small .clipbox__toggler {
-
+    font-size: 14px;
   }
 }

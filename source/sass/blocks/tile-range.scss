@@ -51,6 +51,10 @@
   height: 200px;
   background-color: $category-text-bg;
   border-radius: 10px;
+
+  @media #{$tablet-desktop} {
+    width: 289px;
+  }
 }
 
 .tile-range__item a {

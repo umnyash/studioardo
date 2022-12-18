@@ -1,10 +1,30 @@
+.popular-goods__wrapper {
+  display: grid;
+  grid-template-areas: 'title'
+                        'slider'
+                        'btn';
+
+  @media #{$tablet-desktop} {
+    grid-template-columns: 1fr auto;
+    grid-template-areas: 'title btn'
+                          'slider slider';
+    margin-bottom: 40px;
+  }
+}
+
 .popular-goods__title {
+  grid-area: title;
   margin: 0 0 10px 0;
   letter-spacing: -0.03em;
 
-  @media #{$laptop-desktop} {
+  @media #{$tablet-desktop} {
     margin: 0 0 25px 0;
   }
+}
+
+.popular-goods-swiper {
+  grid-area: slider;
+  max-width: 100%;
 }
 
 .popular-goods__list {
@@ -22,10 +42,10 @@
 
   @media #{$laptop-desktop} {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(343px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(289px, 1fr));
     row-gap: 20px;
-    column-gap: 9px;
-    margin: 0 0 40px 0;
+    column-gap: 8px;
+    margin: 0;
   }
 }
 
@@ -34,10 +54,13 @@
   height: auto;
   margin: 0;
 
+  @media #{$tablet-desktop} {
+    width: 310px;
+  }
+
   @media #{$laptop-desktop} {
     position: relative;
-    width: 100%;
-    height: 440px;
+    width: 289px;
 
     &:hover {
       z-index: 2;
@@ -46,10 +69,16 @@
 }
 
 .popular-goods__arrows {
+  grid-area: btn;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 0 40px 0;
+
+  @media #{$tablet-desktop} {
+    margin: 0;
+    align-self: flex-start;
+  }
 
   @media #{$laptop-desktop} {
     display: none;
@@ -81,10 +110,30 @@
   .good__main {
     padding: 0 4px 10px;
     row-gap: 12px;
+
+    @media #{$laptop-desktop} {
+      margin-top: 10px;
+    }
   }
 
   .good__img-wrapper {
     height: 200px;
+
+    @media #{$laptop-desktop} {
+      height: 255px;
+    }
+  }
+
+  .good__heading {
+    @media #{$laptop-desktop} {
+      font-size: 14px;
+    }
+  }
+
+  .good__like {
+    @media #{$laptop-desktop} {
+      align-self: flex-start;
+    }
   }
 
   .good__characteristics--value {

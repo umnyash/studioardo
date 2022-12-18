@@ -17,10 +17,14 @@
 }
 
 .main-page__current-offers {
-  margin-bottom: 67px;
+  margin-bottom: -27px;
+
+  @media #{$tablet-desktop} {
+    margin-bottom: -21px;
+  }
 
   @media #{$laptop-desktop} {
-    margin-bottom: 30px;
+    margin-bottom: -8px;
   }
 }
 
@@ -45,6 +49,10 @@
   margin-bottom: 40px;
 
   @media #{$laptop-desktop} {
+    margin-bottom: 56px;
+  }
+
+  @media #{$desktop} {
     margin-bottom: 100px;
   }
 }
@@ -53,14 +61,14 @@
   margin-bottom: 60px;
 
   @media #{$laptop-desktop} {
-    margin-bottom: 89px;
+    margin-bottom: 55px;
   }
 }
 
 .main-page__projects {
   margin-bottom: 60px;
 
-  @media #{$laptop-desktop} {
+  @media #{$desktop} {
     margin-bottom: 100px;
   }
 }
@@ -76,7 +84,7 @@
 .main-page__popular-goods {
   margin-bottom: 60px;
 
-  @media #{$laptop-desktop} {
+  @media #{$desktop} {
     margin-bottom: 100px;
   }
 }

@@ -22,16 +22,51 @@
   margin: auto 0;
 }
 
+.current-offers__tabs-wrapper {
+  max-width: 100%;
+  transform: translateY(-68%);
+  z-index: 10;
+
+  @media #{$laptop-desktop} {
+    transform: translateY(-50%);
+  }
+}
+
+.current-offers__wrapper {
+  position: relative;
+  filter: drop-shadow(0px 290px 116px rgba(0, 0, 0, 0.01)) drop-shadow(0px 163px 98px rgba(0, 0, 0, 0.04))
+  drop-shadow(0px 72px 72px rgba(0, 0, 0, 0.06)) drop-shadow(0px 18px 40px rgba(0, 0, 0, 0.07))
+  drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.07));
+
+  @media #{$tablet-desktop} {
+    filter: drop-shadow(0px 18px 40px rgba(0, 0, 0, 0.07)) drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.07));
+  }
+}
+
+.offers-tabs-swiper {
+  border-radius: 9px;
+
+  @media #{$tablet-desktop} {
+    border-radius: 10px;
+    border: 1px solid $links-list-border-color;
+  }
+}
+
 .current-offers__tabs-list {
   margin: 0;
   padding: 0;
   list-style: none;
+
+  @media #{$tablet-desktop} {
+    border-radius: 10px;
+  }
 }
 
 .current-offers__tabs-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: auto;
   margin: 0;
   padding: 23px 43px;
   background: $background-color;
@@ -40,11 +75,36 @@
   box-sizing: border-box;
 
   @media #{$tablet-desktop} {
-    padding: 20px 10px 20px;
+    position: relative;
+    padding: 20px 10px;
+    border-radius: 0;
+    border: none;
+  }
+
+  @media #{$laptop-desktop} {
+    min-width: 196px;
+    padding: 21px 8px 18px;
   }
 }
 
-.current-offers__tabs-item--active {
+.current-offers__tabs-item a {
+  display: block;
+}
+
+.current-offers__tabs-item:not(:last-child) {
+  @media #{$tablet-desktop} {
+    &::after {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 40px;
+      right: 0;
+      border: 1px solid $links-list-border-color;
+    }
+  }
+}
+
+.current-offers__tabs-list .current-offers__tabs-item--active {
   position: relative;
   overflow: hidden;
 
@@ -56,21 +116,15 @@
     height: 3px;
     background: $pagination-alter-color;
   }
-}
 
-.current-offers__tabs-wrapper {
-  position: absolute;
-  max-width: 100%;
-  bottom: -30px;
-  z-index: 10;
-}
+  @media #{$tablet-desktop} {
+    background-color: $offers-tab-background-color;
 
-.current-offers__wrapper {
-  position: relative;
-  border-radius: 18px;
-  filter: drop-shadow(0px 290px 116px rgba(0, 0, 0, 0.01)) drop-shadow(0px 163px 98px rgba(0, 0, 0, 0.04))
-  drop-shadow(0px 72px 72px rgba(0, 0, 0, 0.06)) drop-shadow(0px 18px 40px rgba(0, 0, 0, 0.07))
-  drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.07));
+    &::after {
+      height: 4px;
+      bottom: -1px;
+    }
+  }
 }
 
 .current-offers__arrow {
@@ -81,12 +135,22 @@
   border: 1px solid $button-border-color;
   transform: translateY(-50%);
   filter: drop-shadow(0px 3px 25px rgba(0, 0, 0, 0.06));
+
+  @media #{$tablet-desktop} {
+    right: 0;
+    transform: translate(50%, -50%);
+  }
 }
 
 .current-offers__arrow--back {
   left: 5px;
   right: auto;
   transform: translateY(-50%) rotate(-180deg);
+
+  @media #{$tablet-desktop} {
+    left: 0;
+    transform: translate(-50%, -50%) rotate(-180deg);
+  }
 }
 
 .current-offers__tabs-title {
@@ -96,8 +160,13 @@
   font-size: 18px;
   line-height: 1.3;
   letter-spacing: 0;
+  text-align: center;
   text-transform: none;
   color: $offers-tab-title-color;
+
+  @media #{$tablet-desktop} {
+    font-size: 14px;
+  }
 }
 
 .current-offers__tabs-text {
@@ -106,7 +175,12 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 1.5;
+  text-align: center;
   color: $offers-tab-text-color;
+
+  @media #{$laptop-desktop} {
+    font-size: 12px;
+  }
 }
 
 .current-offers__dots {
@@ -118,6 +192,10 @@
 
   .swiper-pagination-bullet-active {
     background: $radiobutton-active-color;
+  }
+
+  @media #{$laptop-desktop} {
+    display: none;
   }
 }
 

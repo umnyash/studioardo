@@ -633,6 +633,11 @@ if(productsSection) {
           nextEl: ".products__arrow--next",
           prevEl: ".products__arrow--back",
         },
+        breakpoints: {
+          1280: {
+            spaceBetween: 5,
+          }
+        }
       });
 
     };
@@ -724,10 +729,8 @@ if(popGoodsSection) {
         slidesPerView: 1,
         spaceBetween: 3,
         breakpoints: {
-          375: {
-            slidesPerView: 'auto',
-          },
           768: {
+            slidesPerView: 'auto',
             spaceBetween: 8,
           },
         },
@@ -816,6 +819,9 @@ if (tileSwiper) {
     breakpoints: {
       768: {
         spaceBetween: 10,
+      },
+      1280: {
+        spaceBetween: 8,
       },
     },
   });
@@ -969,9 +975,12 @@ if (offersSection) {
         slidesPerView: 3,
         slidesPerGroup: 3,
       },
-      // 1510: {
-      //   spaceBetween: 10,
-      // },
+      1280: {
+        slidesPerView: 6,
+        slidesPerGroup: 1,
+        loop: false,
+      },
     },
   });
 };
+

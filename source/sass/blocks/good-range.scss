@@ -17,13 +17,13 @@
   filter: drop-shadow(0px 18px 40px $good-range-shadow-color) drop-shadow(0px 0px 0px $good-range-shadow-color) drop-shadow(0px 3px 25px rgba(0, 0, 0, 0.06));
 
   @media #{$tablet-desktop} {
-    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     filter: drop-shadow(0px 18px 40px $good-range-shadow-color);
   }
 
   @media #{$laptop-desktop} {
     grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
   }
 }
 
@@ -52,20 +52,25 @@
     padding: 12px 20px 15px;
   }
 
-  @media #{$laptop-desktop} {
+  @media #{$tablet-desktop} {
     flex-direction: row;
     justify-content: flex-start;
-    padding: 18px 14px;
+    padding: 17px 14px;
   }
 }
 
 .good-range__sale {
   display: none;
-  position: absolute;
-  top: 21px;
-  left: 190px;
 
   @media #{$laptop-desktop} {
     display: initial;
+    position: absolute;
+    top: 21px;
+    left: 143px;
+  }
+
+  @media #{$desktop} {
+    top: 21px;
+    left: 190px;
   }
 }

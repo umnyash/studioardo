@@ -2,6 +2,10 @@
   position: relative;
   padding: 91px 0 60px;
   background: $artgallery-accent-bg-color;
+
+  @media #{$laptop-desktop} {
+    padding: 82px 0 71px;
+  }
 }
 
 .inspiration__wrapper {
@@ -34,8 +38,14 @@
   font-size: 16px;
   line-height: 21px;
 
+
   @media #{$tablet-desktop} {
     width: 221px;
+  }
+
+  @media #{$laptop-desktop} {
+    min-height: 41px;
+    padding: 10px 14px;
   }
 }
 
@@ -45,7 +55,7 @@
   align-self: center;
 }
 
-.inspiration__gallery ul {
+.inspiration__gallery-list {
   margin: 0 0 0 10px;
   padding: 0;
   list-style: none;
@@ -59,13 +69,25 @@
   }
 }
 
-.inspiration__gallery li {
+.inspiration__gallery-item {
   margin: 0;
   width: 280px;
   height: 450px;
 
   @media #{$tablet-desktop} {
     height: 490px;
+  }
+}
+
+.inspiration__gallery-link {
+  display: block;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
   }
 }
 

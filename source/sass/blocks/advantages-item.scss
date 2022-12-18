@@ -71,7 +71,8 @@
 }
 
 .advantages-item__laptop{
-  @media #{$laptop-desktop} {
+
+  @media #{$desktop} {
     display: none;
   }
 }
@@ -79,7 +80,7 @@
 .advantages-item__desktop {
   display: none;
 
-  @media #{$desktop} {
+  @media #{$tablet-desktop} {
     display: initial;
   }
 }
