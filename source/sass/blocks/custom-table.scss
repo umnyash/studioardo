@@ -115,3 +115,49 @@
     margin-top: 36px;
   }
 }
+
+
+
+.custom-table--big-2 {
+  .custom-table__table {
+    min-width: 800px;
+  }
+
+  .table {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  td,
+  th {
+    width: 223px;
+    height: 50px;
+    padding: 9px 60px;
+  }
+
+  .table__heading th {
+    padding: 20px 40px 17px;
+  }
+
+  th:first-child,
+  td:first-child {
+    min-width: 240px;
+    padding-left: 18px;
+  }
+
+  .table__heading th:last-child,
+  td:last-child {
+    width: 202px;
+    min-width: 182px;
+    padding-right: 50px;
+  }
+
+  .table-cell--alter {
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .custom-table__note {
+    margin-top: 36px;
+  }
+}

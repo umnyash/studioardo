@@ -1,0 +1,99 @@
+.stone-category-page__banner {
+  margin: 0 0 10px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 40px;
+  }
+}
+
+.stone-category-page__reference {
+  margin: 0 0 10px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 23px;
+  }
+}
+
+.stone-category-page__advantages-and-widget {
+  margin: 0 0 40px;
+}
+
+.stone-category-page__n-products {
+  margin: 0 0 10px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 60px;
+  }
+
+  @media #{$desktop} {
+    margin-bottom: 100px;
+  }
+}
+
+.stone-category-page__materials {
+  margin: 0 0 10px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 60px;
+  }
+
+  @media #{$desktop} {
+    margin-bottom: 94px;
+  }
+}
+
+.stone-category-page__work-option {
+  margin: 0 0 10px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 60px;
+  }
+
+  @media #{$desktop} {
+    margin-bottom: 100px;
+  }
+}
+
+.stone-category-page__ratings {
+  margin: 0 0 60px;
+}
+
+.stone-category-page__calculation {
+  margin: 0 0 40px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 60px;
+  }
+
+  @media #{$desktop} {
+    margin-bottom: 100px;
+  }
+}
+
+.stone-category-page__delivery-info {
+  margin: 0 0 40px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 60px;
+  }
+
+  @media #{$desktop} {
+    margin-bottom: 100px;
+  }
+}
+
+.stone-category-page__manufacture {
+  margin: 0 0 60px;
+
+  @media #{$desktop} {
+    margin-bottom: 106px;
+  }
+}
+
+.stone-category-page__clients {
+  margin: 0 0 50px;
+
+  @media #{$desktop} {
+    margin-bottom: 97px;
+  }
+}
