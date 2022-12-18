@@ -58,9 +58,9 @@
     object-fit: contain;
   }
 
-  // @media #{$laptop-desktop} {
-  //   width: 111px;
-  // }
+  @media #{$desktop} {
+    width: 160px;
+  }
 }
 
 .product-item--adaptive {
@@ -103,6 +103,11 @@
 
     @media #{$laptop-desktop} {
       width: 111px;
+    }
+
+    @media #{$laptop-desktop} {
+      width: 160px;
+      object-fit: contain;
     }
   }
 }

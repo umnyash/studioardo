@@ -669,7 +669,10 @@ if (serviceSwiper) {
     watchOverflow: true,
     spaceBetween: 5,
     breakpoints: {
-      1024: {
+      1280: {
+        spaceBetween: 7,
+      },
+      1510: {
         spaceBetween: 20,
       },
     }
@@ -981,6 +984,42 @@ if (offersSection) {
         loop: false,
       },
     },
+  });
+
+  const tabsWrapper = offersSection.querySelector('.current-offers__tabs-list');
+  const tabs = tabsWrapper.querySelectorAll('.current-offers__tabs-item');
+  const slides = offersSection.querySelectorAll('.current-offers__slide');
+  let activeSlideNumber = 0;
+
+  const changeActiveTab = () => {
+
+    tabs.forEach((tab) => {
+      tab.classList.remove('current-offers__tabs-item--active');
+
+      if (+tab.dataset.slideIndex === activeSlideNumber) {
+        tab.classList.add('current-offers__tabs-item--active');
+      }
+    });
+  };
+
+  tabsWrapper.addEventListener('click', ({target}) => {
+
+    const tab = target.closest('.current-offers__tabs-item');
+
+    if (!tab) {
+      return;
+    }
+
+    const tabNumber = +tab.dataset.slideIndex;
+    if (tabNumber === activeSlideNumber) {
+      return;
+    }
+
+    slides[activeSlideNumber].classList.remove('current-offers__slide--active');
+    activeSlideNumber = tabNumber;
+    slides[activeSlideNumber].classList.add('current-offers__slide--active');
+
+    changeActiveTab();
   });
 };
 

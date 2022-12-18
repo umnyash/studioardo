@@ -28,6 +28,10 @@
     grid-area: btn;
     display: grid;
   }
+
+  @media #{$desktop} {
+    margin-top: 9px;
+  }
 }
 
 .n-news__swiper {

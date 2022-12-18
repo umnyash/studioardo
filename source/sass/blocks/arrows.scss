@@ -16,7 +16,7 @@
   background-image: url("../img/icons/white-left-arrow.svg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 5px 11px;
+  background-size: 8px 13px;
   border-radius: 50%;
   border: 1px solid $secondary-button-color;
   cursor: pointer;
@@ -32,10 +32,6 @@
 
 .arrows__item--next {
   transform: rotate(180deg);
-}
-
-.arrows__item--back {
-  transform: rotate(-180deg);
 }
 
 .arrows--alter {

@@ -26,9 +26,20 @@
   @media #{$laptop-desktop} {
     margin-bottom: -8px;
   }
+
+  @media #{$desktop} {
+    margin-bottom: 1px;
+  }
 }
 
-.main-page__good-range,
+.main-page__good-range {
+  margin-bottom: 40px;
+
+  @media #{$tablet-desktop} {
+    margin-bottom: 60px;
+  }
+}
+
 .main-page__tile-range {
   margin-bottom: 40px;
 
@@ -63,6 +74,10 @@
   @media #{$laptop-desktop} {
     margin-bottom: 55px;
   }
+
+  @media #{$desktop} {
+    margin-bottom: 83px;
+  }
 }
 
 .main-page__projects {
@@ -76,8 +91,12 @@
 .main-page__n-service {
   margin-bottom: 40px;
 
-  @media #{$narrowlaptop-desktop} {
+  @media #{$laptop-desktop} {
     margin-bottom: 60px;
+  }
+
+  @media #{$desktop} {
+    margin-bottom: 65px;
   }
 }
 
@@ -98,7 +117,7 @@
   }
 
   @media #{$desktop} {
-    margin-bottom: 40px;
+    margin-bottom: 34px;
   }
 }
 

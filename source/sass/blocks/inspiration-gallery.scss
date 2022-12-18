@@ -67,6 +67,10 @@
   @media #{$laptop-desktop} {
     margin: 0 0 0 50px;
   }
+
+  @media #{$desktop} {
+    margin: 0 0 0 35px;
+  }
 }
 
 .inspiration__gallery-item {
