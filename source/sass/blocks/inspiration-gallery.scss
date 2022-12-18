@@ -55,6 +55,12 @@
   align-self: center;
 }
 
+.inspiration .inspiration__arrows {
+  @media #{$narrow-mobile} {
+    display: none;
+  }
+}
+
 .inspiration__gallery-list {
   margin: 0 0 0 10px;
   padding: 0;

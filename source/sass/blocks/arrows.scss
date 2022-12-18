@@ -2,10 +2,6 @@
   display: grid;
   grid-template-columns: repeat(2, min-content);
   gap: 8px;
-
-  @media #{$narrow-mobile} {
-    gap: 3px;
-  }
 }
 
 .arrows__item {

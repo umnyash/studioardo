@@ -24,6 +24,10 @@
 .current-offers__content {
   grid-area: 1/1/2/2;
   margin: auto 0;
+
+  @media #{$narrow-mobile} {
+    margin: 25px 0;
+  }
 }
 
 .current-offers__tabs-wrapper {

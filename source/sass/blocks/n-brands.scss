@@ -35,6 +35,10 @@
 .n-brands__nav-item:not(:last-child) {
   margin: 0 20px 0 0;
 
+  @media #{$narrow-mobile} {
+    margin: 0 20px 10px 0;
+  }
+
   @media #{$tablet-desktop} {
     margin: 0 30px 0 0;
   }
@@ -94,6 +98,10 @@
   margin: 0;
   padding: 0;
   list-style: none;
+
+  @media #{$narrow-mobile} {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   @media #{$tablet-desktop} {
     display: flex;
