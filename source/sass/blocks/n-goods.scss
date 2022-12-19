@@ -1,0 +1,44 @@
+.n-goods__inner {
+  padding: 0 14px;
+
+  @media #{$desktop} {
+    width: 1480px;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin: 0 auto;
+  }
+}
+
+.n-goods__heading {
+  margin: 0 0 22px;
+
+  @media #{$tablet-desktop} {
+    margin-bottom: 40px;
+  }
+}
+
+.n-goods__button-wrapper {
+  display: flex;
+  padding: 0 14px;
+  margin: 40px 0 0;
+
+  @media #{$tablet-desktop} {
+    padding: 0;
+  }
+
+  @media #{$laptop-desktop} {
+    margin-top: 50px;
+  }
+}
+
+.n-goods__button {
+  width: 100%;
+  padding-right: 18px;
+  padding-left: 18px;
+
+  @media #{$tablet-desktop} {
+    width: auto;
+    min-width: 350px;
+    margin: 0 auto;
+  }
+}
