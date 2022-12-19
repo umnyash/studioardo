@@ -2,7 +2,6 @@
   display: grid;
   row-gap: 10px;
   column-gap: 10px;
-  padding: 0 10px;
   list-style: none;
 
   @media (min-width: 716px) {
@@ -10,15 +9,7 @@
   }
 
   @media #{$tablet-desktop} {
-    padding: 0 15px;
     row-gap: 20px;
-  }
-
-  @media #{$desktop} {
-    box-sizing: border-box;
-    width: 1480px;
-    padding: 0 39px;
-    margin: 0 auto;
   }
 }
 
