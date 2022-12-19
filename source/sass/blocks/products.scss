@@ -1,14 +1,13 @@
-
 .products__wrapper {
   display: grid;
   grid-template-areas: 'title'
-                        'slider'
-                        'btn';
+    'slider'
+    'btn';
 
   @media #{$tablet-desktop} {
     grid-template-columns: 1fr auto;
     grid-template-areas: 'title btn'
-                         'slider slider';
+      'slider slider';
   }
 }
 

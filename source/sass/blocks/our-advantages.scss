@@ -38,11 +38,11 @@
   }
 
   .our-advantages__item::after {
-      right: 9px;
+    right: 9px;
 
-      @media #{$desktop} {
-        top: 12px;
-      }
+    @media #{$desktop} {
+      top: 12px;
+    }
   }
 }
 
@@ -84,8 +84,7 @@
     @media #{$laptop-desktop} {
       left: auto;
       right: 0;
-      transform: translate( 0, -100%);
+      transform: translate(0, -100%);
     }
   }
 }
-

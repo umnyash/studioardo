@@ -1,14 +1,13 @@
-
 .tile-range__wrapper {
   display: grid;
   grid-template-areas: 'title'
-                        'slider'
-                        'btn';
+    'slider'
+    'btn';
 
   @media #{$tablet-desktop} {
     grid-template-columns: 1fr auto;
     grid-template-areas: 'title btn'
-                         'slider slider';
+      'slider slider';
   }
 }
 
@@ -79,7 +78,7 @@
   border-radius: 10px;
 }
 
-.tile-range__image img{
+.tile-range__image img {
   display: block;
   width: 100%;
   height: 100%;

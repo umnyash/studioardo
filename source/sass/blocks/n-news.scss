@@ -1,12 +1,12 @@
 .n-news__wrapper {
   display: grid;
   grid-template-areas: 'title'
-                        'swiper';
+    'swiper';
 
   @media #{$tablet-desktop} {
     grid-template-columns: 1fr auto;
     grid-template-areas: 'title btn'
-                         'swiper swiper';
+      'swiper swiper';
   }
 }
 
@@ -36,6 +36,7 @@
 
 .n-news__swiper {
   max-width: 100%;
+
   @media #{$tablet-desktop} {
     grid-area: swiper;
   }

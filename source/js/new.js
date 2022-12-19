@@ -447,7 +447,7 @@ if (customForm2Elements) {
   const toggleAccordionView = (evt) => {
     const accordionButton = evt.target.closest('.form__section-heading-button');
 
-    if(!accordionButton) {
+    if (!accordionButton) {
       return;
     }
 
@@ -576,8 +576,8 @@ if (inspirationGallery) {
 
 const productsSection = document.querySelector('.products');
 
-if(productsSection) {
-  (function() {
+if (productsSection) {
+  (function () {
 
     // breakpoint where swiper will be destroyed
     // and switches to a dual-column layout
@@ -591,28 +591,28 @@ if(productsSection) {
     const breakpointChecker = () => {
 
       // if larger viewport and multi-row layout needed
-      if ( breakpoint.matches === true ) {
+      if (breakpoint.matches === true) {
 
         // clean up old instances and inline styles when available
-      if ( productSwiper !== undefined ) {
-        productsSwiper.destroy(true,true);
-        productsSwiper.classList.remove('swiper');
-        productsList.classList.remove('swiper-wrapper');
-        productSlides.forEach((slide) => {
-          slide.classList.remove('swiper-slide');
-        });
-      }
+        if (productSwiper !== undefined) {
+          productsSwiper.destroy(true, true);
+          productsSwiper.classList.remove('swiper');
+          productsList.classList.remove('swiper-wrapper');
+          productSlides.forEach((slide) => {
+            slide.classList.remove('swiper-slide');
+          });
+        }
 
-      // or/and do nothing
-      return;
+        // or/and do nothing
+        return;
 
         // else if a small viewport and single column layout needed
-        } else if ( breakpoint.matches === false ) {
+      } else if (breakpoint.matches === false) {
 
-          // fire small viewport version of swiper
-          return enableSwiper();
+        // fire small viewport version of swiper
+        return enableSwiper();
 
-        }
+      }
 
     };
 
@@ -623,7 +623,7 @@ if(productsSection) {
         slide.classList.add('swiper-slide');
       });
 
-      productSwiper = new Swiper ('.products-swiper', {
+      productSwiper = new Swiper('.products-swiper', {
         slidesPerView: 'auto',
         grid: {
           rows: 2,
@@ -681,9 +681,9 @@ if (serviceSwiper) {
 
 const popGoodsSection = document.querySelector('.popular-goods');
 
-if(popGoodsSection) {
+if (popGoodsSection) {
 
-  (function() {
+  (function () {
     // breakpoint where swiper will be destroyed
     // and switches to a dual-column layout
     const breakpoint = window.matchMedia('(min-width: 1280px)');
@@ -696,28 +696,28 @@ if(popGoodsSection) {
     const breakpointChecker = () => {
 
       // if larger viewport and multi-row layout needed
-      if ( breakpoint.matches === true ) {
+      if (breakpoint.matches === true) {
 
         // clean up old instances and inline styles when available
-      if ( popGoodSwiper !== undefined ) {
-        popGoodsSwiper.destroy(true,true);
-        popGoodsSwiper.classList.remove('swiper');
-        popGoodsList.classList.remove('swiper-wrapper');
-        popGoodsSlides.forEach((slide) => {
-          slide.classList.remove('swiper-slide');
-        });
-      }
+        if (popGoodSwiper !== undefined) {
+          popGoodsSwiper.destroy(true, true);
+          popGoodsSwiper.classList.remove('swiper');
+          popGoodsList.classList.remove('swiper-wrapper');
+          popGoodsSlides.forEach((slide) => {
+            slide.classList.remove('swiper-slide');
+          });
+        }
 
-      // or/and do nothing
-      return;
+        // or/and do nothing
+        return;
 
         // else if a small viewport and single column layout needed
-        } else if ( breakpoint.matches === false ) {
+      } else if (breakpoint.matches === false) {
 
-          // fire small viewport version of swiper
-          return enableSwiper();
+        // fire small viewport version of swiper
+        return enableSwiper();
 
-        }
+      }
 
     };
 
@@ -728,7 +728,7 @@ if(popGoodsSection) {
         slide.classList.add('swiper-slide');
       });
 
-      popGoodSwiper = new Swiper ('.popular-goods-swiper', {
+      popGoodSwiper = new Swiper('.popular-goods-swiper', {
         slidesPerView: 1,
         spaceBetween: 3,
         breakpoints: {
@@ -809,7 +809,7 @@ if (popGoodList) {
 
 const tileSwiper = document.querySelector('.tile-range');
 if (tileSwiper) {
-  let swiper = new Swiper ('.tile-range-swiper', {
+  let swiper = new Swiper('.tile-range-swiper', {
     slidesPerView: 'auto',
     grid: {
       rows: 2,
@@ -879,9 +879,9 @@ initSelects(document);
 
 const brandsSection = document.querySelector('.n-brands');
 
-if(brandsSection) {
+if (brandsSection) {
 
-  (function() {
+  (function () {
     // breakpoint where swiper will be destroyed
     // and switches to a dual-column layout
     const breakpoint = window.matchMedia('(min-width: 768px)');
@@ -894,28 +894,28 @@ if(brandsSection) {
     const breakpointChecker = () => {
 
       // if larger viewport and multi-row layout needed
-      if ( breakpoint.matches === false ) {
+      if (breakpoint.matches === false) {
 
         // clean up old instances and inline styles when available
-      if ( brandSwiper !== undefined ) {
-        brandsSwiper.destroy(true,true);
-        brandsSwiper.classList.remove('swiper');
-        brandsList.classList.remove('swiper-wrapper');
-        brandsSlides.forEach((slide) => {
-          slide.classList.remove('swiper-slide');
-        });
-      }
+        if (brandSwiper !== undefined) {
+          brandsSwiper.destroy(true, true);
+          brandsSwiper.classList.remove('swiper');
+          brandsList.classList.remove('swiper-wrapper');
+          brandsSlides.forEach((slide) => {
+            slide.classList.remove('swiper-slide');
+          });
+        }
 
-      // or/and do nothing
-      return;
+        // or/and do nothing
+        return;
 
         // else if a small viewport and single column layout needed
-        } else if ( breakpoint.matches === true ) {
+      } else if (breakpoint.matches === true) {
 
-          // fire small viewport version of swiper
-          return enableSwiper();
+        // fire small viewport version of swiper
+        return enableSwiper();
 
-        }
+      }
 
     };
 
@@ -926,7 +926,7 @@ if(brandsSection) {
         slide.classList.add('swiper-slide');
       });
 
-      brandSwiper = new Swiper ('.brands-swiper', {
+      brandSwiper = new Swiper('.brands-swiper', {
         slidesPerView: 'auto',
         spaceBetween: 5,
         navigation: {
@@ -947,7 +947,7 @@ if(brandsSection) {
 
 const newsSection = document.querySelector('.n-news');
 if (newsSection) {
-  let swiper = new Swiper ('.news-swiper', {
+  let swiper = new Swiper('.news-swiper', {
     slidesPerView: 'auto',
     spaceBetween: 5,
     navigation: {
@@ -959,7 +959,7 @@ if (newsSection) {
 
 const offersSection = document.querySelector('.current-offers');
 if (offersSection) {
-  let tabSwiper = new Swiper ('.offers-tabs-swiper', {
+  let tabSwiper = new Swiper('.offers-tabs-swiper', {
     slidesPerView: 1,
     spaceBetween: 0,
     loop: true,
@@ -1002,7 +1002,7 @@ if (offersSection) {
     });
   };
 
-  tabsWrapper.addEventListener('click', ({target}) => {
+  tabsWrapper.addEventListener('click', ({ target }) => {
 
     const tab = target.closest('.current-offers__tabs-item');
 
