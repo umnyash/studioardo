@@ -38,6 +38,18 @@
   }
 }
 
+.stone-product-page__n-goods {
+  margin: 0 0 40px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 60px;
+  }
+
+  @media #{$desktop} {
+    margin-bottom: 100px;
+  }
+}
+
 .stone-product-page__ratings {
   margin: 0 0 60px;
 }
