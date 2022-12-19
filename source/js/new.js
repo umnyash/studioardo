@@ -695,6 +695,7 @@ if (serviceSwiper) {
     spaceBetween: 5,
     breakpoints: {
       1280: {
+        slidesPerView: 3,
         spaceBetween: 7,
       },
       1510: {
