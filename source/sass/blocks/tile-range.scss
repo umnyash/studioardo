@@ -34,10 +34,6 @@
   grid-area: slider;
   max-width: 100%;
   filter: drop-shadow(0px 18px 15px $good-range-shadow-color);
-
-  @media #{$laptop-desktop} {
-    min-width: 100%;
-  }
 }
 
 .tile-range__list {
@@ -57,6 +53,10 @@
 
   @media #{$tablet-desktop} {
     width: 289px;
+  }
+
+  @media #{$laptop-desktop} {
+    min-width: 289px;
   }
 
   @media #{$desktop} {

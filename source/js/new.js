@@ -656,7 +656,11 @@ if (productsSection) {
         },
         breakpoints: {
           1280: {
+            slidesPerView: 4,
             spaceBetween: 5,
+          },
+          1510: {
+            spaceBetween: 10,
           }
         }
       });
@@ -750,11 +754,10 @@ if (popGoodsSection) {
       });
 
       popGoodSwiper = new Swiper('.popular-goods-swiper', {
-        slidesPerView: 1,
+        slidesPerView: 'auto',
         spaceBetween: 3,
         breakpoints: {
           768: {
-            slidesPerView: 'auto',
             spaceBetween: 8,
           },
         },
@@ -845,6 +848,7 @@ if (tileSwiper) {
         spaceBetween: 10,
       },
       1280: {
+        slidesPerView: 4,
         spaceBetween: 8,
       },
     },
@@ -1010,23 +1014,17 @@ initSelects(document);
 const brandsSection = document.querySelector('.n-brands');
 
 if (brandsSection) {
-
   (function () {
-    // breakpoint where swiper will be destroyed
-    // and switches to a dual-column layout
     const breakpoint = window.matchMedia('(min-width: 768px)');
     const brandsSwiper = document.querySelector('.brands-swiper');
     const brandsList = document.querySelector('.n-brands__list');
     const brandsSlides = document.querySelectorAll('.n-brands__item');
 
-    // keep track of swiper instances to destroy later
     let brandSwiper;
     const breakpointChecker = () => {
 
-      // if larger viewport and multi-row layout needed
       if (breakpoint.matches === false) {
 
-        // clean up old instances and inline styles when available
         if (brandSwiper !== undefined) {
           brandsSwiper.destroy(true, true);
           brandsSwiper.classList.remove('swiper');
@@ -1035,14 +1033,9 @@ if (brandsSection) {
             slide.classList.remove('swiper-slide');
           });
         }
-
-        // or/and do nothing
         return;
 
-        // else if a small viewport and single column layout needed
       } else if (breakpoint.matches === true) {
-
-        // fire small viewport version of swiper
         return enableSwiper();
 
       }
@@ -1059,6 +1052,7 @@ if (brandsSection) {
       brandSwiper = new Swiper('.brands-swiper', {
         slidesPerView: 'auto',
         spaceBetween: 5,
+        loop: true,
         navigation: {
           nextEl: ".n-brands__arrow--next",
           prevEl: ".n-brands__arrow--back",
@@ -1067,10 +1061,7 @@ if (brandsSection) {
 
     };
 
-    // keep an eye on viewport size changes
     window.addEventListener('resize', breakpointChecker);
-
-    // kickstart
     breakpointChecker();
   })();
 }

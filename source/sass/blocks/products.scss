@@ -58,6 +58,10 @@
     width: 290px;
   }
 
+  @media #{$laptop-desktop} {
+    min-width: 290px;
+  }
+
   @media #{$desktop} {
     width: 343px;
   }

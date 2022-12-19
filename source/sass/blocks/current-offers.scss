@@ -14,11 +14,13 @@
   grid-area: 1 / 1 / 2 / 2;
   margin: 0;
   opacity: 0;
+  pointer-events: none;
   transition: opacity 1000ms;
 }
 
 .current-offers__slide--active {
   opacity: 1;
+  pointer-events: auto;
 }
 
 .current-offers__content {
