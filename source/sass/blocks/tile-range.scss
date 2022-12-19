@@ -91,7 +91,6 @@
   align-self: flex-end;
   display: grid;
   height: 60px;
-  transition: height 0.5s ease-out;
   background: $category-text-bg-40;
   z-index: 5;
   padding: 18px 7px 19px;
@@ -115,7 +114,7 @@
   .tile-range__category {
     height: 100%;
     align-items: stretch;
-
+    transition: height 0.5s ease-out;
   }
 
   .tile-range__category-text {
