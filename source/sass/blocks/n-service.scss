@@ -27,7 +27,7 @@
   }
 
   @media #{$laptop-desktop} {
-    width: 389px;
+    min-width: 389px;
   }
 
   @media #{$desktop} {
