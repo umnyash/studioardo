@@ -1,0 +1,39 @@
+.news-card {
+  display: grid;
+}
+
+.news-card__headline {
+  margin: 0 15px 10px 0;
+  font-family: $basic-font-family;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.3;
+  color: $basic-text-color;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.news-card__date {
+  font-family: $basic-font-family;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.3;
+  color: $weak-text-color;
+}
+
+.news-card__image {
+  order: -1;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.news-card__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}

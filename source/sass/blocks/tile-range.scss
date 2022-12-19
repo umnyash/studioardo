@@ -1,0 +1,123 @@
+.tile-range__wrapper {
+  display: grid;
+  grid-template-areas: 'title'
+    'slider'
+    'btn';
+
+  @media #{$tablet-desktop} {
+    grid-template-columns: 1fr auto;
+    grid-template-areas: 'title btn'
+      'slider slider';
+  }
+}
+
+.tile-range__title {
+  grid-area: title;
+  margin: 0 0 25px 0;
+  letter-spacing: -0.03em;
+}
+
+.tile-range__arrows {
+  grid-area: btn;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+
+  @media #{$tablet-desktop} {
+    margin-top: 0;
+    align-self: flex-start;
+  }
+}
+
+.tile-range__swiper {
+  grid-area: slider;
+  max-width: 100%;
+  filter: drop-shadow(0px 18px 15px $good-range-shadow-color);
+}
+
+.tile-range__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: calc(200px + 200px + 10px);
+}
+
+.tile-range__item {
+  margin: 0;
+  width: 342px;
+  height: 200px;
+  background-color: $category-text-bg;
+  overflow: hidden;
+  border-radius: 10px;
+
+  @media #{$tablet-desktop} {
+    width: 289px;
+  }
+
+  @media #{$laptop-desktop} {
+    min-width: 289px;
+  }
+
+  @media #{$desktop} {
+    width: 342px;
+  }
+}
+
+.tile-range__item a {
+  display: grid;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.tile-range__image {
+  grid-area: 1/1/2/2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.tile-range__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.tile-range__category {
+  grid-area: 1/1/2/2;
+  align-self: flex-end;
+  display: grid;
+  height: 60px;
+  background: $category-text-bg-40;
+  z-index: 5;
+  padding: 18px 7px 19px;
+  box-sizing: border-box;
+  border-radius: 0 0 10px 10px;
+}
+
+.tile-range__category-text {
+  margin: 0;
+  font-family: $basic-font-family;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0;
+  color: $text-color-secondary;
+  text-transform: none;
+}
+
+.tile-range__item:hover {
+  .tile-range__category {
+    height: 100%;
+    align-items: stretch;
+    transition: height 0.5s ease-out;
+  }
+
+  .tile-range__category-text {
+    align-self: center;
+  }
+}

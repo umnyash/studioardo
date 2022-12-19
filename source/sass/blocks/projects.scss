@@ -1,0 +1,157 @@
+.projects__wrapper {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  margin: 0 0 18px 0;
+
+  @media #{$laptop-desktop} {
+    margin: 0 0 40px 0;
+  }
+}
+
+.projects__title {
+  grid-column: 1/3;
+  grid-row: 1/2;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.03em;
+
+  @media #{$tablet-desktop} {
+    margin: 0 0 25px 0;
+  }
+}
+
+.projects__button {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  width: 242px;
+  padding: 10px 14px 10px;
+  font-size: 16px;
+  line-height: 21px;
+
+  @media #{$laptop-desktop} {
+    min-height: 41px;
+  }
+}
+
+.projects__arrows {
+  @media #{$narrow-mobile} {
+    display: none;
+  }
+
+  grid-column: 2/3;
+  grid-row: 2/3;
+  align-self: center;
+}
+
+.projects .projects__arrows {
+  @media #{$narrow-mobile} {
+    display: none;
+  }
+}
+
+.projects__gallery {
+  border-radius: 10px;
+  margin: 0 0 0 10px;
+
+  @media #{$tablet-desktop} {
+    margin: 0 0 0 30px;
+  }
+
+  @media #{$laptop-desktop} {
+    margin: 0;
+  }
+}
+
+.projects__gallery ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.projects__gallery-item {
+  margin: 0;
+  width: 301px;
+  height: auto;
+  background-color: $category-text-bg;
+  border-radius: 10px;
+
+  @media #{$tablet-desktop} {
+    width: 550px;
+    height: 500px;
+  }
+}
+
+.projects__gallery-link {
+  display: block;
+  display: grid;
+  border-radius: 10px;
+}
+
+.projects__image {
+  grid-area: 1/1/2/2;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.projects__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.projects__category {
+  grid-area: 1/1/2/2;
+  align-self: flex-end;
+  display: grid;
+  height: 48px;
+  transition: height 0.5s ease-out;
+  background: $category-text-bg-40;
+  z-index: 5;
+  padding: 16px 5px 14px;
+  box-sizing: border-box;
+  border-radius: 0 0 10px 10px;
+
+  @media #{$narrow-mobile} {
+    height: 50px;
+  }
+
+  @media #{$tablet-desktop} {
+    height: 88px;
+  }
+
+  @media #{$laptop-desktop} {
+    padding: 29px 15px 28px;
+  }
+}
+
+.projects__category-text {
+  font-family: $basic-font-family;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.3;
+  text-align: center;
+  letter-spacing: 0;
+  text-transform: none;
+  margin: 0;
+  color: $text-color-secondary;
+
+  @media #{$tablet-desktop} {
+    font-size: 24px;
+    font-weight: 500;
+  }
+}
+
+.projects__gallery-item:hover {
+  .projects__category {
+    height: 100%;
+    align-items: stretch;
+
+  }
+
+  .projects__category-text {
+    align-self: center;
+  }
+}

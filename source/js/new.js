@@ -463,7 +463,7 @@ if (customForm2Elements) {
   const toggleAccordionView = (evt) => {
     const accordionButton = evt.target.closest('.form__section-heading-button');
 
-    if(!accordionButton) {
+    if (!accordionButton) {
       return;
     }
 
@@ -581,6 +581,281 @@ if (goodList) {
   goodList.addEventListener('click', cancelQuickOrder);
 }
 
+
+const inspirationGallery = document.querySelector('.inspiration');
+
+if (inspirationGallery) {
+  let swiper = new Swiper(".artgallery-swiper", {
+    slidesPerView: 'auto',
+    spaceBetween: 5,
+    navigation: {
+      nextEl: ".inspiration__arrow--next",
+      prevEl: ".inspiration__arrow--back",
+    },
+  })
+};
+
+const productsSection = document.querySelector('.products');
+
+if (productsSection) {
+  (function () {
+
+    // breakpoint where swiper will be destroyed
+    // and switches to a dual-column layout
+    const breakpoint = window.matchMedia('(min-width: 1440px)');
+    const productsSwiper = document.querySelector('.products-swiper');
+    const productsList = document.querySelector('.products__list');
+    const productSlides = document.querySelectorAll('.products__item');
+
+    // keep track of swiper instances to destroy later
+    let productSwiper;
+    const breakpointChecker = () => {
+
+      // if larger viewport and multi-row layout needed
+      if (breakpoint.matches === true) {
+
+        // clean up old instances and inline styles when available
+        if (productSwiper !== undefined) {
+          productsSwiper.destroy(true, true);
+          productsSwiper.classList.remove('swiper');
+          productsList.classList.remove('swiper-wrapper');
+          productSlides.forEach((slide) => {
+            slide.classList.remove('swiper-slide');
+          });
+        }
+
+        // or/and do nothing
+        return;
+
+        // else if a small viewport and single column layout needed
+      } else if (breakpoint.matches === false) {
+
+        // fire small viewport version of swiper
+        return enableSwiper();
+
+      }
+
+    };
+
+    const enableSwiper = () => {
+      productsSwiper.classList.add('swiper');
+      productsList.classList.add('swiper-wrapper');
+      productSlides.forEach((slide) => {
+        slide.classList.add('swiper-slide');
+      });
+
+      productSwiper = new Swiper('.products-swiper', {
+        slidesPerView: 'auto',
+        grid: {
+          rows: 2,
+        },
+        spaceBetween: 8,
+        navigation: {
+          nextEl: ".products__arrow--next",
+          prevEl: ".products__arrow--back",
+        },
+        breakpoints: {
+          1280: {
+            slidesPerView: 4,
+            spaceBetween: 5,
+          },
+          1510: {
+            spaceBetween: 10,
+          }
+        }
+      });
+
+    };
+
+    // keep an eye on viewport size changes
+    window.addEventListener('resize', breakpointChecker);
+
+    // kickstart
+    breakpointChecker();
+  })();
+}
+
+const projectsGallery = document.querySelector('.projects');
+if (projectsGallery) {
+  let swiper = new Swiper(".projects-swiper", {
+    slidesPerView: 'auto',
+    spaceBetween: 5,
+    navigation: {
+      nextEl: ".projects__arrow--next",
+      prevEl: ".projects__arrow--back",
+    },
+  })
+};
+
+const serviceSwiper = document.querySelector('.n-service');
+if (serviceSwiper) {
+  let swiper = new Swiper(".n-service-swiper", {
+    slidesPerView: 'auto',
+    watchOverflow: true,
+    spaceBetween: 5,
+    breakpoints: {
+      1280: {
+        slidesPerView: 3,
+        spaceBetween: 7,
+      },
+      1510: {
+        spaceBetween: 20,
+      },
+    }
+  })
+};
+
+const popGoodsSection = document.querySelector('.popular-goods');
+
+if (popGoodsSection) {
+
+  (function () {
+    // breakpoint where swiper will be destroyed
+    // and switches to a dual-column layout
+    const breakpoint = window.matchMedia('(min-width: 1280px)');
+    const popGoodsSwiper = document.querySelector('.popular-goods-swiper');
+    const popGoodsList = document.querySelector('.popular-goods__list');
+    const popGoodsSlides = document.querySelectorAll('.popular-goods__item');
+
+    // keep track of swiper instances to destroy later
+    let popGoodSwiper;
+    const breakpointChecker = () => {
+
+      // if larger viewport and multi-row layout needed
+      if (breakpoint.matches === true) {
+
+        // clean up old instances and inline styles when available
+        if (popGoodSwiper !== undefined) {
+          popGoodsSwiper.destroy(true, true);
+          popGoodsSwiper.classList.remove('swiper');
+          popGoodsList.classList.remove('swiper-wrapper');
+          popGoodsSlides.forEach((slide) => {
+            slide.classList.remove('swiper-slide');
+          });
+        }
+
+        // or/and do nothing
+        return;
+
+        // else if a small viewport and single column layout needed
+      } else if (breakpoint.matches === false) {
+
+        // fire small viewport version of swiper
+        return enableSwiper();
+
+      }
+
+    };
+
+    const enableSwiper = () => {
+      popGoodsSwiper.classList.add('swiper');
+      popGoodsList.classList.add('swiper-wrapper');
+      popGoodsSlides.forEach((slide) => {
+        slide.classList.add('swiper-slide');
+      });
+
+      popGoodSwiper = new Swiper('.popular-goods-swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 3,
+        breakpoints: {
+          768: {
+            spaceBetween: 8,
+          },
+        },
+        navigation: {
+          nextEl: ".popular-goods__arrow--next",
+          prevEl: ".popular-goods__arrow--back",
+        },
+      });
+
+    };
+
+    // keep an eye on viewport size changes
+    window.addEventListener('resize', breakpointChecker);
+
+    // kickstart
+    breakpointChecker();
+  })();
+}
+
+const popGoodList = document.querySelector('.popular-goods__list');
+
+if (popGoodList) {
+  const addGoodToCart = (evt) => {
+    const goodCartButton = evt.target.closest('.good__cart-button');
+
+    if (!goodCartButton) {
+      return;
+    }
+
+    const good = goodCartButton.closest('.good');
+    good.classList.add('good--in-cart');
+  };
+
+  const quickOrderGood = (evt) => {
+    const goodQuickOrderButton = evt.target.closest('.good__quick-order-button');
+
+    if (!goodQuickOrderButton) {
+      return;
+    }
+
+    const good = goodQuickOrderButton.closest('.good');
+    good.classList.add('good--quick-order');
+  };
+
+  const cancelQuickOrder = (evt) => {
+    const goodQuickOrderCancelButton = evt.target.closest('.good__cancel-order');
+
+    if (!goodQuickOrderCancelButton) {
+      return;
+    }
+
+    const good = goodQuickOrderCancelButton.closest('.good');
+    good.classList.remove('good--quick-order');
+  };
+
+  const submitQuickOrder = (evt) => {
+    const goodQuickOrderSubmitButton = evt.target.closest('.good__submit-order');
+
+    if (!goodQuickOrderSubmitButton) {
+      return;
+    }
+
+    const good = goodQuickOrderSubmitButton.closest('.good');
+    good.classList.remove('good--quick-order');
+    good.classList.add('good--in-order');
+  };
+
+  popGoodList.addEventListener('click', submitQuickOrder);
+  popGoodList.addEventListener('click', addGoodToCart);
+  popGoodList.addEventListener('click', quickOrderGood);
+  popGoodList.addEventListener('click', cancelQuickOrder);
+}
+
+const tileSwiper = document.querySelector('.tile-range');
+if (tileSwiper) {
+  let swiper = new Swiper('.tile-range-swiper', {
+    slidesPerView: 'auto',
+    grid: {
+      rows: 2,
+    },
+    spaceBetween: 8,
+    navigation: {
+      nextEl: ".tile-range__arrow--next",
+      prevEl: ".tile-range__arrow--back",
+    },
+    breakpoints: {
+      768: {
+        spaceBetween: 10,
+      },
+      1280: {
+        slidesPerView: 4,
+        spaceBetween: 8,
+      },
+    },
+  });
+};
+
 const linksElements = document.querySelectorAll('.links');
 
 if (linksElements) {
@@ -612,20 +887,6 @@ if (orderForm) {
     });
   }
 }
-
-const initSelects = (parentNode) => {
-  const selectElements = parentNode.querySelectorAll('.n-select select');
-  if (!selectElements) {
-    return;
-  }
-  selectElements.forEach((select) => {
-    const choices = new Choices(select, {
-      searchEnabled: false,
-    });
-  })
-};
-
-initSelects(document);
 
 const anchor = document.querySelector('.n-banner__video-link');
 
@@ -735,3 +996,152 @@ if (materialsSwiperAlter) {
     },
   });
 }
+
+const initSelects = (parentNode) => {
+  const selectElements = parentNode.querySelectorAll('.n-select select');
+  if (!selectElements) {
+    return;
+  }
+  selectElements.forEach((select) => {
+    const choices = new Choices(select, {
+      searchEnabled: false,
+    });
+  })
+};
+
+initSelects(document);
+
+
+const brandsSection = document.querySelector('.n-brands');
+
+if (brandsSection) {
+  (function () {
+    const breakpoint = window.matchMedia('(min-width: 768px)');
+    const brandsSwiper = document.querySelector('.brands-swiper');
+    const brandsList = document.querySelector('.n-brands__list');
+    const brandsSlides = document.querySelectorAll('.n-brands__item');
+
+    let brandSwiper;
+    const breakpointChecker = () => {
+
+      if (breakpoint.matches === false) {
+
+        if (brandSwiper !== undefined) {
+          brandsSwiper.destroy(true, true);
+          brandsSwiper.classList.remove('swiper');
+          brandsList.classList.remove('swiper-wrapper');
+          brandsSlides.forEach((slide) => {
+            slide.classList.remove('swiper-slide');
+          });
+        }
+        return;
+
+      } else if (breakpoint.matches === true) {
+        return enableSwiper();
+
+      }
+
+    };
+
+    const enableSwiper = () => {
+      brandsSwiper.classList.add('swiper');
+      brandsList.classList.add('swiper-wrapper');
+      brandsSlides.forEach((slide) => {
+        slide.classList.add('swiper-slide');
+      });
+
+      brandSwiper = new Swiper('.brands-swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 5,
+        loop: true,
+        navigation: {
+          nextEl: ".n-brands__arrow--next",
+          prevEl: ".n-brands__arrow--back",
+        },
+      });
+
+    };
+
+    window.addEventListener('resize', breakpointChecker);
+    breakpointChecker();
+  })();
+}
+
+const newsSection = document.querySelector('.n-news');
+if (newsSection) {
+  let swiper = new Swiper('.news-swiper', {
+    slidesPerView: 'auto',
+    spaceBetween: 5,
+    navigation: {
+      nextEl: ".n-news__arrow--next",
+      prevEl: ".n-news__arrow--back",
+    },
+  });
+};
+
+const offersSection = document.querySelector('.current-offers');
+if (offersSection) {
+  let tabSwiper = new Swiper('.offers-tabs-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    navigation: {
+      nextEl: ".current-offers__arrow--next",
+      prevEl: ".current-offers__arrow--back",
+    },
+    pagination: {
+      el: '.current-offers__dots',
+      bulletActiveClass: 'current-offers__dot--current',
+      bulletClass: 'current-offers__dot',
+      clickable: true,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+      },
+      1280: {
+        slidesPerView: 6,
+        slidesPerGroup: 1,
+        loop: false,
+      },
+    },
+  });
+
+  const tabsWrapper = offersSection.querySelector('.current-offers__tabs-list');
+  const tabs = tabsWrapper.querySelectorAll('.current-offers__tabs-item');
+  const slides = offersSection.querySelectorAll('.current-offers__slide');
+  let activeSlideNumber = 0;
+
+  const changeActiveTab = () => {
+
+    tabs.forEach((tab) => {
+      tab.classList.remove('current-offers__tabs-item--active');
+
+      if (+tab.dataset.slideIndex === activeSlideNumber) {
+        tab.classList.add('current-offers__tabs-item--active');
+      }
+    });
+  };
+
+  tabsWrapper.addEventListener('click', ({ target }) => {
+
+    const tab = target.closest('.current-offers__tabs-item');
+
+    if (!tab) {
+      return;
+    }
+
+    const tabNumber = +tab.dataset.slideIndex;
+    if (tabNumber === activeSlideNumber) {
+      return;
+    }
+
+    slides[activeSlideNumber].classList.remove('current-offers__slide--active');
+    activeSlideNumber = tabNumber;
+    slides[activeSlideNumber].classList.add('current-offers__slide--active');
+
+    changeActiveTab();
+  });
+};
+

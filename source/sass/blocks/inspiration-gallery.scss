@@ -1,0 +1,117 @@
+.inspiration {
+  position: relative;
+  padding: 91px 0 60px;
+  background: $artgallery-accent-bg-color;
+
+  @media #{$laptop-desktop} {
+    padding: 82px 0 71px;
+  }
+}
+
+.inspiration__wrapper {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  margin: 0 0 20px 0;
+
+  @media #{$laptop-desktop} {
+    margin: 0 0 40px 0;
+  }
+}
+
+.inspiration__title {
+  grid-column: 1/3;
+  grid-row: 1/2;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.03em;
+  color: $text-color-secondary;
+
+  @media #{$tablet-desktop} {
+    margin: 0 0 25px 0;
+  }
+}
+
+.inspiration__button {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  width: 242px;
+  padding: 10px 14px 8px;
+  font-size: 16px;
+  line-height: 21px;
+
+
+  @media #{$tablet-desktop} {
+    width: 221px;
+  }
+
+  @media #{$laptop-desktop} {
+    min-height: 41px;
+    padding: 10px 14px;
+  }
+}
+
+.inspiration__arrows {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  align-self: center;
+}
+
+.inspiration .inspiration__arrows {
+  @media #{$narrow-mobile} {
+    display: none;
+  }
+}
+
+.inspiration__gallery-list {
+  margin: 0 0 0 10px;
+  padding: 0;
+  list-style: none;
+
+  @media #{$tablet-desktop} {
+    margin: 0 0 0 30px;
+  }
+
+  @media #{$laptop-desktop} {
+    margin: 0 0 0 50px;
+  }
+
+  @media #{$desktop} {
+    margin: 0 0 0 35px;
+  }
+}
+
+.inspiration__gallery-item {
+  margin: 0;
+  width: 280px;
+  height: 450px;
+
+  @media #{$tablet-desktop} {
+    height: 490px;
+  }
+}
+
+.inspiration__gallery-link {
+  display: block;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.inspiration__image {
+  display: block;
+  width: 280px;
+  height: 100%;
+}
+
+.inspiration__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: center;
+}

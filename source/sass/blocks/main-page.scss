@@ -1,0 +1,146 @@
+.main-page__body {
+  .center {
+    @media #{$tablet-desktop} {
+      padding: 0 30px;
+    }
+
+    @media #{$laptop-desktop} {
+      padding: 0 50px;
+    }
+
+    @media #{$desktop} {
+      width: 1480px;
+      padding: 0 40px;
+      margin: 0 auto;
+    }
+  }
+}
+
+.main-page__main {
+  margin-top: 0;
+}
+
+.main-page__current-offers {
+  margin-bottom: -27px;
+
+  @media #{$tablet-desktop} {
+    margin-bottom: -21px;
+  }
+
+  @media #{$laptop-desktop} {
+    margin-bottom: -8px;
+  }
+
+  @media #{$desktop} {
+    margin-bottom: 1px;
+  }
+}
+
+.main-page__good-range {
+  margin-bottom: 40px;
+
+  @media #{$tablet-desktop} {
+    margin-bottom: 60px;
+  }
+}
+
+.main-page__tile-range {
+  margin-bottom: 40px;
+
+  @media #{$tablet-desktop} {
+    margin-bottom: 60px;
+  }
+}
+
+.main-page__our-advantages {
+  margin-bottom: 40px;
+
+  @media #{$desktop} {
+    margin-bottom: 60px;
+  }
+}
+
+.main-page__products {
+  margin-bottom: 40px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 56px;
+  }
+
+  @media #{$desktop} {
+    margin-bottom: 100px;
+  }
+}
+
+.main-page__inspo {
+  margin-bottom: 60px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 55px;
+  }
+
+  @media #{$desktop} {
+    margin-bottom: 83px;
+  }
+}
+
+.main-page__projects {
+  margin-bottom: 60px;
+
+  @media #{$desktop} {
+    margin-bottom: 100px;
+  }
+}
+
+.main-page__n-service {
+  margin-bottom: 40px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 60px;
+  }
+
+  @media #{$desktop} {
+    margin-bottom: 65px;
+  }
+}
+
+.main-page__popular-goods {
+  margin-bottom: 60px;
+
+  @media #{$desktop} {
+    margin-bottom: 100px;
+  }
+}
+
+
+.main-page__n-subscribe {
+  margin-bottom: 40px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 52px;
+  }
+
+  @media #{$desktop} {
+    margin-bottom: 34px;
+  }
+}
+
+.main-page__n-brands {
+  padding: 18px 0 38px 0;
+
+  @media #{$tablet-desktop} {
+    padding: 40px 0 60px 0;
+  }
+}
+
+.main-page__n-news {
+  margin-bottom: 60px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 77px;
+  }
+
+  @media #{$desktop} {
+    margin-bottom: 100px;
+  }
+}

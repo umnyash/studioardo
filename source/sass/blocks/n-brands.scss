@@ -1,0 +1,199 @@
+.n-brands {
+  background-color: $n-brands-background-color;
+}
+
+.n-brands__nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 0 18px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.n-brands__nav-item {
+  margin: 0;
+}
+
+
+.n-brands__nav-link {
+  display: block;
+  color: $basic-text-color;
+  opacity: 0.6;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.n-brands__nav-item--active {
+  .n-brands__nav-link {
+    opacity: 1;
+  }
+}
+
+.n-brands__nav-item:not(:last-child) {
+  margin: 0 20px 0 0;
+
+  @media #{$narrow-mobile} {
+    margin: 0 20px 10px 0;
+  }
+
+  @media #{$tablet-desktop} {
+    margin: 0 30px 0 0;
+  }
+}
+
+.n-brands__nav-name {
+  display: flex;
+  align-items: center;
+  font-family: $basic-font-family;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.3;
+
+  @media #{$tablet-desktop} {
+    font-size: 14px;
+  }
+}
+
+.n-brands__nav-name::before {
+  content: "";
+  width: 26px;
+  height: 20px;
+  margin-right: 10px;
+  border-radius: 2px;
+}
+
+.n-brands__nav-name--spain::before {
+  background: url("../img/flag-spain.svg") no-repeat center;
+  background-size: cover;
+}
+
+.n-brands__nav-name--italy::before {
+  background: url("../img/italy-flag.png") no-repeat center;
+}
+
+.n-brands__nav-name--portugal::before {
+  background: url("../img/portugal-flag.png") no-repeat center;
+}
+
+.n-brands__wrapper {
+  position: relative;
+  margin: 0 0 18px 0;
+
+  @media #{$tablet-desktop} {
+    margin: 0 0 30px 0;
+  }
+
+  @media #{$laptop-desktop} {
+    margin: 0 0 21px 0;
+  }
+}
+
+.n-brands__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @media #{$narrow-mobile} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media #{$tablet-desktop} {
+    display: flex;
+  }
+}
+
+.n-brands__item {
+  min-width: 117px;
+  height: 68px;
+  margin: 0;
+  border-radius: 10px;
+  background-color: $background-color;
+
+  @media #{$tablet-desktop} {
+    width: 213px;
+    height: 175px;
+  }
+}
+
+.n-brands__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+}
+
+.n-brands__image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+.n-brands__button {
+  width: 244px;
+  min-height: 41px;
+  margin: 0 auto;
+  padding: 10px 14px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.3;
+  border: 1px solid transparent;
+  background: $n-brands-button-color;
+
+  &::after {
+    content: "";
+    width: 19px;
+    height: 14px;
+    background: url("../img/icons/black-right-arrow.svg") no-repeat center;
+  }
+
+  &:hover {
+    border-color: $button-border-color;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+.n-brands__arrows {
+  display: none;
+
+  @media #{$tablet-desktop} {
+    display: initial;
+  }
+}
+
+.n-brands__arrow {
+  @media #{$tablet-desktop} {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 5;
+    transform: translate(50%, -50%);
+  }
+}
+
+.n-brands__arrow--back {
+  @media #{$tablet-desktop} {
+    left: 0;
+    right: auto;
+    transform: translate(-50%, -50%) rotate(-180deg);
+  }
+}
