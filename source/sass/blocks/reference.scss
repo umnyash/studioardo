@@ -74,3 +74,12 @@
     min-width: 278px;
   }
 }
+
+.reference--alter {
+  font-size: 16px;
+  line-height: 24px;
+
+  .reference__inner {
+    align-items: start;
+  }
+}

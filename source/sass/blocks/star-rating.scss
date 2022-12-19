@@ -2,6 +2,7 @@
   display: grid;
   grid-auto-flow: column;
   column-gap: 10px;
+  justify-content: space-between;
   align-items: center;
 
   &::after {
@@ -46,5 +47,50 @@
 
   @media #{$laptop-desktop} {
     column-gap: 14px;
+  }
+}
+
+.star-rating--small {
+
+  &::after {
+    --star-size: 17px;
+    margin-bottom: 2px;
+
+    @media #{$tablet-desktop} {
+      --star-size: 23px;
+    }
+  }
+}
+
+.star-rating--big {
+  column-gap: 18px;
+
+  &::after {
+    --star-size: 21px;
+    margin-bottom: 2px;
+
+    @media #{$desktop} {
+      --star-size: 28px;
+    }
+  }
+}
+
+.star-rating--alter {
+  @media #{$desktop} {
+    grid-auto-flow: row;
+    row-gap: 20px;
+    justify-items: center;
+  }
+}
+
+.star-rating--theme--1 {
+  &::after {
+    filter: brightness(0);
+  }
+}
+
+.star-rating--theme--2 {
+  &::after {
+    filter: brightness(0) invert(100%);
   }
 }

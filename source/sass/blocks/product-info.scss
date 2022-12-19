@@ -1,0 +1,43 @@
+.product-info {
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.product-info__heading {
+  margin: 0 0 24px;
+}
+
+.product-info__list {
+  margin: 0 0 42px;
+}
+
+.product-info__price-wrapper {
+  margin: 0 0 20px;
+  font: inherit;
+}
+
+.product-info__buttons {
+  display: grid;
+  row-gap: 10px;
+
+  @media #{$tablet-desktop} {
+    grid-auto-flow: column;
+    column-gap: 11px;
+    justify-content: start;
+  }
+
+  @media #{$desktop} {
+    margin: 62px 0 0;
+  }
+}
+
+.product-info__button {
+  padding-right: 18px;
+  padding-left: 18px;
+
+  @media #{$tablet-desktop} {
+    min-width: 200px;
+  }
+}
+
+

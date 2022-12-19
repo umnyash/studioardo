@@ -73,3 +73,20 @@
   border-radius: 10px;
   box-shadow: 0 3px 25px 0 rgba(0, 0, 0, 0.06);
 }
+
+.popup--big {
+  .popup__inner {
+    max-width: none;
+    width: 100%;
+    max-width: 1920px;
+    border-radius: 0;
+  }
+
+  .popup__close {
+    @media #{$desktop} {
+      top: 16px;
+      right: 19px;
+      background-size: 38px 38px;
+    }
+  }
+}

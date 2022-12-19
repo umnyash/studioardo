@@ -67,11 +67,12 @@
 
 .links__toggle {
   display: inline-grid;
+  padding: 0;
+  border: none;
   grid-auto-flow: column;
   column-gap: 10px;
   justify-content: start;
   align-content: center;
-  border: none;
   font-family: $basic-font-family;
   font-size: 16px;
   line-height: 1.3;

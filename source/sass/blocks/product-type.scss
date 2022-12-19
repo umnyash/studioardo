@@ -98,12 +98,24 @@
     font-size: 16px;
     line-height: 1.3;
   }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
 }
 
 .product-type__link--accent {
   grid-area: link-2;
   font-weight: 600;
   color: $special-color;
+
+  &:hover {
+    color: $text-color-secondary;
+  }
 
   @media #{$tablet-desktop} {
     color: $text-color-secondary;

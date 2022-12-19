@@ -1,0 +1,39 @@
+.ratings__inner {
+  padding: 0 14px;
+
+  @media #{$desktop} {
+    width: 1480px;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin: 0 auto;
+  }
+}
+
+.ratings__heading {
+  margin: 0 0 22px;
+
+  @media #{$tablet-desktop} {
+    margin-bottom: 40px;
+  }
+}
+
+.ratings__list {
+  display: grid;
+  row-gap: 6px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  @media #{$widemobile-desktop} {
+    column-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(347px, 1fr))
+  }
+
+  @media #{$tablet-desktop} {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.ratings__item {
+  margin: 0;
+}
