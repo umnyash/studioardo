@@ -19,27 +19,6 @@
 
 
 .good-list__item {
-  position: relative;
+  // position: relative;
   margin: 0;
-
-  &:hover,
-  &:focus {
-    z-index: 2;
-    height: 460px;
-
-    .good-list__good {
-      height: auto;
-    }
-  }
-
-  @media #{$widemobile-desktop} {
-    &:hover,
-    &:focus {
-      height: 439px;
-
-      .good-list__good {
-        height: auto;
-      }
-    }
-  }
 }

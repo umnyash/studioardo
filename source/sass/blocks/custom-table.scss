@@ -161,3 +161,22 @@
     margin-top: 36px;
   }
 }
+
+
+/*fffffffff */
+
+// .custom-table td,
+// .custom-table th {
+//   position: relative;
+
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     height: 1px;
+//     background-image: repeating-linear-gradient(to right, $custom-table-decorated-row-border-color 0, $custom-table-decorated-row-border-color 1px, transparent 1px, transparent 5px);
+//     background-repeat: no-repeat;
+//   }
+// }
