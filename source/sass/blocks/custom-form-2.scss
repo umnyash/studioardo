@@ -116,6 +116,7 @@
     position: absolute;
     top: calc(50% + 1px);
     left: 13px;
+    width: calc(100% - 20px);
     color: $custom-form-weak-text-color;
     transform: translateY(-50%);
     transition-property: top, font-size, color;
@@ -680,6 +681,37 @@
       opacity: 0.6;
     }
   }
+
+  .form__notice {
+    padding: 7px 5px 6px;
+    margin: 0 0 16px;
+    font-size: 14px;
+    line-height: 18px;
+
+    &--success {
+      display: inline-grid;
+      grid-auto-flow: column;
+      column-gap: 10px;
+      justify-content: center;
+      align-items: center;
+      background-color: $background-secondary-color;
+
+      &::before {
+        content: "";
+        width: 18px;
+        height: 13px;
+        background-image: url(../img/icons/checkmark-2.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: translate(-2px, -2px);
+      }
+    }
+
+    &--error {
+      text-align: center;
+      background-color: $custom-form-2-notice-error-color;
+    }
+  }
 }
 
 
@@ -997,5 +1029,93 @@
     font-size: 14px;
     line-height: 1.3;
     color: $weak-text-color;
+  }
+}
+
+.custom-form-2--calculation {
+  .form__body {
+    max-width: none;
+
+    @media #{$tablet-desktop} {
+      padding: 16px 68px 20px;
+    }
+  }
+
+  .form__select {
+    margin: 0 0 16px;
+
+    @media #{$tablet-desktop} {
+      margin-bottom: 20px;
+    }
+  }
+
+  .form__section {
+    @media #{$widemobile-desktop} {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 5px;
+    }
+  }
+
+  .form__section-heading {
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: $basic-font-family;
+    font-size: 16px !important;
+    line-height: 1.3 !important;
+
+    @media #{$widemobile-desktop} {
+      grid-column: 1 / -1;
+    }
+
+    @media #{$tablet-desktop} {
+      margin-bottom: 21px;
+    }
+  }
+
+  .form__result {
+    padding: 19px 14px;
+    border-radius: 6px;
+    margin: 10px 0 29px;
+    background-color: $background-secondary-color;
+
+    .form__textfield-wrapper {
+      margin-bottom: 0;
+    }
+  }
+
+  .form__result-price-wrapper {
+    margin: 0 0 11px;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+  }
+
+  .form__result-text {
+    margin: 0 0 11px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: $weak-text-color;
+  }
+
+  .form__submit {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .form__consent-wrapper {
+    margin-top: 20px;
+
+    @media #{$tablet-desktop} {
+      margin-top: 30px;
+    }
+  }
+
+  .form__checkbox-label-text {
+    justify-content: center;
+  }
+
+  .form__notice {
+    width: 100%;
   }
 }

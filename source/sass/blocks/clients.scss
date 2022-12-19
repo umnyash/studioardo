@@ -1,0 +1,70 @@
+.clients__inner {
+  padding: 0 14px;
+
+  @media #{$desktop} {
+    width: 1480px;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin: 0 auto;
+  }
+}
+
+.clients__heading {
+  margin: 0 0 31px;
+
+  @media #{$tablet-desktop} {
+    margin-bottom: 40px;
+  }
+}
+
+.clients__list {
+  display: grid;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 9px;
+  column-gap: 30px;
+  align-items: center;
+
+  @media #{$widemobile-desktop} {
+    margin-right: 14px;
+    margin-left: 14px;
+    grid-template-columns: repeat(2, minmax(140px, 205px));
+    column-gap: 36px;
+    justify-content: space-around;
+  }
+
+  @media #{$tablet-desktop} {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 205px));
+    margin-right: 21px;
+    margin-left: 21px;
+    row-gap: 27px;
+    column-gap: 60px;
+  }
+
+  @media #{$laptop-desktop} {
+    column-gap: 100px;
+  }
+
+  @media #{$desktop} {
+    grid-template-columns: repeat(4, 205px);
+    justify-content: space-between;
+  }
+}
+
+.clients__item {
+  display: flex;
+  min-height: 67px;
+  align-items: center;
+
+  @media #{$tablet-desktop} {
+    min-height: 99px;
+  }
+}
+
+.clients__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

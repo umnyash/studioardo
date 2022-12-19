@@ -1,0 +1,14 @@
+.delivery-info__inner {
+  padding: 0 14px;
+
+  @media #{$desktop} {
+    width: 1480px;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin: 0 auto;
+  }
+}
+
+.delivery-info__heading {
+  margin: 0 0 40px;
+}

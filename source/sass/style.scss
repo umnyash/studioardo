@@ -89,7 +89,6 @@
 @import "blocks/good-list.scss";
 @import "blocks/n-collection.scss";
 @import "blocks/n-collection-list.scss";
-
 @import "blocks/main-page.scss";
 @import "blocks/our-advantages.scss";
 @import "blocks/advantages-item.scss";
@@ -111,5 +110,34 @@
 @import "blocks/links.scss";
 @import "blocks/product-types.scss";
 @import "blocks/product-type.scss";
+@import "blocks/ratings.scss";
+@import "blocks/rater.scss";
+@import "blocks/textfield.scss";
+@import "blocks/n-select.scss";
+@import "blocks/calculation.scss";
+@import "blocks/calculation-form.scss";
+@import "blocks/manufacture.scss";
+@import "blocks/n-video.scss";
+@import "blocks/company-rating.scss";
+@import "blocks/clients.scss";
+@import "blocks/team.scss";
+@import "blocks/advantages-and-widget.scss";
+
+@import "blocks/stone-main-page.scss";
+@import "blocks/stone-category-page";
+@import "blocks/stone-product-page";
+@import "blocks/work-option.scss";
+
+@import "blocks/n-advantages.scss";
+@import "blocks/n-products.scss";
+@import "blocks/product-info.scss";
+@import "blocks/n-slider.scss";
+@import "blocks/characteristics-2.scss";
+@import "blocks/materials.scss";
+@import "blocks/material.scss";
+@import "blocks/delivery-info.scss";
+@import "blocks/calculation-material.scss";
+@import "blocks/n-goods.scss";
 
 @import "helpers/center.scss";
+@import "helpers/animations.scss";
