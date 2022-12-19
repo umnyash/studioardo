@@ -1,0 +1,66 @@
+.calculation-material {
+  @media #{$laptop-desktop} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media #{$desktop} {
+    grid-template-columns: 800px 1fr;
+  }
+}
+
+.calculation-material__calculation {
+  display: grid;
+}
+
+.calculation-material__calculation-img-wrapper {
+  grid-area: 1 / 1 / 2 / 2;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: $calculation-background-color;
+
+  @media #{$tablet-desktop} {
+    display: block;
+    overflow: hidden;
+  }
+}
+
+.calculation-material__calculation-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.calculation-material__calculation-form-wrapper {
+  grid-area: 1 / 1 / 2 / 2;
+  display: flex;
+  max-width: 520px;
+  padding: 50px 10px 30px;
+  margin: auto;
+
+  @media #{$desktop} {
+    padding-top: 74px;
+    padding-bottom: 74px;
+  }
+}
+
+.calculation-material__material {
+  max-width: 100%;
+  padding: 20px 16px 30px;
+
+  @media #{$tablet-desktop} {
+    padding: 40px 60px;
+  }
+
+  @media #{$laptop-desktop} {
+    display: grid;
+    align-content: center;
+  }
+
+  @media #{$desktop} {
+    padding: 118px 100px 74px;
+  }
+}

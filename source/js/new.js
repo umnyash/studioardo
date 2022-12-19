@@ -82,6 +82,22 @@ if (popups) {
     });
   }
 
+  const materialsSection = document.querySelector('.materials');
+  const popupCalculationMaterial = document.querySelector('.popup--calculation-material');
+
+  if (materialsSection && popupCalculationMaterial) {
+    materialsSection.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      const materialLink = evt.target.closest('.material__link');
+
+      if (!materialLink) {
+        return;
+      }
+      openPopup(popupCalculationMaterial);
+
+    });
+  }
+
   const popupGood = document.querySelector('.popup--good');
 
   if (popupGood) {
@@ -552,6 +568,11 @@ if (goodList) {
     const good = goodQuickOrderSubmitButton.closest('.good');
     good.classList.remove('good--quick-order');
     good.classList.add('good--in-order');
+
+    setTimeout(() => {
+      good.classList.remove('good--in-order');
+      good.classList.add('good--after-order');
+    }, 4000);
   };
 
   goodList.addEventListener('click', submitQuickOrder);
@@ -688,15 +709,6 @@ if (materialSwiper) {
     },
     mousewheel: true,
     keyboard: true,
-    // breakpoints: {
-    //   768: {
-    //     spaceBetween: 15,
-    //   },
-    //   1280: {
-    //     slidesPerView: 4,
-    //     spaceBetween: 25
-    //   },
-    // },
   });
 }
 

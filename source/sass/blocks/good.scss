@@ -3,7 +3,8 @@
   box-sizing: border-box;
   padding: 8px 8px 18px;
   border-radius: 10px;
-  row-gap: 11px;
+  row-gap: 12px;
+  align-content: start;
   font-family: $basic-font-family;
   background-color: $background-color;
   box-shadow: 0px 3px 25px rgba(0, 0, 0, 0.06);
@@ -11,9 +12,9 @@
 
 .good__main {
   display: grid;
-  padding: 0 10px 10px;
+  padding: 3px 10px 8px;
   grid-template-columns: 1fr auto;
-  row-gap: 10px;
+  row-gap: 13px;
   column-gap: 20px;
   align-items: center;
   border-bottom: 1px solid $good-main-border-color;
@@ -23,7 +24,7 @@
   margin: 0;
   grid-column: 1 / 2;
   font-family: $basic-font-family;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.3;
   font-weight: 500;
 }
@@ -113,7 +114,7 @@
   display: grid;
   padding: 0 10px;
   grid-template-columns: 1fr auto;
-  row-gap: 10px;
+  row-gap: 13px;
   column-gap: 20px;
   align-items: center;
 }
@@ -121,13 +122,38 @@
 .good__price-code {
   grid-area: 1 / 1 / 2 / 2;
   display: grid;
-  row-gap: 8px;
+  margin: 4px 0 0;
+  margin: 0;
+  row-gap: 6px;
+}
+
+.good__price-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  align-items: center;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 500;
 }
 
 .good__price {
-  margin: 0;
-  font-size: 24px;
-  line-height: 1;
+  margin: 4px 0;
+  font: inherit;
+
+  &--new {
+    margin-right: 8px;
+    color: $accent-color-2;
+  }
+
+  &--old {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-size: 12px;
+    font-weight: 400;
+    text-decoration: line-through;
+    color: $weak-text-color;
+  }
 }
 
 .good__total-price-wrapper {
@@ -153,7 +179,7 @@
 
 .good__cart-button {
   align-self: start;
-  min-width: 106px;
+  min-width: 105px;
   min-height: 40px;
 }
 
@@ -162,10 +188,11 @@
   align-self: start;
   display: none;
   grid-auto-flow: column;
-  padding: 18px 10px 14px;
+  min-height: 40px;
+  padding: 10px 5px 8px;
   margin: 0;
   border-radius: 3px;
-  column-gap: 10px;
+  column-gap: 5px;
   align-items: center;
   font-family: $basic-font-family;
   font-size: 14px;
@@ -229,7 +256,8 @@
   background-repeat: no-repeat;
   background-position: center;
 
-  &:hover {
+  &:hover,
+  &:focus {
     opacity: 0.8;
   }
 
@@ -247,12 +275,19 @@
 .good__submit-text {
   display: none;
   grid-column: 1 / 3;
-  margin: 8px 0 0;
+  // margin: 8px 0 0;
+  margin: 0;
   font-size: 14px;
   line-height: 1.4;
+  animation-name: fadeout;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
 }
 
-.good:hover {
+.good:hover,
+.good:focus {
   .good__quick-order-button {
     display: block;
   }
@@ -271,7 +306,8 @@
     display: none !important;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     .good__radiobuttons {
       display: flex;
     }
@@ -329,7 +365,8 @@
     }
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     .good__number-field {
       display: grid;
       margin-top: 0;
@@ -351,19 +388,11 @@
     display: none;
   }
 
-  .good__extra {
-    padding-top: 8px;
-  }
-
   .good__cart-button {
     display: none;
   }
 
-  .good__total-price-wrapper {
-    display: block;
-  }
-
-  .good__code-wrapper {
+  .good__price-code {
     display: none;
   }
 
@@ -371,9 +400,21 @@
     display: none !important;
   }
 
-  &:hover {
-    .good__submit-text {
-      display: block;
-    }
+  .good__submit-text {
+    display: block;
+  }
+}
+
+.good--after-order {
+  .good__like {
+    display: none;
+  }
+
+  .good__cart-button {
+    display: none;
+  }
+
+  .good__quick-order-button {
+    display: none !important;
   }
 }

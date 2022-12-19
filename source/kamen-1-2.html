@@ -716,7 +716,7 @@
           </div>
         </div>
       </section>
-      <div class="popup popup--big popup--open">
+      <div class="popup popup--big popup--calculation-material">
         <div class="popup__inner ">
           <button class="popup__close" type="button">
             <span class="visually-hidden">Закрыть.</span>
@@ -724,68 +724,74 @@
           <div class="popup__content">
             <div class="calculation-material">
               <div class="calculation-material__calculation">
-                <div class="calculation-material__calculation-form calculation-form">
-                  <h3 class="calculation-form__heading">Введите параметры изделия для расчета</h3>
-                  <div class="calculation-form__body custom-form-2 custom-form-2--calculation">
-                    <div class="form">
-                      <form class="form__body" action="#!" method="post">
-                        <div class="form__select n-select">
-                          <select name="type">
-                            <option value="">Тип изделия</option>
-                            <option>Тип 1</option>
-                            <option>Тип 2</option>
-                            <option>Тип 3</option>
-                          </select>
-                        </div>
-                        <div class="form__select n-select">
-                          <select name="material">
-                            <option value="">Материал</option>
-                            <option>Камень</option>
-                            <option>Мрамор</option>
-                            <option>Гранит</option>
-                            <option>Дерево</option>
-                            <option>Контент</option>
-                          </select>
-                        </div>
-                        <fieldset class="form__section">
-                          <legend class="form__section-heading">Размеры изделия</legend>
-                          <div class="form__textfield-wrapper">
-                            <label class="form__textfield-label">
-                              <span class="form__textfield">
-                                <input class="form__textfield-control" name="length" type="number" min="1" placeholder="100">
-                                <span class="form__textfield-label-text">Длина см</span>
+                <h2 class="visually-hidden">Рассчитайте стоимость вашего изделия прямо сейчас</h2>
+                <picture class="calculation-material__calculation-img-wrapper" aria-hidden="true">
+                  <img class="calculation-material__calculation-img" src="img/calculation-bg-tablet.jpg" alt="">
+                </picture>
+                <div class="calculation-material__calculation-form-wrapper">
+                  <div class="calculation-material__calculation-form calculation-form">
+                    <h3 class="calculation-form__heading">Введите параметры изделия для расчета</h3>
+                    <div class="calculation-form__body custom-form-2 custom-form-2--calculation">
+                      <div class="form">
+                        <form class="form__body" action="#!" method="post">
+                          <div class="form__select n-select">
+                            <select name="type">
+                              <option value="">Тип изделия</option>
+                              <option>Тип 1</option>
+                              <option>Тип 2</option>
+                              <option>Тип 3</option>
+                            </select>
+                          </div>
+                          <div class="form__select n-select">
+                            <select name="material">
+                              <option value="">Материал</option>
+                              <option>Камень</option>
+                              <option>Мрамор</option>
+                              <option>Гранит</option>
+                              <option>Дерево</option>
+                              <option>Контент</option>
+                            </select>
+                          </div>
+                          <fieldset class="form__section">
+                            <legend class="form__section-heading">Размеры изделия</legend>
+                            <div class="form__textfield-wrapper">
+                              <label class="form__textfield-label">
+                                <span class="form__textfield">
+                                  <input class="form__textfield-control" name="length" type="number" min="1" placeholder="100">
+                                  <span class="form__textfield-label-text">Длина см</span>
+                                </span>
+                              </label>
+                            </div>
+                            <div class="form__textfield-wrapper">
+                              <label class="form__textfield-label">
+                                <span class="form__textfield">
+                                  <input class="form__textfield-control" name="width" type="number" min="1" placeholder="100">
+                                  <span class="form__textfield-label-text">Ширина см</span>
+                                </span>
+                              </label>
+                            </div>
+                            <div class="form__textfield-wrapper">
+                              <label class="form__textfield-label">
+                                <span class="form__textfield">
+                                  <input class="form__textfield-control" name="name" type="number" min="1" placeholder="100">
+                                  <span class="form__textfield-label-text">Площадь м2</span>
+                                </span>
+                              </label>
+                            </div>
+                          </fieldset>
+                          <button class="form__submit button button--secondary button--alter-2 button--fw600" type="button">Получить лучшее предложение</button>
+                          <div class="form__consent-wrapper">
+                            <label class="form__checkbox-label">
+                              <input class="form__checkbox-control form__checkbox-control--secondary visually-hidden" name="consent" type="checkbox" checked>
+                              <span class="form__checkbox-label-text">
+                                <span>
+                                  Согласие с <a class="form__link" href="!#" target="_blank">политикой обработки данных</a>
+                                </span>
                               </span>
                             </label>
                           </div>
-                          <div class="form__textfield-wrapper">
-                            <label class="form__textfield-label">
-                              <span class="form__textfield">
-                                <input class="form__textfield-control" name="width" type="number" min="1" placeholder="100">
-                                <span class="form__textfield-label-text">Ширина см</span>
-                              </span>
-                            </label>
-                          </div>
-                          <div class="form__textfield-wrapper">
-                            <label class="form__textfield-label">
-                              <span class="form__textfield">
-                                <input class="form__textfield-control" name="name" type="number" min="1" placeholder="100">
-                                <span class="form__textfield-label-text">Площадь м2</span>
-                              </span>
-                            </label>
-                          </div>
-                        </fieldset>
-                        <button class="form__submit button button--secondary button--alter-2 button--fw600" type="button">Получить лучшее предложение</button>
-                        <div class="form__consent-wrapper">
-                          <label class="form__checkbox-label">
-                            <input class="form__checkbox-control form__checkbox-control--secondary visually-hidden" name="consent" type="checkbox" checked>
-                            <span class="form__checkbox-label-text">
-                              <span>
-                                Согласие с <a class="form__link" href="!#" target="_blank">политикой обработки данных</a>
-                              </span>
-                            </span>
-                          </label>
-                        </div>
-                      </form>
+                        </form>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -793,7 +799,7 @@
               <div class="calculation-material__material">
                 <article class="material material--big">
                   <div class="material__text-content">
-                    <h3 class="material__heading">Гранит</h3>
+                    <h3 class="material__heading">Мрамор</h3>
                     <p class="material__price-wrapper">
                       Цена от <span class="material__price">4800</span>₽/м2
                     </p>
