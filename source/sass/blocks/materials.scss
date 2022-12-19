@@ -42,20 +42,36 @@
   top: calc(50% - 40px);
 }
 
-.materials__slider-wrapper > .materials__slider-button--prev {
-  @media #{$desktop} {
-    left: 0;
-    transform: translateX(-50%);
-  }
-}
+// .materials__slider-wrapper > .materials__slider-button--prev {
+//   @media #{$desktop} {
+//     left: 0;
+//     transform: translateX(-50%);
+//   }
+// }
 
-.materials__slider-wrapper > .materials__slider-button--next {
-  @media #{$desktop} {
-    right: 0;
-    transform: translateX(50%);
-  }
-}
+// .materials__slider-wrapper > .materials__slider-button--next {
+//   @media #{$desktop} {
+//     right: 0;
+//     transform: translateX(50%);
+//   }
+// }
 
-.materials__slider--alter ~ .materials__slider-button {
-  top: calc(50% - 16px);
+.materials__slider--alter {
+  .materials__slider-button {
+    top: calc(50% - 16px);
+  }
+
+  @media #{$desktop} {
+    padding-right: 19px;
+    padding-left: 19px;
+    margin-right: -19px;
+    margin-left: -19px;
+
+    .materials__slider-button--prev {
+      left: 0;
+    }
+    .materials__slider-button--next {
+      right: 0;
+    }
+  }
 }
