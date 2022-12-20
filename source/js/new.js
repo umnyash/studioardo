@@ -599,22 +599,16 @@ const productsSection = document.querySelector('.products');
 
 if (productsSection) {
   (function () {
-
-    // breakpoint where swiper will be destroyed
-    // and switches to a dual-column layout
     const breakpoint = window.matchMedia('(min-width: 1440px)');
     const productsSwiper = document.querySelector('.products-swiper');
     const productsList = document.querySelector('.products__list');
     const productSlides = document.querySelectorAll('.products__item');
 
-    // keep track of swiper instances to destroy later
     let productSwiper;
     const breakpointChecker = () => {
 
-      // if larger viewport and multi-row layout needed
       if (breakpoint.matches === true) {
 
-        // clean up old instances and inline styles when available
         if (productSwiper !== undefined) {
           productsSwiper.destroy(true, true);
           productsSwiper.classList.remove('swiper');
@@ -624,13 +618,9 @@ if (productsSection) {
           });
         }
 
-        // or/and do nothing
         return;
-
-        // else if a small viewport and single column layout needed
       } else if (breakpoint.matches === false) {
 
-        // fire small viewport version of swiper
         return enableSwiper();
 
       }
@@ -667,13 +657,9 @@ if (productsSection) {
           }
         }
       });
-
     };
 
-    // keep an eye on viewport size changes
     window.addEventListener('resize', breakpointChecker);
-
-    // kickstart
     breakpointChecker();
   })();
 }
@@ -713,21 +699,16 @@ const popGoodsSection = document.querySelector('.popular-goods');
 if (popGoodsSection) {
 
   (function () {
-    // breakpoint where swiper will be destroyed
-    // and switches to a dual-column layout
+
     const breakpoint = window.matchMedia('(min-width: 1280px)');
     const popGoodsSwiper = document.querySelector('.popular-goods-swiper');
     const popGoodsList = document.querySelector('.popular-goods__list');
     const popGoodsSlides = document.querySelectorAll('.popular-goods__item');
-
-    // keep track of swiper instances to destroy later
+    r
     let popGoodSwiper;
     const breakpointChecker = () => {
-
-      // if larger viewport and multi-row layout needed
       if (breakpoint.matches === true) {
 
-        // clean up old instances and inline styles when available
         if (popGoodSwiper !== undefined) {
           popGoodsSwiper.destroy(true, true);
           popGoodsSwiper.classList.remove('swiper');
@@ -737,15 +718,10 @@ if (popGoodsSection) {
           });
         }
 
-        // or/and do nothing
         return;
 
-        // else if a small viewport and single column layout needed
       } else if (breakpoint.matches === false) {
-
-        // fire small viewport version of swiper
         return enableSwiper();
-
       }
 
     };
@@ -773,10 +749,7 @@ if (popGoodsSection) {
 
     };
 
-    // keep an eye on viewport size changes
     window.addEventListener('resize', breakpointChecker);
-
-    // kickstart
     breakpointChecker();
   })();
 }
@@ -1135,6 +1108,36 @@ if (offersSection) {
     });
   };
 
+  const nextSlide = () => {
+    let tab = document.querySelector('.current-offers__tabs-item--active');
+    let tabNumber = +tab.dataset.slideIndex;
+
+    slides[activeSlideNumber].classList.remove('current-offers__slide--active');
+    tabNumber++;
+    if (tabNumber == slides.length) {
+      tabNumber = 0;
+    }
+    activeSlideNumber = tabNumber;
+    slides[activeSlideNumber].classList.add('current-offers__slide--active');
+
+    changeActiveTab();
+  }
+
+  let autoplayInterval = null;
+
+  const startAutoplay = () => {
+    if (!autoplayInterval) {
+      autoplayInterval = setInterval(nextSlide, 5000);
+    }
+  }
+
+  startAutoplay();
+
+  const stopAutoplay = () => {
+    clearInterval(autoplayInterval);
+    autoplayInterval = null;
+  }
+
   tabsWrapper.addEventListener('click', ({ target }) => {
 
     const tab = target.closest('.current-offers__tabs-item');
@@ -1153,6 +1156,8 @@ if (offersSection) {
     slides[activeSlideNumber].classList.add('current-offers__slide--active');
 
     changeActiveTab();
+    stopAutoplay();
+    startAutoplay();
   });
 };
 
