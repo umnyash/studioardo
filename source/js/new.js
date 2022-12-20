@@ -645,7 +645,7 @@ if (productsSection) {
       });
 
       productSwiper = new Swiper('.products-swiper', {
-        slidesPerView: 'auto',
+        slidesPerView: 1,
         grid: {
           rows: 2,
         },
@@ -655,6 +655,9 @@ if (productsSection) {
           prevEl: ".products__arrow--back",
         },
         breakpoints: {
+          768: {
+            slidesPerView: 'auto',
+          },
           1280: {
             slidesPerView: 4,
             spaceBetween: 5,
