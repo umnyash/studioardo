@@ -25,8 +25,6 @@
 .popular-goods-swiper {
   grid-area: slider;
   max-width: 100%;
-  padding-bottom: 180px;
-  margin-bottom: -180px;
 }
 
 .popular-goods__list {
@@ -76,18 +74,6 @@
   @media #{$desktop} {
     width: 343px;
   }
-}
-
-.popular-goods__item .good {
-  height: 100%;
-}
-
-.popular-goods__item .good:hover,
-.popular-goods .good--in-cart,
-.popular-goods .good--quick-order,
-.popular-goods .good--in-order,
-.popular-goods .good--after-order {
-  height: auto;
 }
 
 .popular-goods__arrows {

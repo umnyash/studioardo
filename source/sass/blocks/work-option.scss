@@ -119,12 +119,11 @@
 
 .work-option__variants--gap-border {
   padding: 1px;
-  background-color: $work-option-variant-border-color;
   gap: 1px;
 
   .work-option__variant {
     padding: 40px 14px 20px;
-    background-color: $background-color;
+    box-shadow: 0 0 0 1px $work-option-variant-border-color;
 
     &::before {
       top: 6px;

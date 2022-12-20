@@ -17,6 +17,7 @@
   font-family: $basic-font-family;
   font-size: 14px;
   line-height: 22px;
+  overflow: hidden;
 }
 
 .custom-table .table__heading--bordered {
@@ -29,15 +30,16 @@
   font-weight: 700;
 }
 
-.custom-table tr {
+.custom-table td:first-child,
+.custom-table th:first-child {
   position: relative;
 
   &::after {
     content: "";
     position: absolute;
-    right: 0;
     bottom: 0;
     left: 0;
+    width: 100vw;
     height: 1px;
     background-image: repeating-linear-gradient(to right, $custom-table-decorated-row-border-color 0, $custom-table-decorated-row-border-color 1px, transparent 1px, transparent 5px);
     background-repeat: no-repeat;
@@ -115,8 +117,6 @@
     margin-top: 36px;
   }
 }
-
-
 
 .custom-table--big-2 {
   .custom-table__table {

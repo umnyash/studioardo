@@ -1,4 +1,6 @@
 .good {
+  position: relative;
+
   display: grid;
   box-sizing: border-box;
   padding: 8px 8px 18px;
@@ -7,7 +9,13 @@
   align-content: start;
   font-family: $basic-font-family;
   background-color: $background-color;
-  box-shadow: 0px 3px 25px rgba(0, 0, 0, 0.06);
+  filter: drop-shadow(0px 3px 25px rgba(0, 0, 0, 0.06));
+
+  &:hover {
+    z-index: 2;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
 }
 
 .good__main {
@@ -111,18 +119,30 @@
 }
 
 .good__extra {
+  position: absolute;
+  right: 0;
+  bottom: 18px;
+  left: 0;
   display: grid;
-  padding: 0 10px;
+  padding: 0px 18px 18px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
   grid-template-columns: 1fr auto;
   row-gap: 13px;
   column-gap: 20px;
   align-items: center;
+  background-color: inherit;
+  transform: translateY(100%);
+}
+
+.good:hover .good__extra {
+  padding-top: 13px;
 }
 
 .good__price-code {
-  grid-area: 1 / 1 / 2 / 2;
+  position: relative;
   display: grid;
-  margin: 4px 0 0;
+  padding: 0 130px 0 10px;
   margin: 0;
   row-gap: 6px;
 }
@@ -178,14 +198,17 @@
 }
 
 .good__cart-button {
-  align-self: start;
+  position: absolute;
+  top: 0px;
+  right: 10px;
   min-width: 105px;
   min-height: 40px;
 }
 
 .good__status {
-  justify-self: end;
-  align-self: start;
+  position: absolute;
+  top: 0px;
+  right: 10px;
   display: none;
   grid-auto-flow: column;
   min-height: 40px;
@@ -219,8 +242,8 @@
 }
 
 .good__radiobuttons {
-  grid-column: span 1;
-  margin: 7px 0 0;
+  position: absolute;
+  margin: 2px 0 0;
   display: none;
 }
 
@@ -230,8 +253,7 @@
 
 .good__number-field {
   display: none;
-  margin: 7px 0 0;
-  transform: translateX(2px);
+  margin: 4px 0 0;
 }
 
 .good__form-wrapper {
@@ -275,14 +297,13 @@
 .good__submit-text {
   display: none;
   grid-column: 1 / 3;
-  // margin: 8px 0 0;
   margin: 0;
   font-size: 14px;
   line-height: 1.4;
   animation-name: fadeout;
   animation-duration: 1s;
   animation-timing-function: ease-in;
-  animation-delay: 3s;
+  animation-delay: 5s;
   animation-fill-mode: forwards;
 }
 
@@ -306,6 +327,17 @@
     display: none !important;
   }
 
+  .good__number-field {
+    grid-column: 2 / 3;
+  }
+
+  .good__radiobuttons {
+    z-index: 1;
+    bottom: -19px;
+    left: 10px;
+    transform: translateY(100%);
+  }
+
   &:hover,
   &:focus {
     .good__radiobuttons {
@@ -319,16 +351,12 @@
 }
 
 .good--quick-order {
+  .good__price-code {
+    padding-right: 160px;
+  }
+
   .good__like {
     display: none;
-  }
-
-  .good__extra {
-    padding-top: 8px;
-  }
-
-  .good__price-code {
-    grid-area: 1 / 1 / 2 / 3;
   }
 
   .good__total-price-wrapper {
@@ -344,9 +372,9 @@
   }
 
   .good__radiobuttons {
-    grid-column: 1 / 3;
-    align-self: start;
-    justify-self: center;
+    position: absolute;;
+    top: 0px;
+    right: 8px;
     display: flex;
     margin: 0;
   }
@@ -355,22 +383,21 @@
     display: none !important;
   }
 
-  @media (min-width: 363px) {
-    .good__price-code {
-      grid-area: 1 / 1 / 2 / 2;
-    }
-
-    .good__radiobuttons {
-      grid-column: span 1;
-    }
+  .good__number-field {
+    grid-column: 1 / 3;
+    margin-top: 0;
+    margin-bottom: 2px
   }
 
   &:hover,
   &:focus {
+    .good__extra {
+      padding-top: 8px;
+      row-gap: 10px;
+    }
+
     .good__number-field {
       display: grid;
-      margin-top: 0;
-      grid-column: 1 / 3;
     }
 
     .good__form-wrapper {
@@ -384,6 +411,8 @@
 }
 
 .good--in-order {
+  z-index: 3;
+
   .good__like {
     display: none;
   }
@@ -392,12 +421,12 @@
     display: none;
   }
 
-  .good__price-code {
-    display: none;
-  }
-
   .good__quick-order-button {
     display: none !important;
+  }
+
+  .good__extra {
+    padding-top: 13px;
   }
 
   .good__submit-text {
@@ -416,5 +445,9 @@
 
   .good__quick-order-button {
     display: none !important;
+  }
+
+  &:hover .good__extra {
+    padding-top: 0;
   }
 }
