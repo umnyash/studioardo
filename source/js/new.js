@@ -704,7 +704,7 @@ if (popGoodsSection) {
     const popGoodsSwiper = document.querySelector('.popular-goods-swiper');
     const popGoodsList = document.querySelector('.popular-goods__list');
     const popGoodsSlides = document.querySelectorAll('.popular-goods__item');
-    r
+
     let popGoodSwiper;
     const breakpointChecker = () => {
       if (breakpoint.matches === true) {
