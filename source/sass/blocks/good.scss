@@ -140,6 +140,7 @@
 }
 
 .good__price-code {
+  position: relative;
   display: grid;
   padding: 0 130px 0 10px;
   margin: 0;
@@ -198,16 +199,16 @@
 
 .good__cart-button {
   position: absolute;
-  top: -50px;
-  right: 18px;
+  top: 0px;
+  right: 10px;
   min-width: 105px;
   min-height: 40px;
 }
 
 .good__status {
   position: absolute;
-  top: -50px;
-  right: 18px;
+  top: 0px;
+  right: 10px;
   display: none;
   grid-auto-flow: column;
   min-height: 40px;
@@ -241,6 +242,7 @@
 }
 
 .good__radiobuttons {
+  position: absolute;
   margin: 2px 0 0;
   display: none;
 }
@@ -301,7 +303,7 @@
   animation-name: fadeout;
   animation-duration: 1s;
   animation-timing-function: ease-in;
-  animation-delay: 3s;
+  animation-delay: 5s;
   animation-fill-mode: forwards;
 }
 
@@ -325,6 +327,17 @@
     display: none !important;
   }
 
+  .good__number-field {
+    grid-column: 2 / 3;
+  }
+
+  .good__radiobuttons {
+    z-index: 1;
+    bottom: -19px;
+    left: 10px;
+    transform: translateY(100%);
+  }
+
   &:hover,
   &:focus {
     .good__radiobuttons {
@@ -338,6 +351,10 @@
 }
 
 .good--quick-order {
+  .good__price-code {
+    padding-right: 160px;
+  }
+
   .good__like {
     display: none;
   }
@@ -356,8 +373,8 @@
 
   .good__radiobuttons {
     position: absolute;;
-    top: -50px;
-    right: 18px;
+    top: 0px;
+    right: 8px;
     display: flex;
     margin: 0;
   }

@@ -572,7 +572,7 @@ if (goodList) {
     setTimeout(() => {
       good.classList.remove('good--in-order');
       good.classList.add('good--after-order');
-    }, 4000);
+    }, 6000);
   };
 
   goodList.addEventListener('click', submitQuickOrder);
@@ -778,6 +778,9 @@ if (popGoodsSection) {
   })();
 }
 
+
+
+
 const popGoodList = document.querySelector('.popular-goods__list');
 
 if (popGoodList) {
@@ -824,6 +827,11 @@ if (popGoodList) {
     const good = goodQuickOrderSubmitButton.closest('.good');
     good.classList.remove('good--quick-order');
     good.classList.add('good--in-order');
+
+    setTimeout(() => {
+      good.classList.remove('good--in-order');
+      good.classList.add('good--after-order');
+    }, 6000);
   };
 
   popGoodList.addEventListener('click', submitQuickOrder);
