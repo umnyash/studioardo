@@ -1065,14 +1065,10 @@ if (newsSection) {
 
 const offersSection = document.querySelector('.current-offers');
 if (offersSection) {
-  let tabSwiper = new Swiper('.offers-tabs-swiper', {
+  const tabSwiper = new Swiper('.offers-tabs-swiper', {
     slidesPerView: 1,
     spaceBetween: 0,
     loop: true,
-    navigation: {
-      nextEl: ".current-offers__arrow--next",
-      prevEl: ".current-offers__arrow--back",
-    },
     pagination: {
       el: '.current-offers__dots',
       bulletActiveClass: 'current-offers__dot--current',
@@ -1092,72 +1088,23 @@ if (offersSection) {
     },
   });
 
-  const tabsWrapper = offersSection.querySelector('.current-offers__tabs-list');
-  const tabs = tabsWrapper.querySelectorAll('.current-offers__tabs-item');
-  const slides = offersSection.querySelectorAll('.current-offers__slide');
-  let activeSlideNumber = 0;
-
-  const changeActiveTab = () => {
-
-    tabs.forEach((tab) => {
-      tab.classList.remove('current-offers__tabs-item--active');
-
-      if (+tab.dataset.slideIndex === activeSlideNumber) {
-        tab.classList.add('current-offers__tabs-item--active');
-      }
-    });
-  };
-
-  const nextSlide = () => {
-    let tab = document.querySelector('.current-offers__tabs-item--active');
-    let tabNumber = +tab.dataset.slideIndex;
-
-    slides[activeSlideNumber].classList.remove('current-offers__slide--active');
-    tabNumber++;
-    if (tabNumber == slides.length) {
-      tabNumber = 0;
-    }
-    activeSlideNumber = tabNumber;
-    slides[activeSlideNumber].classList.add('current-offers__slide--active');
-
-    changeActiveTab();
-  }
-
-  let autoplayInterval = null;
-
-  const startAutoplay = () => {
-    if (!autoplayInterval) {
-      autoplayInterval = setInterval(nextSlide, 5000);
-    }
-  }
-
-  startAutoplay();
-
-  const stopAutoplay = () => {
-    clearInterval(autoplayInterval);
-    autoplayInterval = null;
-  }
-
-  tabsWrapper.addEventListener('click', ({ target }) => {
-
-    const tab = target.closest('.current-offers__tabs-item');
-
-    if (!tab) {
-      return;
-    }
-
-    const tabNumber = +tab.dataset.slideIndex;
-    if (tabNumber === activeSlideNumber) {
-      return;
-    }
-
-    slides[activeSlideNumber].classList.remove('current-offers__slide--active');
-    activeSlideNumber = tabNumber;
-    slides[activeSlideNumber].classList.add('current-offers__slide--active');
-
-    changeActiveTab();
-    stopAutoplay();
-    startAutoplay();
+  const swiper = new Swiper('.current-offers__slider', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    navigation: {
+      nextEl: ".current-offers__arrow--next",
+      prevEl: ".current-offers__arrow--back",
+    },
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+    thumbs: {
+      swiper: tabSwiper,
+    },
+    autoplay: {
+      delay: 12000,
+    },
   });
 };
-

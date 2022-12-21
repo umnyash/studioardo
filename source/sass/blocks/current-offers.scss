@@ -135,6 +135,12 @@
   }
 }
 
+.current-offers__arrows {
+  @media #{$laptop-desktop} {
+    display: none;
+  }
+}
+
 .current-offers__arrow {
   position: absolute;
   top: 50%;
