@@ -23,12 +23,14 @@
 
   @media #{$laptop-desktop} {
     display: initial;
-    width: 100%;
-    height: 100%;
+    width: 392px;
+    height: auto;
   }
 
-  @media #{$laptop-desktop} {
+  @media #{$desktop} {
+    width: 100%;
     margin-left: 19px;
+    box-sizing: content-box;
   }
 }
 
@@ -54,7 +56,7 @@
   }
 
   @media #{$desktop} {
-    margin-top: 5px;
+    margin: 5px 0 19px 0;
   }
 }
 
@@ -90,5 +92,6 @@
 .company-info {
   .clipbox--small .clipbox__toggler {
     font-size: 14px;
+    color: $weak-text-color;
   }
 }
