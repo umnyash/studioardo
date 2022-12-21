@@ -77,21 +77,3 @@
 .company-info__description-text ul {
   margin: 0;
 }
-
-.company-info {
-  .clipbox--reduced {
-    .clipbox__content {
-      &::after {
-        display: none;
-      }
-    }
-  }
-}
-
-
-.company-info {
-  .clipbox--small .clipbox__toggler {
-    font-size: 14px;
-    color: $weak-text-color;
-  }
-}
