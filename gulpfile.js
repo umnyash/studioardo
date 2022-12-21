@@ -129,7 +129,8 @@ exports.images = copyImages;
 const createWebp = () => {
   return gulp.src([
     'source/img/stone/hero/*.{jpg,png}',
-    'source/img/team/*.{jpg,png}'
+    'source/img/team/*.{jpg,png}',
+    'source/img/current-offers/*.{jpg,png}'
   ], {
     base: 'source'
   })
