@@ -22,73 +22,73 @@
   }
 }
 
-.popular-goods-swiper {
+.popular-goods__slider{
   grid-area: slider;
   max-width: 100%;
   padding-bottom: 180px;
   margin-bottom: -180px;
 }
 
-.popular-goods__list {
-  margin: 0 0 18px 0;
-  padding: 10px 4px 23px 4px;
-  list-style: none;
+// .popular-goods__list {
+//   margin: 0 0 18px 0;
+//   padding: 10px 4px 23px 4px;
+//   list-style: none;
 
-  @media #{$widemobile-desktop} {
-    padding: 10px 4px 0 9px;
-  }
+//   @media #{$widemobile-desktop} {
+//     padding: 10px 4px 0 9px;
+//   }
 
-  @media #{$tablet-desktop} {
-    padding: 0;
-  }
+//   @media #{$tablet-desktop} {
+//     padding: 0;
+//   }
 
-  @media #{$laptop-desktop} {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(289px, 1fr));
-    row-gap: 20px;
-    column-gap: 8px;
-    margin: 0;
-  }
+//   @media #{$laptop-desktop} {
+//     display: grid;
+//     grid-template-columns: repeat(auto-fill, minmax(289px, 1fr));
+//     row-gap: 20px;
+//     column-gap: 8px;
+//     margin: 0;
+//   }
 
-  @media #{$desktop} {
-    column-gap: 9px;
-  }
-}
+//   @media #{$desktop} {
+//     column-gap: 9px;
+//   }
+// }
 
-.popular-goods__item {
-  width: 343px;
-  height: auto;
-  margin: 0;
+// .popular-goods__item {
+//   width: 343px;
+//   height: auto;
+//   margin: 0;
 
-  @media #{$tablet-desktop} {
-    width: 310px;
-  }
+//   @media #{$tablet-desktop} {
+//     width: 310px;
+//   }
 
-  @media #{$laptop-desktop} {
-    position: relative;
-    width: 289px;
+//   @media #{$laptop-desktop} {
+//     position: relative;
+//     width: 289px;
 
-    &:hover {
-      z-index: 2;
-    }
-  }
+//     &:hover {
+//       z-index: 2;
+//     }
+//   }
 
-  @media #{$desktop} {
-    width: 343px;
-  }
-}
+//   @media #{$desktop} {
+//     width: 343px;
+//   }
+// }
 
-.popular-goods__item .good {
-  height: 100%;
-}
+// .popular-goods__item .good {
+//   height: 100%;
+// }
 
-.popular-goods__item .good:hover,
-.popular-goods .good--in-cart,
-.popular-goods .good--quick-order,
-.popular-goods .good--in-order,
-.popular-goods .good--after-order {
-  height: auto;
-}
+// .popular-goods__item .good:hover,
+// .popular-goods .good--in-cart,
+// .popular-goods .good--quick-order,
+// .popular-goods .good--in-order,
+// .popular-goods .good--after-order {
+//   height: auto;
+// }
 
 .popular-goods__arrows {
   grid-area: btn;
@@ -124,66 +124,66 @@
   }
 }
 
-.popular-goods {
-  .good {
-    padding: 8px 18px 18px 10px;
-  }
+// .popular-goods {
+//   .good {
+//     padding: 8px 18px 18px 10px;
+//   }
 
-  .good__main {
-    padding: 0 4px 10px;
-    row-gap: 12px;
+//   .good__main {
+//     padding: 0 4px 10px;
+//     row-gap: 12px;
 
-    @media #{$laptop-desktop} {
-      margin-top: 10px;
-    }
+//     @media #{$laptop-desktop} {
+//       margin-top: 10px;
+//     }
 
-    @media #{$desktop} {
-      margin-top: 2px;
-      padding: 0 4px 10px 7px;
-    }
-  }
+//     @media #{$desktop} {
+//       margin-top: 2px;
+//       padding: 0 4px 10px 7px;
+//     }
+//   }
 
-  .good__img-wrapper {
-    height: 200px;
+//   .good__img-wrapper {
+//     height: 200px;
 
-    @media #{$laptop-desktop} {
-      height: 255px;
-    }
-  }
+//     @media #{$laptop-desktop} {
+//       height: 255px;
+//     }
+//   }
 
-  .good__heading {
-    @media #{$laptop-desktop} {
-      font-size: 14px;
-    }
+//   .good__heading {
+//     @media #{$laptop-desktop} {
+//       font-size: 14px;
+//     }
 
-    @media #{$desktop} {
-      font-size: 18px;
-    }
-  }
+//     @media #{$desktop} {
+//       font-size: 18px;
+//     }
+//   }
 
-  .good__like {
-    @media #{$laptop-desktop} {
-      align-self: flex-start;
-    }
+//   .good__like {
+//     @media #{$laptop-desktop} {
+//       align-self: flex-start;
+//     }
 
-    @media #{$desktop} {
-      align-self: center;
-    }
-  }
+//     @media #{$desktop} {
+//       align-self: center;
+//     }
+//   }
 
-  .good__characteristics--value {
-    margin: 0 8px 5px 0;
-  }
+//   .good__characteristics--value {
+//     margin: 0 8px 5px 0;
+//   }
 
-  .good__labels-list {
-    margin: 0 0 10px 7px;
-  }
+//   .good__labels-list {
+//     margin: 0 0 10px 7px;
+//   }
 
-  .good__extra {
-    padding: 0 4px;
-  }
+//   .good__extra {
+//     padding: 0 4px;
+//   }
 
-  .good__price-code {
-    row-gap: 5px;
-  }
-}
+//   .good__price-code {
+//     row-gap: 5px;
+//   }
+// }

@@ -1,12 +1,10 @@
 .n-collection-list {
   display: grid;
-  row-gap: 10px;
-  column-gap: 10px;
+  padding: 0;
   list-style: none;
-
-  @media (min-width: 716px) {
-    grid-template-columns: repeat(auto-fill, minmax(343px, 1fr));
-  }
+  row-gap: 10px;
+  column-gap: 9px;
+  grid-template-columns: repeat(auto-fill, minmax(289px, 1fr));
 
   @media #{$tablet-desktop} {
     row-gap: 20px;

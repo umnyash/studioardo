@@ -577,6 +577,7 @@ if (goodList) {
     }
 
     const good = goodQuickOrderSubmitButton.closest('.good');
+    good.classList.remove('good--in-cart');
     good.classList.remove('good--quick-order');
     good.classList.add('good--in-order');
 

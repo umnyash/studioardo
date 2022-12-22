@@ -2,12 +2,9 @@
   display: grid;
   padding: 0;
   row-gap: 10px;
-  column-gap: 10px;
+  column-gap: 9px;
   list-style: none;
-
-  @media (min-width: 716px) {
-    grid-template-columns: repeat(auto-fill, minmax(343px, 1fr));
-  }
+  grid-template-columns: repeat(auto-fill, minmax(289px, 1fr));
 
   @media #{$tablet-desktop} {
     row-gap: 20px;
@@ -17,7 +14,8 @@
 .good-list__item {
   margin: 0;
 
-  &:hover {
+  &:hover,
+  &:focus {
     z-index: 2;
   }
 }
