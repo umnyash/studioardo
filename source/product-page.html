@@ -340,9 +340,19 @@
         </div>
       </section>
 
-      <section class="goods">
-        <div class="center">
-          <h2 class="heading heading--alter-2">Еще товары из этой коллекции:</h2>
+      <section class="goods goods--more">
+
+          <header class="goods__header">
+            <div class="goods__header-inner">
+              <h2 class="goods__heading heading heading--alter-2">Популярные товары</h2>
+              <button class="goods__slider-button-prev swiper-button-prev arrow-button" type="button">
+                <span class="visually-hidden">Предыдущий слайд</span>
+              </button>
+              <button class="goods__slider-button-next swiper-button-next arrow-button" type="button">
+                <span class="visually-hidden">Следующий слайд</span>
+              </button>
+            </div>
+          </header>
           <div class="goods__slider swiper">
             <ul class="goods__slider__list good-list swiper-wrapper">
               <li class="good-list__item good swiper-slide">
@@ -1152,14 +1162,8 @@
                 </div>
               </li>
             </ul>
-            <button class="goods__slider-button-prev swiper-button-prev arrow-button" type="button">
-              <span class="visually-hidden">Предыдущий слайд</span>
-            </button>
-            <button class="goods__slider-button-next swiper-button-next arrow-button" type="button">
-              <span class="visually-hidden">Следующий слайд</span>
-            </button>
           </div>
-        </div>
+
       </section>
 
       <div class="s-popular">

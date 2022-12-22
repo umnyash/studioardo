@@ -1134,15 +1134,23 @@ if (offersSection) {
   });
 };
 
-const goodsSlider = document.querySelector('.goods__slider');
+const goodsSlider = document.querySelector('.goods--more .goods__slider');
 if (goodsSlider) {
-  const swiper = new Swiper(".goods__slider", {
-    slidesPerView: 'auto',
+  const swiper = new Swiper(".goods--more .goods__slider", {
+    slidesPerView: 1,
     spaceBetween: 9,
-    loop: true,
     navigation: {
-      nextEl: ".goods__slider-button-next",
-      prevEl: ".goods__slider-button-prev",
+      nextEl: ".goods--more .goods__slider-button-next",
+      prevEl: ".goods--more .goods__slider-button-prev",
     },
+    breakpoints: {
+      420: {
+        slidesPerView: 'auto',
+      },
+      1280: {
+        slidesPerView: 4,
+      },
+    },
+    watchSlidesProgress: true
   });
 }
