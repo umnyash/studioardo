@@ -1,4 +1,4 @@
-.n-goods__inner {
+.goods__inner {
   padding: 0 14px;
 
   @media #{$desktop} {
@@ -9,7 +9,7 @@
   }
 }
 
-.n-goods__heading {
+.goods__heading {
   margin: 0 0 22px;
 
   @media #{$tablet-desktop} {
@@ -17,12 +17,12 @@
   }
 }
 
-.n-goods__good-list {
+.goods__good-list {
   margin: 0;
   list-style: none;
 }
 
-.n-goods__button-wrapper {
+.goods__button-wrapper {
   display: flex;
   padding: 0 14px;
   margin: 40px 0 0;
@@ -36,7 +36,7 @@
   }
 }
 
-.n-goods__button {
+.goods__button {
   width: 100%;
   padding-right: 18px;
   padding-left: 18px;
@@ -46,4 +46,25 @@
     min-width: 350px;
     margin: 0 auto;
   }
+}
+
+.goods__slider.swiper {
+  padding: 57px 0 200px;
+}
+
+.goods__slider-button-next,
+.goods__slider-button-prev {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: auto;
+  margin: 0
+}
+
+.goods__slider-button-prev {
+  right: 45px;
+}
+
+.goods__slider-button-next {
+  transform: rotate(180deg);
 }

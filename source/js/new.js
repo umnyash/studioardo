@@ -1133,3 +1133,16 @@ if (offersSection) {
     },
   });
 };
+
+const goodsSlider = document.querySelector('.goods__slider');
+if (goodsSlider) {
+  const swiper = new Swiper(".goods__slider", {
+    slidesPerView: 'auto',
+    spaceBetween: 9,
+    loop: true,
+    navigation: {
+      nextEl: ".goods__slider-button-next",
+      prevEl: ".goods__slider-button-prev",
+    },
+  });
+}
