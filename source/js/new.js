@@ -526,7 +526,7 @@ const goodList = document.querySelector('.good-list');
 
 if (goodList) {
   const addGoodToCart = (evt) => {
-    const goodCartButton = evt.target.closest('.good__cart-button');
+    const goodCartButton = evt.target.closest('.good__add-cart');
 
     if (!goodCartButton) {
       return;
@@ -535,6 +535,17 @@ if (goodList) {
     const good = goodCartButton.closest('.good');
     good.classList.add('good--in-cart');
   };
+
+  const removeFromCart = (evt) => {
+    const goodCartButton = evt.target.closest('.good__remove-cart');
+
+    if (!goodCartButton) {
+      return;
+    }
+
+    const good = goodCartButton.closest('.good');
+    good.classList.remove('good--in-cart');
+  }
 
   const quickOrderGood = (evt) => {
     const goodQuickOrderButton = evt.target.closest('.good__quick-order-button');
@@ -577,6 +588,7 @@ if (goodList) {
 
   goodList.addEventListener('click', submitQuickOrder);
   goodList.addEventListener('click', addGoodToCart);
+  goodList.addEventListener('click', removeFromCart);
   goodList.addEventListener('click', quickOrderGood);
   goodList.addEventListener('click', cancelQuickOrder);
 }
@@ -761,7 +773,7 @@ const popGoodList = document.querySelector('.popular-goods__list');
 
 if (popGoodList) {
   const addGoodToCart = (evt) => {
-    const goodCartButton = evt.target.closest('.good__cart-button');
+    const goodCartButton = evt.target.closest('.good__add-cart');
 
     if (!goodCartButton) {
       return;
@@ -770,6 +782,17 @@ if (popGoodList) {
     const good = goodCartButton.closest('.good');
     good.classList.add('good--in-cart');
   };
+
+  const removeFromCart = (evt) => {
+    const goodCartButton = evt.target.closest('.good__remove-cart');
+
+    if (!goodCartButton) {
+      return;
+    }
+
+    const good = goodCartButton.closest('.good');
+    good.classList.remove('good--in-cart');
+  }
 
   const quickOrderGood = (evt) => {
     const goodQuickOrderButton = evt.target.closest('.good__quick-order-button');
@@ -812,6 +835,7 @@ if (popGoodList) {
 
   popGoodList.addEventListener('click', submitQuickOrder);
   popGoodList.addEventListener('click', addGoodToCart);
+  popGoodList.addEventListener('click', removeFromCart);
   popGoodList.addEventListener('click', quickOrderGood);
   popGoodList.addEventListener('click', cancelQuickOrder);
 }

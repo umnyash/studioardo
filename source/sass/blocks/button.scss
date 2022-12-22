@@ -77,7 +77,7 @@
 .button--secondary-2 {
   border-color: $secondary-button-color;
   color: $secondary-button-color;
-  background-color: rgba(66, 189, 152, 0.05);
+  background-color: fade-out($special-color, 0.95);
 
   &:hover {
     opacity: 0.8;

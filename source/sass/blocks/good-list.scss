@@ -1,6 +1,6 @@
 .good-list {
   display: grid;
-  // padding: 0;
+  padding: 0;
   row-gap: 10px;
   column-gap: 10px;
   list-style: none;
@@ -14,12 +14,10 @@
   }
 }
 
-.good-list__good {
-  height: 100%;
-}
-
-
 .good-list__item {
-  // position: relative;
   margin: 0;
+
+  &:hover {
+    z-index: 2;
+  }
 }

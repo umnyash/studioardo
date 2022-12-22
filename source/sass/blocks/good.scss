@@ -1,6 +1,5 @@
 .good {
   position: relative;
-
   display: grid;
   box-sizing: border-box;
   padding: 8px 8px 18px;
@@ -12,7 +11,6 @@
   filter: drop-shadow(0px 3px 25px rgba(0, 0, 0, 0.06));
 
   &:hover {
-    z-index: 2;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
@@ -29,8 +27,8 @@
 }
 
 .good__heading {
-  margin: 0;
   grid-column: 1 / 2;
+  margin: 0;
   font-family: $basic-font-family;
   font-size: 16px;
   line-height: 1.3;
@@ -55,8 +53,12 @@
 .good__img-wrapper {
   display: block;
   width: 100%;
-  height: 255px;
+  height: 200px;
   margin: 0;
+
+  @media #{$tablet-desktop} {
+    height: 255px;
+  }
 }
 
 .good__img {
@@ -69,10 +71,11 @@
 }
 
 .good__like {
-  grid-column: 2 / 3;
+  grid-area: 1 / 2 / 3 / 3;
   margin: 0;
   width: 23px;
   height: 23px;
+  transform: translateY(11px);
 }
 
 .good__labels-list {
@@ -82,7 +85,7 @@
 }
 
 .good__characteristics {
-  grid-column: 1 / 3;
+  grid-column: 1 / 2;
   max-width: 380px;
   margin: 0;
   align-items: center;
@@ -133,16 +136,26 @@
   align-items: center;
   background-color: inherit;
   transform: translateY(100%);
+  // background-color: rgba(255, 255, 0, 0.4);
 }
 
-.good:hover .good__extra {
-  padding-top: 13px;
+// .good:hover .good__extra {
+//   @media #{$tablet-desktop} {
+//     padding-top: 13px;
+//   }
+// }
+
+.good__info {
+  position: relative;
+  display: grid;
+  margin: 0 10px;
+  row-gap: 9px;
 }
 
 .good__price-code {
-  position: relative;
   display: grid;
-  padding: 0 130px 0 10px;
+  width: 100%;
+  padding: 0 120px 0 0;
   margin: 0;
   row-gap: 6px;
 }
@@ -197,28 +210,29 @@
   margin: 0 0 0 5px;
 }
 
-.good__cart-button {
+.good__add-cart {
   position: absolute;
   top: 0px;
-  right: 10px;
+  right: 0;
   min-width: 105px;
   min-height: 40px;
 }
 
-.good__status {
+.good__remove-cart {
   position: absolute;
   top: 0px;
-  right: 10px;
+  right: 0;
   display: none;
   grid-auto-flow: column;
   min-height: 40px;
-  padding: 10px 5px 8px;
+  padding: 9px 15px 9px 14px;
   margin: 0;
+  border: none;
   border-radius: 3px;
-  column-gap: 5px;
+  column-gap: 10px;
   align-items: center;
   font-family: $basic-font-family;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 18px;
   font-weight: 600;
   color: $special-color;
@@ -233,12 +247,51 @@
     background-size: contain;
     background-position: center;
   }
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
 }
 
 .good__quick-order-button {
-  display: none;
-  grid-column: 1 / 3;
-  margin: 5px 0 0;
+  // display: none;
+  // grid-column: 1 / 3;
+
+  justify-self: center;
+  padding: 7px 10px 0;
+  border: none;
+  margin: 0;
+  text-align: center;
+  font-family: $basic-font-family;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 600;
+  color: $special-color;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  @media #{$laptop-desktop} {
+    display: none;
+    width: 100%;
+    min-height: 50px;
+    padding: 8px 10px 6px;
+    border: 1px solid $secondary-button-color;
+    color: $secondary-button-color;
+    background-color: fade-out($special-color, 0.95);
+  }
 }
 
 .good__radiobuttons {
@@ -297,9 +350,12 @@
 .good__submit-text {
   display: none;
   grid-column: 1 / 3;
+  padding: 10px;
+  border-radius: 3px;
   margin: 0;
   font-size: 14px;
-  line-height: 1.4;
+  line-height: 1.2;
+  background-color: fade-out($special-color, 0.85);
   animation-name: fadeout;
   animation-duration: 1s;
   animation-timing-function: ease-in;
@@ -307,45 +363,68 @@
   animation-fill-mode: forwards;
 }
 
-.good:hover,
-.good:focus {
-  .good__quick-order-button {
-    display: block;
+@media #{$laptop-desktop} {
+  .good:hover,
+  .good:focus {
+    .good__extra {
+      // padding-bottom: 73px;
+      padding-bottom: 86px;
+    }
+
+    .good__quick-order-button {
+      position: absolute;
+      z-index: 2;
+      bottom: -18px;
+      left: 0;
+      display: block;
+      transform: translateY(100%);
+    }
   }
 }
 
 .good--in-cart {
-  .good__cart-button {
+  .good__price-code {
+    padding-right: 124px;
+  }
+
+  .good__add-cart {
     display: none;
   }
 
-  .good__status {
+  .good__remove-cart {
     display: grid;
   }
 
-  .good__quick-order-button {
-    display: none !important;
-  }
-
-  .good__number-field {
-    grid-column: 2 / 3;
-  }
-
-  .good__radiobuttons {
-    z-index: 1;
-    bottom: -19px;
-    left: 10px;
-    transform: translateY(100%);
-  }
-
-  &:hover,
-  &:focus {
-    .good__radiobuttons {
-      display: flex;
+  @media #{$laptop-desktop} {
+    .good__quick-order-button {
+      display: none !important;
     }
 
     .good__number-field {
-      display: grid;
+      grid-column: 2 / 3;
+    }
+
+    .good__radiobuttons {
+      z-index: 1;
+      bottom: -19px;
+      left: 0;
+      transform: translateY(100%);
+    }
+
+    &:hover,
+    &:focus {
+      .good__extra {
+        padding-top: 13px;
+        padding-bottom: 17px;
+      }
+
+      .good__radiobuttons {
+        display: flex;
+      }
+
+      .good__number-field {
+        display: grid;
+      }
     }
   }
 }
@@ -367,14 +446,18 @@
     display: none;
   }
 
-  .good__cart-button {
+  .good__add-cart {
+    display: none;
+  }
+
+  .good__remove-cart {
     display: none;
   }
 
   .good__radiobuttons {
     position: absolute;;
     top: 0px;
-    right: 8px;
+    right: -2px;
     display: flex;
     margin: 0;
   }
@@ -392,7 +475,8 @@
   &:hover,
   &:focus {
     .good__extra {
-      padding-top: 8px;
+      padding-top: 15px;
+      padding-bottom: 18px;
       row-gap: 10px;
     }
 
@@ -417,12 +501,20 @@
     display: none;
   }
 
-  .good__cart-button {
+  .good__add-cart {
     display: none;
   }
 
   .good__quick-order-button {
     display: none !important;
+  }
+
+  .good__total-price-wrapper {
+    display: block;
+  }
+
+  .good__code-wrapper {
+    display: none;
   }
 
   .good__extra {
@@ -432,6 +524,12 @@
   .good__submit-text {
     display: block;
   }
+
+  @media #{$laptop-desktop} {
+    &:hover .good__extra {
+      padding-bottom: 18px;
+    }
+  }
 }
 
 .good--after-order {
@@ -439,7 +537,7 @@
     display: none;
   }
 
-  .good__cart-button {
+  .good__add-cart {
     display: none;
   }
 
@@ -449,5 +547,11 @@
 
   &:hover .good__extra {
     padding-top: 0;
+  }
+
+  @media #{$laptop-desktop} {
+    &:hover .good__extra {
+      padding-bottom: 18px;
+    }
   }
 }
