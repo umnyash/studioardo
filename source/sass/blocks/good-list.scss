@@ -27,7 +27,8 @@
 }
 
 .good-list__item.swiper-slide {
-  height: auto;
+  // align-self: start;
+  // height: auto;
 
   @media (min-width: 420px) {
     width: 343px;

@@ -707,139 +707,137 @@ if (serviceSwiper) {
   })
 };
 
-const popGoodsSection = document.querySelector('.popular-goods');
+// const popGoodsSection = document.querySelector('.popular-goods');
 
-if (popGoodsSection) {
+// if (popGoodsSection) {
 
-  (function () {
+//   (function () {
 
-    const breakpoint = window.matchMedia('(min-width: 1280px)');
-    const popGoodsSwiper = document.querySelector('.popular-goods-swiper');
-    const popGoodsList = document.querySelector('.popular-goods__list');
-    const popGoodsSlides = document.querySelectorAll('.popular-goods__item');
+//     const breakpoint = window.matchMedia('(min-width: 1280px)');
+//     const popGoodsSwiper = document.querySelector('.popular-goods-swiper');
+//     const popGoodsList = document.querySelector('.popular-goods__list');
+//     const popGoodsSlides = document.querySelectorAll('.popular-goods__item');
 
-    let popGoodSwiper;
-    const breakpointChecker = () => {
-      if (breakpoint.matches === true) {
+//     let popGoodSwiper;
+//     const breakpointChecker = () => {
+//       if (breakpoint.matches === true) {
 
-        if (popGoodSwiper !== undefined) {
-          popGoodsSwiper.destroy(true, true);
-          popGoodsSwiper.classList.remove('swiper');
-          popGoodsList.classList.remove('swiper-wrapper');
-          popGoodsSlides.forEach((slide) => {
-            slide.classList.remove('swiper-slide');
-          });
-        }
+//         if (popGoodSwiper !== undefined) {
+//           popGoodsSwiper.destroy(true, true);
+//           popGoodsSwiper.classList.remove('swiper');
+//           popGoodsList.classList.remove('swiper-wrapper');
+//           popGoodsSlides.forEach((slide) => {
+//             slide.classList.remove('swiper-slide');
+//           });
+//         }
 
-        return;
+//         return;
 
-      } else if (breakpoint.matches === false) {
-        return enableSwiper();
-      }
+//       } else if (breakpoint.matches === false) {
+//         return enableSwiper();
+//       }
 
-    };
+//     };
 
-    const enableSwiper = () => {
-      popGoodsSwiper.classList.add('swiper');
-      popGoodsList.classList.add('swiper-wrapper');
-      popGoodsSlides.forEach((slide) => {
-        slide.classList.add('swiper-slide');
-      });
+//     const enableSwiper = () => {
+//       popGoodsSwiper.classList.add('swiper');
+//       popGoodsList.classList.add('swiper-wrapper');
+//       popGoodsSlides.forEach((slide) => {
+//         slide.classList.add('swiper-slide');
+//       });
 
-      popGoodSwiper = new Swiper('.popular-goods-swiper', {
-        slidesPerView: 'auto',
-        spaceBetween: 3,
-        breakpoints: {
-          768: {
-            spaceBetween: 8,
-          },
-        },
-        navigation: {
-          nextEl: ".popular-goods__arrow--next",
-          prevEl: ".popular-goods__arrow--back",
-        },
-      });
+//       popGoodSwiper = new Swiper('.popular-goods-swiper', {
+//         slidesPerView: 'auto',
+//         spaceBetween: 3,
+//         breakpoints: {
+//           768: {
+//             spaceBetween: 8,
+//           },
+//         },
+//         navigation: {
+//           nextEl: ".popular-goods__arrow--next",
+//           prevEl: ".popular-goods__arrow--back",
+//         },
+//       });
 
-    };
+//     };
 
-    window.addEventListener('resize', breakpointChecker);
-    breakpointChecker();
-  })();
-}
-
-
+//     window.addEventListener('resize', breakpointChecker);
+//     breakpointChecker();
+//   })();
+// }
 
 
-const popGoodList = document.querySelector('.popular-goods__list');
+// const popGoodList = document.querySelector('.popular-goods__list');
 
-if (popGoodList) {
-  const addGoodToCart = (evt) => {
-    const goodCartButton = evt.target.closest('.good__add-cart');
+// if (popGoodList) {
+//   const addGoodToCart = (evt) => {
+//     const goodCartButton = evt.target.closest('.good__add-cart');
 
-    if (!goodCartButton) {
-      return;
-    }
+//     if (!goodCartButton) {
+//       return;
+//     }
 
-    const good = goodCartButton.closest('.good');
-    good.classList.add('good--in-cart');
-  };
+//     const good = goodCartButton.closest('.good');
+//     good.classList.add('good--in-cart');
+//   };
 
-  const removeFromCart = (evt) => {
-    const goodCartButton = evt.target.closest('.good__remove-cart');
+//   const removeFromCart = (evt) => {
+//     const goodCartButton = evt.target.closest('.good__remove-cart');
 
-    if (!goodCartButton) {
-      return;
-    }
+//     if (!goodCartButton) {
+//       return;
+//     }
 
-    const good = goodCartButton.closest('.good');
-    good.classList.remove('good--in-cart');
-  }
+//     const good = goodCartButton.closest('.good');
+//     good.classList.remove('good--in-cart');
+//   }
 
-  const quickOrderGood = (evt) => {
-    const goodQuickOrderButton = evt.target.closest('.good__quick-order-button');
+//   const quickOrderGood = (evt) => {
+//     const goodQuickOrderButton = evt.target.closest('.good__quick-order-button');
 
-    if (!goodQuickOrderButton) {
-      return;
-    }
+//     if (!goodQuickOrderButton) {
+//       return;
+//     }
 
-    const good = goodQuickOrderButton.closest('.good');
-    good.classList.add('good--quick-order');
-  };
+//     const good = goodQuickOrderButton.closest('.good');
+//     good.classList.add('good--quick-order');
+//   };
 
-  const cancelQuickOrder = (evt) => {
-    const goodQuickOrderCancelButton = evt.target.closest('.good__cancel-order');
+//   const cancelQuickOrder = (evt) => {
+//     const goodQuickOrderCancelButton = evt.target.closest('.good__cancel-order');
 
-    if (!goodQuickOrderCancelButton) {
-      return;
-    }
+//     if (!goodQuickOrderCancelButton) {
+//       return;
+//     }
 
-    const good = goodQuickOrderCancelButton.closest('.good');
-    good.classList.remove('good--quick-order');
-  };
+//     const good = goodQuickOrderCancelButton.closest('.good');
+//     good.classList.remove('good--quick-order');
+//   };
 
-  const submitQuickOrder = (evt) => {
-    const goodQuickOrderSubmitButton = evt.target.closest('.good__submit-order');
+//   const submitQuickOrder = (evt) => {
+//     const goodQuickOrderSubmitButton = evt.target.closest('.good__submit-order');
 
-    if (!goodQuickOrderSubmitButton) {
-      return;
-    }
+//     if (!goodQuickOrderSubmitButton) {
+//       return;
+//     }
 
-    const good = goodQuickOrderSubmitButton.closest('.good');
-    good.classList.remove('good--quick-order');
-    good.classList.add('good--in-order');
+//     const good = goodQuickOrderSubmitButton.closest('.good');
+//     good.classList.remove('good--quick-order');
+//     good.classList.add('good--in-order');
 
-    setTimeout(() => {
-      good.classList.remove('good--in-order');
-      good.classList.add('good--after-order');
-    }, 6000);
-  };
+//     setTimeout(() => {
+//       good.classList.remove('good--in-order');
+//       good.classList.add('good--after-order');
+//     }, 6000);
+//   };
 
-  popGoodList.addEventListener('click', submitQuickOrder);
-  popGoodList.addEventListener('click', addGoodToCart);
-  popGoodList.addEventListener('click', removeFromCart);
-  popGoodList.addEventListener('click', quickOrderGood);
-  popGoodList.addEventListener('click', cancelQuickOrder);
-}
+//   popGoodList.addEventListener('click', submitQuickOrder);
+//   popGoodList.addEventListener('click', addGoodToCart);
+//   popGoodList.addEventListener('click', removeFromCart);
+//   popGoodList.addEventListener('click', quickOrderGood);
+//   popGoodList.addEventListener('click', cancelQuickOrder);
+// }
 
 const tileSwiper = document.querySelector('.tile-range');
 if (tileSwiper) {
@@ -1134,8 +1132,8 @@ if (offersSection) {
   });
 };
 
-const goodsSlider = document.querySelector('.goods--more .goods__slider');
-if (goodsSlider) {
+const moreGoodsSlider = document.querySelector('.goods--more .goods__slider');
+if (moreGoodsSlider) {
   const swiper = new Swiper(".goods--more .goods__slider", {
     slidesPerView: 1,
     spaceBetween: 9,
@@ -1148,6 +1146,29 @@ if (goodsSlider) {
         slidesPerView: 'auto',
       },
       1280: {
+        slidesPerView: 4,
+      },
+    },
+    watchSlidesProgress: true
+  });
+}
+
+const popularGoodsSlider = document.querySelector('.goods--popular .goods__slider');
+if (popularGoodsSlider) {
+  const swiper = new Swiper(".goods--popular .goods__slider", {
+    slidesPerView: 1,
+    spaceBetween: 9,
+    allowTouchMove: true,
+    navigation: {
+      nextEl: ".goods--popular .goods__slider-button-next",
+      prevEl: ".goods--popular .goods__slider-button-prev",
+    },
+    breakpoints: {
+      420: {
+        slidesPerView: 'auto',
+      },
+      1280: {
+        allowTouchMove: false,
         slidesPerView: 4,
       },
     },
