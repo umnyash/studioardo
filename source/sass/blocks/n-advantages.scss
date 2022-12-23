@@ -126,7 +126,7 @@
 }
 
 .n-advantages__item:last-child .n-advantages__info {
-  @media #{$laptop} {
+  @media #{$laptop-desktop} {
     right: 0;
     left: auto;
     transform: translate(0, -100%);
