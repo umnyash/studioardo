@@ -27,6 +27,7 @@ $accent-font-family: "Playfair Display", "Georgia", "Times New Roman", sans-seri
 
 $border-color: #c8c8c8;
 $basic-text-color: #333333;
+$accent-text-color: #222121;
 $additional-text-color: #c5072b;
 $text-color-secondary: #ffffff;
 $background-color: #ffffff;
@@ -112,11 +113,6 @@ $cart-header-border-color: #c8c8c8;
 $notification-error-color: #eb9393;
 $check-good-border-color: #c8c8c8;
 $good-main-border-color: #ebebeb;
-$advantage-item-bg1: #FFF1E7;
-$advantage-item-bg2: #F7FFE7;
-$advantage-item-bg3: #ECF8EE;
-$advantage-item-bg4: #E8E7FF;
-$advantage-item-bg5: #FAECFC;
 $product-border-color: #D9D9D9;
 $good-range-shadow-color: rgba(0, 0, 0, 0.07);
 $artgallery-accent-bg-color: #222E30;
@@ -139,6 +135,13 @@ $calculation-background-color: #f5f5f5;
 $n-products-item-border-color: rgba(51, 51, 51, 0.2);
 $n-products-item-backgroung-color: #fbfbfb;
 $n-advantages-item-background-color: #f9f9f9;
+
+$n-advantages-item-background-color-1: #fff1e7;
+$n-advantages-item-background-color-2: #f7ffe7;
+$n-advantages-item-background-color-3: #ecf8ee;
+$n-advantages-item-background-color-4: #e8e7ff;
+$n-advantages-item-background-color-5: #faecfc;
+
 $n-slider-pagination-bullet-background-color: #c4c4c4;
 $n-slider-pagination-active-bullet-background-color: #5b5b5b;
 $work-option-variant-border-color: #dfdfdf;
