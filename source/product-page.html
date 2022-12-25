@@ -2669,23 +2669,13 @@
       </div>
 
     </main>
-    <div class="page-body__good-order-notification">
-      <div class="notification notification--alter notification--success">
-        <p class="notification__text">С вами свяжется менеджер для подтверждения заказа</p>
-        <button class="notification__close" type="button">
-          <span class="visually-hidden">Закрыть уведомление</span>
-        </button>
-      </div>
-    </div>
     <script>
       const goodCartFeaturesLinks = document.querySelectorAll('.good-card__features-link');
       goodCartFeaturesLinks.forEach((link) => {
         link.addEventListener('click', () => {
-          console.log('Hello')
           const popup = link.querySelector('.mi-hidden');
           setTimeout(() => {
             popup.classList.add('active');
-            console.log(popup)
           }, 0);
         })
       });
