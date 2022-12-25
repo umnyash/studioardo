@@ -51,15 +51,26 @@
 // Swiper version
 
 .goods--swiper {
-  display: grid;
+  .goods__inner {
+    display: grid;
+    width: auto;
+    padding: 0;
+    margin: 0;
 
-  @media #{$tablet-desktop} {
-    justify-content: center;
-    grid-template-columns: 1fr auto;
-    grid-template-areas:
-      "heading slider-arrows"
-      "slider  slider"
-      "button  button";
+    @media #{$tablet-desktop} {
+      justify-content: center;
+      grid-template-columns: 1fr auto;
+      column-gap: 20px;
+      grid-template-areas:
+        "heading slider-arrows"
+        "slider  slider"
+        "button  button";
+    }
+
+    @media #{$desktop} {
+      width: 1420px;
+      margin: 0 auto;
+    }
   }
 
   .goods__heading {
@@ -73,9 +84,7 @@
     }
 
     @media #{$desktop} {
-      width: 1480px;
-      padding: 0 40px;
-      margin: 0 auto;
+      padding-left: 10px;
     }
   }
 
@@ -119,6 +128,10 @@
       margin-top: 5px;
       margin-right: 15px;
     }
+
+    @media #{$desktop} {
+      margin-right: 10px;
+    }
   }
 
   .goods__slider-button-next,
@@ -138,31 +151,37 @@
   }
 }
 
-.goods--swiper--mobile-tablet-only {
+.goods--popular .goods__slider-buttons {
   @media #{$laptop-desktop} {
-    .goods__slider.swiper {
-      overflow: visible !important;
-    }
-
-    .goods__list.swiper-wrapper {
-      display: grid;
-      row-gap: 10px;
-      column-gap: 9px;
-      transform: none !important;
-    }
-
-    .swiper-slide {
-      width: auto !important;
-      margin: 0 !important;
-    }
-
-    .swiper-slide-duplicate {
-      display: none !important;
-    }
-
-    .goods__slider-buttons {
-      display: none;
-    }
+    display: none;
   }
 }
+
+// .goods--swiper--mobile-tablet-only {
+//   @media #{$laptop-desktop} {
+//     .goods__slider.swiper {
+//       overflow: visible !important;
+//     }
+
+//     .goods__list.swiper-wrapper {
+//       display: grid;
+//       row-gap: 10px;
+//       column-gap: 9px;
+//       transform: none !important;
+//     }
+
+//     .swiper-slide {
+//       width: auto !important;
+//       margin: 0 !important;
+//     }
+
+//     .swiper-slide-duplicate {
+//       display: none !important;
+//     }
+
+//     .goods__slider-buttons {
+//       display: none;
+//     }
+//   }
+// }
 

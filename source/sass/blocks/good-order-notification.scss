@@ -1,0 +1,19 @@
+.good-order-notification {
+  position: fixed;
+  z-index: 100;
+  bottom: 18px;
+  left: 50%;
+  display: grid;
+  width: 100%;
+  justify-content: center;
+  transform: translateX(-50%);
+
+  @media #{$laptop-desktop} {
+    justify-content: end;
+    width: auto;
+    top: 15px;
+    right: 35px;
+    bottom: auto;
+    transform: none;
+  }
+}

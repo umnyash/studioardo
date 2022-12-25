@@ -16,7 +16,7 @@
     <meta name="format-detection" content="address=no"/>
   </head>
   <body class="page-body">
-    <main>
+    <main class="page-new-good-cards">
       <ul class="page-body__good-list good-list">
         <li class="good-list__item good">
           <div class="good__main">
@@ -121,7 +121,6 @@
               </button>
             </div>
             <button class="good__submit-order button button--secondary button--alter button--alter-3" type="button">Отправить</button>
-            <p class="good__submit-text">Скоро вам позвонит менеджер для проверки количества и наличия на складе</p>
           </div>
         </li>
         <li class="good-list__item good">
@@ -174,7 +173,10 @@
               </p>
             </div>
             <button class="good__add-cart button button--secondary button--small button--fw700 button--with-icon button--with-icon--cart" type="button">В корзину</button>
-            <button class="good__remove-cart" type="button">Удалить</button>
+            <button class="good__remove-cart" type="button">
+              <span class="good__remove-cart-text">Добавлено</span>
+              <span class="good__remove-cart-hover-text">Удалить</span>
+            </button>
             <div class="good__radiobuttons">
               <label class="good__radiobutton radiobutton radiobutton--alter-3">
                 <input class="radiobutton__control visually-hidden" type="radio" name="goods-unit-2" value="m2" checked autocomplete="off">
@@ -221,7 +223,6 @@
               </button>
             </div>
             <button class="good__submit-order button button--secondary button--alter button--alter-3" type="button">Отправить</button>
-            <p class="good__submit-text">Скоро вам позвонит менеджер для проверки количества и наличия на складе</p>
           </div>
         </li>
         <li class="good-list__item good">
@@ -321,7 +322,6 @@
               </button>
             </div>
             <button class="good__submit-order button button--secondary button--alter button--alter-3" type="button">Отправить</button>
-            <p class="good__submit-text">Скоро вам позвонит менеджер для проверки количества и наличия на складе</p>
           </div>
         </li>
         <li class="good-list__item good">
@@ -421,7 +421,6 @@
               </button>
             </div>
             <button class="good__submit-order button button--secondary button--alter button--alter-3" type="button">Отправить</button>
-            <p class="good__submit-text">Скоро вам позвонит менеджер для проверки количества и наличия на складе</p>
           </div>
         </li>
         <li class="good-list__item good">
@@ -521,7 +520,6 @@
               </button>
             </div>
             <button class="good__submit-order button button--secondary button--alter button--alter-3" type="button">Отправить</button>
-            <p class="good__submit-text">Скоро вам позвонит менеджер для проверки количества и наличия на складе</p>
           </div>
         </li>
         <li class="good-list__item good">
@@ -621,7 +619,6 @@
               </button>
             </div>
             <button class="good__submit-order button button--secondary button--alter button--alter-3" type="button">Отправить</button>
-            <p class="good__submit-text">Скоро вам позвонит менеджер для проверки количества и наличия на складе</p>
           </div>
         </li>
         <li class="good-list__item good">
@@ -721,7 +718,6 @@
               </button>
             </div>
             <button class="good__submit-order button button--secondary button--alter button--alter-3" type="button">Отправить</button>
-            <p class="good__submit-text">Скоро вам позвонит менеджер для проверки количества и наличия на складе</p>
           </div>
         </li>
         <li class="good-list__item good">
@@ -821,11 +817,18 @@
               </button>
             </div>
             <button class="good__submit-order button button--secondary button--alter button--alter-3" type="button">Отправить</button>
-            <p class="good__submit-text">Скоро вам позвонит менеджер для проверки количества и наличия на складе</p>
           </div>
         </li>
       </ul>
     </main>
+    <div class="page-new-good-cards__good-order-notification">
+      <div class="notification notification--alter notification--success">
+        <p class="notification__text">С вами свяжется менеджер для подтверждения заказа</p>
+        <button class="notification__close" type="button">
+          <span class="visually-hidden">Закрыть уведомление</span>
+        </button>
+      </div>
+    </div>
     <footer style="padding:20px;height:250px;background-color:grey;color:white">
       Временный footer, чтобы страница не прыгала при наведении курсора на карточки в нижнем ряду
     </footer>
