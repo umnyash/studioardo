@@ -634,6 +634,7 @@ if (productsSection) {
 
         if (productSwiper !== undefined) {
           productSwiper.destroy(true, true);
+          productSwiper = undefined;
           productsSwiper.classList.remove('swiper');
           productsList.classList.remove('swiper-wrapper');
           productSlides.forEach((slide) => {
@@ -642,7 +643,7 @@ if (productsSection) {
         }
 
         return;
-      } else if (breakpoint.matches === false) {
+      } else if (breakpoint.matches === false && productSwiper === undefined) {
 
         return enableSwiper();
 
@@ -913,6 +914,7 @@ if (brandsSection) {
 
         if (brandSwiper !== undefined) {
           brandSwiper.destroy(true, true);
+          brandSwiper = undefined;
           brandsSwiper.classList.remove('swiper');
           brandsList.classList.remove('swiper-wrapper');
           brandsSlides.forEach((slide) => {
@@ -921,11 +923,10 @@ if (brandsSection) {
         }
         return;
 
-      } else if (breakpoint.matches === true) {
+      } else if (breakpoint.matches === true && brandSwiper === undefined) {
         return enableSwiper();
 
       }
-
     };
 
     const enableSwiper = () => {
@@ -943,7 +944,6 @@ if (brandsSection) {
           prevEl: ".n-brands__arrow--back",
         },
       });
-
     };
 
     window.addEventListener('resize', breakpointChecker);
@@ -1065,7 +1065,7 @@ if (popularGoodsSection) {
 
         if (popGoodSwiper !== undefined) {
           popGoodSwiper.destroy(true, true);
-
+          popGoodSwiper = undefined;
           popularGoodsSection.classList.remove('goods--swiper');
           popGoodsSwiper.classList.remove('swiper');
           popGoodsList.classList.remove('swiper-wrapper');
@@ -1076,7 +1076,7 @@ if (popularGoodsSection) {
 
         return;
 
-      } else if (breakpoint.matches === false) {
+      } else if (breakpoint.matches === false && popGoodSwiper === undefined) {
         return enableSwiper();
       }
 
