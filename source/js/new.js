@@ -643,9 +643,11 @@ if (productsSection) {
 
         return;
       } else if (breakpoint.matches === false) {
-
-        return enableSwiper();
-
+        if (productsSwiper.classList.contains('swiper')) {
+          return;
+        } else {
+          return enableSwiper();
+        }
       }
 
     };
@@ -922,8 +924,11 @@ if (brandsSection) {
         return;
 
       } else if (breakpoint.matches === true) {
-        return enableSwiper();
-
+        if (brandsSwiper.classList.contains('swiper')) {
+          return;
+        } else {
+          return enableSwiper();
+        }
       }
 
     };
@@ -1081,7 +1086,11 @@ if (popularGoodsSection) {
         return;
 
       } else if (breakpoint.matches === false) {
-        return enableSwiper();
+        if (popGoodsSwiper.classList.contains('swiper')) {
+          return;
+        } else {
+          return enableSwiper();
+        }
       }
 
     };
