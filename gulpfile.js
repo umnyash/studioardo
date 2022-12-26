@@ -112,22 +112,13 @@ exports.images = copyImages;
 
 // WebP
 
-// const createWebp = () => {
-//   return gulp.src([
-//     'source/img/**/*.{jpg,png}',
-//     '!source/img/backgrounds/**',
-//     '!source/img/favicons/**',
-//     '!source/img/location-pin.png',
-//     'source/files/**/*.{jpg,png}'
-//   ], {
-//     base: 'source'
-//   })
-//     .pipe(webp({quality: 90}))
-//     .pipe(gulp.dest('build'));
-// }
-
 const createWebp = () => {
   return gulp.src([
+    'source/img/**/*.{jpg,png}',
+    '!source/img/backgrounds/**',
+    '!source/img/favicons/**',
+    '!source/img/location-pin.png',
+    'source/files/**/*.{jpg,png}',
     'source/img/stone/hero/*.{jpg,png}',
     'source/img/team/*.{jpg,png}',
     'source/img/current-offers/*.{jpg,png}'
