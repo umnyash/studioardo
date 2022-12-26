@@ -52,7 +52,7 @@
   }
 }
 
-.main-page__our-advantages {
+.main-page__n-advantages {
   margin-bottom: 40px;
 
   @media #{$desktop} {
@@ -104,7 +104,7 @@
   }
 }
 
-.main-page__popular-goods {
+.main-page__goods.goods--popular {
   margin-bottom: 60px;
 
   @media #{$desktop} {
@@ -144,3 +144,4 @@
     margin-bottom: 100px;
   }
 }
+

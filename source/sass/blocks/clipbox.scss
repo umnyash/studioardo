@@ -124,6 +124,12 @@
   }
 }
 
+.clipbox--reduced {
+  .clipbox__content--alter::after {
+    display: none;
+  }
+}
+
 .clipbox--expanded {
   .clipbox__content {
     max-height: none;
@@ -147,6 +153,23 @@
   padding-top: 0;
   border-top: none;
   color: $clipbox-toggler-alter-color;
+
+  &::after {
+    display: none;
+  }
+}
+
+.clipbox__toggler--alter-2 {
+  padding-top: 0;
+  border-top: none;
+  font-family: $additional-font-family;
+  font-size: 16px;
+  line-height: 1;
+  color: $accent-color-2;
+
+  @media #{$tablet-desktop} {
+    color: $weak-text-color;
+  }
 
   &::after {
     display: none;

@@ -517,16 +517,16 @@ const closeNotification = (evt) => {
     return;
   }
 
-  notificationCloseButton.closest('.page-body__notification').remove();
+  notificationCloseButton.closest('.good-order-notification').remove();
 };
 
 document.body.addEventListener('click', closeNotification);
 
-const goodList = document.querySelector('.good-list');
+const goodLists = document.querySelectorAll('.good-list');
 
-if (goodList) {
+if (goodLists) {
   const addGoodToCart = (evt) => {
-    const goodCartButton = evt.target.closest('.good__cart-button');
+    const goodCartButton = evt.target.closest('.good__add-cart');
 
     if (!goodCartButton) {
       return;
@@ -535,6 +535,17 @@ if (goodList) {
     const good = goodCartButton.closest('.good');
     good.classList.add('good--in-cart');
   };
+
+  const removeFromCart = (evt) => {
+    const goodCartButton = evt.target.closest('.good__remove-cart');
+
+    if (!goodCartButton) {
+      return;
+    }
+
+    const good = goodCartButton.closest('.good');
+    good.classList.remove('good--in-cart');
+  }
 
   const quickOrderGood = (evt) => {
     const goodQuickOrderButton = evt.target.closest('.good__quick-order-button');
@@ -558,6 +569,20 @@ if (goodList) {
     good.classList.remove('good--quick-order');
   };
 
+  const showGoodOrderNotification = (status, text) => {
+    const notification = `
+      <div class="good-order-notification">
+        <div class="notification notification--alter notification--${status}">
+          <p class="notification__text">${text}</p>
+          <button class="notification__close" type="button">
+            <span class="visually-hidden">Закрыть уведомление</span>
+          </button>
+        </div>
+      </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', notification);
+  }
+
   const submitQuickOrder = (evt) => {
     const goodQuickOrderSubmitButton = evt.target.closest('.good__submit-order');
 
@@ -567,18 +592,16 @@ if (goodList) {
 
     const good = goodQuickOrderSubmitButton.closest('.good');
     good.classList.remove('good--quick-order');
-    good.classList.add('good--in-order');
-
-    setTimeout(() => {
-      good.classList.remove('good--in-order');
-      good.classList.add('good--after-order');
-    }, 6000);
+    showGoodOrderNotification('success', 'С вами свяжется менеджер для подтверждения заказа');
   };
 
-  goodList.addEventListener('click', submitQuickOrder);
-  goodList.addEventListener('click', addGoodToCart);
-  goodList.addEventListener('click', quickOrderGood);
-  goodList.addEventListener('click', cancelQuickOrder);
+  goodLists.forEach((list) => {
+    list.addEventListener('click', submitQuickOrder);
+    list.addEventListener('click', addGoodToCart);
+    list.addEventListener('click', removeFromCart);
+    list.addEventListener('click', quickOrderGood);
+    list.addEventListener('click', cancelQuickOrder);
+  });
 }
 
 
@@ -693,128 +716,6 @@ if (serviceSwiper) {
     }
   })
 };
-
-const popGoodsSection = document.querySelector('.popular-goods');
-
-if (popGoodsSection) {
-
-  (function () {
-
-    const breakpoint = window.matchMedia('(min-width: 1280px)');
-    const popGoodsSwiper = document.querySelector('.popular-goods-swiper');
-    const popGoodsList = document.querySelector('.popular-goods__list');
-    const popGoodsSlides = document.querySelectorAll('.popular-goods__item');
-
-    let popGoodSwiper;
-    const breakpointChecker = () => {
-      if (breakpoint.matches === true) {
-
-        if (popGoodSwiper !== undefined) {
-          popGoodsSwiper.destroy(true, true);
-          popGoodsSwiper.classList.remove('swiper');
-          popGoodsList.classList.remove('swiper-wrapper');
-          popGoodsSlides.forEach((slide) => {
-            slide.classList.remove('swiper-slide');
-          });
-        }
-
-        return;
-
-      } else if (breakpoint.matches === false) {
-        return enableSwiper();
-      }
-
-    };
-
-    const enableSwiper = () => {
-      popGoodsSwiper.classList.add('swiper');
-      popGoodsList.classList.add('swiper-wrapper');
-      popGoodsSlides.forEach((slide) => {
-        slide.classList.add('swiper-slide');
-      });
-
-      popGoodSwiper = new Swiper('.popular-goods-swiper', {
-        slidesPerView: 'auto',
-        spaceBetween: 3,
-        breakpoints: {
-          768: {
-            spaceBetween: 8,
-          },
-        },
-        navigation: {
-          nextEl: ".popular-goods__arrow--next",
-          prevEl: ".popular-goods__arrow--back",
-        },
-      });
-
-    };
-
-    window.addEventListener('resize', breakpointChecker);
-    breakpointChecker();
-  })();
-}
-
-
-
-
-const popGoodList = document.querySelector('.popular-goods__list');
-
-if (popGoodList) {
-  const addGoodToCart = (evt) => {
-    const goodCartButton = evt.target.closest('.good__cart-button');
-
-    if (!goodCartButton) {
-      return;
-    }
-
-    const good = goodCartButton.closest('.good');
-    good.classList.add('good--in-cart');
-  };
-
-  const quickOrderGood = (evt) => {
-    const goodQuickOrderButton = evt.target.closest('.good__quick-order-button');
-
-    if (!goodQuickOrderButton) {
-      return;
-    }
-
-    const good = goodQuickOrderButton.closest('.good');
-    good.classList.add('good--quick-order');
-  };
-
-  const cancelQuickOrder = (evt) => {
-    const goodQuickOrderCancelButton = evt.target.closest('.good__cancel-order');
-
-    if (!goodQuickOrderCancelButton) {
-      return;
-    }
-
-    const good = goodQuickOrderCancelButton.closest('.good');
-    good.classList.remove('good--quick-order');
-  };
-
-  const submitQuickOrder = (evt) => {
-    const goodQuickOrderSubmitButton = evt.target.closest('.good__submit-order');
-
-    if (!goodQuickOrderSubmitButton) {
-      return;
-    }
-
-    const good = goodQuickOrderSubmitButton.closest('.good');
-    good.classList.remove('good--quick-order');
-    good.classList.add('good--in-order');
-
-    setTimeout(() => {
-      good.classList.remove('good--in-order');
-      good.classList.add('good--after-order');
-    }, 6000);
-  };
-
-  popGoodList.addEventListener('click', submitQuickOrder);
-  popGoodList.addEventListener('click', addGoodToCart);
-  popGoodList.addEventListener('click', quickOrderGood);
-  popGoodList.addEventListener('click', cancelQuickOrder);
-}
 
 const tileSwiper = document.querySelector('.tile-range');
 if (tileSwiper) {
@@ -1065,14 +966,10 @@ if (newsSection) {
 
 const offersSection = document.querySelector('.current-offers');
 if (offersSection) {
-  let tabSwiper = new Swiper('.offers-tabs-swiper', {
+  const tabSwiper = new Swiper('.offers-tabs-swiper', {
     slidesPerView: 1,
     spaceBetween: 0,
     loop: true,
-    navigation: {
-      nextEl: ".current-offers__arrow--next",
-      prevEl: ".current-offers__arrow--back",
-    },
     pagination: {
       el: '.current-offers__dots',
       bulletActiveClass: 'current-offers__dot--current',
@@ -1092,72 +989,133 @@ if (offersSection) {
     },
   });
 
-  const tabsWrapper = offersSection.querySelector('.current-offers__tabs-list');
-  const tabs = tabsWrapper.querySelectorAll('.current-offers__tabs-item');
-  const slides = offersSection.querySelectorAll('.current-offers__slide');
-  let activeSlideNumber = 0;
-
-  const changeActiveTab = () => {
-
-    tabs.forEach((tab) => {
-      tab.classList.remove('current-offers__tabs-item--active');
-
-      if (+tab.dataset.slideIndex === activeSlideNumber) {
-        tab.classList.add('current-offers__tabs-item--active');
-      }
-    });
-  };
-
-  const nextSlide = () => {
-    let tab = document.querySelector('.current-offers__tabs-item--active');
-    let tabNumber = +tab.dataset.slideIndex;
-
-    slides[activeSlideNumber].classList.remove('current-offers__slide--active');
-    tabNumber++;
-    if (tabNumber == slides.length) {
-      tabNumber = 0;
-    }
-    activeSlideNumber = tabNumber;
-    slides[activeSlideNumber].classList.add('current-offers__slide--active');
-
-    changeActiveTab();
-  }
-
-  let autoplayInterval = null;
-
-  const startAutoplay = () => {
-    if (!autoplayInterval) {
-      autoplayInterval = setInterval(nextSlide, 5000);
-    }
-  }
-
-  startAutoplay();
-
-  const stopAutoplay = () => {
-    clearInterval(autoplayInterval);
-    autoplayInterval = null;
-  }
-
-  tabsWrapper.addEventListener('click', ({ target }) => {
-
-    const tab = target.closest('.current-offers__tabs-item');
-
-    if (!tab) {
-      return;
-    }
-
-    const tabNumber = +tab.dataset.slideIndex;
-    if (tabNumber === activeSlideNumber) {
-      return;
-    }
-
-    slides[activeSlideNumber].classList.remove('current-offers__slide--active');
-    activeSlideNumber = tabNumber;
-    slides[activeSlideNumber].classList.add('current-offers__slide--active');
-
-    changeActiveTab();
-    stopAutoplay();
-    startAutoplay();
+  const swiper = new Swiper('.current-offers__slider', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    navigation: {
+      nextEl: ".current-offers__arrow--next",
+      prevEl: ".current-offers__arrow--back",
+    },
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+    thumbs: {
+      swiper: tabSwiper,
+    },
+    autoplay: {
+      delay: 12000,
+    },
   });
 };
 
+const goodsSlider1 = document.querySelector('.goods--swiper--1 .goods__slider');
+if (goodsSlider1) {
+  const swiper = new Swiper(".goods--swiper--1 .goods__slider", {
+    slidesPerView: 1,
+    spaceBetween: 9,
+    navigation: {
+      nextEl: ".goods--swiper--1 .goods__slider-button-next",
+      prevEl: ".goods--swiper--1 .goods__slider-button-prev",
+    },
+    breakpoints: {
+      420: {
+        slidesPerView: 'auto',
+      },
+      1280: {
+        slidesPerView: 4,
+      },
+    },
+    watchSlidesProgress: true
+  });
+}
+
+const goodsSlider2 = document.querySelector('.goods--swiper--2 .goods__slider');
+if (goodsSlider1) {
+  const swiper = new Swiper(".goods--swiper--2 .goods__slider", {
+    slidesPerView: 1,
+    spaceBetween: 9,
+    navigation: {
+      nextEl: ".goods--swiper--2 .goods__slider-button-next",
+      prevEl: ".goods--swiper--2 .goods__slider-button-prev",
+    },
+    breakpoints: {
+      420: {
+        slidesPerView: 'auto',
+      },
+      1280: {
+        slidesPerView: 4,
+      },
+    },
+    watchSlidesProgress: true
+  });
+}
+
+const popularGoodsSection = document.querySelector('.goods--popular');
+
+if (popularGoodsSection) {
+
+  (function () {
+
+    const breakpoint = window.matchMedia('(min-width: 1280px)');
+    const popGoodsSwiper = document.querySelector('.goods--popular .goods__slider');
+    const popGoodsList = document.querySelector('.goods--popular .goods__list');
+    const popGoodsSlides = document.querySelectorAll('.goods--popular .good-list__item');
+
+    let popGoodSwiper;
+    const breakpointChecker = () => {
+      if (breakpoint.matches === true) {
+
+        if (popGoodSwiper !== undefined) {
+          popGoodsSwiper.destroy(true, true);
+
+          popularGoodsSection.classList.remove('goods--swiper');
+          popGoodsSwiper.classList.remove('swiper');
+          popGoodsList.classList.remove('swiper-wrapper');
+          popGoodsSlides.forEach((slide) => {
+            slide.classList.remove('swiper-slide');
+          });
+        }
+
+        return;
+
+      } else if (breakpoint.matches === false) {
+        return enableSwiper();
+      }
+
+    };
+
+    const enableSwiper = () => {
+      popularGoodsSection.classList.add('goods--swiper');
+      popGoodsSwiper.classList.add('swiper');
+      popGoodsList.classList.add('swiper-wrapper');
+      popGoodsSlides.forEach((slide) => {
+        slide.classList.add('swiper-slide');
+      });
+
+      popGoodSwiper = new Swiper(".goods--popular .goods__slider", {
+        slidesPerView: 1,
+        spaceBetween: 9,
+        allowTouchMove: true,
+        navigation: {
+          nextEl: ".goods--popular .goods__slider-button-next",
+          prevEl: ".goods--popular .goods__slider-button-prev",
+        },
+        breakpoints: {
+          420: {
+            slidesPerView: 'auto',
+          },
+          1280: {
+            allowTouchMove: false,
+            slidesPerView: 4,
+          },
+        },
+        watchSlidesProgress: true
+      });
+    };
+
+    window.addEventListener('resize', breakpointChecker);
+    breakpointChecker();
+  })();
+}

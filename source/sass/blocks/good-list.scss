@@ -1,25 +1,37 @@
 .good-list {
   display: grid;
-  // padding: 0;
+  padding: 0;
   row-gap: 10px;
-  column-gap: 10px;
+  column-gap: 9px;
   list-style: none;
-
-  @media (min-width: 716px) {
-    grid-template-columns: repeat(auto-fill, minmax(343px, 1fr));
-  }
+  grid-template-columns: repeat(auto-fill, minmax(289px, 1fr));
 
   @media #{$tablet-desktop} {
     row-gap: 20px;
   }
 }
 
-.good-list__good {
-  height: 100%;
+.good-list.swiper-wrapper {
+  display: flex;
+  row-gap: 0;
+  column-gap: 0;
 }
 
-
 .good-list__item {
-  // position: relative;
   margin: 0;
+
+  &:hover,
+  &:focus {
+    z-index: 2;
+  }
+}
+
+.good-list__item.swiper-slide {
+  @media (min-width: 420px) {
+    width: 343px;
+  }
+
+  @media #{$laptop-desktop} {
+    width: auto;
+  }
 }

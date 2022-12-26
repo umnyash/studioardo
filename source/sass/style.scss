@@ -90,8 +90,6 @@
 @import "blocks/n-collection.scss";
 @import "blocks/n-collection-list.scss";
 @import "blocks/main-page.scss";
-@import "blocks/our-advantages.scss";
-@import "blocks/advantages-item.scss";
 @import "blocks/good-range.scss";
 @import "blocks/products.scss";
 @import "blocks/product-item.scss";
@@ -140,7 +138,11 @@
 @import "blocks/material.scss";
 @import "blocks/delivery-info.scss";
 @import "blocks/calculation-material.scss";
-@import "blocks/n-goods.scss";
+@import "blocks/goods.scss";
+@import "blocks/arrow-button.scss";
+@import "blocks/good-order-notification.scss";
 
 @import "helpers/center.scss";
 @import "helpers/animations.scss";
+
+// Pages

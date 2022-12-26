@@ -118,7 +118,10 @@ const createWebp = () => {
     '!source/img/backgrounds/**',
     '!source/img/favicons/**',
     '!source/img/location-pin.png',
-    'source/files/**/*.{jpg,png}'
+    'source/files/**/*.{jpg,png}',
+    'source/img/stone/hero/*.{jpg,png}',
+    'source/img/team/*.{jpg,png}',
+    'source/img/current-offers/*.{jpg,png}'
   ], {
     base: 'source'
   })
