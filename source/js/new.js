@@ -622,7 +622,7 @@ const productsSection = document.querySelector('.products');
 
 if (productsSection) {
   (function () {
-    const breakpoint = window.matchMedia('(min-width: 1440px)');
+    const breakpoint = window.matchMedia('(min-width: 1280px)');
     const productsSwiper = document.querySelector('.products-swiper');
     const productsList = document.querySelector('.products__list');
     const productSlides = document.querySelectorAll('.products__item');
@@ -633,7 +633,7 @@ if (productsSection) {
       if (breakpoint.matches === true) {
 
         if (productSwiper !== undefined) {
-          productsSwiper.destroy(true, true);
+          productSwiper.destroy(true, true);
           productsSwiper.classList.remove('swiper');
           productsList.classList.remove('swiper-wrapper');
           productSlides.forEach((slide) => {
@@ -643,11 +643,9 @@ if (productsSection) {
 
         return;
       } else if (breakpoint.matches === false) {
-        if (productsSwiper.classList.contains('swiper')) {
-          return;
-        } else {
-          return enableSwiper();
-        }
+
+        return enableSwiper();
+
       }
 
     };
@@ -708,7 +706,7 @@ if (serviceSwiper) {
     watchOverflow: true,
     spaceBetween: 5,
     breakpoints: {
-      1280: {
+      768: {
         slidesPerView: 3,
         spaceBetween: 7,
       },
@@ -914,7 +912,7 @@ if (brandsSection) {
       if (breakpoint.matches === false) {
 
         if (brandSwiper !== undefined) {
-          brandsSwiper.destroy(true, true);
+          brandSwiper.destroy(true, true);
           brandsSwiper.classList.remove('swiper');
           brandsList.classList.remove('swiper-wrapper');
           brandsSlides.forEach((slide) => {
@@ -924,11 +922,8 @@ if (brandsSection) {
         return;
 
       } else if (breakpoint.matches === true) {
-        if (brandsSwiper.classList.contains('swiper')) {
-          return;
-        } else {
-          return enableSwiper();
-        }
+        return enableSwiper();
+
       }
 
     };
@@ -943,7 +938,6 @@ if (brandsSection) {
       brandSwiper = new Swiper('.brands-swiper', {
         slidesPerView: 'auto',
         spaceBetween: 5,
-        loop: true,
         navigation: {
           nextEl: ".n-brands__arrow--next",
           prevEl: ".n-brands__arrow--back",
@@ -974,7 +968,6 @@ if (offersSection) {
   const tabSwiper = new Swiper('.offers-tabs-swiper', {
     slidesPerView: 1,
     spaceBetween: 0,
-    loop: true,
     pagination: {
       el: '.current-offers__dots',
       bulletActiveClass: 'current-offers__dot--current',
@@ -989,7 +982,6 @@ if (offersSection) {
       1280: {
         slidesPerView: 6,
         slidesPerGroup: 1,
-        loop: false,
       },
     },
   });
@@ -997,7 +989,6 @@ if (offersSection) {
   const swiper = new Swiper('.current-offers__slider', {
     slidesPerView: 1,
     spaceBetween: 0,
-    loop: true,
     navigation: {
       nextEl: ".current-offers__arrow--next",
       prevEl: ".current-offers__arrow--back",
@@ -1073,7 +1064,7 @@ if (popularGoodsSection) {
       if (breakpoint.matches === true) {
 
         if (popGoodSwiper !== undefined) {
-          popGoodsSwiper.destroy(true, true);
+          popGoodSwiper.destroy(true, true);
 
           popularGoodsSection.classList.remove('goods--swiper');
           popGoodsSwiper.classList.remove('swiper');
@@ -1086,11 +1077,7 @@ if (popularGoodsSection) {
         return;
 
       } else if (breakpoint.matches === false) {
-        if (popGoodsSwiper.classList.contains('swiper')) {
-          return;
-        } else {
-          return enableSwiper();
-        }
+        return enableSwiper();
       }
 
     };
@@ -1123,6 +1110,7 @@ if (popularGoodsSection) {
         watchSlidesProgress: true
       });
     };
+
 
     window.addEventListener('resize', breakpointChecker);
     breakpointChecker();
