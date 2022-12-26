@@ -202,3 +202,11 @@
     background-color: $n-advantages-item-background-color-5;
   }
 }
+
+.n-advantages--left-column--desktop .n-advantages__item:last-child .n-advantages__info {
+  @media #{$desktop} {
+    right: auto;
+    left: 50%;
+    transform: translate(-50%, -100%);
+  }
+}

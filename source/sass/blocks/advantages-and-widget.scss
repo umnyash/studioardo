@@ -25,11 +25,3 @@
     display: block;
   }
 }
-
-.advantages-and-widget .n-advantages__item:last-child .n-advantages__info {
-  @media #{$desktop} {
-    right: auto;
-    left: 50%;
-    transform: translate(-50%, -100%);
-  }
-}
