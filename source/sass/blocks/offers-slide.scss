@@ -68,11 +68,11 @@
   }
 
   @media #{$mobile} {
-    height: 452px;
+    min-height: 452px;
   }
 
   @media #{$tablet-desktop} {
-    height: 530px;
+    min-height: 500px;
 
     &::after {
       background-image: linear-gradient(87.82deg, rgba(0, 0, 0, 0.6) 27.33%, rgba(0, 0, 0, 0) 95.45%);
@@ -80,7 +80,7 @@
   }
 
   @media #{$laptop-desktop} {
-    height: 570px;
+    min-height: 570px;
 
     &::after {
       background-image: linear-gradient(90.33deg, rgba(0, 0, 0, 0.6) 26.5%, rgba(0, 0, 0, 0) 59.42%);
