@@ -85,7 +85,7 @@
     align-self: flex-start;
   }
 
-  @media #{laptop} {
+  @media #{$laptop-desktop} {
     display: none;
   }
 }
