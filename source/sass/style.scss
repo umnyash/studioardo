@@ -109,8 +109,8 @@
 @import "blocks/product-type.scss";
 @import "blocks/n-news.scss";
 @import "blocks/news-card.scss";
-// @import "blocks/current-offers.scss";
-// @import "blocks/offers-slide.scss";
+@import "blocks/current-offers.scss";
+@import "blocks/offers-slide.scss";
 @import "blocks/ratings.scss";
 @import "blocks/rater.scss";
 @import "blocks/textfield.scss";
@@ -142,6 +142,8 @@
 @import "blocks/arrow-button.scss";
 @import "blocks/good-order-notification.scss";
 @import "blocks/c-filter.scss";
+@import "blocks/offers.scss";
+@import "blocks/tabs.scss";
 
 @import "helpers/center.scss";
 @import "helpers/animations.scss";
