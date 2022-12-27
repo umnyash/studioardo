@@ -1008,13 +1008,11 @@ if (currentOffersSection) {
 
 const offersSection = document.querySelector('.offers');
 if (offersSection) {
-  const tabList = new Swiper('.offers__tabs-wrapper', {
+  const tabs = new Swiper('.offers .tabs__slider', {
     slidesPerView: 1,
     spaceBetween: 0,
     pagination: {
-      // el: '.current-offers__dots',
-      // bulletActiveClass: 'current-offers__dot--current',
-      // bulletClass: 'current-offers__dot',
+      el: '.offers .tabs__pagination',
       clickable: true,
     },
     breakpoints: {
@@ -1029,17 +1027,21 @@ if (offersSection) {
     },
   });
 
-  const slideList = new Swiper('.offers', {
+  const slides = new Swiper('.offers__slider', {
     slidesPerView: 1,
     spaceBetween: 0,
+    loop: true,
     navigation: {
-      nextEl: ".current-offers__arrow--next",
-      prevEl: ".current-offers__arrow--back",
+      nextEl: ".offers__button-next",
+      prevEl: ".offers__button-prev",
     },
     effect: 'fade',
     fadeEffect: {
       crossFade: true
-    }
+    },
+    thumbs: {
+      swiper: tabs,
+    },
   });
 };
 
