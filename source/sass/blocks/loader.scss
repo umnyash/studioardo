@@ -8,8 +8,11 @@
 
 .loader {
   position: relative;
-  color: transparent !important;
+}
 
+.loader input,
+.loader button {
+  color: transparent !important;
 }
 
 .loader__img {
