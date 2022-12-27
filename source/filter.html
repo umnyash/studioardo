@@ -26,7 +26,9 @@
     </style>
   </head>
   <body class="page-body">
-    <div class="preloader preloader--mobile-only"></div>
+    <div class="preloader preloader--mobile-only">
+      <img class="preloader__img" src="img/icons/loader.svg" width="70" height="70" alt="Загрузка...">
+    </div>
     <main>
       <div class="filter-page">
         <div class="filter-page__container">
@@ -14002,7 +14004,12 @@
           <div class="bx-filter-parameters-box-container">
             <button type="button" class="c-filter__collapse"></button>
             <input class="c-filter__btn c-filter__btn--reset" type="button" id="del_filter" name="del_filter" value="Сбросить фильтр">
-            <input class="c-filter__btn c-filter__btn--submit" type="button" id="set_filter" name="set_filter" value="Показать">
+            <!-- <input class="c-filter__btn c-filter__btn--submit" type="button" id="set_filter" name="set_filter" value="Показать"> -->
+
+            <button class="c-filter__btn c-filter__btn--submit" type="button" id="set_filter" name="set_filter">
+              <img class="loader__img" src="img/icons/loader.svg" width="20" height="20" alt="Загрузка...">
+              Показать
+            </button>
           </div>
         </div>
       </div>
