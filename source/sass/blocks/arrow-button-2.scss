@@ -1,0 +1,31 @@
+.arrow-button-2 {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  place-items: center;
+  background: $background-color;
+
+  &::before {
+    content: "";
+    width: 7px;
+    height: 13px;
+    background-image: url("../img/icons/slider-arrow-right.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  &::after {
+    display: none;
+  }
+
+  &.swiper-button-disabled {
+    display: none;
+  }
+}
+
+.arrow-button-2--bordered {
+  border: 1px solid $border-color;
+}
