@@ -1012,7 +1012,7 @@ if (offersSection) {
     slidesPerView: 1,
     spaceBetween: 0,
     pagination: {
-      el: '.offers .tabs__pagination',
+      el: '.offers__tabs-pagination',
       clickable: true,
     },
     breakpoints: {

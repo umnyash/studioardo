@@ -41,7 +41,6 @@
   bottom: 0;
   right: 10px;
   left: 10px;
-  // margin: 0 10px;
 
   @media #{$tablet-desktop} {
     right: 30px;
@@ -52,10 +51,20 @@
     right: 50px;
     left: 50px;
   }
+
+  @media #{$desktop} {
+    right: 0;
+    left: 0;
+  }
 }
 
 .offers__tabs-wrapper {
   position: relative;
+
+  @media #{$desktop} {
+    width: 1400px;
+    margin: 0 auto;
+  }
 }
 
 .offers__button-prev,
@@ -88,5 +97,27 @@
   @media #{$tablet-desktop} {
     right: 0;
     transform: translate(50%, -50%);
+  }
+}
+
+.offers__tabs-pagination {
+  margin: 3px 0 0;
+  text-align: center;
+
+  .swiper-pagination-bullet {
+    width: 7px;
+    height: 7px;
+    margin: 3px;
+    background-color: $tabs-pagination-bullet-color;
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $special-color;
+  }
+
+  @media #{$desktop} {
+    width: 1400px;
+    margin: 0 auto;
   }
 }

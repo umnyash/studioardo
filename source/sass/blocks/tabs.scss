@@ -113,19 +113,19 @@
   }
 }
 
-.tabs__pagination {
-  margin: 3px 0 0;
-  text-align: center;
+// .tabs__pagination {
+//   margin: 3px 0 0;
+//   text-align: center;
 
-  .swiper-pagination-bullet {
-    width: 7px;
-    height: 7px;
-    margin: 3px;
-    background-color: $tabs-pagination-bullet-color;
-    opacity: 1;
-  }
+//   .swiper-pagination-bullet {
+//     width: 7px;
+//     height: 7px;
+//     margin: 3px;
+//     background-color: $tabs-pagination-bullet-color;
+//     opacity: 1;
+//   }
 
-  .swiper-pagination-bullet-active {
-    background-color: $special-color;
-  }
-}
+//   .swiper-pagination-bullet-active {
+//     background-color: $special-color;
+//   }
+// }

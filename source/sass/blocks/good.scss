@@ -142,6 +142,7 @@
 .good__info {
   position: relative;
   display: grid;
+  min-height: 47px;
   margin: 0 10px;
   row-gap: 9px;
   align-items: start;
@@ -194,12 +195,12 @@
 }
 
 .good__code-wrapper {
-  // margin: 2px 0 0;
   margin: 0;
   font-size: 13px;
   line-height: 18px;
   text-transform: lowercase;
   color: $weak-text-color;
+  word-break: break-all;
 }
 
 .good__code-button {
