@@ -1,8 +1,10 @@
 .n-collection {
   display: grid;
   box-sizing: border-box;
+  height: 100%;
   padding: 8px 8px 18px;
   border-radius: 10px;
+  grid-template-rows: auto 1fr auto;
   row-gap: 11px;
   align-content: start;
   font-family: $basic-font-family;
@@ -16,7 +18,8 @@
   grid-template-columns: 1fr auto;
   row-gap: 15px;
   column-gap: 20px;
-  align-items: center;
+  align-content: start;
+  align-items: start;
   border-bottom: 1px solid $good-main-border-color;
 }
 
@@ -62,9 +65,11 @@
 
 .n-collection__like {
   grid-column: 2 / 3;
+  align-self: start;
   margin: 0;
   width: 23px;
   height: 23px;
+  transform: translateY(10px);
 }
 
 .n-collection__labels-list {
@@ -162,6 +167,8 @@
 }
 
 .n-collection:hover {
+  height: auto;
+
   .n-collection__button {
     display: grid;
   }
