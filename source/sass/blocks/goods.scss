@@ -25,15 +25,15 @@
 .goods__button-wrapper {
   display: flex;
   padding: 0 14px;
-  margin: 40px 0 0;
+  margin: 30px 0 0; // 40,
 
   @media #{$tablet-desktop} {
     padding: 0;
   }
 
-  @media #{$laptop-desktop} {
-    margin-top: 50px;
-  }
+  // @media #{$laptop-desktop} {
+  //   margin-top: 50px;
+  // }
 }
 
 .goods__button {

@@ -60,21 +60,6 @@ const styles2 = () => {
 
 exports.styles2 = styles2;
 
-// Styles3
-
-const styles3 = () => {
-  return gulp.src('source/css/style.css')
-    .pipe(postcss([
-      autoprefixer(),
-      csso()
-    ]))
-    .pipe(rename('style.min.css'))
-    .pipe(gulp.dest('build/css'))
-    .pipe(sync.stream());
-}
-
-exports.styles3 = styles3;
-
 // Images
 
 const optimizeImages = () => {
@@ -244,7 +229,6 @@ const build = gulp.series(
   gulp.parallel(
     styles,
     styles2,
-    styles3,
     html,
     scripts,
     scripts2,
@@ -264,7 +248,6 @@ exports.default = gulp.series(
   gulp.parallel(
     styles,
     styles2,
-    styles3,
     html,
     scripts,
     scripts2,
