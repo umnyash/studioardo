@@ -997,7 +997,6 @@ if (popularGoodsSection) {
       } else if (breakpoint.matches === false && popGoodSwiper === undefined) {
         return enableSwiper();
       }
-
     };
 
     const enableSwiper = () => {
@@ -1028,7 +1027,6 @@ if (popularGoodsSection) {
         watchSlidesProgress: true
       });
     };
-
 
     window.addEventListener('resize', breakpointChecker);
     breakpointChecker();
