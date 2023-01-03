@@ -1,24 +1,19 @@
 .n-collection-list {
   display: grid;
-  padding: 0;
+  padding: 0 0 35px;
   list-style: none;
-  row-gap: 10px;
+  row-gap: 45px;
   column-gap: 9px;
   grid-template-columns: repeat(auto-fill, minmax(289px, 1fr));
 
   @media #{$tablet-desktop} {
-    row-gap: 20px;
+    row-gap: 55px;
   }
 }
 
 .n-collection-list__item {
   position: relative;
-  height: 433px;
   margin: 0;
-
-  @media #{$widemobile-desktop} {
-    height: 412px;
-  }
 
   &:hover,
   &:focus {

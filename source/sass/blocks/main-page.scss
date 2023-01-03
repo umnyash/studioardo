@@ -20,19 +20,11 @@
   margin-top: 0;
 }
 
-.main-page__current-offers {
-  margin-bottom: -27px;
-
-  @media #{$tablet-desktop} {
-    margin-bottom: -21px;
-  }
+.main-page__offers {
+  margin-bottom: 16px;
 
   @media #{$laptop-desktop} {
-    margin-bottom: -8px;
-  }
-
-  @media #{$desktop} {
-    margin-bottom: 1px;
+    margin-bottom: 30px;
   }
 }
 
@@ -145,3 +137,14 @@
   }
 }
 
+.main-page__body .goods--swiper .goods__inner {
+  @media #{$tablet-desktop} {
+    padding: 0 20px;
+  }
+}
+
+.main-page__body .goods__inner {
+  @media #{$laptop-desktop} {
+    padding: 0 50px;
+  }
+}

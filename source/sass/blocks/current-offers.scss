@@ -77,7 +77,7 @@
   margin: 0;
   padding: 23px 43px;
   background: $background-color;
-  border: 1px solid $links-list-border-color;
+  border: 1px solid $offers-tabs-border-color;
   border-radius: 18px;
   box-sizing: border-box;
   cursor: pointer;
@@ -176,7 +176,7 @@
   letter-spacing: 0;
   text-align: center;
   text-transform: none;
-  color: $offers-tab-title-color;
+  color: $accent-text-color;
 
   @media #{$tablet-desktop} {
     font-size: 14px;

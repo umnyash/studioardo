@@ -1,0 +1,131 @@
+.tabs {
+  border: 1px solid $tabs-slider-border-color;
+  border-radius: 18px;
+  background-color: $background-color;
+  overflow: hidden;
+  filter: drop-shadow(0px 290px 116px rgba(0, 0, 0, 0.01)) drop-shadow(0px 163px 98px rgba(0, 0, 0, 0.04)) drop-shadow(0px 72px 72px rgba(0, 0, 0, 0.06)) drop-shadow(0px 18px 40px rgba(0, 0, 0, 0.07)) drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.07));
+
+  @media #{$tablet-desktop} {
+    border-radius: 10px;
+    filter: drop-shadow(0px 18px 40px rgba(0, 0, 0, 0.07)) drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.07));
+  }
+}
+
+.tabs__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.tabs__item {
+  padding: 23px 43px;
+  margin: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  @media #{$tablet-desktop} {
+    position: relative;
+    padding: 20px 10px;
+  }
+
+  @media #{$laptop-desktop} {
+    min-width: 196px;
+    padding: 21px 8px 18px;
+  }
+
+  @media #{$desktop} {
+    padding: 23px 12px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -1px;
+    width: 1px;
+    height: 40px;
+    background-color: $tabs-slider-border-color;
+    transform: translateY(-50%);
+  }
+}
+
+.tabs__item.swiper-slide-thumb-active {
+  position: relative;
+  // overflow: hidden;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: $special-color;
+    transform: none;
+  }
+
+  @media #{$tablet-desktop} {
+    background-color: $tabs-active-background-color;
+
+    &::after {
+      height: 4px;
+      bottom: -1px;
+    }
+  }
+}
+
+.tabs__heading {
+  margin: 0 0 2px 0;
+  text-align: center;
+  font-family: $basic-font-family;
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  color: $accent-text-color;
+
+  @media #{$tablet-desktop} {
+    font-size: 14px;
+  }
+
+  @media #{$desktop} {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+}
+
+.tabs__text {
+  margin: 0;
+  font-family: $basic-font-family;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+  color: $tabs-text-color;
+
+  @media #{$laptop-desktop} {
+    font-size: 12px;
+  }
+
+  @media #{$desktop} {
+    font-size: 14px;
+  }
+}
+
+// .tabs__pagination {
+//   margin: 3px 0 0;
+//   text-align: center;
+
+//   .swiper-pagination-bullet {
+//     width: 7px;
+//     height: 7px;
+//     margin: 3px;
+//     background-color: $tabs-pagination-bullet-color;
+//     opacity: 1;
+//   }
+
+//   .swiper-pagination-bullet-active {
+//     background-color: $special-color;
+//   }
+// }

@@ -1,13 +1,15 @@
 .n-collection {
+  position: relative;
   display: grid;
   box-sizing: border-box;
+  height: 100%;
   padding: 8px 8px 18px;
   border-radius: 10px;
+  grid-template-rows: auto 1fr;
   row-gap: 11px;
-  align-content: start;
   font-family: $basic-font-family;
   background-color: $background-color;
-  box-shadow: 0px 3px 25px rgba(0, 0, 0, 0.06);
+  filter: drop-shadow(0px 3px 25px rgba(0, 0, 0, 0.06));
 }
 
 .n-collection__main {
@@ -16,7 +18,7 @@
   grid-template-columns: 1fr auto;
   row-gap: 15px;
   column-gap: 20px;
-  align-items: center;
+  align-content: space-between;
   border-bottom: 1px solid $good-main-border-color;
 }
 
@@ -65,6 +67,7 @@
   margin: 0;
   width: 23px;
   height: 23px;
+  transform: translateY(10px);
 }
 
 .n-collection__labels-list {
@@ -111,12 +114,20 @@
 }
 
 .n-collection__extra {
+  position: absolute;
+  right: 0;
+  bottom: 7px;
+  left: 0;
   display: grid;
-  padding: 0 10px;
+  padding: 0 18px 18px;
+  border-bottom-right-radius: inherit;
+  border-bottom-left-radius: inherit;
   grid-template-columns: 1fr auto;
   row-gap: 10px;
   column-gap: 20px;
-  align-items: center;
+  align-items: start;
+  background-color: inherit;
+  transform: translateY(100%);
 }
 
 .n-collection__price-code {

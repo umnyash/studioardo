@@ -37,7 +37,7 @@
   list-style: none;
   height: calc(137px + 137px + 8px);
 
-  @media #{$desktop} {
+  @media #{$laptop} {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 8px;
@@ -59,11 +59,7 @@
   }
 
   @media #{$laptop-desktop} {
-    min-width: 290px;
-  }
-
-  @media #{$desktop} {
-    width: 343px;
+    width: auto;
   }
 }
 
@@ -89,7 +85,7 @@
     align-self: flex-start;
   }
 
-  @media #{$desktop} {
+  @media #{$laptop-desktop} {
     display: none;
   }
 }

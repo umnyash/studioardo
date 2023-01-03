@@ -110,32 +110,6 @@ if (popups) {
   });
 }
 
-const numberFields = document.querySelectorAll('.number-field');
-
-if (numberFields) {
-  const setInputWidth = (input) => {
-    input.style.width = input.value.length + 1 + 'ch';
-  }
-
-  numberFields.forEach((numberField) => {
-    const numberControl = numberField.querySelector('.number-field__control');
-
-    numberField.querySelector('.number-field__button--minus').addEventListener('click', () => {
-      numberControl.stepDown();
-      setInputWidth(numberControl);
-    });
-
-    numberField.querySelector('.number-field__button--plus').addEventListener('click', () => {
-      numberControl.stepUp();
-      setInputWidth(numberControl);
-    });
-
-    numberControl.addEventListener('input', () => {
-      setInputWidth(numberControl);
-    });
-  });
-}
-
 const likeButtons = document.querySelectorAll('.like');
 
 if (likeButtons) {
@@ -510,101 +484,6 @@ if (promocodeElement && promocodeCancelButton && promocodeShowButton1 && promoco
   });
 }
 
-const closeNotification = (evt) => {
-  const notificationCloseButton = evt.target.closest('.notification__close');
-
-  if (!notificationCloseButton) {
-    return;
-  }
-
-  notificationCloseButton.closest('.good-order-notification').remove();
-};
-
-document.body.addEventListener('click', closeNotification);
-
-const goodLists = document.querySelectorAll('.good-list');
-
-if (goodLists) {
-  const addGoodToCart = (evt) => {
-    const goodCartButton = evt.target.closest('.good__add-cart');
-
-    if (!goodCartButton) {
-      return;
-    }
-
-    const good = goodCartButton.closest('.good');
-    good.classList.add('good--in-cart');
-  };
-
-  const removeFromCart = (evt) => {
-    const goodCartButton = evt.target.closest('.good__remove-cart');
-
-    if (!goodCartButton) {
-      return;
-    }
-
-    const good = goodCartButton.closest('.good');
-    good.classList.remove('good--in-cart');
-  }
-
-  const quickOrderGood = (evt) => {
-    const goodQuickOrderButton = evt.target.closest('.good__quick-order-button');
-
-    if (!goodQuickOrderButton) {
-      return;
-    }
-
-    const good = goodQuickOrderButton.closest('.good');
-    good.classList.add('good--quick-order');
-  };
-
-  const cancelQuickOrder = (evt) => {
-    const goodQuickOrderCancelButton = evt.target.closest('.good__cancel-order');
-
-    if (!goodQuickOrderCancelButton) {
-      return;
-    }
-
-    const good = goodQuickOrderCancelButton.closest('.good');
-    good.classList.remove('good--quick-order');
-  };
-
-  const showGoodOrderNotification = (status, text) => {
-    const notification = `
-      <div class="good-order-notification">
-        <div class="notification notification--alter notification--${status}">
-          <p class="notification__text">${text}</p>
-          <button class="notification__close" type="button">
-            <span class="visually-hidden">Закрыть уведомление</span>
-          </button>
-        </div>
-      </div>
-    `;
-    document.body.insertAdjacentHTML('beforeend', notification);
-  }
-
-  const submitQuickOrder = (evt) => {
-    const goodQuickOrderSubmitButton = evt.target.closest('.good__submit-order');
-
-    if (!goodQuickOrderSubmitButton) {
-      return;
-    }
-
-    const good = goodQuickOrderSubmitButton.closest('.good');
-    good.classList.remove('good--quick-order');
-    showGoodOrderNotification('success', 'С вами свяжется менеджер для подтверждения заказа');
-  };
-
-  goodLists.forEach((list) => {
-    list.addEventListener('click', submitQuickOrder);
-    list.addEventListener('click', addGoodToCart);
-    list.addEventListener('click', removeFromCart);
-    list.addEventListener('click', quickOrderGood);
-    list.addEventListener('click', cancelQuickOrder);
-  });
-}
-
-
 const inspirationGallery = document.querySelector('.inspiration');
 
 if (inspirationGallery) {
@@ -622,7 +501,7 @@ const productsSection = document.querySelector('.products');
 
 if (productsSection) {
   (function () {
-    const breakpoint = window.matchMedia('(min-width: 1440px)');
+    const breakpoint = window.matchMedia('(min-width: 1280px)');
     const productsSwiper = document.querySelector('.products-swiper');
     const productsList = document.querySelector('.products__list');
     const productSlides = document.querySelectorAll('.products__item');
@@ -633,7 +512,8 @@ if (productsSection) {
       if (breakpoint.matches === true) {
 
         if (productSwiper !== undefined) {
-          productsSwiper.destroy(true, true);
+          productSwiper.destroy(true, true);
+          productSwiper = undefined;
           productsSwiper.classList.remove('swiper');
           productsList.classList.remove('swiper-wrapper');
           productSlides.forEach((slide) => {
@@ -642,12 +522,10 @@ if (productsSection) {
         }
 
         return;
-      } else if (breakpoint.matches === false) {
-        if (productsSwiper.classList.contains('swiper')) {
-          return;
-        } else {
-          return enableSwiper();
-        }
+      } else if (breakpoint.matches === false && productSwiper === undefined) {
+
+        return enableSwiper();
+
       }
 
     };
@@ -708,7 +586,7 @@ if (serviceSwiper) {
     watchOverflow: true,
     spaceBetween: 5,
     breakpoints: {
-      1280: {
+      768: {
         slidesPerView: 3,
         spaceBetween: 7,
       },
@@ -914,7 +792,8 @@ if (brandsSection) {
       if (breakpoint.matches === false) {
 
         if (brandSwiper !== undefined) {
-          brandsSwiper.destroy(true, true);
+          brandSwiper.destroy(true, true);
+          brandSwiper = undefined;
           brandsSwiper.classList.remove('swiper');
           brandsList.classList.remove('swiper-wrapper');
           brandsSlides.forEach((slide) => {
@@ -923,14 +802,10 @@ if (brandsSection) {
         }
         return;
 
-      } else if (breakpoint.matches === true) {
-        if (brandsSwiper.classList.contains('swiper')) {
-          return;
-        } else {
-          return enableSwiper();
-        }
-      }
+      } else if (breakpoint.matches === true && brandSwiper === undefined) {
+        return enableSwiper();
 
+      }
     };
 
     const enableSwiper = () => {
@@ -943,13 +818,11 @@ if (brandsSection) {
       brandSwiper = new Swiper('.brands-swiper', {
         slidesPerView: 'auto',
         spaceBetween: 5,
-        loop: true,
         navigation: {
           nextEl: ".n-brands__arrow--next",
           prevEl: ".n-brands__arrow--back",
         },
       });
-
     };
 
     window.addEventListener('resize', breakpointChecker);
@@ -969,12 +842,11 @@ if (newsSection) {
   });
 };
 
-const offersSection = document.querySelector('.current-offers');
-if (offersSection) {
+const currentOffersSection = document.querySelector('.current-offers');
+if (currentOffersSection) {
   const tabSwiper = new Swiper('.offers-tabs-swiper', {
     slidesPerView: 1,
     spaceBetween: 0,
-    loop: true,
     pagination: {
       el: '.current-offers__dots',
       bulletActiveClass: 'current-offers__dot--current',
@@ -989,7 +861,6 @@ if (offersSection) {
       1280: {
         slidesPerView: 6,
         slidesPerGroup: 1,
-        loop: false,
       },
     },
   });
@@ -997,7 +868,6 @@ if (offersSection) {
   const swiper = new Swiper('.current-offers__slider', {
     slidesPerView: 1,
     spaceBetween: 0,
-    loop: true,
     navigation: {
       nextEl: ".current-offers__arrow--next",
       prevEl: ".current-offers__arrow--back",
@@ -1011,6 +881,45 @@ if (offersSection) {
     },
     autoplay: {
       delay: 12000,
+    },
+  });
+};
+
+const offersSection = document.querySelector('.offers');
+if (offersSection) {
+  const tabs = new Swiper('.offers .tabs__slider', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    pagination: {
+      el: '.offers__tabs-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+      },
+      1280: {
+        slidesPerView: 6,
+        slidesPerGroup: 1,
+      },
+    },
+  });
+
+  const slides = new Swiper('.offers__slider', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    navigation: {
+      nextEl: ".offers__button-next",
+      prevEl: ".offers__button-prev",
+    },
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+    thumbs: {
+      swiper: tabs,
     },
   });
 };
@@ -1073,8 +982,8 @@ if (popularGoodsSection) {
       if (breakpoint.matches === true) {
 
         if (popGoodSwiper !== undefined) {
-          popGoodsSwiper.destroy(true, true);
-
+          popGoodSwiper.destroy(true, true);
+          popGoodSwiper = undefined;
           popularGoodsSection.classList.remove('goods--swiper');
           popGoodsSwiper.classList.remove('swiper');
           popGoodsList.classList.remove('swiper-wrapper');
@@ -1085,14 +994,9 @@ if (popularGoodsSection) {
 
         return;
 
-      } else if (breakpoint.matches === false) {
-        if (popGoodsSwiper.classList.contains('swiper')) {
-          return;
-        } else {
-          return enableSwiper();
-        }
+      } else if (breakpoint.matches === false && popGoodSwiper === undefined) {
+        return enableSwiper();
       }
-
     };
 
     const enableSwiper = () => {

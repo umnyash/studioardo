@@ -26,7 +26,9 @@
     </style>
   </head>
   <body class="page-body">
-    <div class="preloader preloader--active preloader--mobile-only"></div>
+    <div class="preloader preloader--active preloader--mobile-only">
+      <img class="preloader__img" src="img/icons/loader.svg" width="70" height="70" alt="Загрузка...">
+    </div>
     <main>
       <div class="filter-page">
         <div class="filter-page__container">
@@ -14002,7 +14004,10 @@
           <div class="bx-filter-parameters-box-container">
             <button type="button" class="c-filter__collapse"></button>
             <input class="c-filter__btn c-filter__btn--reset" type="button" id="del_filter" name="del_filter" value="Сбросить фильтр">
-            <input class="c-filter__btn c-filter__btn--submit loader" type="button" id="set_filter" name="set_filter" value="Показать">
+            <span class="c-filter__btn-submit-wrapper loader">
+              <input class="c-filter__btn c-filter__btn--submit" type="button" id="set_filter" name="set_filter" value="Показать">
+              <img class="loader__img" src="img/icons/loader.svg" width="20" height="20" alt="Загрузка...">
+            </span>
           </div>
         </div>
       </div>
@@ -14026,7 +14031,7 @@
       const preloader = document.querySelector('.preloader');
 
       document.querySelector('.c-filter__btn--submit').addEventListener('click', (evt) => {
-        evt.target.classList.toggle('loader');
+        evt.target.parentNode.classList.toggle('loader');
         preloader.classList.toggle('preloader--active');
       })
     </script>

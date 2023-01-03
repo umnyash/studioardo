@@ -2,19 +2,13 @@
   display: grid;
   padding: 0;
   row-gap: 10px;
-  column-gap: 9px;
+  column-gap: 8px;
   list-style: none;
   grid-template-columns: repeat(auto-fill, minmax(289px, 1fr));
 
   @media #{$tablet-desktop} {
     row-gap: 20px;
   }
-}
-
-.good-list.swiper-wrapper {
-  display: flex;
-  row-gap: 0;
-  column-gap: 0;
 }
 
 .good-list__item {

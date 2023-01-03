@@ -4,358 +4,268 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/normalize.css" rel="stylesheet">
-    <link href="css/libs.min.css" rel="stylesheet">
+    <!-- <link href="css/libs.min.css" rel="stylesheet">
     <link href="css/choices.min.css" rel="stylesheet">
-    <link href="css/swiper.min.css" rel="stylesheet">
+    <link href="css/swiper.min.css" rel="stylesheet"> -->
     <link href="css/swiper-bundle.min.css" rel="stylesheet">
-    <link href="css/styles.min.css" rel="stylesheet">
+    <!-- <link href="css/styles.min.css" rel="stylesheet">
     <link href="css/style.min.css" rel="stylesheet">
-    <link href="css/custom.min.css" rel="stylesheet">
+    <link href="css/custom.min.css" rel="stylesheet"> -->
     <link href="css/new.css" rel="stylesheet"> <!-- Новые стили -->
-    <title>Камень - страница товара</title>
+    <title>Главная, вариант 2</title>
     <meta name="format-detection" content="telephone=no"/>
     <meta name="format-detection" content="address=no"/>
   </head>
   <body class="page-body">
-    <main class="stone-product-page">
-      <section class="stone-product-page__banner n-banner">
-        <picture class="n-banner__img-wrapper" aria-hidden="true">
-          <source type="image/webp" media="(min-width: 1281px)" srcset="img/stone/hero/marble-window-sills-hero-bg-desktop.webp 1x, img/stone/hero/marble-window-sills-hero-bg-desktop@2x.webp 2x">
-          <source type="image/webp" media="(min-width: 769px)" srcset="img/stone/hero/marble-window-sills-hero-bg-laptop.webp 1x, img/stone/hero/marble-window-sills-hero-bg-laptop@2x.webp 2x">
-          <source type="image/webp" media="(min-width: 376px)" srcset="img/stone/hero/marble-window-sills-hero-bg-tablet.webp 1x, img/stone/hero/marble-window-sills-hero-bg-tablet@2x.webp 2x">
-          <source type="image/webp" srcset="img/stone/hero/marble-window-sills-hero-bg.webp 1x, img/stone/hero/marble-window-sills-hero-bg@2x.webp 2x">
-          <source media="(min-width: 1281px)" srcset="img/stone/hero/marble-window-sills-hero-bg-desktop.jpg 1x, img/stone/hero/marble-window-sills-hero-bg-desktop@2x.jpg 2x">
-          <source media="(min-width: 769px)" srcset="img/stone/hero/marble-window-sills-hero-bg-laptop.jpg 1x, img/stone/hero/marble-window-sills-hero-bg-laptop@2x.jpg 2x">
-          <source media="(min-width: 376px)" srcset="img/stone/hero/marble-window-sills-hero-bg-tablet.jpg 1x, img/stone/hero/marble-window-sills-hero-bg-tablet@2x.jpg 2x">
-          <img class="n-banner__img" src="img/stone/hero/marble-window-sills-hero-bg.jpg" srcset="img/stone/hero/marble-window-sills-hero-bg@2x.jpg 2x">
-        </picture>
-        <div class="n-banner__content-wrapper">
-          <div class="n-banner__content">
-            <div class="n-banner__content-inner">
-              <div class="n-banner__text-content">
-                <h1 class="n-banner__heading">Подоконники из&nbsp;мрамора</h1>
-                <p class="n-banner__text">Делают интерьер неповторимым и придадут шарм природного материала</p>
-                <div class="n-banner__buttons">
-                  <a class="button button--primary button--alter-3 button--fw600" href="#!">Заказать расчет</a>
-                  <a class="button button--secondary button--alter-3 button--fw600" href="#!">Рассчитать самому</a>
+    <main>
+      <h1 class="visually-hidden">Ardo Studio – студия плитки, сантехники, изделий из камня</h1>
+
+      <section class="offers">
+        <h2 class="visually-hidden">Актуальные предложения</h2>
+        <div class="offers__slider swiper">
+          <ul class="offers__list swiper-wrapper">
+            <li class="offers__item n-banner n-banner--alter swiper-slide">
+              <div class="n-banner__content-wrapper">
+                <div class="n-banner__content">
+                  <div class="n-banner__content-inner">
+                    <div class="n-banner__text-content">
+                      <h1 class="n-banner__heading">Летнее предложение! -45%</h1>
+                      <p class="n-banner__text">Скидки до -45% на керамогранит и керамическую плитку до 31 июля</p>
+                      <a class="n-banner__button button button--secondary button--alter-3 button--fw600" href="#!">Перейти к товарам</a>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <a class="n-banner__video-link" href="#manufacture-video">Видео с производства</a>
+              <picture class="n-banner__img-wrapper">
+                <source type="image/webp" media="(min-width: 1510px)" srcset="img/offers/offer-desktop-1.webp, img/offers/offer-desktop-1@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 1280px)" srcset="img/offers/offer-laptop-1.webp, img/offers/offer-laptop-1@2x.webp 2x">
+                <source type="image/webp"  media="(min-width: 768px)" srcset="img/offers/offer-tablet-1.webp, img/offers/offer-tablet-1@2x.webp 2x">
+                <source type="image/webp" srcset="img/offers/offer-mobile-1.webp, img/offers/offer-mobile-1@2x.webp 2x">
+                <source media="(min-width: 1510px)" srcset="img/offers/offer-desktop-1.jpg, img/offers/offer-desktop-1@2x.jpg 2x">
+                <source media="(min-width: 1280px)" srcset="img/offers/offer-laptop-1.jpg, img/offers/offer-laptop-1@2x.jpg 2x">
+                <source media="(min-width: 768px)" srcset="img/offers/offer-tablet-1.jpg, img/offers/offer-tablet-1@2x.jpg 2x">
+                <img class="n-banner__img" src="img/offers/offer-mobile-1.jpg" srcset="img/offers/offer-mobile-1@2x.jpg 2x" alt="" width="375" height="452">
+              </picture>
+            </li>
+            <li class="offers__item n-banner n-banner--alter swiper-slide">
+              <div class="n-banner__content-wrapper">
+                <div class="n-banner__content">
+                  <div class="n-banner__content-inner">
+                    <div class="n-banner__text-content">
+                      <h1 class="n-banner__heading">Комфортное место для выбора материалов</h1>
+                      <p class="n-banner__text">Шоу-рум 1000 м2. Удобные переговорные и итальянский welcome-кофе</p>
+                      <a class="n-banner__button button button--secondary button--alter-3 button--fw600" href="#!">Перейти к товарам</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <picture class="n-banner__img-wrapper">
+                <source type="image/webp" media="(min-width: 1510px)" srcset="img/offers/offer-desktop-2.webp, img/offers/offer-desktop-2@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 1280px)" srcset="img/offers/offer-laptop-2.webp, img/offers/offer-laptop-2@2x.webp 2x">
+                <source type="image/webp"  media="(min-width: 768px)" srcset="img/offers/offer-tablet-2.webp, img/offers/offer-tablet-2@2x.webp 2x">
+                <source type="image/webp" srcset="img/offers/offer-mobile-2.webp, img/offers/offer-mobile-2@2x.webp 2x">
+                <source media="(min-width: 1510px)" srcset="img/offers/offer-desktop-2.jpg, img/offers/offer-desktop-2@2x.jpg 2x">
+                <source media="(min-width: 1280px)" srcset="img/offers/offer-laptop-2.jpg, img/offers/offer-laptop-2@2x.jpg 2x">
+                <source media="(min-width: 768px)" srcset="img/offers/offer-tablet-2.jpg, img/offers/offer-tablet-2@2x.jpg 2x">
+                <img class="n-banner__img" src="img/offers/offer-mobile-2.jpg" srcset="img/offers/offer-mobile-2@2x.jpg 2x" alt="" width="375" height="452">
+              </picture>
+            </li>
+            <li class="offers__item n-banner n-banner--alter swiper-slide">
+              <div class="n-banner__content-wrapper">
+                <div class="n-banner__content">
+                  <div class="n-banner__content-inner">
+                    <div class="n-banner__text-content">
+                      <h1 class="n-banner__heading">Панно из мозаики по вашему эскизу</h1>
+                      <p class="n-banner__text">Произведение искусства в единичном экземпляре у вас дома</p>
+                      <a class="n-banner__button button button--secondary button--alter-3 button--fw600" href="#!">Перейти к товарам</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <picture class="n-banner__img-wrapper">
+                <source type="image/webp" media="(min-width: 1510px)" srcset="img/offers/offer-desktop-3.webp, img/offers/offer-desktop-3@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 1280px)" srcset="img/offers/offer-laptop-3.webp, img/offers/offer-laptop-3@2x.webp 2x">
+                <source type="image/webp"  media="(min-width: 768px)" srcset="img/offers/offer-tablet-3.webp, img/offers/offer-tablet-3@2x.webp 2x">
+                <source type="image/webp" srcset="img/offers/offer-mobile-3.webp, img/offers/offer-mobile-3@2x.webp 2x">
+                <source media="(min-width: 1510px)" srcset="img/offers/offer-desktop-3.jpg, img/offers/offer-desktop-3@2x.jpg 2x">
+                <source media="(min-width: 1280px)" srcset="img/offers/offer-laptop-3.jpg, img/offers/offer-laptop-3@2x.jpg 2x">
+                <source media="(min-width: 768px)" srcset="img/offers/offer-tablet-3.jpg, img/offers/offer-tablet-3@2x.jpg 2x">
+                <img class="n-banner__img" src="img/offers/offer-mobile-3.jpg" srcset="img/offers/offer-mobile-3@2x.jpg 2x" alt="" width="375" height="452">
+              </picture>
+            </li>
+            <li class="offers__item n-banner n-banner--alter swiper-slide">
+              <div class="n-banner__content-wrapper">
+                <div class="n-banner__content">
+                  <div class="n-banner__content-inner">
+                    <div class="n-banner__text-content">
+                      <h1 class="n-banner__heading">Изделия из камня по индивидуальному дизайну</h1>
+                      <p class="n-banner__text">Сделают интерьер неповторимым и придадут шарм природного материала.</p>
+                      <a class="n-banner__button button button--secondary button--alter-3 button--fw600" href="#!">Перейти к товарам</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <picture class="n-banner__img-wrapper">
+                <source type="image/webp" media="(min-width: 1510px)" srcset="img/offers/offer-desktop-4.webp, img/offers/offer-desktop-4@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 1280px)" srcset="img/offers/offer-laptop-4.webp, img/offers/offer-laptop-4@2x.webp 2x">
+                <source type="image/webp"  media="(min-width: 768px)" srcset="img/offers/offer-tablet-4.webp, img/offers/offer-tablet-4@2x.webp 2x">
+                <source type="image/webp" srcset="img/offers/offer-mobile-4.webp, img/offers/offer-mobile-4@2x.webp 2x">
+                <source media="(min-width: 1510px)" srcset="img/offers/offer-desktop-4.jpg, img/offers/offer-desktop-4@2x.jpg 2x">
+                <source media="(min-width: 1280px)" srcset="img/offers/offer-laptop-4.jpg, img/offers/offer-laptop-4@2x.jpg 2x">
+                <source media="(min-width: 768px)" srcset="img/offers/offer-tablet-4.jpg, img/offers/offer-tablet-4@2x.jpg 2x">
+                <img class="n-banner__img" src="img/offers/offer-mobile-4.jpg" srcset="img/offers/offer-mobile-4@2x.jpg 2x" alt="" width="375" height="452">
+              </picture>
+            </li>
+            <li class="offers__item n-banner n-banner--alter swiper-slide">
+              <div class="n-banner__content-wrapper">
+                <div class="n-banner__content">
+                  <div class="n-banner__content-inner">
+                    <div class="n-banner__text-content">
+                      <h1 class="n-banner__heading">Панно из мозаики</h1>
+                      <p class="n-banner__text">Новые поступления</p>
+                      <a class="n-banner__button button button--secondary button--alter-3 button--fw600" href="#!">Перейти к товарам</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <picture class="n-banner__img-wrapper">
+                <source type="image/webp" media="(min-width: 1510px)" srcset="img/offers/offer-desktop-3.webp, img/offers/offer-desktop-3@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 1280px)" srcset="img/offers/offer-laptop-3.webp, img/offers/offer-laptop-3@2x.webp 2x">
+                <source type="image/webp"  media="(min-width: 768px)" srcset="img/offers/offer-tablet-3.webp, img/offers/offer-tablet-3@2x.webp 2x">
+                <source type="image/webp" srcset="img/offers/offer-mobile-3.webp, img/offers/offer-mobile-3@2x.webp 2x">
+                <source media="(min-width: 1510px)" srcset="img/offers/offer-desktop-3.jpg, img/offers/offer-desktop-3@2x.jpg 2x">
+                <source media="(min-width: 1280px)" srcset="img/offers/offer-laptop-3.jpg, img/offers/offer-laptop-3@2x.jpg 2x">
+                <source media="(min-width: 768px)" srcset="img/offers/offer-tablet-3.jpg, img/offers/offer-tablet-3@2x.jpg 2x">
+                <img class="n-banner__img" src="img/offers/offer-mobile-3.jpg" srcset="img/offers/offer-mobile-3@2x.jpg 2x" alt="" width="375" height="452">
+              </picture>
+            </li>
+            <li class="offers__item n-banner n-banner--alter swiper-slide">
+              <div class="n-banner__content-wrapper">
+                <div class="n-banner__content">
+                  <div class="n-banner__content-inner">
+                    <div class="n-banner__text-content">
+                      <h1 class="n-banner__heading">Отобрали лучшие коллекции на выставках Европы и предлагаем Вам</h1>
+                      <p class="n-banner__text">5 000 позиций керамики и сантехникив в наличии и более 90 эксклюзивных брендов</p>
+                      <a class="n-banner__button button button--secondary button--alter-3 button--fw600" href="#!">Перейти к товарам</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <picture class="n-banner__img-wrapper">
+                <source type="image/webp" media="(min-width: 1510px)" srcset="img/offers/offer-desktop-5.webp, img/offers/offer-desktop-5@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 1280px)" srcset="img/offers/offer-laptop-5.webp, img/offers/offer-laptop-5@2x.webp 2x">
+                <source type="image/webp"  media="(min-width: 768px)" srcset="img/offers/offer-tablet-5.webp, img/offers/offer-tablet-5@2x.webp 2x">
+                <source type="image/webp" srcset="img/offers/offer-mobile-5.webp, img/offers/offer-mobile-5@2x.webp 2x">
+                <source media="(min-width: 1510px)" srcset="img/offers/offer-desktop-5.jpg, img/offers/offer-desktop-5@2x.jpg 2x">
+                <source media="(min-width: 1280px)" srcset="img/offers/offer-laptop-5.jpg, img/offers/offer-laptop-5@2x.jpg 2x">
+                <source media="(min-width: 768px)" srcset="img/offers/offer-tablet-5.jpg, img/offers/offer-tablet-5@2x.jpg 2x">
+                <img class="n-banner__img" src="img/offers/offer-mobile-5.jpg" srcset="img/offers/offer-mobile-5@2x.jpg 2x" alt="" width="375" height="452">
+              </picture>
+            </li>
+          </ul>
+        </div>
+        <div class="offers__controls">
+          <div class="offers__tabs-wrapper">
+            <div class="offers__tabs tabs">
+              <div class="tabs__slider swiper">
+                <ul class="tabs__list swiper-wrapper">
+                  <li class="tabs__item swiper-slide">
+                    <h3 class="tabs__heading">Спец предложение!</h3>
+                    <p class="tabs__text">Скидки до -45% </p>
+                  </li>
+                  <li class="tabs__item swiper-slide">
+                    <h3 class="tabs__heading">Керамика и сантехника</h3>
+                    <p class="tabs__text">Лучшие коллекции Европы</p>
+                  </li>
+                  <li class="tabs__item swiper-slide">
+                    <h3 class="tabs__heading">Шоу-рум</h3>
+                    <p class="tabs__text">1000 м2</p>
+                  </li>
+                  <li class="tabs__item swiper-slide">
+                    <h3 class="tabs__heading">Изделия из камня</h3>
+                    <p class="tabs__text">Индивидуальное производство</p>
+                  </li>
+                  <li class="tabs__item swiper-slide">
+                    <h3 class="tabs__heading">Панно из мозаики</h3>
+                    <p class="tabs__text">По вашему эскизу</p>
+                  </li>
+                  <li class="tabs__item swiper-slide">
+                    <h3 class="tabs__heading">Паркет и доска</h3>
+                    <p class="tabs__text">Премиальное качество</p>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
-      <div class="stone-product-page__advantages-and-widget advantages-and-widget">
-        <div class="advantages-and-widget__inner">
-          <section class="advantages-and-widget__advantages n-advantages n-advantages--left-column--desktop">
-            <h2 class="visually-hidden">Преимущества</h2>
-            <ul class="n-advantages__list">
-              <li class="n-advantages__item">
-                <p class="n-advantages__name">Без переплат</p>
-                <div class="n-advantages__info">
-                  <picture class="n-advantages__img-wrapper">
-                    <img class="n-advantages__img" src="img/stone/advantages/stone-advantage-1.jpg" alt="Ресепшен студии Ардо." width="335" height="95">
-                  </picture>
-                  <p class="n-advantages__text">За счет прямых поставок камня из Италии, Испании, России, Греции, Бразилии, Индии и Китая</p>
-                </div>
-              </li>
-              <li class="n-advantages__item">
-                <p class="n-advantages__name">Точная геометрия изделий</p>
-                <div class="n-advantages__info">
-                  <picture class="n-advantages__img-wrapper">
-                    <img class="n-advantages__img" src="img/stone/advantages/stone-advantage-2.jpg" alt="ЧПУ станок." width="335" height="95">
-                  </picture>
-                  <p class="n-advantages__text">Используем высокоточное итальянское оборудование (ЧПУ станки)</p>
-                </div>
-              </li>
-              <li class="n-advantages__item">
-                <p class="n-advantages__name">Всё пройдёт, как задумано</p>
-                <div class="n-advantages__info">
-                  <picture class="n-advantages__img-wrapper">
-                    <img class="n-advantages__img" src="img/stone/advantages/stone-advantage-3.jpg" alt="Кладка плитки." width="335" height="95">
-                  </picture>
-                  <p class="n-advantages__text">Мастера со стажем работы с камнем более 10 лет осуществят обработку камня, доставку и установку "под ключ"</p>
-                </div>
-              </li>
-              <li class="n-advantages__item">
-                <p class="n-advantages__name">Виды изделий неограничены</p>
-                <div class="n-advantages__info">
-                  <picture class="n-advantages__img-wrapper">
-                    <img class="n-advantages__img" src="img/stone/advantages/stone-advantage-4.jpg" alt="Узор из камня." width="335" height="95">
-                  </picture>
-                  <p class="n-advantages__text">Разрабатываем как стандартные, так и нетиповые изделия из камня. Любим работать  с дизайнерами</p>
-                </div>
-              </li>
-            </ul>
-          </section>
-          <a class="advantages-and-widget__widget link badge-widget metrika link__control i-bem badge-widget_js_inited link_js_inited link__control_js_inited" data-bem="{&quot;link&quot;:{},&quot;badge-widget&quot;:{},&quot;metrika&quot;:{&quot;goal&quot;:&quot;BADGE_REVIEWS_CLICK&quot;}}" style="background-image: url(https://avatars.mds.yandex.net/get-altay/1860543/badge_rating_4.7/orig);" role="link" href="//yandex.ru/profile/1245017224?intent=reviews&amp;utm_source=badge&amp;utm_medium=rating&amp;utm_campaign=v1" target="_blank"></a>
-        </div>
-      </div>
-      <section class="stone-product-page__materials materials">
-        <div class="materials__inner">
-          <h2 class="visually-hidden">Более 100 видов камня</h2>
-          <div class="materials__slider materials__slider--alter n-slider swiper">
-            <ul class="materials__list materials__list--small n-slider__list swiper-wrapper">
-              <li class="materials__item material material--alter swiper-slide">
-                <a class="material__link" href="#">
-                  <div class="material__text-content">
-                    <h3 class="material__heading">Мрамор Сани Дарк</h3>
-                  </div>
-                  <picture class="material__img-wrapper">
-                    <img class="material__img" src="img/stone/materials/material-1.jpg" width="331" height="300" alt="Мрамор.">
-                  </picture>
-                </a>
-              </li>
-              <li class="materials__item material material--alter swiper-slide">
-                <a class="material__link" href="#">
-                  <div class="material__text-content">
-                    <h3 class="material__heading">Мрамор Сивек</h3>
-                  </div>
-                  <picture class="material__img-wrapper">
-                    <img class="material__img" src="img/stone/materials/material-2.jpg" width="331" height="300" alt="Гранит.">
-                  </picture>
-                </a>
-              </li>
-              <li class="materials__item material material--alter swiper-slide">
-                <a class="material__link" href="#">
-                  <div class="material__text-content">
-                    <h3 class="material__heading">Сильвия Оро</h3>
-                  </div>
-                  <picture class="material__img-wrapper">
-                    <img class="material__img" src="img/stone/materials/material-3.jpg" width="331" height="300" alt="Мрамор.">
-                  </picture>
-                </a>
-              </li>
-              <li class="materials__item material material--alter swiper-slide">
-                <a class="material__link" href="#">
-                  <div class="material__text-content">
-                    <h3 class="material__heading">Мрамор Статуарио</h3>
-                  </div>
-                  <picture class="material__img-wrapper">
-                    <img class="material__img" src="img/stone/materials/material-4.jpg" width="331" height="300" alt="Мрамор.">
-                  </picture>
-                </a>
-              </li>
-              <li class="materials__item material material--alter swiper-slide">
-                <a class="material__link" href="#">
-                  <div class="material__text-content">
-                    <h3 class="material__heading">Мрамор Сани Дарк</h3>
-                  </div>
-                  <picture class="material__img-wrapper">
-                    <img class="material__img" src="img/stone/materials/material-2.jpg" width="331" height="300" alt="Гранит.">
-                  </picture>
-                </a>
-              </li>
-              <li class="materials__item material material--alter swiper-slide">
-                <a class="material__link" href="#">
-                  <div class="material__text-content">
-                    <h3 class="material__heading">Мрамор Сани Дарк</h3>
-                  </div>
-                  <picture class="material__img-wrapper">
-                    <img class="material__img" src="img/stone/materials/material-2.jpg" width="331" height="300" alt="Гранит.">
-                  </picture>
-                </a>
-              </li>
-              <li class="materials__item material material--alter swiper-slide">
-                <a class="material__link" href="#">
-                  <div class="material__text-content">
-                    <h3 class="material__heading">Мрамор Сани Дарк</h3>
-                  </div>
-                  <picture class="material__img-wrapper">
-                    <img class="material__img" src="img/stone/materials/material-3.jpg" width="331" height="300" alt="Мрамор.">
-                  </picture>
-                </a>
-              </li>
-              <li class="materials__item material material--alter swiper-slide">
-                <a class="material__link" href="#">
-                  <div class="material__text-content">
-                    <h3 class="material__heading">Мрамор Сани Дарк</h3>
-                  </div>
-                  <picture class="material__img-wrapper">
-                    <img class="material__img" src="img/stone/materials/material-4.jpg" width="331" height="300" alt="Мрамор.">
-                  </picture>
-                </a>
-              </li>
-            </ul>
-            <button class="materials__slider-button materials__slider-button--prev n-slider__button n-slider__button--prev swiper-button-prev" type="button">
+            <button class="offers__button-prev arrow-button-2 arrow-button-2--bordered swiper-button-prev" type="button">
               <span class="visually-hidden">Предыдущий слайд</span>
             </button>
-            <button class="materials__slider-button materials__slider-button--next n-slider__button n-slider__button--next swiper-button-next" type="button">
+            <button class="offers__button-next arrow-button-2 arrow-button-2--bordered swiper-button-next" type="button">
               <span class="visually-hidden">Следущий слайд</span>
             </button>
           </div>
+          <div class="tabs__pagination"></div>
         </div>
       </section>
-      <section class="stone-product-page__n-products n-products">
-        <div class="n-products__inner">
-          <h2 class="visually-hidden">Подоконнки</h2>
-          <ul class="n-products__list">
-            <li class="n-products__item">
-              <div class="n-products__item-info product-info">
-                <h3 class="product-info__heading heading heading--alter-2">Подоконник из мрамора</h3>
-                <dl class="product-info__list characteristics-2">
-                  <div class="characteristics-2__item">
-                    <dt class="characteristics-2__key">Материал:</dt>
-                    <dd class="characteristics-2__value">Мрамор</dd>
-                  </div>
-                  <div class="characteristics-2__item">
-                    <dt class="characteristics-2__key">Размер:</dt>
-                    <dd class="characteristics-2__value">40х120 см</dd>
-                  </div>
-                  <div class="characteristics-2__item">
-                    <dt class="characteristics-2__key">Срок изготовления:</dt>
-                    <dd class="characteristics-2__value">20 дней</dd>
-                  </div>
-                  <div class="characteristics-2__item">
-                    <dt class="characteristics-2__key">Форма:</dt>
-                    <dd class="characteristics-2__value">Название формы</dd>
-                  </div>
-                  <div class="characteristics-2__item">
-                    <dt class="characteristics-2__key">Тип профиля:</dt>
-                    <dd class="characteristics-2__value">№4</dd>
-                    <dd class="characteristics-2__value-img">
-                      <img src="img/stone/drawing/end-profile-4.svg" width="50" alt="Рисунок профиля.">
-                    </dd>
-                  </div>
-                  <div class="characteristics-2__item">
-                    <dt class="characteristics-2__key">Тип подклейки:</dt>
-                    <dd class="characteristics-2__value">№1</dd>
-                    <dd class="characteristics-2__value-img">
-                      <img src="img/stone/drawing/gluing-1.svg" width="50" alt="Рисунок подклейки.">
-                    </dd>
-                  </div>
-                </dl>
-                <p class="product-info__price-wrapper">
-                  Цена от <span class="n-product__price">7&nbsp;000</span>₽ п.метр
-                </p>
-                <div class="product-info__buttons">
-                  <button class="product-info__button button button--primary-2" type="button">Подробнее</button>
-                  <button class="product-info__button button button--secondary" type="button">Рассчитать мой вариант</button>
-                </div>
-              </div>
-              <div class="n-products__item-gallery">
-                <div class="n-products__item-slider n-slider n-slider--alter swiper">
-                  <ul class="n-slider__list swiper-wrapper">
-                    <li class="n-slider__item swiper-slide">
-                      <picture class="n-products__item-img-wrapper">
-                        <img class="n-products__item-img" src="img/stone/products/product-1.jpg" width="813" height="433" alt="Подоконник из мрамора.">
-                      </picture>
-                    </li>
-                    <li class="n-slider__item swiper-slide">
-                      <picture class="n-products__item-img-wrapper">
-                        <img class="n-products__item-img" src="img/stone/products/product-1.jpg" width="813" height="433" alt="Подоконник из мрамора.">
-                      </picture>
-                    </li>
-                    <li class="n-slider__item swiper-slide">
-                      <picture class="n-products__item-img-wrapper">
-                        <img class="n-products__item-img" src="img/stone/products/product-1.jpg" width="813" height="433" alt="Подоконник из мрамора.">
-                      </picture>
-                    </li>
-                    <li class="n-slider__item swiper-slide">
-                      <picture class="n-products__item-img-wrapper">
-                        <img class="n-products__item-img" src="img/stone/products/product-1.jpg" width="813" height="433" alt="Подоконник из мрамора.">
-                      </picture>
-                    </li>
-                  </ul>
-                  <div class="n-slider__pagination swiper-pagination"></div>
-                  <button class="n-slider__button n-slider__button--prev swiper-button-prev" type="button">
-                    <span class="visually-hidden">Предыдущий слайд</span>
-                  </button>
-                  <button class="n-slider__button n-slider__button--next swiper-button-next" type="button">
-                    <span class="visually-hidden">Следущий слайд</span>
-                  </button>
-                </div>
+
+      <section class="main-page__n-advantages n-advantages n-advantages--alter n-advantages--colourful">
+        <div class="center">
+          <h2 class="visually-hidden">Наши преимущества</h2>
+          <ul class="n-advantages__list">
+            <li class="n-advantages__item">
+              <p class="n-advantages__name">Помогаем воплотить<br class="n-advantages__br n-advantages__br--tablet-desktop"> Ваши идеи в интерьере</p>
+              <div class="n-advantages__info">
+                <picture class="n-advantages__img-wrapper">
+                  <img class="n-advantages__img" src="img/advantages/advantage-info-1.jpg" alt="Ресепшен студии Ардо." width="335" height="95">
+                </picture>
+                <p class="n-advantages__text">Более 5000 позиций на складе. Эксклюзивные коллекции более 90 брендов</p>
               </div>
             </li>
-            <li class="n-products__item">
-              <div class="n-products__item-info product-info">
-                <h3 class="product-info__heading heading heading--alter-2">Подоконник из гранита</h3>
-                <dl class="product-info__list characteristics-2">
-                  <div class="characteristics-2__item">
-                    <dt class="characteristics-2__key">Материал:</dt>
-                    <dd class="characteristics-2__value">Гранит</dd>
-                  </div>
-                  <div class="characteristics-2__item">
-                    <dt class="characteristics-2__key">Размер:</dt>
-                    <dd class="characteristics-2__value">40х120 см</dd>
-                  </div>
-                  <div class="characteristics-2__item">
-                    <dt class="characteristics-2__key">Срок изготовления:</dt>
-                    <dd class="characteristics-2__value">20 дней</dd>
-                  </div>
-                  <div class="characteristics-2__item">
-                    <dt class="characteristics-2__key">Форма:</dt>
-                    <dd class="characteristics-2__value">Название формы</dd>
-                  </div>
-                  <div class="characteristics-2__item">
-                    <dt class="characteristics-2__key">Тип профиля:</dt>
-                    <dd class="characteristics-2__value">№4</dd>
-                    <dd class="characteristics-2__value-img">
-                      <img src="img/stone/drawing/end-profile-4.svg" width="50" alt="Рисунок профиля.">
-                    </dd>
-                  </div>
-                  <div class="characteristics-2__item">
-                    <dt class="characteristics-2__key">Тип подклейки:</dt>
-                    <dd class="characteristics-2__value">№1</dd>
-                    <dd class="characteristics-2__value-img">
-                      <img src="img/stone/drawing/gluing-1.svg" width="50" alt="Рисунок подклейки.">
-                    </dd>
-                  </div>
-                </dl>
-                <p class="product-info__price-wrapper">
-                  Цена от <span class="n-product__price">7&nbsp;000</span>₽ п.метр
-                </p>
-                <div class="product-info__buttons">
-                  <button class="product-info__button button button--primary-2" type="button">Подробнее</button>
-                  <button class="product-info__button button button--secondary" type="button">Рассчитать мой вариант</button>
-                </div>
+            <li class="n-advantages__item">
+              <p class="n-advantages__name">Нам доверяют<br class="n-advantages__br n-advantages__br--tablet-desktop"> свои проекты</p>
+              <div class="n-advantages__info">
+                <picture class="n-advantages__img-wrapper">
+                  <img class="n-advantages__img" src="img/advantages/advantage-info-2.jpg" alt="ЧПУ станок." width="335" height="95">
+                </picture>
+                <p class="n-advantages__text">18 лет активно работаем на рынке. 98% дизайнеров и архитекторов рекомендуют нас друзьям и коллегам (Опрос NPS 2021)</p>
               </div>
-              <div class="n-products__item-gallery">
-                <div class="n-products__item-slider n-slider n-slider--alter swiper">
-                  <ul class="n-slider__list swiper-wrapper">
-                    <li class="n-slider__item swiper-slide">
-                      <picture class="n-products__item-img-wrapper">
-                        <img class="n-products__item-img" src="img/stone/products/product-2.jpg" width="813" height="433" alt="Подоконник из мрамора.">
-                      </picture>
-                    </li>
-                    <li class="n-slider__item swiper-slide">
-                      <picture class="n-products__item-img-wrapper">
-                        <img class="n-products__item-img" src="img/stone/products/product-2.jpg" width="813" height="433" alt="Подоконник из мрамора.">
-                      </picture>
-                    </li>
-                    <li class="n-slider__item swiper-slide">
-                      <picture class="n-products__item-img-wrapper">
-                        <img class="n-products__item-img" src="img/stone/products/product-2.jpg" width="813" height="433" alt="Подоконник из мрамора.">
-                      </picture>
-                    </li>
-                    <li class="n-slider__item swiper-slide">
-                      <picture class="n-products__item-img-wrapper">
-                        <img class="n-products__item-img" src="img/stone/products/product-2.jpg" width="813" height="433" alt="Подоконник из мрамора.">
-                      </picture>
-                    </li>
-                  </ul>
-                  <div class="n-slider__pagination swiper-pagination"></div>
-                  <button class="n-slider__button n-slider__button--prev swiper-button-prev" type="button">
-                    <span class="visually-hidden">Предыдущий слайд</span>
-                  </button>
-                  <button class="n-slider__button n-slider__button--next swiper-button-next" type="button">
-                    <span class="visually-hidden">Следущий слайд</span>
-                  </button>
-                </div>
+            </li>
+            <li class="n-advantages__item">
+              <p class="n-advantages__name">Гарантируем<br class="n-advantages__br n-advantages__br--tablet-desktop"> минимальные цены</p>
+              <div class="n-advantages__info">
+                <picture class="n-advantages__img-wrapper">
+                  <img class="n-advantages__img" src="img/advantages/advantage-info-3.jpg" alt="Кладка плитки." width="335" height="95">
+                </picture>
+                <p class="n-advantages__text">Отгружаем напрямую с фабрик, поэтому предлагаем лучшие цены на рынке</p>
+              </div>
+            </li>
+            <li class="n-advantages__item">
+              <p class="n-advantages__name">Вдохновляем и<br class="n-advantages__br n-advantages__br--mobile"> дарим<br class="n-advantages__br n-advantages__br--tablet-desktop"> эмоции!</p>
+              <div class="n-advantages__info">
+                <picture class="n-advantages__img-wrapper">
+                  <img class="n-advantages__img" src="img/advantages/advantage-info-4.jpg" alt="Узор из камня." width="335" height="95">
+                </picture>
+                <p class="n-advantages__text">Для вас в шоу-руме welcome кофе, удобные переговорные зоны для подбора, 1000 кв.м. с готовыми решениями</p>
+              </div>
+            </li>
+            <li class="n-advantages__item">
+              <p class="n-advantages__name">Заботимся, чтобы все<br class="n-advantages__br n-advantages__br--tablet-desktop"> прошло по&nbsp;плану</p>
+              <div class="n-advantages__info">
+                <picture class="n-advantages__img-wrapper">
+                  <img class="n-advantages__img" src="img/advantages/advantage-info-5.jpg" alt="Узор из камня." width="335" height="95">
+                </picture>
+                <p class="n-advantages__text">За вами закрепляется личный менеджер со стажем более 10 лет. Он поможет разрешить все возникающие вопросы</p>
               </div>
             </li>
           </ul>
-          <div class="n-products__button-wrapper">
-            <a class="n-products__button button" href="#">Показать ещё</a>
-          </div>
         </div>
       </section>
-      <section class="stone-product-page__goods goods">
+
+      <section class="main-page__goods goods goods--popular">
         <div class="goods__inner">
-          <h2 class="goods__heading heading heading--alter-2">Товары</h2>
-          <ul class="goods__list good-list">
-            <li class="good-list__item">
-              <form class="good" action="#!" method="post">
+          <h2 class="goods__heading heading heading--alter-2">Популярные товары</h2>
+          <div class="goods__slider">
+            <ul class="goods__list good-list">
+              <li class="good-list__item good">
                 <div class="good__main">
                   <h2 class="good__heading">
                     <a class="good__link" href="#!">Керамогранит Equipe Matelier Alpine White Mat 40x120</a>
@@ -462,10 +372,8 @@
                   </div>
                   <button class="good__submit-order button button--secondary button--alter button--alter-3" type="button">Отправить</button>
                 </div>
-              </form>
-            </li>
-            <li class="good-list__item">
-              <form class="good" action="#!" method="post">
+              </li>
+              <li class="good-list__item good">
                 <div class="good__main">
                   <h2 class="good__heading">
                     <a class="good__link" href="#!">Керамогранит Equipe Matelier Alpine White Mat 40x120</a>
@@ -566,10 +474,8 @@
                   </div>
                   <button class="good__submit-order button button--secondary button--alter button--alter-3" type="button">Отправить</button>
                 </div>
-              </form>
-            </li>
-            <li class="good-list__item">
-              <form class="good" action="#!" method="post">
+              </li>
+              <li class="good-list__item good">
                 <div class="good__main">
                   <h2 class="good__heading">
                     <a class="good__link" href="#!">Керамогранит Equipe Matelier Alpine White Mat 40x120</a>
@@ -670,10 +576,8 @@
                   </div>
                   <button class="good__submit-order button button--secondary button--alter button--alter-3" type="button">Отправить</button>
                 </div>
-              </form>
-            </li>
-            <li class="good-list__item">
-              <form class="good" action="#!" method="post">
+              </li>
+              <li class="good-list__item good">
                 <div class="good__main">
                   <h2 class="good__heading">
                     <a class="good__link" href="#!">Керамогранит Equipe Matelier Alpine White Mat 40x120</a>
@@ -774,10 +678,8 @@
                   </div>
                   <button class="good__submit-order button button--secondary button--alter button--alter-3" type="button">Отправить</button>
                 </div>
-              </form>
-            </li>
-            <li class="good-list__item">
-              <form class="good" action="#!" method="post">
+              </li>
+              <li class="good-list__item good">
                 <div class="good__main">
                   <h2 class="good__heading">
                     <a class="good__link" href="#!">Керамогранит Equipe Matelier Alpine White Mat 40x120</a>
@@ -878,10 +780,8 @@
                   </div>
                   <button class="good__submit-order button button--secondary button--alter button--alter-3" type="button">Отправить</button>
                 </div>
-              </form>
-            </li>
-            <li class="good-list__item">
-              <form class="good" action="#!" method="post">
+              </li>
+              <li class="good-list__item good">
                 <div class="good__main">
                   <h2 class="good__heading">
                     <a class="good__link" href="#!">Керамогранит Equipe Matelier Alpine White Mat 40x120</a>
@@ -982,10 +882,8 @@
                   </div>
                   <button class="good__submit-order button button--secondary button--alter button--alter-3" type="button">Отправить</button>
                 </div>
-              </form>
-            </li>
-            <li class="good-list__item">
-              <form class="good" action="#!" method="post">
+              </li>
+              <li class="good-list__item good">
                 <div class="good__main">
                   <h2 class="good__heading">
                     <a class="good__link" href="#!">Керамогранит Equipe Matelier Alpine White Mat 40x120</a>
@@ -1086,10 +984,8 @@
                   </div>
                   <button class="good__submit-order button button--secondary button--alter button--alter-3" type="button">Отправить</button>
                 </div>
-              </form>
-            </li>
-            <li class="good-list__item">
-              <form class="good" action="#!" method="post">
+              </li>
+              <li class="good-list__item good">
                 <div class="good__main">
                   <h2 class="good__heading">
                     <a class="good__link" href="#!">Керамогранит Equipe Matelier Alpine White Mat 40x120</a>
@@ -1190,316 +1086,47 @@
                   </div>
                   <button class="good__submit-order button button--secondary button--alter button--alter-3" type="button">Отправить</button>
                 </div>
-              </form>
-            </li>
-          </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="goods__slider-buttons">
+            <button class="goods__slider-button-prev swiper-button-prev arrow-button" type="button">
+              <span class="visually-hidden">Предыдущий слайд</span>
+            </button>
+            <button class="goods__slider-button-next swiper-button-next arrow-button" type="button">
+              <span class="visually-hidden">Следующий слайд</span>
+            </button>
+          </div>
           <div class="goods__button-wrapper">
             <a class="goods__button button" href="#">Перейти в каталог</a>
           </div>
         </div>
       </section>
-      <section class="stone-product-page__ratings ratings">
-        <div class="ratings__inner">
-          <h2 class="ratings__heading heading heading--alter-2">Работаем на совесть</h2>
-          <ul class="ratings__list">
-            <li class="ratings__item rater">
-              <picture class="rater__img-wrapper">
-                <source media="(min-width: 768px)" srcset="img/raters/google-logo-tablet@2x.png 1x">
-                <img class="rater__img" src="img/raters/google-logo@2x.png" width="93" height="31" alt="Логотип Google.">
-              </picture>
-              <div class="rater__rating star-rating star-rating--small star-rating--theme--1 star-rating--5">
-                Рейтинг 4,9
-              </div>
-            </li>
-            <li class="ratings__item rater">
-              <picture class="rater__img-wrapper">
-                <source media="(min-width: 768px)" srcset="img/raters/2gis-logo-tablet@2x.png 1x">
-                <img class="rater__img" src="img/raters/2gis-logo@2x.png" width="85" height="28" alt="Логотип Google.">
-              </picture>
-              <div class="rater__rating star-rating star-rating--small star-rating--theme--1 star-rating--5">
-                Рейтинг 5
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-      <section class="stone-product-page__calculation calculation">
-        <div class="calculation__center">
-          <div class="calculation__inner">
-            <picture class="calculation__img-wrapper" aria-hidden="true">
-              <source media="(min-width: 1281px)" srcset="img/calculation-bg-desktop.jpg 1x">
-              <source media="(min-width: 801px)" srcset="img/calculation-bg-laptop.jpg 1x">
-              <img class="calculation__img" src="img/calculation-bg-tablet.jpg" alt="">
-            </picture>
-            <div class="calculation__content">
-              <h2 class="calculation__heading">Рассчитайте стоимость вашего изделия прямо сейчас</h2>
-              <div class="calculation__form calculation-form">
-                <h3 class="calculation-form__heading">Введите параметры изделия для расчета</h3>
-                <div class="calculation-form__body custom-form-2 custom-form-2--calculation">
-                  <div class="form">
-                    <form class="form__body" action="#!" method="post">
-                      <div class="form__select n-select">
-                        <select name="type">
-                          <option value="">Тип изделия</option>
-                          <option>Тип 1</option>
-                          <option>Тип 2</option>
-                          <option>Тип 3</option>
-                        </select>
-                      </div>
-                      <div class="form__select n-select">
-                        <select name="material">
-                          <option value="">Материал</option>
-                          <option>Камень</option>
-                          <option>Мрамор</option>
-                          <option>Гранит</option>
-                          <option>Дерево</option>
-                          <option>Контент</option>
-                        </select>
-                      </div>
-                      <fieldset class="form__section">
-                        <legend class="form__section-heading">Размеры изделия</legend>
-                        <div class="form__textfield-wrapper">
-                          <label class="form__textfield-label">
-                            <span class="form__textfield">
-                              <input class="form__textfield-control" name="length" type="number" min="1" placeholder="100">
-                              <span class="form__textfield-label-text">Длина см</span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="form__textfield-wrapper">
-                          <label class="form__textfield-label">
-                            <span class="form__textfield">
-                              <input class="form__textfield-control" name="width" type="number" min="1" placeholder="100">
-                              <span class="form__textfield-label-text">Ширина см</span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="form__textfield-wrapper">
-                          <label class="form__textfield-label">
-                            <span class="form__textfield">
-                              <input class="form__textfield-control" name="name" type="number" min="1" placeholder="100">
-                              <span class="form__textfield-label-text">Площадь м2</span>
-                            </span>
-                          </label>
-                        </div>
-                      </fieldset>
-                      <button class="form__submit button button--secondary button--alter-2 button--fw600" type="button">Получить лучшее предложение</button>
-                      <div class="form__consent-wrapper">
-                        <label class="form__checkbox-label">
-                          <input class="form__checkbox-control form__checkbox-control--secondary visually-hidden" name="consent" type="checkbox" checked>
-                          <span class="form__checkbox-label-text">
-                            <span>
-                              Согласие с <a class="form__link" href="!#" target="_blank">политикой обработки данных</a>
-                            </span>
-                          </span>
-                        </label>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="stone-product-page__manufacture manufacture">
-        <div class="manufacture__content">
-          <h2 class="manufacture__heading heading heading--alter-2">Видео с производства</h2>
-          <div class="manufacture__n-video n-video">
-            <video class="n-video__video" poster="img/video-1-poster.jpg" id="manufacture-video" preload="metadata" width="292" height="174">
-              <source src="uxtesting.mp4" type="video/mp4">
-              <source src="uxtesting.ogv" type="video/ogg">
-              <source src="uxtesting.webm" type="video/webm">
-            </video>
-            <button class="n-video__play" type="button">
-              <span class="visually-hidden">Воспроизвести</span>
-            </button>
-          </div>
-          <p class="manufacture__text">Прозначные процессы, контроль производства и лучшее качество — это все студия ARDO</p>
-        </div>
-        <div class="manufacture__rating company-rating">
-          <h2 class="company-rating__heading">АрдоСтудио</h2>
-          <div class="company-rating__rating star-rating star-rating--alter star-rating--big star-rating--theme--2 star-rating--5">
-            <span class="visually-hidden">Рейтинг</span> 4,9
-          </div>
-          <a class="company-rating__link" href="#!">53 отзывов</a>
-        </div>
-      </section>
-      <section class="stone-product-page__clients clients">
-        <div class="clients__inner">
-          <h2 class="clients__heading heading heading--alter-2">Объекты, где можно увидеть наши изделия из камня:</h2>
-          <ul class="clients__list">
-            <li class="clients__item">
-              <img class="clients__img" src="img/clients/client-1.svg" alt="Береговой – жилой квартал на Москве-реке.">
-            </li>
-            <li class="clients__item">
-              <img class="clients__img" src="img/clients/client-2.png" alt="ПОКЛОННАЯ 9.">
-            </li>
-            <li class="clients__item">
-              <img class="clients__img" src="img/clients/client-3.svg" alt="Серебрянный фонтан – жилой комплекс.">
-            </li>
-            <li class="clients__item">
-              <img class="clients__img" src="img/clients/client-4.svg" alt="Снегири – частная школа.">
-            </li>
-            <li class="clients__item">
-              <img class="clients__img" src="img/clients/client-5.svg" alt="Жуковка XXI.">
-            </li>
-            <li class="clients__item">
-              <img class="clients__img" src="img/clients/client-6.svg" alt="PALMIRA – business-club.">
-            </li>
-            <li class="clients__item">
-              <img class="clients__img" src="img/clients/client-7.svg" alt="ПЕРВЫЙ СЕМЕЙНЫЙ.">
-            </li>
-            <li class="clients__item">
-              <img class="clients__img" src="img/clients/client-8.png" alt="Английский Квартал.">
-            </li>
-          </ul>
-        </div>
-      </section>
-      <section class="stone-product-page__team team">
-        <div class="team__inner">
-          <h2 class="team__heading heading heading--alter-2">Люди, которые вкладывают душу  в каждый проект</h2>
-          <picture class="team__img-wrapper">
-            <source type="image/webp" media="(min-width: 1281px)" srcset="img/team/team-desktop.webp 1x, img/team/team-desktop@2x.webp 2x">
-            <source type="image/webp" media="(min-width: 769px)" srcset="img/team/team-laptop.webp 1x, img/team/team-laptop@2x.webp 2x">
-            <source type="image/webp" media="(min-width: 376px)" srcset="img/team/team-tablet.webp 1x, img/team/team-tablet@2x.webp 2x">
-            <source type="image/webp" srcset="img/team/team.webp 1x, img/team/team@2x.webp 2x">
-            <source media="(min-width: 1281px)" srcset="img/team/team-desktop.jpg 1x, img/team/team-desktop@2x.jpg 2x">
-            <source media="(min-width: 769px)" srcset="img/team/team-laptop.jpg 1x, img/team/team-laptop@2x.jpg 2x">
-            <source media="(min-width: 376px)" srcset="img/team/team-tablet.jpg 1x, img/team/team-tablet@2x.jpg 2x">
-            <img class="team__img" src="img/team/team.jpg" srcset="img/team/team@2x.jpg 2x" alt="Групповая фотография: 3 мужчины и 4 женщины.">
-          </picture>
-          <div class="team__buttons">
-            <a class="team__button team__button--phone" href="#!">Обсудить ваш проект</a>
-            <a class="team__button team__button--3d" href="#!">Заказать визуализацию</a>
-          </div>
-        </div>
-      </section>
-      <div class="popup popup--big popup--calculation-material">
-        <div class="popup__inner ">
-          <button class="popup__close" type="button">
-            <span class="visually-hidden">Закрыть.</span>
-          </button>
-          <div class="popup__content">
-            <div class="calculation-material">
-              <div class="calculation-material__calculation">
-                <h2 class="visually-hidden">Рассчитайте стоимость вашего изделия прямо сейчас</h2>
-                <picture class="calculation-material__calculation-img-wrapper" aria-hidden="true">
-                  <img class="calculation-material__calculation-img" src="img/calculation-bg-tablet.jpg" alt="">
-                </picture>
-                <div class="calculation-material__calculation-form-wrapper">
-                  <div class="calculation-material__calculation-form calculation-form">
-                    <h3 class="calculation-form__heading">Введите параметры изделия для расчета</h3>
-                    <div class="calculation-form__body custom-form-2 custom-form-2--calculation">
-                      <div class="form">
-                        <form class="form__body" action="#!" method="post">
-                          <div class="form__select n-select">
-                            <select name="type">
-                              <option value="">Тип изделия</option>
-                              <option>Тип 1</option>
-                              <option>Тип 2</option>
-                              <option>Тип 3</option>
-                            </select>
-                          </div>
-                          <div class="form__select n-select">
-                            <select name="material">
-                              <option value="">Материал</option>
-                              <option>Камень</option>
-                              <option>Мрамор</option>
-                              <option>Гранит</option>
-                              <option>Дерево</option>
-                              <option>Контент</option>
-                            </select>
-                          </div>
-                          <fieldset class="form__section">
-                            <legend class="form__section-heading">Размеры изделия</legend>
-                            <div class="form__textfield-wrapper">
-                              <label class="form__textfield-label">
-                                <span class="form__textfield">
-                                  <input class="form__textfield-control" name="length" type="number" min="1" placeholder="100">
-                                  <span class="form__textfield-label-text">Длина см</span>
-                                </span>
-                              </label>
-                            </div>
-                            <div class="form__textfield-wrapper">
-                              <label class="form__textfield-label">
-                                <span class="form__textfield">
-                                  <input class="form__textfield-control" name="width" type="number" min="1" placeholder="100">
-                                  <span class="form__textfield-label-text">Ширина см</span>
-                                </span>
-                              </label>
-                            </div>
-                            <div class="form__textfield-wrapper">
-                              <label class="form__textfield-label">
-                                <span class="form__textfield">
-                                  <input class="form__textfield-control" name="name" type="number" min="1" placeholder="100">
-                                  <span class="form__textfield-label-text">Площадь м2</span>
-                                </span>
-                              </label>
-                            </div>
-                          </fieldset>
-                          <button class="form__submit button button--secondary button--alter-2 button--fw600" type="button">Получить лучшее предложение</button>
-                          <div class="form__consent-wrapper">
-                            <label class="form__checkbox-label">
-                              <input class="form__checkbox-control form__checkbox-control--secondary visually-hidden" name="consent" type="checkbox" checked>
-                              <span class="form__checkbox-label-text">
-                                <span>
-                                  Согласие с <a class="form__link" href="!#" target="_blank">политикой обработки данных</a>
-                                </span>
-                              </span>
-                            </label>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="calculation-material__material">
-                <article class="material material--big">
-                  <div class="material__text-content">
-                    <h3 class="material__heading">Мрамор</h3>
-                    <p class="material__price-wrapper">
-                      Цена от <span class="material__price">4800</span>₽/м2
-                    </p>
-                  </div>
-                  <div class="material__slider n-slider swiper">
-                    <ul class="material__slider-list n-slider__list swiper-wrapper">
-                      <li class="material__slider-item swiper-slide">
-                        <picture class="material__slider-img-wrapper">
-                          <img class="material__slider-img" src="img/stone/materials/material-2-big.jpg" width="600" height="600" alt="Гранит.">
-                        </picture>
-                      </li>
-                      <li class="material__slider-item swiper-slide">
-                        <picture class="material__slider-img-wrapper">
-                          <img class="material__slider-img" src="img/stone/materials/material-2-big.jpg" width="600" height="600" alt="Гранит.">
-                        </picture>
-                      </li>
-                    </ul>
-                    <button class="material__slider-button n-slider__button n-slider__button--prev swiper-button-prev" type="button">
-                      <span class="visually-hidden">Предыдущий слайд</span>
-                    </button>
-                    <button class="material__slider-button n-slider__button n-slider__button--next swiper-button-next" type="button">
-                      <span class="visually-hidden">Следущий слайд</span>
-                    </button>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </div>
-        </div>
+
+      <div style="width: 280px;">
+        <p style="padding: 20px; background-color: #fff1e7;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum cursus magna at feugiat. Nunc interdum elit vel blandit egestas. Fusce fermentum auctor purus non dictum. Nullam volutpat mi risus, in auctor ante facilisis in. Nam nisi felis, vestibulum nec odio sit amet, maximus interdum purus. Proin eget odio urna. In vel lacus tempor nulla dignissim ultrices in vel magna. Sed pulvinar varius mauris nec fermentum. Sed finibus mattis ante at ultrices. Aliquam ac justo eget eros bibendum facilisis ut ut ante. Proin rhoncus, leo sit amet feugiat feugiat, sapien diam rhoncus odio, id dignissim nibh odio ac erat. Aenean ac diam diam. Curabitur a odio leo. Nulla ac molestie ipsum, at laoreet turpis. Integer a vehicula erat.</p>
+        <p style="padding: 20px; background-color: #f7ffe7;">Integer libero nisi, iaculis vulputate fermentum ac, malesuada vitae est. Duis in ipsum sapien. Mauris dignissim nulla pretium ex ultrices elementum. Phasellus pellentesque vulputate ante, suscipit maximus nisl accumsan ut. Praesent tempus egestas risus a mattis. Donec mattis nisi nec varius vulputate. In dapibus mi ex, eu egestas ipsum hendrerit in. Sed scelerisque lacus id sem vulputate, et mattis urna dapibus. Cras luctus et nisi eu scelerisque. Pellentesque aliquet sed est vitae porta. Aenean sed libero et tellus dapibus porttitor.</p>
+        <p style="padding: 20px; background-color: #ecf8ee;">Suspendisse potenti. Duis vel sollicitudin magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean sed vulputate tellus. Nam dapibus magna id faucibus auctor. Sed mauris magna, condimentum vel luctus vitae, interdum et velit. Duis et elit at nisi maximus sodales. Nullam in sem a ipsum feugiat malesuada elementum quis elit. Vivamus sed libero a orci bibendum faucibus. Quisque eu ornare lectus, vel tincidunt neque. Donec mauris ex, aliquet eu mi sed, accumsan aliquet sem.</p>
+        <p style="padding: 20px; background-color: #e8e7ff;">Maecenas consequat metus eget purus rhoncus iaculis. Vivamus vitae auctor nibh. Ut id justo massa. Donec nisi massa, lacinia quis pellentesque eget, pulvinar a mi. Aenean faucibus pulvinar neque, nec tincidunt dui fringilla maximus. Proin posuere condimentum consectetur. Donec ullamcorper ante non dui commodo maximus.</p>
+        <p style="padding: 20px; background-color: #faecfc;">Sed tincidunt eget nisi in iaculis. Maecenas vulputate arcu nec nisi ullamcorper, et rhoncus turpis facilisis. Mauris eget magna sed tellus iaculis pharetra. Proin a tincidunt eros. Etiam mattis lorem nec odio placerat congue. Fusce lacinia quam sed sodales interdum. Proin faucibus risus eu mi dignissim commodo. Quisque sagittis ante vel elit gravida facilisis. Vivamus vitae luctus velit. Quisque imperdiet magna a dui ultrices, sed sodales lorem gravida. Sed vehicula sed nulla at placerat.</p>
+      </div>
+      <div style="width: 280px;">
+        <p style="padding: 20px; background-color: #fff1e7;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum cursus magna at feugiat. Nunc interdum elit vel blandit egestas. Fusce fermentum auctor purus non dictum. Nullam volutpat mi risus, in auctor ante facilisis in. Nam nisi felis, vestibulum nec odio sit amet, maximus interdum purus. Proin eget odio urna. In vel lacus tempor nulla dignissim ultrices in vel magna. Sed pulvinar varius mauris nec fermentum. Sed finibus mattis ante at ultrices. Aliquam ac justo eget eros bibendum facilisis ut ut ante. Proin rhoncus, leo sit amet feugiat feugiat, sapien diam rhoncus odio, id dignissim nibh odio ac erat. Aenean ac diam diam. Curabitur a odio leo. Nulla ac molestie ipsum, at laoreet turpis. Integer a vehicula erat.</p>
+        <p style="padding: 20px; background-color: #f7ffe7;">Integer libero nisi, iaculis vulputate fermentum ac, malesuada vitae est. Duis in ipsum sapien. Mauris dignissim nulla pretium ex ultrices elementum. Phasellus pellentesque vulputate ante, suscipit maximus nisl accumsan ut. Praesent tempus egestas risus a mattis. Donec mattis nisi nec varius vulputate. In dapibus mi ex, eu egestas ipsum hendrerit in. Sed scelerisque lacus id sem vulputate, et mattis urna dapibus. Cras luctus et nisi eu scelerisque. Pellentesque aliquet sed est vitae porta. Aenean sed libero et tellus dapibus porttitor.</p>
+        <p style="padding: 20px; background-color: #ecf8ee;">Suspendisse potenti. Duis vel sollicitudin magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean sed vulputate tellus. Nam dapibus magna id faucibus auctor. Sed mauris magna, condimentum vel luctus vitae, interdum et velit. Duis et elit at nisi maximus sodales. Nullam in sem a ipsum feugiat malesuada elementum quis elit. Vivamus sed libero a orci bibendum faucibus. Quisque eu ornare lectus, vel tincidunt neque. Donec mauris ex, aliquet eu mi sed, accumsan aliquet sem.</p>
+        <p style="padding: 20px; background-color: #e8e7ff;">Maecenas consequat metus eget purus rhoncus iaculis. Vivamus vitae auctor nibh. Ut id justo massa. Donec nisi massa, lacinia quis pellentesque eget, pulvinar a mi. Aenean faucibus pulvinar neque, nec tincidunt dui fringilla maximus. Proin posuere condimentum consectetur. Donec ullamcorper ante non dui commodo maximus.</p>
+        <p style="padding: 20px; background-color: #faecfc;">Sed tincidunt eget nisi in iaculis. Maecenas vulputate arcu nec nisi ullamcorper, et rhoncus turpis facilisis. Mauris eget magna sed tellus iaculis pharetra. Proin a tincidunt eros. Etiam mattis lorem nec odio placerat congue. Fusce lacinia quam sed sodales interdum. Proin faucibus risus eu mi dignissim commodo. Quisque sagittis ante vel elit gravida facilisis. Vivamus vitae luctus velit. Quisque imperdiet magna a dui ultrices, sed sodales lorem gravida. Sed vehicula sed nulla at placerat.</p>
       </div>
     </main>
-    <script src="js/choices.min.js"></script>
-    <script src="js/swiper.min.js"></script>
+    <!-- <script src="js/choices.min.js"></script>
+    <script src="js/swiper.min.js"></script> -->
     <script src="js/swiper-bundle.min.js"></script> <!-- Новый скрипт -->
     <script src="js/new.js"></script> <!-- Новый скрипт -->
-    <script src="js/demo.js"></script> <!-- Cкрипт для тестирования -->
-    <script src="js/jquery.3.4.1.min.js"></script>
+    <!-- <script src="js/jquery.3.4.1.min.js"></script>
     <script src="js/jquery.cookie.min.js"></script>
     <script src="js/libs.min.js"></script>
     <script src="js/min/lazyload.min.js"></script>
     <script src="js/scripts.min.js"></script>
-    <script src="js/min/custom.min.js"></script>
+    <script src="js/min/custom.min.js"></script> -->
   </body>
 </html>
