@@ -8,7 +8,6 @@ const del = require('del');
 const sync = require('browser-sync').create();
 const sass = require('gulp-sass')(require('sass'));
 const autoprefixer = require('gulp-autoprefixer');
-const groupCssMediaQueries = require('gulp-group-css-media-queries');
 const csso = require('gulp-csso');
 const rename = require('gulp-rename');
 const terser = require('gulp-terser');
@@ -41,7 +40,6 @@ const styles = () => {
   return src('./source/sass/new.scss', { sourcemaps: true })
     .pipe(sass())
     .pipe(autoprefixer())
-    .pipe(gulpIf(isProd, groupCssMediaQueries()))
     .pipe(dest('./build/css', { sourcemaps: true }))
     // .pipe(rename({ suffix: '.min' }))
     // .pipe(csso())
