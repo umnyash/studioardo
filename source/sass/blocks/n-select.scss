@@ -1,7 +1,6 @@
 .n-select {
   .choices {
     &::after {
-      // z-index: 3;
       right: 14px;
       width: 19px;
       height: 19px;
@@ -22,7 +21,6 @@
 
     .choices__inner {
       position: relative;
-      // z-index: 2;
       min-height: auto;
       padding: 17px 44px 14px 14px;
       margin: 0;
@@ -56,6 +54,23 @@
       margin: 0;
       background-color: $background-color;
       box-shadow: 0px 3px 25px rgba(0, 0, 0, 0.08);
+
+      .choices__list {
+        scrollbar-gutter: stable;
+        scrollbar-color: #dedede transparent;
+        scrollbar-width: thin;
+
+        &::-webkit-scrollbar-track,
+        &::-webkit-scrollbar {
+          background-color: transparent;
+          width: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: transparent;
+          background-image: linear-gradient(to right, #dedede, #dedede 2px, transparent 2px);
+        }
+      }
 
       .choices__placeholder {
         display: none !important;
