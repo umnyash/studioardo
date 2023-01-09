@@ -842,54 +842,13 @@ if (newsSection) {
   });
 };
 
-const currentOffersSection = document.querySelector('.current-offers');
-if (currentOffersSection) {
-  const tabSwiper = new Swiper('.offers-tabs-swiper', {
-    slidesPerView: 1,
-    spaceBetween: 0,
-    pagination: {
-      el: '.current-offers__dots',
-      bulletActiveClass: 'current-offers__dot--current',
-      bulletClass: 'current-offers__dot',
-      clickable: true,
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 3,
-        slidesPerGroup: 3,
-      },
-      1280: {
-        slidesPerView: 6,
-        slidesPerGroup: 1,
-      },
-    },
-  });
-
-  const swiper = new Swiper('.current-offers__slider', {
-    slidesPerView: 1,
-    spaceBetween: 0,
-    navigation: {
-      nextEl: ".current-offers__arrow--next",
-      prevEl: ".current-offers__arrow--back",
-    },
-    effect: 'fade',
-    fadeEffect: {
-      crossFade: true
-    },
-    thumbs: {
-      swiper: tabSwiper,
-    },
-    autoplay: {
-      delay: 12000,
-    },
-  });
-};
-
 const offersSection = document.querySelector('.offers');
 if (offersSection) {
   const tabs = new Swiper('.offers .tabs__slider', {
     slidesPerView: 1,
     spaceBetween: 0,
+    loop: true,
+    watchSlidesProgress: true,
     pagination: {
       el: '.offers__tabs-pagination',
       clickable: true,
@@ -902,6 +861,7 @@ if (offersSection) {
       1280: {
         slidesPerView: 6,
         slidesPerGroup: 1,
+        loop: false,
       },
     },
   });
@@ -910,6 +870,7 @@ if (offersSection) {
     slidesPerView: 1,
     spaceBetween: 0,
     loop: true,
+    watchSlidesProgress: true,
     navigation: {
       nextEl: ".offers__button-next",
       prevEl: ".offers__button-prev",
