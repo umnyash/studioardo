@@ -19,17 +19,19 @@
 .n-brands__nav-link {
   display: block;
   color: $basic-text-color;
-  opacity: 0.6;
 
-  &:hover {
-    opacity: 1;
+  &[href]:hover,
+  &[href]:focus {
+    opacity: 0.8;
+  }
+
+  &[href]:active {
+    opacity: 0.6;
   }
 }
 
-.n-brands__nav-item--active {
-  .n-brands__nav-link {
-    opacity: 1;
-  }
+.n-brands__nav-link--active {
+  pointer-events: none;
 }
 
 .n-brands__nav-item:not(:last-child) {
