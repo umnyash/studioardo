@@ -49,7 +49,6 @@
 }
 
 .projects__gallery {
-  border-radius: 10px;
   margin: 0 0 0 10px;
 
   @media #{$tablet-desktop} {
@@ -73,6 +72,7 @@
   height: auto;
   background-color: $category-text-bg;
   border-radius: 10px;
+  overflow: hidden;
 
   @media #{$tablet-desktop} {
     width: 550px;
