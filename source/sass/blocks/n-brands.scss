@@ -19,18 +19,20 @@
 .n-brands__nav-link {
   display: block;
   color: $basic-text-color;
+  opacity: 0.6;
 
   &[href]:hover,
-  &[href]:focus {
-    opacity: 0.8;
+  &[href]:focus-visible {
+    opacity: 1;
   }
 
   &[href]:active {
-    opacity: 0.6;
+    opacity: 0.3;
   }
 }
 
-.n-brands__nav-link--active {
+.n-brands__nav-link--current {
+  opacity: 1;
   pointer-events: none;
 }
 
