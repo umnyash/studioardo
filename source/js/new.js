@@ -877,6 +877,12 @@ if (offersSection) {
       nextEl: ".offers__button-next",
       prevEl: ".offers__button-prev",
     },
+    autoplay: {
+      delay: 6500,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+      waitForTransition: true
+    },
     effect: 'fade',
     fadeEffect: {
       crossFade: true
