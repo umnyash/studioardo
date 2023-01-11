@@ -708,6 +708,7 @@ if (materialsSwiper) {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+    watchSlidesProgress: true,
     mousewheel: true,
     keyboard: true,
     breakpoints: {
@@ -733,6 +734,7 @@ if (materialSwiper) {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+    watchSlidesProgress: true,
     mousewheel: true,
     keyboard: true,
   });
