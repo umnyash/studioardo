@@ -95,22 +95,27 @@
   .goods__slider.swiper {
     z-index: 2;
     max-width: 100%;
-    padding: 32px 10px 200px;
-    margin: -11px 0 -181px;
+    padding: 0 0 200px;
+    margin: 21px 10px -181px;
     visibility: hidden;
+    filter: drop-shadow(0px 3px 25px rgba(0, 0, 0, 0.06));
 
     @media #{$tablet-desktop} {
       grid-area: slider;
-      margin-right: 5px;
-      margin-left: 5px;
-      margin-top: -7px;
+      margin-right: 15px;
+      margin-left: 15px;
+      margin-top: 25px;
     }
 
     @media #{$desktop} {
-      width: 1420px;
+      width: 1400px;
       margin-right: auto;
       margin-left: auto;
     }
+  }
+
+  .good {
+    filter: none;
   }
 
   .goods__list.swiper-wrapper {
