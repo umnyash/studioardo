@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/libs.min.css" rel="stylesheet">
-    <link href="css/choices.min.css" rel="stylesheet">
     <link href="css/swiper.min.css" rel="stylesheet">
     <link href="css/swiper-bundle.min.css" rel="stylesheet">
     <link href="css/styles.min.css" rel="stylesheet">
@@ -1470,32 +1469,133 @@
                   <div class="form">
                     <form class="form__body" action="#!" method="post">
                       <div class="form__select n-select">
-                        <select name="type">
-                          <option value="">Тип изделия</option>
-                          <option>Столешницы</option>
-                          <option>Подоконники</option>
-                          <option>Лестницы</option>
-                          <option>Ступени</option>
-                          <option>Столы</option>
-                          <option>Камины</option>
-                          <option>Полы</option>
-                          <option>Фасады</option>
-                          <option>Входные группы</option>
-                          <option>Барные стойки</option>
-                          <option>Панно</option>
-                          <option>Хамамы</option>
-                          <option>Предметы интерьера</option>
-                          <option>Спец элементы</option>
+                        <div class="n-select__select" tabindex="0" aria-hidden="true">
+                          <p class="n-select__header">Тип изделия</p>
+                          <div class="n-select__options n-select__options--text">
+                            <ul class="n-select__list" data-max-height="8">
+                              <li class="n-select__option" data-index="0">Столешницы</li>
+                              <li class="n-select__option" data-index="1">Подоконники</li>
+                              <li class="n-select__option" data-index="2">Лестницы</li>
+                              <li class="n-select__option" data-index="3">Ступени</li>
+                              <li class="n-select__option" data-index="4">Столы</li>
+                              <li class="n-select__option" data-index="5">Камины</li>
+                              <li class="n-select__option" data-index="6">Полы</li>
+                              <li class="n-select__option" data-index="7">Фасады</li>
+                              <li class="n-select__option" data-index="8">Входные группы</li>
+                              <li class="n-select__option" data-index="9">Барные стойки</li>
+                              <li class="n-select__option" data-index="10">Панно</li>
+                              <li class="n-select__option" data-index="11">Хамамы</li>
+                              <li class="n-select__option" data-index="12">Предметы интерьера</li>
+                              <li class="n-select__option" data-index="13">Спец элементы</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <select class="n-select__control visually-hidden" name="type" tabindex="-1">
+                          <option value="countertops">Столешницы</option>
+                          <option value="window-sills">Подоконники</option>
+                          <option value="stairs">Лестницы</option>
+                          <option value="steps">Ступени</option>
+                          <option value="tables">Столы</option>
+                          <option value="fireplaces">Камины</option>
+                          <option value="floors">Полы</option>
+                          <option value="facades">Фасады</option>
+                          <option value="entrance-groups">Входные группы</option>
+                          <option value="bar-counters">Барные стойки</option>
+                          <option value="panel" >Панно</option>
+                          <option value="hamams" >Хамамы</option>
+                          <option value="interior-items" >Предметы интерьера</option>
+                          <option value="special-elements" >Спец элементы</option>
                         </select>
                       </div>
                       <div class="form__select n-select">
-                        <select name="material">
-                          <option value="">Материал</option>
-                          <option>Камень</option>
-                          <option>Мрамор</option>
-                          <option>Гранит</option>
-                          <option>Дерево</option>
-                          <option>Контент</option>
+                        <div class="n-select__select" tabindex="0" aria-hidden="true">
+                          <p class="n-select__header">Материал</p>
+                          <div class="n-select__options">
+                            <ul class="n-select__list" data-max-height="8">
+                              <li class="n-select__option material-preview" data-index="0">
+                                <h3 class="material-preview__heading">Мрамор lorem-1</h3>
+                                <p class="material-preview__price">от 7000 ₽/м2</p>
+                                <picture class="material-preview__img-wrapper">
+                                  <img class="material-preview__img" src="img/stone/materials/material-4-small.jpg" width="100" height="40" alt="Мрамор lorem-1.">
+                                </picture>
+                              </li>
+                              <li class="n-select__option material-preview" data-index="1">
+                                <h3 class="material-preview__heading">Мрамор lorem ips-2</h3>
+                                <p class="material-preview__price">от 4000 ₽/м2</p>
+                                <picture class="material-preview__img-wrapper">
+                                  <img class="material-preview__img" src="img/stone/materials/material-5-small.jpg" width="100" height="40" alt="Мрамор lorem ips-2.">
+                                </picture>
+                              </li>
+                              <li class="n-select__option material-preview" data-index="2">
+                                <h3 class="material-preview__heading">Мрамор название-3</h3>
+                                <p class="material-preview__price">от 5000 ₽/м2</p>
+                                <picture class="material-preview__img-wrapper">
+                                  <img class="material-preview__img" src="img/stone/materials/material-6-small.jpg" width="100" height="40" alt="Мрамор название-3.">
+                                </picture>
+                              </li>
+                              <li class="n-select__option material-preview" data-index="3">
+                                <h3 class="material-preview__heading">Мрамор ips 4</h3>
+                                <p class="material-preview__price">от 7000 ₽/м2</p>
+                                <picture class="material-preview__img-wrapper">
+                                  <img class="material-preview__img" src="img/stone/materials/material-7-small.jpg" width="100" height="40" alt="Мрамор ips 4.">
+                                </picture>
+                              </li>
+                              <li class="n-select__option material-preview" data-index="3">
+                                <h3 class="material-preview__heading">Мрамор ips 4</h3>
+                                <p class="material-preview__price">от 7000 ₽/м2</p>
+                                <picture class="material-preview__img-wrapper">
+                                  <img class="material-preview__img" src="img/stone/materials/material-7-small.jpg" width="100" height="40" alt="Мрамор ips 4.">
+                                </picture>
+                              </li>
+                              <li class="n-select__option material-preview" data-index="3">
+                                <h3 class="material-preview__heading">Мрамор ips 4</h3>
+                                <p class="material-preview__price">от 7000 ₽/м2</p>
+                                <picture class="material-preview__img-wrapper">
+                                  <img class="material-preview__img" src="img/stone/materials/material-7-small.jpg" width="100" height="40" alt="Мрамор ips 4.">
+                                </picture>
+                              </li>
+                              <li class="n-select__option material-preview" data-index="3">
+                                <h3 class="material-preview__heading">Мрамор ips 4</h3>
+                                <p class="material-preview__price">от 7000 ₽/м2</p>
+                                <picture class="material-preview__img-wrapper">
+                                  <img class="material-preview__img" src="img/stone/materials/material-7-small.jpg" width="100" height="40" alt="Мрамор ips 4.">
+                                </picture>
+                              </li>
+                              <li class="n-select__option material-preview" data-index="3">
+                                <h3 class="material-preview__heading">Мрамор ips 4</h3>
+                                <p class="material-preview__price">от 7000 ₽/м2</p>
+                                <picture class="material-preview__img-wrapper">
+                                  <img class="material-preview__img" src="img/stone/materials/material-7-small.jpg" width="100" height="40" alt="Мрамор ips 4.">
+                                </picture>
+                              </li>
+                              <li class="n-select__option material-preview" data-index="3">
+                                <h3 class="material-preview__heading">Мрамор ips 4</h3>
+                                <p class="material-preview__price">от 7000 ₽/м2</p>
+                                <picture class="material-preview__img-wrapper">
+                                  <img class="material-preview__img" src="img/stone/materials/material-7-small.jpg" width="100" height="40" alt="Мрамор ips 4.">
+                                </picture>
+                              </li>
+                              <li class="n-select__option material-preview" data-index="3">
+                                <h3 class="material-preview__heading">Мрамор ips 4</h3>
+                                <p class="material-preview__price">от 7000 ₽/м2</p>
+                                <picture class="material-preview__img-wrapper">
+                                  <img class="material-preview__img" src="img/stone/materials/material-7-small.jpg" width="100" height="40" alt="Мрамор ips 4.">
+                                </picture>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <select class="n-select__control visually-hidden" name="material" tabindex="-1">
+                          <option>Мрамор lorem-1</option>
+                          <option>Мрамор lorem ips-2</option>
+                          <option>Мрамор название-3</option>
+                          <option>Мрамор ips 4</option>
+                          <option>Мрамор ips 4</option>
+                          <option>Мрамор ips 4</option>
+                          <option>Мрамор ips 4</option>
+                          <option>Мрамор ips 4</option>
+                          <option>Мрамор ips 4</option>
+                          <option>Мрамор ips 4</option>
                         </select>
                       </div>
                       <fieldset class="form__section">
@@ -1636,32 +1736,133 @@
                       <div class="form">
                         <form class="form__body" action="#!" method="post">
                           <div class="form__select n-select">
-                            <select name="type">
-                              <option value="">Тип изделия</option>
-                              <option>Столешницы</option>
-                              <option>Подоконники</option>
-                              <option>Лестницы</option>
-                              <option>Ступени</option>
-                              <option>Столы</option>
-                              <option>Камины</option>
-                              <option>Полы</option>
-                              <option>Фасады</option>
-                              <option>Входные группы</option>
-                              <option>Барные стойки</option>
-                              <option>Панно</option>
-                              <option>Хамамы</option>
-                              <option>Предметы интерьера</option>
-                              <option>Спец элементы</option>
+                            <div class="n-select__select" tabindex="0" aria-hidden="true">
+                              <p class="n-select__header">Тип изделия</p>
+                              <div class="n-select__options n-select__options--text">
+                                <ul class="n-select__list" data-max-height="8">
+                                  <li class="n-select__option" data-index="0">Столешницы</li>
+                                  <li class="n-select__option" data-index="1">Подоконники</li>
+                                  <li class="n-select__option" data-index="2">Лестницы</li>
+                                  <li class="n-select__option" data-index="3">Ступени</li>
+                                  <li class="n-select__option" data-index="4">Столы</li>
+                                  <li class="n-select__option" data-index="5">Камины</li>
+                                  <li class="n-select__option" data-index="6">Полы</li>
+                                  <li class="n-select__option" data-index="7">Фасады</li>
+                                  <li class="n-select__option" data-index="8">Входные группы</li>
+                                  <li class="n-select__option" data-index="9">Барные стойки</li>
+                                  <li class="n-select__option" data-index="10">Панно</li>
+                                  <li class="n-select__option" data-index="11">Хамамы</li>
+                                  <li class="n-select__option" data-index="12">Предметы интерьера</li>
+                                  <li class="n-select__option" data-index="13">Спец элементы</li>
+                                </ul>
+                              </div>
+                            </div>
+                            <select class="n-select__control visually-hidden" name="type" tabindex="-1">
+                              <option value="countertops">Столешницы</option>
+                              <option value="window-sills">Подоконники</option>
+                              <option value="stairs">Лестницы</option>
+                              <option value="steps">Ступени</option>
+                              <option value="tables">Столы</option>
+                              <option value="fireplaces">Камины</option>
+                              <option value="floors">Полы</option>
+                              <option value="facades">Фасады</option>
+                              <option value="entrance-groups">Входные группы</option>
+                              <option value="bar-counters">Барные стойки</option>
+                              <option value="panel" >Панно</option>
+                              <option value="hamams" >Хамамы</option>
+                              <option value="interior-items" >Предметы интерьера</option>
+                              <option value="special-elements" >Спец элементы</option>
                             </select>
                           </div>
                           <div class="form__select n-select">
-                            <select name="material">
-                              <option value="">Материал</option>
-                              <option>Камень</option>
-                              <option>Мрамор</option>
-                              <option>Гранит</option>
-                              <option>Дерево</option>
-                              <option>Контент</option>
+                            <div class="n-select__select" tabindex="0" aria-hidden="true">
+                              <p class="n-select__header">Материал</p>
+                              <div class="n-select__options">
+                                <ul class="n-select__list" data-max-height="8">
+                                  <li class="n-select__option material-preview" data-index="0">
+                                    <h3 class="material-preview__heading">Мрамор lorem-1</h3>
+                                    <p class="material-preview__price">от 7000 ₽/м2</p>
+                                    <picture class="material-preview__img-wrapper">
+                                      <img class="material-preview__img" src="img/stone/materials/material-4-small.jpg" width="100" height="40" alt="Мрамор lorem-1.">
+                                    </picture>
+                                  </li>
+                                  <li class="n-select__option material-preview" data-index="1">
+                                    <h3 class="material-preview__heading">Мрамор lorem ips-2</h3>
+                                    <p class="material-preview__price">от 4000 ₽/м2</p>
+                                    <picture class="material-preview__img-wrapper">
+                                      <img class="material-preview__img" src="img/stone/materials/material-5-small.jpg" width="100" height="40" alt="Мрамор lorem ips-2.">
+                                    </picture>
+                                  </li>
+                                  <li class="n-select__option material-preview" data-index="2">
+                                    <h3 class="material-preview__heading">Мрамор название-3</h3>
+                                    <p class="material-preview__price">от 5000 ₽/м2</p>
+                                    <picture class="material-preview__img-wrapper">
+                                      <img class="material-preview__img" src="img/stone/materials/material-6-small.jpg" width="100" height="40" alt="Мрамор название-3.">
+                                    </picture>
+                                  </li>
+                                  <li class="n-select__option material-preview" data-index="3">
+                                    <h3 class="material-preview__heading">Мрамор ips 4</h3>
+                                    <p class="material-preview__price">от 7000 ₽/м2</p>
+                                    <picture class="material-preview__img-wrapper">
+                                      <img class="material-preview__img" src="img/stone/materials/material-7-small.jpg" width="100" height="40" alt="Мрамор ips 4.">
+                                    </picture>
+                                  </li>
+                                  <li class="n-select__option material-preview" data-index="3">
+                                    <h3 class="material-preview__heading">Мрамор ips 4</h3>
+                                    <p class="material-preview__price">от 7000 ₽/м2</p>
+                                    <picture class="material-preview__img-wrapper">
+                                      <img class="material-preview__img" src="img/stone/materials/material-7-small.jpg" width="100" height="40" alt="Мрамор ips 4.">
+                                    </picture>
+                                  </li>
+                                  <li class="n-select__option material-preview" data-index="3">
+                                    <h3 class="material-preview__heading">Мрамор ips 4</h3>
+                                    <p class="material-preview__price">от 7000 ₽/м2</p>
+                                    <picture class="material-preview__img-wrapper">
+                                      <img class="material-preview__img" src="img/stone/materials/material-7-small.jpg" width="100" height="40" alt="Мрамор ips 4.">
+                                    </picture>
+                                  </li>
+                                  <li class="n-select__option material-preview" data-index="3">
+                                    <h3 class="material-preview__heading">Мрамор ips 4</h3>
+                                    <p class="material-preview__price">от 7000 ₽/м2</p>
+                                    <picture class="material-preview__img-wrapper">
+                                      <img class="material-preview__img" src="img/stone/materials/material-7-small.jpg" width="100" height="40" alt="Мрамор ips 4.">
+                                    </picture>
+                                  </li>
+                                  <li class="n-select__option material-preview" data-index="3">
+                                    <h3 class="material-preview__heading">Мрамор ips 4</h3>
+                                    <p class="material-preview__price">от 7000 ₽/м2</p>
+                                    <picture class="material-preview__img-wrapper">
+                                      <img class="material-preview__img" src="img/stone/materials/material-7-small.jpg" width="100" height="40" alt="Мрамор ips 4.">
+                                    </picture>
+                                  </li>
+                                  <li class="n-select__option material-preview" data-index="3">
+                                    <h3 class="material-preview__heading">Мрамор ips 4</h3>
+                                    <p class="material-preview__price">от 7000 ₽/м2</p>
+                                    <picture class="material-preview__img-wrapper">
+                                      <img class="material-preview__img" src="img/stone/materials/material-7-small.jpg" width="100" height="40" alt="Мрамор ips 4.">
+                                    </picture>
+                                  </li>
+                                  <li class="n-select__option material-preview" data-index="3">
+                                    <h3 class="material-preview__heading">Мрамор ips 4</h3>
+                                    <p class="material-preview__price">от 7000 ₽/м2</p>
+                                    <picture class="material-preview__img-wrapper">
+                                      <img class="material-preview__img" src="img/stone/materials/material-7-small.jpg" width="100" height="40" alt="Мрамор ips 4.">
+                                    </picture>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <select class="n-select__control visually-hidden" name="material" tabindex="-1">
+                              <option>Мрамор lorem-1</option>
+                              <option>Мрамор lorem ips-2</option>
+                              <option>Мрамор название-3</option>
+                              <option>Мрамор ips 4</option>
+                              <option>Мрамор ips 4</option>
+                              <option>Мрамор ips 4</option>
+                              <option>Мрамор ips 4</option>
+                              <option>Мрамор ips 4</option>
+                              <option>Мрамор ips 4</option>
+                              <option>Мрамор ips 4</option>
                             </select>
                           </div>
                           <fieldset class="form__section">
@@ -1743,7 +1944,6 @@
         </div>
       </div>
     </main>
-    <script src="js/choices.min.js"></script>
     <script src="js/swiper.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script> <!-- Новый скрипт -->
     <script src="js/new.js"></script> <!-- Новый скрипт -->

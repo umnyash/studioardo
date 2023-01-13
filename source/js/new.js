@@ -1,13 +1,20 @@
 const popups = document.querySelectorAll('.popup');
 
+const Key = Object.freeze({
+  ESCAPE: 'Escape',
+  ESC: 'Esc',
+  UP: 'ArrowUp',
+  RIGHT: 'ArrowRight',
+  DOWN: 'ArrowDown',
+  LEFT: 'ArrowLeft',
+  SPACE: 'Space',
+  ENTER: 'Enter'
+});
+
 if (popups) {
-  const Keys = {
-    ESCAPE: 'Escape',
-    ESC: 'Esc',
-  };
 
   const isEscEvent = (evt) => {
-    return evt.key === Keys.ESCAPE || evt.key === Keys.ESC;
+    return evt.key === Key.ESCAPE || evt.key === Key.ESC;
   };
 
   let bodyWidth = document.body.clientWidth;
@@ -764,21 +771,6 @@ if (materialsSwiperAlter) {
   });
 }
 
-const initSelects = (parentNode) => {
-  const selectElements = parentNode.querySelectorAll('.n-select select');
-  if (!selectElements) {
-    return;
-  }
-  selectElements.forEach((select) => {
-    const choices = new Choices(select, {
-      searchEnabled: false,
-    });
-  })
-};
-
-initSelects(document);
-
-
 const brandsSection = document.querySelector('.n-brands');
 
 if (brandsSection) {
@@ -1001,3 +993,94 @@ if (popularGoodsSection) {
     breakpointChecker();
   })();
 }
+
+/* ------------ n-select ------------ */
+
+const initSelect = (wrapper) => {
+  const control = wrapper.querySelector('.n-select__control');
+  const select = wrapper.querySelector('.n-select__select');
+  const header = select.querySelector('.n-select__header');
+  const listWrapper = select.querySelector('.n-select__options');
+  const list = listWrapper.querySelector('.n-select__list');
+
+  let listMaxHeight = false;
+
+  const setListMaxHeight = () => {
+    if (listMaxHeight) {
+      return;
+    }
+
+    list.style.maxHeight = `${list.children[0].offsetHeight * list.dataset.maxHeight}px`;
+    listMaxHeight = true;
+  };
+
+  select.addEventListener('keydown',  setListMaxHeight, {once: true});
+  select.addEventListener('click', setListMaxHeight, {once: true});
+
+  let currentOptionIndex = 0;
+  list.children[currentOptionIndex].classList.add('n-select__option--selected');
+
+  const getNextOptionIndex = () => {
+    return (currentOptionIndex + 1) % control.children.length;
+  };
+
+  const getPrevOptionIndex = () => {
+    return (currentOptionIndex - 1 < 0) ? control.children.length - 1 : currentOptionIndex - 1;
+  };
+
+  const selectOption = (index) => {
+    list.children[currentOptionIndex].classList.remove('n-select__option--selected');
+    control.children[currentOptionIndex].selected = false;
+
+    currentOptionIndex = index;
+
+    list.children[currentOptionIndex].classList.add('n-select__option--selected');
+    header.textContent = control.children[currentOptionIndex].textContent;
+
+    if (list.children[currentOptionIndex].offsetTop + list.children[currentOptionIndex].offsetHeight > list.offsetHeight + list.scrollTop) {
+      list.scrollTop = list.children[currentOptionIndex].offsetTop + list.children[currentOptionIndex].offsetHeight - list.offsetHeight;
+    } else if (list.scrollTop > list.children[currentOptionIndex].offsetTop) {
+      list.scrollTop = list.children[currentOptionIndex].offsetTop;
+    }
+
+    control.children[currentOptionIndex].selected = true;
+  };
+
+  select.addEventListener('keydown', (evt) => {
+    switch (evt.code) {
+      case Key.RIGHT:
+      case Key.DOWN:
+        evt.preventDefault();
+        selectOption(getNextOptionIndex());
+        break;
+      case Key.UP:
+      case Key.LEFT:
+        evt.preventDefault();
+        selectOption(getPrevOptionIndex());
+        break;
+      case Key.SPACE:
+      case Key.ENTER:
+        evt.preventDefault();
+        select.classList.toggle('n-select__select--open');
+        break;
+    }
+  });
+
+  select.addEventListener('click', ({target}) => {
+    const option = target.closest('.n-select__option');
+
+    if (option) {
+      selectOption(option.dataset.index);
+    }
+
+    select.classList.toggle('n-select__select--open');
+  });
+
+  select.addEventListener('blur', () => {
+    select.classList.remove('n-select__select--open');
+  });
+};
+
+document.querySelectorAll('.n-select').forEach(initSelect);
+
+/* ------------ */
