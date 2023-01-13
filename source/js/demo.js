@@ -112,5 +112,65 @@ if (numberFields) {
     numberControl.addEventListener('input', () => {
       setInputWidth(numberControl);
     });
+
+    const numberFieldWrapper = numberField.closest('.goods-quantity') ? numberField.closest('.goods-quantity') : numberField.closest('form');
+
+    if (numberFieldWrapper) {
+      const radiobuttons = numberFieldWrapper.querySelectorAll('input[type="radio"]');
+
+      radiobuttons.forEach((radio) => {
+        radio.addEventListener('change', () => {
+          setInputWidth(numberControl);
+        })
+      })
+    }
   });
 }
+
+/* -------------- Сокращенный вариант для сайта ----------------- */
+
+// const numberFields = document.querySelectorAll('.number-field');
+
+// if (numberFields) {
+//   const setInputWidth = (input) => {
+//     const roundedValue = String(Math.ceil(input.value * 1000) / 1000);
+//     input.value = roundedValue;
+//     input.style.width = roundedValue.length + 1 + 'ch';
+//   }
+
+//   numberFields.forEach((numberField) => {
+//     const numberControl = numberField.querySelector('.number-field__control');
+
+//     numberField.querySelector('.number-field__button--minus').addEventListener('click', () => {
+//       setTimeout(() => {
+//         setInputWidth(numberControl)
+//       }, 0);
+//     });
+
+//     numberField.querySelector('.number-field__button--plus').addEventListener('click', () => {
+//       setTimeout(() => {
+//         setInputWidth(numberControl)
+//       }, 0);
+//     });
+
+//     numberControl.addEventListener('input', () => {
+//       setInputWidth(numberControl);
+//     });
+
+//     const numberFieldWrapper = numberField.closest('.goods-quantity') ? numberField.closest('.goods-quantity') : numberField.closest('form');
+
+//     if (numberFieldWrapper) {
+//       const radiobuttons = numberFieldWrapper.querySelectorAll('input[type="radio"]');
+
+//       radiobuttons.forEach((radio) => {
+//         radio.addEventListener('change', () => {
+//           setInputWidth(numberControl);
+//         })
+//       })
+//     }
+
+//     setInputWidth(numberControl);
+//   });
+// }
+
+/* ------------------------------------- */
