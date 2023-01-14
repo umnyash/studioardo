@@ -1088,70 +1088,29 @@ document.querySelectorAll('.n-select').forEach(initSelect);
 /* ------------ custom-form-2--calculation ------------ */
 
 const initCalculationForms = (form) => {
-  const measurementNames = [
-    'length',
-    'width',
-    'area'
-  ];
+  const CENTIMETERS_IN_1_SQUARE_METER = 10000;
 
-  const measurements = Array.from(form.querySelectorAll(`
-    [name="${measurementNames[0]}"],
-    [name="${measurementNames[1]}"],
-    [name="${measurementNames[2]}"]
-  `));
+  const lengthField = form.querySelector('[name="length"]');
+  const widthField = form.querySelector('[name="width"]');
+  const areaField = form.querySelector('[name="area"]');
 
-  const calculator = {
-    length: measurements[0],
-    width: measurements[1],
-    area: measurements[2],
-    calcLength() {
-      return +this.area.value / +this.width.value;
-    },
-    calcWidth() {
-      return +this.area.value / +this.length.value
-    },
-    calcArea() {
-      return +this.length.value * +this.width.value;
-    }
-  };
+  const calcArea = () => {
+    return +lengthField.value * +widthField.value / CENTIMETERS_IN_1_SQUARE_METER;
+  }
 
-  const isMeasurement = (input) => {
-    for (let name of measurementNames) {
-      if (input.name === name) {
-        return true;
-      }
-    }
-  };
+  const setArea = () => {
+    areaField.value = calcArea();
+  }
 
-  const sort = (measurement) => {
-    if (measurement === measurements[measurements.length - 1]) {
-      return;
-    }
+  const resetField = (field) => {
+    field.value = '';
+  }
 
-    measurements.push(measurements.splice(measurements.indexOf(measurement), 1)[0])
-  };
-
-  const calc = (name) => {
-    switch (name) {
-      case 'area':
-        calculator.area.value =  Math.ceil(calculator.calcArea() * 1000) / 1000;
-        break;
-      case 'length':
-        calculator.length.value = Math.ceil(calculator.calcLength() * 1000) / 1000;
-        break;
-      case 'width':
-        calculator.width.value = Math.ceil(calculator.calcWidth() * 1000) / 1000;
-        break;
-    }
-  };
-
-  form.addEventListener('input', (evt) => {
-    const measurement = evt.target;
-
-    if (isMeasurement(measurement)) {
-      sort(measurement);
-      calc(measurements[0].name);
-    }
+  lengthField.addEventListener('input', setArea);
+  widthField.addEventListener('input', setArea);
+  areaField.addEventListener('input', () => {
+    resetField(lengthField);
+    resetField(widthField);
   });
 };
 
