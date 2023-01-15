@@ -730,23 +730,6 @@ if (materialsSwiper) {
   });
 }
 
-
-const materialSwiper = document.querySelector('.material__slider.swiper');
-
-if (materialSwiper) {
-  var swiper = new Swiper('.material__slider', {
-    slidesPerView: 1,
-    cssMode: true,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    watchSlidesProgress: true,
-    mousewheel: true,
-    keyboard: true,
-  });
-}
-
 const materialsSwiperAlter = document.querySelector('.materials__slider--alter.swiper');
 
 if (materialsSwiperAlter) {
@@ -1072,6 +1055,40 @@ const materialsData = {
 
 /* ------------ */
 
+/* ------------ material-preview ------------ */
+
+const materialPreviewSwiper = new Swiper('.material__slider', {
+  slidesPerView: 1,
+  cssMode: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  watchSlidesProgress: true,
+  mousewheel: true,
+  keyboard: true,
+});
+
+const changeMaterialPreview = (preview, name) => {
+  const materialInfoHeading = preview.querySelector('.material__heading');
+  const materialPrice = preview.querySelector('.material__price');
+
+  const slides = materialsData[name].images.map((link) => `
+    <li class="material__slider-item swiper-slide">
+      <picture class="material__slider-img-wrapper">
+        <img class="material__slider-img" src="${link}" width="600" height="600" alt="Гранит.">
+      </picture>
+    </li>
+  `).join('');
+
+  materialInfoHeading.textContent = name;
+  materialPrice.textContent = materialsData[name].price;
+  materialPreviewSwiper.removeAllSlides();
+  materialPreviewSwiper.appendSlide(slides);
+  materialPreviewSwiper.slideTo(0, 0);
+};
+
+/* ------------ */
 
 /* ------------ n-select ------------ */
 
@@ -1082,65 +1099,12 @@ const initSelect = (wrapper) => {
   const listWrapper = select.querySelector('.n-select__options');
   const list = listWrapper.querySelector('.n-select__list');
 
-  let materialInfo;
-  let changeMaterialInfo;
+  let isMaterialPreviewChanger = false;
+  let materialPreview = null;
 
-  if (wrapper.classList.contains('n-select--material-changer')) {
-    materialInfo = wrapper.closest('.calculation-material').querySelector('.material');
-    const materialInfoHeading = materialInfo.querySelector('.material__heading');
-    const materialPrice = materialInfo.querySelector('.material__price');
-
-    const initMaterialSlider = (slider) => {
-      const swiper = new Swiper(slider, {
-        slidesPerView: 1,
-        cssMode: true,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        watchSlidesProgress: true,
-        mousewheel: true,
-        keyboard: true,
-      });
-    }
-
-    changeMaterialInfo = () => {
-      materialInfoHeading.textContent = control.value;
-      materialPrice.textContent = materialsData[control.value].price;
-      materialInfo.querySelector('.material__slider').remove();
-      const newSlider = `
-        <div class="material__slider n-slider swiper">
-          <ul class="material__slider-list n-slider__list swiper-wrapper">
-          </ul>
-          <button class="material__slider-button n-slider__button n-slider__button--prev swiper-button-prev" type="button">
-            <span class="visually-hidden">Предыдущий слайд</span>
-          </button>
-          <button class="material__slider-button n-slider__button n-slider__button--next swiper-button-next" type="button">
-            <span class="visually-hidden">Следущий слайд</span>
-          </button>
-        </div>
-      `;
-
-      materialInfo = wrapper.closest('.calculation-material').querySelector('.material');
-      console.log(materialInfo);
-
-      const listItems = materialsData[control.value].images.map((link) => `
-        <li class="material__slider-item swiper-slide">
-          <picture class="material__slider-img-wrapper">
-            <img class="material__slider-img" src="${link}" width="600" height="600" alt="Гранит.">
-          </picture>
-        </li>
-      `).join('');
-
-      materialInfo.insertAdjacentHTML('beforeend', newSlider);
-      const sliderList = materialInfo.querySelector('.material__slider-list');
-      sliderList.insertAdjacentHTML('beforeend', listItems);
-      const slider = materialInfo.querySelector('.material__slider');
-
-      initMaterialSlider(slider);
-    };
-
-    // console.log(materialInfo);
+  if (wrapper.classList.contains('n-select--material-preview-changer')) {
+    isMaterialPreviewChanger = true;
+    materialPreview = wrapper.closest('.calculation-material').querySelector('.material');
   }
 
   let listMaxHeight = false;
@@ -1157,7 +1121,7 @@ const initSelect = (wrapper) => {
   select.addEventListener('keydown',  setListMaxHeight, {once: true});
   select.addEventListener('click', setListMaxHeight, {once: true});
 
-  let currentOptionIndex = 2;
+  let currentOptionIndex = 0;
   list.children[currentOptionIndex].classList.add('n-select__option--selected');
 
   const getNextOptionIndex = () => {
@@ -1185,8 +1149,8 @@ const initSelect = (wrapper) => {
 
     control.children[currentOptionIndex].selected = true;
 
-    if (wrapper.classList.contains('n-select--material-changer')) {
-      changeMaterialInfo();
+    if (isMaterialPreviewChanger) {
+      changeMaterialPreview(materialPreview, control.value);
     }
   };
 
@@ -1224,8 +1188,10 @@ const initSelect = (wrapper) => {
     select.classList.remove('n-select__select--open');
   });
 
-  if (wrapper.classList.contains('n-select--material-changer')) {
-    control.addEventListener('change', changeMaterialInfo);
+  if (isMaterialPreviewChanger) {
+    control.addEventListener('change', () => {
+      changeMaterialPreview(materialPreview, control.value);
+    });
   }
 };
 
