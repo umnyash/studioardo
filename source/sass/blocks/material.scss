@@ -104,10 +104,26 @@
   }
 
   .material__slider-img-wrapper {
+    display: grid;
+    max-width: 600px;
+    max-height: 600px;
+
+    &::before {
+      content: "";
+      grid-area: 1 / 1 / 2 / 2;
+      width: 100%;
+      padding: 50% 0;
+    }
+
     @media #{$mobile} {
       height: 160px;
+      width: 160px;
       margin: 0 auto;
     }
+  }
+
+  .material__slider-img {
+    grid-area: 1 / 1 / 2 / 2;
   }
 
   .material__slider-button {

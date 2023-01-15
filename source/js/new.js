@@ -994,6 +994,85 @@ if (popularGoodsSection) {
   })();
 }
 
+/* ------------ Data ------------ */
+const materialsData = {
+  'Мрамор lorem-1': {
+    price: 7000,
+    images: [
+      'img/stone/materials/material-4-small.jpg',
+      'img/stone/materials/material-4-small.jpg'
+    ]
+  },
+  'Мрамор lorem ips-2': {
+    price: 4000,
+    images: [
+      'img/stone/materials/material-5-small.jpg',
+      'img/stone/materials/material-5-small.jpg'
+    ]
+  },
+  'Мрамор название-3': {
+    price: 5000,
+    images: [
+      'img/stone/materials/material-2-big.jpg',
+      'img/stone/materials/material-2-big.jpg'
+    ]
+  },
+  'Мрамор ips 4': {
+    price: 7000,
+    images: [
+      'img/stone/materials/material-7-small.jpg',
+      'img/stone/materials/material-7-small.jpg',
+      'img/stone/materials/material-7-small.jpg',
+      'img/stone/materials/material-7-small.jpg'
+    ]
+  },
+  'Мрамор ips 5': {
+    price: 7000,
+    images: [
+      'img/stone/materials/material-7-small.jpg',
+      'img/stone/materials/material-7-small.jpg'
+    ]
+  },
+  'Мрамор ips 6': {
+    price: 7000,
+    images: [
+      'img/stone/materials/material-7-small.jpg',
+      'img/stone/materials/material-7-small.jpg'
+    ]
+  },
+  'Мрамор ips 7': {
+    price: 7000,
+    images: [
+      'img/stone/materials/material-7-small.jpg',
+      'img/stone/materials/material-7-small.jpg'
+    ]
+  },
+  'Мрамор ips 8': {
+    price: 7000,
+    images: [
+      'img/stone/materials/material-7-small.jpg',
+      'img/stone/materials/material-7-small.jpg'
+    ]
+  },
+  'Мрамор ips 9': {
+    price: 7000,
+    images: [
+      'img/stone/materials/material-7-small.jpg',
+      'img/stone/materials/material-7-small.jpg'
+    ]
+  },
+  'Мрамор ips 10': {
+    price: 7000,
+    images: [
+      'img/stone/materials/material-7-small.jpg',
+      'img/stone/materials/material-7-small.jpg'
+    ]
+  }
+};
+
+/* ------------ */
+
+
 /* ------------ n-select ------------ */
 
 const initSelect = (wrapper) => {
@@ -1002,6 +1081,67 @@ const initSelect = (wrapper) => {
   const header = select.querySelector('.n-select__header');
   const listWrapper = select.querySelector('.n-select__options');
   const list = listWrapper.querySelector('.n-select__list');
+
+  let materialInfo;
+  let changeMaterialInfo;
+
+  if (wrapper.classList.contains('n-select--material-changer')) {
+    materialInfo = wrapper.closest('.calculation-material').querySelector('.material');
+    const materialInfoHeading = materialInfo.querySelector('.material__heading');
+    const materialPrice = materialInfo.querySelector('.material__price');
+
+    const initMaterialSlider = (slider) => {
+      const swiper = new Swiper(slider, {
+        slidesPerView: 1,
+        cssMode: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        watchSlidesProgress: true,
+        mousewheel: true,
+        keyboard: true,
+      });
+    }
+
+    changeMaterialInfo = () => {
+      materialInfoHeading.textContent = control.value;
+      materialPrice.textContent = materialsData[control.value].price;
+      materialInfo.querySelector('.material__slider').remove();
+      const newSlider = `
+        <div class="material__slider n-slider swiper">
+          <ul class="material__slider-list n-slider__list swiper-wrapper">
+          </ul>
+          <button class="material__slider-button n-slider__button n-slider__button--prev swiper-button-prev" type="button">
+            <span class="visually-hidden">Предыдущий слайд</span>
+          </button>
+          <button class="material__slider-button n-slider__button n-slider__button--next swiper-button-next" type="button">
+            <span class="visually-hidden">Следущий слайд</span>
+          </button>
+        </div>
+      `;
+
+      materialInfo = wrapper.closest('.calculation-material').querySelector('.material');
+      console.log(materialInfo);
+
+      const listItems = materialsData[control.value].images.map((link) => `
+        <li class="material__slider-item swiper-slide">
+          <picture class="material__slider-img-wrapper">
+            <img class="material__slider-img" src="${link}" width="600" height="600" alt="Гранит.">
+          </picture>
+        </li>
+      `).join('');
+
+      materialInfo.insertAdjacentHTML('beforeend', newSlider);
+      const sliderList = materialInfo.querySelector('.material__slider-list');
+      sliderList.insertAdjacentHTML('beforeend', listItems);
+      const slider = materialInfo.querySelector('.material__slider');
+
+      initMaterialSlider(slider);
+    };
+
+    // console.log(materialInfo);
+  }
 
   let listMaxHeight = false;
 
@@ -1017,7 +1157,7 @@ const initSelect = (wrapper) => {
   select.addEventListener('keydown',  setListMaxHeight, {once: true});
   select.addEventListener('click', setListMaxHeight, {once: true});
 
-  let currentOptionIndex = 0;
+  let currentOptionIndex = 2;
   list.children[currentOptionIndex].classList.add('n-select__option--selected');
 
   const getNextOptionIndex = () => {
@@ -1044,6 +1184,10 @@ const initSelect = (wrapper) => {
     }
 
     control.children[currentOptionIndex].selected = true;
+
+    if (wrapper.classList.contains('n-select--material-changer')) {
+      changeMaterialInfo();
+    }
   };
 
   select.addEventListener('keydown', (evt) => {
@@ -1079,11 +1223,34 @@ const initSelect = (wrapper) => {
   select.addEventListener('blur', () => {
     select.classList.remove('n-select__select--open');
   });
+
+  if (wrapper.classList.contains('n-select--material-changer')) {
+    control.addEventListener('change', changeMaterialInfo);
+  }
 };
 
 document.querySelectorAll('.n-select').forEach(initSelect);
 
 /* ------------ */
+// const UPLOAD_URL = 'https://echo.htmlacademy.ru/courses';
+let UPLOAD_URL = 'https://echo.htmlacademy.ru/courses';
+
+const sendData = (onSuccess, onFail, body) => {
+  fetch(UPLOAD_URL, {
+    method: 'POST',
+    body,
+  })
+    .then((response) => {
+      if(response.ok) {
+        onSuccess();
+      } else {
+        onFail();
+      }
+    })
+    .catch(() => {
+      onFail();
+    });
+};
 
 /* ------------ custom-form-2--calculation ------------ */
 
@@ -1093,6 +1260,11 @@ const initCalculationForms = (form) => {
   const lengthField = form.querySelector('[name="length"]');
   const widthField = form.querySelector('[name="width"]');
   const areaField = form.querySelector('[name="area"]');
+  const formResult = form.querySelector('.form__result');
+
+  const chekcAreaField = () => {
+    return !!+areaField.value;
+  };
 
   const calcArea = () => {
     return +lengthField.value * +widthField.value / CENTIMETERS_IN_1_SQUARE_METER;
@@ -1100,6 +1272,7 @@ const initCalculationForms = (form) => {
 
   const setArea = () => {
     areaField.value = calcArea();
+    formResult.classList.toggle('form__result--hidden', !chekcAreaField());
   }
 
   const resetField = (field) => {
@@ -1111,9 +1284,58 @@ const initCalculationForms = (form) => {
   areaField.addEventListener('input', () => {
     resetField(lengthField);
     resetField(widthField);
+    formResult.classList.toggle('form__result--hidden', !chekcAreaField());
+  });
+
+  const formWrapper = form.closest('.custom-form-2--calculation');
+  const formSubmit = form.querySelector('.form__submit');
+
+  const onSuccess = () => {
+    formWrapper.classList.remove('custom-form-2--notice--error');
+    formWrapper.classList.add('custom-form-2--notice--success');
+    formSubmit.classList.remove('loader');
+  };
+
+  const onFail = () => {
+    formWrapper.classList.remove('custom-form-2--notice--success');
+    formWrapper.classList.add('custom-form-2--notice--error');
+    formSubmit.classList.remove('loader');
+  };
+
+  form.addEventListener('submit', (evt) => {
+    evt.preventDefault();
+    formSubmit.classList.add('loader');
+
+    // Имитация успешной (или нет) отправки формы
+    UPLOAD_URL = Math.random() > 0.5 ? 'https://echo.htmlacademy.ru/courses' : 'error';
+
+    setTimeout(() => {
+      sendData(
+        () => onSuccess(),
+        () => onFail(),
+        new FormData(evt.target)
+      );
+    }, 1000)
   });
 };
 
 document.querySelectorAll('.custom-form-2--calculation .form__body').forEach(initCalculationForms);
 
 /* ------------ */
+// let slider12 = document.querySelector('.calculation-material .material__slider');
+
+// const blablabla = () => {
+//   const swiper = new Swiper(slider12, {
+//       slidesPerView: 1,
+//       cssMode: true,
+//       navigation: {
+//         nextEl: '.swiper-button-next',
+//         prevEl: '.swiper-button-prev',
+//       },
+//       watchSlidesProgress: true,
+//       mousewheel: true,
+//       keyboard: true,
+//     });
+// }
+
+// blablabla()
