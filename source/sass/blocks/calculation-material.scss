@@ -99,6 +99,7 @@
 
   @media #{$tablet-desktop} {
     display: grid;
+    grid-template-columns: 100%;
     align-content: center;
   }
 

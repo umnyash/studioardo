@@ -1100,8 +1100,6 @@ const changeMaterialPreview = (preview, name) => {
 /* ------------ */
 
 /* ------------ n-select ------------ */
-let isUserSelectedMaterial = false;
-
 const initSelect = (wrapper) => {
   const control = wrapper.querySelector('.n-select__control');
   const select = wrapper.querySelector('.n-select__select');
@@ -1109,8 +1107,12 @@ const initSelect = (wrapper) => {
   const listWrapper = select.querySelector('.n-select__options');
   const list = listWrapper.querySelector('.n-select__list');
 
+  control.value = '';
+
   let isMaterialPreviewChanger = false;
   let materialPreview = null;
+
+  let changeEvent = new Event('change', { bubbles: true });
 
   if (wrapper.classList.contains('n-select--material-preview-changer')) {
     isMaterialPreviewChanger = true;
@@ -1159,10 +1161,10 @@ const initSelect = (wrapper) => {
 
     control.children[currentOptionIndex].selected = true;
 
-    isUserSelectedMaterial = true;
+    control.dispatchEvent(changeEvent);
 
     if (isMaterialPreviewChanger) {
-      changeMaterialPreview(materialPreview, control.value);
+      // changeMaterialPreview(materialPreview, control.value);
     }
   };
 
@@ -1202,7 +1204,7 @@ const initSelect = (wrapper) => {
 
   if (isMaterialPreviewChanger) {
     control.addEventListener('change', () => {
-      changeMaterialPreview(materialPreview, control.value);
+      // changeMaterialPreview(materialPreview, control.value);
     });
   }
 };
@@ -1238,9 +1240,10 @@ const initCalculationForms = (form) => {
   const lengthField = form.querySelector('[name="length"]');
   const widthField = form.querySelector('[name="width"]');
   const areaField = form.querySelector('[name="area"]');
+  const materialField = form.querySelector('[name="material"]')
   const formResult = form.querySelector('.form__result');
 
-  const checkAreaField = () => {
+  const isAreaFieldFiled = () => {
     return !!+areaField.value;
   };
 
@@ -1250,7 +1253,7 @@ const initCalculationForms = (form) => {
 
   const setArea = () => {
     areaField.value = calcArea();
-    formResult.classList.toggle('form__result--hidden', (!(checkAreaField() && isUserSelectedMaterial)));
+    formResult.classList.toggle('form__result--hidden', (!(isAreaFieldFiled() && materialField.value)));
   }
 
   const resetField = (field) => {
@@ -1262,7 +1265,11 @@ const initCalculationForms = (form) => {
   areaField.addEventListener('input', () => {
     resetField(lengthField);
     resetField(widthField);
-    formResult.classList.toggle('form__result--hidden', !checkAreaField());
+    formResult.classList.toggle('form__result--hidden', (!(isAreaFieldFiled() && materialField.value)));
+  });
+
+  materialField.addEventListener('change', () => {
+    formResult.classList.toggle('form__result--hidden', (!(isAreaFieldFiled() && materialField.value)));
   });
 
   const formWrapper = form.closest('.custom-form-2--calculation');
@@ -1300,20 +1307,30 @@ const initCalculationForms = (form) => {
 document.querySelectorAll('.custom-form-2--calculation .form__body').forEach(initCalculationForms);
 
 /* ------------ */
-// let slider12 = document.querySelector('.calculation-material .material__slider');
 
-// const blablabla = () => {
-//   const swiper = new Swiper(slider12, {
-//       slidesPerView: 1,
-//       cssMode: true,
-//       navigation: {
-//         nextEl: '.swiper-button-next',
-//         prevEl: '.swiper-button-prev',
-//       },
-//       watchSlidesProgress: true,
-//       mousewheel: true,
-//       keyboard: true,
-//     });
-// }
 
-// blablabla()
+
+/////////////////////////////
+const materialsSlider = new Swiper('.materials-slider', {
+  slidesPerView: 1,
+  cssMode: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  watchSlidesProgress: true,
+});
+
+///////////////////////////
+// const initCalculationMaterialSection = (section) => {
+//   const materialField = section.querySelector('[name="material"]');
+
+//   materialField.addEventListener('change', (evt) => {
+//     currentOptionIndex = materialField.querySelector(`[value="${materialField.value}"]`).dataset.index;
+//     console.log(materialField.value + ' ' + currentOptionIndex)
+
+//     materialsSlider.slideTo(currentOptionIndex, 0);
+//   });
+// };
+
+// document.querySelectorAll('.calculation-material').forEach(initCalculationMaterialSection);
