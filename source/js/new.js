@@ -91,6 +91,7 @@ if (popups) {
 
   const materialsSection = document.querySelector('.materials');
   const popupCalculationMaterial = document.querySelector('.popup--calculation-material');
+  const popupCalculationMaterialLinks = document.querySelectorAll('[data-modal-opener="calculation-material"]');
 
   if (materialsSection && popupCalculationMaterial) {
     materialsSection.addEventListener('click', (evt) => {
@@ -101,7 +102,15 @@ if (popups) {
         return;
       }
       openPopup(popupCalculationMaterial);
+    });
+  }
 
+  if (popupCalculationMaterial) {
+    popupCalculationMaterialLinks.forEach((link) => {
+      link.addEventListener('click', (evt) => {
+        evt.preventDefault();
+        openPopup(popupCalculationMaterial);
+      })
     });
   }
 
@@ -1091,6 +1100,7 @@ const changeMaterialPreview = (preview, name) => {
 /* ------------ */
 
 /* ------------ n-select ------------ */
+let isUserSelectedMaterial = false;
 
 const initSelect = (wrapper) => {
   const control = wrapper.querySelector('.n-select__control');
@@ -1148,6 +1158,8 @@ const initSelect = (wrapper) => {
     }
 
     control.children[currentOptionIndex].selected = true;
+
+    isUserSelectedMaterial = true;
 
     if (isMaterialPreviewChanger) {
       changeMaterialPreview(materialPreview, control.value);
@@ -1228,7 +1240,7 @@ const initCalculationForms = (form) => {
   const areaField = form.querySelector('[name="area"]');
   const formResult = form.querySelector('.form__result');
 
-  const chekcAreaField = () => {
+  const checkAreaField = () => {
     return !!+areaField.value;
   };
 
@@ -1238,7 +1250,7 @@ const initCalculationForms = (form) => {
 
   const setArea = () => {
     areaField.value = calcArea();
-    formResult.classList.toggle('form__result--hidden', !chekcAreaField());
+    formResult.classList.toggle('form__result--hidden', (!(checkAreaField() && isUserSelectedMaterial)));
   }
 
   const resetField = (field) => {
@@ -1250,7 +1262,7 @@ const initCalculationForms = (form) => {
   areaField.addEventListener('input', () => {
     resetField(lengthField);
     resetField(widthField);
-    formResult.classList.toggle('form__result--hidden', !chekcAreaField());
+    formResult.classList.toggle('form__result--hidden', !checkAreaField());
   });
 
   const formWrapper = form.closest('.custom-form-2--calculation');
