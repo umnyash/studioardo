@@ -11,6 +11,8 @@ const Key = Object.freeze({
   ENTER: 'Enter'
 });
 
+let isPopupCalculationMaterialWasOpened = false;
+
 if (popups) {
 
   const isEscEvent = (evt) => {
@@ -36,7 +38,21 @@ if (popups) {
   const openCalculationMaterialPopup = (type, material) => {
     bodyWidth = document.body.clientWidth;
 
+
     const popup = document.querySelector('.popup--calculation-material');
+    popup.querySelector('form').reset();
+
+    const formResult = popup.querySelector('.calculation-form .form__result');
+    const typeSelect = popup.querySelector('.calculation-form select[name="type"]');
+    const materialSelect = popup.querySelector('.calculation-form select[name="material"]');
+    const nSelectHeaders = popup.querySelectorAll('.calculation-form .n-select__header');
+
+    formResult.classList.add('form__result--hidden');
+    typeSelect.value = '';
+    materialSelect.value= '';
+    nSelectHeaders.forEach((header) => {
+      header.textContent = header.dataset.text;
+    })
 
     popup.classList.add('popup--open');
     currentPopup = popup;
@@ -48,24 +64,24 @@ if (popups) {
     }
 
     if (type) {
-      const select = popup.querySelector('.calculation-form select[name="type"]');
       let changeEvent = new Event('change', { bubbles: true });
 
-      const index = select.querySelector(`option[value="${type}"]`).dataset.index;
+      const index = typeSelect.querySelector(`option[value="${type}"]`).dataset.index;
 
-      select.children[index].selected = true;
-      select.dispatchEvent(changeEvent);
+      typeSelect.children[index].selected = true;
+      typeSelect.dispatchEvent(changeEvent);
     }
 
     if (material) {
-      const select = popup.querySelector('.calculation-form select[name="material"]');
-      let changeEvent = new Event('change', { bubbles: true });
+      let changeEvent2 = new Event('change', { bubbles: true });
 
-      const index = select.querySelector(`option[value="${material}"]`).dataset.index;
+      const index = materialSelect.querySelector(`option[value="${material}"]`).dataset.index;
 
-      select.children[index].selected = true;
-      select.dispatchEvent(changeEvent);
+      materialSelect.children[index].selected = true;
+      materialSelect.dispatchEvent(changeEvent2);
     }
+
+    isPopupCalculationMaterialWasOpened = true;
   };
 
   const closePopup = (popup) => {
@@ -1237,6 +1253,7 @@ const initSelect = (wrapper) => {
   control.addEventListener('change', () => {
     currentOptionIndex = control.querySelector(`option[value="${control.value}"]`).dataset.index;
     selectOption(currentOptionIndex);
+    console.log('привет')
   });
 
   if (isMaterialPreviewChanger) {
@@ -1355,7 +1372,7 @@ const materialsSlider = new Swiper('.materials-slider', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
-  watchSlidesProgress: true,
+  watchSlidesProgress: true
 });
 
 ///////////////////////////
@@ -1363,11 +1380,18 @@ const initCalculationMaterialSection = (section) => {
   const materialField = section.querySelector('[name="material"]');
 
   materialField.addEventListener('change', (evt) => {
+
     currentOptionIndex = materialField.querySelector(`[value="${materialField.value}"]`).dataset.index;
     console.log(materialField.value + ' ' + currentOptionIndex)
-
     materialsSlider.slideTo(currentOptionIndex);
+
+    if (!isPopupCalculationMaterialWasOpened) {
+      setTimeout(() => {
+        materialsSlider.slideTo(currentOptionIndex);
+      }, 20)
+    }
   });
 };
 
+console.log(document.querySelector('.calculation-material').querySelectorAll('[name="material"]'))
 document.querySelectorAll('.calculation-material').forEach(initCalculationMaterialSection);
