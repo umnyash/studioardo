@@ -33,6 +33,41 @@ if (popups) {
     }
   };
 
+  const openCalculationMaterialPopup = (type, material) => {
+    bodyWidth = document.body.clientWidth;
+
+    const popup = document.querySelector('.popup--calculation-material');
+
+    popup.classList.add('popup--open');
+    currentPopup = popup;
+    document.body.classList.add('no-scroll');
+    document.addEventListener('keydown', onPopupEscKeydown);
+
+    if (document.body.clientWidth > bodyWidth) {
+      document.body.style.paddingRight = document.body.clientWidth - bodyWidth + 'px';
+    }
+
+    if (type) {
+      const select = popup.querySelector('.calculation-form select[name="type"]');
+      let changeEvent = new Event('change', { bubbles: true });
+
+      const index = select.querySelector(`option[value="${type}"]`).dataset.index;
+
+      select.children[index].selected = true;
+      select.dispatchEvent(changeEvent);
+    }
+
+    if (material) {
+      const select = popup.querySelector('.calculation-form select[name="material"]');
+      let changeEvent = new Event('change', { bubbles: true });
+
+      const index = select.querySelector(`option[value="${material}"]`).dataset.index;
+
+      select.children[index].selected = true;
+      select.dispatchEvent(changeEvent);
+    }
+  };
+
   const closePopup = (popup) => {
     popup.classList.remove('popup--open');
     currentPopup = null;
@@ -101,7 +136,8 @@ if (popups) {
       if (!materialLink) {
         return;
       }
-      openPopup(popupCalculationMaterial);
+
+      openCalculationMaterialPopup(materialLink.dataset.type, materialLink.dataset.material);
     });
   }
 
@@ -109,7 +145,7 @@ if (popups) {
     popupCalculationMaterialLinks.forEach((link) => {
       link.addEventListener('click', (evt) => {
         evt.preventDefault();
-        openPopup(popupCalculationMaterial);
+        openCalculationMaterialPopup(link.dataset.type, link.dataset.material);
       })
     });
   }
@@ -1136,7 +1172,10 @@ const initSelect = (wrapper) => {
   };
 
   const selectOption = (index) => {
-    list.children[currentOptionIndex].classList.remove('n-select__option--selected');
+    list.querySelectorAll('.n-select__option').forEach((option) => {
+      option.classList.remove('n-select__option--selected');
+    });
+    // list.children[currentOptionIndex].classList.remove('n-select__option--selected');
     control.children[currentOptionIndex].selected = false;
 
     currentOptionIndex = +index;;
@@ -1152,7 +1191,9 @@ const initSelect = (wrapper) => {
 
     control.children[currentOptionIndex].selected = true;
 
-    control.dispatchEvent(changeEvent);
+    try {
+      control.dispatchEvent(changeEvent);
+    } catch (err) {}
 
     if (isMaterialPreviewChanger) {
       // changeMaterialPreview(materialPreview, control.value);
@@ -1191,6 +1232,11 @@ const initSelect = (wrapper) => {
 
   select.addEventListener('blur', () => {
     select.classList.remove('n-select__select--open');
+  });
+
+  control.addEventListener('change', () => {
+    currentOptionIndex = control.querySelector(`option[value="${control.value}"]`).dataset.index;
+    selectOption(currentOptionIndex);
   });
 
   if (isMaterialPreviewChanger) {
@@ -1313,15 +1359,15 @@ const materialsSlider = new Swiper('.materials-slider', {
 });
 
 ///////////////////////////
-// const initCalculationMaterialSection = (section) => {
-//   const materialField = section.querySelector('[name="material"]');
+const initCalculationMaterialSection = (section) => {
+  const materialField = section.querySelector('[name="material"]');
 
-//   materialField.addEventListener('change', (evt) => {
-//     currentOptionIndex = materialField.querySelector(`[value="${materialField.value}"]`).dataset.index;
-//     console.log(materialField.value + ' ' + currentOptionIndex)
+  materialField.addEventListener('change', (evt) => {
+    currentOptionIndex = materialField.querySelector(`[value="${materialField.value}"]`).dataset.index;
+    console.log(materialField.value + ' ' + currentOptionIndex)
 
-//     materialsSlider.slideTo(currentOptionIndex, 0);
-//   });
-// };
+    materialsSlider.slideTo(currentOptionIndex);
+  });
+};
 
-// document.querySelectorAll('.calculation-material').forEach(initCalculationMaterialSection);
+document.querySelectorAll('.calculation-material').forEach(initCalculationMaterialSection);
