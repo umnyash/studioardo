@@ -1032,117 +1032,6 @@ if (popularGoodsSection) {
   })();
 }
 
-/* ------------ Data ------------ */
-const materialsData = {
-  'Мрамор lorem-1': {
-    price: 7000,
-    images: [
-      'img/stone/materials/material-4-small.jpg',
-      'img/stone/materials/material-4-small.jpg'
-    ]
-  },
-  'Мрамор lorem ips-2': {
-    price: 4000,
-    images: [
-      'img/stone/materials/material-5-small.jpg',
-      'img/stone/materials/material-5-small.jpg'
-    ]
-  },
-  'Мрамор название-3': {
-    price: 5000,
-    images: [
-      'img/stone/materials/material-2-big.jpg',
-      'img/stone/materials/material-2-big.jpg'
-    ]
-  },
-  'Мрамор ips 4': {
-    price: 7000,
-    images: [
-      'img/stone/materials/material-7-small.jpg',
-      'img/stone/materials/material-7-small.jpg',
-      'img/stone/materials/material-7-small.jpg',
-      'img/stone/materials/material-7-small.jpg'
-    ]
-  },
-  'Мрамор ips 5': {
-    price: 7000,
-    images: [
-      'img/stone/materials/material-7-small.jpg',
-      'img/stone/materials/material-7-small.jpg'
-    ]
-  },
-  'Мрамор ips 6': {
-    price: 7000,
-    images: [
-      'img/stone/materials/material-7-small.jpg',
-      'img/stone/materials/material-7-small.jpg'
-    ]
-  },
-  'Мрамор ips 7': {
-    price: 7000,
-    images: [
-      'img/stone/materials/material-7-small.jpg',
-      'img/stone/materials/material-7-small.jpg'
-    ]
-  },
-  'Мрамор ips 8': {
-    price: 7000,
-    images: [
-      'img/stone/materials/material-7-small.jpg',
-      'img/stone/materials/material-7-small.jpg'
-    ]
-  },
-  'Мрамор ips 9': {
-    price: 7000,
-    images: [
-      'img/stone/materials/material-7-small.jpg',
-      'img/stone/materials/material-7-small.jpg'
-    ]
-  },
-  'Мрамор ips 10': {
-    price: 7000,
-    images: [
-      'img/stone/materials/material-7-small.jpg',
-      'img/stone/materials/material-7-small.jpg'
-    ]
-  }
-};
-
-/* ------------ */
-
-/* ------------ material-preview ------------ */
-
-const materialPreviewSwiper = new Swiper('.material__slider', {
-  slidesPerView: 1,
-  cssMode: true,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  watchSlidesProgress: true
-});
-
-const changeMaterialPreview = (preview, name) => {
-  const materialInfoHeading = preview.querySelector('.material__heading');
-  const materialPrice = preview.querySelector('.material__price');
-
-  const slides = materialsData[name].images.map((link) => `
-    <li class="material__slider-item swiper-slide">
-      <picture class="material__slider-img-wrapper">
-        <img class="material__slider-img" src="${link}" width="600" height="600" alt="Гранит.">
-      </picture>
-    </li>
-  `).join('');
-
-  materialInfoHeading.textContent = name;
-  materialPrice.textContent = materialsData[name].price;
-  materialPreviewSwiper.removeAllSlides();
-  materialPreviewSwiper.appendSlide(slides);
-  materialPreviewSwiper.slideTo(0, 0);
-};
-
-/* ------------ */
-
 /* ------------ n-select ------------ */
 const initSelect = (wrapper) => {
   const control = wrapper.querySelector('.n-select__control');
@@ -1153,15 +1042,7 @@ const initSelect = (wrapper) => {
 
   control.value = '';
 
-  let isMaterialPreviewChanger = false;
-  let materialPreview = null;
-
   let changeEvent = new Event('change', { bubbles: true });
-
-  if (wrapper.classList.contains('n-select--material-preview-changer')) {
-    isMaterialPreviewChanger = true;
-    materialPreview = wrapper.closest('.calculation-material').querySelector('.material');
-  }
 
   let listMaxHeight = false;
 
@@ -1210,10 +1091,6 @@ const initSelect = (wrapper) => {
     try {
       control.dispatchEvent(changeEvent);
     } catch (err) {}
-
-    if (isMaterialPreviewChanger) {
-      // changeMaterialPreview(materialPreview, control.value);
-    }
   };
 
   select.addEventListener('keydown', (evt) => {
@@ -1253,14 +1130,7 @@ const initSelect = (wrapper) => {
   control.addEventListener('change', () => {
     currentOptionIndex = control.querySelector(`option[value="${control.value}"]`).dataset.index;
     selectOption(currentOptionIndex);
-    console.log('привет')
   });
-
-  if (isMaterialPreviewChanger) {
-    control.addEventListener('change', () => {
-      // changeMaterialPreview(materialPreview, control.value);
-    });
-  }
 };
 
 document.querySelectorAll('.n-select').forEach(initSelect);
@@ -1362,9 +1232,6 @@ document.querySelectorAll('.custom-form-2--calculation .form__body').forEach(ini
 
 /* ------------ */
 
-
-
-/////////////////////////////
 const materialsSlider = new Swiper('.materials-slider', {
   slidesPerView: 1,
   cssMode: true,
@@ -1375,14 +1242,14 @@ const materialsSlider = new Swiper('.materials-slider', {
   watchSlidesProgress: true
 });
 
-///////////////////////////
+/* ------------ Смена слайда при изменении селекта материалов ------------ */
+
 const initCalculationMaterialSection = (section) => {
   const materialField = section.querySelector('[name="material"]');
 
   materialField.addEventListener('change', (evt) => {
 
     currentOptionIndex = materialField.querySelector(`[value="${materialField.value}"]`).dataset.index;
-    console.log(materialField.value + ' ' + currentOptionIndex)
     materialsSlider.slideTo(currentOptionIndex);
 
     if (!isPopupCalculationMaterialWasOpened) {
@@ -1393,5 +1260,18 @@ const initCalculationMaterialSection = (section) => {
   });
 };
 
-console.log(document.querySelector('.calculation-material').querySelectorAll('[name="material"]'))
 document.querySelectorAll('.calculation-material').forEach(initCalculationMaterialSection);
+
+/* ------------ */
+
+/* ------------ Смена селекта при изменении слайда материалов ------------ */
+const calculationMaterialSelect = document.querySelector('.materials-slider').closest('.calculation-material').querySelector('select[name="material"]');
+const calculationMaterialSelectChangeEvent = new Event('change', { bubbles: true });
+
+materialsSlider.on('slideChange', () => {
+  const option = calculationMaterialSelect.querySelector(`option[data-index="${materialsSlider.realIndex}"]`);
+  calculationMaterialSelect.value = option.value;
+  calculationMaterialSelect.dispatchEvent(calculationMaterialSelectChangeEvent);
+})
+
+/* ------------ */
