@@ -707,9 +707,7 @@ if (nProductsItemSlider) {
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
-    },
-    mousewheel: true,
-    keyboard: true,
+    }
   });
 }
 
@@ -725,8 +723,6 @@ if (materialsSwiper) {
       prevEl: '.swiper-button-prev',
     },
     watchSlidesProgress: true,
-    mousewheel: true,
-    keyboard: true,
     breakpoints: {
       768: {
         spaceBetween: 15,
@@ -750,8 +746,6 @@ if (materialsSwiperAlter) {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-    mousewheel: true,
-    keyboard: true,
     breakpoints: {
       1280: {
         slidesPerView: 6,
@@ -1073,9 +1067,7 @@ const materialPreviewSwiper = new Swiper('.material__slider', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
-  watchSlidesProgress: true,
-  mousewheel: true,
-  keyboard: true,
+  watchSlidesProgress: true
 });
 
 const changeMaterialPreview = (preview, name) => {
@@ -1134,7 +1126,6 @@ const initSelect = (wrapper) => {
   select.addEventListener('click', setListMaxHeight, {once: true});
 
   let currentOptionIndex = 0;
-  list.children[currentOptionIndex].classList.add('n-select__option--selected');
 
   const getNextOptionIndex = () => {
     return (currentOptionIndex + 1) % control.children.length;
@@ -1148,7 +1139,7 @@ const initSelect = (wrapper) => {
     list.children[currentOptionIndex].classList.remove('n-select__option--selected');
     control.children[currentOptionIndex].selected = false;
 
-    currentOptionIndex = index;
+    currentOptionIndex = +index;;
 
     list.children[currentOptionIndex].classList.add('n-select__option--selected');
     header.textContent = control.children[currentOptionIndex].textContent;
