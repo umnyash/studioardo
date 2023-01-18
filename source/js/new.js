@@ -1,5 +1,7 @@
 const popups = document.querySelectorAll('.popup');
 
+const changeEvent = new Event('change', { bubbles: true });
+
 const Key = Object.freeze({
   ESCAPE: 'Escape',
   ESC: 'Esc',
@@ -38,21 +40,20 @@ if (popups) {
   const openCalculationMaterialPopup = (type, material) => {
     bodyWidth = document.body.clientWidth;
 
-
     const popup = document.querySelector('.popup--calculation-material');
     popup.querySelector('form').reset();
 
     const formResult = popup.querySelector('.calculation-form .form__result');
     const typeSelect = popup.querySelector('.calculation-form select[name="type"]');
     const materialSelect = popup.querySelector('.calculation-form select[name="material"]');
-    const nSelectHeaders = popup.querySelectorAll('.calculation-form .n-select__header');
 
     formResult.classList.add('form__result--hidden');
-    typeSelect.value = '';
-    materialSelect.value= '';
-    nSelectHeaders.forEach((header) => {
-      header.textContent = header.dataset.text;
-    })
+
+    typeSelect.value = type ? type : '';
+    typeSelect.dispatchEvent(changeEvent);
+
+    materialSelect.value = material ? material : '';
+    materialSelect.dispatchEvent(changeEvent);
 
     popup.classList.add('popup--open');
     currentPopup = popup;
@@ -61,24 +62,6 @@ if (popups) {
 
     if (document.body.clientWidth > bodyWidth) {
       document.body.style.paddingRight = document.body.clientWidth - bodyWidth + 'px';
-    }
-
-    if (type) {
-      let changeEvent = new Event('change', { bubbles: true });
-
-      const index = typeSelect.querySelector(`option[value="${type}"]`).dataset.index;
-
-      typeSelect.children[index].selected = true;
-      typeSelect.dispatchEvent(changeEvent);
-    }
-
-    if (material) {
-      let changeEvent2 = new Event('change', { bubbles: true });
-
-      const index = materialSelect.querySelector(`option[value="${material}"]`).dataset.index;
-
-      materialSelect.children[index].selected = true;
-      materialSelect.dispatchEvent(changeEvent2);
     }
 
     isPopupCalculationMaterialWasOpened = true;
@@ -1037,12 +1020,12 @@ const initSelect = (wrapper) => {
   const control = wrapper.querySelector('.n-select__control');
   const select = wrapper.querySelector('.n-select__select');
   const header = select.querySelector('.n-select__header');
-  const listWrapper = select.querySelector('.n-select__options');
-  const list = listWrapper.querySelector('.n-select__list');
+  const list = select.querySelector('.n-select__list');
+  const options = list.querySelectorAll('.n-select__option');
 
   control.value = '';
 
-  let changeEvent = new Event('change', { bubbles: true });
+  // let changeEvent = new Event('change', { bubbles: true });
 
   let listMaxHeight = false;
 
@@ -1068,14 +1051,21 @@ const initSelect = (wrapper) => {
     return (currentOptionIndex - 1 < 0) ? control.children.length - 1 : currentOptionIndex - 1;
   };
 
-  const selectOption = (index) => {
-    list.querySelectorAll('.n-select__option').forEach((option) => {
+  const changeValue = (index) => {
+    control.children[index].selected = true;
+    control.dispatchEvent(changeEvent);
+  };
+
+  const highlightSelectedOption = () => {
+    options.forEach((option) => {
       option.classList.remove('n-select__option--selected');
     });
-    // list.children[currentOptionIndex].classList.remove('n-select__option--selected');
-    control.children[currentOptionIndex].selected = false;
 
-    currentOptionIndex = +index;;
+    if (control.value === '') {
+      header.textContent = header.dataset.text;
+      list.scrollTop = 0;
+      return;
+    }
 
     list.children[currentOptionIndex].classList.add('n-select__option--selected');
     header.textContent = control.children[currentOptionIndex].textContent;
@@ -1085,12 +1075,6 @@ const initSelect = (wrapper) => {
     } else if (list.scrollTop > list.children[currentOptionIndex].offsetTop) {
       list.scrollTop = list.children[currentOptionIndex].offsetTop;
     }
-
-    control.children[currentOptionIndex].selected = true;
-
-    try {
-      control.dispatchEvent(changeEvent);
-    } catch (err) {}
   };
 
   select.addEventListener('keydown', (evt) => {
@@ -1098,12 +1082,12 @@ const initSelect = (wrapper) => {
       case Key.RIGHT:
       case Key.DOWN:
         evt.preventDefault();
-        selectOption(getNextOptionIndex());
+        changeValue(getNextOptionIndex());
         break;
       case Key.UP:
       case Key.LEFT:
         evt.preventDefault();
-        selectOption(getPrevOptionIndex());
+        changeValue(getPrevOptionIndex());
         break;
       case Key.SPACE:
       case Key.ENTER:
@@ -1117,7 +1101,7 @@ const initSelect = (wrapper) => {
     const option = target.closest('.n-select__option');
 
     if (option) {
-      selectOption(option.dataset.index);
+      changeValue(option.dataset.index);
     }
 
     select.classList.toggle('n-select__select--open');
@@ -1128,8 +1112,12 @@ const initSelect = (wrapper) => {
   });
 
   control.addEventListener('change', () => {
-    currentOptionIndex = control.querySelector(`option[value="${control.value}"]`).dataset.index;
-    selectOption(currentOptionIndex);
+    if (control.value) {
+      currentOptionIndex = +control.querySelector(`option[value="${control.value}"]`).dataset.index;
+    } else {
+      currentOptionIndex = 0;
+    }
+    highlightSelectedOption();
   });
 };
 
@@ -1232,6 +1220,8 @@ document.querySelectorAll('.custom-form-2--calculation .form__body').forEach(ini
 
 /* ------------ */
 
+
+
 const materialsSlider = new Swiper('.materials-slider', {
   slidesPerView: 1,
   cssMode: true,
@@ -1239,39 +1229,30 @@ const materialsSlider = new Swiper('.materials-slider', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
+  speed: 0,
   watchSlidesProgress: true
 });
 
-/* ------------ Смена слайда при изменении селекта материалов ------------ */
+/* ------------ Связь селекта и слайдера ------------ */
 
 const initCalculationMaterialSection = (section) => {
-  const materialField = section.querySelector('[name="material"]');
+  const materialSelect = section.querySelector('select[name="material"]');
 
-  materialField.addEventListener('change', (evt) => {
+  materialSelect.addEventListener('change', () => {
+    let currentOptionIndex;
 
-    currentOptionIndex = materialField.querySelector(`[value="${materialField.value}"]`).dataset.index;
-    materialsSlider.slideTo(currentOptionIndex);
-
-    if (!isPopupCalculationMaterialWasOpened) {
-      setTimeout(() => {
-        materialsSlider.slideTo(currentOptionIndex);
-      }, 20)
+    if (materialSelect.value) {
+      currentOptionIndex = materialSelect.querySelector(`[value="${materialSelect.value}"]`).dataset.index;
     }
+    materialsSlider.slideTo(currentOptionIndex);
+  });
+
+  materialsSlider.on('slideChange', () => {
+    materialSelect.value = materialSelect.querySelector(`option[data-index="${materialsSlider.realIndex}"]`).value;
+    materialSelect.dispatchEvent(changeEvent);
   });
 };
 
 document.querySelectorAll('.calculation-material').forEach(initCalculationMaterialSection);
-
-/* ------------ */
-
-/* ------------ Смена селекта при изменении слайда материалов ------------ */
-const calculationMaterialSelect = document.querySelector('.materials-slider').closest('.calculation-material').querySelector('select[name="material"]');
-const calculationMaterialSelectChangeEvent = new Event('change', { bubbles: true });
-
-materialsSlider.on('slideChange', () => {
-  const option = calculationMaterialSelect.querySelector(`option[data-index="${materialsSlider.realIndex}"]`);
-  calculationMaterialSelect.value = option.value;
-  calculationMaterialSelect.dispatchEvent(calculationMaterialSelectChangeEvent);
-})
 
 /* ------------ */
