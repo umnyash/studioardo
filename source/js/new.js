@@ -53,7 +53,6 @@ if (popups) {
     typeSelect.dispatchEvent(changeEvent);
 
     materialSelect.value = material ? material : '';
-    materialSelect.dispatchEvent(changeEvent);
 
     popup.classList.add('popup--open');
     currentPopup = popup;
@@ -62,6 +61,15 @@ if (popups) {
 
     if (document.body.clientWidth > bodyWidth) {
       document.body.style.paddingRight = document.body.clientWidth - bodyWidth + 'px';
+    }
+
+
+    materialSelect.dispatchEvent(changeEvent);
+
+    if(!isPopupCalculationMaterialWasOpened) {
+      setTimeout(() => {
+        materialSelect.dispatchEvent(changeEvent);
+      }, 50)
     }
 
     isPopupCalculationMaterialWasOpened = true;
@@ -1052,6 +1060,10 @@ const initSelect = (wrapper) => {
   };
 
   const changeValue = (index) => {
+    if (control.value === control.children[index].value) {
+      return;
+    }
+
     control.children[index].selected = true;
     control.dispatchEvent(changeEvent);
   };
@@ -1248,7 +1260,13 @@ const initCalculationMaterialSection = (section) => {
   });
 
   materialsSlider.on('slideChange', () => {
-    materialSelect.value = materialSelect.querySelector(`option[data-index="${materialsSlider.realIndex}"]`).value;
+    const value = materialSelect.querySelector(`option[data-index="${materialsSlider.realIndex}"]`).value;
+
+    if (materialSelect.value === value) {
+      return;
+    }
+
+    materialSelect.value = value;
     materialSelect.dispatchEvent(changeEvent);
   });
 };
