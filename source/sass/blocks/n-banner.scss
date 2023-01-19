@@ -245,15 +245,19 @@
     position: absolute;
     inset: 0;
     min-height: auto;
+    overflow: hidden;
   }
 
   .n-banner__img {
-    object-fit: none;
-    object-position: 50% 0%;
-
-    @media #{$wide-desktop} {
-      object-fit: cover;
-    }
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: auto;
+    min-width: 100%;
+    max-width: none;
+    height: auto;
+    min-height: 100%;
+    transform: translate(-50%, 0px);
   }
 }
 

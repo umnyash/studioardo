@@ -1279,31 +1279,32 @@ document.querySelectorAll('.calculation-material').forEach(initCalculationMateri
 /* ------------ n-banner img parallax ------------ */
 
 const initBannerParallaxImg = (img) => {
-  const getImgYPositionInPercent = () => {
-    return window.pageYOffset / (img.getBoundingClientRect().bottom + window.pageYOffset) * 100;
-  };
+  const imgWrapper = img.parentNode;
 
-  const setImgYPosition = (position) => {
-    let adjustedPosition;
+  const shiftImg = () => {
+    const imgScrollRange = img.offsetHeight - imgWrapper.offsetHeight;
 
-    if (position <= 0) {
-      adjustedPosition = 0;
-    } else if (position >= 100) {
-      adjustedPosition = 100;
-    } else {
-      adjustedPosition = position;
+    if (imgScrollRange <= 0) {
+      return;
     }
 
-    img.style.objectPosition = `50% ${adjustedPosition}%`;
+    const distanceFromTheTopOfThePage = imgWrapper.getBoundingClientRect().bottom + window.pageYOffset;
+    const imgScrollСoefficient = imgScrollRange / distanceFromTheTopOfThePage;
+    let transformY = window.pageYOffset * imgScrollСoefficient;
+
+    if (transformY <= 0) {
+      transformY = 0;
+    } else if (transformY >= imgScrollRange) {
+      transformY = imgScrollRange;
+    }
+
+    img.style.transform = `translate(-50%, -${transformY}px)`;
   };
 
-  setImgYPosition(getImgYPositionInPercent());
-
-  document.addEventListener('scroll', () => {
-    setImgYPosition(getImgYPositionInPercent());
-  });
+  document.addEventListener('scroll', shiftImg);
 };
 
 document.querySelectorAll('.n-banner--parallax-bg .n-banner__img').forEach(initBannerParallaxImg);
 
 /* ------------ */
+
