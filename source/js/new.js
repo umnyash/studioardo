@@ -1274,3 +1274,35 @@ const initCalculationMaterialSection = (section) => {
 document.querySelectorAll('.calculation-material').forEach(initCalculationMaterialSection);
 
 /* ------------ */
+
+/* ------------ n-banner img parallax ------------ */
+
+const initBannerParallaxImg = (img) => {
+  const getImgYPositionInPercent = () => {
+    return window.pageYOffset / (img.getBoundingClientRect().bottom + window.pageYOffset) * 100;
+  };
+
+  const setImgYPosition = (position) => {
+    let adjustedPosition;
+
+    if (position <= 0) {
+      adjustedPosition = 0;
+    } else if (position >= 100) {
+      adjustedPosition = 100;
+    } else {
+      adjustedPosition = position;
+    }
+
+    img.style.objectPosition = `50% ${adjustedPosition}%`;
+  };
+
+  setImgYPosition(getImgYPositionInPercent());
+
+  document.addEventListener('scroll', () => {
+    setImgYPosition(getImgYPositionInPercent());
+  });
+};
+
+document.querySelectorAll('.n-banner--parallax-bg .n-banner__img').forEach(initBannerParallaxImg);
+
+/* ------------ */
