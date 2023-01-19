@@ -13,6 +13,10 @@
   background-color: $background-color;
   cursor: pointer;
 
+  &--selected {
+    color: inherit;
+  }
+
   &::after {
     content: "";
     position: absolute;

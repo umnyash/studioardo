@@ -1075,9 +1075,12 @@ const initSelect = (wrapper) => {
 
     if (control.value === '') {
       header.textContent = header.dataset.text;
+      header.classList.remove('n-select__header--selected');
       list.scrollTop = 0;
       return;
     }
+
+    header.classList.add('n-select__header--selected');
 
     list.children[currentOptionIndex].classList.add('n-select__option--selected');
     header.textContent = control.children[currentOptionIndex].textContent;
