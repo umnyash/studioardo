@@ -59,6 +59,7 @@
 .calculation-material__calculation-form-wrapper {
   grid-area: 1 / 1 / 2 / 2;
   display: flex;
+  width: 100%;
   max-width: 540px;
   padding: 30px 5px 20px;
   margin: auto;
@@ -71,6 +72,10 @@
   @media #{$desktop} {
     padding-top: 74px;
     padding-bottom: 74px;
+  }
+
+  .calculation-material__calculation-form {
+    width: 100%;
   }
 
   .calculation-form__heading {
