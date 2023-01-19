@@ -1256,10 +1256,11 @@ const initCalculationMaterialSection = (section) => {
     if (materialSelect.value) {
       currentOptionIndex = materialSelect.querySelector(`[value="${materialSelect.value}"]`).dataset.index;
     }
-    materialsSlider.slideTo(currentOptionIndex);
+
+    materialsSlider.slideTo(currentOptionIndex, 0);
   });
 
-  materialsSlider.on('slideChange', () => {
+  materialsSlider.on('realIndexChange', () => {
     const value = materialSelect.querySelector(`option[data-index="${materialsSlider.realIndex}"]`).value;
 
     if (materialSelect.value === value) {
