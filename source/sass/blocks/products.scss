@@ -37,7 +37,7 @@
   list-style: none;
   height: calc(137px + 137px + 8px);
 
-  @media #{$laptop} {
+  @media #{$laptop-desktop} {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 8px;

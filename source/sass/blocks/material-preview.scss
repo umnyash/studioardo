@@ -1,0 +1,48 @@
+.material-preview {
+  display: grid;
+  padding: 9px 15px;
+  grid-template-columns: 1fr auto;
+  gap: 2px 20px;
+  align-items: center;
+}
+
+.material-preview__heading {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.material-preview__price {
+  margin: 0;
+  font-size: 13px;
+  line-height: 20px;
+  color: $weak-text-color;
+}
+
+.material-preview__img-wrapper {
+  grid-area: 1 / 2 / 3 / 3;
+  width: 100px;
+  height: 40px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.material-preview__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.material-preview:hover,
+.material-preview.n-select__option--selected {
+  background-color: $material-preview-hover-color;
+
+  .material-preview__price {
+    color: $basic-text-color;
+  }
+}

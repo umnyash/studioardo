@@ -233,5 +233,31 @@
   }
 }
 
+.n-banner--parallax-bg {
+  position: relative;
+  min-height: 440px;
 
+  @media #{$tablet-desktop} {
+    min-height: 570px;
+  }
+
+  .n-banner__img-wrapper {
+    position: absolute;
+    inset: 0;
+    min-height: auto;
+    overflow: hidden;
+  }
+
+  .n-banner__img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: auto;
+    min-width: 100%;
+    max-width: none;
+    height: auto;
+    min-height: 100%;
+    transform: translate(-50%, 0px);
+  }
+}
 

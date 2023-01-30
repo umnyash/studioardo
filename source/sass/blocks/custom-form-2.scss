@@ -1083,6 +1083,10 @@
     .form__textfield-wrapper {
       margin-bottom: 0;
     }
+
+    &--hidden {
+      display: none;
+    }
   }
 
   .form__result-price-wrapper {
@@ -1117,6 +1121,27 @@
   }
 
   .form__notice {
+    display: none;
     width: 100%;
+  }
+}
+
+.custom-form-2--calculation.custom-form-2--notice--success {
+  .form__consent-wrapper {
+    display: none;
+  }
+
+  .form__notice--success {
+    display: inline-grid;
+  }
+}
+
+.custom-form-2--calculation.custom-form-2--notice--error {
+  .form__consent-wrapper {
+    display: none;
+  }
+
+  .form__notice--error {
+    display: block;
   }
 }

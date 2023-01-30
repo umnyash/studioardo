@@ -21,15 +21,19 @@
   color: $basic-text-color;
   opacity: 0.6;
 
-  &:hover {
+  &[href]:hover,
+  &[href]:focus-visible {
     opacity: 1;
+  }
+
+  &[href]:active {
+    opacity: 0.3;
   }
 }
 
-.n-brands__nav-item--active {
-  .n-brands__nav-link {
-    opacity: 1;
-  }
+.n-brands__nav-link--current {
+  opacity: 1;
+  pointer-events: none;
 }
 
 .n-brands__nav-item:not(:last-child) {

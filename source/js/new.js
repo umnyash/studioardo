@@ -1,13 +1,24 @@
 const popups = document.querySelectorAll('.popup');
 
+const changeEvent = new Event('change', { bubbles: true });
+
+const Key = Object.freeze({
+  ESCAPE: 'Escape',
+  ESC: 'Esc',
+  UP: 'ArrowUp',
+  RIGHT: 'ArrowRight',
+  DOWN: 'ArrowDown',
+  LEFT: 'ArrowLeft',
+  SPACE: 'Space',
+  ENTER: 'Enter'
+});
+
+let isPopupCalculationMaterialWasOpened = false;
+
 if (popups) {
-  const Keys = {
-    ESCAPE: 'Escape',
-    ESC: 'Esc',
-  };
 
   const isEscEvent = (evt) => {
-    return evt.key === Keys.ESCAPE || evt.key === Keys.ESC;
+    return evt.key === Key.ESCAPE || evt.key === Key.ESC;
   };
 
   let bodyWidth = document.body.clientWidth;
@@ -24,6 +35,44 @@ if (popups) {
     if (document.body.clientWidth > bodyWidth) {
       document.body.style.paddingRight = document.body.clientWidth - bodyWidth + 'px';
     }
+  };
+
+  const openCalculationMaterialPopup = (type, material) => {
+    bodyWidth = document.body.clientWidth;
+
+    const popup = document.querySelector('.popup--calculation-material');
+    popup.querySelector('form').reset();
+
+    const formResult = popup.querySelector('.calculation-form .form__result');
+    const typeSelect = popup.querySelector('.calculation-form select[name="type"]');
+    const materialSelect = popup.querySelector('.calculation-form select[name="material"]');
+
+    formResult.classList.add('form__result--hidden');
+
+    typeSelect.value = type ? type : '';
+    typeSelect.dispatchEvent(changeEvent);
+
+    materialSelect.value = material ? material : '';
+
+    popup.classList.add('popup--open');
+    currentPopup = popup;
+    document.body.classList.add('no-scroll');
+    document.addEventListener('keydown', onPopupEscKeydown);
+
+    if (document.body.clientWidth > bodyWidth) {
+      document.body.style.paddingRight = document.body.clientWidth - bodyWidth + 'px';
+    }
+
+
+    materialSelect.dispatchEvent(changeEvent);
+
+    if(!isPopupCalculationMaterialWasOpened) {
+      setTimeout(() => {
+        materialSelect.dispatchEvent(changeEvent);
+      }, 50)
+    }
+
+    isPopupCalculationMaterialWasOpened = true;
   };
 
   const closePopup = (popup) => {
@@ -84,6 +133,7 @@ if (popups) {
 
   const materialsSection = document.querySelector('.materials');
   const popupCalculationMaterial = document.querySelector('.popup--calculation-material');
+  const popupCalculationMaterialLinks = document.querySelectorAll('[data-modal-opener="calculation-material"]');
 
   if (materialsSection && popupCalculationMaterial) {
     materialsSection.addEventListener('click', (evt) => {
@@ -93,8 +143,17 @@ if (popups) {
       if (!materialLink) {
         return;
       }
-      openPopup(popupCalculationMaterial);
 
+      openCalculationMaterialPopup(materialLink.dataset.type, materialLink.dataset.material);
+    });
+  }
+
+  if (popupCalculationMaterial) {
+    popupCalculationMaterialLinks.forEach((link) => {
+      link.addEventListener('click', (evt) => {
+        evt.preventDefault();
+        openCalculationMaterialPopup(link.dataset.type, link.dataset.material);
+      })
     });
   }
 
@@ -691,9 +750,7 @@ if (nProductsItemSlider) {
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
-    },
-    mousewheel: true,
-    keyboard: true,
+    }
   });
 }
 
@@ -708,8 +765,7 @@ if (materialsSwiper) {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-    mousewheel: true,
-    keyboard: true,
+    watchSlidesProgress: true,
     breakpoints: {
       768: {
         spaceBetween: 15,
@@ -719,22 +775,6 @@ if (materialsSwiper) {
         spaceBetween: 25
       },
     },
-  });
-}
-
-
-const materialSwiper = document.querySelector('.material__slider.swiper');
-
-if (materialSwiper) {
-  var swiper = new Swiper('.material__slider', {
-    slidesPerView: 1,
-    cssMode: true,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    mousewheel: true,
-    keyboard: true,
   });
 }
 
@@ -749,8 +789,6 @@ if (materialsSwiperAlter) {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-    mousewheel: true,
-    keyboard: true,
     breakpoints: {
       1280: {
         slidesPerView: 6,
@@ -761,21 +799,6 @@ if (materialsSwiperAlter) {
     },
   });
 }
-
-const initSelects = (parentNode) => {
-  const selectElements = parentNode.querySelectorAll('.n-select select');
-  if (!selectElements) {
-    return;
-  }
-  selectElements.forEach((select) => {
-    const choices = new Choices(select, {
-      searchEnabled: false,
-    });
-  })
-};
-
-initSelects(document);
-
 
 const brandsSection = document.querySelector('.n-brands');
 
@@ -842,54 +865,13 @@ if (newsSection) {
   });
 };
 
-const currentOffersSection = document.querySelector('.current-offers');
-if (currentOffersSection) {
-  const tabSwiper = new Swiper('.offers-tabs-swiper', {
-    slidesPerView: 1,
-    spaceBetween: 0,
-    pagination: {
-      el: '.current-offers__dots',
-      bulletActiveClass: 'current-offers__dot--current',
-      bulletClass: 'current-offers__dot',
-      clickable: true,
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 3,
-        slidesPerGroup: 3,
-      },
-      1280: {
-        slidesPerView: 6,
-        slidesPerGroup: 1,
-      },
-    },
-  });
-
-  const swiper = new Swiper('.current-offers__slider', {
-    slidesPerView: 1,
-    spaceBetween: 0,
-    navigation: {
-      nextEl: ".current-offers__arrow--next",
-      prevEl: ".current-offers__arrow--back",
-    },
-    effect: 'fade',
-    fadeEffect: {
-      crossFade: true
-    },
-    thumbs: {
-      swiper: tabSwiper,
-    },
-    autoplay: {
-      delay: 12000,
-    },
-  });
-};
-
 const offersSection = document.querySelector('.offers');
 if (offersSection) {
   const tabs = new Swiper('.offers .tabs__slider', {
     slidesPerView: 1,
     spaceBetween: 0,
+    loop: true,
+    watchSlidesProgress: true,
     pagination: {
       el: '.offers__tabs-pagination',
       clickable: true,
@@ -902,6 +884,7 @@ if (offersSection) {
       1280: {
         slidesPerView: 6,
         slidesPerGroup: 1,
+        loop: false,
       },
     },
   });
@@ -910,9 +893,16 @@ if (offersSection) {
     slidesPerView: 1,
     spaceBetween: 0,
     loop: true,
+    watchSlidesProgress: true,
     navigation: {
       nextEl: ".offers__button-next",
       prevEl: ".offers__button-prev",
+    },
+    autoplay: {
+      delay: 6500,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+      waitForTransition: true
     },
     effect: 'fade',
     fadeEffect: {
@@ -1032,3 +1022,292 @@ if (popularGoodsSection) {
     breakpointChecker();
   })();
 }
+
+/* ------------ n-select ------------ */
+const initSelect = (wrapper) => {
+  const control = wrapper.querySelector('.n-select__control');
+  const select = wrapper.querySelector('.n-select__select');
+  const header = select.querySelector('.n-select__header');
+  const list = select.querySelector('.n-select__list');
+  const options = list.querySelectorAll('.n-select__option');
+
+  control.value = '';
+
+  // let changeEvent = new Event('change', { bubbles: true });
+
+  let listMaxHeight = false;
+
+  const setListMaxHeight = () => {
+    if (listMaxHeight) {
+      return;
+    }
+
+    list.style.maxHeight = `${list.children[0].offsetHeight * list.dataset.maxHeight}px`;
+    listMaxHeight = true;
+  };
+
+  select.addEventListener('keydown',  setListMaxHeight, {once: true});
+  select.addEventListener('click', setListMaxHeight, {once: true});
+
+  let currentOptionIndex = 0;
+
+  const getNextOptionIndex = () => {
+    return (currentOptionIndex + 1) % control.children.length;
+  };
+
+  const getPrevOptionIndex = () => {
+    return (currentOptionIndex - 1 < 0) ? control.children.length - 1 : currentOptionIndex - 1;
+  };
+
+  const changeValue = (index) => {
+    if (control.value === control.children[index].value) {
+      return;
+    }
+
+    control.children[index].selected = true;
+    control.dispatchEvent(changeEvent);
+  };
+
+  const highlightSelectedOption = () => {
+    options.forEach((option) => {
+      option.classList.remove('n-select__option--selected');
+    });
+
+    if (control.value === '') {
+      header.textContent = header.dataset.text;
+      header.classList.remove('n-select__header--selected');
+      list.scrollTop = 0;
+      return;
+    }
+
+    header.classList.add('n-select__header--selected');
+
+    list.children[currentOptionIndex].classList.add('n-select__option--selected');
+    header.textContent = control.children[currentOptionIndex].textContent;
+
+    if (list.children[currentOptionIndex].offsetTop + list.children[currentOptionIndex].offsetHeight > list.offsetHeight + list.scrollTop) {
+      list.scrollTop = list.children[currentOptionIndex].offsetTop + list.children[currentOptionIndex].offsetHeight - list.offsetHeight;
+    } else if (list.scrollTop > list.children[currentOptionIndex].offsetTop) {
+      list.scrollTop = list.children[currentOptionIndex].offsetTop;
+    }
+  };
+
+  select.addEventListener('keydown', (evt) => {
+    switch (evt.code) {
+      case Key.RIGHT:
+      case Key.DOWN:
+        evt.preventDefault();
+        changeValue(getNextOptionIndex());
+        break;
+      case Key.UP:
+      case Key.LEFT:
+        evt.preventDefault();
+        changeValue(getPrevOptionIndex());
+        break;
+      case Key.SPACE:
+      case Key.ENTER:
+        evt.preventDefault();
+        select.classList.toggle('n-select__select--open');
+        break;
+    }
+  });
+
+  select.addEventListener('click', ({target}) => {
+    const option = target.closest('.n-select__option');
+
+    if (option) {
+      changeValue(option.dataset.index);
+    }
+
+    select.classList.toggle('n-select__select--open');
+  });
+
+  select.addEventListener('blur', () => {
+    select.classList.remove('n-select__select--open');
+  });
+
+  control.addEventListener('change', () => {
+    if (control.value) {
+      currentOptionIndex = +control.querySelector(`option[value="${control.value}"]`).dataset.index;
+    } else {
+      currentOptionIndex = 0;
+    }
+    highlightSelectedOption();
+  });
+};
+
+document.querySelectorAll('.n-select').forEach(initSelect);
+
+/* ------------ */
+// const UPLOAD_URL = 'https://echo.htmlacademy.ru/courses';
+let UPLOAD_URL = 'https://echo.htmlacademy.ru/courses';
+
+const sendData = (onSuccess, onFail, body) => {
+  fetch(UPLOAD_URL, {
+    method: 'POST',
+    body,
+  })
+    .then((response) => {
+      if(response.ok) {
+        onSuccess();
+      } else {
+        onFail();
+      }
+    })
+    .catch(() => {
+      onFail();
+    });
+};
+
+/* ------------ custom-form-2--calculation ------------ */
+
+const initCalculationForms = (form) => {
+  const CENTIMETERS_IN_1_SQUARE_METER = 10000;
+
+  const lengthField = form.querySelector('[name="length"]');
+  const widthField = form.querySelector('[name="width"]');
+  const areaField = form.querySelector('[name="area"]');
+  const materialField = form.querySelector('[name="material"]')
+  const formResult = form.querySelector('.form__result');
+
+  const isAreaFieldFiled = () => {
+    return !!+areaField.value;
+  };
+
+  const calcArea = () => {
+    return +lengthField.value * +widthField.value / CENTIMETERS_IN_1_SQUARE_METER;
+  }
+
+  const setArea = () => {
+    areaField.value = calcArea();
+    formResult.classList.toggle('form__result--hidden', (!(isAreaFieldFiled() && materialField.value)));
+  }
+
+  const resetField = (field) => {
+    field.value = '';
+  }
+
+  lengthField.addEventListener('input', setArea);
+  widthField.addEventListener('input', setArea);
+  areaField.addEventListener('input', () => {
+    resetField(lengthField);
+    resetField(widthField);
+    formResult.classList.toggle('form__result--hidden', (!(isAreaFieldFiled() && materialField.value)));
+  });
+
+  materialField.addEventListener('change', () => {
+    formResult.classList.toggle('form__result--hidden', (!(isAreaFieldFiled() && materialField.value)));
+  });
+
+  const formWrapper = form.closest('.custom-form-2--calculation');
+  const formSubmit = form.querySelector('.form__submit');
+
+  const onSuccess = () => {
+    formWrapper.classList.remove('custom-form-2--notice--error');
+    formWrapper.classList.add('custom-form-2--notice--success');
+    formSubmit.classList.remove('loader');
+  };
+
+  const onFail = () => {
+    formWrapper.classList.remove('custom-form-2--notice--success');
+    formWrapper.classList.add('custom-form-2--notice--error');
+    formSubmit.classList.remove('loader');
+  };
+
+  form.addEventListener('submit', (evt) => {
+    evt.preventDefault();
+    formSubmit.classList.add('loader');
+
+    // Имитация успешной (или нет) отправки формы
+    UPLOAD_URL = Math.random() > 0.5 ? 'https://echo.htmlacademy.ru/courses' : 'error';
+
+    setTimeout(() => {
+      sendData(
+        () => onSuccess(),
+        () => onFail(),
+        new FormData(evt.target)
+      );
+    }, 1000)
+  });
+};
+
+document.querySelectorAll('.custom-form-2--calculation .form__body').forEach(initCalculationForms);
+
+/* ------------ */
+
+
+
+const materialsSlider = new Swiper('.materials-slider', {
+  slidesPerView: 1,
+  cssMode: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  speed: 0,
+  watchSlidesProgress: true
+});
+
+/* ------------ Связь селекта и слайдера ------------ */
+
+const initCalculationMaterialSection = (section) => {
+  const materialSelect = section.querySelector('select[name="material"]');
+
+  materialSelect.addEventListener('change', () => {
+    let currentOptionIndex;
+
+    if (materialSelect.value) {
+      currentOptionIndex = materialSelect.querySelector(`[value="${materialSelect.value}"]`).dataset.index;
+    }
+
+    materialsSlider.slideTo(currentOptionIndex, 0);
+  });
+
+  materialsSlider.on('realIndexChange', () => {
+    const value = materialSelect.querySelector(`option[data-index="${materialsSlider.realIndex}"]`).value;
+
+    if (materialSelect.value === value) {
+      return;
+    }
+
+    materialSelect.value = value;
+    materialSelect.dispatchEvent(changeEvent);
+  });
+};
+
+document.querySelectorAll('.calculation-material').forEach(initCalculationMaterialSection);
+
+/* ------------ */
+
+/* ------------ n-banner img parallax ------------ */
+
+const initBannerParallaxImg = (img) => {
+  const imgWrapper = img.parentNode;
+
+  const shiftImg = () => {
+    const imgScrollRange = img.offsetHeight - imgWrapper.offsetHeight;
+
+    if (imgScrollRange <= 0) {
+      return;
+    }
+
+    const distanceFromTheTopOfThePage = imgWrapper.getBoundingClientRect().bottom + window.pageYOffset;
+    const imgScrollСoefficient = imgScrollRange / distanceFromTheTopOfThePage;
+    let transformY = window.pageYOffset * imgScrollСoefficient;
+
+    if (transformY <= 0) {
+      transformY = 0;
+    } else if (transformY >= imgScrollRange) {
+      transformY = imgScrollRange;
+    }
+
+    img.style.transform = `translate(-50%, -${transformY}px)`;
+  };
+
+  document.addEventListener('scroll', shiftImg);
+};
+
+document.querySelectorAll('.n-banner--parallax-bg .n-banner__img').forEach(initBannerParallaxImg);
+
+/* ------------ */
+

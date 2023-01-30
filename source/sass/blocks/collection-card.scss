@@ -24,8 +24,8 @@
 
   @media #{$laptop-desktop} {
     grid-template-rows: repeat(6, min-content) 1fr;
-    grid-template-columns: 61.6% 1fr auto;
-    column-gap: 27px;
+    grid-template-columns: 60% 1fr auto;
+    column-gap: 60px;
     grid-template-areas:
       "class     class           class"
       "heading   price           social-actions"
@@ -40,8 +40,7 @@
     width: 1480px;
     padding: 0 40px;
     margin: 0 auto;
-    grid-template-columns: 920px 1fr auto;
-    column-gap: 30px;
+    grid-template-columns: 800px 1fr auto;
   }
 }
 
@@ -156,20 +155,7 @@
 }
 
 .collection-card__gallery .collection-img__carousel .item {
-  height: 195px;
   margin: 0;
-
-  @media #{$widemobile-desktop} {
-    height: 230px;
-  }
-
-  @media #{$tablet-desktop} {
-    height: 500px;
-  }
-
-  @media #{$desktop} {
-    height: 565px;
-  }
 }
 
 .collection-card__gallery .collection-img__thumbs {
@@ -185,22 +171,31 @@
 }
 
 .collection-card__gallery .collection-img__thumbs .item {
-  height: 36px;
   margin: 0 2px;
 
   @media #{$tablet-desktop} {
-    height: 116px;
-    margin: 0 4px;
-  }
-
-  @media #{$laptop-desktop} {
-    height: 118px;
-  }
-
-  @media #{$desktop} {
-    height: 90px;
     margin: 0 5px;
   }
+}
+
+.collection-card__gallery.collection-img .item {
+  position: relative;
+  height: auto;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    padding: 50% 0;
+  }
+}
+
+.collection-card__gallery.collection-img .item picture {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .collection-card__buttons {

@@ -33,15 +33,10 @@
 .inspiration__button {
   grid-column: 1/2;
   grid-row: 2/3;
-  width: 242px;
+  justify-self: start;
   padding: 10px 14px 8px;
   font-size: 16px;
   line-height: 21px;
-
-
-  @media #{$tablet-desktop} {
-    width: 221px;
-  }
 
   @media #{$laptop-desktop} {
     min-height: 41px;

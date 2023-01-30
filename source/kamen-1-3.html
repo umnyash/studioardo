@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/libs.min.css" rel="stylesheet">
-    <link href="css/choices.min.css" rel="stylesheet">
     <link href="css/swiper.min.css" rel="stylesheet">
     <link href="css/swiper-bundle.min.css" rel="stylesheet">
     <link href="css/styles.min.css" rel="stylesheet">
@@ -18,7 +17,7 @@
   </head>
   <body class="page-body">
     <main class="stone-product-page">
-      <section class="stone-product-page__banner n-banner">
+      <section class="stone-product-page__banner n-banner n-banner--parallax-bg">
         <picture class="n-banner__img-wrapper" aria-hidden="true">
           <source type="image/webp" media="(min-width: 1281px)" srcset="img/stone/hero/marble-window-sills-hero-bg-desktop.webp 1x, img/stone/hero/marble-window-sills-hero-bg-desktop@2x.webp 2x">
           <source type="image/webp" media="(min-width: 769px)" srcset="img/stone/hero/marble-window-sills-hero-bg-laptop.webp 1x, img/stone/hero/marble-window-sills-hero-bg-laptop@2x.webp 2x">
@@ -36,8 +35,8 @@
                 <h1 class="n-banner__heading">Подоконники из&nbsp;мрамора</h1>
                 <p class="n-banner__text">Делают интерьер неповторимым и придадут шарм природного материала</p>
                 <div class="n-banner__buttons">
-                  <a class="button button--primary button--alter-3 button--fw600" href="#!">Заказать расчет</a>
-                  <a class="button button--secondary button--alter-3 button--fw600" href="#!">Рассчитать самому</a>
+                  <a class="button button--primary button--alter-3 button--fw600" href="#" data-modal-opener="calculation-material">Заказать расчет</a>
+                  <a class="button button--secondary button--alter-3 button--fw600" href="#cost-calculation-form">Рассчитать самому</a>
                 </div>
               </div>
               <a class="n-banner__video-link" href="#manufacture-video">Видео с производства</a>
@@ -230,7 +229,7 @@
                 </p>
                 <div class="product-info__buttons">
                   <button class="product-info__button button button--primary-2" type="button">Подробнее</button>
-                  <button class="product-info__button button button--secondary" type="button">Рассчитать мой вариант</button>
+                  <button class="product-info__button button button--secondary" type="button" data-modal-opener="calculation-material" data-type="window-sills" data-material="Мрамор название-3">Рассчитать мой вариант</button>
                 </div>
               </div>
               <div class="n-products__item-gallery">
@@ -307,7 +306,7 @@
                 </p>
                 <div class="product-info__buttons">
                   <button class="product-info__button button button--primary-2" type="button">Подробнее</button>
-                  <button class="product-info__button button button--secondary" type="button">Рассчитать мой вариант</button>
+                  <button class="product-info__button button button--secondary" type="button" data-modal-opener="calculation-material" data-type="window-sills" data-material="Мрамор название-3">Рассчитать мой вариант</button>
                 </div>
               </div>
               <div class="n-products__item-gallery">
@@ -331,6 +330,237 @@
                     <li class="n-slider__item swiper-slide">
                       <picture class="n-products__item-img-wrapper">
                         <img class="n-products__item-img" src="img/stone/products/product-2.jpg" width="813" height="433" alt="Подоконник из мрамора.">
+                      </picture>
+                    </li>
+                  </ul>
+                  <div class="n-slider__pagination swiper-pagination"></div>
+                  <button class="n-slider__button n-slider__button--prev swiper-button-prev" type="button">
+                    <span class="visually-hidden">Предыдущий слайд</span>
+                  </button>
+                  <button class="n-slider__button n-slider__button--next swiper-button-next" type="button">
+                    <span class="visually-hidden">Следущий слайд</span>
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li class="n-products__item">
+              <div class="n-products__item-info product-info">
+                <h3 class="product-info__heading heading heading--alter-2">Подоконник из мрамора</h3>
+                <dl class="product-info__list characteristics-2">
+                  <div class="characteristics-2__item">
+                    <dt class="characteristics-2__key">Материал:</dt>
+                    <dd class="characteristics-2__value">Мрамор</dd>
+                  </div>
+                  <div class="characteristics-2__item">
+                    <dt class="characteristics-2__key">Размер:</dt>
+                    <dd class="characteristics-2__value">40х120 см</dd>
+                  </div>
+                  <div class="characteristics-2__item">
+                    <dt class="characteristics-2__key">Срок изготовления:</dt>
+                    <dd class="characteristics-2__value">20 дней</dd>
+                  </div>
+                  <div class="characteristics-2__item">
+                    <dt class="characteristics-2__key">Форма:</dt>
+                    <dd class="characteristics-2__value">Название формы</dd>
+                  </div>
+                  <div class="characteristics-2__item">
+                    <dt class="characteristics-2__key">Тип профиля:</dt>
+                    <dd class="characteristics-2__value">№4</dd>
+                    <dd class="characteristics-2__value-img">
+                      <img src="img/stone/drawing/end-profile-4.svg" width="50" alt="Рисунок профиля.">
+                    </dd>
+                  </div>
+                  <div class="characteristics-2__item">
+                    <dt class="characteristics-2__key">Тип подклейки:</dt>
+                    <dd class="characteristics-2__value">№1</dd>
+                    <dd class="characteristics-2__value-img">
+                      <img src="img/stone/drawing/gluing-1.svg" width="50" alt="Рисунок подклейки.">
+                    </dd>
+                  </div>
+                </dl>
+                <p class="product-info__price-wrapper">
+                  Цена от <span class="n-product__price">7&nbsp;000</span>₽ п.метр
+                </p>
+                <div class="product-info__buttons">
+                  <button class="product-info__button button button--primary-2" type="button">Подробнее</button>
+                  <button class="product-info__button button button--secondary" type="button" data-modal-opener="calculation-material" data-type="window-sills" data-material="Мрамор название-3">Рассчитать мой вариант</button>
+                </div>
+              </div>
+              <div class="n-products__item-gallery">
+                <div class="n-products__item-slider n-slider n-slider--alter swiper">
+                  <ul class="n-slider__list swiper-wrapper">
+                    <li class="n-slider__item swiper-slide">
+                      <picture class="n-products__item-img-wrapper">
+                        <img class="n-products__item-img" src="img/stone/products/product-1.jpg" width="813" height="433" alt="Подоконник из мрамора.">
+                      </picture>
+                    </li>
+                    <li class="n-slider__item swiper-slide">
+                      <picture class="n-products__item-img-wrapper">
+                        <img class="n-products__item-img" src="img/stone/products/product-1.jpg" width="813" height="433" alt="Подоконник из мрамора.">
+                      </picture>
+                    </li>
+                    <li class="n-slider__item swiper-slide">
+                      <picture class="n-products__item-img-wrapper">
+                        <img class="n-products__item-img" src="img/stone/products/product-1.jpg" width="813" height="433" alt="Подоконник из мрамора.">
+                      </picture>
+                    </li>
+                    <li class="n-slider__item swiper-slide">
+                      <picture class="n-products__item-img-wrapper">
+                        <img class="n-products__item-img" src="img/stone/products/product-1.jpg" width="813" height="433" alt="Подоконник из мрамора.">
+                      </picture>
+                    </li>
+                  </ul>
+                  <div class="n-slider__pagination swiper-pagination"></div>
+                  <button class="n-slider__button n-slider__button--prev swiper-button-prev" type="button">
+                    <span class="visually-hidden">Предыдущий слайд</span>
+                  </button>
+                  <button class="n-slider__button n-slider__button--next swiper-button-next" type="button">
+                    <span class="visually-hidden">Следущий слайд</span>
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li class="n-products__item">
+              <div class="n-products__item-info product-info">
+                <h3 class="product-info__heading heading heading--alter-2">Подоконник из гранита</h3>
+                <dl class="product-info__list characteristics-2">
+                  <div class="characteristics-2__item">
+                    <dt class="characteristics-2__key">Материал:</dt>
+                    <dd class="characteristics-2__value">Гранит</dd>
+                  </div>
+                  <div class="characteristics-2__item">
+                    <dt class="characteristics-2__key">Размер:</dt>
+                    <dd class="characteristics-2__value">40х120 см</dd>
+                  </div>
+                  <div class="characteristics-2__item">
+                    <dt class="characteristics-2__key">Срок изготовления:</dt>
+                    <dd class="characteristics-2__value">20 дней</dd>
+                  </div>
+                  <div class="characteristics-2__item">
+                    <dt class="characteristics-2__key">Форма:</dt>
+                    <dd class="characteristics-2__value">Название формы</dd>
+                  </div>
+                  <div class="characteristics-2__item">
+                    <dt class="characteristics-2__key">Тип профиля:</dt>
+                    <dd class="characteristics-2__value">№4</dd>
+                    <dd class="characteristics-2__value-img">
+                      <img src="img/stone/drawing/end-profile-4.svg" width="50" alt="Рисунок профиля.">
+                    </dd>
+                  </div>
+                  <div class="characteristics-2__item">
+                    <dt class="characteristics-2__key">Тип подклейки:</dt>
+                    <dd class="characteristics-2__value">№1</dd>
+                    <dd class="characteristics-2__value-img">
+                      <img src="img/stone/drawing/gluing-1.svg" width="50" alt="Рисунок подклейки.">
+                    </dd>
+                  </div>
+                </dl>
+                <p class="product-info__price-wrapper">
+                  Цена от <span class="n-product__price">7&nbsp;000</span>₽ п.метр
+                </p>
+                <div class="product-info__buttons">
+                  <button class="product-info__button button button--primary-2" type="button">Подробнее</button>
+                  <button class="product-info__button button button--secondary" type="button" data-modal-opener="calculation-material" data-type="window-sills" data-material="Мрамор название-3">Рассчитать мой вариант</button>
+                </div>
+              </div>
+              <div class="n-products__item-gallery">
+                <div class="n-products__item-slider n-slider n-slider--alter swiper">
+                  <ul class="n-slider__list swiper-wrapper">
+                    <li class="n-slider__item swiper-slide">
+                      <picture class="n-products__item-img-wrapper">
+                        <img class="n-products__item-img" src="img/stone/products/product-2.jpg" width="813" height="433" alt="Подоконник из мрамора.">
+                      </picture>
+                    </li>
+                    <li class="n-slider__item swiper-slide">
+                      <picture class="n-products__item-img-wrapper">
+                        <img class="n-products__item-img" src="img/stone/products/product-2.jpg" width="813" height="433" alt="Подоконник из мрамора.">
+                      </picture>
+                    </li>
+                    <li class="n-slider__item swiper-slide">
+                      <picture class="n-products__item-img-wrapper">
+                        <img class="n-products__item-img" src="img/stone/products/product-2.jpg" width="813" height="433" alt="Подоконник из мрамора.">
+                      </picture>
+                    </li>
+                    <li class="n-slider__item swiper-slide">
+                      <picture class="n-products__item-img-wrapper">
+                        <img class="n-products__item-img" src="img/stone/products/product-2.jpg" width="813" height="433" alt="Подоконник из мрамора.">
+                      </picture>
+                    </li>
+                  </ul>
+                  <div class="n-slider__pagination swiper-pagination"></div>
+                  <button class="n-slider__button n-slider__button--prev swiper-button-prev" type="button">
+                    <span class="visually-hidden">Предыдущий слайд</span>
+                  </button>
+                  <button class="n-slider__button n-slider__button--next swiper-button-next" type="button">
+                    <span class="visually-hidden">Следущий слайд</span>
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li class="n-products__item">
+              <div class="n-products__item-info product-info">
+                <h3 class="product-info__heading heading heading--alter-2">Подоконник из мрамора</h3>
+                <dl class="product-info__list characteristics-2">
+                  <div class="characteristics-2__item">
+                    <dt class="characteristics-2__key">Материал:</dt>
+                    <dd class="characteristics-2__value">Мрамор</dd>
+                  </div>
+                  <div class="characteristics-2__item">
+                    <dt class="characteristics-2__key">Размер:</dt>
+                    <dd class="characteristics-2__value">40х120 см</dd>
+                  </div>
+                  <div class="characteristics-2__item">
+                    <dt class="characteristics-2__key">Срок изготовления:</dt>
+                    <dd class="characteristics-2__value">20 дней</dd>
+                  </div>
+                  <div class="characteristics-2__item">
+                    <dt class="characteristics-2__key">Форма:</dt>
+                    <dd class="characteristics-2__value">Название формы</dd>
+                  </div>
+                  <div class="characteristics-2__item">
+                    <dt class="characteristics-2__key">Тип профиля:</dt>
+                    <dd class="characteristics-2__value">№4</dd>
+                    <dd class="characteristics-2__value-img">
+                      <img src="img/stone/drawing/end-profile-4.svg" width="50" alt="Рисунок профиля.">
+                    </dd>
+                  </div>
+                  <div class="characteristics-2__item">
+                    <dt class="characteristics-2__key">Тип подклейки:</dt>
+                    <dd class="characteristics-2__value">№1</dd>
+                    <dd class="characteristics-2__value-img">
+                      <img src="img/stone/drawing/gluing-1.svg" width="50" alt="Рисунок подклейки.">
+                    </dd>
+                  </div>
+                </dl>
+                <p class="product-info__price-wrapper">
+                  Цена от <span class="n-product__price">7&nbsp;000</span>₽ п.метр
+                </p>
+                <div class="product-info__buttons">
+                  <button class="product-info__button button button--primary-2" type="button">Подробнее</button>
+                  <button class="product-info__button button button--secondary" type="button" data-modal-opener="calculation-material" data-type="window-sills" data-material="Мрамор название-3">Рассчитать мой вариант</button>
+                </div>
+              </div>
+              <div class="n-products__item-gallery">
+                <div class="n-products__item-slider n-slider n-slider--alter swiper">
+                  <ul class="n-slider__list swiper-wrapper">
+                    <li class="n-slider__item swiper-slide">
+                      <picture class="n-products__item-img-wrapper">
+                        <img class="n-products__item-img" src="img/stone/products/product-1.jpg" width="813" height="433" alt="Подоконник из мрамора.">
+                      </picture>
+                    </li>
+                    <li class="n-slider__item swiper-slide">
+                      <picture class="n-products__item-img-wrapper">
+                        <img class="n-products__item-img" src="img/stone/products/product-1.jpg" width="813" height="433" alt="Подоконник из мрамора.">
+                      </picture>
+                    </li>
+                    <li class="n-slider__item swiper-slide">
+                      <picture class="n-products__item-img-wrapper">
+                        <img class="n-products__item-img" src="img/stone/products/product-1.jpg" width="813" height="433" alt="Подоконник из мрамора.">
+                      </picture>
+                    </li>
+                    <li class="n-slider__item swiper-slide">
+                      <picture class="n-products__item-img-wrapper">
+                        <img class="n-products__item-img" src="img/stone/products/product-1.jpg" width="813" height="433" alt="Подоконник из мрамора.">
                       </picture>
                     </li>
                   </ul>
@@ -1233,27 +1463,139 @@
             </picture>
             <div class="calculation__content">
               <h2 class="calculation__heading">Рассчитайте стоимость вашего изделия прямо сейчас</h2>
-              <div class="calculation__form calculation-form">
+              <div class="calculation__form calculation-form" id="cost-calculation-form">
                 <h3 class="calculation-form__heading">Введите параметры изделия для расчета</h3>
                 <div class="calculation-form__body custom-form-2 custom-form-2--calculation">
                   <div class="form">
                     <form class="form__body" action="#!" method="post">
                       <div class="form__select n-select">
-                        <select name="type">
-                          <option value="">Тип изделия</option>
-                          <option>Тип 1</option>
-                          <option>Тип 2</option>
-                          <option>Тип 3</option>
+                        <div class="n-select__select" tabindex="0" aria-hidden="true">
+                          <p class="n-select__header" data-text="Тип изделия">Тип изделия</p>
+                          <div class="n-select__options n-select__options--text">
+                            <ul class="n-select__list" data-max-height="8">
+                              <li class="n-select__option" data-index="0">Столешницы</li>
+                              <li class="n-select__option" data-index="1">Подоконники</li>
+                              <li class="n-select__option" data-index="2">Лестницы</li>
+                              <li class="n-select__option" data-index="3">Ступени</li>
+                              <li class="n-select__option" data-index="4">Столы</li>
+                              <li class="n-select__option" data-index="5">Камины</li>
+                              <li class="n-select__option" data-index="6">Полы</li>
+                              <li class="n-select__option" data-index="7">Фасады</li>
+                              <li class="n-select__option" data-index="8">Входные группы</li>
+                              <li class="n-select__option" data-index="9">Барные стойки</li>
+                              <li class="n-select__option" data-index="10">Панно</li>
+                              <li class="n-select__option" data-index="11">Хамамы</li>
+                              <li class="n-select__option" data-index="12">Предметы интерьера</li>
+                              <li class="n-select__option" data-index="13">Спец элементы</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <select class="n-select__control visually-hidden" name="type" tabindex="-1">
+                          <option data-index="0" value="countertops">Столешницы</option>
+                          <option data-index="1" value="window-sills">Подоконники</option>
+                          <option data-index="2" value="stairs">Лестницы</option>
+                          <option data-index="3" value="steps">Ступени</option>
+                          <option data-index="4" value="tables">Столы</option>
+                          <option data-index="5" value="fireplaces">Камины</option>
+                          <option data-index="6" value="floors">Полы</option>
+                          <option data-index="7" value="facades">Фасады</option>
+                          <option data-index="8" value="entrance-groups">Входные группы</option>
+                          <option data-index="9" value="bar-counters">Барные стойки</option>
+                          <option data-index="10" value="panel" >Панно</option>
+                          <option data-index="11" value="hamams" >Хамамы</option>
+                          <option data-index="12" value="interior-items" >Предметы интерьера</option>
+                          <option data-index="13" value="special-elements" >Спец элементы</option>
                         </select>
                       </div>
                       <div class="form__select n-select">
-                        <select name="material">
-                          <option value="">Материал</option>
-                          <option>Камень</option>
-                          <option>Мрамор</option>
-                          <option>Гранит</option>
-                          <option>Дерево</option>
-                          <option>Контент</option>
+                        <div class="n-select__select" tabindex="0" aria-hidden="true">
+                          <p class="n-select__header" data-text="Материал">Материал</p>
+                          <div class="n-select__options">
+                            <ul class="n-select__list" data-max-height="8">
+                              <li class="n-select__option material-preview" data-index="0">
+                                <h3 class="material-preview__heading">Мрамор lorem-1</h3>
+                                <p class="material-preview__price">от 7000 ₽/м2</p>
+                                <picture class="material-preview__img-wrapper">
+                                  <img class="material-preview__img" src="img/stone/materials/material-4-small.jpg" width="100" height="40" alt="Мрамор lorem-1.">
+                                </picture>
+                              </li>
+                              <li class="n-select__option material-preview" data-index="1">
+                                <h3 class="material-preview__heading">Мрамор lorem ips-2</h3>
+                                <p class="material-preview__price">от 4000 ₽/м2</p>
+                                <picture class="material-preview__img-wrapper">
+                                  <img class="material-preview__img" src="img/stone/materials/material-5-small.jpg" width="100" height="40" alt="Мрамор lorem ips-2.">
+                                </picture>
+                              </li>
+                              <li class="n-select__option material-preview" data-index="2">
+                                <h3 class="material-preview__heading">Мрамор название-3</h3>
+                                <p class="material-preview__price">от 5000 ₽/м2</p>
+                                <picture class="material-preview__img-wrapper">
+                                  <img class="material-preview__img" src="img/stone/materials/material-6-small.jpg" width="100" height="40" alt="Мрамор название-3.">
+                                </picture>
+                              </li>
+                              <li class="n-select__option material-preview" data-index="3">
+                                <h3 class="material-preview__heading">Мрамор ips 4</h3>
+                                <p class="material-preview__price">от 7000 ₽/м2</p>
+                                <picture class="material-preview__img-wrapper">
+                                  <img class="material-preview__img" src="img/stone/materials/material-7-small.jpg" width="100" height="40" alt="Мрамор ips 4.">
+                                </picture>
+                              </li>
+                              <li class="n-select__option material-preview" data-index="4">
+                                <h3 class="material-preview__heading">Мрамор ips 5</h3>
+                                <p class="material-preview__price">от 7000 ₽/м2</p>
+                                <picture class="material-preview__img-wrapper">
+                                  <img class="material-preview__img" src="img/stone/materials/material-7-small.jpg" width="100" height="40" alt="Мрамор ips 4.">
+                                </picture>
+                              </li>
+                              <li class="n-select__option material-preview" data-index="5">
+                                <h3 class="material-preview__heading">Мрамор ips 6</h3>
+                                <p class="material-preview__price">от 7000 ₽/м2</p>
+                                <picture class="material-preview__img-wrapper">
+                                  <img class="material-preview__img" src="img/stone/materials/material-7-small.jpg" width="100" height="40" alt="Мрамор ips 4.">
+                                </picture>
+                              </li>
+                              <li class="n-select__option material-preview" data-index="6">
+                                <h3 class="material-preview__heading">Мрамор ips 7</h3>
+                                <p class="material-preview__price">от 7000 ₽/м2</p>
+                                <picture class="material-preview__img-wrapper">
+                                  <img class="material-preview__img" src="img/stone/materials/material-7-small.jpg" width="100" height="40" alt="Мрамор ips 4.">
+                                </picture>
+                              </li>
+                              <li class="n-select__option material-preview" data-index="7">
+                                <h3 class="material-preview__heading">Мрамор ips 8</h3>
+                                <p class="material-preview__price">от 7000 ₽/м2</p>
+                                <picture class="material-preview__img-wrapper">
+                                  <img class="material-preview__img" src="img/stone/materials/material-7-small.jpg" width="100" height="40" alt="Мрамор ips 4.">
+                                </picture>
+                              </li>
+                              <li class="n-select__option material-preview" data-index="8">
+                                <h3 class="material-preview__heading">Мрамор ips 9</h3>
+                                <p class="material-preview__price">от 7000 ₽/м2</p>
+                                <picture class="material-preview__img-wrapper">
+                                  <img class="material-preview__img" src="img/stone/materials/material-7-small.jpg" width="100" height="40" alt="Мрамор ips 4.">
+                                </picture>
+                              </li>
+                              <li class="n-select__option material-preview" data-index="9">
+                                <h3 class="material-preview__heading">Мрамор ips 10</h3>
+                                <p class="material-preview__price">от 7000 ₽/м2</p>
+                                <picture class="material-preview__img-wrapper">
+                                  <img class="material-preview__img" src="img/stone/materials/material-7-small.jpg" width="100" height="40" alt="Мрамор ips 4.">
+                                </picture>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <select class="n-select__control visually-hidden" name="material" tabindex="-1">
+                          <option data-index="0" value="Мрамор lorem-1">Мрамор lorem-1</option>
+                          <option data-index="1" value="Мрамор lorem ips-2">Мрамор lorem ips-2</option>
+                          <option data-index="2" value="Мрамор название-3">Мрамор название-3</option>
+                          <option data-index="3" value="Мрамор ips 4">Мрамор ips 4</option>
+                          <option data-index="4" value="Мрамор ips 5">Мрамор ips 5</option>
+                          <option data-index="5" value="Мрамор ips 6">Мрамор ips 6</option>
+                          <option data-index="6" value="Мрамор ips 7">Мрамор ips 7</option>
+                          <option data-index="7" value="Мрамор ips 8">Мрамор ips 8</option>
+                          <option data-index="8" value="Мрамор ips 9">Мрамор ips 9</option>
+                          <option data-index="9" value="Мрамор ips 10">Мрамор ips 10</option>
                         </select>
                       </div>
                       <fieldset class="form__section">
@@ -1277,13 +1619,32 @@
                         <div class="form__textfield-wrapper">
                           <label class="form__textfield-label">
                             <span class="form__textfield">
-                              <input class="form__textfield-control" name="name" type="number" min="1" placeholder="100">
+                              <input class="form__textfield-control" name="area" type="number" min="1" placeholder="100">
                               <span class="form__textfield-label-text">Площадь м2</span>
                             </span>
                           </label>
                         </div>
                       </fieldset>
-                      <button class="form__submit button button--secondary button--alter-2 button--fw600" type="button">Получить лучшее предложение</button>
+                      <div class="form__result form__result--hidden">
+                        <p class="form__result-price-wrapper">
+                          Итого: <span class="form__result-price">14&nbsp;000</span> ₽
+                        </p>
+                        <p class="form__result-text">Оставьте контактный номер чтобы уточнить детали заказа</p>
+                        <div class="form__textfield-wrapper">
+                          <label class="form__textfield-label">
+                            <span class="form__textfield">
+                              <input class="form__textfield-control" name="tel" type="tel" placeholder="+7 (912) 345-67-89">
+                              <span class="form__textfield-label-text">Телефон</span>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                      <button class="form__submit button button--secondary button--alter-2 button--fw600" type="submit">
+                        Получить лучшее предложение
+                        <img class="loader__img" src="img/icons/loader.svg" width="20" height="20" alt="Загрузка...">
+                      </button>
+                      <p class="form__notice form__notice--success">Спасибо. Ваш расчет отправлен</p>
+                      <p class="form__notice form__notice--error">Ошибка отправки формы</p>
                       <div class="form__consent-wrapper">
                         <label class="form__checkbox-label">
                           <input class="form__checkbox-control form__checkbox-control--secondary visually-hidden" name="consent" type="checkbox" checked>
@@ -1382,8 +1743,8 @@
           </button>
           <div class="popup__content">
             <div class="calculation-material">
+              <h2 class="calculation-material__heading">Рассчитайте стоимость вашего изделия прямо сейчас</h2>
               <div class="calculation-material__calculation">
-                <h2 class="visually-hidden">Рассчитайте стоимость вашего изделия прямо сейчас</h2>
                 <picture class="calculation-material__calculation-img-wrapper" aria-hidden="true">
                   <img class="calculation-material__calculation-img" src="img/calculation-bg-tablet.jpg" alt="">
                 </picture>
@@ -1394,21 +1755,133 @@
                       <div class="form">
                         <form class="form__body" action="#!" method="post">
                           <div class="form__select n-select">
-                            <select name="type">
-                              <option value="">Тип изделия</option>
-                              <option>Тип 1</option>
-                              <option>Тип 2</option>
-                              <option>Тип 3</option>
+                            <div class="n-select__select" tabindex="0" aria-hidden="true">
+                              <p class="n-select__header" data-text="Тип изделия">Тип изделия</p>
+                              <div class="n-select__options n-select__options--text">
+                                <ul class="n-select__list" data-max-height="8">
+                                  <li class="n-select__option" data-index="0">Столешницы</li>
+                                  <li class="n-select__option" data-index="1">Подоконники</li>
+                                  <li class="n-select__option" data-index="2">Лестницы</li>
+                                  <li class="n-select__option" data-index="3">Ступени</li>
+                                  <li class="n-select__option" data-index="4">Столы</li>
+                                  <li class="n-select__option" data-index="5">Камины</li>
+                                  <li class="n-select__option" data-index="6">Полы</li>
+                                  <li class="n-select__option" data-index="7">Фасады</li>
+                                  <li class="n-select__option" data-index="8">Входные группы</li>
+                                  <li class="n-select__option" data-index="9">Барные стойки</li>
+                                  <li class="n-select__option" data-index="10">Панно</li>
+                                  <li class="n-select__option" data-index="11">Хамамы</li>
+                                  <li class="n-select__option" data-index="12">Предметы интерьера</li>
+                                  <li class="n-select__option" data-index="13">Спец элементы</li>
+                                </ul>
+                              </div>
+                            </div>
+                            <select class="n-select__control visually-hidden" name="type" tabindex="-1">
+                              <option data-index="0" value="countertops">Столешницы</option>
+                              <option data-index="1" value="window-sills">Подоконники</option>
+                              <option data-index="2" value="stairs">Лестницы</option>
+                              <option data-index="3" value="steps">Ступени</option>
+                              <option data-index="4" value="tables">Столы</option>
+                              <option data-index="5" value="fireplaces">Камины</option>
+                              <option data-index="6" value="floors">Полы</option>
+                              <option data-index="7" value="facades">Фасады</option>
+                              <option data-index="8" value="entrance-groups">Входные группы</option>
+                              <option data-index="9" value="bar-counters">Барные стойки</option>
+                              <option data-index="10" value="panel" >Панно</option>
+                              <option data-index="11" value="hamams" >Хамамы</option>
+                              <option data-index="12" value="interior-items" >Предметы интерьера</option>
+                              <option data-index="13" value="special-elements" >Спец элементы</option>
                             </select>
                           </div>
                           <div class="form__select n-select">
-                            <select name="material">
-                              <option value="">Материал</option>
-                              <option>Камень</option>
-                              <option>Мрамор</option>
-                              <option>Гранит</option>
-                              <option>Дерево</option>
-                              <option>Контент</option>
+                            <div class="n-select__select" tabindex="0" aria-hidden="true">
+                              <p class="n-select__header" data-text="Материал">Материал</p>
+                              <div class="n-select__options">
+                                <ul class="n-select__list" data-max-height="8">
+                                  <li class="n-select__option material-preview" data-index="0">
+                                    <h3 class="material-preview__heading">Мрамор lorem-1</h3>
+                                    <p class="material-preview__price">от 7000 ₽/м2</p>
+                                    <picture class="material-preview__img-wrapper">
+                                      <img class="material-preview__img" src="img/stone/materials/material-4-small.jpg" width="100" height="40" alt="Мрамор lorem-1.">
+                                    </picture>
+                                  </li>
+                                  <li class="n-select__option material-preview" data-index="1">
+                                    <h3 class="material-preview__heading">Мрамор lorem ips-2</h3>
+                                    <p class="material-preview__price">от 4000 ₽/м2</p>
+                                    <picture class="material-preview__img-wrapper">
+                                      <img class="material-preview__img" src="img/stone/materials/material-5-small.jpg" width="100" height="40" alt="Мрамор lorem ips-2.">
+                                    </picture>
+                                  </li>
+                                  <li class="n-select__option material-preview" data-index="2">
+                                    <h3 class="material-preview__heading">Мрамор название-3</h3>
+                                    <p class="material-preview__price">от 5000 ₽/м2</p>
+                                    <picture class="material-preview__img-wrapper">
+                                      <img class="material-preview__img" src="img/stone/materials/material-6-small.jpg" width="100" height="40" alt="Мрамор название-3.">
+                                    </picture>
+                                  </li>
+                                  <li class="n-select__option material-preview" data-index="3">
+                                    <h3 class="material-preview__heading">Мрамор ips 4</h3>
+                                    <p class="material-preview__price">от 7000 ₽/м2</p>
+                                    <picture class="material-preview__img-wrapper">
+                                      <img class="material-preview__img" src="img/stone/materials/material-7-small.jpg" width="100" height="40" alt="Мрамор ips 4.">
+                                    </picture>
+                                  </li>
+                                  <li class="n-select__option material-preview" data-index="4">
+                                    <h3 class="material-preview__heading">Мрамор ips 5</h3>
+                                    <p class="material-preview__price">от 7000 ₽/м2</p>
+                                    <picture class="material-preview__img-wrapper">
+                                      <img class="material-preview__img" src="img/stone/materials/material-7-small.jpg" width="100" height="40" alt="Мрамор ips 4.">
+                                    </picture>
+                                  </li>
+                                  <li class="n-select__option material-preview" data-index="5">
+                                    <h3 class="material-preview__heading">Мрамор ips 6</h3>
+                                    <p class="material-preview__price">от 7000 ₽/м2</p>
+                                    <picture class="material-preview__img-wrapper">
+                                      <img class="material-preview__img" src="img/stone/materials/material-7-small.jpg" width="100" height="40" alt="Мрамор ips 4.">
+                                    </picture>
+                                  </li>
+                                  <li class="n-select__option material-preview" data-index="6">
+                                    <h3 class="material-preview__heading">Мрамор ips 7</h3>
+                                    <p class="material-preview__price">от 7000 ₽/м2</p>
+                                    <picture class="material-preview__img-wrapper">
+                                      <img class="material-preview__img" src="img/stone/materials/material-7-small.jpg" width="100" height="40" alt="Мрамор ips 4.">
+                                    </picture>
+                                  </li>
+                                  <li class="n-select__option material-preview" data-index="7">
+                                    <h3 class="material-preview__heading">Мрамор ips 8</h3>
+                                    <p class="material-preview__price">от 7000 ₽/м2</p>
+                                    <picture class="material-preview__img-wrapper">
+                                      <img class="material-preview__img" src="img/stone/materials/material-7-small.jpg" width="100" height="40" alt="Мрамор ips 4.">
+                                    </picture>
+                                  </li>
+                                  <li class="n-select__option material-preview" data-index="8">
+                                    <h3 class="material-preview__heading">Мрамор ips 9</h3>
+                                    <p class="material-preview__price">от 7000 ₽/м2</p>
+                                    <picture class="material-preview__img-wrapper">
+                                      <img class="material-preview__img" src="img/stone/materials/material-7-small.jpg" width="100" height="40" alt="Мрамор ips 4.">
+                                    </picture>
+                                  </li>
+                                  <li class="n-select__option material-preview" data-index="9">
+                                    <h3 class="material-preview__heading">Мрамор ips 10</h3>
+                                    <p class="material-preview__price">от 7000 ₽/м2</p>
+                                    <picture class="material-preview__img-wrapper">
+                                      <img class="material-preview__img" src="img/stone/materials/material-7-small.jpg" width="100" height="40" alt="Мрамор ips 4.">
+                                    </picture>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <select class="n-select__control visually-hidden" name="material" tabindex="-1">
+                              <option data-index="0" value="Мрамор lorem-1">Мрамор lorem-1</option>
+                              <option data-index="1" value="Мрамор lorem ips-2">Мрамор lorem ips-2</option>
+                              <option data-index="2" value="Мрамор название-3">Мрамор название-3</option>
+                              <option data-index="3" value="Мрамор ips 4">Мрамор ips 4</option>
+                              <option data-index="4" value="Мрамор ips 5">Мрамор ips 5</option>
+                              <option data-index="5" value="Мрамор ips 6">Мрамор ips 6</option>
+                              <option data-index="6" value="Мрамор ips 7">Мрамор ips 7</option>
+                              <option data-index="7" value="Мрамор ips 8">Мрамор ips 8</option>
+                              <option data-index="8" value="Мрамор ips 9">Мрамор ips 9</option>
+                              <option data-index="9" value="Мрамор ips 10">Мрамор ips 10</option>
                             </select>
                           </div>
                           <fieldset class="form__section">
@@ -1432,13 +1905,32 @@
                             <div class="form__textfield-wrapper">
                               <label class="form__textfield-label">
                                 <span class="form__textfield">
-                                  <input class="form__textfield-control" name="name" type="number" min="1" placeholder="100">
+                                  <input class="form__textfield-control" name="area" type="number" min="1" placeholder="100">
                                   <span class="form__textfield-label-text">Площадь м2</span>
                                 </span>
                               </label>
                             </div>
                           </fieldset>
-                          <button class="form__submit button button--secondary button--alter-2 button--fw600" type="button">Получить лучшее предложение</button>
+                          <div class="form__result form__result--hidden">
+                            <p class="form__result-price-wrapper">
+                              Итого: <span class="form__result-price">14&nbsp;000</span> ₽
+                            </p>
+                            <p class="form__result-text">Оставьте контактный номер чтобы уточнить детали заказа</p>
+                            <div class="form__textfield-wrapper">
+                              <label class="form__textfield-label">
+                                <span class="form__textfield">
+                                  <input class="form__textfield-control" name="tel" type="tel" placeholder="+7 (912) 345-67-89">
+                                  <span class="form__textfield-label-text">Телефон</span>
+                                </span>
+                              </label>
+                            </div>
+                          </div>
+                          <button class="form__submit button button--secondary button--alter-2 button--fw600" type="submit">
+                            Получить лучшее предложение
+                            <img class="loader__img" src="img/icons/loader.svg" width="20" height="20" alt="Загрузка...">
+                          </button>
+                          <p class="form__notice form__notice--success">Спасибо. Ваш расчет отправлен</p>
+                          <p class="form__notice form__notice--error">Ошибка отправки формы</p>
                           <div class="form__consent-wrapper">
                             <label class="form__checkbox-label">
                               <input class="form__checkbox-control form__checkbox-control--secondary visually-hidden" name="consent" type="checkbox" checked>
@@ -1456,41 +1948,112 @@
                 </div>
               </div>
               <div class="calculation-material__material">
-                <article class="material material--big">
-                  <div class="material__text-content">
-                    <h3 class="material__heading">Мрамор</h3>
-                    <p class="material__price-wrapper">
-                      Цена от <span class="material__price">4800</span>₽/м2
-                    </p>
-                  </div>
-                  <div class="material__slider n-slider swiper">
-                    <ul class="material__slider-list n-slider__list swiper-wrapper">
-                      <li class="material__slider-item swiper-slide">
-                        <picture class="material__slider-img-wrapper">
-                          <img class="material__slider-img" src="img/stone/materials/material-2-big.jpg" width="600" height="600" alt="Гранит.">
-                        </picture>
-                      </li>
-                      <li class="material__slider-item swiper-slide">
-                        <picture class="material__slider-img-wrapper">
-                          <img class="material__slider-img" src="img/stone/materials/material-2-big.jpg" width="600" height="600" alt="Гранит.">
-                        </picture>
-                      </li>
-                    </ul>
-                    <button class="material__slider-button n-slider__button n-slider__button--prev swiper-button-prev" type="button">
-                      <span class="visually-hidden">Предыдущий слайд</span>
-                    </button>
-                    <button class="material__slider-button n-slider__button n-slider__button--next swiper-button-next" type="button">
-                      <span class="visually-hidden">Следущий слайд</span>
-                    </button>
-                  </div>
-                </article>
+                <div class="materials-slider n-slider swiper">
+                  <ul class="materials-slider__list n-slider__list swiper-wrapper">
+                    <li class="materials-slider__item swiper-slide">
+                      <h3 class="materials-slider__heading">Мрамор lorem-1</h3>
+                      <p class="materials-slider__price-wrapper">
+                        Цена от <span class="materials-slider__price">7000</span>₽/м2
+                      </p>
+                      <picture class="materials-slider__img-wrapper">
+                        <img class="materials-slider__img" src="img/stone/materials/material-4-small.jpg" width="600" height="600" alt="Гранит.">
+                      </picture>
+                    </li>
+                    <li class="materials-slider__item swiper-slide">
+                      <h3 class="materials-slider__heading">Мрамор lorem ips-2</h3>
+                      <p class="materials-slider__price-wrapper">
+                        Цена от <span class="materials-slider__price">4000</span>₽/м2
+                      </p>
+                      <picture class="materials-slider__img-wrapper">
+                        <img class="materials-slider__img" src="img/stone/materials/material-5-small.jpg" width="600" height="600" alt="Гранит.">
+                      </picture>
+                    </li>
+                    <li class="materials-slider__item swiper-slide">
+                      <h3 class="materials-slider__heading">Мрамор название-3</h3>
+                      <p class="materials-slider__price-wrapper">
+                        Цена от <span class="materials-slider__price">5000</span>₽/м2
+                      </p>
+                      <picture class="materials-slider__img-wrapper">
+                        <img class="materials-slider__img" src="img/stone/materials/material-2-big.jpg" width="600" height="600" alt="Гранит.">
+                      </picture>
+                    </li>
+                    <li class="materials-slider__item swiper-slide">
+                      <h3 class="materials-slider__heading">Мрамор ips 4</h3>
+                      <p class="materials-slider__price-wrapper">
+                        Цена от <span class="materials-slider__price">7000</span>₽/м2
+                      </p>
+                      <picture class="materials-slider__img-wrapper">
+                        <img class="materials-slider__img" src="img/stone/materials/material-7-small.jpg" width="600" height="600" alt="Гранит.">
+                      </picture>
+                    </li>
+                    <li class="materials-slider__item swiper-slide">
+                      <h3 class="materials-slider__heading">Мрамор ips 5</h3>
+                      <p class="materials-slider__price-wrapper">
+                        Цена от <span class="materials-slider__price">7000</span>₽/м2
+                      </p>
+                      <picture class="materials-slider__img-wrapper">
+                        <img class="materials-slider__img" src="img/stone/materials/material-7-small.jpg" width="600" height="600" alt="Гранит.">
+                      </picture>
+                    </li>
+                    <li class="materials-slider__item swiper-slide">
+                      <h3 class="materials-slider__heading">Мрамор ips 6</h3>
+                      <p class="materials-slider__price-wrapper">
+                        Цена от <span class="materials-slider__price">7000</span>₽/м2
+                      </p>
+                      <picture class="materials-slider__img-wrapper">
+                        <img class="materials-slider__img" src="img/stone/materials/material-7-small.jpg" width="600" height="600" alt="Гранит.">
+                      </picture>
+                    </li>
+                    <li class="materials-slider__item swiper-slide">
+                      <h3 class="materials-slider__heading">Мрамор ips 7</h3>
+                      <p class="materials-slider__price-wrapper">
+                        Цена от <span class="materials-slider__price">7000</span>₽/м2
+                      </p>
+                      <picture class="materials-slider__img-wrapper">
+                        <img class="materials-slider__img" src="img/stone/materials/material-7-small.jpg" width="600" height="600" alt="Гранит.">
+                      </picture>
+                    </li>
+                    <li class="materials-slider__item swiper-slide">
+                      <h3 class="materials-slider__heading">Мрамор ips 8</h3>
+                      <p class="materials-slider__price-wrapper">
+                        Цена от <span class="materials-slider__price">7000</span>₽/м2
+                      </p>
+                      <picture class="materials-slider__img-wrapper">
+                        <img class="materials-slider__img" src="img/stone/materials/material-7-small.jpg" width="600" height="600" alt="Гранит.">
+                      </picture>
+                    </li>
+                    <li class="materials-slider__item swiper-slide">
+                      <h3 class="materials-slider__heading">Мрамор ips 9</h3>
+                      <p class="materials-slider__price-wrapper">
+                        Цена от <span class="materials-slider__price">7000</span>₽/м2
+                      </p>
+                      <picture class="materials-slider__img-wrapper">
+                        <img class="materials-slider__img" src="img/stone/materials/material-7-small.jpg" width="600" height="600" alt="Гранит.">
+                      </picture>
+                    </li>
+                    <li class="materials-slider__item swiper-slide">
+                      <h3 class="materials-slider__heading">Мрамор ips 10</h3>
+                      <p class="materials-slider__price-wrapper">
+                        Цена от <span class="materials-slider__price">7000</span>₽/м2
+                      </p>
+                      <picture class="materials-slider__img-wrapper">
+                        <img class="materials-slider__img" src="img/stone/materials/material-7-small.jpg" width="600" height="600" alt="Гранит.">
+                      </picture>
+                    </li>
+                  </ul>
+                  <button class="materials-slider__button n-slider__button n-slider__button--prev swiper-button-prev" type="button">
+                    <span class="visually-hidden">Предыдущий слайд</span>
+                  </button>
+                  <button class="materials-slider__button n-slider__button n-slider__button--next swiper-button-next" type="button">
+                    <span class="visually-hidden">Следущий слайд</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </main>
-    <script src="js/choices.min.js"></script>
     <script src="js/swiper.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script> <!-- Новый скрипт -->
     <script src="js/new.js"></script> <!-- Новый скрипт -->

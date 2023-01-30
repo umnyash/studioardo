@@ -22,7 +22,7 @@
 .projects__button {
   grid-column: 1/2;
   grid-row: 2/3;
-  width: 242px;
+  justify-self: start;
   padding: 10px 14px 10px;
   font-size: 16px;
   line-height: 21px;
@@ -49,7 +49,6 @@
 }
 
 .projects__gallery {
-  border-radius: 10px;
   margin: 0 0 0 10px;
 
   @media #{$tablet-desktop} {
@@ -73,6 +72,7 @@
   height: auto;
   background-color: $category-text-bg;
   border-radius: 10px;
+  overflow: hidden;
 
   @media #{$tablet-desktop} {
     width: 550px;
