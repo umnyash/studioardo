@@ -75,7 +75,7 @@
   transform: translateY(-50%);
 
   @media #{$laptop-desktop} {
-    display: none;
+    top: -30px;
   }
 }
 
@@ -88,6 +88,12 @@
     left: 0px;
     transform: translate(-50%, -50%) rotate(180deg);
   }
+
+  @media #{$laptop-desktop} {
+    right: 8px;
+    left: auto;
+    transform: translate(-100%, -100%) rotate(180deg);
+  }
 }
 
 .offers__button-next {
@@ -97,6 +103,10 @@
   @media #{$tablet-desktop} {
     right: 0;
     transform: translate(50%, -50%);
+  }
+
+  @media #{$laptop-desktop} {
+    transform: translateY(-100%);
   }
 }
 
