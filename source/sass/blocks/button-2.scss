@@ -18,7 +18,7 @@
   cursor: pointer;
 
   @media #{$tablet-desktop} {
-    min-height: 60px;
+    min-height: 50px;
     padding-top: 10px;
     padding-bottom: 7px;
     font-size: 14px;
@@ -48,6 +48,10 @@
     font-size: 16px;
     line-height: 21px;
   }
+}
+
+.button-2--alter-2 {
+  text-transform: none;
 }
 
 .button-2--big {
@@ -113,6 +117,12 @@
     width: 21px;
     height: 21px;
   }
+}
+
+.button-2--with-icon--play::before {
+  width: 20px;
+  height: 16px;
+  background-image: url("../img/icons/play-media-icon-2.svg");
 }
 
 .button-2--with-icon--pdf::before {
