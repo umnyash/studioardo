@@ -40,15 +40,18 @@
   height: auto;
   margin: 0 18px 0 0;
   flex-shrink: 0;
+}
 
+.product-item__image--backup {
+  background-color: $background-for-image;
 }
 
 .product-item__image img {
   display: block;
-  width: 160px;
-  height: auto;
+  width: 100px;
+  height: 80px;
   border-radius: 3px;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
 
   @media #{$narrow-mobile} {
