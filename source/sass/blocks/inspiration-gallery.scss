@@ -4,7 +4,7 @@
   background: $artgallery-accent-bg-color;
 
   @media #{$laptop-desktop} {
-    padding: 60px 0 71px;
+    padding: 82px 0 71px;
   }
 }
 
@@ -77,24 +77,10 @@
 .inspiration__gallery-item {
   margin: 0;
   width: 280px;
-  height: 100%;
+  height: 450px;
 
-  // @media #{$tablet-desktop} {
-  //   height: 490px;
-  // }
-}
-
-.inspiration__gallery-text {
-  display: none;
-
-  @media #{$laptop-desktop} {
-    display: inline-block;
-    margin: 18px 0 0 0;
-    font-family: $basic-font-family;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 21px;
-    color: $weak-text-color;
+  @media #{$tablet-desktop} {
+    height: 490px;
   }
 }
 
@@ -103,10 +89,7 @@
   height: 100%;
 
   &:hover {
-    .inspiration__gallery-text {
-      color: $text-color-secondary;
-      text-decoration: underline;
-    }
+    opacity: 0.8;
   }
 
   &:active {
