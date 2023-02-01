@@ -549,6 +549,7 @@ if (inspirationGallery) {
   let swiper = new Swiper(".artgallery-swiper", {
     slidesPerView: 'auto',
     spaceBetween: 5,
+    loop: true,
     navigation: {
       nextEl: ".inspiration__arrow--next",
       prevEl: ".inspiration__arrow--back",
@@ -602,6 +603,7 @@ if (productsSection) {
           rows: 2,
         },
         spaceBetween: 8,
+        loop: true,
         navigation: {
           nextEl: ".products__arrow--next",
           prevEl: ".products__arrow--back",
@@ -631,6 +633,7 @@ if (projectsGallery) {
   let swiper = new Swiper(".projects-swiper", {
     slidesPerView: 'auto',
     spaceBetween: 5,
+    loop: true,
     navigation: {
       nextEl: ".projects__arrow--next",
       prevEl: ".projects__arrow--back",
@@ -664,6 +667,7 @@ if (tileSwiper) {
       rows: 2,
     },
     spaceBetween: 8,
+    loop: true,
     navigation: {
       nextEl: ".tile-range__arrow--next",
       prevEl: ".tile-range__arrow--back",
@@ -858,6 +862,7 @@ if (newsSection) {
   let swiper = new Swiper('.news-swiper', {
     slidesPerView: 'auto',
     spaceBetween: 5,
+    loop: true,
     navigation: {
       nextEl: ".n-news__arrow--next",
       prevEl: ".n-news__arrow--back",
@@ -913,6 +918,36 @@ if (offersSection) {
     },
   });
 };
+
+const showroomGallery = document.querySelector('.showroom');
+if(showroomGallery) {
+  const showroomContainer = document.querySelector('.showroom__swiper');
+  let swiper = new Swiper(".showroom__swiper", {
+    slidesPerView: 'auto',
+    loop: true,
+    freeMode: true,
+    speed: 3000,
+    autoplay : {
+      delay: 0,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+      waitForTransition: true
+    },
+    navigation: {
+      nextEl: ".showroom__arrow--next",
+      prevEl: ".showroom__arrow--back",
+    },
+  });
+  swiper.on('mouseEnter', function () {
+    swiper.params.speed = 300;
+
+  });
+
+  swiper.on('autoplayResume', function () {
+    swiper.params.speed = 3000;
+
+  });
+}
 
 const goodsSlider1 = document.querySelector('.goods--swiper--1 .goods__slider');
 if (goodsSlider1) {

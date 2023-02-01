@@ -181,27 +181,27 @@
   }
 }
 
-.n-advantages--colourful {
-  .n-advantages__item:nth-child(5n - 4) .n-advantages__name {
-    background-color: $n-advantages-item-background-color-1;
-  }
+// .n-advantages--colourful {
+//   .n-advantages__item:nth-child(5n - 4) .n-advantages__name {
+//     background-color: $n-advantages-item-background-color-1;
+//   }
 
-  .n-advantages__item:nth-child(5n - 3) .n-advantages__name {
-    background-color: $n-advantages-item-background-color-2;
-  }
+//   .n-advantages__item:nth-child(5n - 3) .n-advantages__name {
+//     background-color: $n-advantages-item-background-color-2;
+//   }
 
-  .n-advantages__item:nth-child(5n - 2) .n-advantages__name {
-    background-color: $n-advantages-item-background-color-3;
-  }
+//   .n-advantages__item:nth-child(5n - 2) .n-advantages__name {
+//     background-color: $n-advantages-item-background-color-3;
+//   }
 
-  .n-advantages__item:nth-child(5n - 1) .n-advantages__name {
-    background-color: $n-advantages-item-background-color-4;
-  }
+//   .n-advantages__item:nth-child(5n - 1) .n-advantages__name {
+//     background-color: $n-advantages-item-background-color-4;
+//   }
 
-  .n-advantages__item:nth-child(5n) .n-advantages__name {
-    background-color: $n-advantages-item-background-color-5;
-  }
-}
+//   .n-advantages__item:nth-child(5n) .n-advantages__name {
+//     background-color: $n-advantages-item-background-color-5;
+//   }
+// }
 
 .n-advantages--left-column--desktop .n-advantages__item:last-child .n-advantages__info {
   @media #{$desktop} {
