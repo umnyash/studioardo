@@ -7,13 +7,12 @@ $wide-mobile: "(min-width: 375px) and (max-width: 767px)";
 $widemobile-desktop: "(min-width: 375px)";
 $tablet: "(min-width: 768px) and (max-width: 1279px)";
 $tablet-desktop: "(min-width: 768px)";
-$narrowlaptop: "(min-width: 1024px) and (max-width: 1279px)";
 $narrowlaptop-desktop: "(min-width: 1024px)";
 $laptop: "(min-width: 1280px) and (max-width: 1509px)";
 $laptop-desktop: "(min-width: 1280px)";
 $desktop: "(min-width: 1510px)";
 $wide-desktop: "(min-width: 1920px)";
-// $narrowlaptop-desktop: "(min-width: 1024px)";
+$narrowlaptop-desktop: "(min-width: 1024px)";
 
 $cart-tablet: "(min-width: 900px)";
 $cart-desktop: "(min-width: 1440px)";
@@ -132,8 +131,6 @@ $offers-tabs-border-color: #e1e1e1;
 $offers-tab-text-color: #7d7d7d;
 $offers-tab-background-color: #EAFBE6;
 $offers-dots-color: #B8B8B8;
-$background-for-image: rgba(233,233,233,0.3);
-$tooltip-color:#B9889D;
 
 
 $tabs-text-color: #7d7d7d;
@@ -147,6 +144,11 @@ $n-products-item-border-color: rgba(51, 51, 51, 0.2);
 $n-products-item-backgroung-color: #fbfbfb;
 $n-advantages-item-background-color: #f9f9f9;
 
+$n-advantages-item-background-color-1: #fff1e7;
+$n-advantages-item-background-color-2: #f7ffe7;
+$n-advantages-item-background-color-3: #ecf8ee;
+$n-advantages-item-background-color-4: #e8e7ff;
+$n-advantages-item-background-color-5: #faecfc;
 
 $n-slider-pagination-bullet-background-color: #c4c4c4;
 $n-slider-pagination-active-bullet-background-color: #5b5b5b;
