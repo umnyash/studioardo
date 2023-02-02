@@ -550,6 +550,7 @@ if (inspirationGallery) {
     slidesPerView: 'auto',
     spaceBetween: 5,
     watchSlidesProgress: true,
+    loop: true,
     navigation: {
       nextEl: ".inspiration__arrow--next",
       prevEl: ".inspiration__arrow--back",
@@ -632,6 +633,8 @@ if (projectsGallery) {
   let swiper = new Swiper(".projects-swiper", {
     slidesPerView: 'auto',
     spaceBetween: 5,
+    watchSlidesProgress: true,
+    loop: true,
     navigation: {
       nextEl: ".projects__arrow--next",
       prevEl: ".projects__arrow--back",
@@ -669,6 +672,8 @@ if (tileSwiper) {
       nextEl: ".tile-range__arrow--next",
       prevEl: ".tile-range__arrow--back",
     },
+    watchSlidesProgress: true,
+    loop: true,
     breakpoints: {
       768: {
         spaceBetween: 10,
@@ -748,6 +753,8 @@ if (nProductsItemSlider) {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+    watchSlidesProgress: true,
+    loop: true,
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
@@ -827,6 +834,10 @@ if(showroomGallery) {
   swiper.on('autoplayResume', function () {
     swiper.params.speed = 7000;
   });
+
+  // swiper.on('click', function (evt) {
+  //   console.log(evt)
+  // });
 }
 
 const newsSection = document.querySelector('.n-news');
@@ -834,6 +845,8 @@ if (newsSection) {
   let swiper = new Swiper('.news-swiper', {
     slidesPerView: 'auto',
     spaceBetween: 5,
+    watchSlidesProgress: true,
+    loop: true,
     navigation: {
       nextEl: ".n-news__arrow--next",
       prevEl: ".n-news__arrow--back",
