@@ -24,23 +24,19 @@
   margin-bottom: 16px;
 
   @media #{$laptop-desktop} {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
   }
 }
 
 .main-page__good-range {
   margin-bottom: 40px;
-
-  @media #{$tablet-desktop} {
-    margin-bottom: 60px;
-  }
 }
 
 .main-page__tile-range {
   margin-bottom: 40px;
 
   @media #{$tablet-desktop} {
-    margin-bottom: 60px;
+    margin-bottom: 77px;
   }
 }
 
@@ -60,27 +56,23 @@
   }
 
   @media #{$desktop} {
-    margin-bottom: 100px;
+    margin-bottom: 84px;
   }
 }
 
 .main-page__inspo {
   margin-bottom: 60px;
-
-  @media #{$laptop-desktop} {
-    margin-bottom: 55px;
-  }
-
-  @media #{$desktop} {
-    margin-bottom: 83px;
-  }
 }
 
 .main-page__projects {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
+
+  @media #{$tablet-desktop} {
+    margin-bottom: 60px;
+  }
 
   @media #{$desktop} {
-    margin-bottom: 100px;
+    margin-bottom: 80px;
   }
 }
 
@@ -92,18 +84,21 @@
   }
 
   @media #{$desktop} {
-    margin-bottom: 65px;
+    margin-bottom: 86px;
   }
 }
 
 .main-page__goods.goods--popular {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
+
+  @media #{$tablet-desktop} {
+    margin-bottom: 60px;
+  }
 
   @media #{$desktop} {
-    margin-bottom: 100px;
+    margin-bottom: 90px;
   }
 }
-
 
 .main-page__n-subscribe {
   margin-bottom: 40px;
@@ -118,7 +113,8 @@
 }
 
 .main-page__n-brands {
-  padding: 18px 0 38px 0;
+  padding: 30px 0 38px 0;
+  margin: 0 0 40px 0;
 
   @media #{$tablet-desktop} {
     padding: 40px 0 60px 0;
@@ -126,18 +122,19 @@
 
   @media #{$desktop} {
     padding: 56px 0 100px 0;
+    margin-bottom: 60px;
   }
 }
 
 .main-page__n-news {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 
-  @media #{$laptop-desktop} {
-    margin-bottom: 77px;
+  @media #{$tablet-desktop} {
+    margin-bottom: 60px;
   }
 
-  @media #{$desktop} {
-    margin-bottom: 100px;
+  @media #{$laptop-desktop} {
+    margin-bottom: 80px;
   }
 }
 
@@ -151,4 +148,8 @@
   @media #{$laptop-desktop} {
     padding: 0 50px;
   }
+}
+
+.main-page__company-info {
+  margin-bottom: 80px;
 }
