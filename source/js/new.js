@@ -549,6 +549,7 @@ if (inspirationGallery) {
   let swiper = new Swiper(".artgallery-swiper", {
     slidesPerView: 'auto',
     spaceBetween: 5,
+    watchSlidesProgress: true,
     navigation: {
       nextEl: ".inspiration__arrow--next",
       prevEl: ".inspiration__arrow--back",
