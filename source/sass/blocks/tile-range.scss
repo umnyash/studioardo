@@ -40,16 +40,13 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  height: calc(200px + 200px + 10px);
 }
 
 .tile-range__item {
-  margin: 0;
+  display: grid;
   width: 342px;
-  height: 200px;
-  background-color: $category-text-bg;
-  overflow: hidden;
-  border-radius: 10px;
+  margin: 0;
+  row-gap: 8px;
 
   @media #{$tablet-desktop} {
     width: 289px;
@@ -64,10 +61,12 @@
   }
 }
 
-.tile-range__item a {
+.tile-range__link {
   display: grid;
   height: 200px;
   border-radius: 10px;
+  background-color: $accent-text-color;
+  overflow: hidden;
 }
 
 .tile-range__image {
@@ -110,7 +109,7 @@
   text-transform: none;
 }
 
-.tile-range__item:hover {
+.tile-range__link:hover {
   .tile-range__category {
     height: 100%;
     align-items: stretch;

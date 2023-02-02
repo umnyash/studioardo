@@ -664,16 +664,13 @@ const tileSwiper = document.querySelector('.tile-range');
 if (tileSwiper) {
   let swiper = new Swiper('.tile-range-swiper', {
     slidesPerView: 'auto',
-    grid: {
-      rows: 2,
-    },
     spaceBetween: 8,
+    loop: true,
     navigation: {
       nextEl: ".tile-range__arrow--next",
       prevEl: ".tile-range__arrow--back",
     },
     watchSlidesProgress: true,
-    loop: true,
     breakpoints: {
       768: {
         spaceBetween: 10,
@@ -833,11 +830,7 @@ if(showroomGallery) {
 
   swiper.on('autoplayResume', function () {
     swiper.params.speed = 7000;
-  });
-
-  // swiper.on('click', function (evt) {
-  //   console.log(evt)
-  // });
+  });;
 }
 
 const newsSection = document.querySelector('.n-news');
