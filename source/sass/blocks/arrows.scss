@@ -39,6 +39,10 @@
   background-color: $background-color;
   background-image: url("../img/icons/slider-arrow-right.svg");
 
+  &.arrows__item--back {
+    transform: rotate(180deg);
+  }
+
   &:hover {
     border-color: $secondary-button-color;
   }

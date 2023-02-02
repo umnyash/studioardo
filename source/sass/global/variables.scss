@@ -10,6 +10,7 @@ $tablet: "(min-width: 768px) and (max-width: 1279px)";
 $tablet-desktop: "(min-width: 768px)";
 $narrowlaptop-desktop: "(min-width: 1024px)";
 $laptop: "(min-width: 1280px) and (max-width: 1509px)";
+$narrowlaptop: "(min-width: 1024px) and (max-width: 1279px)";
 $laptop-desktop: "(min-width: 1280px)";
 $desktop: "(min-width: 1510px)";
 $wide-desktop: "(min-width: 1920px)";
@@ -152,6 +153,7 @@ $work-option-variant-border-color: #dfdfdf;
 $work-option-key-color: #f0f0f0;
 $work-option-variant-number-background-color: #f3f3f3;
 $material-preview-hover-color: #f3f3f3;
+$tooltip-color: #b9889d;
 
 
 $share-transition-duration: 200ms;
