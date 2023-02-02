@@ -6,6 +6,15 @@
   border: 1px solid $product-border-color;
   transition: 0.3s linear;
 
+  @media #{$narrow-mobile} {
+    height: 100%
+  }
+
+  @media #{$mobile} {
+    border-radius: 3px;
+    border: 1px solid transparent;
+  }
+
   &:hover {
     border: 1px solid $button-hover-color;
     border-radius: 10px;
@@ -32,92 +41,47 @@
   letter-spacing: -0.01em;
   text-transform: none;
   margin: 0;
+
+  @media #{$narrow-mobile} {
+    text-align: center;
+  }
+
+  @media #{$mobile} {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
+
+.product-item__image-wrapper {
+  display: block;
+  width: 100px;
+  height: 80px;
+  margin: 0 auto 13px;
+  flex-shrink: 0;
+
+  @media #{$tablet-desktop} {
+    width: 147px;
+    height: 100px;
+    margin: auto 18px auto 0;
+  }
+
+  @media #{$laptop-desktop} {
+    width: 110px;
+    height: 100px;
+    margin: 0 18px 0 0;
+  }
+
+  @media #{$laptop-desktop} {
+    width: 160px;
+    height: 100px;
+  }
 }
 
 .product-item__image {
   display: block;
-  width: auto;
-  height: auto;
-  margin: 0 18px 0 0;
-  flex-shrink: 0;
-
-}
-
-.product-item__image img {
-  display: block;
-  width: 160px;
-  height: auto;
-  border-radius: 3px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   object-position: center;
-
-  @media #{$narrow-mobile} {
-    width: 111px;
-  }
-
-  @media #{$tablet-desktop} {
-    width: 111px;
-    height: 100px;
-    object-fit: contain;
-  }
-
-  @media #{$desktop} {
-    width: 160px;
-  }
 }
 
-.product-item--adaptive {
-  .product-item__link {
-    @media #{$narrow-mobile} {
-      height: 100%
-    }
-
-    @media #{$mobile} {
-      border-radius: 3px;
-      border: 1px solid transparent;
-    }
-  }
-
-  .product-item__title {
-    @media #{$narrow-mobile} {
-      text-align: center;
-    }
-
-    @media #{$mobile} {
-      font-size: 14px;
-      line-height: 19px;
-    }
-  }
-
-  .product-item__image {
-    @media #{$mobile-tablet} {
-      margin-top: auto;
-      margin-right: 18px;
-      margin-bottom: auto;
-      margin-left: 0;
-    }
-
-    @media #{$mobile} {
-      margin: 0 auto 13px;
-      width: 100px;
-    }
-  }
-
-  .product-item__image img {
-
-    @media #{$tablet-desktop} {
-      width: 147px;
-      height: 100px;
-      object-fit: cover;
-    }
-
-    @media #{$laptop-desktop} {
-      width: 111px;
-    }
-
-    @media #{$desktop} {
-      width: 160px;
-      object-fit: contain;
-    }
-  }
-}
