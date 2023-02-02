@@ -600,10 +600,9 @@ if (productsSection) {
 
       productSwiper = new Swiper('.products-swiper', {
         slidesPerView: 1,
-        grid: {
-          rows: 2,
-        },
+        loop: true,
         spaceBetween: 8,
+        watchSlidesProgress: true,
         navigation: {
           nextEl: ".products__arrow--next",
           prevEl: ".products__arrow--back",
