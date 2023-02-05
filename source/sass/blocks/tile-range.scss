@@ -33,7 +33,7 @@
 .tile-range__swiper {
   grid-area: slider;
   max-width: 100%;
-  filter: drop-shadow(0px 18px 15px $good-range-shadow-color);
+  filter: drop-shadow(0px 18px 15px rgba(0, 0, 0, 0.07));
 }
 
 .tile-range__list {

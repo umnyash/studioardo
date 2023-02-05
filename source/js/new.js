@@ -563,9 +563,9 @@ const productsSection = document.querySelector('.products');
 if (productsSection) {
   (function () {
     const breakpoint = window.matchMedia('(min-width: 1280px)');
-    const productsSwiper = document.querySelector('.products-swiper');
+    const productsSwiper = document.querySelector('.products__slider');
     const productsList = document.querySelector('.products__list');
-    const productSlides = document.querySelectorAll('.products__item');
+    const productSlides = document.querySelectorAll('.products__item-group');
 
     let productSwiper;
     const breakpointChecker = () => {
@@ -598,7 +598,7 @@ if (productsSection) {
         slide.classList.add('swiper-slide');
       });
 
-      productSwiper = new Swiper('.products-swiper', {
+      productSwiper = new Swiper('.products__slider', {
         slidesPerView: 1,
         loop: true,
         spaceBetween: 8,
@@ -608,7 +608,7 @@ if (productsSection) {
           prevEl: ".products__arrow--back",
         },
         breakpoints: {
-          768: {
+          420: {
             slidesPerView: 'auto',
           },
           1280: {
