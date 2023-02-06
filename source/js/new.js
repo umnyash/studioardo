@@ -552,8 +552,8 @@ if (inspirationGallery) {
     watchSlidesProgress: true,
     loop: true,
     navigation: {
-      nextEl: ".inspiration__arrow--next",
-      prevEl: ".inspiration__arrow--back",
+      nextEl: ".inspiration__arrows .arrows__next",
+      prevEl: ".inspiration__arrows .arrows__prev",
     },
   })
 };
@@ -635,8 +635,8 @@ if (projectsGallery) {
     watchSlidesProgress: true,
     loop: true,
     navigation: {
-      nextEl: ".projects__arrow--next",
-      prevEl: ".projects__arrow--back",
+      nextEl: ".projects__arrows .arrows__next",
+      prevEl: ".projects__arrows .arrows__prev",
     },
   })
 };
@@ -666,8 +666,8 @@ if (tileSwiper) {
     spaceBetween: 8,
     loop: true,
     navigation: {
-      nextEl: ".tile-range__arrow--next",
-      prevEl: ".tile-range__arrow--back",
+      nextEl: ".tile-range__arrows .arrows__next",
+      prevEl: ".tile-range__arrows .arrows__prev",
     },
     watchSlidesProgress: true,
     breakpoints: {
@@ -746,8 +746,8 @@ if (nProductsItemSlider) {
   var swiper = new Swiper('.n-products__item-slider', {
     cssMode: true,
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: ".products__arrows .arrows__next",
+      prevEl: ".products__arrows .arrows__prev",
     },
     watchSlidesProgress: true,
     loop: true,
@@ -810,17 +810,17 @@ if (showroomSlider) {
   const splide = new Splide('.showroom__slider', {
     type: 'loop',
     drag: 'free',
+    pagination: false,
     focus: 'center',
     autoWidth: true,
-    pauseOnFocus: false,
     autoScroll: {
       speed: 0.5,
+      pauseOnFocus: false
     }
   });
 
   splide.mount(window.splide.Extensions);
 }
-
 
 const newsSection = document.querySelector('.n-news');
 if (newsSection) {
@@ -830,8 +830,8 @@ if (newsSection) {
     watchSlidesProgress: true,
     loop: true,
     navigation: {
-      nextEl: ".n-news__arrow--next",
-      prevEl: ".n-news__arrow--back",
+      nextEl: ".n-news__arrows .arrows__next",
+      prevEl: ".n-news__arrows .arrows__prev",
     },
   });
 };

@@ -11,10 +11,6 @@
  }
 }
 
-.offers__slider {
-
-}
-
 .offers__list {
   margin: 0;
 }
@@ -22,18 +18,6 @@
 .offers__item {
   margin: 0;
 }
-
-// .offers__controls {
-//   margin: 0 10px;
-//   border: 1px solid $offers-tabs-border-color;
-//   border-radius: 18px;
-//   background-color: $background-color;
-//   filter: drop-shadow(0px 290px 116px rgba(0, 0, 0, 0.01)) drop-shadow(0px 163px 98px rgba(0, 0, 0, 0.04)) drop-shadow(0px 72px 72px rgba(0, 0, 0, 0.06)) drop-shadow(0px 18px 40px rgba(0, 0, 0, 0.07)) drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.07));
-
-//   @media #{$tablet-desktop} {
-//     filter: drop-shadow(0px 18px 40px rgba(0, 0, 0, 0.07)) drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.07));
-//   }
-// }
 
 .offers__controls {
   position: absolute;
@@ -82,6 +66,8 @@
 .offers__button-prev {
   left: 5px;
   right: auto;
+  width: 38px;
+  height: 38px;
   transform: translateY(-50%) rotate(180deg);
 
   @media #{$tablet-desktop} {
@@ -99,6 +85,8 @@
 .offers__button-next {
   left: auto;
   right: 5px;
+  width: 38px;
+  height: 38px;
 
   @media #{$tablet-desktop} {
     right: 0;

@@ -4,46 +4,12 @@
   gap: 8px;
 }
 
-.arrows__item {
+.arrows__next,
+.arrows__prev {
   width: 38px;
   height: 38px;
-  padding: 0;
-  background-color: $secondary-button-color;
-  background-image: url("../img/icons/white-left-arrow.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 8px 13px;
-  border-radius: 50%;
-  border: 1px solid $secondary-button-color;
-  cursor: pointer;
-
-  &:hover {
-    opacity: 0.8;
-  }
-
-  &:active {
-    opacity: 0.6;
-  }
 }
 
-.arrows__item--next {
+.arrows__prev {
   transform: rotate(180deg);
-}
-
-.arrows--alter {
-  display: block;
-}
-
-.arrows__item--alter {
-  border-color: $background-color;
-  background-color: $background-color;
-  background-image: url("../img/icons/slider-arrow-right.svg");
-
-  &.arrows__item--back {
-    transform: rotate(180deg);
-  }
-
-  &:hover {
-    border-color: $secondary-button-color;
-  }
 }
