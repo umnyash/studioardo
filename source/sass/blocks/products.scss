@@ -8,6 +8,8 @@
     grid-template-columns: 1fr auto;
     grid-template-areas: 'title btn'
       'slider slider';
+    gap: 25px 60px;
+    align-items: center;
   }
 }
 
@@ -16,8 +18,8 @@
   margin: 0 0 25px 0;
   letter-spacing: -0.03em;
 
-  @media #{$laptop-desktop} {
-    margin: 0 0 25px 0;
+  @media #{$tablet-desktop} {
+    margin-bottom: 0;
   }
 }
 
@@ -70,7 +72,6 @@
 
   @media #{$tablet-desktop} {
     margin-top: 0;
-    align-self: flex-start;
   }
 
   @media #{$laptop-desktop} {

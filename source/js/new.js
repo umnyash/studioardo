@@ -604,8 +604,8 @@ if (productsSection) {
         spaceBetween: 8,
         watchSlidesProgress: true,
         navigation: {
-          nextEl: ".products__arrow--next",
-          prevEl: ".products__arrow--back",
+          nextEl: ".products__arrows .arrows__next",
+          prevEl: ".products__arrows .arrows__prev",
         },
         breakpoints: {
           420: {
@@ -746,8 +746,8 @@ if (nProductsItemSlider) {
   var swiper = new Swiper('.n-products__item-slider', {
     cssMode: true,
     navigation: {
-      nextEl: ".products__arrows .arrows__next",
-      prevEl: ".products__arrows .arrows__prev",
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
     },
     watchSlidesProgress: true,
     loop: true,
