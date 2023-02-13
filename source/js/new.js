@@ -870,7 +870,7 @@ if (offersSection) {
       prevEl: ".offers__button-prev",
     },
     autoplay: {
-      delay: 6500,
+      delay: 6000,
       disableOnInteraction: false,
       pauseOnMouseEnter: true,
       waitForTransition: true
