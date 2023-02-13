@@ -282,12 +282,14 @@
   background-color: transparent;
   cursor: pointer;
 
-  &:hover {
-    opacity: 0.8;
-  }
+  @media #{$mobile} {
+    &:hover {
+      opacity: 0.8;
+    }
 
-  &:active {
-    opacity: 0.6;
+    &:active {
+      opacity: 0.6;
+    }
   }
 
   @media #{$laptop-desktop} {
@@ -295,10 +297,19 @@
     width: 100%;
     min-height: 50px;
     padding: 8px 10px 6px;
-    border: 1px solid $secondary-button-color;
+    border: 1px solid $special-color;
     border-radius: 3px;
-    color: $secondary-button-color;
+    color: $special-color;
     background-color: fade-out($special-color, 0.95);
+
+    &:hover {
+      color: $text-color-secondary;
+      background-color: $special-color;
+    }
+
+    &:active {
+      background-color: $good-quick-order-button-active-color;
+    }
   }
 }
 
