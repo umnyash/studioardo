@@ -1282,3 +1282,51 @@ document.querySelectorAll('.n-banner--parallax-bg .n-banner__img').forEach(initB
 
 /* ------------ */
 
+/* ------------ good__heading elements ------------ */
+/* Задать заголовкам карточек товаров, которые расположены
+в одном ряду, одинаковую высоту.*/
+
+const goodListNodes = document.querySelectorAll('.good-list');
+
+if (goodListNodes.length > 0) {
+  const CARD_MIN_WIDTH = 289;
+
+  const setMinHeight = (headings) => {
+    let highest = 0;
+
+    headings.forEach((heading) => {
+      heading.style.minHeight = 'auto';
+
+      if (heading.offsetHeight > highest) {
+        highest = heading.offsetHeight;
+      }
+    });
+
+    headings.forEach((heading) => {
+      heading.style.minHeight = `${highest}px`;
+    });
+  };
+
+  const setGoodListCardHeadingsHeight = () => {
+    goodListNodes.forEach((list) => {
+      const headings = Array.from(list.querySelectorAll('.good__heading'));
+
+      if (list.classList.contains('swiper-wrapper')) {
+        setMinHeight(headings);
+      } else {
+        const cardsCountInRow = Math.floor(list.clientWidth / CARD_MIN_WIDTH);
+
+        for (let i = 0; i < headings.length; i += cardsCountInRow) {
+          const headingsInRow = headings.slice(i, i + cardsCountInRow);
+
+          setMinHeight(headingsInRow);
+        }
+      }
+    })
+  };
+
+  window.addEventListener('load', setGoodListCardHeadingsHeight, {once: true});
+  window.addEventListener('resize', setGoodListCardHeadingsHeight);
+};
+
+/* ------------ */
