@@ -1314,7 +1314,8 @@ if (goodListNodes.length > 0) {
       if (list.classList.contains('swiper-wrapper')) {
         setMinHeight(headings);
       } else {
-        const cardsCountInRow = Math.floor(list.clientWidth / CARD_MIN_WIDTH);
+        const columnGap = parseInt(getComputedStyle(list).columnGap, 10);
+        const cardsCountInRow = Math.floor((list.clientWidth + columnGap) / (CARD_MIN_WIDTH + columnGap));
 
         for (let i = 0; i < headings.length; i += cardsCountInRow) {
           const headingsInRow = headings.slice(i, i + cardsCountInRow);
