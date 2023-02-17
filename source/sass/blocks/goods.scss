@@ -151,6 +151,7 @@
 
   .goods__slider-button-next {
     transform: rotate(180deg);
+    will-change: transform;
   }
 
   .goods__button-wrapper {

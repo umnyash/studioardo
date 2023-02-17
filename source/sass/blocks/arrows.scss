@@ -12,4 +12,5 @@
 
 .arrows__prev {
   transform: rotate(180deg);
+  will-change: transform;
 }

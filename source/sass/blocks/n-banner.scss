@@ -258,6 +258,7 @@
     height: auto;
     min-height: 100%;
     transform: translate(-50%, 0px);
+    will-change: transform;
   }
 }
 

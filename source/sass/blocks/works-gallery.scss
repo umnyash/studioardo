@@ -145,6 +145,7 @@
   place-items: center;
   background: $works-gallery-slider-button-color;
   transform: translate(-8px, 5px);
+  will-change: transform;
 
   &::before {
     content: "";
@@ -167,8 +168,10 @@
 
 .works-gallery__slider-button--prev {
   transform: translate(8px, 5px);
+  will-change: transform;
 }
 
 .works-gallery__slider-button--prev::before {
   transform: rotate(180deg);
+  will-change: transform;
 }

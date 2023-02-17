@@ -112,6 +112,7 @@
   height: 17px;
   background-image: url("../img/icons/phone.svg");
   transform: translateY(-1px);
+  will-change: transform;
 
   @media #{$tablet-desktop} {
     width: 21px;
@@ -131,6 +132,7 @@
   margin: 0 0 0;
   background-image: url("../img/icons/pdf-icon.svg");
   transform: translateY(-1px);
+  will-change: transform;
 
   @media #{$tablet-desktop} {
     width: 28px;

@@ -31,12 +31,14 @@
     background-size: contain;
     background-position: center;
     transform: translateY(-50%);
+    will-change: transform;
   }
 
   &.is-open::after {
     border: none;
     margin: 0;
     transform: translateY(-50%) rotate(180deg);
+    will-change: transform;
   }
 }
 
@@ -51,6 +53,7 @@
   background-color: #ffffff;
   box-shadow: 0px 3px 25px rgb(0 0 0 / 8%);
   transform: translateY(100%);
+  will-change: transform;
   visibility: hidden;
 }
 
@@ -107,6 +110,7 @@
 
     &::after {
       transform: translateY(-50%) rotate(180deg);
+      will-change: transform;
     }
   }
 

@@ -534,5 +534,6 @@
     left: 50% !important;
     right: auto;
     transform: translateX(-50%);
+    will-change: transform;
   }
 }

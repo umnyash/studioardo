@@ -79,6 +79,7 @@
 .characteristics__value--with-img img {
   vertical-align: middle;
   transform: translate(4px, -1px);
+  will-change: transform;
 }
 
 .characteristics__link {

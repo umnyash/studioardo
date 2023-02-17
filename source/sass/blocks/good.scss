@@ -74,6 +74,7 @@
   width: 23px;
   height: 23px;
   transform: translate(10px, 11px);
+  will-change: transform;
 }
 
 .good__labels-list {
@@ -134,6 +135,7 @@
   align-items: center;
   background-color: inherit;
   transform: translateY(100%);
+  will-change: transform;
 }
 
 .good__info {
@@ -397,6 +399,7 @@
       left: 0;
       display: block;
       transform: translateY(100%);
+      will-change: transform;
     }
   }
 }
@@ -429,6 +432,7 @@
         bottom: 22px;
         left: 0;
         transform: translateY(100%);
+        will-change: transform;
       }
 
       .good__number-field {
@@ -437,11 +441,13 @@
         right: 18px;
         display: grid;
         transform: translateY(-100%);
+        will-change: transform;
       }
 
       .good__quick-order-button {
         z-index: 2;
         transform: translateY(40px);
+        will-change: transform;
       }
 
       .good__extra {
@@ -463,6 +469,7 @@
       bottom: -19px;
       left: 0;
       transform: translateY(100%);
+      will-change: transform;
     }
 
     &:hover,

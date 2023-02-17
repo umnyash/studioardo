@@ -107,6 +107,7 @@
 .links--open {
   .links__toggle::after {
     transform: rotate(180deg);
+    will-change: transform;
   }
 
   .links__list {
@@ -117,6 +118,7 @@
       display: grid;
       width: 100%;
       transform: translateY(100%);
+      will-change: transform;
     }
   }
 }

@@ -46,6 +46,7 @@
   background-color: $background-color;
   box-shadow: 0 3px 25px rgba(0, 0, 0, 0.08);
   transform: translate(50%, 100%);
+  will-change: transform;
   opacity: 0;
   visibility: hidden;
   transition-property: opacity, visibility;
@@ -54,6 +55,7 @@
   @media #{$tablet-desktop} {
     right: 0;
     transform: translateY(100%);
+    will-change: transform;
   }
 
   &::before {
@@ -106,7 +108,7 @@
 .share:hover {
   .share__button {
     border-color: $share-button-hover-color;
-  
+
     &::before {
       background-color: $share-button-hover-color;
     }

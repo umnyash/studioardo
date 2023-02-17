@@ -57,6 +57,7 @@
   top: 50%;
   margin: 0;
   transform: translateY(-50%);
+  will-change: transform;
 
   @media #{$laptop-desktop} {
     top: -30px;
@@ -69,16 +70,19 @@
   width: 38px;
   height: 38px;
   transform: translateY(-50%) rotate(180deg);
+  will-change: transform;
 
   @media #{$tablet-desktop} {
     left: 0px;
     transform: translate(-50%, -50%) rotate(180deg);
+    will-change: transform;
   }
 
   @media #{$laptop-desktop} {
     right: 8px;
     left: auto;
     transform: translate(-100%, -100%) rotate(180deg);
+    will-change: transform;
   }
 }
 
@@ -91,10 +95,12 @@
   @media #{$tablet-desktop} {
     right: 0;
     transform: translate(50%, -50%);
+    will-change: transform;
   }
 
   @media #{$laptop-desktop} {
     transform: translateY(-100%);
+    will-change: transform;
   }
 }
 

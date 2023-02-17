@@ -47,6 +47,7 @@
 
 .n-slider__button--prev::before {
   transform: rotate(180deg);
+  will-change: transform;
 }
 
 .n-slider__pagination {

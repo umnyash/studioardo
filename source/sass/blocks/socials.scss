@@ -3,15 +3,6 @@
   padding: 0;
   list-style: none;
   flex-wrap: wrap;
-  // justify-content: center;
-
-  @media #{$tablet-desktop} {
-    // justify-content: start;
-  }
-
-  @media #{$tablet} {
-    // justify-content: end;
-  }
 }
 
 .socials__item {

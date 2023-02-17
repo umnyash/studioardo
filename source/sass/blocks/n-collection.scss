@@ -69,6 +69,7 @@
   width: 23px;
   height: 23px;
   transform: translateY(10px);
+  will-change: transform;
 }
 
 .n-collection__labels-list {
@@ -129,6 +130,7 @@
   align-items: start;
   background-color: inherit;
   transform: translateY(100%);
+  will-change: transform;
 }
 
 .n-collection__price-code {

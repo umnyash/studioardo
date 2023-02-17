@@ -116,6 +116,7 @@
   margin: 0;
   background: url("../img/icons/right-arrow.svg") no-repeat center;
   transform: translateY(-1px);
+  will-change: transform;
   background-size: contain;
 }
 
@@ -133,6 +134,7 @@
   margin: 0;
   background-image: url("../img/icons/play-media-icon.svg");
   transform: translateY(-1px);
+  will-change: transform;
 }
 
 .button--with-icon--envelope::before {
@@ -141,14 +143,13 @@
   margin: 0 5px 0 0;
   background-image: url("../img/icons/envelope.svg");
   transform: translateY(-1px);
+  will-change: transform;
 }
 
 .button--with-icon--cart::before {
   width: 17px;
   height: 15px;
-  // margin: 0 5px 0 0;
   background-image: url("../img/icons/small-cart.svg");
-  // transform: translateY(-1px);
 }
 
 .button--with-icon--download::before {
@@ -161,7 +162,6 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: 13px 15px;
-  // transform: translateY(-1px);
 }
 
 .button--with-shadow {

@@ -18,6 +18,7 @@
     @media #{$tablet-desktop} {
       --star-size: 20px;
       transform: translateY(-1px);
+      will-change: transform;
     }
 
     @media #{$laptop-desktop} {

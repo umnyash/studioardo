@@ -53,10 +53,10 @@
   max-width: 813px;
   margin: 0 auto;
   transform: translateY(16px);
+  will-change: transform;
 
   @media #{$laptop} {
     align-self: end;
-    // transform: translateY(30px);
   }
 }
 

@@ -117,6 +117,7 @@
   width: 100%;
   justify-content: center;
   transform: translate(-50%, -50%);
+  will-change: transform;
 
   @media #{$laptop-desktop} {
     justify-content: end;
@@ -124,6 +125,7 @@
     top: 15px;
     right: 35px;
     transform: none;
+    will-change: transform;
   }
 }
 

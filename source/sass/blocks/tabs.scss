@@ -47,12 +47,12 @@
     height: 40px;
     background-color: $tabs-slider-border-color;
     transform: translateY(-50%);
+    will-change: transform;
   }
 }
 
 .tabs__item.swiper-slide-thumb-active {
   position: relative;
-  // overflow: hidden;
 
   &::after {
     position: absolute;
@@ -63,6 +63,7 @@
     height: 3px;
     background: $special-color;
     transform: none;
+    will-change: transform;
   }
 
   @media #{$tablet-desktop} {
