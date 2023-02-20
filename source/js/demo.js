@@ -5,7 +5,7 @@ const closeNotification = (evt) => {
     return;
   }
 
-  notificationCloseButton.closest('.good-order-notification').remove();
+  notificationCloseButton.closest('.good-order-notification, .notification').remove();
 };
 document.body.addEventListener('click', closeNotification);
 
