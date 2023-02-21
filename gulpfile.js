@@ -37,10 +37,10 @@ const html = () => {
 
 // Styles
 const styles = () => {
-  return src('./source/sass/new.scss', { sourcemaps: true })
+  return src('./source/sass/new.scss', { sourcemaps: isDev })
     .pipe(sass())
     .pipe(autoprefixer())
-    .pipe(dest('./build/css', { sourcemaps: true }))
+    .pipe(dest('./build/css', { sourcemaps: isDev }))
     // .pipe(rename({ suffix: '.min' }))
     // .pipe(csso())
     // .pipe(dest('./build/css', { sourcemaps: true }))
@@ -49,9 +49,9 @@ const styles = () => {
 
 // Scripts
 const scripts = () => {
-  return src(['./source/js/new.js', './source/js/demo.js'], { sourcemaps: true })
+  return src(['./source/js/new.js', './source/js/demo.js'], { sourcemaps: isDev })
     // .pipe(terser())
-    .pipe(dest('./build/js', { sourcemaps: true }))
+    .pipe(dest('./build/js', { sourcemaps: isDev }))
     .pipe(sync.stream())
 };
 
