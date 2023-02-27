@@ -1,14 +1,10 @@
-// .loader {
-//   color: transparent !important;
-//   background-image: url("../img/icons/loader.svg");
-//   background-repeat: no-repeat;
-//   background-position: center;
-//   background-size: auto 60%;
-// }
-
 .loader {
   position: relative;
   color: transparent !important;
+  background-image: url("../img/icons/loader.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 60%;
 }
 
 .loader input,
@@ -23,11 +19,13 @@
   display: none;
   width: auto;
   height: 60%;
+  background-color: inherit;
   transform: translate(-50%, -50%);
   will-change: transform;
   pointer-events: none;
 }
 
+.loader + .loader__img,
 .loader .loader__img {
   display: block;
 }
