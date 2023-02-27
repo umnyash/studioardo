@@ -15,6 +15,14 @@
   background-color: transparent;
   cursor: pointer;
 
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+
   @media #{$tablet-desktop} {
     min-height: 50px;
     padding-top: 10px;
