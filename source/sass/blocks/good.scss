@@ -197,29 +197,21 @@
 }
 
 .good__code-wrapper {
+  display: -webkit-box;
   margin: 0;
   font-size: 13px;
   line-height: 18px;
   text-transform: lowercase;
   color: $weak-text-color;
   word-break: break-all;
-
-  // display: -webkit-box;
-  // -webkit-line-clamp: 3;
-  // -webkit-box-orient: vertical;
-  // overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
-
-// .good__code {
-//   display: -webkit-box;
-//   -webkit-line-clamp: 3;
-//   -webkit-box-orient: vertical;
-//   overflow: hidden;
-// }
 
 .good__code-button {
   vertical-align: middle;
-  margin: 0 0 0 5px;
+  margin: 0 0.2em 0 0;
 }
 
 .good__add-cart {
