@@ -1,3 +1,13 @@
+.main-page__body .header {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width:991px) {
+  .main-page__body main {
+    margin-top: 50px;
+  }
+}
+
 .main-page__body {
   .center {
     @media #{$tablet-desktop} {
