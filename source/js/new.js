@@ -111,6 +111,16 @@ if (popups) {
     });
   }
 
+  const popupOrderVisualizationOpenButton = document.querySelector('.button--popup--order--visualization');
+  const popupOrderVisualization = document.querySelector('.popup--order--visualization');
+
+  if (popupOrderVisualizationOpenButton && popupOrderVisualization) {
+    popupOrderVisualizationOpenButton.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      openPopup(popupOrderVisualization);
+    });
+  }
+
   const popupOrderSampleOpenButton = document.querySelector('.button--popup--order-sample');
   const popupOrderSample = document.querySelector('.popup--order-sample');
 
