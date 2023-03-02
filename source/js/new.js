@@ -1340,4 +1340,48 @@ if (goodListNodes.length > 0) {
   window.addEventListener('resize', setGoodListCardHeadingsHeight);
 };
 
+const collectionListNodes = document.querySelectorAll('.n-collection-list');
+
+if (collectionListNodes.length > 0) {
+  const CARD_MIN_WIDTH = 289;
+
+  const setMinHeight = (headings) => {
+    let highest = 0;
+
+    headings.forEach((heading) => {
+      heading.style.minHeight = 'auto';
+
+      if (heading.offsetHeight > highest) {
+        highest = heading.offsetHeight;
+      }
+    });
+
+    headings.forEach((heading) => {
+      heading.style.minHeight = `${highest}px`;
+    });
+  };
+
+  const setCollectionListCardHeadingsHeight = () => {
+    collectionListNodes.forEach((list) => {
+      const headings = Array.from(list.querySelectorAll('.n-collection__heading'));
+
+      if (list.classList.contains('swiper-wrapper')) {
+        setMinHeight(headings);
+      } else {
+        const columnGap = parseInt(getComputedStyle(list).columnGap, 10);
+        const cardsCountInRow = Math.floor((list.clientWidth + columnGap) / (CARD_MIN_WIDTH + columnGap));
+
+        for (let i = 0; i < headings.length; i += cardsCountInRow) {
+          const headingsInRow = headings.slice(i, i + cardsCountInRow);
+
+          setMinHeight(headingsInRow);
+        }
+      }
+    })
+  };
+
+  window.addEventListener('load', setCollectionListCardHeadingsHeight, {once: true});
+  window.addEventListener('resize', setCollectionListCardHeadingsHeight);
+};
+
 /* ------------ */
