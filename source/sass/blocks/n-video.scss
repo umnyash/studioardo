@@ -1,10 +1,21 @@
 .n-video {
   position: relative;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    padding: calc((398 * 100%) / 664) 0 0;
+  }
 }
 
 .n-video__video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
+  background-color: #000000;
 }
 
 .n-video__play {
