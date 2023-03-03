@@ -1,7 +1,8 @@
 .stone-main-page__banner {
-  margin: 0 0 10px;
+  margin: 4px 0 10px;
 
   @media #{$laptop-desktop} {
+    margin-top: 7px;
     margin-bottom: 53px;
   }
 }
