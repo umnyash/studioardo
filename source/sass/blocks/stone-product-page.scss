@@ -81,3 +81,11 @@
     margin-bottom: 97px;
   }
 }
+
+.stone-product-page__team {
+  margin: 0 0 60px;
+
+  @media #{$desktop} {
+    margin-bottom: 100px;
+  }
+}

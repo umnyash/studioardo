@@ -57,3 +57,19 @@
     margin-bottom: 100px;
   }
 }
+
+.stone-main-page__clients {
+  margin: 0 0 50px;
+
+  @media #{$desktop} {
+    margin-bottom: 100px;
+  }
+}
+
+.stone-main-page__team {
+  margin: 0 0 60px;
+
+  @media #{$desktop} {
+    margin-bottom: 100px;
+  }
+}

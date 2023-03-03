@@ -97,3 +97,11 @@
     margin-bottom: 97px;
   }
 }
+
+.stone-category-page__team {
+  margin: 0 0 60px;
+
+  @media #{$desktop} {
+    margin-bottom: 100px;
+  }
+}
