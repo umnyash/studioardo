@@ -846,13 +846,16 @@ if (newsSection) {
   });
 };
 
-const offersSection = document.querySelector('.offers');
-if (offersSection) {
-  const tabs = new Swiper('.offers .tabs__slider', {
-    slidesPerView: 1,
-    spaceBetween: 0,
+const initOfferSection = (offersSection) => {
+  const tabsSliderElement = offersSection.querySelector('.tabs__slider');
+  const tabsItemsCount = tabsSliderElement.querySelectorAll('.tabs__item').length;
+  let isEdgeTabsItemClick = false;
+
+  const tabsSlider = new Swiper(tabsSliderElement, {
     loop: true,
     watchSlidesProgress: true,
+    threshold: 10,
+    slideToClickedSlide: true,
     pagination: {
       el: '.offers__tabs-pagination',
       clickable: true,
@@ -860,24 +863,26 @@ if (offersSection) {
     breakpoints: {
       768: {
         slidesPerView: 3,
-        slidesPerGroup: 3,
+        centeredSlides: true,
       },
       1280: {
         slidesPerView: 6,
-        slidesPerGroup: 1,
-        loop: false,
+        slideToClickedSlide: false,
+        centeredSlides: false,
       },
     },
   });
 
-  const slides = new Swiper('.offers__slider', {
-    slidesPerView: 1,
-    spaceBetween: 0,
+  const mainSlider = new Swiper(".offers__slider", {
     loop: true,
     watchSlidesProgress: true,
     navigation: {
       nextEl: ".offers__button-next",
       prevEl: ".offers__button-prev",
+    },
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
     },
     autoplay: {
       delay: 6000,
@@ -885,15 +890,116 @@ if (offersSection) {
       pauseOnMouseEnter: true,
       waitForTransition: true
     },
-    effect: 'fade',
-    fadeEffect: {
-      crossFade: true
-    },
-    thumbs: {
-      swiper: tabs,
-    },
   });
-};
+
+  const highlightCurrentTabsSlide = (index) => {
+    tabsSlider.slides.forEach((slide) => slide.classList.remove('tabs__item--current'));
+    const tabs = tabsSliderElement.querySelectorAll(`.tabs__item[data-swiper-slide-index="${index}"]`);
+    tabs.forEach((slide) => slide.classList.add('tabs__item--current'));
+  };
+
+  const scrollTabsSliderOnDesktopWidth = (index, transition = true) => {
+    switch (index) {
+      case tabsSlider.realIndex:
+        isEdgeTabsItemClick = true;
+        tabsSlider.slidePrev(transition ? tabsSlider.params.speed / 2 : 0);
+        break;
+      case (tabsSlider.realIndex + 1) % tabsItemsCount:
+        tabsSlider.slidePrev(transition ? tabsSlider.params.speed : 0);
+        break;
+      case (tabsSlider.realIndex + 4) % tabsItemsCount:
+        tabsSlider.slideNext(transition ? tabsSlider.params.speed : 0)
+        break;
+      case (tabsSlider.realIndex + 5) % tabsItemsCount:
+        isEdgeTabsItemClick = true;
+        tabsSlider.slideNext(transition ? tabsSlider.params.speed / 2 : 0)
+        break;
+    }
+  };
+
+  mainSlider.on('slideNextTransitionStart', () => {
+    highlightCurrentTabsSlide(mainSlider.realIndex);
+
+    if (tabsSlider.params.slidesPerView <= 3) {
+      tabsSlider.slideNext();
+
+      // При очень быстром листании главного слайдера может случиться рассинхронизация с табами
+      // Этот код восстанавливает синхронизацию
+      if (tabsSlider.realIndex !== mainSlider.realIndex) {
+        tabsSlider.slideToLoop(mainSlider.realIndex)
+      }
+    } else {
+      scrollTabsSliderOnDesktopWidth(mainSlider.realIndex);
+    }
+  });
+
+  mainSlider.on('slidePrevTransitionStart', () => {
+    highlightCurrentTabsSlide(mainSlider.realIndex);
+
+    if (tabsSlider.params.slidesPerView <= 3) {
+      tabsSlider.slidePrev();
+
+      // При очень быстром листании главного слайдера может случиться рассинхронизация с табами
+      // Этот код восстанавливает синхронизацию
+      if (tabsSlider.realIndex !== mainSlider.realIndex) {
+        tabsSlider.slideToLoop(mainSlider.realIndex)
+      }
+    } else {
+      scrollTabsSliderOnDesktopWidth(mainSlider.realIndex);
+    }
+  });
+
+  tabsSlider.on('slideNextTransitionEnd', () => {
+    if (!isEdgeTabsItemClick || tabsSlider.params.slidesPerView <= 3) {
+      return;
+    }
+
+    tabsSlider.slideNext(tabsSlider.params.speed / 2);
+    isEdgeTabsItemClick = false;
+  });
+
+  tabsSlider.on('slidePrevTransitionEnd', () => {
+    if (!isEdgeTabsItemClick || tabsSlider.params.slidesPerView <= 3) {
+      return;
+    }
+
+    tabsSlider.slidePrev(tabsSlider.params.speed / 2);
+    isEdgeTabsItemClick = false;
+  });
+
+  tabsSliderElement.addEventListener('click', (evt) => {
+    const tabsItem = evt.target.closest('.tabs__item');
+
+    if (!tabsItem) {
+      return;
+    }
+
+    tabsItemIndex = +tabsItem.dataset.swiperSlideIndex;
+    mainSlider.slideToLoop(tabsItemIndex, mainSlider.params.speed, false);
+
+    if (tabsSlider.params.slidesPerView > 3) {
+      highlightCurrentTabsSlide(mainSlider.realIndex);
+      scrollTabsSliderOnDesktopWidth(tabsItemIndex);
+    }
+  });
+
+  tabsSlider.on('slideChange', () => {
+    if (tabsSlider.params.slidesPerView <= 3) {
+      mainSlider.slideToLoop(tabsSlider.realIndex, mainSlider.params.speed, false);
+      highlightCurrentTabsSlide(mainSlider.realIndex);
+    }
+  });
+
+  highlightCurrentTabsSlide(mainSlider.realIndex);
+
+  if (tabsSlider.params.slidesPerView <= 3) {
+    tabsSlider.slideToLoop(mainSlider.realIndex);
+  } else {
+    scrollTabsSliderOnDesktopWidth(mainSlider.realIndex, false);
+  }
+}
+
+document.querySelectorAll('.offers').forEach(initOfferSection);
 
 const goodsSlider1 = document.querySelector('.goods--swiper--1 .goods__slider');
 if (goodsSlider1) {

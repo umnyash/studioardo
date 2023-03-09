@@ -13,6 +13,7 @@
 
 .offers__list {
   margin: 0;
+  padding: 0;
 }
 
 .offers__item {
@@ -120,8 +121,7 @@
     background-color: $special-color;
   }
 
-  @media #{$desktop} {
-    width: 1400px;
-    margin: 0 auto;
+  @media #{$laptop-desktop} {
+    display: none;
   }
 }

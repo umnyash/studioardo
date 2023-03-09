@@ -11,70 +11,75 @@
   }
 }
 
+.tabs__slider {
+  position: relative;
+
+  &::after {
+    content: "";
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: $background-color;
+  }
+}
+
 .tabs__list {
+  position: relative;
   padding: 0;
   margin: 0;
   list-style: none;
+  transition-timing-function: linear;
 }
 
 .tabs__item {
-  height: auto;
-  padding: 23px 43px;
-  margin: 0;
+  position: relative;
   box-sizing: border-box;
+  height: auto;
+  padding: 23px 43px 20px;
+  border-bottom: 3px solid transparent;
+  margin: 0;
   background-color: $background-color;
   cursor: pointer;
 
   @media #{$tablet-desktop} {
-    position: relative;
-    padding: 20px 10px;
+    padding: 20px 10px 17px;
   }
 
   @media #{$laptop-desktop} {
-    min-width: 196px;
-    padding: 21px 8px 18px;
+    // min-width: 196px;
+    padding: 21px 8px 15px;
   }
 
   @media #{$desktop} {
-    padding: 23px 12px;
+    padding: 23px 12px 20px;
   }
 
   &::after {
     content: "";
     position: absolute;
-    top: 50%;
-    right: -1px;
+    z-index: 2;
+    top: calc(50% - 20px);
+    right: 0;
     width: 1px;
     height: 40px;
     background-color: $tabs-slider-border-color;
-    transform: translateY(-50%);
-    will-change: transform;
   }
 }
 
 .tabs__item:hover,
+.tabs__item--current,
 .tabs__item.swiper-slide-thumb-active {
-  position: relative;
+  border-bottom-color: $special-color;
 
   &::after {
-    position: absolute;
-    content: "";
-    top: auto;
-    bottom: 0;
-    width: 100%;
-    height: 3px;
-    background: $special-color;
-    transform: none;
-    will-change: transform;
+    display: none;
   }
 
   @media #{$tablet-desktop} {
     background-color: $tabs-active-background-color;
-
-    &::after {
-      height: 4px;
-      bottom: -1px;
-    }
   }
 }
 
@@ -116,20 +121,3 @@
     font-size: 14px;
   }
 }
-
-// .tabs__pagination {
-//   margin: 3px 0 0;
-//   text-align: center;
-
-//   .swiper-pagination-bullet {
-//     width: 7px;
-//     height: 7px;
-//     margin: 3px;
-//     background-color: $tabs-pagination-bullet-color;
-//     opacity: 1;
-//   }
-
-//   .swiper-pagination-bullet-active {
-//     background-color: $special-color;
-//   }
-// }
