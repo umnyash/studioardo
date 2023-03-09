@@ -884,12 +884,12 @@ const initOfferSection = (offersSection) => {
     fadeEffect: {
       crossFade: true
     },
-    autoplay: {
-      delay: 6000,
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true,
-      waitForTransition: true
-    },
+    // autoplay: {
+    //   delay: 6000,
+    //   disableOnInteraction: false,
+    //   pauseOnMouseEnter: true,
+    //   waitForTransition: true
+    // },
   });
 
   const highlightCurrentTabsSlide = (index) => {
