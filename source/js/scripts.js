@@ -55,7 +55,7 @@ $(document).ready(function () {
 			$('.form-input-options').toggleClass('active');
 		})
 	})
-	
+
 	//var MoscowText = ['Москва', '<span class="call_phone_495_3">8 (495) 023 7775</span>', '84996889385', 'calltouch_phone_495_1'];
 	//var SaintPetersburgText = ['Санкт-Петербург', '<span class="call_phone_812_3">8 (812) 445 84 37</span>', '88124458437', 'calltouch_phone_812_1'];
 
@@ -65,10 +65,10 @@ $(document).ready(function () {
 		$('.locations .btn-location').removeClass('btn-location--selected');
 		$(this).addClass('btn-location--selected');
 		$.cookie('SELECT_SITY', city, { expires: 365, path: '/' });
-		
+
 		$('.city-all').hide();
 		$('.city-'+city).show();
-		
+
 		/* if (city == "SaintPetersburg"){
 			$('.cityText span').html(SaintPetersburgText[0]);
 			$('.phoneText span').html(SaintPetersburgText[1]);
@@ -84,7 +84,7 @@ $(document).ready(function () {
 		} */
 		CloseWindow();
 	});
-	
+
 	$("#c-filter__price-fake").click(function (e) {
 		$('#c-filter__price-fake').hide();
 		$('#c-filter__price').show();
@@ -705,7 +705,7 @@ jQuery.event.special.touchstart = {
 		t = !0
 	}
   });
-  
+
 	$(".form-select__list li input").change(function (e) {
 		let t = $(this).parents("li").attr("data-target"),
 		s = $(this).parents(".form-select");
@@ -743,14 +743,14 @@ jQuery.event.special.touchstart = {
 			s.find(".form-select__input span.select__title").width() + s.find(".form-select__input span.selected-items").width() >= 10 && s.find(".form-select__input .selected-items").html("+ " + i.length)
 		}
 	});
-  
+
 	$(".form-select__input").on("click", "a.del", function (e) {
 		e.preventDefault();
 		let t = $(this).parents(".form-select__input"),
 			s = $(this).parents(".select-item").attr("data-target");
 		$(this).parents(".select-item").remove(), $("#" + s).click(), !$(t).children(".select-item").length > 0 && $(t).find(".select__title").removeClass("hidden"), e.stopPropagation()
 	});
-  
+
   $(".banner__carousel").slick({
     dots: !0,
     customPaging: function (e, t) {
@@ -848,7 +848,7 @@ jQuery.event.special.touchstart = {
     arrows: !1,
     asNavFor: ".collection-img__thumbs"
   }), $(".collection-img__thumbs").slick({
-    slidesToShow: 4,
+    slidesToShow: 5,
     slidesToScroll: 1,
     dots: !1,
     arrows: !1,
@@ -928,7 +928,7 @@ priceInput.forEach(input =>{
     input.addEventListener("input", e =>{
         let minPrice = parseInt(priceInput[0].value),
         maxPrice = parseInt(priceInput[1].value);
-        
+
         if((maxPrice - minPrice >= priceGap) && maxPrice <= rangeInput[1].max){
             if(e.target.className === "input-min"){
                 rangeInput[0].value = minPrice;
@@ -956,7 +956,7 @@ rangeInput.forEach(input =>{
             range.style.left = ((minVal / rangeInput[0].max) * 100) + "%";
             range.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
         }
-		
+
 		if(e.target.className === "range-min"){
 			$('#arrFilter_P1_MIN').each(function() {
 				smartFilter.keyup(this);

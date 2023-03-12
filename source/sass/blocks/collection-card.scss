@@ -24,7 +24,7 @@
 
   @media #{$laptop-desktop} {
     grid-template-rows: repeat(6, min-content) 1fr;
-    grid-template-columns: 60% 1fr auto;
+    grid-template-columns: 740px 1fr auto;
     column-gap: 60px;
     grid-template-areas:
       "class     class           class"
@@ -40,7 +40,7 @@
     width: 1480px;
     padding: 0 40px;
     margin: 0 auto;
-    grid-template-columns: 800px 1fr auto;
+    // grid-template-columns: 800px 1fr auto;
   }
 }
 
@@ -128,7 +128,7 @@
 .collection-card__gallery.collection-img {
   width: 100%;
   overflow-x: hidden;
-  margin: 0 0 15px;
+  margin: 0 auto 15px;
   justify-content: center;
 
   @media #{$tablet-desktop} {
@@ -137,8 +137,10 @@
   }
 
   @media #{$laptop-desktop} {
+    max-width: 700px;
     margin-top: 36px;
     margin-bottom: 0;
+    margin-left: 0;
   }
 
   @media #{$desktop} {
@@ -160,22 +162,11 @@
 
 .collection-card__gallery .collection-img__thumbs {
   margin: 0 -2px;
-
-  @media #{$tablet-desktop} {
-    margin: 0 -4px;
-  }
-
-  @media #{$desktop} {
-    margin: 0 -5px;
-  }
 }
 
 .collection-card__gallery .collection-img__thumbs .item {
   margin: 0 2px;
-
-  @media #{$tablet-desktop} {
-    margin: 0 5px;
-  }
+  max-height: 128px;
 }
 
 .collection-card__gallery.collection-img .item {
@@ -217,11 +208,19 @@
   }
 
   @media #{$laptop-desktop} {
+    max-width: 700px;
     margin-top: 23px;
   }
 
   @media #{$desktop} {
     margin-top: 21px;
+  }
+
+  .button-2 {
+    @media #{$laptop-desktop} {
+      font-family: $additional-font-family;
+      text-transform: none;
+    }
   }
 }
 
