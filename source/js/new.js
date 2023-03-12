@@ -846,7 +846,7 @@ if (newsSection) {
   });
 };
 
-const initOfferSection = (offersSection) => {
+const initOffersSection = (offersSection) => {
   const tabsSliderElement = offersSection.querySelector('.tabs__slider');
   const tabsItemsCount = tabsSliderElement.querySelectorAll('.tabs__item').length;
   let isEdgeTabsItemClick = false;
@@ -855,20 +855,16 @@ const initOfferSection = (offersSection) => {
     loop: true,
     watchSlidesProgress: true,
     threshold: 10,
-    slideToClickedSlide: true,
     pagination: {
       el: '.offers__tabs-pagination',
       clickable: true,
     },
     breakpoints: {
       768: {
-        slidesPerView: 3,
-        centeredSlides: true,
+        slidesPerView: Math.min(3, tabsItemsCount),
       },
       1280: {
-        slidesPerView: 6,
-        slideToClickedSlide: false,
-        centeredSlides: false,
+        slidesPerView: Math.min(6, tabsItemsCount),
       },
     },
   });
@@ -892,79 +888,77 @@ const initOfferSection = (offersSection) => {
     },
   });
 
+  tabsSlider.on('slideNextTransitionEnd', () => {
+    if (isEdgeTabsItemClick && tabsSlider.params.slidesPerView >= 4) {
+      tabsSlider.slideNext(tabsSlider.params.speed / 2);
+      isEdgeTabsItemClick = false;
+    }
+  });
+
+  tabsSlider.on('slidePrevTransitionEnd', () => {
+    if (isEdgeTabsItemClick && tabsSlider.params.slidesPerView >= 5) {
+      tabsSlider.slidePrev(tabsSlider.params.speed / 2);
+      isEdgeTabsItemClick = false;
+    }
+  });
+
   const highlightCurrentTabsSlide = (index) => {
     tabsSlider.slides.forEach((slide) => slide.classList.remove('tabs__item--current'));
     const tabs = tabsSliderElement.querySelectorAll(`.tabs__item[data-swiper-slide-index="${index}"]`);
     tabs.forEach((slide) => slide.classList.add('tabs__item--current'));
   };
 
-  const scrollTabsSliderOnDesktopWidth = (index, transition = true) => {
-    switch (index) {
-      case tabsSlider.realIndex:
-        isEdgeTabsItemClick = true;
-        tabsSlider.slidePrev(transition ? tabsSlider.params.speed / 2 : 0);
-        break;
-      case (tabsSlider.realIndex + 1) % tabsItemsCount:
-        tabsSlider.slidePrev(transition ? tabsSlider.params.speed : 0);
-        break;
-      case (tabsSlider.realIndex + 4) % tabsItemsCount:
-        tabsSlider.slideNext(transition ? tabsSlider.params.speed : 0)
-        break;
-      case (tabsSlider.realIndex + 5) % tabsItemsCount:
-        isEdgeTabsItemClick = true;
-        tabsSlider.slideNext(transition ? tabsSlider.params.speed / 2 : 0)
-        break;
-    }
-  };
-
-  mainSlider.on('slideNextTransitionStart', () => {
-    highlightCurrentTabsSlide(mainSlider.realIndex);
-
-    if (tabsSlider.params.slidesPerView <= 3) {
+  const setCurrentTabsSlidePosition = (index) => {
+    if (tabsSlider.params.slidesPerView === 2) {
+      if (index === tabsSlider.realIndex) {
+        return;
+      }
       tabsSlider.slideNext();
-
-      // При очень быстром листании главного слайдера может случиться рассинхронизация с табами
-      // Этот код восстанавливает синхронизацию
-      if (tabsSlider.realIndex !== mainSlider.realIndex) {
-        tabsSlider.slideToLoop(mainSlider.realIndex)
+    } else if (tabsSlider.params.slidesPerView === 3) {
+      switch (index) {
+        case tabsSlider.realIndex:
+          tabsSlider.slidePrev();
+          break;
+        case (tabsSlider.realIndex + tabsSlider.params.slidesPerView - 1) % tabsItemsCount:
+          tabsSlider.slideNext();
+          break;
       }
-    } else {
-      scrollTabsSliderOnDesktopWidth(mainSlider.realIndex);
+    } else if (tabsSlider.params.slidesPerView === 4) {
+      switch (index) {
+        case tabsSlider.realIndex:
+          tabsSlider.slidePrev();
+          break;
+        case (tabsSlider.realIndex + tabsSlider.params.slidesPerView - 2) % tabsItemsCount:
+          tabsSlider.slideNext();
+          break;
+        case (tabsSlider.realIndex + tabsSlider.params.slidesPerView - 1) % tabsItemsCount:
+          isEdgeTabsItemClick = true;
+          tabsSlider.slideNext(tabsSlider.params.speed / 2);
+          break;
+      }
+    } else if (tabsSlider.params.slidesPerView >= 5) {
+      switch (index) {
+        case tabsSlider.realIndex:
+          isEdgeTabsItemClick = true;
+          tabsSlider.slidePrev(tabsSlider.params.speed / 2);
+          break;
+        case (tabsSlider.realIndex + 1) % tabsItemsCount:
+          tabsSlider.slidePrev(tabsSlider.params.speed);
+          break;
+        case (tabsSlider.realIndex + tabsSlider.params.slidesPerView - 2) % tabsItemsCount:
+          tabsSlider.slideNext();
+          break;
+        case (tabsSlider.realIndex + tabsSlider.params.slidesPerView - 1) % tabsItemsCount:
+          isEdgeTabsItemClick = true;
+          tabsSlider.slideNext(tabsSlider.params.speed / 2);
+          break;
+      }
     }
-  });
+  }
 
-  mainSlider.on('slidePrevTransitionStart', () => {
+  mainSlider.on('slideChange', () => {
     highlightCurrentTabsSlide(mainSlider.realIndex);
-
-    if (tabsSlider.params.slidesPerView <= 3) {
-      tabsSlider.slidePrev();
-
-      // При очень быстром листании главного слайдера может случиться рассинхронизация с табами
-      // Этот код восстанавливает синхронизацию
-      if (tabsSlider.realIndex !== mainSlider.realIndex) {
-        tabsSlider.slideToLoop(mainSlider.realIndex)
-      }
-    } else {
-      scrollTabsSliderOnDesktopWidth(mainSlider.realIndex);
-    }
-  });
-
-  tabsSlider.on('slideNextTransitionEnd', () => {
-    if (!isEdgeTabsItemClick || tabsSlider.params.slidesPerView <= 3) {
-      return;
-    }
-
-    tabsSlider.slideNext(tabsSlider.params.speed / 2);
-    isEdgeTabsItemClick = false;
-  });
-
-  tabsSlider.on('slidePrevTransitionEnd', () => {
-    if (!isEdgeTabsItemClick || tabsSlider.params.slidesPerView <= 3) {
-      return;
-    }
-
-    tabsSlider.slidePrev(tabsSlider.params.speed / 2);
-    isEdgeTabsItemClick = false;
+    setCurrentTabsSlidePosition(mainSlider.realIndex);
   });
 
   tabsSliderElement.addEventListener('click', (evt) => {
@@ -975,31 +969,16 @@ const initOfferSection = (offersSection) => {
     }
 
     tabsItemIndex = +tabsItem.dataset.swiperSlideIndex;
+
     mainSlider.slideToLoop(tabsItemIndex, mainSlider.params.speed, false);
-
-    if (tabsSlider.params.slidesPerView > 3) {
-      highlightCurrentTabsSlide(mainSlider.realIndex);
-      scrollTabsSliderOnDesktopWidth(tabsItemIndex);
-    }
-  });
-
-  tabsSlider.on('slideChange', () => {
-    if (tabsSlider.params.slidesPerView <= 3) {
-      mainSlider.slideToLoop(tabsSlider.realIndex, mainSlider.params.speed, false);
-      highlightCurrentTabsSlide(mainSlider.realIndex);
-    }
+    setCurrentTabsSlidePosition(tabsItemIndex);
   });
 
   highlightCurrentTabsSlide(mainSlider.realIndex);
-
-  if (tabsSlider.params.slidesPerView <= 3) {
-    tabsSlider.slideToLoop(mainSlider.realIndex);
-  } else {
-    scrollTabsSliderOnDesktopWidth(mainSlider.realIndex, false);
-  }
+  setCurrentTabsSlidePosition(mainSlider.realIndex);
 }
 
-document.querySelectorAll('.offers').forEach(initOfferSection);
+document.querySelectorAll('.offers').forEach(initOffersSection);
 
 const goodsSlider1 = document.querySelector('.goods--swiper--1 .goods__slider');
 if (goodsSlider1) {
