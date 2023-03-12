@@ -40,7 +40,6 @@
     width: 1480px;
     padding: 0 40px;
     margin: 0 auto;
-    // grid-template-columns: 800px 1fr auto;
   }
 }
 
@@ -148,12 +147,12 @@
   }
 }
 
+.collection-card__gallery {
+  overflow: hidden;
+}
+
 .collection-card__gallery .collection-img__carousel {
   margin: 0 0 4px;
-
-  @media #{$tablet-desktop} {
-    margin-bottom: 10px;
-  }
 }
 
 .collection-card__gallery .collection-img__carousel .item {
@@ -209,11 +208,7 @@
 
   @media #{$laptop-desktop} {
     max-width: 700px;
-    margin-top: 23px;
-  }
-
-  @media #{$desktop} {
-    margin-top: 21px;
+    margin-top: 16px;
   }
 
   .button-2 {
