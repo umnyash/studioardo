@@ -851,6 +851,8 @@ const initOffersSection = (offersSection) => {
   const mainSliderElement = offersSection.querySelector('.offers__slider');
   const tabsItemsCount = tabsSliderElement.querySelectorAll('.tabs__item').length;
   let isEdgeTabsItemClick = false;
+  const mainSliderPrevButton = offersSection.querySelector('.offers__button-prev-2');
+  const mainSliderNextButton = offersSection.querySelector('.offers__button-next-2');
 
   const tabsSlider = new Swiper(tabsSliderElement, {
     loop: true,
@@ -969,6 +971,9 @@ const initOffersSection = (offersSection) => {
     tabsItemIndex = +tabsItem.dataset.swiperSlideIndex;
     mainSlider.slideToLoop(tabsItemIndex);
   });
+
+  mainSliderPrevButton.addEventListener('click', () => mainSlider.slidePrev());
+  mainSliderNextButton.addEventListener('click', () => mainSlider.slideNext());
 
   mainSlider.on('slideNextTransitionStart', () => {
     if (tabsSlider.params.slidesPerView < 3) {

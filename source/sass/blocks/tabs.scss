@@ -40,7 +40,7 @@
   flex-direction: column;
   box-sizing: border-box;
   height: auto;
-  padding: 23px 43px 20px;
+  padding: 23px 50px 20px;
   border-bottom: 3px solid transparent;
   margin: 0;
   background-color: $background-color;
@@ -51,7 +51,6 @@
   }
 
   @media #{$laptop-desktop} {
-    // min-width: 196px;
     padding: 21px 8px 15px;
   }
 
@@ -72,8 +71,7 @@
 }
 
 .tabs__item:hover,
-.tabs__item--current,
-.tabs__item.swiper-slide-thumb-active {
+.tabs__item--current {
   border-bottom-color: $special-color;
 
   &::after {
