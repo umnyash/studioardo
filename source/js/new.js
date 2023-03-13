@@ -562,8 +562,8 @@ if (inspirationGallery) {
     watchSlidesProgress: true,
     loop: true,
     navigation: {
-      nextEl: ".inspiration__arrows .arrows__next",
-      prevEl: ".inspiration__arrows .arrows__prev",
+      nextEl: ".inspiration__button-next",
+      prevEl: ".inspiration__button-prev",
     },
   })
 };
@@ -614,8 +614,8 @@ if (productsSection) {
         spaceBetween: 8,
         watchSlidesProgress: true,
         navigation: {
-          nextEl: ".products__arrows .arrows__next",
-          prevEl: ".products__arrows .arrows__prev",
+          nextEl: ".products__button-next",
+          prevEl: ".products__button-prev",
         },
         breakpoints: {
           420: {
@@ -676,8 +676,8 @@ if (tileSwiper) {
     spaceBetween: 8,
     loop: true,
     navigation: {
-      nextEl: ".tile-range__arrows .arrows__next",
-      prevEl: ".tile-range__arrows .arrows__prev",
+      nextEl: ".tile-range__button-next",
+      prevEl: ".tile-range__button-prev",
     },
     watchSlidesProgress: true,
     breakpoints: {

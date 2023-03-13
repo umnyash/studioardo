@@ -23,17 +23,30 @@
   }
 }
 
-.n-news__arrows {
-  display: none;
+.n-news__button-prev,
+.n-news__button-next {
+  position: absolute;
+  z-index: 2;
+  top: 81px;
+  width: 38px;
+  height: 38px;
+  margin: 0;
 
   @media #{$tablet-desktop} {
-    grid-area: btn;
-    display: grid;
+    top: 75px;
+    width: 50px;
+    height: 50px;
   }
+}
 
-  @media #{$desktop} {
-    margin-top: 9px;
-  }
+.n-news__button-prev {
+  left: 0;
+  transform: rotate(180deg);
+  will-change: transform;
+}
+
+.n-news__button-next {
+  right: 0;
 }
 
 .n-news__swiper {

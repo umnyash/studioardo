@@ -395,14 +395,6 @@
         <div class="inspiration__wrapper">
           <h2 class="inspiration__title heading heading--alter-2">Трендовые коллекции для вдохновения</h2>
           <a href="#" class="inspiration__button button--with-icon-reverse button button--secondary">Перейти в коллекции</a>
-          <div class="inspiration__arrows arrows">
-            <button class="arrows__prev arrow-button-2 arrow-button-2--alter" type="button">
-              <span class="visually-hidden">Предыдущий слайд</span>
-            </button>
-            <button class="arrows__next arrow-button-2 arrow-button-2--alter" type="button">
-              <span class="visually-hidden">Следующий слайд</span>
-            </button>
-          </div>
         </div>
       </div>
       <div class="inspiration__gallery swiper artgallery-swiper">
@@ -471,6 +463,12 @@
             </a>
           </li>
         </ul>
+        <button class="inspiration__button-prev arrow-button-2" type="button">
+          <span class="visually-hidden">Предыдущий слайд</span>
+        </button>
+        <button class="inspiration__button-next arrow-button-2" type="button">
+          <span class="visually-hidden">Следующий слайд</span>
+        </button>
       </div>
     </section>
 
@@ -531,91 +529,89 @@
       <div class="center">
         <div class="tile-range__wrapper">
           <h2 class="tile-range__title heading heading--alter-2">Отобрали лучшее из многообразия плитки</h2>
-          <div class="tile-range__arrows">
-            <div class="arrows">
-              <button class="arrows__prev arrow-button-2 arrow-button-2--alter" type="button">
-                <span class="visually-hidden">Предыдущий слайд</span>
-              </button>
-              <button class="arrows__next arrow-button-2 arrow-button-2--alter" type="button">
-                <span class="visually-hidden">Следующий слайд</span>
-              </button>
-            </div>
-          </div>
-          <div class="tile-range__swiper swiper tile-range-swiper">
-            <div class="tile-range__list swiper-wrapper">
-              <div class="tile-range__item swiper-slide">
-                <a class="tile-range__link" href="#">
-                  <div class="tile-range__category">
-                    <h3 class="tile-range__category-text">Итальянская плитка</h3>
-                  </div>
-                  <picture class="tile-range__image">
-                    <img src="img/tile-range-1.jpg" alt="">
-                  </picture>
-                </a>
-                <a class="tile-range__link" href="#">
-                  <div class="tile-range__category">
-                    <h3 class="tile-range__category-text">Испанская плитка</h3>
-                  </div>
-                  <picture class="tile-range__image">
-                    <img src="img/tile-range-5.jpg" alt="">
-                  </picture>
-                </a>
-              </div>
-              <div class="tile-range__item swiper-slide">
-                <a class="tile-range__link" href="#">
-                  <div class="tile-range__category">
-                    <h3 class="tile-range__category-text">Португальская плитка</h3>
-                  </div>
-                  <picture class="tile-range__image">
-                    <img src="img/tile-range-2.jpg" alt="">
-                  </picture>
-                </a>
-                <a class="tile-range__link" href="#">
-                  <div class="tile-range__category">
-                    <h3 class="tile-range__category-text">Итальянская плитка</h3>
-                  </div>
-                  <picture class="tile-range__image">
-                    <img src="img/tile-range-6.jpg" alt="">
-                  </picture>
-                </a>
-              </div>
-              <div class="tile-range__item swiper-slide">
-                <a class="tile-range__link" href="#">
-                  <div class="tile-range__category">
-                    <h3 class="tile-range__category-text">Плитка под мрамор</h3>
-                  </div>
-                  <picture class="tile-range__image">
-                    <img src="img/tile-range-3.jpg" alt="">
-                  </picture>
-                </a>
-                <a class="tile-range__link" href="#">
-                  <div class="tile-range__category">
-                    <h3 class="tile-range__category-text">Плитка под дерево</h3>
-                  </div>
-                  <picture class="tile-range__image">
-                    <img src="img/tile-range-7.jpg" alt="">
-                  </picture>
-                </a>
-              </div>
-              <div class="tile-range__item swiper-slide">
-                <a class="tile-range__link" href="#">
-                  <div class="tile-range__category">
-                    <h3 class="tile-range__category-text">Матовая плитка</h3>
-                  </div>
-                  <picture class="tile-range__image">
-                    <img src="img/tile-range-4.jpg" alt="">
-                  </picture>
-                </a>
-                <a class="tile-range__link" href="#">
-                  <div class="tile-range__category">
-                    <h3 class="tile-range__category-text">Глянцевая плитка</h3>
-                  </div>
-                  <picture class="tile-range__image">
-                    <img src="img/tile-range-8.jpg" alt="">
-                  </picture>
-                </a>
+          <div class="tile-range__slider-wrapper">
+            <div class="tile-range__swiper swiper tile-range-swiper">
+              <div class="tile-range__list swiper-wrapper">
+                <div class="tile-range__item swiper-slide">
+                  <a class="tile-range__link" href="#">
+                    <div class="tile-range__category">
+                      <h3 class="tile-range__category-text">Итальянская плитка</h3>
+                    </div>
+                    <picture class="tile-range__image">
+                      <img src="img/tile-range-1.jpg" alt="">
+                    </picture>
+                  </a>
+                  <a class="tile-range__link" href="#">
+                    <div class="tile-range__category">
+                      <h3 class="tile-range__category-text">Испанская плитка</h3>
+                    </div>
+                    <picture class="tile-range__image">
+                      <img src="img/tile-range-5.jpg" alt="">
+                    </picture>
+                  </a>
+                </div>
+                <div class="tile-range__item swiper-slide">
+                  <a class="tile-range__link" href="#">
+                    <div class="tile-range__category">
+                      <h3 class="tile-range__category-text">Португальская плитка</h3>
+                    </div>
+                    <picture class="tile-range__image">
+                      <img src="img/tile-range-2.jpg" alt="">
+                    </picture>
+                  </a>
+                  <a class="tile-range__link" href="#">
+                    <div class="tile-range__category">
+                      <h3 class="tile-range__category-text">Итальянская плитка</h3>
+                    </div>
+                    <picture class="tile-range__image">
+                      <img src="img/tile-range-6.jpg" alt="">
+                    </picture>
+                  </a>
+                </div>
+                <div class="tile-range__item swiper-slide">
+                  <a class="tile-range__link" href="#">
+                    <div class="tile-range__category">
+                      <h3 class="tile-range__category-text">Плитка под мрамор</h3>
+                    </div>
+                    <picture class="tile-range__image">
+                      <img src="img/tile-range-3.jpg" alt="">
+                    </picture>
+                  </a>
+                  <a class="tile-range__link" href="#">
+                    <div class="tile-range__category">
+                      <h3 class="tile-range__category-text">Плитка под дерево</h3>
+                    </div>
+                    <picture class="tile-range__image">
+                      <img src="img/tile-range-7.jpg" alt="">
+                    </picture>
+                  </a>
+                </div>
+                <div class="tile-range__item swiper-slide">
+                  <a class="tile-range__link" href="#">
+                    <div class="tile-range__category">
+                      <h3 class="tile-range__category-text">Матовая плитка</h3>
+                    </div>
+                    <picture class="tile-range__image">
+                      <img src="img/tile-range-4.jpg" alt="">
+                    </picture>
+                  </a>
+                  <a class="tile-range__link" href="#">
+                    <div class="tile-range__category">
+                      <h3 class="tile-range__category-text">Глянцевая плитка</h3>
+                    </div>
+                    <picture class="tile-range__image">
+                      <img src="img/tile-range-8.jpg" alt="">
+                    </picture>
+                  </a>
+                </div>
               </div>
             </div>
+            <button class="tile-range__button-prev arrow-button-2" type="button">
+              <span class="visually-hidden">Предыдущий слайд</span>
+            </button>
+            <button class="tile-range__button-next arrow-button-2" type="button">
+              <span class="visually-hidden">Следующий слайд</span>
+            </button>
           </div>
         </div>
       </div>
@@ -625,75 +621,73 @@
       <div class="center">
         <div class="products__wrapper">
           <h2 class="products__title heading heading--alter-2">Сантехника для ценителей эстетики</h2>
-          <div class="products__arrows">
-            <div class="arrows">
-              <button class="arrows__prev arrow-button-2 arrow-button-2--alter" type="button">
-                <span class="visually-hidden">Предыдущий слайд</span>
-              </button>
-              <button class="arrows__next arrow-button-2 arrow-button-2--alter" type="button">
-                <span class="visually-hidden">Следующий слайд</span>
-              </button>
-            </div>
-          </div>
-          <div class="products__slider">
-            <div class="products__list">
-              <div class="products__item-group">
-                <a class="product-item" href="#">
-                  <picture class="product-item__image-wrapper">
-                    <img class="product-item__image" src="img/plumbing/bath.jpg" alt="Белая ванна.">
-                  </picture>
-                  <h3 class="product-item__title">Ванны</h3>
-                </a>
-                <a class="product-item" href="#">
-                  <picture class="product-item__image-wrapper">
-                    <img class="product-item__image" src="img/plumbing/faucet.jpg" alt="Смеситель.">
-                  </picture>
-                  <h3 class="product-item__title">Смесители</h3>
-                </a>
-              </div>
-              <div class="products__item-group">
-                <a class="product-item" href="#">
-                  <picture class="product-item__image-wrapper">
-                    <img class="product-item__image" src="img/plumbing/toilet.jpg" alt="Белый унитаз.">
-                  </picture>
-                  <h3 class="product-item__title">Унитазы</h3>
-                </a>
-                <a class="product-item" href="#">
-                  <picture class="product-item__image-wrapper">
-                    <img class="product-item__image" src="img/plumbing/sink.jpg" alt="Белая раковина.">
-                  </picture>
-                  <h3 class="product-item__title">Раковины</h3>
-                </a>
-              </div>
-              <div class="products__item-group">
-                <a class="product-item" href="#">
-                  <picture class="product-item__image-wrapper">
-                    <img class="product-item__image" src="img/plumbing/shower.jpg" alt="Лейка душа.">
-                  </picture>
-                  <h3 class="product-item__title">Души</h3>
-                </a>
-                <a class="product-item" href="#">
-                  <picture class="product-item__image-wrapper">
-                    <img class="product-item__image" src="img/plumbing/towelwarmer.jpg" alt="Металлический змеевик.">
-                  </picture>
-                  <h3 class="product-item__title">Полотенце-сушители</h3>
-                </a>
-              </div>
-              <div class="products__item-group">
-                <a class="product-item" href="#">
-                  <picture class="product-item__image-wrapper">
-                    <img class="product-item__image" src="img/plumbing/urinal.jpg" alt="Белый писсуар.">
-                  </picture>
-                  <h3 class="product-item__title">Писсуары</h3>
-                </a>
-                <a class="product-item" href="#">
-                  <picture class="product-item__image-wrapper">
-                    <img class="product-item__image" src="img/plumbing/bidet.jpg" alt="Белое биде.">
-                  </picture>
-                  <h3 class="product-item__title">Биде</h3>
-                </a>
+          <div class="products__slider-wrapper">
+            <div class="products__slider">
+              <div class="products__list">
+                <div class="products__item-group">
+                  <a class="product-item" href="#">
+                    <picture class="product-item__image-wrapper">
+                      <img class="product-item__image" src="img/plumbing/bath.jpg" alt="Белая ванна.">
+                    </picture>
+                    <h3 class="product-item__title">Ванны</h3>
+                  </a>
+                  <a class="product-item" href="#">
+                    <picture class="product-item__image-wrapper">
+                      <img class="product-item__image" src="img/plumbing/faucet.jpg" alt="Смеситель.">
+                    </picture>
+                    <h3 class="product-item__title">Смесители</h3>
+                  </a>
+                </div>
+                <div class="products__item-group">
+                  <a class="product-item" href="#">
+                    <picture class="product-item__image-wrapper">
+                      <img class="product-item__image" src="img/plumbing/toilet.jpg" alt="Белый унитаз.">
+                    </picture>
+                    <h3 class="product-item__title">Унитазы</h3>
+                  </a>
+                  <a class="product-item" href="#">
+                    <picture class="product-item__image-wrapper">
+                      <img class="product-item__image" src="img/plumbing/sink.jpg" alt="Белая раковина.">
+                    </picture>
+                    <h3 class="product-item__title">Раковины</h3>
+                  </a>
+                </div>
+                <div class="products__item-group">
+                  <a class="product-item" href="#">
+                    <picture class="product-item__image-wrapper">
+                      <img class="product-item__image" src="img/plumbing/shower.jpg" alt="Лейка душа.">
+                    </picture>
+                    <h3 class="product-item__title">Души</h3>
+                  </a>
+                  <a class="product-item" href="#">
+                    <picture class="product-item__image-wrapper">
+                      <img class="product-item__image" src="img/plumbing/towelwarmer.jpg" alt="Металлический змеевик.">
+                    </picture>
+                    <h3 class="product-item__title">Полотенце-сушители</h3>
+                  </a>
+                </div>
+                <div class="products__item-group">
+                  <a class="product-item" href="#">
+                    <picture class="product-item__image-wrapper">
+                      <img class="product-item__image" src="img/plumbing/urinal.jpg" alt="Белый писсуар.">
+                    </picture>
+                    <h3 class="product-item__title">Писсуары</h3>
+                  </a>
+                  <a class="product-item" href="#">
+                    <picture class="product-item__image-wrapper">
+                      <img class="product-item__image" src="img/plumbing/bidet.jpg" alt="Белое биде.">
+                    </picture>
+                    <h3 class="product-item__title">Биде</h3>
+                  </a>
+                </div>
               </div>
             </div>
+            <button class="products__button-prev arrow-button-2" type="button">
+              <span class="visually-hidden">Предыдущий слайд</span>
+            </button>
+            <button class="products__button-next arrow-button-2" type="button">
+              <span class="visually-hidden">Следующий слайд</span>
+            </button>
           </div>
         </div>
       </div>
@@ -744,11 +738,11 @@
             </ul>
           </div>
           <div class="showroom__wrapper splide__arrows center">
-            <div class="showroom__arrows arrows">
-              <button class="arrows__prev splide__arrow splide__arrow--prev arrow-button-2" type="button">
+            <div class="showroom__arrows">
+              <button class="showroom__button-prev splide__arrow splide__arrow--prev arrow-button-2" type="button">
                 <span class="visually-hidden">Предыдущий слайд</span>
               </button>
-              <button class="arrows__next splide__arrow splide__arrow--next arrow-button-2" type="button">
+              <button class="showroom__button-next splide__arrow splide__arrow--next arrow-button-2" type="button">
                 <span class="visually-hidden">Следующий слайд</span>
               </button>
             </div>
@@ -1815,14 +1809,6 @@
           <a href="#" class="projects__button button--with-icon-reverse button button--secondary button--popup--order--visualization">
             Заказать визуализацию
           </a>
-          <div class="projects__arrows arrows">
-            <button class="arrows__prev arrow-button-2 arrow-button-2--alter" type="button">
-              <span class="visually-hidden">Предыдущий слайд</span>
-            </button>
-            <button class="arrows__next arrow-button-2 arrow-button-2--alter" type="button">
-              <span class="visually-hidden">Следующий слайд</span>
-            </button>
-          </div>
         </div>
       </div>
       <div class="projects__gallery swiper projects-swiper">
@@ -1872,6 +1858,12 @@
             </a>
           </li>
         </ul>
+        <button class="projects__button-prev arrow-button-2" type="button">
+          <span class="visually-hidden">Предыдущий слайд</span>
+        </button>
+        <button class="projects__button-next arrow-button-2" type="button">
+          <span class="visually-hidden">Следующий слайд</span>
+        </button>
       </div>
     </section>
 
@@ -1879,15 +1871,6 @@
       <div class="center">
         <div class="n-news__wrapper">
           <h2 class="n-news__title heading heading--alter-2">Последние новости из мира интерьера Ардо Студио</h2>
-          <div class="n-news__arrows arrows">
-            <button class="arrows__prev arrow-button-2 arrow-button-2--alter" type="button">
-              <span class="visually-hidden">Предыдущий слайд</span>
-            </button>
-            <button class="arrows__next arrow-button-2 arrow-button-2--alter" type="button">
-              <span class="visually-hidden">Следующий слайд</span>
-            </button>
-          </div>
-
           <div class="n-news__swiper swiper news-swiper">
             <ul class="n-news__list swiper-wrapper">
               <li class="n-news__item swiper-slide">
@@ -1936,6 +1919,12 @@
                 </a>
               </li>
             </ul>
+            <button class="n-news__button-prev arrow-button-2" type="button">
+              <span class="visually-hidden">Предыдущий слайд</span>
+            </button>
+            <button class="n-news__button-next arrow-button-2" type="button">
+              <span class="visually-hidden">Следующий слайд</span>
+            </button>
           </div>
         </div>
       </div>

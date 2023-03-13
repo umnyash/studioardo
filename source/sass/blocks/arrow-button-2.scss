@@ -5,12 +5,13 @@
   border-radius: 50%;
   place-items: center;
   background: $background-color;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15));
   cursor: pointer;
 
   &::before {
     content: "";
-    width: 7px;
-    height: 13px;
+    width: 8px;
+    height: 14px;
     background-color: $basic-text-color;
     mask: url("../img/icons/slider-arrow-right.svg");
     mask-repeat: no-repeat;

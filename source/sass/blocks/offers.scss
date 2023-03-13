@@ -31,29 +31,6 @@
   margin: 0;
 }
 
-// .offers__controls {
-//   position: absolute;
-//   z-index: 2;
-//   bottom: 0;
-//   right: 10px;
-//   left: 10px;
-
-//   @media #{$tablet-desktop} {
-//     right: 30px;
-//     left: 30px;
-//   }
-
-//   @media #{$laptop-desktop} {
-//     right: 50px;
-//     left: 50px;
-//   }
-
-//   @media #{$desktop} {
-//     right: 0;
-//     left: 0;
-//   }
-// }
-
 .offers__controls {
   grid-area: 2 / 1 / 4 / 2;
   z-index: 2;
