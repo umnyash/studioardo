@@ -848,11 +848,13 @@ if (newsSection) {
 
 const initOffersSection = (offersSection) => {
   const tabsSliderElement = offersSection.querySelector('.tabs__slider');
+  const mainSliderElement = offersSection.querySelector('.offers__slider');
   const tabsItemsCount = tabsSliderElement.querySelectorAll('.tabs__item').length;
   let isEdgeTabsItemClick = false;
 
   const tabsSlider = new Swiper(tabsSliderElement, {
     loop: true,
+    allowTouchMove: false,
     watchSlidesProgress: true,
     threshold: 10,
     pagination: {
@@ -869,7 +871,7 @@ const initOffersSection = (offersSection) => {
     },
   });
 
-  const mainSlider = new Swiper(".offers__slider", {
+  const mainSlider = new Swiper(mainSliderElement , {
     loop: true,
     watchSlidesProgress: true,
     navigation: {
@@ -888,6 +890,9 @@ const initOffersSection = (offersSection) => {
     },
   });
 
+  mainSlider.on('slideChangeTransitionStart', () => mainSlider.allowTouchMove = false);
+  mainSlider.on('slideChangeTransitionEnd', () => mainSlider.allowTouchMove = true);
+
   tabsSlider.on('slideNextTransitionEnd', () => {
     if (isEdgeTabsItemClick && tabsSlider.params.slidesPerView >= 4) {
       tabsSlider.slideNext(tabsSlider.params.speed / 2);
@@ -902,19 +907,15 @@ const initOffersSection = (offersSection) => {
     }
   });
 
-  const highlightCurrentTabsSlide = (index) => {
+  const highlightCurrentTab = (index) => {
     tabsSlider.slides.forEach((slide) => slide.classList.remove('tabs__item--current'));
     const tabs = tabsSliderElement.querySelectorAll(`.tabs__item[data-swiper-slide-index="${index}"]`);
     tabs.forEach((slide) => slide.classList.add('tabs__item--current'));
   };
+  highlightCurrentTab(mainSlider.realIndex);
 
-  const setCurrentTabsSlidePosition = (index) => {
-    if (tabsSlider.params.slidesPerView === 2) {
-      if (index === tabsSlider.realIndex) {
-        return;
-      }
-      tabsSlider.slideNext();
-    } else if (tabsSlider.params.slidesPerView === 3) {
+  const scrollTabsSlider = (index) => {
+    if (tabsSlider.params.slidesPerView === 3) {
       switch (index) {
         case tabsSlider.realIndex:
           tabsSlider.slidePrev();
@@ -954,12 +955,9 @@ const initOffersSection = (offersSection) => {
           break;
       }
     }
-  }
+  };
+  scrollTabsSlider(mainSlider.realIndex);
 
-  mainSlider.on('slideChange', () => {
-    highlightCurrentTabsSlide(mainSlider.realIndex);
-    setCurrentTabsSlidePosition(mainSlider.realIndex);
-  });
 
   tabsSliderElement.addEventListener('click', (evt) => {
     const tabsItem = evt.target.closest('.tabs__item');
@@ -969,15 +967,31 @@ const initOffersSection = (offersSection) => {
     }
 
     tabsItemIndex = +tabsItem.dataset.swiperSlideIndex;
-
-    mainSlider.slideToLoop(tabsItemIndex, mainSlider.params.speed, false);
-    setCurrentTabsSlidePosition(tabsItemIndex);
+    mainSlider.slideToLoop(tabsItemIndex);
   });
 
-  highlightCurrentTabsSlide(mainSlider.realIndex);
-  setCurrentTabsSlidePosition(mainSlider.realIndex);
-}
+  mainSlider.on('slideNextTransitionStart', () => {
+    if (tabsSlider.params.slidesPerView < 3) {
+      tabsSlider.slideNext();
+    }
+  });
 
+  mainSlider.on('slidePrevTransitionStart', () => {
+    if (tabsSlider.params.slidesPerView < 3) {
+      tabsSlider.slidePrev();
+    }
+  });
+
+  mainSlider.on('slideChange', () => {
+    highlightCurrentTab(mainSlider.realIndex);
+
+    if (tabsSlider.params.slidesPerView >= 3) {
+      scrollTabsSlider(mainSlider.realIndex);
+    }
+  });
+
+  mainSlider.on('resize', () => mainSlider.slideToLoop(tabsSlider.realIndex));
+}
 document.querySelectorAll('.offers').forEach(initOffersSection);
 
 const goodsSlider1 = document.querySelector('.goods--swiper--1 .goods__slider');
