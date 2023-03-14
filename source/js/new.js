@@ -645,8 +645,8 @@ if (projectsGallery) {
     watchSlidesProgress: true,
     loop: true,
     navigation: {
-      nextEl: ".projects__arrows .arrows__next",
-      prevEl: ".projects__arrows .arrows__prev",
+      nextEl: ".projects__button-next",
+      prevEl: ".projects__button-prev",
     },
   })
 };
@@ -687,6 +687,9 @@ if (tileSwiper) {
       1280: {
         slidesPerView: 4,
         spaceBetween: 8,
+      },
+      1510: {
+        spaceBetween: 10,
       },
     },
   });
@@ -840,8 +843,13 @@ if (newsSection) {
     watchSlidesProgress: true,
     loop: true,
     navigation: {
-      nextEl: ".n-news__arrows .arrows__next",
-      prevEl: ".n-news__arrows .arrows__prev",
+      nextEl: ".n-news__button-next",
+      prevEl: ".n-news__button-prev",
+    },
+    breakpoints: {
+      1510: {
+        spaceBetween: 10,
+      },
     },
   });
 };
@@ -911,6 +919,9 @@ const initOffersSection = (offersSection) => {
 
   const highlightCurrentTab = (index) => {
     tabsSlider.slides.forEach((slide) => slide.classList.remove('tabs__item--current'));
+    if (tabsSlider.params.slidesPerView < 2) {
+      return;
+    }
     const tabs = tabsSliderElement.querySelectorAll(`.tabs__item[data-swiper-slide-index="${index}"]`);
     tabs.forEach((slide) => slide.classList.add('tabs__item--current'));
   };

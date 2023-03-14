@@ -1,5 +1,5 @@
 .n-brands {
-  font-family: $basic-font-family;
+  font-family: $additional-font-family;
   background-color: $n-brands-background-color;
 }
 
@@ -15,7 +15,7 @@
 }
 
 .n-brands__button {
-  min-width: 240px;
+  min-width: 220px;
   flex-shrink: 0;
   margin: 20px 40px 20px 0;
 }
@@ -36,6 +36,10 @@
   @media #{$laptop-desktop} {
     width: auto;
     margin-left: auto;
+  }
+
+  @media #{$desktop} {
+    margin-top: 8px;
   }
 }
 

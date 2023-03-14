@@ -181,15 +181,24 @@
   }
 }
 
+.n-advantages__br--tablet-laptop {
+  @media #{$mobile} {
+    display: none;
+  }
+
+  @media #{$desktop} {
+    display: none;
+  }
+}
+
 .n-advantages--alter {
-  font-family: $basic-font-family;
+  font-family: $additional-font-family;
   font-size: 13px;
   letter-spacing: 0;
   color: $accent-text-color;
 
   @media #{$tablet-desktop} {
     font-size: 16px;
-    letter-spacing: -0.03em;
   }
 
   .n-advantages__list {
@@ -218,6 +227,10 @@
 
     @media #{$tablet-desktop} {
       padding: 15px 20px 13px 11px;
+    }
+
+    @media #{$desktop} {
+      padding-right: 60px;
     }
   }
 

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ru" class="main-page">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/normalize.css" rel="stylesheet">
+  <link href="css/libs.min.css" rel="stylesheet">
+  <link href="css/styles.min.css" rel="stylesheet">
+  <link href="css/style.min.css" rel="stylesheet">
+  <link href="css/custom.min.css" rel="stylesheet">
+  <link href="css/new.css" rel="stylesheet">
+  <title>Header & footer</title>
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="format-detection" content="address=no" />
+
+  <style>
+    body {
+      display: grid;
+      min-height: 100vh;
+      grid-template-rows: auto 1fr auto;
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__fs">
+      <div class="top header__top">
+        <div class="container">
+          <div class="top__row">
+            <div class="top__links">
+              <a class="top__link js-modal-show cityText city-all city-Moscow" href="#js-modal-geo">
+                <svg width="12" height="16">
+                  <use href="/img/icons/sprite.svg#icon-marker2"></use>
+                </svg>
+								<span>Москва</span>
+							</a>
+              <span class="calltouch_phone_495_1 city-all city-Moscow" id="calltouch_phone">
+                <a href="tel:84950237775" class="top__link phoneText">
+                  <svg width="14" height="14">
+                    <use href="/img/icons/sprite.svg#icon-tel2"></use>
+                  </svg>
+                  <span>
+                    <span class="call_phone_495_3">
+                      <span class="inh" href="tel:+74954325368">
+                        <span itemprop="telephone">+7 (495) 432-53-68</span>
+                      </span>
+                    </span>
+                  </span>
+                </a>
+              </span>
+              <span class="top__link">
+                <a href="mailto:zakaz@ardostudio.ru">zakaz@ardostudio.ru</a>
+              </span>
+            </div>
+            <nav class="top-menu">
+	            <ul>
+                <li><a href="/delivery/">Доставка</a></li>
+                <li><a href="/payments/">Оплата</a></li>
+                <li><a href="/services/">Услуги</a></li>
+                <li><a href="/news/">Новости</a></li>
+                <li><a href="/about/">О компании</a></li>
+                <li><a href="/contacts/">Контакты</a></li>
+                <li><a href="/gallery/">Галерея</a></li>
+						  </ul>
+						</nav>
+            <a href="#js-modal-dealer" class="top__link top__link--account js-modal-show">
+              <svg width="20" height="22">
+                <use href="/img/icons/sprite.svg#icon-user2"></use>
+              </svg>
+              Аккаунт
+            </a>
+            <button class="header__openbtn header__openbtn--top">
+							<span></span>
+						</button>
+          </div>
+        </div>
+      </div>
+      <div class="container line-rc">
+        <div class="headerbar">
+          <a class="logo hdr__logo" href="/">
+            <img loading="lazy" src="/img/logo.svg" width="114" height="35" alt="logo">
+          </a>
+          <div class="search__form">
+            <form id="search-form" method="post" novalidate="novalidate">
+              <input type="text" name="q" placeholder="Поиск по названию или артикулу" required="">
+              <button type="submit">
+                <svg>
+                  <use href="/img/icons/sprite.svg#icon-search"></use>
+                </svg>
+              </button>
+            </form>
+          </div>
+          <div class="headerbar__buttons">
+            <a href="/for-diler/" class="headerbar__btn headerbar__btn--deal">
+              <svg width="15" height="11">
+                <use href="/img/icons/sprite.svg#icon-car"></use>
+              </svg>
+              <span>Дилерам</span>
+            </a>
+            <a href="/for-dizayner/" class="headerbar__btn headerbar__btn--des">
+              <svg width="15" height="15">
+                <use href="/img/icons/sprite.svg#icon-des"></use>
+              </svg>
+              <span>Дизайнерам</span>
+            </a>
+          </div>
+          <div class="headerbar__links">
+            <a href="/aktsii/" class="headerbar__link headerbar__link--red">
+              <svg width="21" height="22">
+                <use href="/img/icons/sprite.svg#icon-percent"></use>
+              </svg>
+              Акции
+            </a>
+            <a href="/services/" class="headerbar__link">
+              <svg width="19" height="21">
+                <use href="/img/icons/sprite.svg#icon-cube"></use>
+              </svg>
+              Услуги
+            </a>
+            <div class="headerbar__link">
+							<form method="post" action="/" name="basket_form" class="basket-form" id="basket_form" novalidate="novalidate">
+		            <div id="basket_form_container">
+                  <div class="top-basket">
+                    <a class="top-basket__icon top-basket__icon--has-items" href="/cart/">
+                      <svg width="23" height="20">
+                        <use href="/img/icons/sprite.svg#icon-basket"></use>
+                      </svg>
+                      <span class="top-basket__link">Корзина</span>
+                    </a>
+                  </div>
+                </div>
+              </form>
+    				</div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-bar-container">
+        <nav class="navbar">
+	        <div class="navbar__menu">
+		        <ul class="menu">
+							<li>
+						    <a href="/brands/">Бренды</a>
+								<button class="open-mobile-nav"><span></span></button>
+						  </li>
+							<li>
+						    <a href="/catalog-collections/keramicheskaya-plitka/">Керамическая плитка</a>
+								<button class="open-mobile-nav"><span></span></button>
+							</li>
+							<li class="">
+						    <a href="/catalog-collections/keramogranit/">Керамогранит</a>
+							  <button class="open-mobile-nav"><span></span></button>
+							</li>
+							<li>
+						    <a href="/catalog-collections/mozaika/">Мозаика</a>
+								<button class="open-mobile-nav"><span></span></button>
+							</li>
+							<li>
+						    <a href="/catalog-collections/santekhnika/">Сантехника</a>
+							  <button class="open-mobile-nav"><span></span></button>
+							</li>
+							<li>
+						    <a href="/catalog-collections/kamen/">Камень</a>
+								<button class="open-mobile-nav"><span></span></button>
+						  </li>
+							<li>
+						    <a href="/catalog-collections/parket/">Паркет</a>
+							</li>
+							<li>
+						    <a href="/catalog/mebel/stoli/">Столы</a>
+							</li>
+							<li>
+						    <a href="/catalog-collections/keramicheskaya-plitka/keramogranit/new/">Новинки</a>
+							</li>
+							<li>
+						    <a href="/v-nalichii/">В наличии</a>
+							</li>
+							<li>
+						    <a href="/catalog-collections/soputstvuushie-tovari/">Прочее</a>
+							</li>
+						</ul>
+	        </div>
+				</nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    Основное содержимое
+  </main>
+
+  <footer class="footer">
+    <div class="footer__banner" style="background-image: url('img/footer-bg.jpg');">
+      <div class="container footer__wrapper">
+        <img loading="lazy" src="img/small-logo.svg" alt="" width="160" height="160" class="footer__logo">
+        <div class="footer__links">
+          <a class="footer__card footer__card--adress" href="https://yandex.ru/maps/-/CCUufURfsC" target="_blank">
+            <p class="footer__txt">г. Москва, <br>ул. Дениса Давыдова 4 </p>
+            <p class="footer__tel">
+              <svg class="footer__tel-icon" width="12" height="12">
+                <use href="/img/icons/sprite.svg#icon-phone"></use>
+              </svg>
+              <span class="call_phone_495_3">8 (495) 023 7775</span></p>
+            <svg class="footer__loc-icon" width="22" height="31">
+              <use href="/img/icons/sprite.svg#icon-marker"></use>
+            </svg>
+          </a>
+          <a class="footer__card footer__card--adress" target="_blank" href="https://yandex.ru/maps/-/CCUZ6BC19D">
+            <p class="footer__txt">г. Санкт-Петербург,<br>12-я линия Васильевского острова, дом 27 </p>
+            <p class="footer__tel">
+              <svg class="footer__tel-icon" width="12" height="12">
+                <use href="/img/icons/sprite.svg#icon-phone"></use>
+              </svg>
+              <span class="call_phone_812_3">8 (812) 445 84 37</span> </p>
+            <svg class="footer__loc-icon" width="22" height="31">
+              <use href="/img/icons/sprite.svg#icon-marker"></use>
+            </svg>
+          </a>
+                          <a class="footer__card footer__card--link js-modal-show" href="#js-modal-dealer">
+                          <svg class="footer__link-icon" width="25" height="26">
+              <use href="/img/icons/sprite.svg#icon-user"></use>
+            </svg>
+            <span class="footer__link-txt">Личный кабинет</span>
+          </a>
+          <a class="footer__card footer__card--link footer__card--dark" href="https://dealer.studioardo.ru/">
+            <svg class="footer__link-icon" width="25" height="26">
+              <use href="/img/icons/sprite.svg#icon-doors"></use>
+            </svg>
+            <span class="footer__link-txt">Дилерский портал</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__caption">
+      <div class="container">
+        <div class="footer__cap-holder">
+          <div class="footer__soc-links">
+            <a class="footer__soc-link" href="https://wa.me/79651285557" target="_blank">
+              <svg width="29" height="29">
+                <use href="/img/icons/sprite.svg#icon-whatsapp"></use>
+              </svg>
+            </a>
+            <a class="footer__soc-link" href="https://t.me/ardostudio" target="_blank">
+              <svg width="28" height="24">
+                <use href="/img/icons/sprite.svg#icon-tg-dark"></use>
+              </svg>
+            </a>
+          </div>
+
+          <div class="footer__cap-heading">
+            У вас возникли воспросы?
+          </div>
+
+          <div class="footer__cap-text">
+            Мы будем рады ответить на них – свяжитесь с нами по телефону или напишите в WhatsApp или Telegram
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__socials">
+<div class="container">
+<ul class="soc-list small">
+            <li class="soc-list__item">
+    <a class="soc-list__link" href="https://vk.com/ardo_studio" target="_blank" onclick="ym(40916714, 'reachGoal', 'soc'); return true;">
+      <svg class="soc-list__icon" width="33" height="21">
+        <use href="/img/icons/sprite.svg#icon-vk2"></use>
+      </svg>
+    VKontakte</a>
+  </li>
+            <li class="soc-list__item">
+    <a class="soc-list__link" href="https://t.me/ArdoStudio_official" target="_blank" onclick="ym(40916714, 'reachGoal', 'soc'); return true;">
+      <svg class="soc-list__icon" width="27" height="24">
+        <use href="/img/icons/sprite.svg#icon-tg"></use>
+      </svg>
+    Telegram</a>
+  </li>
+            <li class="soc-list__item">
+    <a class="soc-list__link" href="https://www.youtube.com/channel/UCeCClWuZGmBDn_2L5QmoEyA" target="_blank" onclick="ym(40916714, 'reachGoal', 'soc'); return true;">
+      <svg class="soc-list__icon" width="29" height="21">
+        <use href="/img/icons/sprite.svg#icon-youtube"></use>
+      </svg>
+    Youtube</a>
+  </li>
+    </ul>
+</div>
+</div>
+    <div class="footer__info">
+      <div class="container">
+        <!-- footerbar-->
+        <div class="footerbar">
+          <!-- f-menu-->
+
+          <div class="footerbar__menu f-menu">
+            <p class="f-menu__title">Основное</p>
+
+<ul class="f-menu__list">
+              <li><a href="/about/">О компании</a></li>
+                    <li><a href="/gallery/">Галерея работ</a></li>
+                    <li><a href="/services/">Услуги</a></li>
+                    <li><a href="/news/">Новости</a></li>
+                    <li><a href="/info/">Полезная информация</a></li>
+                    <li><a href="/partners/">Партнёры</a></li>
+                    <li><a href="/reviews/">Отзывы</a></li>
+                    <li><a href="/aktsii/">Акции</a></li>
+                    <li><a href="/v-nalichii/">В наличии</a></li>
+                    <li><a href="/delivery/">Доставка</a></li>
+                    <li><a href="/payments/">Оплата</a></li>
+                    <li><a href="/vacancies/">Вакансии</a></li>
+                    <li><a href="/for-diler/">Для дилеров</a></li>
+                    <li><a href="/for-dizayner/">Для дизайнеров</a></li>
+                    <li><a href="/contacts/">Контакты</a></li>
+        </ul>
+          </div>
+          <div class="footerbar__catalog f-menu">
+            <p class="f-menu__title">Каталог</p>
+
+<ul class="f-menu__list">
+              <li><a href="/catalog/keramicheskaya-plitka/">Керамическая плитка</a></li>
+                    <li><a href="/catalog/mozaika/">Мозаика</a></li>
+                    <li><a href="/catalog/santekhnika/">Сантехника</a></li>
+                    <li><a href="/catalog/kamen/">Камень</a></li>
+                    <li><a href="/catalog-collections/parket/">Паркет</a></li>
+                    <li><a href="/brands/">Бренды</a></li>
+                    <li><a href="/sitemap/">Карта сайта</a></li>
+        </ul>
+          </div>
+            <!-- end f-menu-->
+
+            <!-- f-contacts-->
+          <div class="footerbar__contacts f-contacts">
+              <p class="f-contacts__title">Контакты</p>
+<iframe class="footerbar__yandex" src="https://yandex.ru/sprav/widget/rating-badge/1245017224" width="150" height="50" frameborder="0"></iframe>
+<div class="footerbar__emails">
+<p class="f-contacts__item"><span>Для дилеров</span><br><a href="mailto:opt@ardostudio.ru">opt@ardostudio.ru </a></p>
+<p class="f-contacts__item"><span>Для частных клиентов</span><br><a href="mailto:zakaz@ardostudio.ru">zakaz@ardostudio.ru</a></p>
+<p class="f-contacts__item"><span>Для дизайнеров</span><br><a href="mailto:arch@ardostudio.ru">arch@ardostudio.ru </a></p>
+<p class="f-contacts__item"><span>По всем вопросам</span><br><a href="mailto:info@ardostudio.ru">info@ardostudio.ru</a></p>
+</div>								<div class="f-dealers">
+              <p class="f-dealers__text">Впервые на сайте? Пожалуйста, напишите нам на электронную почту <a href="mailto:zakaz@ardostudio.ru">zakaz@ardostudio.ru.</a> </p>
+              <p class="f-dealers__text">Если уже являетесь нашим партнером воспользуйтесь формой авторизации.</p>
+            </div>
+          </div>
+        </div>
+        <!-- end footerbar-->
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container bottom">
+        <p class="bottom__copy">Copyright © 2023ARDO STUDIO</p>
+        <a class="bottom__link" href="/sitemap/">Карта сайта</a>
+        <p class="bottom__req"><span>ООО «ЗР Групп»</span><span>ИНН 5053068795</span><span>КПП 772901001</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/jquery.3.4.1.min.js"></script>
+  <script src="js/jquery.cookie.min.js"></script>
+  <script src="js/libs.min.js"></script>
+  <script src="js/min/lazyload.min.js"></script>
+  <script src="js/scripts.min.js"></script>
+  <script src="js/min/custom.min.js"></script>
+</body>
+
+</html>

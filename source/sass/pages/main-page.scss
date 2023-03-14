@@ -163,3 +163,13 @@
 .main-page__company-info {
   margin-bottom: 80px;
 }
+
+.main-page__body {
+  .n-banner {
+    font-family: $additional-font-family;
+  }
+
+  .button {
+    font-family: $additional-font-family;
+  }
+}

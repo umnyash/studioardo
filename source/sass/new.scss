@@ -3,7 +3,10 @@
 @import "global/fonts.scss";
 @import "global/variables.scss";
 @import "global/global.scss";
-@import "global/filter-fix.scss";
+
+// Fix
+@import "fix/filter-fix.scss";
+@import "fix/header-fix.scss";
 
 // Blocks
 
@@ -89,7 +92,6 @@
 @import "blocks/good-list.scss";
 @import "blocks/n-collection.scss";
 @import "blocks/n-collection-list.scss";
-@import "blocks/main-page.scss";
 @import "blocks/good-range.scss";
 @import "blocks/products.scss";
 @import "blocks/product-item.scss";
@@ -152,3 +154,5 @@
 @import "helpers/animations.scss";
 
 // Pages
+
+@import "pages/main-page.scss";

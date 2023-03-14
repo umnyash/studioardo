@@ -25,6 +25,10 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 6px;
   }
+
+  @media #{$desktop} {
+    gap: 10px;
+  }
 }
 
 .good-range__item {

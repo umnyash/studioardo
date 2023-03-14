@@ -46,6 +46,10 @@
     min-width: 250px;
     margin: 0 auto;
   }
+
+  @media #{$desktop} {
+    min-width: 330px;
+  }
 }
 
 .goods__slider-buttons {

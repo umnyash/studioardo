@@ -18,7 +18,6 @@
   grid-column: 1 / 3;
   grid-row: 1 / 2;
   margin: 0;
-  letter-spacing: -0.03em;
 
   @media #{$tablet} {
     grid-column: 1 / 2;
@@ -29,12 +28,12 @@
   grid-column: 1 / 2;
   grid-row: 2 / 3;
   justify-self: start;
-  padding: 10px 14px 10px;
+  padding: 9px 14px 8px;
   font-size: 16px;
   line-height: 21px;
 
   @media #{$laptop-desktop} {
-    min-height: 41px;
+    min-height: 40px;
   }
 }
 
@@ -139,7 +138,6 @@
   align-self: flex-end;
   display: grid;
   height: 48px;
-  transition: height 0.2s ease-out;
   background: $category-text-bg-40;
   z-index: 5;
   padding: 16px 5px 14px;
@@ -176,14 +174,8 @@
   }
 }
 
-.projects__gallery-item:hover {
+.projects__gallery-link:hover {
   .projects__category {
-    height: 100%;
-    align-items: stretch;
-
-  }
-
-  .projects__category-text {
-    align-self: center;
+    background-color: $special-color;
   }
 }

@@ -1,4 +1,4 @@
-.showroom .showroom__center {
+.showroom .showroom__center.center {
   margin-bottom: 30px;
 }
 
@@ -131,6 +131,7 @@
   }
 
   @media #{$desktop} {
+    bottom: 5px;
     width: 389px;
   }
 }

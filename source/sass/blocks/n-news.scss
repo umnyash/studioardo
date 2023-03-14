@@ -16,7 +16,6 @@
 .n-news__title {
   grid-area: title;
   margin: 0;
-  letter-spacing: -0.03em;
 
   @media #{$tablet-desktop} {
     grid-column: 1 / 2;
