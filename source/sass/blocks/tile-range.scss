@@ -124,3 +124,7 @@
   color: $text-color-secondary;
   text-transform: none;
 }
+
+.tile-range__link:hover .tile-range__category {
+  background-color: $special-color;
+}

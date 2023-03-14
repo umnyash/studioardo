@@ -36,23 +36,14 @@
 
 .n-subscribe__logo {
   display: block;
-  width: 62px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
 
   @media #{$tablet-desktop} {
     grid-area: logo;
-    width: 121px;
-    height: 109px;
-    margin-top: 10px;
+    width: 120px;
+    height: 120px;
   }
-}
-
-.n-subscribe__logo img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
 }
 
 .n-subscribe__text-wrapper {
