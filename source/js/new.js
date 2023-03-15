@@ -1526,20 +1526,38 @@ const initShowroomTooltip = (tooltip) => {
 document.querySelectorAll('.showroom__tooltip').forEach(initShowroomTooltip);
 
 
-window.addEventListener('load', () => {
-  const initGoodList = (list) => {
-    const listItems = list.querySelectorAll('.good-list__item');
-    listItems.forEach((item) => {
-      item.style.height = `${item.offsetHeight}px`;
-    });
-  };
-  document.querySelectorAll('.good-list').forEach(initGoodList);
 
-  const initCollectionList = (list) => {
-    const listItems = list.querySelectorAll('.n-collection-list__item');
-    listItems.forEach((item) => {
-      item.style.height = `${item.offsetHeight}px`;
-    });
-  };
-  document.querySelectorAll('.n-collection-list').forEach(initCollectionList);
+const goodCards = document.querySelectorAll('.good-list__item');
+const collectionCards = document.querySelectorAll('.n-collection-list__item');
+
+window.addEventListener('load', () => {
+  goodCards.forEach((card) => {
+    card.style.height = 'auto';
+    setTimeout(() => {
+      card.style.height = `${card.offsetHeight}px`;
+    }, 0)
+  });
+
+  collectionCards.forEach((card) => {
+    card.style.height = 'auto';
+    setTimeout(() => {
+      card.style.height = `${card.offsetHeight}px`;
+    }, 0)
+  });
 });
+
+window.addEventListener('resize', () => {
+  goodCards.forEach((card) => {
+    card.style.height = 'auto';
+    setTimeout(() => {
+      card.style.height = `${card.offsetHeight}px`;
+    }, 0)
+  });
+
+  collectionCards.forEach((card) => {
+    card.style.height = 'auto';
+    setTimeout(() => {
+      card.style.height = `${card.offsetHeight}px`;
+    }, 0)
+  });
+})
