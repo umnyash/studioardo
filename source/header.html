@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru" class="main-page">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/normalize.css" rel="stylesheet">
+  <link href="css/libs.min.css" rel="stylesheet">
+  <link href="css/styles.min.css" rel="stylesheet">
+  <link href="css/style.min.css" rel="stylesheet">
+  <link href="css/custom.min.css" rel="stylesheet">
+  <link href="css/new.css" rel="stylesheet">
+  <title>Header & footer</title>
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="format-detection" content="address=no" />
+
+  <style>
+    body {
+      display: grid;
+      min-height: 100vh;
+      grid-template-rows: auto 1fr auto;
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__fs">
+      <div class="top header__top">
+        <div class="container">
+          <div class="top__row">
+            <div class="top__links">
+              <a class="top__link js-modal-show cityText city-all city-Moscow" href="#js-modal-geo">
+                <img src="img/icons/location-pin.svg" width="12" height="15" aria-hidden="true">
+                <!-- <svg width="12" height="16">
+                  <use href="/img/icons/sprite.svg#icon-marker2"></use>
+                </svg> -->
+								<span>Москва</span>
+							</a>
+              <span class="calltouch_phone_495_1 city-all city-Moscow" id="calltouch_phone">
+                <a href="tel:84950237775" class="top__link phoneText">
+                  <img src="img/icons/phone-2.svg" width="13" height="13" aria-hidden="true">
+                  <!-- <svg width="14" height="14">
+                    <use href="/img/icons/sprite.svg#icon-tel2"></use>
+                  </svg> -->
+                  <span>
+                    <span class="call_phone_495_3">
+                      <span class="inh" href="tel:+74954325368">
+                        <span itemprop="telephone">+7 (495) 432-53-68</span>
+                      </span>
+                    </span>
+                  </span>
+                </a>
+              </span>
+              <span class="top__link">
+                <a href="mailto:zakaz@ardostudio.ru">
+                  <img src="img/icons/letter-icon.svg" width="14" height="11" aria-hidden="true">
+                  zakaz@ardostudio.ru
+                </a>
+              </span>
+            </div>
+            <nav class="top-menu">
+	            <ul>
+                <li><a href="/delivery/">Доставка</a></li>
+                <li><a href="/payments/">Оплата</a></li>
+                <li><a href="/services/">Услуги</a></li>
+                <li><a href="/news/">Новости</a></li>
+                <li><a href="/about/">О компании</a></li>
+                <li><a href="/contacts/">Контакты</a></li>
+                <li><a href="/gallery/">Галерея</a></li>
+						  </ul>
+						</nav>
+            <a href="#js-modal-dealer" class="top__link top__link--account js-modal-show">
+              <img src="img/icons/profile-icon.svg" width="13" height="14" aria-hidden="true">
+              <!-- <svg width="20" height="22">
+                <use href="/img/icons/sprite.svg#icon-user2"></use>
+              </svg> -->
+              Аккаунт
+            </a>
+            <button class="header__openbtn header__openbtn--top">
+							<span></span>
+						</button>
+          </div>
+        </div>
+      </div>
+      <div class="container line-rc">
+        <div class="headerbar">
+          <a class="logo hdr__logo" href="/">
+            <img loading="lazy" src="/img/logo.svg" width="114" height="35" alt="logo">
+          </a>
+          <div class="search__form">
+            <form id="search-form" method="post" novalidate="novalidate">
+              <input type="text" name="q" placeholder="Поиск по названию или артикулу" required="">
+              <button type="submit">
+                <img src="img/icons/search-icon.svg" width="20" height="20" aria-hidden="true">
+                <!-- <svg>
+                  <use href="/img/icons/sprite.svg#icon-search"></use>
+                </svg> -->
+              </button>
+            </form>
+          </div>
+          <div class="headerbar__buttons">
+            <a href="/for-diler/" class="headerbar__btn headerbar__btn--deal">
+              <img src="img/icons/gallery-icon.svg" width="13" height="14" aria-hidden="true">
+              <!-- <svg width="15" height="11">
+                <use href="/img/icons/sprite.svg#icon-car"></use>
+              </svg> -->
+              <span>Дилерам</span>
+            </a>
+            <a href="/for-dizayner/" class="headerbar__btn headerbar__btn--des">
+              <img src="img/icons/math-icon.svg" width="17" height="16" aria-hidden="true">
+              <!-- <svg width="15" height="15">
+                <use href="/img/icons/sprite.svg#icon-des"></use>
+              </svg> -->
+              <span>Дизайнерам</span>
+            </a>
+          </div>
+          <div class="headerbar__links">
+            <a href="/aktsii/" class="headerbar__link headerbar__link--red">
+              <img src="img/icons/percent.svg" width="20" height="20" aria-hidden="true">
+              <!-- <svg width="21" height="22">
+                <use href="/img/icons/sprite.svg#icon-percent"></use>
+              </svg> -->
+              Акции
+            </a>
+            <a href="/services/" class="headerbar__link">
+              <img src="img/icons/star-2.svg" width="20" height="20" aria-hidden="true">
+              <!-- <svg width="19" height="21">
+                <use href="/img/icons/sprite.svg#icon-cube"></use>
+              </svg> -->
+              Услуги
+            </a>
+            <div class="headerbar__link">
+							<form method="post" action="/" name="basket_form" class="basket-form" id="basket_form" novalidate="novalidate">
+		            <div id="basket_form_container">
+                  <div class="top-basket">
+                    <a class="top-basket__icon top-basket__icon--has-items" href="/cart/">
+                      <!-- <svg width="23" height="20">
+                        <use href="/img/icons/sprite.svg#icon-basket"></use>
+                      </svg> -->
+                      <img src="img/icons/cart-2.svg" width="20" height="20" aria-hidden="true">
+                      <span class="top-basket__link">Корзина</span>
+                    </a>
+                  </div>
+                </div>
+              </form>
+    				</div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-bar-container">
+        <nav class="navbar">
+	        <div class="navbar__menu">
+		        <ul class="menu">
+							<li>
+						    <a href="/brands/">Бренды</a>
+								<button class="open-mobile-nav"><span></span></button>
+						  </li>
+							<li>
+						    <a href="/catalog-collections/keramicheskaya-plitka/">Керамическая плитка</a>
+								<button class="open-mobile-nav"><span></span></button>
+							</li>
+							<li class="">
+						    <a href="/catalog-collections/keramogranit/">Керамогранит</a>
+							  <button class="open-mobile-nav"><span></span></button>
+							</li>
+							<li>
+						    <a href="/catalog-collections/mozaika/">Мозаика</a>
+								<button class="open-mobile-nav"><span></span></button>
+							</li>
+							<li>
+						    <a href="/catalog-collections/santekhnika/">Сантехника</a>
+							  <button class="open-mobile-nav"><span></span></button>
+							</li>
+							<li>
+						    <a href="/catalog-collections/kamen/">Камень</a>
+								<button class="open-mobile-nav"><span></span></button>
+						  </li>
+							<li>
+						    <a href="/catalog-collections/parket/">Паркет</a>
+							</li>
+							<li>
+						    <a href="/catalog/mebel/stoli/">Столы</a>
+							</li>
+							<li>
+						    <a href="/catalog-collections/keramicheskaya-plitka/keramogranit/new/">Новинки</a>
+							</li>
+							<li>
+						    <a href="/v-nalichii/">В наличии</a>
+							</li>
+							<li>
+						    <a href="/catalog-collections/soputstvuushie-tovari/">Прочее</a>
+							</li>
+						</ul>
+	        </div>
+				</nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    Основное содержимое
+  </main>
+
+  <script src="js/jquery.3.4.1.min.js"></script>
+  <script src="js/jquery.cookie.min.js"></script>
+  <script src="js/libs.min.js"></script>
+  <script src="js/min/lazyload.min.js"></script>
+  <script src="js/scripts.min.js"></script>
+  <script src="js/min/custom.min.js"></script>
+</body>
+
+</html>

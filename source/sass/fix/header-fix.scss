@@ -1,4 +1,105 @@
+.header {
+  font-family: $additional-font-family;
+}
+
+
 .menu > li > a {
   letter-spacing: normal;
 }
 
+.top__links .top__link,
+.top__links .top__link a {
+  color: #333;
+  font-weight: 700; ////////////////
+}
+
+.top__link img {
+  margin-right: 5px;
+}
+
+// .top__link--location {
+//   display: inline-grid;
+//   grid-auto-flow: column;
+//   column-gap: 5px;
+
+//   &::before {
+//     content: "";
+//     width: 12px;
+//     height: 15px;
+//     background-color: $weak-text-color;
+//     mask-image: url("../img/icons/location-pin.svg");
+//     mask-repeat: no-repeat;
+//   }
+// }
+
+// .top__link--phone {
+//   display: inline-grid;
+//   grid-auto-flow: column;
+//   column-gap: 5px;
+
+//   &::before {
+//     content: "";
+//     width: 13px;
+//     height: 13px;
+//     background-color: $weak-text-color;
+//     mask-image: url("../img/icons/phone-2.svg");
+//     mask-repeat: no-repeat;
+//   }
+// }
+
+// .top__link--email {
+//   display: inline-grid;
+//   grid-auto-flow: column;
+//   column-gap: 5px;
+
+//   &::before {
+//     content: "";
+//     width: 14px;
+//     height: 11px;
+//     background-color: $weak-text-color;
+//     mask-image: url("../img/icons/letter-icon.svg");
+//     mask-repeat: no-repeat;
+//   }
+// }
+
+.top__link--account {
+  &::before {
+    display: none;
+  }
+}
+
+// .header .search__form button {
+//   &::before {
+//     content: "";
+//     width: 20px;
+//     height: 20px;
+//     background-color: $weak-text-color;
+//     mask-image: url("../img/icons/search-icon.svg");
+//     mask-repeat: no-repeat;
+//   }
+// }
+
+.logo .hdr__logo {
+  width: 114px;
+}
+
+.headerbar__btn img {
+  position: relative;
+  margin-right: 5px;
+}
+
+.headerbar__link img {
+  margin-bottom: 5px;
+}
+
+.headerbar__btn--des {
+  color: #333;
+
+  &:hover {
+    color: #333;
+  }
+
+  &::before {
+    background-color: #f1f1f1;
+  }
+}
