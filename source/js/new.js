@@ -1515,3 +1515,12 @@ const initVideoPlayer = (videoplayer) => {
 };
 
 document.querySelectorAll('.n-video').forEach(initVideoPlayer);
+
+const initShowroomTooltip = (tooltip) => {
+  const closeButton = tooltip.querySelector('.showroom__tooltip-close');
+  closeButton.addEventListener('click', () => {
+    tooltip.remove();
+  });
+};
+
+document.querySelectorAll('.showroom__tooltip').forEach(initShowroomTooltip);

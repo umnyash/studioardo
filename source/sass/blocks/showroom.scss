@@ -155,3 +155,19 @@
     font-size: 24px;
   }
 }
+
+.showroom__tooltip-close {
+  position: absolute;
+  top: 3px;
+  right: 4px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  background-image: url("../img/icons/popup-close.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.4;
+  cursor: pointer;
+}
