@@ -1,0 +1,14 @@
+.category__item .cat-card {
+  height: 50px;
+  min-height: auto;
+  padding: 3px 8px 4px;
+}
+
+.category__item .cat-card__img {
+  max-height: 100%;
+}
+
+.category__item .cat-card__title {
+  font-family: $additional-font-family;
+  font-size: 14px;
+}
