@@ -1524,3 +1524,22 @@ const initShowroomTooltip = (tooltip) => {
 };
 
 document.querySelectorAll('.showroom__tooltip').forEach(initShowroomTooltip);
+
+
+window.addEventListener('load', () => {
+  const initGoodList = (list) => {
+    const listItems = list.querySelectorAll('.good-list__item');
+    listItems.forEach((item) => {
+      item.style.height = `${item.offsetHeight}px`;
+    });
+  };
+  document.querySelectorAll('.good-list').forEach(initGoodList);
+
+  const initCollectionList = (list) => {
+    const listItems = list.querySelectorAll('.n-collection-list__item');
+    listItems.forEach((item) => {
+      item.style.height = `${item.offsetHeight}px`;
+    });
+  };
+  document.querySelectorAll('.n-collection-list').forEach(initCollectionList);
+});

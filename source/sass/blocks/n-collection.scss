@@ -3,7 +3,7 @@
   display: grid;
   box-sizing: border-box;
   height: 100%;
-  padding: 8px;
+  padding: 8px 8px 12px;
   border-radius: 10px;
   grid-template-rows: auto 1fr;
   row-gap: 8px;
@@ -15,7 +15,7 @@
 .n-collection__main {
   position: relative;
   display: grid;
-  padding: 0 10px 9px;
+  padding: 0 10px 7px;
   grid-template-columns: 1fr auto;
   row-gap: 2px;
   column-gap: 20px;
@@ -38,8 +38,6 @@
   font-family: $additional-font-family;
   font-size: 16px;
   line-height: 1.3;
-  // font-weight: 500;
-  font-weight: 700;
   overflow-wrap: anywhere;
 }
 
@@ -82,6 +80,7 @@ n-collection__link-2 {
 
 .n-collection__like {
   grid-column: 2 / 3;
+  display: none;
   margin: 0;
   width: 14px;
   height: 14px;
@@ -101,11 +100,9 @@ n-collection__link-2 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1;
-  // font-weight: 500;
-  font-weight: 700;
-  color: $n-collection-characteristics-color;
+  color: $characteristics-color;
 }
 
 .n-collection__characteristics-value {
@@ -132,24 +129,6 @@ n-collection__link-2 {
   object-position: center;
 }
 
-.n-collection__extra {
-  position: absolute;
-  right: 0;
-  bottom: 7px;
-  left: 0;
-  display: grid;
-  padding: 0 18px 8px;
-  border-bottom-right-radius: inherit;
-  border-bottom-left-radius: inherit;
-  grid-template-columns: 1fr auto;
-  row-gap: 10px;
-  column-gap: 20px;
-  align-items: center;
-  background-color: inherit;
-  transform: translateY(100%);
-  will-change: transform;
-}
-
 .n-collection__footer {
   display: grid;
   padding: 0 10px;
@@ -172,7 +151,6 @@ n-collection__link-2 {
   align-items: center;
   font-size: 16px;
   line-height: 1;
-  // font-weight: 500;
   font-weight: 700;
 }
 
@@ -191,7 +169,7 @@ n-collection__link-2 {
     font-size: 13px;
     font-weight: 400;
     text-decoration: line-through;
-    color: $weak-text-color;
+    color: $characteristics-color;
   }
 }
 
@@ -204,14 +182,10 @@ n-collection__link-2 {
 
 .n-collection__colors {
   grid-column: 1 / 3;
-  min-height: 17px;
-  padding: 0 0 0 18px;
-  margin: 0 -2px -2px 0;
+  display: none;
+  margin: 0 0 2px;
   font-size: 0;
-  background-image: url("../img/icons/colors-icon.svg");
-  background-size: 14px 14px;
-  background-repeat: no-repeat;
-  background-position: 1px 3px;
+  color: $characteristics-color;
 }
 
 .n-collection__color {
@@ -222,16 +196,43 @@ n-collection__link-2 {
   border-radius: 50%;
 }
 
+.n-collection__color-name {
+  vertical-align: top;
+  display: inline-block;
+  margin: 2px 3px 0 0;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.n-collection__shapes {
+  display: none;
+  grid-column: 1 / 3;
+  min-height: 17px;
+  margin: 0;
+  color: $characteristics-color;
+}
+
+.n-collection__shape {
+  display: inline-block;
+  margin: 0 2px 0 0;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.n-collection__shape-name {
+  display: inline-block;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
 .n-collection__sizes {
   grid-column: 1 / 3;
   min-height: 15px;
   padding: 2px 0 0 20px;
-  margin: 0;
-  font-size: 12px;
+  margin: 0 0 2px;
+  font-size: 13px;
   line-height: 1;
-  // font-weight: 500;
-  font-weight: 700;
-  color: $n-collection-characteristics-color;
+  color: $characteristics-color;
   background-image: url("../img/icons/size-icon.svg");
   background-size: 15px 15px;
   background-repeat: no-repeat;
@@ -244,4 +245,18 @@ n-collection__link-2 {
 
 .n-collection .button {
   font-family: $additional-font-family;
+}
+
+.n-collection:hover {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+
+  .n-collection__shapes,
+  .n-collection__colors {
+    display: block;
+  }
 }
