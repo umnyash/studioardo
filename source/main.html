@@ -2101,52 +2101,6 @@
         </div>
       </div>
     </section>
-
-    <div class="popup popup--simple-2 popup--order--visualization">
-      <div class="popup__inner ">
-        <button class="popup__close" type="button">
-          <span class="visually-hidden">Закрыть.</span>
-        </button>
-        <div class="popup__content custom-form-2">
-          <div class="form">
-            <div class="form__header">
-              <h2 class="form__heading">Заказать<br> визуализацию</h2>
-            </div>
-            <form class="form__body" action="#!" method="post" enctype="multipart/form-data">
-              <div class="form__textfield-wrapper">
-                <label class="form__textfield-label">
-                  <span class="form__textfield">
-                    <input class="form__textfield-control" name="tel" type="tel" placeholder="+7 (912) 345-67-89">
-                    <span class="form__textfield-label-text">Телефон</span>
-                  </span>
-                </label>
-              </div>
-              <div class="form__textfield-wrapper">
-                <label class="form__textfield-label">
-                  <span class="form__textfield">
-                    <input class="form__textfield-control" name="name" type="text" placeholder="Введите имя">
-                    <span class="form__textfield-label-text">Имя</span>
-                  </span>
-                </label>
-              </div>
-              <div class="form__submit-wrapper">
-                <button class="form__button form__button--wide button button--secondary button--alter-2" type="submit">Отправить</button>
-              </div>
-              <div class="form__consent-wrapper">
-                <label class="form__checkbox-label">
-                  <input class="form__checkbox-control form__checkbox-control--secondary visually-hidden" name="consent" type="checkbox" checked>
-                  <span class="form__checkbox-label-text">
-                    <span>
-                      Согласие с <a class="form__link" href="!#" target="_blank">политикой обработки данных</a>
-                    </span>
-                  </span>
-                </label>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
   </main>
 
     <footer class="footer">
@@ -2313,6 +2267,149 @@
       </div>
     </div>
   </footer>
+
+  <a class="connect-btn js-modal-show" href="#js-modal-message">
+    <img src="https://www.studioardo.ru/upload/resize_cache/webp/img/feedback.webp">
+  </a>
+
+  <div class="popup popup--simple-2 popup--order--visualization">
+    <div class="popup__inner ">
+      <button class="popup__close" type="button">
+        <span class="visually-hidden">Закрыть.</span>
+      </button>
+      <div class="popup__content custom-form-2">
+        <div class="form">
+          <div class="form__header">
+            <h2 class="form__heading">Заказать<br> визуализацию</h2>
+          </div>
+          <form class="form__body" action="#!" method="post" enctype="multipart/form-data">
+            <div class="form__textfield-wrapper">
+              <label class="form__textfield-label">
+                <span class="form__textfield">
+                  <input class="form__textfield-control" name="tel" type="tel" placeholder="+7 (912) 345-67-89">
+                  <span class="form__textfield-label-text">Телефон</span>
+                </span>
+              </label>
+            </div>
+            <div class="form__textfield-wrapper">
+              <label class="form__textfield-label">
+                <span class="form__textfield">
+                  <input class="form__textfield-control" name="name" type="text" placeholder="Введите имя">
+                  <span class="form__textfield-label-text">Имя</span>
+                </span>
+              </label>
+            </div>
+            <div class="form__submit-wrapper">
+              <button class="form__button form__button--wide button button--secondary button--alter-2" type="submit">Отправить</button>
+            </div>
+            <div class="form__consent-wrapper">
+              <label class="form__checkbox-label">
+                <input class="form__checkbox-control form__checkbox-control--secondary visually-hidden" name="consent" type="checkbox" checked>
+                <span class="form__checkbox-label-text">
+                  <span>
+                    Согласие с <a class="form__link" href="!#" target="_blank">политикой обработки данных</a>
+                  </span>
+                </span>
+              </label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup popup--simple-2" id="js-modal-message">
+    <div class="popup__inner ">
+      <button class="popup__close js-modal-close" type="button">
+        <span class="visually-hidden">Закрыть.</span>
+      </button>
+      <div class="popup__content custom-form-2 custom-form-2--feedback">
+        <div class="form">
+          <div class="form__header">
+            <h2 class="form__heading">Тип обращения</h2>
+            <p>Мы рады ответить на любой ваш вопрос, выслушать ваше предложение или замечание.</p>
+          </div>
+          <form class="form__body" action="#" method="post" enctype="multipart/form-data">
+            <div class="form__select n-select">
+              <div class="n-select__select" tabindex="0" aria-hidden="true">
+                <p class="n-select__header" data-text="Тип изделия">Тип обращения</p>
+                <div class="n-select__options n-select__options--text">
+                  <ul class="n-select__list" data-max-height="8">
+                    <li class="n-select__option" data-index="0">Задать вопрос</li>
+                    <li class="n-select__option" data-index="1">Оставить отзыв</li>
+                    <li class="n-select__option" data-index="2">Пожаловаться</li>
+                  </ul>
+                </div>
+              </div>
+              <select class="n-select__control visually-hidden" name="type" tabindex="-1">
+                <option data-index="0" value="question">Задать вопрос</option>
+                <option data-index="1" value="review">Оставить отзыв</option>
+                <option data-index="2" value="complaint">Пожаловаться</option>
+              </select>
+            </div>
+            <div class="form__textfield-wrapper">
+              <label class="form__textfield-label">
+                <span class="form__textfield">
+                  <input class="form__textfield-control" name="name" type="text" placeholder="Вадим">
+                  <span class="form__textfield-label-text">Ваше имя *</span>
+                </span>
+              </label>
+            </div>
+            <div class="form__textfield-wrapper">
+              <label class="form__textfield-label">
+                <span class="form__textfield">
+                  <input class="form__textfield-control" name="tel" type="tel" placeholder="+7 (912) 345-67-89">
+                  <span class="form__textfield-label-text">Телефон *</span>
+                </span>
+              </label>
+            </div>
+            <div class="form__textarea-wrapper">
+              <label class="form__textarea-label">
+                <span class="visually-hidden">Текст сообщения *</span>
+                <span class="form__textarea">
+                  <textarea class="form__textarea-control" name="text" placeholder="Текст сообщения *"></textarea>
+                </span>
+              </label>
+            </div>
+            <div class="form__file-field-wrapper">
+              <p class=form__file-field-description>Вы можете добавить медиафайлы к обращению</p>
+              <span>
+                <label class="form__file-field">
+                  <span class="form__file-field-button">Загрузить файл</span>
+                  <input class="form__file-field-control" name="screenshot" type="file">
+                </label>
+              </span>
+              <span>
+                <label class="form__file-field">
+                  <span class="form__file-field-button">Загрузить файл</span>
+                  <input class="form__file-field-control" name="screenshot" type="file">
+                </label>
+              </span>
+              <span>
+                <label class="form__file-field">
+                  <span class="form__file-field-button">Загрузить файл</span>
+                  <input class="form__file-field-control" name="screenshot" type="file">
+                </label>
+              </span>
+            </div>
+            <div class="form__submit-wrapper">
+              <button class="form__button form__button--wide button button--secondary button--alter-2" type="submit">Отправить</button>
+            </div>
+            <div class="form__consent-wrapper">
+              <label class="form__checkbox-label">
+                <input class="form__checkbox-control form__checkbox-control--secondary visually-hidden" name="consent" type="checkbox" checked>
+                <span class="form__checkbox-label-text">
+                  <span>
+                    Согласие с <a class="form__link" href="!#" target="_blank">политикой обработки данных</a>
+                  </span>
+                </span>
+              </label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="js/splide.min.js"></script>
   <script src="js/splide-extension-auto-scroll.min.js"></script>

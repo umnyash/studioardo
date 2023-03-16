@@ -198,6 +198,77 @@
     color: $basic-text-color;
   }
 
+  .form__textarea,
+  .form__textarea-label {
+    display: block;
+    height: 100%;
+  }
+
+  .form__textarea {
+    position: relative;
+    display: block;
+    height: 100%;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: calc(50% + 1px);
+      right: 13px;
+      width: 18px;
+      height: 13px;
+      background-image: url("../img/icons/checkmark-2.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0;
+      transform: translateY(-50%);
+      will-change: transform;
+      transition-property: opacity;
+      transition-duration: $custom-form-2-transition-duration;
+    }
+
+    &--valid::after {
+      opacity: 1;
+    }
+  }
+
+  .form__textarea-control {
+    width: 100%;
+    padding: 10px 44px 7px 13px;
+    border: 2px solid $custom-form-2-textfield-border-color;
+    border-radius: 6px;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    transition-property: border-color, background-color, box-shadow;
+    transition-duration: $custom-form-2-transition-duration;
+    resize: none;
+
+    &::-webkit-scrollbar-track,
+    &::-webkit-scrollbar {
+      background-color: transparent;
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: transparent;
+      background-image: linear-gradient(to right, #dedede, #dedede 2px, transparent 2px);
+    }
+  }
+
+  .form__textarea-control:focus {
+    border-color: $special-color;
+  }
+
+  .form__textarea-control:focus,
+  .form__textarea-control:not(:placeholder-shown) {
+    background-color: $custom-form-2-textfield-background-secondary-color;
+  }
+
+
+  .form__textarea--error .form__textarea-control {
+    border-color: $custom-form-2-textfield-border-error-color;
+  }
+
   .form__file-field-wrapper {
     display: grid;
     justify-content: start;
@@ -1151,5 +1222,15 @@
 
   .form__notice--error {
     display: block;
+  }
+}
+
+.custom-form-2--feedback {
+  .form__select {
+    margin-bottom: 20px;
+  }
+
+  .form__textarea-wrapper {
+    min-height: 80px;
   }
 }

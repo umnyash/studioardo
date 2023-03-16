@@ -77,6 +77,7 @@ if (popups) {
 
   const closePopup = (popup) => {
     popup.classList.remove('popup--open');
+    popup.style.display = 'none';
     currentPopup = null;
     document.body.classList.remove('no-scroll');
     document.removeEventListener('keydown', onPopupEscKeydown);
@@ -492,13 +493,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-const fileUploadControl = document.querySelector('.form__file-field-control');
-
-if (fileUploadControl) {
-  fileUploadControl.addEventListener('change', () => {
-    fileUploadControl.classList.toggle('form__file-field-control--shown', fileUploadControl.files[0]);
+const initFileUploadControl = (control) => {
+  control.addEventListener('change', () => {
+    control.classList.toggle('form__file-field-control--shown', control.files[0]);
   });
-}
+
+  window.addEventListener('load', () => {
+    control.classList.toggle('form__file-field-control--shown', control.files[0]);
+  });
+};
+
+document.querySelectorAll('.form__file-field-control').forEach(initFileUploadControl);
 
 const customForm2Elements = document.querySelectorAll('.custom-form-2');
 
