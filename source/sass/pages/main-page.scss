@@ -158,6 +158,10 @@
   @media #{$laptop-desktop} {
     padding: 0 50px;
   }
+
+  @media #{$desktop} {
+    padding: 0 40px;
+  }
 }
 
 .main-page__company-info {
