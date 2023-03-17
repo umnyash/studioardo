@@ -77,7 +77,7 @@ if (popups) {
 
   const closePopup = (popup) => {
     popup.classList.remove('popup--open');
-    popup.style.display = 'none';
+    popup.style.display = '';
     currentPopup = null;
     document.body.classList.remove('no-scroll');
     document.removeEventListener('keydown', onPopupEscKeydown);
@@ -495,10 +495,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const initFileUploadControl = (control) => {
   control.addEventListener('change', () => {
-    control.classList.toggle('form__file-field-control--shown', control.files[0]);
-  });
-
-  window.addEventListener('load', () => {
     control.classList.toggle('form__file-field-control--shown', control.files[0]);
   });
 };
@@ -1518,8 +1514,6 @@ const initVideoPlayer = (videoplayer) => {
 
   buttonPlayElement.addEventListener('click', playVideo);
 };
-
-document.querySelectorAll('.n-video').forEach(initVideoPlayer);
 
 const initShowroomTooltip = (tooltip) => {
   const closeButton = tooltip.querySelector('.showroom__tooltip-close');
