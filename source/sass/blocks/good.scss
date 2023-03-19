@@ -529,13 +529,13 @@
     display: block;
     margin: 0;
   }
-
-  .good__radiobuttons {
-    display: flex;
-  }
 }
 
 .good--quick-order:hover {
+  .good__radiobuttons {
+    display: flex;
+  }
+
   .good__number-field {
     display: grid;
   }
