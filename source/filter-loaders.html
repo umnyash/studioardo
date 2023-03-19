@@ -10,7 +10,8 @@
     <link href="css/style.min.css" rel="stylesheet">
     <link href="css/custom.min.css" rel="stylesheet">
     <link href="css/new.css" rel="stylesheet"> <!-- Новые стили -->
-    <title>Фильтр c фоновым лоадером</title>
+    <link href="css/loaders.css" rel="stylesheet"> <!-- Стили для пробного лоадера -->
+    <title>Фильтр с img-лоадером</title>
     <meta name="format-detection" content="telephone=no"/>
     <meta name="format-detection" content="address=no"/>
 
@@ -33,7 +34,65 @@
     </style>
   </head>
   <body class="page-body">
-    <div class="preloader preloader--mobile-only"></div>
+
+
+    <!-- PRELOADER OVERLAY -->
+    <div class="preloader preloader--mobile-only">
+      <img class="preloader__img" src="img/icons/loader.svg" width="20" height="20" alt="Загрузка...">
+      <img class="preloader__img" src="img/loaders/cat.svg" width="20" height="20" alt="">
+      <img class="preloader__img" src="img/loaders/gif.gif" width="20" height="20" alt="">
+      <span class="preloader-js">
+        <span class="preloader-js__span-1 preloader-js__span-1--position-2"></span>
+        <span class="preloader-js__span-2"></span>
+      </span>
+      <span class="preloader-css">
+        <span class="preloader-css__span"></span>
+      </span>
+      <span class="preloader__bg" style="background-image: url('../img/icons/loader.svg');"></span>
+      <span class="preloader__bg" style="background-image: url('../img/loaders/cat.svg');"></span>
+      <span class="preloader__bg" style="background-image: url('../img/loaders/gif.gif');"></span>
+      <span class="preloader-counter">99</span>
+      <span class="preloader__bg" style="background-image: url('../img/loaders/loader-2.svg');"></span>
+      <script>
+        const loaderJsSpan10 = document.querySelector('.preloader-js__span-1');
+        let timerId10 = setTimeout(function moveLoaderJsSpan1() {
+          console.log('fdf');
+          loaderJsSpan10.classList.toggle('preloader-js__span-1--position-2');
+          timerId10 = setTimeout(moveLoaderJsSpan1, 1000);
+        }, 1000);
+        const loaderJsSpan20 = document.querySelector('.preloader-js__span-2');
+        let leftPos0 = 0;
+        let direction0 = 0;
+        let timerId20 = setTimeout(function moveLoaderJsSpan2() {
+          if (leftPos0 >= 100) {
+            direction0 = 1;
+          } else if (leftPos0 <= 0) {
+            direction0 = 0;
+          }
+          if (direction0 === 0) {
+            leftPos0 ++;
+          }
+          if (direction0 === 1) {
+            leftPos0 --;
+          }
+          loaderJsSpan20.style.left = leftPos0 + '%';
+          timerId20 = setTimeout(moveLoaderJsSpan2, 5);
+        }, 5);
+
+        const counter0 = document.querySelector('.preloader-counter');
+        let num0 = 99;
+        const intervalId0 = setInterval(function() {
+          if (num0 <= 0) {
+            num0 = 99;
+          } else {
+            num0--;
+          }
+          counter0.textContent = num0;
+        }, 50)
+      </script>
+    </div>
+    <!-- PRELOADER OVERLAY END-->
+
     <main>
       <div class="filter-page">
         <div class="filter-page__container">
@@ -14007,7 +14066,64 @@
           <div class="bx-filter-parameters-box-container">
             <button type="button" class="c-filter__collapse"></button>
             <input class="c-filter__btn c-filter__btn--reset" type="button" id="del_filter" name="del_filter" value="Сбросить фильтр">
-            <input class="c-filter__btn c-filter__btn--submit" type="button" id="set_filter" name="set_filter" value="Показать">
+
+
+            <!-- PRELOADER INPUT WRAPPER -->
+            <span class="c-filter__btn-submit-wrapper">
+              <input class="c-filter__btn c-filter__btn--submit" type="button" id="set_filter" name="set_filter" value="Показать">
+              <img class="loader__img" src="img/icons/loader.svg" width="20" height="20" alt="Загрузка...">
+              <img class="loader__img" src="img/loaders/cat.svg" width="20" height="20" alt="">
+              <img class="loader__img" src="img/loaders/gif.gif" width="20" height="20" alt="">
+              <span class="loader-js">
+                <span class="loader-js__span-1 loader-js__span-1--position-2"></span>
+                <span class="loader-js__span-2"></span>
+              </span>
+              <span class="loader-css">
+                <span class="loader-css__span"></span>
+              </span>
+              <span class="loader-counter">99<span>
+              <script>
+                const loaderJsSpan1 = document.querySelector('.loader-js__span-1');
+                let timerId1 = setTimeout(function moveLoaderJsSpan1() {
+                  console.log('fdf');
+                  loaderJsSpan1.classList.toggle('loader-js__span-1--position-2');
+                  timerId1 = setTimeout(moveLoaderJsSpan1, 1000);
+                }, 1000);
+                const loaderJsSpan2 = document.querySelector('.loader-js__span-2');
+                let leftPos = 0;
+                let direction = 0;
+                let timerId2 = setTimeout(function moveLoaderJsSpan2() {
+                  if (leftPos >= 100) {
+                    direction = 1;
+                  } else if (leftPos <= 0) {
+                    direction = 0;
+                  }
+                  if (direction === 0) {
+                    leftPos ++;
+                  }
+                  if (direction === 1) {
+                    leftPos --;
+                  }
+                  loaderJsSpan2.style.left = leftPos + '%';
+                  timerId2 = setTimeout(moveLoaderJsSpan2, 5);
+                }, 5);
+
+                const counter = document.querySelector('.loader-counter');
+                let num = 99;
+                const intervalId = setInterval(function() {
+                  if (num <= 0) {
+                    num = 99;
+                  } else {
+                    num--;
+                  }
+                  counter.textContent = num;
+                }, 50)
+              </script>
+            </span>
+            <!-- PRELOADER INPUT WRAPPER END -->
+
+
+
           </div>
         </div>
       </div>
