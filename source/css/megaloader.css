@@ -167,13 +167,19 @@
 
 .preloader {
   background-image: none !important;
+}
+
+.preloader__inner {
+  display: grid;
+  max-width: 500px;
+  margin: 0 auto;
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
   align-content: start;
 }
 
 .preloader--active {
-  display: grid !important;
+  display: block !important;
 }
 
 .preloader__img {

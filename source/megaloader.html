@@ -38,23 +38,25 @@
 
     <!-- PRELOADER OVERLAY -->
     <div class="preloader preloader--mobile-only">
-      <img class="preloader__img" src="img/icons/loader.svg" width="20" height="20" alt="Загрузка...">
-      <img class="preloader__img" src="img/loaders/cat.svg" width="20" height="20" alt="">
-      <span class="preloader-css-2">
-        <span class="preloader-css-2__span"></span>
-      </span>
-      <span class="preloader-js">
-        <span class="preloader-js__span-1 preloader-js__span-1--position-2"></span>
-        <span class="preloader-js__span-2"></span>
-      </span>
-      <span class="preloader-css">
-        <span class="preloader-css__span"></span>
-      </span>
-      <span class="preloader__bg" style="background-image: url('img/icons/loader.svg');"></span>
-      <span class="preloader__bg" style="background-image: url('img/loaders/cat.svg');"></span>
-      <span class="preloader__bg" style="background-image: url('img/loaders/gif.gif');"></span>
-      <span class="preloader-counter">99</span>
-      <span class="preloader__bg" style="background-image: url('img/loaders/loader-2.svg');"></span>
+      <div class="preloader__inner">
+        <img class="preloader__img" src="img/icons/loader.svg" width="20" height="20" alt="Загрузка...">
+        <img class="preloader__img" src="img/loaders/cat.svg" width="20" height="20" alt="">
+        <span class="preloader-css-2">
+          <span class="preloader-css-2__span"></span>
+        </span>
+        <span class="preloader-js">
+          <span class="preloader-js__span-1 preloader-js__span-1--position-2"></span>
+          <span class="preloader-js__span-2"></span>
+        </span>
+        <span class="preloader-css">
+          <span class="preloader-css__span"></span>
+        </span>
+        <span class="preloader__bg" style="background-image: url('img/icons/loader.svg');"></span>
+        <span class="preloader__bg" style="background-image: url('img/loaders/cat.svg');"></span>
+        <span class="preloader__bg" style="background-image: url('img/loaders/gif.gif');"></span>
+        <span class="preloader-counter">99</span>
+        <span class="preloader__bg" style="background-image: url('img/loaders/loader-2.svg');"></span>
+      </div>
       <script>
         const loaderJsSpan10 = document.querySelector('.preloader-js__span-1');
         let timerId10 = setTimeout(function moveLoaderJsSpan1() {
