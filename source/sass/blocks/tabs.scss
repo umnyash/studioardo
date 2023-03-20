@@ -44,7 +44,7 @@
   flex-direction: column;
   box-sizing: border-box;
   height: auto;
-  padding: 10px 62px 4px;
+  padding: 12px 62px 6px;
   border-bottom: 3px solid transparent;
   margin: 0;
   justify-content: center;
@@ -70,13 +70,12 @@
 
 .tabs__item:hover,
 .tabs__item--current {
-  border-bottom-color: $special-color;
-
   &::after {
     display: none;
   }
 
   @media #{$tablet-desktop} {
+    border-bottom-color: $special-color;
     background-color: $tabs-active-background-color;
   }
 }
