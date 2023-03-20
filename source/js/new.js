@@ -896,12 +896,12 @@ const initOffersSection = (offersSection) => {
     fadeEffect: {
       crossFade: true
     },
-    autoplay: {
-      delay: 6000,
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true,
-      waitForTransition: true
-    },
+    // autoplay: {
+    //   delay: 6000,
+    //   disableOnInteraction: false,
+    //   pauseOnMouseEnter: true,
+    //   waitForTransition: true
+    // },
   });
 
   mainSlider.on('slideChangeTransitionStart', () => mainSlider.allowTouchMove = false);

@@ -1,7 +1,8 @@
 .offers {
  position: relative;
  display: grid;
- grid-template-rows: auto 62px 1fr;
+//  grid-template-rows: auto 62px 1fr;
+ grid-template-rows: auto 50px 12px 1fr;
  grid-template-columns: 100%;
 
  @media #{$tablet-desktop} {
@@ -32,7 +33,7 @@
 }
 
 .offers__controls {
-  grid-area: 2 / 1 / 4 / 2;
+  grid-area: 2 / 1 / 5 / 2;
   z-index: 2;
   padding: 0 10px;
 
@@ -73,7 +74,6 @@
 
   @media #{$laptop-desktop} {
     display: none;
-    // top: -30px;
   }
 }
 
