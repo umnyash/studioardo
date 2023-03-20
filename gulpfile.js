@@ -20,6 +20,7 @@ const webp = require('gulp-webp');
 const copy = () => {
   return src([
     './source/fonts/*.*',
+    './source/img/**/*.gif',
     './source/video/*.*',
     './source/css/*.css',
     './source/js/**/*.js',

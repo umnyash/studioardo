@@ -10,8 +10,8 @@
     <link href="css/style.min.css" rel="stylesheet">
     <link href="css/custom.min.css" rel="stylesheet">
     <link href="css/new.css" rel="stylesheet"> <!-- Новые стили -->
-    <link href="css/loaders.css" rel="stylesheet"> <!-- Стили для пробного лоадера -->
-    <title>Фильтр с img-лоадером</title>
+    <link href="css/megaloader.css" rel="stylesheet"> <!-- Стили для пробного лоадера -->
+    <title>Мегалоадер</title>
     <meta name="format-detection" content="telephone=no"/>
     <meta name="format-detection" content="address=no"/>
 
@@ -40,7 +40,9 @@
     <div class="preloader preloader--mobile-only">
       <img class="preloader__img" src="img/icons/loader.svg" width="20" height="20" alt="Загрузка...">
       <img class="preloader__img" src="img/loaders/cat.svg" width="20" height="20" alt="">
-      <img class="preloader__img" src="img/loaders/gif.gif" width="20" height="20" alt="">
+      <span class="preloader-css-2">
+        <span class="preloader-css-2__span"></span>
+      </span>
       <span class="preloader-js">
         <span class="preloader-js__span-1 preloader-js__span-1--position-2"></span>
         <span class="preloader-js__span-2"></span>
@@ -48,15 +50,14 @@
       <span class="preloader-css">
         <span class="preloader-css__span"></span>
       </span>
-      <span class="preloader__bg" style="background-image: url('../img/icons/loader.svg');"></span>
-      <span class="preloader__bg" style="background-image: url('../img/loaders/cat.svg');"></span>
-      <span class="preloader__bg" style="background-image: url('../img/loaders/gif.gif');"></span>
+      <span class="preloader__bg" style="background-image: url('img/icons/loader.svg');"></span>
+      <span class="preloader__bg" style="background-image: url('img/loaders/cat.svg');"></span>
+      <span class="preloader__bg" style="background-image: url('img/loaders/gif.gif');"></span>
       <span class="preloader-counter">99</span>
-      <span class="preloader__bg" style="background-image: url('../img/loaders/loader-2.svg');"></span>
+      <span class="preloader__bg" style="background-image: url('img/loaders/loader-2.svg');"></span>
       <script>
         const loaderJsSpan10 = document.querySelector('.preloader-js__span-1');
         let timerId10 = setTimeout(function moveLoaderJsSpan1() {
-          console.log('fdf');
           loaderJsSpan10.classList.toggle('preloader-js__span-1--position-2');
           timerId10 = setTimeout(moveLoaderJsSpan1, 1000);
         }, 1000);
@@ -14073,7 +14074,9 @@
               <input class="c-filter__btn c-filter__btn--submit" type="button" id="set_filter" name="set_filter" value="Показать">
               <img class="loader__img" src="img/icons/loader.svg" width="20" height="20" alt="Загрузка...">
               <img class="loader__img" src="img/loaders/cat.svg" width="20" height="20" alt="">
-              <img class="loader__img" src="img/loaders/gif.gif" width="20" height="20" alt="">
+              <span class="loader-css-2">
+                <span class="loader-css-2__span"></span>
+              </span>
               <span class="loader-js">
                 <span class="loader-js__span-1 loader-js__span-1--position-2"></span>
                 <span class="loader-js__span-2"></span>
@@ -14085,7 +14088,6 @@
               <script>
                 const loaderJsSpan1 = document.querySelector('.loader-js__span-1');
                 let timerId1 = setTimeout(function moveLoaderJsSpan1() {
-                  console.log('fdf');
                   loaderJsSpan1.classList.toggle('loader-js__span-1--position-2');
                   timerId1 = setTimeout(moveLoaderJsSpan1, 1000);
                 }, 1000);
