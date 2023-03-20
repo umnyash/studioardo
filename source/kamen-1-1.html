@@ -646,12 +646,13 @@
             <img class="team__img" src="img/team/team.webp" srcset="img/team/team@2x.webp 2x" alt="Групповая фотография: 3 мужчины и 4 женщины.">
           </picture>
           <div class="team__buttons">
-            <a class="team__button team__button--phone" href="#!">Обсудить ваш проект</a>
-            <a class="team__button team__button--3d" href="#!">Заказать визуализацию</a>
+            <a class="team__button team__button--phone js-modal-show" href="#js-modal-callback">Обсудить ваш проект</a>
+            <a class="team__button team__button--3d js-modal-show" href="#js-modal-visual">Заказать визуализацию</a>
           </div>
         </div>
       </section>
     </main>
+
     <div class="popup popup--big popup--calculation-material">
       <div class="popup__inner ">
         <button class="popup__close" type="button">
@@ -969,6 +970,99 @@
         </div>
       </div>
     </div>
+
+    <div class="popup popup--simple-2" id="js-modal-callback">
+      <div class="popup__inner ">
+        <button class="popup__close" type="button">
+          <span class="visually-hidden">Закрыть.</span>
+        </button>
+        <div class="popup__content custom-form-2">
+          <div class="form">
+            <div class="form__header">
+              <h2 class="form__heading">Заказать звонок</h2>
+            </div>
+            <form class="form__body" action="#!" method="post" enctype="multipart/form-data">
+              <div class="form__textfield-wrapper">
+                <label class="form__textfield-label">
+                  <span class="form__textfield">
+                    <input class="form__textfield-control" name="tel" type="tel" placeholder="+7 (912) 345-67-89">
+                    <span class="form__textfield-label-text">Телефон</span>
+                  </span>
+                </label>
+              </div>
+              <div class="form__textfield-wrapper">
+                <label class="form__textfield-label">
+                  <span class="form__textfield">
+                    <input class="form__textfield-control" name="name" type="text" placeholder="Введите имя">
+                    <span class="form__textfield-label-text">Имя</span>
+                  </span>
+                </label>
+              </div>
+              <div class="form__submit-wrapper">
+                <button class="form__button form__button--wide button button--secondary button--alter-2" type="submit">Отправить</button>
+              </div>
+              <div class="form__consent-wrapper">
+                <label class="form__checkbox-label">
+                  <input class="form__checkbox-control form__checkbox-control--secondary visually-hidden" name="consent" type="checkbox" checked>
+                  <span class="form__checkbox-label-text">
+                    <span>
+                      Согласие с <a class="form__link" href="!#" target="_blank">политикой обработки данных</a>
+                    </span>
+                  </span>
+                </label>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup popup--simple-2"id="js-modal-visual">
+      <div class="popup__inner ">
+        <button class="popup__close" type="button">
+          <span class="visually-hidden">Закрыть.</span>
+        </button>
+        <div class="popup__content custom-form-2">
+          <div class="form">
+            <div class="form__header">
+              <h2 class="form__heading">Заказать<br> визуализацию</h2>
+            </div>
+            <form class="form__body" action="#!" method="post" enctype="multipart/form-data">
+              <div class="form__textfield-wrapper">
+                <label class="form__textfield-label">
+                  <span class="form__textfield">
+                    <input class="form__textfield-control" name="tel" type="tel" placeholder="+7 (912) 345-67-89">
+                    <span class="form__textfield-label-text">Телефон</span>
+                  </span>
+                </label>
+              </div>
+              <div class="form__textfield-wrapper">
+                <label class="form__textfield-label">
+                  <span class="form__textfield">
+                    <input class="form__textfield-control" name="name" type="text" placeholder="Введите имя">
+                    <span class="form__textfield-label-text">Имя</span>
+                  </span>
+                </label>
+              </div>
+              <div class="form__submit-wrapper">
+                <button class="form__button form__button--wide button button--secondary button--alter-2" type="submit">Отправить</button>
+              </div>
+              <div class="form__consent-wrapper">
+                <label class="form__checkbox-label">
+                  <input class="form__checkbox-control form__checkbox-control--secondary visually-hidden" name="consent" type="checkbox" checked>
+                  <span class="form__checkbox-label-text">
+                    <span>
+                      Согласие с <a class="form__link" href="!#" target="_blank">политикой обработки данных</a>
+                    </span>
+                  </span>
+                </label>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="js/swiper.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script> <!-- Новый скрипт -->
     <script src="js/new.js"></script> <!-- Новый скрипт -->

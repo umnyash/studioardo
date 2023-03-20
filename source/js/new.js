@@ -80,6 +80,8 @@ if (popups) {
     popup.style.display = '';
     currentPopup = null;
     document.body.classList.remove('no-scroll');
+    document.body.classList.remove('opened-modal');
+    document.querySelector('#js-overlay').remove();
     document.removeEventListener('keydown', onPopupEscKeydown);
 
     document.body.style.paddingRight = '0';
