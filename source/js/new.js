@@ -265,7 +265,8 @@ const goodInfoTaber = document.querySelector('.good-info__taber');
 if (goodInfoTaber) {
   const swiper = new Swiper(".good-info__tab-buttons-wrapper", {
     slidesPerView: 'auto',
-    freeMode: true
+    freeMode: true,
+    watchSlidesProgress: true,
   });
 
   const tabLinks = goodInfoTaber.querySelectorAll('.good-info__tab-buttons-link');
