@@ -77,11 +77,17 @@ if (popups) {
 
   const closePopup = (popup) => {
     popup.classList.remove('popup--open');
-    popup.style.display = '';
+    const popupWrapper = popup?.closest('[id^="js-modal-"]');
+    if (popupWrapper) {
+      popupWrapper.style.display = '';
+    }
     currentPopup = null;
     document.body.classList.remove('no-scroll');
     document.body.classList.remove('opened-modal');
-    document.querySelector('#js-overlay').remove();
+    const overlay = document.querySelector('#js-overlay');
+    if (overlay) {
+      overlay.remove()
+    }
     document.removeEventListener('keydown', onPopupEscKeydown);
 
     document.body.style.paddingRight = '0';

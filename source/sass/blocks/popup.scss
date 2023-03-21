@@ -17,6 +17,21 @@
   }
 }
 
+[id^="js-modal-"] {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+[id^="js-modal-"] .popup {
+  display: grid;
+  grid-template-columns: 100%;
+}
+
 .popup__inner {
   max-width: 400px;
   border-radius: 10px;
