@@ -17,7 +17,7 @@
   }
 }
 
-[id^="js-modal-"] {
+.popup-wrapper {
   z-index: 9999;
   position: fixed;
   top: 0;
@@ -27,7 +27,7 @@
   height: 100%;
 }
 
-[id^="js-modal-"] .popup {
+.popup-wrapper .popup {
   display: grid;
   grid-template-columns: 100%;
 }
