@@ -56,6 +56,10 @@
     justify-content: start;
   }
 
+  @media #{$laptop-desktop} {
+    padding: 15px 12px 18px;
+  }
+
   &::after {
     content: "";
     position: absolute;
