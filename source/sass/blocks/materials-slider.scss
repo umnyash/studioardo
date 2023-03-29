@@ -67,23 +67,15 @@
   }
 
   @media #{$desktop} {
-    width: 310px;
-    height: 310px;
-    margin-bottom: 100px;
+    // width: 310px;
+    // height: 310px;
+    // margin-bottom: 100px;
+    margin-bottom: 50px;
   }
 
-  @media #{$wide-desktop} {
-    width: 600px;
-    height: 600px;
-  }
-
-  // @media #{$tablet-desktop} {
-  //   width: calc(100% - 140px);
-  //   height: auto;
-  // }
-
-  // @media #{$desktop} {
-  //   width: calc(100% - 200px);
+  // @media #{$wide-desktop} {
+  //   width: 600px;
+  //   height: 600px;
   // }
 }
 
@@ -105,13 +97,13 @@
     top: 200px;
   }
 
-  @media #{$desktop} {
-    top: 170px;
-  }
+  // @media #{$desktop} {
+  //   top: 170px;
+  // }
 
-  @media #{$wide-desktop} {
-    top: 300px;
-  }
+  // @media #{$wide-desktop} {
+  //   top: 300px;
+  // }
 }
 
 .materials-slider__button.swiper-button-prev {
@@ -128,13 +120,13 @@
     left: calc(50% - 258px);
   }
 
-  @media #{$desktop} {
-    left: calc(50% - 245px);
-  }
+  // @media #{$desktop} {
+  //   left: calc(50% - 245px);
+  // }
 
-  @media #{$wide-desktop} {
-    left: calc(50% - 390px);
-  }
+  // @media #{$wide-desktop} {
+  //   left: calc(50% - 390px);
+  // }
 }
 
 .materials-slider__button.swiper-button-next {
@@ -151,11 +143,11 @@
     right: calc(50% - 258px);
   }
 
-  @media #{$desktop} {
-    right: calc(50% - 245px);
-  }
+  // @media #{$desktop} {
+  //   right: calc(50% - 245px);
+  // }
 
-  @media #{$wide-desktop} {
-    right: calc(50% - 390px);
-  }
+  // @media #{$wide-desktop} {
+  //   right: calc(50% - 390px);
+  // }
 }
