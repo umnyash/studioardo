@@ -43,9 +43,9 @@ const styles = () => {
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(dest('./build/css', { sourcemaps: isDev }))
-    // .pipe(rename({ suffix: '.min' }))
-    // .pipe(csso())
-    // .pipe(dest('./build/css', { sourcemaps: true }))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(csso())
+    .pipe(dest('./build/css', { sourcemaps: true }))
     .pipe(sync.stream())
 };
 
