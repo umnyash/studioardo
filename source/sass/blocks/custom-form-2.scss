@@ -472,17 +472,20 @@
     }
   }
 
+  .form__consent-wrapper .form__checkbox-control:checked ~ .form__checkbox-label-text::before,
   .form__checkbox-control:checked + .form__checkbox-label-text::before  {
     background-image: url("../img/icons/custom-form-checkmark.svg");
     background-repeat: no-repeat;
     background-position: center;
   }
 
+  .form__consent-wrapper .form__checkbox-control--primary:checked ~ .form__checkbox-label-text::before,
   .form__checkbox-control--primary:checked + .form__checkbox-label-text::before  {
     border-color: $accent-color;
     background-color: $accent-color;
   }
 
+  .form__consent-wrapper .form__checkbox-control--secondary:checked ~ .form__checkbox-label-text::before,
   .form__checkbox-control--secondary:checked + .form__checkbox-label-text::before  {
     border-color: $special-color;
     background-color: $special-color;
