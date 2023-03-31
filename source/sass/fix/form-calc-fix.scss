@@ -1,0 +1,11 @@
+#form-calc .form-checkbox label {
+    padding-left: 24px;
+
+    &::before {
+      top: 2px;
+    }
+
+    &::after {
+      top: 5px;
+    }
+}

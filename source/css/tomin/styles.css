@@ -14765,3 +14765,5 @@ label.error {
     margin-top: 10px;
   }
 }
+
+a.number-big {width: 40px; height: 34px; text-align: center; vertical-align: middle; padding-top: 10px;}

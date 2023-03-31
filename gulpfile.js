@@ -49,6 +49,14 @@ const styles = () => {
     .pipe(sync.stream())
 };
 
+const minStyles = () => {
+  return src('./source/css/tomin/*.css')
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(csso())
+    .pipe(dest('./build/css'))
+    .pipe(sync.stream())
+}
+
 // Scripts
 const scripts = () => {
   return src(['./source/js/new.js', './source/js/demo.js'], { sourcemaps: isDev })
@@ -115,6 +123,7 @@ const server = () => {
 exports.copy = copy;
 exports.html = html;
 exports.styles = styles;
+exports.minStyles = minStyles;
 exports.scripts = scripts;
 exports.images = images;
 exports.createWebp = createWebp;
@@ -125,7 +134,7 @@ exports.clear = clear;
 // Build
 const build = series(
   clear,
-  parallel(copy, html, styles, scripts, images, createWebp),
+  parallel(copy, html, styles, minStyles, scripts, images, createWebp),
 );
 
 // Dev

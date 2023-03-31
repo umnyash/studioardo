@@ -7654,7 +7654,7 @@ label.error {
 }
 
 .location__time {
-    width: 150px
+    width: 145px
 }
 
 .location__email,
@@ -17445,6 +17445,10 @@ label.error {
     display: none !important
 }
 
+#agree-error {
+	display: block !important
+}
+
 .custom-form label.error {
 	display: block !important
 }
@@ -19424,3 +19428,21 @@ input.filter__submit {
 p.basket__price-old {text-decoration: line-through; opacity: 0.6; font-size: 13px!important;}
 a.number-big {width: 40px; height: 34px; text-align: center; vertical-align: middle; padding-top: 10px;}
 .promo.promo-filter {margin-top: 45px; margin-bottom: 45px;}
+.good__img-wrapper .good__img{
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+.good__img-wrapper img:nth-child(2), .good__img-wrapper:hover img:first-child{
+    opacity: 0 !important;
+}
+.good__img-wrapper:hover img:nth-child(2) {
+    opacity: 1 !important;
+}
+.labels{
+    z-index: 1;
+    pointer-events: none;
+}
+.good__img-wrapper{
+    position:relative;
+}
