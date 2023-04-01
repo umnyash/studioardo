@@ -20,7 +20,6 @@
   margin: 0;
   width: 290px;
   height: auto;
-  border-radius: 10px;
 
   @media #{$tablet-desktop} {
     min-width: 232px;
@@ -37,11 +36,12 @@
 
 .n-service__link {
   display: grid;
-  align-content: start;
   height: 100%;
-  color: $basic-text-color;
   border-radius: 10px;
+  align-content: start;
+  color: $basic-text-color;
   background: $background-color;
+  overflow: hidden;
 
   &:hover {
     opacity: 0.8;
@@ -62,7 +62,6 @@
   display: block;
   width: 100%;
   height: 100%;
-  border-radius: 10px 10px 0 0;
   object-fit: cover;
   object-position: center;
 }
@@ -73,8 +72,6 @@
   flex-direction: column;
   height: 100%;
   padding: 13px 5px;
-  border-radius: 0 0 10px 10px;
-
 
   @media #{$tablet-desktop} {
     padding: 13px 10px 10px;
