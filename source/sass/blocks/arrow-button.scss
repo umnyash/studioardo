@@ -9,7 +9,7 @@
   background-size: 8px 13px;
   border: none;
   border-radius: 50%;
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15));
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   cursor: pointer;
 
   &:hover {

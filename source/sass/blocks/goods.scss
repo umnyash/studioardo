@@ -25,15 +25,11 @@
 .goods__button-wrapper {
   display: flex;
   padding: 0 14px;
-  margin: 30px 0 0; // 40,
+  margin: 30px 0 0;
 
   @media #{$tablet-desktop} {
     padding: 0;
   }
-
-  // @media #{$laptop-desktop} {
-  //   margin-top: 50px;
-  // }
 }
 
 .goods__button {
@@ -64,13 +60,18 @@
     width: auto;
     padding: 0;
     margin: 0;
+    grid-template-areas:
+        "heading"
+        "slider"
+        "slider-arrows"
+        "button";
 
     @media #{$tablet-desktop} {
       justify-content: center;
       grid-template-columns: 1fr auto;
       column-gap: 20px;
       grid-template-areas:
-        "heading slider-arrows"
+        "heading heading"
         "slider  slider"
         "button  button";
     }
@@ -81,12 +82,27 @@
     }
   }
 
+  .goods__inner::before {
+    content: "";
+    grid-area: slider;
+    height: calc(100% - 40px);
+    border-radius: 10px;
+    margin: 21px 10px 0;
+    background-image: linear-gradient(360deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.028));
+    box-shadow: 0px 3px 50px 2px rgba(0, 0, 0, 0.06);
+
+    @media #{$tablet-desktop} {
+      height: calc(100% - 44px);
+      margin: 25px 15px 0;
+    }
+  }
+
   .goods__heading {
+    grid-area: heading;
     padding: 0 10px;
     margin-bottom: 0;
 
     @media #{$tablet-desktop} {
-      grid-area: heading;
       padding-right: 15px;
       padding-left: 15px;
     }
@@ -97,15 +113,14 @@
   }
 
   .goods__slider.swiper {
+    grid-area: slider;
     z-index: 2;
     max-width: 100%;
     padding: 0 0 200px;
     margin: 21px 10px -181px;
     visibility: hidden;
-    filter: drop-shadow(0px 3px 25px rgba(0, 0, 0, 0.06));
 
     @media #{$tablet-desktop} {
-      grid-area: slider;
       margin-right: 15px;
       margin-left: 15px;
       margin-top: 25px;
@@ -119,7 +134,11 @@
   }
 
   .good {
-    filter: none;
+    box-shadow: none;
+
+    &:hover {
+      box-shadow: 0px 3px 50px 2px rgba(0, 0, 0, 0.06);
+    }
   }
 
   .goods__list.swiper-wrapper {
@@ -130,6 +149,7 @@
   }
 
   .goods__slider-buttons {
+    grid-area: slider-arrows;
     z-index: 0;
     display: grid;
     grid-auto-flow: column;
@@ -138,18 +158,13 @@
     visibility: hidden;
 
     @media #{$tablet-desktop} {
-      // grid-area: slider-arrows;
       margin-top: 5px;
       margin-right: 15px;
-      grid-area: 2 / 1 / 3 / -1;
+      grid-area: slider;
       margin: 0;
       align-items: center;
       justify-content: space-between;
       z-index: 3;
-    }
-
-    @media #{$desktop} {
-      // margin-right: 10px;
     }
   }
 
@@ -161,13 +176,11 @@
   }
 
   .goods__slider-button-next {
-    transform: rotate(180deg);
+    transform: scale(-1, 1);
     will-change: transform;
   }
 
   .goods__button-wrapper {
-    @media #{$tablet-desktop} {
-      grid-area: button;
-    }
+    grid-area: button;
   }
 }
