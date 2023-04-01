@@ -90,6 +90,7 @@
     margin: 21px 10px 0;
     background-image: linear-gradient(360deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.028));
     box-shadow: 0px 3px 50px 2px rgba(0, 0, 0, 0.06);
+    visibility: hidden;
 
     @media #{$tablet-desktop} {
       height: calc(100% - 44px);
