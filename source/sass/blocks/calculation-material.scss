@@ -126,3 +126,12 @@
     padding: 90px 100px 70px;
   }
 }
+
+.calculation-material__calculation--unit2 ~ .calculation-material__material {
+  .materials-slider__unit1 {
+    display: none;
+  }
+  .materials-slider__unit2 {
+    display: inline;
+  }
+}

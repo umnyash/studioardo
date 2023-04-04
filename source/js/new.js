@@ -1266,10 +1266,10 @@ const sendData = (onSuccess, onFail, body) => {
 };
 
 /* ------------ custom-form-2--calculation ------------ */
-const PRODUCTS_MEASURED_IN_RUNNING_METERS = ['countertops', 'window-sills', 'steps'];
 
 const initCalculationForms = (form) => {
   const CENTIMETERS_IN_1_SQUARE_METER = 10000;
+  const PRODUCTS_MEASURED_IN_RUNNING_METERS = ['countertops', 'window-sills', 'steps'];
 
   const lengthField = form.querySelector('[name="length"]');
   const widthField = form.querySelector('[name="width"]');
@@ -1280,6 +1280,8 @@ const initCalculationForms = (form) => {
   const formResult = form.querySelector('.form__result');
   const areaFieldWrapper = areaField.closest('.form__textfield-wrapper');
   const countFieldWrapper = countField.closest('.form__textfield-wrapper');
+
+  const calculationMaterialWrapper = form.closest('.calculation-material__calculation');
 
   let isCalculationInRunningMeters = false;
 
@@ -1359,6 +1361,9 @@ const initCalculationForms = (form) => {
       }
 
       enableCalculationInRunningMeters();
+      if (calculationMaterialWrapper) {
+        calculationMaterialWrapper.classList.add('calculation-material__calculation--unit2');
+      }
       isCalculationInRunningMeters = true;
     } else {
       if (!isCalculationInRunningMeters) {
@@ -1366,6 +1371,9 @@ const initCalculationForms = (form) => {
       }
 
       disableCalculationInRunningMeters();
+      if (calculationMaterialWrapper) {
+        calculationMaterialWrapper.classList.remove('calculation-material__calculation--unit2');
+      }
       isCalculationInRunningMeters = false;
     }
   })
