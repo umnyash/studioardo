@@ -1584,19 +1584,6 @@ if (collectionListNodes.length > 0) {
 
 /* ------------ */
 
-const initVideoPlayer = (videoplayer) => {
-  const videoElement = videoplayer.querySelector('.n-video__video');
-  const buttonPlayElement = videoplayer.querySelector('.n-video__play');
-
-  const playVideo = () => {
-    videoElement.setAttribute('controls', true);
-    videoElement.play();
-    buttonPlayElement.style.display = 'none';
-  };
-
-  buttonPlayElement.addEventListener('click', playVideo);
-};
-
 const initShowroomTooltip = (tooltip) => {
   const closeButton = tooltip.querySelector('.showroom__tooltip-close');
   closeButton.addEventListener('click', () => {
