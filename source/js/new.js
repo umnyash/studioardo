@@ -1266,6 +1266,7 @@ const sendData = (onSuccess, onFail, body) => {
 };
 
 /* ------------ custom-form-2--calculation ------------ */
+const PRODUCTS_MEASURED_IN_RUNNING_METERS = ['countertops', 'window-sills', 'steps'];
 
 const initCalculationForms = (form) => {
   const CENTIMETERS_IN_1_SQUARE_METER = 10000;
@@ -1273,8 +1274,22 @@ const initCalculationForms = (form) => {
   const lengthField = form.querySelector('[name="length"]');
   const widthField = form.querySelector('[name="width"]');
   const areaField = form.querySelector('[name="area"]');
-  const materialField = form.querySelector('[name="material"]')
+  const countField = form.querySelector('[name="count"]');
+  const materialField = form.querySelector('[name="material"]');
+  const typeField = form.querySelector('[name="type"]');
   const formResult = form.querySelector('.form__result');
+  const areaFieldWrapper = areaField.closest('.form__textfield-wrapper');
+  const countFieldWrapper = countField.closest('.form__textfield-wrapper');
+
+  let isCalculationInRunningMeters = false;
+
+  const toggleFormResultView = () => {
+    if (!PRODUCTS_MEASURED_IN_RUNNING_METERS.includes(typeField.value)) {
+      formResult.classList.toggle('form__result--hidden', (!(isAreaFieldFiled() && materialField.value)));
+    } else {
+      formResult.classList.toggle('form__result--hidden', (!(lengthField.value && countField.value && materialField.value)));
+    }
+  }
 
   const isAreaFieldFiled = () => {
     return !!+areaField.value;
@@ -1286,24 +1301,74 @@ const initCalculationForms = (form) => {
 
   const setArea = () => {
     areaField.value = calcArea();
-    formResult.classList.toggle('form__result--hidden', (!(isAreaFieldFiled() && materialField.value)));
+    toggleFormResultView();
   }
 
   const resetField = (field) => {
     field.value = '';
   }
 
+  countField.addEventListener('input', toggleFormResultView);
   lengthField.addEventListener('input', setArea);
   widthField.addEventListener('input', setArea);
   areaField.addEventListener('input', () => {
     resetField(lengthField);
     resetField(widthField);
-    formResult.classList.toggle('form__result--hidden', (!(isAreaFieldFiled() && materialField.value)));
+
+    toggleFormResultView();
   });
 
   materialField.addEventListener('change', () => {
-    formResult.classList.toggle('form__result--hidden', (!(isAreaFieldFiled() && materialField.value)));
+    toggleFormResultView();
   });
+
+  const enableCalculationInRunningMeters = () => {
+    areaField.disabled = true;
+    areaFieldWrapper.classList.add('form__textfield-wrapper--hidden');
+
+    countField.disabled = false;
+    countFieldWrapper.classList.remove('form__textfield-wrapper--hidden');
+
+    lengthField.removeEventListener('input', setArea);
+    lengthField.addEventListener('input', toggleFormResultView);
+
+    widthField.removeEventListener('input', setArea);
+    widthField.setAttribute('readonly', true);
+
+  };
+
+  const disableCalculationInRunningMeters = () => {
+    countField.disabled = true;
+    countFieldWrapper.classList.add('form__textfield-wrapper--hidden');
+
+    areaField.disabled = false;
+    areaFieldWrapper.classList.remove('form__textfield-wrapper--hidden')
+
+    lengthField.removeEventListener('input', toggleFormResultView);
+    lengthField.addEventListener('input', setArea);
+
+    widthField.addEventListener('input', setArea);
+    widthField.removeAttribute('readonly');
+  };
+
+
+  typeField.addEventListener('change', () => {
+    if (PRODUCTS_MEASURED_IN_RUNNING_METERS.includes(typeField.value)) {
+      if (isCalculationInRunningMeters) {
+        return;
+      }
+
+      enableCalculationInRunningMeters();
+      isCalculationInRunningMeters = true;
+    } else {
+      if (!isCalculationInRunningMeters) {
+        return;
+      }
+
+      disableCalculationInRunningMeters();
+      isCalculationInRunningMeters = false;
+    }
+  })
 
   const formWrapper = form.closest('.custom-form-2--calculation');
   const formSubmit = form.querySelector('.form__submit');

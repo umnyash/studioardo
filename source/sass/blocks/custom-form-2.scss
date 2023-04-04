@@ -77,6 +77,10 @@
     @media #{$tablet-desktop} {
       margin-bottom: 20px;
     }
+
+    &--hidden {
+      display: none;
+    }
   }
 
   .form__textfield-label {
