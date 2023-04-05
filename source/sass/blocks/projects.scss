@@ -99,7 +99,7 @@
 
 .projects__gallery-item {
   margin: 0;
-  width: 301px;
+  width: 300px;
   height: auto;
   background-color: $category-text-bg;
   border-radius: 10px;
@@ -107,28 +107,28 @@
 
   @media #{$tablet-desktop} {
     width: 550px;
-    height: 500px;
   }
 }
 
 .projects__gallery-link {
-  display: block;
   display: grid;
-  border-radius: 10px;
 }
 
 .projects__image {
   grid-area: 1/1/2/2;
-  display: block;
   width: 100%;
-  height: 100%;
+  height: 273px;
+
+  @media #{$tablet-desktop} {
+    width: 100%;
+    height: 500px;
+  }
 }
 
 .projects__image img {
   display: block;
   width: 100%;
   height: 100%;
-  border-radius: 10px;
   object-fit: cover;
   object-position: center;
 }
@@ -142,7 +142,6 @@
   z-index: 5;
   padding: 16px 5px 14px;
   box-sizing: border-box;
-  border-radius: 0 0 10px 10px;
 
   @media #{$narrow-mobile} {
     height: 50px;
