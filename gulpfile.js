@@ -14,7 +14,6 @@ const terser = require('gulp-terser');
 const gulpIf = require('gulp-if');
 const newer = require('gulp-newer');
 const imagemin = require('gulp-imagemin');
-const webp = require('gulp-webp');
 
 // Copy
 const copy = () => {
@@ -81,17 +80,6 @@ const images = () => {
   .pipe(dest('./build/img'))
 };
 
-// Webp
-const createWebp = () => {
-  return src([
-    './source/img/stone/hero/*.{jpg,jpeg,png}',
-    './source/img/team/*.{jpg,jpeg,png}',
-    './source/img/offers/*.{jpg,jpeg,png}'
-  ], { base: './source' })
-    .pipe(webp({quality: 90}))
-    .pipe(dest('./build'));
-}
-
 // Cleaning
 const clear = () => {
   return del('./build');
@@ -103,11 +91,6 @@ const watcher = () => {
   watch('./source/sass/**/*.scss', styles);
   watch(['./source/js/new.js', './source/js/demo.js'], scripts);
   watch('./source/img/**/*.{png,jpg,jpeg,svg}', images);
-  watch([
-    './source/img/stone/hero/*.{jpg,jpeg,png}',
-    './source/img/team/*.{jpg,jpeg,png}',
-    './source/img/offers/*.{jpg,jpeg,png}'
-  ], createWebp);
 }
 
 // Server
@@ -126,7 +109,6 @@ exports.styles = styles;
 exports.minStyles = minStyles;
 exports.scripts = scripts;
 exports.images = images;
-exports.createWebp = createWebp;
 exports.watch = watcher;
 exports.clear = clear;
 
@@ -134,7 +116,7 @@ exports.clear = clear;
 // Build
 const build = series(
   clear,
-  parallel(copy, html, styles, minStyles, scripts, images, createWebp),
+  parallel(copy, html, styles, minStyles, scripts, images),
 );
 
 // Dev
