@@ -13202,7 +13202,7 @@ label.error {
     display: none;
     position: absolute;
     z-index: 1000;
-    top: calc(100% + 5px);
+    top: calc(100% + 15px);
     right: 0;
     width: 340px;
     padding: 20px 30px;
@@ -13214,7 +13214,8 @@ label.error {
 .cart:before {
     content: "";
     position: absolute;
-    left: 50%;
+    left: auto;
+    right: 12px;
     top: -16px;
     width: 0;
     height: 0;
