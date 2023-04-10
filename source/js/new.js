@@ -1281,8 +1281,6 @@ const initCalculationForms = (form) => {
   const areaFieldWrapper = areaField.closest('.form__textfield-wrapper');
   const countFieldWrapper = countField.closest('.form__textfield-wrapper');
 
-  const calculationMaterialWrapper = form.closest('.calculation-material__calculation');
-
   let isCalculationInRunningMeters = false;
 
   const toggleFormResultView = () => {
@@ -1361,9 +1359,6 @@ const initCalculationForms = (form) => {
       }
 
       enableCalculationInRunningMeters();
-      if (calculationMaterialWrapper) {
-        calculationMaterialWrapper.classList.add('calculation-material__calculation--unit2');
-      }
       isCalculationInRunningMeters = true;
     } else {
       if (!isCalculationInRunningMeters) {
@@ -1371,9 +1366,6 @@ const initCalculationForms = (form) => {
       }
 
       disableCalculationInRunningMeters();
-      if (calculationMaterialWrapper) {
-        calculationMaterialWrapper.classList.remove('calculation-material__calculation--unit2');
-      }
       isCalculationInRunningMeters = false;
     }
   })
