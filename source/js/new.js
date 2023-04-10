@@ -1621,3 +1621,44 @@ window.addEventListener('resize', () => {
     }, 0)
   });
 })
+
+/* Изменение ширины инпута при вводе */
+  const setNumberFieldControlWidth = (control) => {
+    control.style.width = `${control.value.length + 1}ch`;
+  }
+
+  const initGoodsQuantity = (goodsQuantity) => {
+    const field = goodsQuantity.querySelector('.number-field__control');
+
+    const onFieldInput = (evt) => setNumberFieldControlWidth(evt.target);
+
+    const onButtonClick = () => {
+      setTimeout(() => { setNumberFieldControlWidth(field) }, 5);
+    };
+
+    field.addEventListener('input', onFieldInput);
+
+    goodsQuantity.querySelectorAll('.number-field__button').forEach((button) => {
+      button.addEventListener('click', onButtonClick);
+    })
+
+    goodsQuantity.querySelectorAll('.radiobutton__control').forEach((radiobutton) => {
+      radiobutton.addEventListener('click', onButtonClick);
+    })
+  };
+  document.querySelectorAll('.goods-quantity').forEach(initGoodsQuantity);
+  document.querySelectorAll('.good').forEach(initGoodsQuantity);
+
+  const initModalsButton = (button) => {
+    button.addEventListener('click', () => {
+      setTimeout(() => {
+        const modal = document.querySelector('#js-modal-click');
+        if (!modal) {
+          return;
+        }
+        modal.querySelectorAll('.goods-quantity').forEach(initGoodsQuantity);
+      }, 1000);
+    });
+  };
+  document.querySelectorAll('.js-modal-show[href="#js-modal-click"').forEach(initModalsButton);
+/**/
