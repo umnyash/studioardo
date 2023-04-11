@@ -1518,21 +1518,24 @@ document.querySelectorAll('.js-modal-show[href="#js-modal-click"').forEach(initM
 /**/
 
 
-/* Кнопка включения видео в iframe */
+/* Youtube Player */
 
-const initIframeVideoStarter = (button, iframe) => {
+const initYouTubeVideoStarter = (player, button) => {
   button.addEventListener('click', () => {
-    console.log('play')
-    iframe.src += '?autoplay=1&mute=1';
+    player.playVideo();
   })
 };
 
-const iframeVideoStarter = document.querySelector('.n-banner__video-link');
-const iframeVideo = document.querySelector('.n-video__frame');
+let youTubePlayer;
+function onYouTubeIframeAPIReady() {
+  youTubePlayer = new YT.Player('manufacture-video');
 
-if (iframeVideoStarter && iframeVideo) {
-  initIframeVideoStarter(iframeVideoStarter, iframeVideo);
-}
+  const playButton = document.querySelector('.n-banner__video-link');
+
+  if (youTubePlayer && playButton) {
+    initYouTubeVideoStarter(youTubePlayer, playButton);
+  }
+};
 
 /**/
 
