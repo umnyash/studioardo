@@ -149,7 +149,15 @@
 }
 
 .n-advantages__name:hover + .n-advantages__info {
-  display: grid;
+  @media (pointer: fine) {
+    display: grid;
+  }
+}
+
+.n-advantages__name--hover + .n-advantages__info {
+  @media (pointer: coarse) {
+    display: grid;
+  }
 }
 
 .n-advantages__item:first-child .n-advantages__info {
@@ -220,10 +228,20 @@
     padding: 15px 20px 12px 10px;
     background-color: $n-advantages-alter-item-background-color;
 
-    &:hover {
-      color: $text-color-secondary;
-      background-color: $special-color;
+    @media (pointer: fine) {
+      &:hover {
+        color: $text-color-secondary;
+        background-color: $special-color;
+      }
     }
+
+    @media (pointer: coarse) {
+      &--hover {
+        color: $text-color-secondary;
+        background-color: $special-color;
+      }
+    }
+
 
     @media #{$tablet-desktop} {
       padding: 15px 20px 13px 11px;
@@ -235,9 +253,16 @@
   }
 
   .n-advantages__name:hover::after {
-    background-color: $background-color;
+    @media (pointer: fine) {
+      background-color: $background-color;
+    }
   }
 
+  .n-advantages__name--hover::after {
+    @media (pointer: coarse) {
+      background-color: $background-color;
+    }
+  }
 }
 
 .n-advantages--left-column--desktop .n-advantages__item:last-child .n-advantages__info {

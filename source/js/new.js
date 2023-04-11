@@ -1517,6 +1517,9 @@ document.querySelectorAll('.js-modal-show[href="#js-modal-click"').forEach(initM
 
 /**/
 
+
+/* Кнопка включения видео в iframe */
+
 const initIframeVideoStarter = (button, iframe) => {
   button.addEventListener('click', () => {
     console.log('play')
@@ -1530,3 +1533,44 @@ const iframeVideo = document.querySelector('.n-video__frame');
 if (iframeVideoStarter && iframeVideo) {
   initIframeVideoStarter(iframeVideoStarter, iframeVideo);
 }
+
+/**/
+
+
+/* Инициализация плашек преимуществ */
+
+const initAdvantagesSection = (section) => {
+  const cards = section.querySelectorAll('.n-advantages__name');
+
+  const onDocumentClick = (evt) => {
+    const card = evt.target.closest('.n-advantages__name');
+    if (!card) {
+      cards.forEach((card) => card.classList.remove('n-advantages__name--hover'));
+      document.removeEventListener('click', onDocumentClick);
+    }
+  };
+
+  section.addEventListener('click', (evt) => {
+    if (!window.matchMedia("(pointer: coarse)").matches) {
+      return;
+    }
+
+    const card = evt.target.closest('.n-advantages__name');
+    if (!card) {
+      return;
+    }
+
+    if (card.classList.contains('n-advantages__name--hover')) {
+      cards.forEach((card) => card.classList.remove('n-advantages__name--hover'));
+    } else {
+      cards.forEach((card) => card.classList.remove('n-advantages__name--hover'));
+      card.classList.add('n-advantages__name--hover');
+      document.addEventListener('click', onDocumentClick);
+    }
+  });
+}
+
+document.querySelectorAll('.n-advantages').forEach(initAdvantagesSection);
+
+/**/
+
