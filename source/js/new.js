@@ -1062,6 +1062,7 @@ if (goodsSlider1) {
   });
 }
 
+
 const popularGoodsSection = document.querySelector('.goods--popular');
 
 if (popularGoodsSection) {
@@ -1129,7 +1130,9 @@ if (popularGoodsSection) {
   })();
 }
 
-/* ------------ n-select ------------ */
+
+/* Инициализация кастомного селекта */
+
 const initSelect = (wrapper) => {
   const control = wrapper.querySelector('.n-select__control');
   const select = wrapper.querySelector('.n-select__select');
@@ -1138,8 +1141,6 @@ const initSelect = (wrapper) => {
   const options = list.querySelectorAll('.n-select__option');
 
   control.value = '';
-
-  // let changeEvent = new Event('change', { bubbles: true });
 
   let listMaxHeight = false;
 
@@ -1244,169 +1245,10 @@ const initSelect = (wrapper) => {
 
 document.querySelectorAll('.n-select').forEach(initSelect);
 
-/* ------------ */
-// const UPLOAD_URL = 'https://echo.htmlacademy.ru/courses';
-let UPLOAD_URL = 'https://echo.htmlacademy.ru/courses';
-
-const sendData = (onSuccess, onFail, body) => {
-  fetch(UPLOAD_URL, {
-    method: 'POST',
-    body,
-  })
-    .then((response) => {
-      if(response.ok) {
-        onSuccess();
-      } else {
-        onFail();
-      }
-    })
-    .catch(() => {
-      onFail();
-    });
-};
-
-/* ------------ custom-form-2--calculation ------------ */
-
-const initCalculationForms = (form) => {
-  const CENTIMETERS_IN_1_SQUARE_METER = 10000;
-  const PRODUCTS_MEASURED_IN_RUNNING_METERS = ['countertops', 'window-sills', 'steps'];
-
-  const lengthField = form.querySelector('[name="length"]');
-  const widthField = form.querySelector('[name="width"]');
-  const areaField = form.querySelector('[name="area"]');
-  const countField = form.querySelector('[name="count"]');
-  const materialField = form.querySelector('[name="material"]');
-  const typeField = form.querySelector('[name="type"]');
-  const formResult = form.querySelector('.form__result');
-  const areaFieldWrapper = areaField.closest('.form__textfield-wrapper');
-  const countFieldWrapper = countField.closest('.form__textfield-wrapper');
-
-  let isCalculationInRunningMeters = false;
-
-  const toggleFormResultView = () => {
-    if (!PRODUCTS_MEASURED_IN_RUNNING_METERS.includes(typeField.value)) {
-      formResult.classList.toggle('form__result--hidden', (!(isAreaFieldFiled() && materialField.value)));
-    } else {
-      formResult.classList.toggle('form__result--hidden', (!(lengthField.value && countField.value && materialField.value)));
-    }
-  }
-
-  const isAreaFieldFiled = () => {
-    return !!+areaField.value;
-  };
-
-  const calcArea = () => {
-    return +lengthField.value * +widthField.value / CENTIMETERS_IN_1_SQUARE_METER;
-  }
-
-  const setArea = () => {
-    areaField.value = calcArea();
-    toggleFormResultView();
-  }
-
-  const resetField = (field) => {
-    field.value = '';
-  }
-
-  countField.addEventListener('input', toggleFormResultView);
-  lengthField.addEventListener('input', setArea);
-  widthField.addEventListener('input', setArea);
-  areaField.addEventListener('input', () => {
-    resetField(lengthField);
-    resetField(widthField);
-
-    toggleFormResultView();
-  });
-
-  materialField.addEventListener('change', () => {
-    toggleFormResultView();
-  });
-
-  const enableCalculationInRunningMeters = () => {
-    areaField.disabled = true;
-    areaFieldWrapper.classList.add('form__textfield-wrapper--hidden');
-
-    countField.disabled = false;
-    countFieldWrapper.classList.remove('form__textfield-wrapper--hidden');
-
-    lengthField.removeEventListener('input', setArea);
-    lengthField.addEventListener('input', toggleFormResultView);
-
-    widthField.removeEventListener('input', setArea);
-    widthField.setAttribute('readonly', true);
-
-  };
-
-  const disableCalculationInRunningMeters = () => {
-    countField.disabled = true;
-    countFieldWrapper.classList.add('form__textfield-wrapper--hidden');
-
-    areaField.disabled = false;
-    areaFieldWrapper.classList.remove('form__textfield-wrapper--hidden')
-
-    lengthField.removeEventListener('input', toggleFormResultView);
-    lengthField.addEventListener('input', setArea);
-
-    widthField.addEventListener('input', setArea);
-    widthField.removeAttribute('readonly');
-  };
+/**/
 
 
-  typeField.addEventListener('change', () => {
-    if (PRODUCTS_MEASURED_IN_RUNNING_METERS.includes(typeField.value)) {
-      if (isCalculationInRunningMeters) {
-        return;
-      }
-
-      enableCalculationInRunningMeters();
-      isCalculationInRunningMeters = true;
-    } else {
-      if (!isCalculationInRunningMeters) {
-        return;
-      }
-
-      disableCalculationInRunningMeters();
-      isCalculationInRunningMeters = false;
-    }
-  })
-
-  const formWrapper = form.closest('.custom-form-2--calculation');
-  const formSubmit = form.querySelector('.form__submit');
-
-  const onSuccess = () => {
-    formWrapper.classList.remove('custom-form-2--notice--error');
-    formWrapper.classList.add('custom-form-2--notice--success');
-    formSubmit.classList.remove('loader');
-  };
-
-  const onFail = () => {
-    formWrapper.classList.remove('custom-form-2--notice--success');
-    formWrapper.classList.add('custom-form-2--notice--error');
-    formSubmit.classList.remove('loader');
-  };
-
-  form.addEventListener('submit', (evt) => {
-    evt.preventDefault();
-    formSubmit.classList.add('loader');
-
-    // Имитация успешной (или нет) отправки формы
-    UPLOAD_URL = Math.random() > 0.5 ? 'https://echo.htmlacademy.ru/courses' : 'error';
-
-    setTimeout(() => {
-      sendData(
-        () => onSuccess(),
-        () => onFail(),
-        new FormData(evt.target)
-      );
-    }, 1000)
-  });
-};
-
-document.querySelectorAll('.custom-form-2--calculation .form__body').forEach(initCalculationForms);
-
-/* ------------ */
-
-
+/* Инициализация слайдера материалов */
 
 const materialsSlider = new Swiper('.materials-slider', {
   slidesPerView: 1,
@@ -1419,7 +1261,9 @@ const materialsSlider = new Swiper('.materials-slider', {
   watchSlidesProgress: true
 });
 
-/* ------------ Связь селекта и слайдера ------------ */
+/* */
+
+/* Связь селекта материалов и слайдера */
 
 const initCalculationMaterialSection = (section) => {
   const materialSelect = section.querySelector('select[name="material"]');
@@ -1448,9 +1292,10 @@ const initCalculationMaterialSection = (section) => {
 
 document.querySelectorAll('.calculation-material').forEach(initCalculationMaterialSection);
 
-/* ------------ */
+/**/
 
-/* ------------ n-banner img parallax ------------ */
+
+/* Эффект параллакса в баннерах */
 
 const initBannerParallaxImg = (img) => {
   const imgWrapper = img.parentNode;
@@ -1480,11 +1325,10 @@ const initBannerParallaxImg = (img) => {
 
 document.querySelectorAll('.n-banner--parallax-bg .n-banner__img').forEach(initBannerParallaxImg);
 
-/* ------------ */
+/**/
 
-/* ------------ good__heading elements ------------ */
-/* Задать заголовкам карточек товаров, которые расположены
-в одном ряду, одинаковую высоту.*/
+
+/* Установка одинаковой высоты заголовков карточкам товаров и коллекций в одном ряду */
 
 const goodListNodes = document.querySelectorAll('.good-list');
 
@@ -1574,7 +1418,10 @@ if (collectionListNodes.length > 0) {
   window.addEventListener('resize', setCollectionListCardHeadingsHeight);
 };
 
-/* ------------ */
+/**/
+
+
+/* Удаление попапа в шоу-руме */
 
 const initShowroomTooltip = (tooltip) => {
   const closeButton = tooltip.querySelector('.showroom__tooltip-close');
@@ -1582,10 +1429,12 @@ const initShowroomTooltip = (tooltip) => {
     tooltip.remove();
   });
 };
-
 document.querySelectorAll('.showroom__tooltip').forEach(initShowroomTooltip);
 
+/**/
 
+
+/* Установка высоты для карточке товаров и коллекций */
 
 const goodCards = document.querySelectorAll('.good-list__item');
 const collectionCards = document.querySelectorAll('.n-collection-list__item');
@@ -1622,43 +1471,49 @@ window.addEventListener('resize', () => {
   });
 })
 
-/* Изменение ширины инпута при вводе */
-  const setNumberFieldControlWidth = (control) => {
-    control.style.width = `${control.value.length + 1}ch`;
-  }
-
-  const initGoodsQuantity = (goodsQuantity) => {
-    const field = goodsQuantity.querySelector('.number-field__control');
-
-    const onFieldInput = (evt) => setNumberFieldControlWidth(evt.target);
-
-    const onButtonClick = () => {
-      setTimeout(() => { setNumberFieldControlWidth(field) }, 5);
-    };
-
-    field.addEventListener('input', onFieldInput);
-
-    goodsQuantity.querySelectorAll('.number-field__button').forEach((button) => {
-      button.addEventListener('click', onButtonClick);
-    })
-
-    goodsQuantity.querySelectorAll('.radiobutton__control').forEach((radiobutton) => {
-      radiobutton.addEventListener('click', onButtonClick);
-    })
-  };
-  document.querySelectorAll('.goods-quantity').forEach(initGoodsQuantity);
-  document.querySelectorAll('.good').forEach(initGoodsQuantity);
-
-  const initModalsButton = (button) => {
-    button.addEventListener('click', () => {
-      setTimeout(() => {
-        const modal = document.querySelector('#js-modal-click');
-        if (!modal) {
-          return;
-        }
-        modal.querySelectorAll('.goods-quantity').forEach(initGoodsQuantity);
-      }, 1000);
-    });
-  };
-  document.querySelectorAll('.js-modal-show[href="#js-modal-click"').forEach(initModalsButton);
 /**/
+
+
+/* Изменение ширины числового инпута при вводе */
+
+const setNumberFieldControlWidth = (control) => {
+  control.style.width = `${control.value.length + 1}ch`;
+}
+
+const initGoodsQuantity = (goodsQuantity) => {
+  const field = goodsQuantity.querySelector('.number-field__control');
+
+  const onFieldInput = (evt) => setNumberFieldControlWidth(evt.target);
+
+  const onButtonClick = () => {
+    setTimeout(() => { setNumberFieldControlWidth(field) }, 5);
+  };
+
+  field.addEventListener('input', onFieldInput);
+
+  goodsQuantity.querySelectorAll('.number-field__button').forEach((button) => {
+    button.addEventListener('click', onButtonClick);
+  })
+
+  goodsQuantity.querySelectorAll('.radiobutton__control').forEach((radiobutton) => {
+    radiobutton.addEventListener('click', onButtonClick);
+  })
+};
+document.querySelectorAll('.goods-quantity').forEach(initGoodsQuantity);
+document.querySelectorAll('.good').forEach(initGoodsQuantity);
+
+const initModalsButton = (button) => {
+  button.addEventListener('click', () => {
+    setTimeout(() => {
+      const modal = document.querySelector('#js-modal-click');
+      if (!modal) {
+        return;
+      }
+      modal.querySelectorAll('.goods-quantity').forEach(initGoodsQuantity);
+    }, 1000);
+  });
+};
+document.querySelectorAll('.js-modal-show[href="#js-modal-click"').forEach(initModalsButton);
+
+/**/
+
