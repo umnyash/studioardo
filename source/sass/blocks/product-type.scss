@@ -69,6 +69,10 @@
   }
 }
 
+.product-type__heading a {
+  color: inherit;
+}
+
 .product-type__price-wrapper {
   grid-area: price;
   margin: 0;
