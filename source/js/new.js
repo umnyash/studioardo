@@ -1517,3 +1517,16 @@ document.querySelectorAll('.js-modal-show[href="#js-modal-click"').forEach(initM
 
 /**/
 
+const initIframeVideoStarter = (button, iframe) => {
+  button.addEventListener('click', () => {
+    console.log('play')
+    iframe.src += '?autoplay=1&mute=1';
+  })
+};
+
+const iframeVideoStarter = document.querySelector('.n-banner__video-link');
+const iframeVideo = document.querySelector('.n-video__frame');
+
+if (iframeVideoStarter && iframeVideo) {
+  initIframeVideoStarter(iframeVideoStarter, iframeVideo);
+}
