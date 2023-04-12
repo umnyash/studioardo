@@ -1,0 +1,39 @@
+.old-news {
+  .page__sidebar {
+    flex-shrink: 0;
+  }
+
+  .page__content {
+    width: auto;
+    flex-grow: 1;
+  }
+
+  .news__row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 280px);
+    gap: 30px 20px;
+    justify-content: center;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .news__item {
+    width: 280px !important;
+    margin: 0;
+  }
+
+  @media (min-width: 768px) {
+    .page__sidebar {
+      width: 120px;
+    }
+    .news__row {
+      justify-content: end;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .page__sidebar {
+      width: 120px;
+    }
+  }
+}
