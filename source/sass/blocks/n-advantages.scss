@@ -61,6 +61,7 @@
   margin: 0;
   font: inherit;
   background-color: $n-advantages-item-background-color;
+  overflow: hidden;
   cursor: pointer;
 
   @media #{$tablet-desktop} {
