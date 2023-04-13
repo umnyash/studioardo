@@ -7,6 +7,18 @@
   margin: 0 0 24px;
 }
 
+.product-info__heading a {
+  color: inherit;
+}
+
+.product-info__heading a:hover {
+  opacity: 0.8;
+}
+
+.product-info__heading a:active {
+  opacity: 0.6;
+}
+
 .product-info__list {
   margin: 0 0 42px;
 }
