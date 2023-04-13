@@ -1579,3 +1579,13 @@ document.querySelectorAll('.n-advantages').forEach(initAdvantagesSection);
 
 /**/
 
+
+/* Подсчёт количества товаров в списке */
+
+const setGoodsCountProperty = (container) => {
+  count = container.querySelectorAll('.good-list__item').length;
+  container.style.setProperty('--goods-count', count);
+}
+document.querySelectorAll('.goods__inner').forEach(setGoodsCountProperty);
+
+/**/

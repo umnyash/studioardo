@@ -68,12 +68,17 @@
 
     @media #{$tablet-desktop} {
       justify-content: center;
-      grid-template-columns: 1fr auto;
-      column-gap: 20px;
+      // grid-template-columns: 1fr auto;
+      grid-template-columns: 100%;
+      // column-gap: 20px;
+      // grid-template-areas:
+      //   "heading heading"
+      //   "slider  slider"
+      //   "button  button";
       grid-template-areas:
-        "heading heading"
-        "slider  slider"
-        "button  button";
+        "heading"
+        "slider"
+        "button";
     }
 
     @media #{$desktop} {
@@ -86,17 +91,28 @@
     content: "";
     grid-area: slider;
     height: calc(100% - 40px);
+    max-width: calc(100% - 10px * 2);
     border-radius: 10px;
     margin: 21px 10px 0;
     background-image: linear-gradient(360deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.028));
     box-shadow: 0px 3px 50px 2px rgba(0, 0, 0, 0.06);
     pointer-events: none;
 
+    @media (min-width: 420px) {
+      width: calc((var(--goods-count, 1) * 343px) + ((var(--goods-count, 1) - 1) * 9px));
+    }
+
     @media #{$tablet-desktop} {
       height: calc(100% - 44px);
+      max-width: calc(100% - 15px * 2);
       margin: 25px 15px 0;
     }
+
+    @media (min-width: 1280px) {
+      width: calc(((100% - 3 * 9px - 2 * 15px) / 4) * var(--goods-count, 1) + ((var(--goods-count, 1) - 1) * 9px));
+    }
   }
+
 
   .goods__heading {
     grid-area: heading;
