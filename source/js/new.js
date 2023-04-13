@@ -1498,6 +1498,8 @@ const initGoodsQuantity = (goodsQuantity) => {
   goodsQuantity.querySelectorAll('.radiobutton__control').forEach((radiobutton) => {
     radiobutton.addEventListener('click', onButtonClick);
   })
+
+  setNumberFieldControlWidth(field);
 };
 document.querySelectorAll('.goods-quantity').forEach(initGoodsQuantity);
 document.querySelectorAll('.good').forEach(initGoodsQuantity);
