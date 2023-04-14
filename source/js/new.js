@@ -495,6 +495,8 @@ if (smallCustomForms) {
   });
 }
 
+/* Открытие модального окна при заргузке страницы */
+
 document.addEventListener("DOMContentLoaded", () => {
   if (window.location.hash === '#js-modal-message') {
     $('#js-modal-message').fadeIn(500), $("body").append('<div class="overlay" id="js-overlay"></div>');
@@ -502,13 +504,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-const initFileUploadControl = (control) => {
-  control.addEventListener('change', () => {
-    control.classList.toggle('form__file-field-control--shown', control.files[0]);
-  });
-};
+/**/
 
-document.querySelectorAll('.form__file-field-control').forEach(initFileUploadControl);
 
 const customForm2Elements = document.querySelectorAll('.custom-form-2');
 
@@ -1589,3 +1586,56 @@ const setGoodsCountProperty = (container) => {
 document.querySelectorAll('.goods__inner').forEach(setGoodsCountProperty);
 
 /**/
+
+/* Добавление дополнительного поля загрузки */
+
+const addNewFileField = (wrapper) => wrapper.insertAdjacentHTML('beforeend', `
+  <span class="form__file-field-item">
+    <label class="form__file-field">
+      <span class="form__file-field-button">Загрузить файл</span>
+      <input class="form__file-field-control" name="screenshot" type="file" accept="image/png, image/jpg, image/jpeg, image/webp, image/gif">
+    </label>
+  </span>
+`);
+
+const initFileFieldWrapper = (wrapper) => {
+  const form = wrapper.closest('form');
+
+  form.addEventListener('change', (evt) => {
+    const fileField = evt.target;
+    if (!fileField.classList.contains('form__file-field-control')) {
+      return;
+    }
+
+    fileField.classList.toggle('form__file-field-control--shown', fileField.value);
+
+    if (!wrapper.dataset.maxCount) {
+      return;
+    }
+
+    const fileFields = wrapper.querySelectorAll('.form__file-field-control');
+
+    if (fileField.value) {
+      if (fileFields.length < wrapper.dataset.maxCount) {
+        addNewFileField(wrapper);
+      }
+    } else {
+      let emptyFileFields = 0;
+
+      for (let i = 0; i < fileFields.length; i++) {
+        if (!fileFields[i].value) {
+          emptyFileFields++;
+        }
+
+        if (emptyFileFields === 2) {
+          break;
+        }
+      }
+
+      if (emptyFileFields > 1) {
+        fileField.closest('.form__file-field-item').remove();
+      }
+    }
+  });
+};
+document.querySelectorAll('.custom-form-2 .form__file-field-wrapper').forEach(initFileFieldWrapper);

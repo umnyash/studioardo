@@ -2296,7 +2296,7 @@
           <div class="form">
             <div class="form__header">
               <h2 class="form__heading">Обратная связь</h2>
-              <p>Мы рады ответить на любой ваш вопрос, выслушать ваше предложение или замечание.</p>
+              <p>Мы рады ответить на любой ваш вопрос, выслушать предложение или критику</p>
             </div>
             <form class="form__body" action="#" method="post" enctype="multipart/form-data">
               <div class="form__select n-select">
@@ -2340,24 +2340,12 @@
                   </span>
                 </label>
               </div>
-              <div class="form__file-field-wrapper">
-                <p class=form__file-field-description>Вы можете добавить медиафайлы к обращению</p>
-                <span>
+              <div class="form__file-field-wrapper" data-max-count="3">
+                <p class=form__file-field-description>Вы можете добавить файлы к обращению</p>
+                <span class="form__file-field-item">
                   <label class="form__file-field">
                     <span class="form__file-field-button">Загрузить файл</span>
-                    <input class="form__file-field-control" name="screenshot" type="file">
-                  </label>
-                </span>
-                <span>
-                  <label class="form__file-field">
-                    <span class="form__file-field-button">Загрузить файл</span>
-                    <input class="form__file-field-control" name="screenshot" type="file">
-                  </label>
-                </span>
-                <span>
-                  <label class="form__file-field">
-                    <span class="form__file-field-button">Загрузить файл</span>
-                    <input class="form__file-field-control" name="screenshot" type="file">
+                    <input class="form__file-field-control" name="screenshot" type="file" accept="image/png, image/jpg, image/jpeg, image/webp, image/gif">
                   </label>
                 </span>
               </div>
