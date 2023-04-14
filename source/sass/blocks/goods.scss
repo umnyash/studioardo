@@ -60,6 +60,7 @@
     width: auto;
     padding: 0;
     margin: 0;
+    grid-template-columns: 100%;
     grid-template-areas:
         "heading"
         "slider"
@@ -68,13 +69,6 @@
 
     @media #{$tablet-desktop} {
       justify-content: center;
-      // grid-template-columns: 1fr auto;
-      grid-template-columns: 100%;
-      // column-gap: 20px;
-      // grid-template-areas:
-      //   "heading heading"
-      //   "slider  slider"
-      //   "button  button";
       grid-template-areas:
         "heading"
         "slider"
