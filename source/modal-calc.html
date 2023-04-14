@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru" class="page-page">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/libs.min.css" rel="stylesheet">
+    <link href="css/swiper.min.css" rel="stylesheet">
+    <link href="css/swiper-bundle.min.css" rel="stylesheet">
+    <link href="css/styles.min.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
+    <link href="css/custom.min.css" rel="stylesheet">
+    <link href="css/new.css" rel="stylesheet"> <!-- Новые стили -->
+    <title>Рассчитать стоимость</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="address=no"/>
+    <style>
+      body {
+        min-height: 100vh;
+        grid-template-rows: 1fr auto ;
+      }
+    </style>
+  </head>
+  <body class="page-body" style="padding-top:20px;padding-bottom:100px;">
+    <main>
+      <a class="service__btn js-modal-show" href="#js-modal-calc"> <span>Рассчитать стоимость</span></a>
+    </main>
+    <footer styel="height:300px;backgound-color:#fafafa;">
+      footer
+    </footer>
+    <div class="popup-wrapper" id="js-modal-calc">
+      <div class="popup popup--simple-2">
+        <div class="popup__inner ">
+          <button class="popup__close" type="button">
+            <span class="visually-hidden">Закрыть.</span>
+          </button>
+          <div class="popup__content custom-form-2">
+            <div class="form">
+              <div class="form__header">
+                <h2 class="form__heading">Рассчитать стоимость</h2>
+              </div>
+              <form class="form__body" action="#!" method="post" enctype="multipart/form-data">
+                <div class="form__textfield-wrapper">
+                  <label class="form__textfield-label">
+                    <span class="form__textfield">
+                      <input class="form__textfield-control" name="firstname" type="text" placeholder="Имя">
+                      <span class="form__textfield-label-text">Ваше имя</span>
+                    </span>
+                  </label>
+                </div>
+                <div class="form__textfield-wrapper">
+                  <label class="form__textfield-label">
+                    <span class="form__textfield">
+                      <input class="form__textfield-control" name="tel" type="tel" placeholder="+7 (912) 345-67-89">
+                      <span class="form__textfield-label-text">Телефон</span>
+                    </span>
+                  </label>
+                </div>
+                <div class="form__textfield-wrapper">
+                  <label class="form__textfield-label">
+                    <span class="form__textfield">
+                      <input class="form__textfield-control" name="address" type="text" placeholder="Адрес">
+                      <span class="form__textfield-label-text">Адрес доставки</span>
+                    </span>
+                  </label>
+                </div>
+                <div class="form__textfield-wrapper">
+                  <label class="form__textfield-label">
+                    <span class="form__textfield">
+                      <input class="form__textfield-control" name="volume" type="text" placeholder="100">
+                      <span class="form__textfield-label-text">Объем м2</span>
+                    </span>
+                  </label>
+                </div>
+                <div class="form__submit-wrapper">
+                  <button class="form__button form__button--wide button button--secondary button--alter-2" type="submit">Получить лучшее предложение</button>
+                </div>
+                <div class="form__consent-wrapper">
+                  <label class="form__checkbox-label">
+                    <input class="form__checkbox-control form__checkbox-control--secondary visually-hidden" name="consent" type="checkbox" checked>
+                    <span class="form__checkbox-label-text">
+                      <span>
+                        Согласие с <a class="form__link" href="!#" target="_blank">политикой обработки данных</a>
+                      </span>
+                    </span>
+                  </label>
+                </div>
+                <div class="form__checkbox-wrapper">
+                  <label class="form__checkbox-label">
+                    <input class="form__checkbox-control form__checkbox-control--secondary visually-hidden" name="help" type="checkbox" checked>
+                    <span class="form__checkbox-label-text">
+                      <span>
+                        Нужна помощь мастера замерщика
+                      </span>
+                    </span>
+                  </label>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/swiper.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/new.js"></script> <!-- Новый скрипт -->
+    <script src="js/jquery.3.4.1.min.js"></script>
+    <script src="js/jquery.cookie.min.js"></script>
+    <script src="js/libs.min.js"></script>
+    <script src="js/min/lazyload.min.js"></script>
+    <script src="js/scripts.min.js"></script>
+    <script src="js/min/custom.min.js"></script>
+  </body>
+</html>

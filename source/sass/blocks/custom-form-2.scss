@@ -450,6 +450,13 @@
     }
   }
 
+  .form__checkbox-wrapper {
+    margin: 16px 0;
+    font-family: $additional-font-family;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
   .form__consent-wrapper--mt20 {
     @media #{$tablet-desktop} {
       margin-top: 20px;
@@ -1242,4 +1249,8 @@
   .form__file-field-description {
     width: 100%;
   }
+}
+
+.custom-form-2 .button {
+  font-family: $additional-font-family;
 }
