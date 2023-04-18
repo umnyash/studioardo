@@ -467,7 +467,7 @@
     display: grid;
     grid-auto-flow: column;
     column-gap: 10px;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
 
     &::before {
@@ -478,10 +478,6 @@
       border-radius: 3px;
       margin: 0 0 3px;
       cursor: pointer;
-    }
-
-    @media #{$tablet-desktop} {
-      justify-content: start;
     }
   }
 
