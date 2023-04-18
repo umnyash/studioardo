@@ -1620,24 +1620,19 @@ const initFileFieldWrapper = (wrapper) => {
     }
 
     const fileFields = wrapper.querySelectorAll('.form__file-field-control');
+    let emptyFileFields = 0;
+
+    for (let i = 0; i < fileFields.length; i++) {
+      if (!fileFields[i].value) {
+        emptyFileFields++;
+      }
+    }
 
     if (fileField.value) {
-      if (fileFields.length < wrapper.dataset.maxCount) {
+      if (fileFields.length < wrapper.dataset.maxCount && emptyFileFields === 0) {
         addNewFileField(wrapper);
       }
     } else {
-      let emptyFileFields = 0;
-
-      for (let i = 0; i < fileFields.length; i++) {
-        if (!fileFields[i].value) {
-          emptyFileFields++;
-        }
-
-        if (emptyFileFields === 2) {
-          break;
-        }
-      }
-
       if (emptyFileFields > 1) {
         fileField.closest('.form__file-field-item').remove();
       }
