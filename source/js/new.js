@@ -1482,11 +1482,17 @@ const initGoodsQuantity = (goodsQuantity) => {
 
   const onFieldInput = (evt) => setNumberFieldControlWidth(evt.target);
 
+  const onFieldChange = (evt) => {
+    setTimeout(() => setNumberFieldControlWidth(evt.target), 5);
+  };
+
   const onButtonClick = () => {
     setTimeout(() => { setNumberFieldControlWidth(field) }, 5);
   };
 
   field.addEventListener('input', onFieldInput);
+
+  field.addEventListener('change', onFieldChange);
 
   goodsQuantity.querySelectorAll('.number-field__button').forEach((button) => {
     button.addEventListener('click', onButtonClick);
