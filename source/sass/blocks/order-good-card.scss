@@ -1,6 +1,5 @@
 .order-good-card {
   display: grid;
-  // padding: 10px 0 9px;
   grid-template-columns: 60px auto 1fr;
   grid-template-areas:
     "img heading         heading         remove-button"
@@ -12,8 +11,6 @@
   color: $basic-text-color;
 
   @media #{$cart-tablet} {
-    // padding-top: 14px;
-    // padding-bottom: 12px;
     grid-template-rows: auto auto 1fr;
     grid-template-columns: auto auto 1fr auto minmax(120px, auto);
     grid-template-areas:
@@ -37,6 +34,10 @@
     font-size: 14px;
     line-height: 1.3;
   }
+}
+
+.order-good-card__heading a {
+  color: inherit;
 }
 
 .order-good-card__img-wrapper {
