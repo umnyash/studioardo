@@ -12,7 +12,7 @@
 
   @media #{$cart-tablet} {
     grid-template-rows: auto auto 1fr;
-    grid-template-columns: auto auto 1fr auto minmax(120px, auto);
+    grid-template-columns: auto auto 1fr minmax(140px, auto) minmax(120px, auto);
     grid-template-areas:
     "remove-button img heading         goods-quantity total-price"
     "remove-button img characteristics goods-quantity total-price"
@@ -27,6 +27,8 @@
   font-size: 12px;
   line-height: 1.2;
   font-weight: 500;
+  overflow-wrap: anywhere;
+  max-width: 393px;
 
   @media #{$cart-tablet} {
     margin-top: 2px;

@@ -3,24 +3,22 @@
 }
 
 .n-cart__inner {
-  padding: 16px 0 0;
+  padding: 20px 0;
 
-  @media #{$cart-desktop} {
-    padding-bottom: 200px;
+  @media #{$laptop-desktop} {
+    padding-bottom: 120px;
   }
 }
 
 .n-cart__form-wrapper {
-  @media #{$tablet-desktop} {
-    padding: 0 15px;
+  @media #{$laptop-desktop} {
+    padding: 0 40px;
   }
 
   @media #{$cart-desktop} {
-    width: 1420px;
-    padding: 0 40px;
+    width: 1324px;
+    padding-right: 0;
+    padding-left: 0;
     margin: 0 auto;
   }
 }
-
-
-
