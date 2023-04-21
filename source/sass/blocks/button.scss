@@ -96,6 +96,21 @@
   }
 }
 
+.button--secondary-3 {
+  &:hover {
+    border-color: $special-color;
+    color: $text-color-secondary;
+    background-color: $special-color;
+    opacity: 1;
+  }
+
+  &:active {
+    border-color: $special-color-dark;
+    background-color: $special-color-dark;
+    opacity: 1;
+  }
+}
+
 .button--tertiary {
   border-color: $tertiary-button-color;
   color: $text-color-secondary;

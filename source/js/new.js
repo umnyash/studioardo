@@ -1,3 +1,12 @@
+const debounce = (cb, timeout = 500) => {
+  let timerId = null;
+
+  return (...rest) => {
+    clearTimeout(timerId);
+    timerId = setTimeout(() => cb.apply(this, rest), timeout);
+  };
+};
+
 const popups = document.querySelectorAll('.popup');
 
 const changeEvent = new Event('change', { bubbles: true });
@@ -1549,6 +1558,7 @@ function onYouTubeIframeAPIReady() {
 
 const initAdvantagesSection = (section) => {
   const cards = section.querySelectorAll('.n-advantages__name');
+  const popups = section.querySelectorAll('.n-advantages__info');
 
   const onDocumentClick = (evt) => {
     const card = evt.target.closest('.n-advantages__name');
@@ -1576,6 +1586,19 @@ const initAdvantagesSection = (section) => {
       document.addEventListener('click', onDocumentClick);
     }
   });
+
+  const roundPopupOffsetValue = () => {
+    popups.forEach((popup) => {
+      popup.style.transform = '';
+      const transformFullValue = getComputedStyle(popup).transform.split(',');
+      const translateXValue = parseFloat(transformFullValue[transformFullValue.length - 2]);
+      const translateYValue = parseFloat(transformFullValue[transformFullValue.length - 1]);
+      popup.style.transform = `translate(${Math.round(translateXValue)}px, ${Math.round(translateYValue)}px)`;
+    })
+  };
+  window.addEventListener('resize', debounce(roundPopupOffsetValue));
+
+  roundPopupOffsetValue();
 }
 
 document.querySelectorAll('.n-advantages').forEach(initAdvantagesSection);

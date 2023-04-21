@@ -93,7 +93,7 @@
   z-index: 2;
   top: -10px;
   left: 50%;
-  display: none;
+  display: grid;
   width: 100%;
   max-width: 395px;
   padding: 30px;
@@ -101,6 +101,7 @@
   row-gap: 20px;
   font-family: $basic-font-family;
   background-color: $background-color;
+  visibility: hidden;
   box-shadow: 0px 3px 25px rgba(0, 0, 0, 0.06);
   transform: translate(-50%, -100%);
   will-change: transform;
@@ -128,7 +129,6 @@
   }
 }
 
-
 .n-advantages__img-wrapper {
   display: block;
   width: 100%;
@@ -152,13 +152,13 @@
 
 .n-advantages__name:hover + .n-advantages__info {
   @media (pointer: fine) {
-    display: grid;
+    visibility: visible;
   }
 }
 
 .n-advantages__name--hover + .n-advantages__info {
   @media (pointer: coarse) {
-    display: grid;
+    visibility: visible;
   }
 }
 
