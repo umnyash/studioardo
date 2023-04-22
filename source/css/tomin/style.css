@@ -13330,7 +13330,7 @@ label.error {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    width: 135px;
+    width: 100%;
     height: 30px;
     background: #c5072b;
     font-size: 12px;
