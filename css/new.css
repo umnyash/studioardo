@@ -1789,6 +1789,18 @@ div.swiper-button-next::after {
   opacity: 0.6;
 }
 
+.button--secondary-3:hover {
+  border-color: #42bd98;
+  color: #ffffff;
+  background-color: #42bd98;
+  opacity: 1;
+}
+.button--secondary-3:active {
+  border-color: #34ad89;
+  background-color: #34ad89;
+  opacity: 1;
+}
+
 .button--tertiary {
   border-color: #808080;
   color: #ffffff;
@@ -12562,7 +12574,7 @@ n-collection__link-2 {
   z-index: 2;
   top: -10px;
   left: 50%;
-  display: none;
+  display: grid;
   width: 100%;
   max-width: 395px;
   padding: 30px;
@@ -12570,6 +12582,7 @@ n-collection__link-2 {
   row-gap: 20px;
   font-family: "Roboto", "Arial", sans-serif;
   background-color: #ffffff;
+  visibility: hidden;
   box-shadow: 0px 3px 25px rgba(0, 0, 0, 0.06);
   transform: translate(-50%, -100%);
   will-change: transform;
@@ -12621,13 +12634,13 @@ n-collection__link-2 {
 
 @media (pointer: fine) {
   .n-advantages__name:hover + .n-advantages__info {
-    display: grid;
+    visibility: visible;
   }
 }
 
 @media (pointer: coarse) {
   .n-advantages__name--hover + .n-advantages__info {
-    display: grid;
+    visibility: visible;
   }
 }
 
