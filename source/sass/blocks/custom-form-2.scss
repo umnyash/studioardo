@@ -884,7 +884,7 @@
   .form__footer-submit-button-extra {
     display: none;
 
-    @media #{$cart-desktop} {
+    @media #{$laptop-desktop} {
       display: inline;
     }
   }
