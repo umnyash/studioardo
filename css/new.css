@@ -5774,7 +5774,7 @@ div.swiper-button-next::after {
 .custom-form-2--order .form__footer-submit-button-extra {
   display: none;
 }
-@media (min-width: 1440px) {
+@media (min-width: 1280px) {
   .custom-form-2--order .form__footer-submit-button-extra {
     display: inline;
   }
