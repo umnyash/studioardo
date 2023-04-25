@@ -271,7 +271,8 @@
   }
 
 
-  .form__textarea--error .form__textarea-control {
+  .form__textarea--error .form__textarea-control,
+  .form__textarea-control.error {
     border-color: $custom-form-2-textfield-border-error-color;
   }
 
