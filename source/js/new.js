@@ -1258,12 +1258,10 @@ document.querySelectorAll('.n-select').forEach(initSelect);
 
 const materialsSlider = new Swiper('.materials-slider', {
   slidesPerView: 1,
-  cssMode: true,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
-  speed: 0,
   watchSlidesProgress: true
 });
 
@@ -1281,21 +1279,21 @@ const initCalculationMaterialSection = (section) => {
       currentOptionIndex = materialSelect.querySelector(`[value="${materialSelect.value}"]`).dataset.index;
     }
 
-    materialsSlider.slideTo(currentOptionIndex, 0);
+    materialsSlider.slideTo(currentOptionIndex, materialsSlider.params.speed, false);
   });
 
-  materialsSlider.on('realIndexChange', () => {
+  materialsSlider.on('transitionEnd', () => {
     const value = materialSelect.querySelector(`option[data-index="${materialsSlider.realIndex}"]`).value;
+    console.log('sdff')
 
-    if (materialSelect.value === value) {
-      return;
-    }
+       if (materialSelect.value === value) {
+        return;
+      }
 
-    materialSelect.value = value;
-    materialSelect.dispatchEvent(changeEvent);
+      materialSelect.value = value;
+      materialSelect.dispatchEvent(changeEvent);
   });
 };
-
 document.querySelectorAll('.calculation-material').forEach(initCalculationMaterialSection);
 
 /**/
