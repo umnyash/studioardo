@@ -4,15 +4,15 @@
   @media #{$tablet-desktop} {
     display: grid;
     padding-top: 0;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 400px 1fr;
   }
 
   @media #{$laptop-desktop} {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 560px 1fr;
   }
 
-  @media #{$desktop} {
-    grid-template-columns: 800px 1fr;
+  @media #{$wide-desktop} {
+    grid-template-columns: 740px 1fr;
   }
 }
 
@@ -23,7 +23,7 @@
 .calculation-material__heading {
   max-width: 536px;
   padding: 0 17px;
-  margin: 0 0 10px;
+  margin: 0 auto 10px;
   font-family: $accent-font-family;
   font-size: 24px;
   line-height: 1.2;
@@ -60,18 +60,22 @@
   grid-area: 1 / 1 / 2 / 2;
   display: flex;
   width: 100%;
-  max-width: 540px;
+  max-width: 580px;
   padding: 30px 5px 20px;
   margin: auto;
 
   @media #{$tablet-desktop} {
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 14px;
+    padding-left: 14px;
   }
 
-  @media #{$desktop} {
-    padding-top: 74px;
-    padding-bottom: 74px;
+  @media #{$laptop-desktop} {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  @media #{$wide-desktop} {
+    padding-top: 20px;
   }
 
   .calculation-material__calculation-form {
@@ -79,7 +83,7 @@
   }
 
   .calculation-form__heading {
-    padding: 40px 12px 22px;
+    padding: 32px 12px 12px;
 
     @media #{$laptop-desktop} {
       padding-right: 90px;
@@ -88,13 +92,54 @@
   }
 
   .custom-form-2--calculation .form__body {
-    padding: 0 10px 1px;
+    padding-right: 10px;
+    padding-left: 10px;
   }
 
   .custom-form-2--calculation .form__body {
     @media #{$laptop-desktop} {
-      padding: 16px 68px 20px;
+      padding: 25px 60px 20px;
     }
+  }
+
+  .custom-form-2 .form__textfield-wrapper {
+    margin-bottom: 14px;
+  }
+  .custom-form-2--calculation .form__select {
+    margin-bottom: 10px;
+  }
+
+  .custom-form-2 .form__section-heading:not(.form__section-heading--button) {
+    grid-template-columns: auto;
+    margin-bottom: 10px;
+  }
+
+  .custom-form-2--calculation .form__result {
+    padding-bottom: 6px;
+    margin-top: 6px;
+    margin-bottom: 20px;
+  }
+
+  .custom-form-2--calculation .form__result-price-wrapper {
+    margin-top: 0;
+    margin-bottom: 6px;
+  }
+
+  .custom-form-2--calculation .form__result-text {
+    margin-bottom: 6px;
+  }
+
+  .custom-form-2--calculation .form__consent-wrapper {
+    text-align: left;
+  }
+
+  .custom-form-2--calculation .form__checkbox-label-text {
+    justify-content: start;
+  }
+
+  .custom-form-2--calculation .form__consent-wrapper {
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
 }
 
@@ -105,24 +150,19 @@
   @media #{$tablet-desktop} {
     display: grid;
     grid-template-columns: 100%;
-    align-content: center;
   }
 
   @media #{$laptop-desktop} {
-    padding: 40px 60px;
+    padding: 30px 0;
   }
 
-  // @media #{$tablet-desktop} {
-  //   padding: 40px 60px;
-  // }
+  @media #{$wide-desktop} {
+    padding: 48px 0 30px;
+  }
+}
 
-  // @media #{$laptop-desktop} {
-  //   display: grid;
-  //   align-content: center;
-  // }
-
-  @media #{$desktop} {
-    // padding: 118px 100px 74px;
-    padding: 90px 100px 70px;
+.popup--big .calculation-material {
+  @media #{$wide-desktop} {
+    min-height: 780px;
   }
 }
