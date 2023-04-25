@@ -194,6 +194,17 @@ if (popups) {
   popups.forEach((popup) => {
     const popupCloseButton = popup.querySelector('.popup__close')
     popupCloseButton.addEventListener('click', closePopup.bind(null, popup));
+
+    popup.addEventListener('click', (evt) => {
+      const popupContent = evt.target.closest('.popup__content');
+
+      if (popupContent) {
+        return;
+      }
+
+      closePopup(popup);
+    });
+
   });
 }
 
@@ -1284,7 +1295,6 @@ const initCalculationMaterialSection = (section) => {
 
   materialsSlider.on('transitionEnd', () => {
     const value = materialSelect.querySelector(`option[data-index="${materialsSlider.realIndex}"]`).value;
-    console.log('sdff')
 
        if (materialSelect.value === value) {
         return;
