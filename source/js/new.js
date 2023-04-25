@@ -1618,11 +1618,11 @@ document.querySelectorAll('.goods__inner').forEach(setGoodsCountProperty);
 
 /* Добавление дополнительного поля загрузки */
 
-const addNewFileField = (wrapper) => wrapper.insertAdjacentHTML('beforeend', `
+const addNewFileField = (wrapper, index) => wrapper.insertAdjacentHTML('beforeend', `
   <span class="form__file-field-item">
     <label class="form__file-field">
       <span class="form__file-field-button">Загрузить файл</span>
-      <input class="form__file-field-control" name="screenshot" type="file" accept="image/png, image/jpg, image/jpeg, image/webp, image/gif">
+      <input class="form__file-field-control" name="files_${index}" type="file" accept="image/png, image/jpg, image/jpeg, image/webp, image/gif">
     </label>
   </span>
 `);
@@ -1643,9 +1643,12 @@ const initFileFieldWrapper = (wrapper) => {
     }
 
     const fileFields = wrapper.querySelectorAll('.form__file-field-control');
+
     let emptyFileFields = 0;
 
     for (let i = 0; i < fileFields.length; i++) {
+      fileFields[i].name = `files_${i + 1}`;
+
       if (!fileFields[i].value) {
         emptyFileFields++;
       }
@@ -1653,7 +1656,7 @@ const initFileFieldWrapper = (wrapper) => {
 
     if (fileField.value) {
       if (fileFields.length < wrapper.dataset.maxCount && emptyFileFields === 0) {
-        addNewFileField(wrapper);
+        addNewFileField(wrapper, fileFields.length + 1);
       }
     } else {
       if (emptyFileFields > 1) {
