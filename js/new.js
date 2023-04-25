@@ -194,6 +194,17 @@ if (popups) {
   popups.forEach((popup) => {
     const popupCloseButton = popup.querySelector('.popup__close')
     popupCloseButton.addEventListener('click', closePopup.bind(null, popup));
+
+    popup.addEventListener('click', (evt) => {
+      const popupContent = evt.target.closest('.popup__content');
+
+      if (popupContent) {
+        return;
+      }
+
+      closePopup(popup);
+    });
+
   });
 }
 
@@ -1258,12 +1269,10 @@ document.querySelectorAll('.n-select').forEach(initSelect);
 
 const materialsSlider = new Swiper('.materials-slider', {
   slidesPerView: 1,
-  cssMode: true,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
-  speed: 0,
   watchSlidesProgress: true
 });
 
@@ -1281,21 +1290,20 @@ const initCalculationMaterialSection = (section) => {
       currentOptionIndex = materialSelect.querySelector(`[value="${materialSelect.value}"]`).dataset.index;
     }
 
-    materialsSlider.slideTo(currentOptionIndex, 0);
+    materialsSlider.slideTo(currentOptionIndex, materialsSlider.params.speed, false);
   });
 
-  materialsSlider.on('realIndexChange', () => {
+  materialsSlider.on('transitionEnd', () => {
     const value = materialSelect.querySelector(`option[data-index="${materialsSlider.realIndex}"]`).value;
 
-    if (materialSelect.value === value) {
-      return;
-    }
+       if (materialSelect.value === value) {
+        return;
+      }
 
-    materialSelect.value = value;
-    materialSelect.dispatchEvent(changeEvent);
+      materialSelect.value = value;
+      materialSelect.dispatchEvent(changeEvent);
   });
 };
-
 document.querySelectorAll('.calculation-material').forEach(initCalculationMaterialSection);
 
 /**/
@@ -1618,11 +1626,11 @@ document.querySelectorAll('.goods__inner').forEach(setGoodsCountProperty);
 
 /* Добавление дополнительного поля загрузки */
 
-const addNewFileField = (wrapper) => wrapper.insertAdjacentHTML('beforeend', `
+const addNewFileField = (wrapper, index) => wrapper.insertAdjacentHTML('beforeend', `
   <span class="form__file-field-item">
     <label class="form__file-field">
       <span class="form__file-field-button">Загрузить файл</span>
-      <input class="form__file-field-control" name="screenshot" type="file" accept="image/png, image/jpg, image/jpeg, image/webp, image/gif">
+      <input class="form__file-field-control" name="files_${index}" type="file" accept="image/png, image/jpg, image/jpeg, image/webp, image/gif">
     </label>
   </span>
 `);
@@ -1643,9 +1651,12 @@ const initFileFieldWrapper = (wrapper) => {
     }
 
     const fileFields = wrapper.querySelectorAll('.form__file-field-control');
+
     let emptyFileFields = 0;
 
     for (let i = 0; i < fileFields.length; i++) {
+      fileFields[i].name = `files_${i + 1}`;
+
       if (!fileFields[i].value) {
         emptyFileFields++;
       }
@@ -1653,7 +1664,7 @@ const initFileFieldWrapper = (wrapper) => {
 
     if (fileField.value) {
       if (fileFields.length < wrapper.dataset.maxCount && emptyFileFields === 0) {
-        addNewFileField(wrapper);
+        addNewFileField(wrapper, fileFields.length + 1);
       }
     } else {
       if (emptyFileFields > 1) {
