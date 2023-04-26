@@ -1388,6 +1388,22 @@ if (goodListNodes.length > 0) {
   window.addEventListener('resize', setGoodListCardHeadingsHeight);
 };
 
+goodListNodes.forEach((list) => {
+  list.addEventListener('touchstart', (evt) => {
+    const cartAddButton = evt.target.closest('.good__add-cart');
+
+    if (!cartAddButton) {
+      return;
+    }
+
+    cartAddButton.classList.add('good__add-cart--expanded');
+
+    setTimeout(() => {
+      cartAddButton.classList.remove('good__add-cart--expanded');
+    }, 500);
+  })
+})
+
 const collectionListNodes = document.querySelectorAll('.n-collection-list');
 
 if (collectionListNodes.length > 0) {
@@ -1431,6 +1447,22 @@ if (collectionListNodes.length > 0) {
   window.addEventListener('load', setCollectionListCardHeadingsHeight, {once: true});
   window.addEventListener('resize', setCollectionListCardHeadingsHeight);
 };
+
+collectionListNodes.forEach((list) => {
+  list.addEventListener('touchstart', (evt) => {
+    const cartAddButton = evt.target.closest('.n-collection__button');
+
+    if (!cartAddButton) {
+      return;
+    }
+
+    cartAddButton.classList.add('n-collection__button--expanded');
+
+    setTimeout(() => {
+      cartAddButton.classList.remove('n-collection__button--expanded');
+    }, 500);
+  })
+});
 
 /**/
 

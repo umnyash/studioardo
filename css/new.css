@@ -7715,6 +7715,18 @@ div.swiper-button-next::after {
   background-color: #34ad89;
 }
 
+.good__add-cart--expanded {
+  position: relative;
+}
+.good__add-cart--expanded::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 400%;
+}
+
 .good__quick-order-button {
   grid-area: quick-order;
   justify-self: center;
@@ -8771,6 +8783,18 @@ n-collection__link-2 {
   display: grid;
   min-width: 96px;
   min-height: 40px;
+}
+
+.n-collection__button--expanded {
+  position: relative;
+}
+.n-collection__button--expanded::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 400%;
 }
 
 .n-collection__colors {
