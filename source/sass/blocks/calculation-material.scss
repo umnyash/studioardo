@@ -56,6 +56,11 @@
   object-position: center bottom;
 }
 
+.calculation-material__calculation-img-wrapper--cover .calculation-material__calculation-img {
+  object-fit: cover;
+  object-position: center;
+}
+
 .calculation-material__calculation-form-wrapper {
   grid-area: 1 / 1 / 2 / 2;
   display: flex;

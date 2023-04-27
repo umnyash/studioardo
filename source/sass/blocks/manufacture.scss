@@ -1,4 +1,6 @@
 .manufacture {
+  font-family: $additional-font-family;
+
   @media #{$desktop} {
     display: grid;
     grid-template-columns: 1125px 275px;
@@ -8,7 +10,7 @@
 
 
 .manufacture__content {
-  padding: 41px 14px 38px;
+  padding: 40px 14px 40px;
   background-color: $background-secondary-color;
 
   @media #{$desktop} {
@@ -18,14 +20,14 @@
 }
 
 .manufacture__heading {
-  margin: 0 0 41px;
+  margin: 0 0 40px;
   text-align: center;
 }
 
 .manufacture__n-video {
   width: 100%;
   max-width: 665px;
-  margin: 0 auto 38px;
+  margin: 0 auto 40px;
 }
 
 .manufacture__text {

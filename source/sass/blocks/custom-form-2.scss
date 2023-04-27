@@ -1136,11 +1136,7 @@
   }
 
   .form__select {
-    margin: 0 0 16px;
-
-    @media #{$tablet-desktop} {
-      margin-bottom: 20px;
-    }
+    margin: 0 0 10px;
   }
 
   .form__section {
@@ -1152,7 +1148,7 @@
   }
 
   .form__section-heading {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     text-align: center;
     font-family: $additional-font-family;
     font-size: 16px !important;
@@ -1161,10 +1157,14 @@
     @media #{$widemobile-desktop} {
       grid-column: 1 / -1;
     }
+  }
 
-    @media #{$tablet-desktop} {
-      margin-bottom: 21px;
-    }
+  .form__section-heading:not(.form__section-heading--button) {
+    grid-template-columns: auto;
+  }
+
+  .form__textfield-wrapper {
+    margin-bottom: 15px;;
   }
 
   .form__result {
@@ -1203,10 +1203,6 @@
 
   .form__consent-wrapper {
     margin-top: 20px;
-
-    @media #{$tablet-desktop} {
-      margin-top: 30px;
-    }
   }
 
   .form__checkbox-label-text {

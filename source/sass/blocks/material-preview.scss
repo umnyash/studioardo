@@ -1,24 +1,32 @@
 .material-preview {
   display: grid;
-  padding: 9px 15px;
+  // padding: 9px 15px;
+  padding: 8px 15px;
   grid-template-columns: 1fr auto;
-  gap: 2px 20px;
+  gap: 3px 20px;
   align-items: center;
 }
 
 .material-preview__heading {
   margin: 0;
   font-size: 14px;
-  line-height: 20px;
-  font-weight: 500;
+  line-height: 1.2;
+  font-weight: 400;
   letter-spacing: 0;
   text-transform: none;
 }
 
 .material-preview__price {
   margin: 0;
+  font-size: 12px;
+  line-height: 1.2;
+  color: $weak-text-color;
+}
+
+.material-preview__text {
+  margin: 0;
   font-size: 13px;
-  line-height: 20px;
+  line-height: 1.2;
   color: $weak-text-color;
 }
 
@@ -26,7 +34,7 @@
   grid-area: 1 / 2 / 3 / 3;
   width: 100px;
   height: 40px;
-  border-radius: 6px;
+  border-radius: 4px;
   overflow: hidden;
 }
 
@@ -44,5 +52,11 @@
 
   .material-preview__price {
     color: $basic-text-color;
+  }
+}
+
+.material-preview--short {
+  .material-preview__img-wrapper {
+    grid-area: 1 / 2 / 2 / 3;
   }
 }

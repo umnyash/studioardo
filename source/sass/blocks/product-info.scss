@@ -1,10 +1,16 @@
 .product-info {
+  font-family: $additional-font-family;
   font-size: 16px;
   line-height: 1.3;
+
+  @media #{$laptop-desktop} {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .product-info__heading {
-  margin: 0 0 24px;
+  margin: 0 0 20px;
 }
 
 .product-info__heading a {
@@ -20,7 +26,7 @@
 }
 
 .product-info__list {
-  margin: 0 0 42px;
+  margin: 0 0 40px;
 }
 
 .product-info__price-wrapper {
@@ -38,8 +44,8 @@
     justify-content: start;
   }
 
-  @media #{$desktop} {
-    margin: 62px 0 0;
+  @media #{$laptop-desktop} {
+    margin: auto 0 0;
   }
 }
 
@@ -49,6 +55,10 @@
 
   @media #{$tablet-desktop} {
     min-width: 200px;
+  }
+
+  @media #{$desktop} {
+    min-width: 224px;
   }
 }
 

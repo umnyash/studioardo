@@ -29,14 +29,13 @@
   @media #{$laptop-desktop} {
     display: grid;
     grid-template-columns: 1fr 702px;
-    column-gap: 20px;
+    column-gap: 75px;
     align-items: start;
   }
 
   @media #{$desktop} {
     margin-bottom: 30px;
     grid-template-columns: 1fr 813px;
-    column-gap: 100px;
   }
 }
 
@@ -45,6 +44,10 @@
 
   @media #{$tablet-desktop} {
     padding: 15px 20px 22px 20px;
+  }
+
+  @media #{$laptop-desktop} {
+    height: 100%;
   }
 }
 

@@ -1273,7 +1273,22 @@ const materialsSlider = new Swiper('.materials-slider', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
-  watchSlidesProgress: true
+  spaceBetween: 14,
+  watchSlidesProgress: true,
+  breakpoints: {
+    768: {
+      spaceBetween: 30,
+    },
+    960: {
+      spaceBetween: 50,
+    },
+    1280: {
+      spaceBetween: 60,
+    },
+    1510: {
+      spaceBetween: 90,
+    },
+  },
 });
 
 /* */

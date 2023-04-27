@@ -5,7 +5,11 @@
 }
 
 .characteristics-2__item {
-  margin: 0 0 11px;
+  margin: 0 0 4px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .characteristics-2__key {

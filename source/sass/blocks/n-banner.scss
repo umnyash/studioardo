@@ -1,6 +1,6 @@
 .n-banner {
   display: grid;
-  font-family: $basic-font-family;
+  font-family: $additional-font-family;
   font-size: 14px;
   line-height: 1.6;
   color: $text-color-secondary;
@@ -58,7 +58,7 @@
 
   @media #{$tablet-desktop} {
     padding-top: 40px;
-    padding-bottom: 60px;
+    padding-bottom: 40px;
   }
 
   @media #{$desktop} {
@@ -81,14 +81,13 @@
 }
 
 .n-banner__heading {
-  margin: 0 0 19px;
+  margin: 0 0 20px;
   font-family: $accent-font-family;
   font-size: 26px;
   line-height: 29px;
   font-weight: 700;
 
   @media #{$tablet-desktop} {
-    margin-bottom: 30px;
     font-size: 36px;
     line-height: 1.2;
     letter-spacing: -0.02em;
@@ -112,7 +111,7 @@
   column-gap: 4px;
 
   @media #{$tablet-desktop} {
-    margin-top: 59px;
+    margin-top: 40px;
     column-gap: 10px;
   }
 }
@@ -121,7 +120,7 @@
   order: -1;
   display: inline-grid;
   grid-auto-flow: column;
-  margin: 41px 0;
+  margin: 0 0 40px;
   column-gap: 10px;
   justify-content: start;
   align-items: center;
@@ -142,8 +141,6 @@
   }
 
   @media #{$tablet-desktop} {
-    margin-top: 20px;
-    margin-bottom: 20px;
     column-gap: 20px;
   }
 

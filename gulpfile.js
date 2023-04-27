@@ -59,7 +59,7 @@ const minStyles = () => {
 // Scripts
 const scripts = () => {
   return src(['./source/js/new.js', './source/js/demo.js'], { sourcemaps: isDev })
-    // .pipe(terser())
+    .pipe(terser())
     .pipe(dest('./build/js', { sourcemaps: isDev }))
     .pipe(sync.stream())
 };

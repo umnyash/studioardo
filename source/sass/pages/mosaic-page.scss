@@ -1,0 +1,100 @@
+.mosaic-page__n-banner {
+  margin: 4px 0 10px;
+
+  @media #{$laptop-desktop} {
+    margin-top: 7px;
+    margin-bottom: 40px;
+  }
+}
+
+.mosaic-page__reference {
+  margin: 0 0 10px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 20px;
+  }
+}
+
+.mosaic-page__advantages-and-widget {
+  margin: 0 0 40px;
+}
+
+.mosaic-page__n-products {
+  margin: 0 0 10px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 60px;
+  }
+
+  @media #{$desktop} {
+    margin-bottom: 100px;
+  }
+}
+
+.mosaic-page__ratings {
+  margin: 0 0 40px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 60px;
+  }
+}
+
+.mosaic-page__calculation {
+  margin: 0 0 30px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 60px;
+  }
+
+  @media #{$desktop} {
+    margin-bottom: 100px;
+  }
+}
+
+.mosaic-page__delivery-info {
+  margin: 0 0 40px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 60px;
+  }
+
+  @media #{$desktop} {
+    margin-bottom: 100px;
+  }
+}
+
+.mosaic-page__manufacture {
+  margin: 0 0 40px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 60px;
+  }
+
+  @media #{$desktop} {
+    margin-bottom: 100px;
+  }
+}
+
+.mosaic-page__clients {
+  margin: 0 0 40px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 60px;
+  }
+
+  @media #{$desktop} {
+    margin-bottom: 100px;
+  }
+}
+
+.mosaic-page__team {
+  margin: 0 0 40px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 60px;
+  }
+
+  @media #{$desktop} {
+    margin-bottom: 100px;
+  }
+}

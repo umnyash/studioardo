@@ -16,6 +16,12 @@
   border-radius: 50%;
   place-items: center;
   background: $background-color;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+
+  @media #{$tablet-desktop} {
+    width: 50px;
+    height: 50px;
+  }
 
   &::before {
     content: "";
@@ -25,6 +31,11 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+
+    @media #{$tablet-desktop} {
+      width: 10px;
+      height: 16px;
+    }
   }
 
   &::after {
