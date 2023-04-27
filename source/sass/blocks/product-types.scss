@@ -33,6 +33,7 @@
 
   @media #{$laptop-desktop} {
     grid-template-columns: 1fr 1fr;
+    row-gap: 20px;
   }
 }
 

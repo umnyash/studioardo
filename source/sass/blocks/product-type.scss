@@ -38,12 +38,14 @@
   grid-template-areas:
     "heading heading price"
     "link-1  link-2  link-2";
+  align-content: center;
   align-items: center;
   row-gap: 7px;
   column-gap: 15px;
 
   @media #{$tablet-desktop} {
-    padding: 18px 18px 15px 19px;
+    min-height: 95px;
+    padding: 7px 20px 9px;
     border: 1px solid $product-type-text-content-border-color;
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
@@ -51,7 +53,7 @@
     grid-template-areas:
       "heading link-1 link-2"
       "price   link-1 link-2";
-    row-gap: 11px;
+    row-gap: 8px;
     column-gap: 8px;
   }
 }
@@ -65,7 +67,7 @@
 
   @media #{$tablet-desktop} {
     font-size: 24px;
-    line-height: 28px;
+    line-height: 24px;
   }
 }
 

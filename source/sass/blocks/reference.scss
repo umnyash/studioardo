@@ -61,17 +61,16 @@
 }
 
 .reference__button {
-  max-width: 345px;
+  max-width: 193px;
   margin: 0 auto;
 
   @media #{$tablet-desktop} {
     grid-column: 1 / 3;
-    min-width: 345px;
+    min-width: 193px;
   }
 
   @media #{$laptop-desktop} {
     grid-column: 3 / 4;
-    min-width: 278px;
   }
 }
 

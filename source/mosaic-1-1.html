@@ -11,7 +11,7 @@
     <link href="css/style.min.css" rel="stylesheet">
     <link href="css/custom.min.css" rel="stylesheet">
     <link href="css/new.css" rel="stylesheet"> <!-- Новые стили -->
-    <title>Мозаика 2</title>
+    <title>Мозаика 1</title>
     <meta name="format-detection" content="telephone=no"/>
     <meta name="format-detection" content="address=no"/>
   </head>
@@ -19,16 +19,16 @@
     <main class="mosaic-page">
       <section class="mosaic-page__n-banner n-banner n-banner--parallax-bg">
         <picture class="n-banner__img-wrapper" aria-hidden="true">
-          <source media="(min-width: 1281px)" srcset="img/mosaic/hero/mosaic-art-panel-hero-bg-desktop.png 1x, img/mosaic/hero/mosaic-art-panel-hero-bg-desktop@2x.png 2x">
-          <source media="(min-width: 769px)" srcset="img/mosaic/hero/mosaic-art-panel-hero-bg-laptop.png 1x, img/mosaic/hero/mosaic-art-panel-hero-bg-laptop@2x.png 2x">
-          <source media="(min-width: 376px)" srcset="img/mosaic/hero/mosaic-art-panel-hero-bg-tablet.png 1x, img/mosaic/hero/mosaic-art-panel-hero-bg-tablet@2x.png 2x">
-          <img class="n-banner__img" src="img/mosaic/hero/mosaic-art-panel-hero-bg.png" srcset="img/mosaic/hero/mosaic-art-panel-hero-bg@2x.png 2x">
+          <source media="(min-width: 1281px)" srcset="img/mosaic/hero/mosaic-products-hero-bg-desktop.png 1x, img/mosaic/hero/mosaic-products-hero-bg-desktop@2x.png 2x">
+          <source media="(min-width: 769px)" srcset="img/mosaic/hero/mosaic-products-hero-bg-laptop.png 1x, img/mosaic/hero/mosaic-products-hero-bg-laptop@2x.png 2x">
+          <source media="(min-width: 376px)" srcset="img/mosaic/hero/mosaic-products-hero-bg-tablet.png 1x, img/mosaic/hero/mosaic-products-hero-bg-tablet@2x.png 2x">
+          <img class="n-banner__img" src="img/mosaic/hero/mosaic-products-hero-bg.png" srcset="img/mosaic/hero/mosaic-products-hero-bg@2x.png 2x">
         </picture>
         <div class="n-banner__content-wrapper">
           <div class="n-banner__content">
             <div class="n-banner__content-inner">
               <div class="n-banner__text-content">
-                <h1 class="n-banner__heading">Художественное пано из мозаики</h1>
+                <h1 class="n-banner__heading">Изделия из мозаики по вашему эскизу</h1>
                 <p class="n-banner__text">Произведение искусства в единичном экземпляре у вас дома</p>
                 <div class="n-banner__buttons">
                   <a class="button button--primary button--alter-3 button--fw600" href="#" data-modal-opener="calculation-material">Заказать расчет</a>
@@ -94,270 +94,75 @@
           <a class="advantages-and-widget__widget link badge-widget metrika link__control i-bem badge-widget_js_inited link_js_inited link__control_js_inited" data-bem="{&quot;link&quot;:{},&quot;badge-widget&quot;:{},&quot;metrika&quot;:{&quot;goal&quot;:&quot;BADGE_REVIEWS_CLICK&quot;}}" style="background-image: url(https://avatars.mds.yandex.net/get-altay/1860543/badge_rating_4.7/orig);" role="link" href="//yandex.ru/profile/1245017224?intent=reviews&amp;utm_source=badge&amp;utm_medium=rating&amp;utm_campaign=v1" target="_blank"></a>
         </div>
       </div>
-      <section class="mosaic-page__n-products n-products">
-        <div class="n-products__inner">
-          <h2 class="visually-hidden">Мозаики</h2>
-          <ul class="n-products__list">
-            <li class="n-products__item">
-              <div class="n-products__item-info product-info">
-                <h3 class="product-info__heading heading heading--alter-2">
-                  <a href="#">Художественное панно на кухню из смальты</a>
-                </h3>
-                <dl class="product-info__list characteristics-2">
-                  <div class="characteristics-2__item">
-                    <dt class="characteristics-2__key">Материал:</dt>
-                    <dd class="characteristics-2__value">Смальта</dd>
-                  </div>
-                  <div class="characteristics-2__item">
-                    <dt class="characteristics-2__key">Размер:</dt>
-                    <dd class="characteristics-2__value">40х120 см</dd>
-                  </div>
-                  <div class="characteristics-2__item">
-                    <dt class="characteristics-2__key">Срок изготовления:</dt>
-                    <dd class="characteristics-2__value">20 дней</dd>
-                  </div>
-                  <div class="characteristics-2__item">
-                    <dt class="characteristics-2__key">Сложность:</dt>
-                    <dd class="characteristics-2__value">Средняя</dd>
-                  </div>
-                </dl>
-                <p class="product-info__price-wrapper">
-                  Цена от <span class="n-product__price">7&nbsp;000</span>₽ п.метр
+      <section class="mosaic-page__product-types product-types">
+        <div class="product-types__inner">
+          <h2 class="visually-hidden">Виды изделий из мозаики</h2>
+          <ul class="product-types__list">
+            <li class="product-types__item product-type">
+              <a href="#">
+                <picture class="product-type__img-wrapper">
+                  <source media="(min-width: 768px)" srcset="img/mosaic/types/matrix-panel-tablet.png 1x, img/mosaic/types/matrix-panel-tablet@2x.png 2x">
+                  <img class="product-type__img" src="img/mosaic/types/matrix-panel.png" srcset="img/mosaic/types/matrix-panel@2x.png 2x" alt="Мозаика в душевой.">
+                </picture>
+              </a>
+              <div class="product-type__text-content">
+                <h2 class="product-type__heading">Матричное панно</h2>
+                <p class="product-type__price-wrapper">
+                  <span class="product-type__price-part">Цена</span> от <span class="product-type__price">4200</span>₽/м2
                 </p>
-                <div class="product-info__buttons">
-                  <button class="product-info__button button button--secondary" type="button" data-modal-opener="calculation-material" data-type="window-sills" data-material="Мрамор название-3">Рассчитать мой вариант</button>
-                </div>
-              </div>
-              <div class="n-products__item-gallery">
-                <div class="n-products__item-slider n-slider n-slider--alter swiper">
-                  <ul class="n-slider__list swiper-wrapper">
-                    <li class="n-slider__item swiper-slide">
-                      <picture class="n-products__item-img-wrapper">
-                        <img class="n-products__item-img" src="img/mosaic/products/product-1.png" width="813" height="433" alt="Подоконник из мрамора.">
-                      </picture>
-                    </li>
-                    <li class="n-slider__item swiper-slide">
-                      <picture class="n-products__item-img-wrapper">
-                        <img class="n-products__item-img" src="img/mosaic/products/product-1.png" width="813" height="433" alt="Подоконник из мрамора.">
-                      </picture>
-                    </li>
-                    <li class="n-slider__item swiper-slide">
-                      <picture class="n-products__item-img-wrapper">
-                        <img class="n-products__item-img" src="img/mosaic/products/product-1.png" width="813" height="433" alt="Подоконник из мрамора.">
-                      </picture>
-                    </li>
-                    <li class="n-slider__item swiper-slide">
-                      <picture class="n-products__item-img-wrapper">
-                        <img class="n-products__item-img" src="img/mosaic/products/product-1.png" width="813" height="433" alt="Подоконник из мрамора.">
-                      </picture>
-                    </li>
-                  </ul>
-                  <div class="n-slider__pagination swiper-pagination"></div>
-                  <button class="n-slider__button n-slider__button--prev swiper-button-prev" type="button">
-                    <span class="visually-hidden">Предыдущий слайд</span>
-                  </button>
-                  <button class="n-slider__button n-slider__button--next swiper-button-next" type="button">
-                    <span class="visually-hidden">Следущий слайд</span>
-                  </button>
-                </div>
+                <a class="product-type__link" href="#!">Подробнее</a>
+                <a class="product-type__link product-type__link--accent" href="#" data-modal-opener="calculation-material" data-type="matrix-panel">Рассчитать мой вариант</a>
               </div>
             </li>
-            <li class="n-products__item">
-              <div class="n-products__item-info product-info">
-                <h3 class="product-info__heading heading heading--alter-2">
-                  <a href="#">Художественное панно на кухню из каменной мозаики</a>
-                </h3>
-                <dl class="product-info__list characteristics-2">
-                  <div class="characteristics-2__item">
-                    <dt class="characteristics-2__key">Материал:</dt>
-                    <dd class="characteristics-2__value">Камень</dd>
-                  </div>
-                  <div class="characteristics-2__item">
-                    <dt class="characteristics-2__key">Размер:</dt>
-                    <dd class="characteristics-2__value">40х120 см</dd>
-                  </div>
-                  <div class="characteristics-2__item">
-                    <dt class="characteristics-2__key">Срок изготовления:</dt>
-                    <dd class="characteristics-2__value">20 дней</dd>
-                  </div>
-                  <div class="characteristics-2__item">
-                    <dt class="characteristics-2__key">Сложность:</dt>
-                    <dd class="characteristics-2__value">Средняя</dd>
-                  </div>
-                </dl>
-                <p class="product-info__price-wrapper">
-                  Цена от <span class="n-product__price">7&nbsp;000</span>₽ п.метр
+            <li class="product-types__item product-type">
+              <a href="#">
+                <picture class="product-type__img-wrapper">
+                  <source media="(min-width: 768px)" srcset="img/mosaic/types/art-panel-tablet.png 1x, img/mosaic/types/art-panel-tablet@2x.png 2x">
+                  <img class="product-type__img" src="img/mosaic/types/art-panel.png" srcset="img/mosaic/types/art-panel@2x.png 2x" alt="Птица из мозаики.">
+                </picture>
+              </a>
+              <div class="product-type__text-content">
+                <h2 class="product-type__heading">Художественное панно</h2>
+                <p class="product-type__price-wrapper">
+                  <span class="product-type__price-part">Цена</span> от <span class="product-type__price">4800</span>₽/м2
                 </p>
-                <div class="product-info__buttons">
-                  <button class="product-info__button button button--secondary" type="button" data-modal-opener="calculation-material" data-type="window-sills" data-material="Мрамор название-3">Рассчитать мой вариант</button>
-                </div>
-              </div>
-              <div class="n-products__item-gallery">
-                <div class="n-products__item-slider n-slider n-slider--alter swiper">
-                  <ul class="n-slider__list swiper-wrapper">
-                    <li class="n-slider__item swiper-slide">
-                      <picture class="n-products__item-img-wrapper">
-                        <img class="n-products__item-img" src="img/mosaic/products/product-2.png" width="813" height="433" alt="Подоконник из мрамора.">
-                      </picture>
-                    </li>
-                    <li class="n-slider__item swiper-slide">
-                      <picture class="n-products__item-img-wrapper">
-                        <img class="n-products__item-img" src="img/mosaic/products/product-2.png" width="813" height="433" alt="Подоконник из мрамора.">
-                      </picture>
-                    </li>
-                    <li class="n-slider__item swiper-slide">
-                      <picture class="n-products__item-img-wrapper">
-                        <img class="n-products__item-img" src="img/mosaic/products/product-2.png" width="813" height="433" alt="Подоконник из мрамора.">
-                      </picture>
-                    </li>
-                    <li class="n-slider__item swiper-slide">
-                      <picture class="n-products__item-img-wrapper">
-                        <img class="n-products__item-img" src="img/mosaic/products/product-2.png" width="813" height="433" alt="Подоконник из мрамора.">
-                      </picture>
-                    </li>
-                  </ul>
-                  <div class="n-slider__pagination swiper-pagination"></div>
-                  <button class="n-slider__button n-slider__button--prev swiper-button-prev" type="button">
-                    <span class="visually-hidden">Предыдущий слайд</span>
-                  </button>
-                  <button class="n-slider__button n-slider__button--next swiper-button-next" type="button">
-                    <span class="visually-hidden">Следущий слайд</span>
-                  </button>
-                </div>
+                <a class="product-type__link" href="#!">Подробнее</a>
+                <a class="product-type__link product-type__link--accent" href="#" data-modal-opener="calculation-material" data-type="art-panel">Рассчитать мой вариант</a>
               </div>
             </li>
-            <li class="n-products__item">
-              <div class="n-products__item-info product-info">
-                <h3 class="product-info__heading heading heading--alter-2">
-                  <a href="#">Художественное панно на кухню из смальты</a>
-                </h3>
-                <dl class="product-info__list characteristics-2">
-                  <div class="characteristics-2__item">
-                    <dt class="characteristics-2__key">Материал:</dt>
-                    <dd class="characteristics-2__value">Смальта</dd>
-                  </div>
-                  <div class="characteristics-2__item">
-                    <dt class="characteristics-2__key">Размер:</dt>
-                    <dd class="characteristics-2__value">40х120 см</dd>
-                  </div>
-                  <div class="characteristics-2__item">
-                    <dt class="characteristics-2__key">Срок изготовления:</dt>
-                    <dd class="characteristics-2__value">20 дней</dd>
-                  </div>
-                  <div class="characteristics-2__item">
-                    <dt class="characteristics-2__key">Сложность:</dt>
-                    <dd class="characteristics-2__value">Средняя</dd>
-                  </div>
-                </dl>
-                <p class="product-info__price-wrapper">
-                  Цена от <span class="n-product__price">7&nbsp;000</span>₽ п.метр
+            <li class="product-types__item product-type">
+              <a href="#">
+                <picture class="product-type__img-wrapper">
+                  <source media="(min-width: 768px)" srcset="img/mosaic/types/mixes-tablet.png 1x, img/mosaic/types/mixes-tablet@2x.png 2x">
+                  <img class="product-type__img" src="img/mosaic/types/mixes.png" srcset="img/mosaic/types/mixes@2x.png 2x" alt="Мозаика на стенах в туалете.">
+                </picture>
+              </a>
+              <div class="product-type__text-content">
+                <h2 class="product-type__heading">Миксы</h2>
+                <p class="product-type__price-wrapper">
+                  <span class="product-type__price-part">Цена</span> от <span class="product-type__price">4200</span>₽/м2
                 </p>
-                <div class="product-info__buttons">
-                  <button class="product-info__button button button--secondary" type="button" data-modal-opener="calculation-material" data-type="window-sills" data-material="Мрамор название-3">Рассчитать мой вариант</button>
-                </div>
-              </div>
-              <div class="n-products__item-gallery">
-                <div class="n-products__item-slider n-slider n-slider--alter swiper">
-                  <ul class="n-slider__list swiper-wrapper">
-                    <li class="n-slider__item swiper-slide">
-                      <picture class="n-products__item-img-wrapper">
-                        <img class="n-products__item-img" src="img/mosaic/products/product-1.png" width="813" height="433" alt="Подоконник из мрамора.">
-                      </picture>
-                    </li>
-                    <li class="n-slider__item swiper-slide">
-                      <picture class="n-products__item-img-wrapper">
-                        <img class="n-products__item-img" src="img/mosaic/products/product-1.png" width="813" height="433" alt="Подоконник из мрамора.">
-                      </picture>
-                    </li>
-                    <li class="n-slider__item swiper-slide">
-                      <picture class="n-products__item-img-wrapper">
-                        <img class="n-products__item-img" src="img/mosaic/products/product-1.png" width="813" height="433" alt="Подоконник из мрамора.">
-                      </picture>
-                    </li>
-                    <li class="n-slider__item swiper-slide">
-                      <picture class="n-products__item-img-wrapper">
-                        <img class="n-products__item-img" src="img/mosaic/products/product-1.png" width="813" height="433" alt="Подоконник из мрамора.">
-                      </picture>
-                    </li>
-                  </ul>
-                  <div class="n-slider__pagination swiper-pagination"></div>
-                  <button class="n-slider__button n-slider__button--prev swiper-button-prev" type="button">
-                    <span class="visually-hidden">Предыдущий слайд</span>
-                  </button>
-                  <button class="n-slider__button n-slider__button--next swiper-button-next" type="button">
-                    <span class="visually-hidden">Следущий слайд</span>
-                  </button>
-                </div>
+                <a class="product-type__link" href="#!">Подробнее</a>
+                <a class="product-type__link product-type__link--accent" href="#" data-modal-opener="calculation-material" data-type="mix">Рассчитать мой вариант</a>
               </div>
             </li>
-            <li class="n-products__item">
-              <div class="n-products__item-info product-info">
-                <h3 class="product-info__heading heading heading--alter-2">
-                  <a href="#">Художественное панно на кухню из каменной мозаики</a>
-                </h3>
-                <dl class="product-info__list characteristics-2">
-                  <div class="characteristics-2__item">
-                    <dt class="characteristics-2__key">Материал:</dt>
-                    <dd class="characteristics-2__value">Камень</dd>
-                  </div>
-                  <div class="characteristics-2__item">
-                    <dt class="characteristics-2__key">Размер:</dt>
-                    <dd class="characteristics-2__value">40х120 см</dd>
-                  </div>
-                  <div class="characteristics-2__item">
-                    <dt class="characteristics-2__key">Срок изготовления:</dt>
-                    <dd class="characteristics-2__value">20 дней</dd>
-                  </div>
-                  <div class="characteristics-2__item">
-                    <dt class="characteristics-2__key">Сложность:</dt>
-                    <dd class="characteristics-2__value">Средняя</dd>
-                  </div>
-                </dl>
-                <p class="product-info__price-wrapper">
-                  Цена от <span class="n-product__price">7&nbsp;000</span>₽ п.метр
+            <li class="product-types__item product-type">
+              <a href="#">
+                <picture class="product-type__img-wrapper">
+                  <source media="(min-width: 768px)" srcset="img/mosaic/types/stretch-marks-tablet.png 1x, img/mosaic/types/stretch-marks-tablet@2x.png 2x">
+                  <img class="product-type__img" src="img/mosaic/types/stretch-marks.png" srcset="img/mosaic/types/stretch-marks@2x.png 2x" alt="Мозаика на стене.">
+                </picture>
+              </a>
+              <div class="product-type__text-content">
+                <h2 class="product-type__heading">Растяжки</h2>
+                <p class="product-type__price-wrapper">
+                  <span class="product-type__price-part">Цена</span> от <span class="product-type__price">4800</span>₽/м2
                 </p>
-                <div class="product-info__buttons">
-                  <button class="product-info__button button button--secondary" type="button" data-modal-opener="calculation-material" data-type="window-sills" data-material="Мрамор название-3">Рассчитать мой вариант</button>
-                </div>
-              </div>
-              <div class="n-products__item-gallery">
-                <div class="n-products__item-slider n-slider n-slider--alter swiper">
-                  <ul class="n-slider__list swiper-wrapper">
-                    <li class="n-slider__item swiper-slide">
-                      <picture class="n-products__item-img-wrapper">
-                        <img class="n-products__item-img" src="img/mosaic/products/product-2.png" width="813" height="433" alt="Подоконник из мрамора.">
-                      </picture>
-                    </li>
-                    <li class="n-slider__item swiper-slide">
-                      <picture class="n-products__item-img-wrapper">
-                        <img class="n-products__item-img" src="img/mosaic/products/product-2.png" width="813" height="433" alt="Подоконник из мрамора.">
-                      </picture>
-                    </li>
-                    <li class="n-slider__item swiper-slide">
-                      <picture class="n-products__item-img-wrapper">
-                        <img class="n-products__item-img" src="img/mosaic/products/product-2.png" width="813" height="433" alt="Подоконник из мрамора.">
-                      </picture>
-                    </li>
-                    <li class="n-slider__item swiper-slide">
-                      <picture class="n-products__item-img-wrapper">
-                        <img class="n-products__item-img" src="img/mosaic/products/product-2.png" width="813" height="433" alt="Подоконник из мрамора.">
-                      </picture>
-                    </li>
-                  </ul>
-                  <div class="n-slider__pagination swiper-pagination"></div>
-                  <button class="n-slider__button n-slider__button--prev swiper-button-prev" type="button">
-                    <span class="visually-hidden">Предыдущий слайд</span>
-                  </button>
-                  <button class="n-slider__button n-slider__button--next swiper-button-next" type="button">
-                    <span class="visually-hidden">Следущий слайд</span>
-                  </button>
-                </div>
+                <a class="product-type__link" href="#!">Подробнее</a>
+                <a class="product-type__link product-type__link--accent" href="#" data-modal-opener="calculation-material" data-type="stretch-mark">Рассчитать мой вариант</a>
               </div>
             </li>
           </ul>
-          <div class="n-products__button-wrapper">
-            <a class="n-products__button button button--secondary-3" href="#">Показать ещё</a>
-          </div>
         </div>
       </section>
       <section class="mosaic-page__product-categories product-categories">
@@ -593,81 +398,6 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-      <section class="mosaic-page__delivery-info delivery-info">
-        <div class="delivery-info__inner">
-          <h2 class="delivery-info__heading heading heading--alter">Доставка</h2>
-          <div class="custom-table custom-table--big-2">
-            <div class="custom-table__table-wrapper">
-              <table class="custom-table__table table">
-                <thead class="table__heading table__heading--bordered">
-                  <tr>
-                    <th>Вес груза</th>
-                    <th>Москва и МО до 15&nbsp;км</th>
-                    <th>МО 15-30&nbsp;км от МКАД</th>
-                    <th>МО 30-50&nbsp;км от МКАД</th>
-                    <th>МО 50-80&nbsp;км от МКАД</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>до 100&nbsp;кг</td>
-                    <td>800&nbsp;₽</td>
-                    <td>1&nbsp;000&nbsp;₽</td>
-                    <td class="table__cell table-cell--alter" colspan="2">по согласованию (возможна доставка в офис до  2х коробок)</td>
-                  </tr>
-                  <tr>
-                    <td>до 500&nbsp;кг</td>
-                    <td>3&nbsp;000&nbsp;₽</td>
-                    <td>3&nbsp;500&nbsp;₽</td>
-                    <td>4&nbsp;500&nbsp;₽</td>
-                    <td>6&nbsp;000&nbsp;₽</td>
-                  </tr>
-                  <tr>
-                    <td>до 1,5 тонны</td>
-                    <td>3&nbsp;500&nbsp;₽</td>
-                    <td>4&nbsp;500&nbsp;₽</td>
-                    <td>5&nbsp;500&nbsp;₽</td>
-                    <td>7&nbsp;000&nbsp;₽</td>
-                  </tr>
-                  <tr>
-                    <td>до 3 тонн</td>
-                    <td>4&nbsp;500&nbsp;₽</td>
-                    <td>5&nbsp;500&nbsp;₽</td>
-                    <td>6&nbsp;500&nbsp;₽</td>
-                    <td>8&nbsp;000&nbsp;₽</td>
-                  </tr>
-                  <tr>
-                    <td>до 5 тонн</td>
-                    <td>5&nbsp;500&nbsp;₽</td>
-                    <td>6&nbsp;500&nbsp;₽</td>
-                    <td>7&nbsp;500&nbsp;₽</td>
-                    <td>9&nbsp;000&nbsp;₽</td>
-                  </tr>
-                  <tr>
-                    <td>более 5 тонн</td>
-                    <td class="table__cell table-cell--alter" colspan="4">по договоренности с отделом логистики </td>
-                  </tr>
-                  <tr>
-                    <td>Манипулятор до 10 тонн с выгрузкой</td>
-                    <td>16&nbsp;000&nbsp;₽</td>
-                    <td>18&nbsp;000&nbsp;₽</td>
-                    <td>20&nbsp;000&nbsp;₽</td>
-                    <td>24&nbsp;000&nbsp;₽</td>
-                  </tr>
-                  <tr>
-                    <td>Заезд в паркинг до 1 тонны (по запросу)</td>
-                    <td>3&nbsp;500&nbsp;₽</td>
-                    <td>4&nbsp;500&nbsp;₽</td>
-                    <td>5&nbsp;500&nbsp;₽</td>
-                    <td>7&nbsp;000&nbsp;₽</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <p class="custom-table__note">МО более 80&nbsp;км от МКАД не возим</p>
           </div>
         </div>
       </section>
