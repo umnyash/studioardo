@@ -1721,3 +1721,24 @@ const initFileFieldWrapper = (wrapper) => {
   });
 };
 document.querySelectorAll('.custom-form-2 .form__file-field-wrapper').forEach(initFileFieldWrapper);
+
+
+/* Слайдер категорий продуктов */
+
+const productCategoriesSlider = new Swiper('.product-categories__slider', {
+  spaceBetween: 14,
+  watchSlidesProgress: true,
+  loop: true,
+  breakpoints: {
+    483: {
+      slidesPerView: 'auto',
+    },
+    1280: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+      loop: false,
+    },
+  },
+});
+
+/**/

@@ -2,9 +2,9 @@
   max-width: 100%;
   padding: 0 14px;
 
-  @media #{$mobile-tablet} {
-    text-align: center;
-  }
+  // @media #{$mobile-tablet} {
+  //   text-align: center;
+  // }
 
   @media #{$tablet-desktop} {
     padding: 0 30px;
@@ -110,9 +110,16 @@
   object-position: center;
 }
 
-.materials-slider__button {
+.materials-slider__button.materials-slider__button {
+  width: 36px;
+  height: 36px;
   top: calc(50% - 19px);
   background-color: $background-secondary-color;
+
+  &::before {
+    width: 7px;
+    height: 13px;
+  }
 }
 
 .materials-slider__button.swiper-button-prev {

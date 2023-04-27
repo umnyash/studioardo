@@ -1,0 +1,36 @@
+.product-categories__inner {
+  padding: 0 14px;
+
+  @media #{$desktop} {
+    width: 1480px;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin: 0 auto;
+  }
+}
+
+.product-categories__heading {
+  margin: 0 0 22px;
+
+  @media #{$tablet-desktop} {
+    margin-bottom: 40px;
+  }
+}
+
+.product-categories__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.product-categories__item {
+  width: auto;
+
+  @media (min-width: 483px) {
+    width: 455px;
+  }
+
+  @media #{$laptop-desktop} {
+    width: auto;
+  }
+}

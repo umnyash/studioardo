@@ -19,18 +19,6 @@
   margin: 0 0 40px;
 }
 
-.mosaic-page__n-products {
-  margin: 0 0 10px;
-
-  @media #{$laptop-desktop} {
-    margin-bottom: 60px;
-  }
-
-  @media #{$desktop} {
-    margin-bottom: 100px;
-  }
-}
-
 .mosaic-page__ratings {
   margin: 0 0 40px;
 
@@ -51,42 +39,11 @@
   }
 }
 
-.mosaic-page__delivery-info {
-  margin: 0 0 40px;
-
-  @media #{$laptop-desktop} {
-    margin-bottom: 60px;
-  }
-
-  @media #{$desktop} {
-    margin-bottom: 100px;
-  }
-}
-
-.mosaic-page__manufacture {
-  margin: 0 0 40px;
-
-  @media #{$laptop-desktop} {
-    margin-bottom: 60px;
-  }
-
-  @media #{$desktop} {
-    margin-bottom: 100px;
-  }
-}
-
-.mosaic-page__clients {
-  margin: 0 0 40px;
-
-  @media #{$laptop-desktop} {
-    margin-bottom: 60px;
-  }
-
-  @media #{$desktop} {
-    margin-bottom: 100px;
-  }
-}
-
+.mosaic-page__n-products,
+.mosaic-page__delivery-info,
+.mosaic-page__manufacture,
+.mosaic-page__clients,
+.mosaic-page__product-categories,
 .mosaic-page__team {
   margin: 0 0 40px;
 
