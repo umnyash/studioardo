@@ -1293,31 +1293,41 @@ const materialsSlider = new Swiper('.materials-slider', {
 
 /* */
 
+
 /* Связь селекта материалов и слайдера */
 
 const initCalculationMaterialSection = (section) => {
-  const materialSelect = section.querySelector('select[name="material"]');
+  const slider = section.querySelector('.materials-slider');
 
-  materialSelect.addEventListener('change', () => {
-    let currentOptionIndex;
+  if (slider) {
+    const sliderConnectedSelectName = slider.dataset.connectedSelect;
+    const connectedSelect = section.querySelector(`select[name="${sliderConnectedSelectName}"]`);
 
-    if (materialSelect.value) {
-      currentOptionIndex = materialSelect.querySelector(`[value="${materialSelect.value}"]`).dataset.index;
+    if (!connectedSelect) {
+      return;
     }
 
-    materialsSlider.slideTo(currentOptionIndex, materialsSlider.params.speed, false);
-  });
+    connectedSelect.addEventListener('change', () => {
+      let currentOptionIndex;
 
-  materialsSlider.on('transitionEnd', () => {
-    const value = materialSelect.querySelector(`option[data-index="${materialsSlider.realIndex}"]`).value;
-
-       if (materialSelect.value === value) {
-        return;
+      if (connectedSelect.value) {
+        currentOptionIndex = connectedSelect.querySelector(`[value="${connectedSelect.value}"]`).dataset.index;
       }
 
-      materialSelect.value = value;
-      materialSelect.dispatchEvent(changeEvent);
-  });
+      materialsSlider.slideTo(currentOptionIndex, materialsSlider.params.speed, false);
+    });
+
+    materialsSlider.on('transitionEnd', () => {
+      const value = connectedSelect.querySelector(`option[data-index="${materialsSlider.realIndex}"]`).value;
+
+         if (connectedSelect.value === value) {
+          return;
+        }
+
+        connectedSelect.value = value;
+        connectedSelect.dispatchEvent(changeEvent);
+    });
+  }
 };
 document.querySelectorAll('.calculation-material').forEach(initCalculationMaterialSection);
 
