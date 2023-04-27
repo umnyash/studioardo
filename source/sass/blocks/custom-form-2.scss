@@ -1164,13 +1164,13 @@
   }
 
   .form__textfield-wrapper {
-    margin-bottom: 15px;;
+    margin-bottom: 10px;;
   }
 
   .form__result {
     padding: 19px 14px;
     border-radius: 6px;
-    margin: 10px 0 29px;
+    margin: 10px 0 20px;
     background-color: $background-secondary-color;
 
     .form__textfield-wrapper {
@@ -1183,14 +1183,14 @@
   }
 
   .form__result-price-wrapper {
-    margin: 0 0 11px;
+    margin: 0 0 6px;
     font-size: 18px;
     line-height: 24px;
     font-weight: 600;
   }
 
   .form__result-text {
-    margin: 0 0 11px;
+    margin: 0 0 6px;
     font-size: 14px;
     line-height: 1.4;
     color: $weak-text-color;
@@ -1203,6 +1203,7 @@
 
   .form__consent-wrapper {
     margin-top: 20px;
+    margin-bottom: 8px;
   }
 
   .form__checkbox-label-text {

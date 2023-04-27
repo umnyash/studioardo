@@ -14,6 +14,13 @@
     <title>Мозаика 3</title>
     <meta name="format-detection" content="telephone=no"/>
     <meta name="format-detection" content="address=no"/>
+
+    <!-- Стили для тестирования -->
+    <style>
+      .form__result--hidden {
+        display: block !important;
+      }
+    </style>
   </head>
   <body class="page-body">
     <main class="mosaic-page">
@@ -452,20 +459,12 @@
                             </span>
                           </label>
                         </div>
-                        <div class="form__textfield-wrapper form__textfield-wrapper--hidden">
-                          <label class="form__textfield-label">
-                            <span class="form__textfield">
-                              <input class="form__textfield-control" name="count" type="number" min="0" value="1" placeholder="1" disabled>
-                              <span class="form__textfield-label-text">Количество</span>
-                            </span>
-                          </label>
-                        </div>
                       </fieldset>
-                      <div class="form__result form__result--hidden">
+                      <div class="form__result">
                         <p class="form__result-price-wrapper">
                           Итого: <span class="form__result-price">14&nbsp;000</span> ₽
                         </p>
-                        <p class="form__result-text">Оставьте контактный номер чтобы уточнить детали заказа</p>
+                        <p class="form__result-text">Оставьте контактный номер для заказа</p>
                         <div class="form__textfield-wrapper">
                           <label class="form__textfield-label">
                             <span class="form__textfield">
@@ -774,16 +773,8 @@
                                 </span>
                               </label>
                             </div>
-                            <div class="form__textfield-wrapper form__textfield-wrapper--hidden">
-                              <label class="form__textfield-label">
-                                <span class="form__textfield">
-                                  <input class="form__textfield-control" name="count" type="number" min="0" value="1" placeholder="1" disabled>
-                                  <span class="form__textfield-label-text">Количество</span>
-                                </span>
-                              </label>
-                            </div>
                           </fieldset>
-                          <div class="form__result form__result--hidden">
+                          <div class="form__result">
                             <p class="form__result-price-wrapper">
                               Итого: <span class="form__result-price">14&nbsp;000</span> ₽
                             </p>

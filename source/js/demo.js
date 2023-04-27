@@ -183,13 +183,18 @@ document.querySelectorAll('.custom-form-2--calculation .form__body').forEach(set
 /* Инициализация форм расчёта */
 
 const initCalculationForms = (form) => {
+  const countField = form.querySelector('[name="count"]');
+
+  if (!countField) {
+    return;
+  }
+
   const CENTIMETERS_IN_1_SQUARE_METER = 10000;
   const PRODUCTS_MEASURED_IN_RUNNING_METERS = ['countertops', 'window-sills', 'steps'];
 
   const lengthField = form.querySelector('[name="length"]');
   const widthField = form.querySelector('[name="width"]');
   const areaField = form.querySelector('[name="area"]');
-  const countField = form.querySelector('[name="count"]');
   const materialField = form.querySelector('[name="material"]');
   const typeField = form.querySelector('[name="type"]');
   const formResult = form.querySelector('.form__result');
@@ -248,8 +253,6 @@ const initCalculationForms = (form) => {
     lengthField.addEventListener('input', toggleFormResultView);
 
     widthField.removeEventListener('input', setArea);
-    widthField.setAttribute('readonly', true);
-
   };
 
   const disableCalculationInRunningMeters = () => {
@@ -263,7 +266,6 @@ const initCalculationForms = (form) => {
     lengthField.addEventListener('input', setArea);
 
     widthField.addEventListener('input', setArea);
-    widthField.removeAttribute('readonly');
   };
 
 
