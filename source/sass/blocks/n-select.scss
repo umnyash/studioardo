@@ -67,6 +67,7 @@
   scroll-behavior: smooth;
   scrollbar-color: #dedede transparent;
   scrollbar-width: thin;
+  height: 10px;
 
   &::-webkit-scrollbar-track,
   &::-webkit-scrollbar {
@@ -117,5 +118,9 @@
 
   .n-select__options {
     visibility: visible;
+  }
+
+  .n-select__list {
+    height: auto;
   }
 }
