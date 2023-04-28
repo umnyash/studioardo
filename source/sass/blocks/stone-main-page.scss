@@ -10,6 +10,10 @@
 .stone-main-page__reference {
   margin: 0 0 10px;
 
+  @media #{$tablet-desktop} {
+    margin-bottom: 24px;
+  }
+
   @media #{$laptop-desktop} {
     margin-bottom: 37px;
   }

@@ -1,15 +1,18 @@
 .advantages-and-widget__inner {
   padding: 0 14px;
 
-  @media #{$desktop} {
+  @media #{$laptop-desktop} {
     display: grid;
+    grid-template-columns: 1fr 260px;
+    column-gap: 20px;
+    align-items: center;
+  }
+
+  @media #{$desktop} {
     width: 1480px;
     padding-right: 40px;
     padding-left: 40px;
     margin: 0 auto;
-    grid-template-columns: 1fr 260px;
-    column-gap: 20px;
-    align-items: center;
   }
 }
 
@@ -21,7 +24,7 @@
   background-position: center;
   background-size: 100%;
 
-  @media #{$desktop} {
+  @media #{$laptop-desktop} {
     display: block;
   }
 }
