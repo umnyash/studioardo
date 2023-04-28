@@ -1812,6 +1812,7 @@ div.swiper-button-next::after {
 }
 .button--secondary-3:active {
   border-color: #34ad89;
+  color: #ffffff;
   background-color: #34ad89;
   opacity: 1;
 }
