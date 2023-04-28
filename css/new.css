@@ -14568,9 +14568,9 @@ n-collection__link-2 {
 .product-categories__item {
   width: auto;
 }
-@media (min-width: 483px) {
+@media (min-width: 364px) {
   .product-categories__item {
-    width: 455px;
+    width: 335px;
   }
 }
 @media (min-width: 1280px) {
@@ -14598,7 +14598,7 @@ n-collection__link-2 {
 
 .product-category__img-wrapper {
   order: -1;
-  height: 300px;
+  height: 220px;
 }
 
 .product-category__img {
