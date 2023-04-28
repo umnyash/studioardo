@@ -11026,7 +11026,7 @@ n-collection__link-2 {
   .product-type__link {
     min-width: 157px;
     padding: 15px 18px 12px;
-    border: 1px solid #42bd98;
+    border: 1px solid #c8c8c8;
     border-radius: 3px;
     text-align: center;
     font-size: 16px;
@@ -11046,12 +11046,17 @@ n-collection__link-2 {
   color: #42bd98;
 }
 .product-type__link--accent:hover {
-  color: #ffffff;
+  color: #42bd98;
 }
 @media (min-width: 768px) {
   .product-type__link--accent {
+    border: 1px solid #42bd98;
+    font-weight: 400;
     color: #ffffff;
     background-color: #42bd98;
+  }
+  .product-type__link--accent:hover {
+    color: #ffffff;
   }
 }
 
