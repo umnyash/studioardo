@@ -99,7 +99,7 @@
   @media #{$tablet-desktop} {
     min-width: 157px;
     padding: 15px 18px 12px;
-    border: 1px solid $special-color;
+    border: 1px solid $button-border-color;
     border-radius: 3px;
     text-align: center;
     font-size: 16px;
@@ -121,11 +121,17 @@
   color: $special-color;
 
   &:hover {
-    color: $text-color-secondary;
+    color: $special-color;
   }
 
   @media #{$tablet-desktop} {
+    border: 1px solid $special-color;
+    font-weight: 400;
     color: $text-color-secondary;
     background-color: $special-color;
+
+    &:hover {
+      color: $text-color-secondary;
+    }
   }
 }
