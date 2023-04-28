@@ -55,6 +55,7 @@ if (popups) {
     const formResult = popup.querySelector('.calculation-form .form__result');
     const typeSelect = popup.querySelector('.calculation-form select[name="type"]');
     const materialSelect = popup.querySelector('.calculation-form select[name="material"]');
+    const difficultySelect = popup.querySelector('.calculation-form select[name="difficulty"]');
 
     formResult.classList.add('form__result--hidden');
 
@@ -62,6 +63,9 @@ if (popups) {
     typeSelect.dispatchEvent(changeEvent);
 
     materialSelect.value = material ? material : '';
+
+    difficultySelect.value = '';
+    difficultySelect.dispatchEvent(changeEvent);
 
     popup.classList.add('popup--open');
     currentPopup = popup;
@@ -1184,9 +1188,9 @@ const initSelect = (wrapper) => {
   };
 
   const changeValue = (index) => {
-    // if (control.value === control.children[index].value) {
-    //   return;
-    // }
+    if (control.value === control.children[index].value) {
+      return;
+    }
 
     control.children[index].selected = true;
     control.dispatchEvent(changeEvent);
