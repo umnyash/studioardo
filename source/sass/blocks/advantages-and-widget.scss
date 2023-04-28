@@ -17,14 +17,19 @@
 }
 
 .advantages-and-widget__widget {
-  display: none;
+  display: block;
   width: 260px;
   height: 87px;
+  margin: 20px auto 0;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
 
+  @media #{$tablet-desktop} {
+    margin-top: 30px;
+  }
+
   @media #{$laptop-desktop} {
-    display: block;
+    margin: 0;
   }
 }

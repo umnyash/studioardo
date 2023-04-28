@@ -41,7 +41,7 @@
     gap: 15px;
   }
 
-  @media #{$laptop-desktop} {
+  @media #{$narrowlaptop-desktop} {
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
   }
@@ -109,7 +109,7 @@
   transform: translate(-50%, -100%);
   will-change: transform;
 
-  @media #{$laptop-desktop} {
+  @media #{$narrowlaptop-desktop} {
     top: -25px;
     width: 395px;
   }
@@ -166,7 +166,7 @@
 }
 
 .n-advantages__item:first-child .n-advantages__info {
-  @media #{$laptop-desktop} {
+  @media #{$narrowlaptop-desktop} {
     left: 0;
     transform: translate(0, -100%);
     will-change: transform;
@@ -174,7 +174,7 @@
 }
 
 .n-advantages__item:last-child .n-advantages__info {
-  @media #{$laptop-desktop} {
+  @media #{$narrowlaptop-desktop} {
     right: 0;
     left: auto;
     transform: translate(0, -100%);
@@ -217,12 +217,11 @@
     gap: 5px;
 
     @media #{$tablet-desktop} {
-      // grid-template-columns: repeat(3, 1fr);
       row-gap: 10px;
       column-gap: 8px;
     }
 
-    @media #{$laptop-desktop} {
+    @media #{$narrowlaptop-desktop} {
       grid-template-columns: repeat(5, 1fr);
       gap: 16px;
     }
