@@ -1184,9 +1184,9 @@ const initSelect = (wrapper) => {
   };
 
   const changeValue = (index) => {
-    if (control.value === control.children[index].value) {
-      return;
-    }
+    // if (control.value === control.children[index].value) {
+    //   return;
+    // }
 
     control.children[index].selected = true;
     control.dispatchEvent(changeEvent);
