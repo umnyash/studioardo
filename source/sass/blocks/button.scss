@@ -106,6 +106,7 @@
 
   &:active {
     border-color: $special-color-dark;
+    color: $text-color-secondary;
     background-color: $special-color-dark;
     opacity: 1;
   }
