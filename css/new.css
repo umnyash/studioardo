@@ -12022,17 +12022,21 @@ n-collection__link-2 {
 .advantages-and-widget__inner {
   padding: 0 14px;
 }
-@media (min-width: 1510px) {
+@media (min-width: 1280px) {
   .advantages-and-widget__inner {
     display: grid;
-    width: 1480px;
-    padding-right: 40px;
-    padding-left: 40px;
-    margin: 0 auto;
     grid-template-columns: 1fr 260px;
     -moz-column-gap: 20px;
          column-gap: 20px;
     align-items: center;
+  }
+}
+@media (min-width: 1510px) {
+  .advantages-and-widget__inner {
+    width: 1480px;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin: 0 auto;
   }
 }
 
@@ -12044,7 +12048,7 @@ n-collection__link-2 {
   background-position: center;
   background-size: 100%;
 }
-@media (min-width: 1510px) {
+@media (min-width: 1280px) {
   .advantages-and-widget__widget {
     display: block;
   }
@@ -12062,6 +12066,11 @@ n-collection__link-2 {
 
 .stone-main-page__reference {
   margin: 0 0 10px;
+}
+@media (min-width: 768px) {
+  .stone-main-page__reference {
+    margin-bottom: 24px;
+  }
 }
 @media (min-width: 1280px) {
   .stone-main-page__reference {
@@ -12148,6 +12157,11 @@ n-collection__link-2 {
 
 .stone-category-page__reference {
   margin: 0 0 10px;
+}
+@media (min-width: 768px) {
+  .stone-category-page__reference {
+    margin-bottom: 24px;
+  }
 }
 @media (min-width: 1280px) {
   .stone-category-page__reference {
@@ -12529,6 +12543,11 @@ n-collection__link-2 {
 }
 @media (min-width: 768px) {
   .n-advantages {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1510px) {
+  .n-advantages {
     font-size: 24px;
   }
 }
@@ -12798,7 +12817,7 @@ n-collection__link-2 {
   }
 }
 
-@media (min-width: 1510px) {
+@media (min-width: 1280px) {
   .n-advantages--left-column--desktop .n-advantages__item:last-child .n-advantages__info {
     right: auto;
     left: 50%;
@@ -14824,6 +14843,11 @@ n-collection__link-2 {
 
 .mosaic-page__reference {
   margin: 0 0 10px;
+}
+@media (min-width: 768px) {
+  .mosaic-page__reference {
+    margin-bottom: 24px;
+  }
 }
 @media (min-width: 1280px) {
   .mosaic-page__reference {
