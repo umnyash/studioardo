@@ -1744,11 +1744,11 @@ const productCategoriesSlider = new Swiper('.product-categories__slider', {
   watchSlidesProgress: true,
   loop: true,
   breakpoints: {
-    483: {
+    364: {
       slidesPerView: 'auto',
     },
     1280: {
-      slidesPerView: 3,
+      slidesPerView: 4,
       spaceBetween: 20,
       loop: false,
     },

@@ -26,8 +26,8 @@
 .product-categories__item {
   width: auto;
 
-  @media (min-width: 483px) {
-    width: 455px;
+  @media (min-width: 364px) {
+    width: 335px;
   }
 
   @media #{$laptop-desktop} {
