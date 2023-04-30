@@ -555,27 +555,6 @@ div.swiper-button-next::after {
   }
 }
 
-.page-body__good-list,
-.page-body__n-collection-list {
-  padding: 0 10px;
-  margin: 0;
-}
-@media (min-width: 768px) {
-  .page-body__good-list,
-  .page-body__n-collection-list {
-    padding: 0 15px;
-  }
-}
-@media (min-width: 1510px) {
-  .page-body__good-list,
-  .page-body__n-collection-list {
-    box-sizing: border-box;
-    width: 1480px;
-    padding: 0 39px;
-    margin: 0 auto;
-  }
-}
-
 .page-body__goods {
   margin: 0 0 50px;
 }
@@ -10872,7 +10851,7 @@ n-collection__link-2 {
 }
 
 .product-types__menu {
-  margin: 0 0 27px;
+  margin: 0 0 20px;
 }
 @media (min-width: 768px) {
   .product-types__menu {
@@ -10886,7 +10865,7 @@ n-collection__link-2 {
   padding: 0;
   margin: 0;
   list-style: none;
-  gap: 25px;
+  gap: 20px;
 }
 @media (min-width: 768px) {
   .product-types__list {
@@ -10901,6 +10880,10 @@ n-collection__link-2 {
     grid-template-columns: 1fr 1fr;
     row-gap: 20px;
   }
+}
+
+.product-types__item {
+  margin: 0;
 }
 
 .product-types__button-wrapper {
@@ -12094,7 +12077,7 @@ n-collection__link-2 {
 }
 
 .stone-main-page__product-types {
-  margin: 0 0 60px;
+  margin: 0 0 40px;
 }
 @media (min-width: 1510px) {
   .stone-main-page__product-types {
@@ -12103,7 +12086,12 @@ n-collection__link-2 {
 }
 
 .stone-main-page__ratings {
-  margin: 0 0 60px;
+  margin: 0 0 40px;
+}
+@media (min-width: 1280px) {
+  .stone-main-page__ratings {
+    margin-bottom: 60px;
+  }
 }
 
 .stone-main-page__calculation {
@@ -12121,7 +12109,12 @@ n-collection__link-2 {
 }
 
 .stone-main-page__manufacture {
-  margin: 0 0 60px;
+  margin: 0 0 40px;
+}
+@media (min-width: 1280px) {
+  .stone-main-page__manufacture {
+    margin-bottom: 60px;
+  }
 }
 @media (min-width: 1510px) {
   .stone-main-page__manufacture {
@@ -12139,7 +12132,7 @@ n-collection__link-2 {
 }
 
 .stone-main-page__clients {
-  margin: 0 0 50px;
+  margin: 0 0 40px;
 }
 @media (min-width: 1510px) {
   .stone-main-page__clients {
@@ -12227,7 +12220,12 @@ n-collection__link-2 {
 }
 
 .stone-category-page__ratings {
-  margin: 0 0 60px;
+  margin: 0 0 40px;
+}
+@media (min-width: 1280px) {
+  .stone-category-page__ratings {
+    margin-bottom: 60px;
+  }
 }
 
 .stone-category-page__calculation {
@@ -12259,7 +12257,12 @@ n-collection__link-2 {
 }
 
 .stone-category-page__manufacture {
-  margin: 0 0 60px;
+  margin: 0 0 40px;
+}
+@media (min-width: 1280px) {
+  .stone-category-page__manufacture {
+    margin-bottom: 60px;
+  }
 }
 @media (min-width: 1510px) {
   .stone-category-page__manufacture {
@@ -12268,7 +12271,7 @@ n-collection__link-2 {
 }
 
 .stone-category-page__clients {
-  margin: 0 0 50px;
+  margin: 0 0 40px;
 }
 @media (min-width: 1510px) {
   .stone-category-page__clients {
@@ -12347,7 +12350,12 @@ n-collection__link-2 {
 }
 
 .stone-product-page__ratings {
-  margin: 0 0 60px;
+  margin: 0 0 40px;
+}
+@media (min-width: 1280px) {
+  .stone-product-page__ratings {
+    margin-bottom: 60px;
+  }
 }
 
 .stone-product-page__calculation {
@@ -12365,7 +12373,12 @@ n-collection__link-2 {
 }
 
 .stone-product-page__manufacture {
-  margin: 0 0 60px;
+  margin: 0 0 40px;
+}
+@media (min-width: 1280px) {
+  .stone-product-page__manufacture {
+    margin-bottom: 60px;
+  }
 }
 @media (min-width: 1510px) {
   .stone-product-page__manufacture {
@@ -12374,7 +12387,7 @@ n-collection__link-2 {
 }
 
 .stone-product-page__clients {
-  margin: 0 0 50px;
+  margin: 0 0 40px;
 }
 @media (min-width: 1510px) {
   .stone-product-page__clients {
