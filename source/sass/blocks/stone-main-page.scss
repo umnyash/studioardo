@@ -24,7 +24,7 @@
 }
 
 .stone-main-page__product-types {
-  margin: 0 0 60px;
+  margin: 0 0 40px;
 
   @media #{$desktop} {
     margin-bottom: 100px;
@@ -32,7 +32,11 @@
 }
 
 .stone-main-page__ratings {
-  margin: 0 0 60px;
+  margin: 0 0 40px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 60px;
+  }
 }
 
 .stone-main-page__calculation {
@@ -48,7 +52,11 @@
 }
 
 .stone-main-page__manufacture {
-  margin: 0 0 60px;
+  margin: 0 0 40px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 60px;
+  }
 
   @media #{$desktop} {
     margin-bottom: 105px;
@@ -64,7 +72,7 @@
 }
 
 .stone-main-page__clients {
-  margin: 0 0 50px;
+  margin: 0 0 40px;
 
   @media #{$desktop} {
     margin-bottom: 100px;

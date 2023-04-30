@@ -129,23 +129,6 @@
   }
 }
 
-.page-body__good-list,
-.page-body__n-collection-list {
-  padding: 0 10px;
-  margin: 0;
-
-  @media #{$tablet-desktop} {
-    padding: 0 15px;
-  }
-
-  @media #{$desktop} {
-    box-sizing: border-box;
-    width: 1480px;
-    padding: 0 39px;
-    margin: 0 auto;
-  }
-}
-
 .page-body__goods {
   margin: 0 0 50px;
 

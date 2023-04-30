@@ -10,7 +10,7 @@
 }
 
 .product-types__menu {
-  margin: 0 0 27px;
+  margin: 0 0 20px;
 
   @media #{$tablet-desktop} {
     margin-bottom: 40px;
@@ -23,7 +23,7 @@
   padding: 0;
   margin: 0;
   list-style: none;
-  gap: 25px;
+  gap: 20px;
 
   @media #{$tablet-desktop} {
     grid-template-columns: 1fr;
@@ -35,6 +35,10 @@
     grid-template-columns: 1fr 1fr;
     row-gap: 20px;
   }
+}
+
+.product-types__item {
+  margin: 0;
 }
 
 .product-types__button-wrapper {

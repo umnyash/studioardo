@@ -14,10 +14,32 @@
     <title>Новые карточки коллекции</title>
     <meta name="format-detection" content="telephone=no"/>
     <meta name="format-detection" content="address=no"/>
+
+    <style>
+      .n-collection-list {
+        padding: 0 10px;
+        margin: 0;
+      }
+
+      @media (min-width: 768px) {
+        .n-collection-list {
+          padding: 0 15px;
+        }
+      }
+
+      @media (min-width: 1510px) {
+        .n-collection-list {
+          box-sizing: border-box;
+          width: 1480px;
+          padding: 0 39px;
+          margin: 0 auto;
+        }
+      }
+    </style>
   </head>
   <body class="page-body">
     <main>
-      <ul class="page-body__n-collection-list n-collection-list">
+      <ul class="n-collection-list">
         <li class="n-collection-list__item">
           <article class="n-collection-list__n-collection n-collection">
             <div class="n-collection__main">

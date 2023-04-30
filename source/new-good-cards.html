@@ -14,10 +14,32 @@
     <title>Новые карточки товаров</title>
     <meta name="format-detection" content="telephone=no"/>
     <meta name="format-detection" content="address=no"/>
+
+    <style>
+      .good-list {
+        padding: 0 10px;
+        margin: 0;
+      }
+
+      @media (min-width: 768px) {
+        .good-list {
+          padding: 0 15px;
+        }
+      }
+
+      @media (min-width: 1510px) {
+        .good-list {
+          box-sizing: border-box;
+          width: 1480px;
+          padding: 0 39px;
+          margin: 0 auto;
+        }
+      }
+    </style>
   </head>
   <body class="page-body">
-    <main class="page-new-good-cards">
-      <ul class="page-body__good-list good-list">
+    <main>
+      <ul class="good-list">
         <li class="good-list__item">
           <form class="good" action="#!" method="post">
             <div class="good__main">
