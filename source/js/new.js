@@ -551,8 +551,8 @@ if (customForm2Elements) {
 }
 
 const promocodeElement = document.querySelector('.custom-form-2--order .form__promocode');
-const promocodeCancelButton = document.querySelector('.promocode__cancel-button');
-const promocodeInput = document.querySelector('.form__textfield-control');
+const promocodeCancelButton = promocodeElement.querySelector('.promocode__cancel-button');
+const promocodeInput = promocodeElement.querySelector('.form__textfield-control');
 const promocodeShowButton1 = document.querySelector('.custom-form-2--order .form__footer-promo-button');
 const promocodeShowButton2 = document.querySelector('.custom-form-2--order .form__promocode-button');
 
