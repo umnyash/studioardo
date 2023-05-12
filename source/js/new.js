@@ -551,37 +551,40 @@ if (customForm2Elements) {
 }
 
 const promocodeElement = document.querySelector('.custom-form-2--order .form__promocode');
-const promocodeCancelButton = promocodeElement.querySelector('.promocode__cancel-button');
-const promocodeInput = promocodeElement.querySelector('.form__textfield-control');
-const promocodeShowButton1 = document.querySelector('.custom-form-2--order .form__footer-promo-button');
-const promocodeShowButton2 = document.querySelector('.custom-form-2--order .form__promocode-button');
 
-if (promocodeElement && promocodeShowButton1 && promocodeShowButton2) {
-  promocodeShowButton1.addEventListener('click', (evt) => {
-    evt.preventDefault();
-    promocodeShowButton1.classList.add('form__footer-promo-button--hidden');
-    promocodeShowButton2.classList.add('form__promocode-button--hidden');
-    promocodeElement.classList.add('form__promocode--show');
-    promocodeInput.focus();
-  });
-}
+if (promocodeElement) {
+  const promocodeCancelButton = promocodeElement.querySelector('.promocode__cancel-button');
+  const promocodeInput = promocodeElement.querySelector('.form__textfield-control');
+  const promocodeShowButton1 = document.querySelector('.custom-form-2--order .form__footer-promo-button');
+  const promocodeShowButton2 = document.querySelector('.custom-form-2--order .form__promocode-button');
 
-if (promocodeElement && promocodeShowButton1 && promocodeShowButton2) {
-  promocodeShowButton2.addEventListener('click', (evt) => {
-    evt.preventDefault();
-    promocodeShowButton1.classList.add('form__footer-promo-button--hidden');
-    promocodeShowButton2.classList.add('form__promocode-button--hidden');
-    promocodeElement.classList.add('form__promocode--show');
-    promocodeInput.focus();
-  });
-}
+  if (promocodeElement && promocodeShowButton1 && promocodeShowButton2) {
+    promocodeShowButton1.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      promocodeShowButton1.classList.add('form__footer-promo-button--hidden');
+      promocodeShowButton2.classList.add('form__promocode-button--hidden');
+      promocodeElement.classList.add('form__promocode--show');
+      promocodeInput.focus();
+    });
+  }
 
-if (promocodeElement && promocodeCancelButton && promocodeShowButton1 && promocodeShowButton2) {
-  promocodeCancelButton.addEventListener('click', () => {
-    promocodeShowButton1.classList.remove('form__footer-promo-button--hidden');
-    promocodeShowButton2.classList.remove('form__promocode-button--hidden');
-    promocodeElement.classList.remove('form__promocode--show');
-  });
+  if (promocodeElement && promocodeShowButton1 && promocodeShowButton2) {
+    promocodeShowButton2.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      promocodeShowButton1.classList.add('form__footer-promo-button--hidden');
+      promocodeShowButton2.classList.add('form__promocode-button--hidden');
+      promocodeElement.classList.add('form__promocode--show');
+      promocodeInput.focus();
+    });
+  }
+
+  if (promocodeElement && promocodeCancelButton && promocodeShowButton1 && promocodeShowButton2) {
+    promocodeCancelButton.addEventListener('click', () => {
+      promocodeShowButton1.classList.remove('form__footer-promo-button--hidden');
+      promocodeShowButton2.classList.remove('form__promocode-button--hidden');
+      promocodeElement.classList.remove('form__promocode--show');
+    });
+  }
 }
 
 const inspirationGallery = document.querySelector('.inspiration');
@@ -1610,7 +1613,17 @@ const initYouTubeVideoStarter = (player, button) => {
 };
 
 let youTubePlayer;
-function onYouTubeIframeAPIReady() {
+// function onYouTubeIframeAPIReady() {
+//   youTubePlayer = new YT.Player('manufacture-video');
+
+//   const playButton = document.querySelector('.n-banner__video-link');
+
+//   if (youTubePlayer && playButton) {
+//     initYouTubeVideoStarter(youTubePlayer, playButton);
+//   }
+// };
+
+const onYouTubeIframeAPIReady = () => {
   youTubePlayer = new YT.Player('manufacture-video');
 
   const playButton = document.querySelector('.n-banner__video-link');
