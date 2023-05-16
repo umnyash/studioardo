@@ -64,8 +64,10 @@ if (popups) {
 
     materialSelect.value = material ? material : '';
 
-    difficultySelect.value = '';
-    difficultySelect.dispatchEvent(changeEvent);
+    if (difficultySelect) {
+      difficultySelect.value = '';
+      difficultySelect.dispatchEvent(changeEvent);
+    }
 
     popup.classList.add('popup--open');
     currentPopup = popup;
@@ -75,7 +77,6 @@ if (popups) {
     if (document.body.clientWidth > bodyWidth) {
       document.body.style.paddingRight = document.body.clientWidth - bodyWidth + 'px';
     }
-
 
     materialSelect.dispatchEvent(changeEvent);
 
@@ -1166,19 +1167,12 @@ const initSelect = (wrapper) => {
 
   control.value = '';
 
-  let listMaxHeight = false;
-
   const setListMaxHeight = () => {
-    if (listMaxHeight) {
-      return;
-    }
-
     list.style.maxHeight = `${list.children[0].offsetHeight * list.dataset.maxHeight}px`;
-    listMaxHeight = true;
   };
 
-  select.addEventListener('keydown',  setListMaxHeight, {once: true});
-  select.addEventListener('click', setListMaxHeight, {once: true});
+  select.addEventListener('keydown', setListMaxHeight);
+  select.addEventListener('click', setListMaxHeight);
 
   let currentOptionIndex = 0;
 
