@@ -1168,7 +1168,14 @@ const initSelect = (wrapper) => {
   control.value = '';
 
   const setListMaxHeight = () => {
-    list.style.maxHeight = `${list.children[0].offsetHeight * list.dataset.maxHeight}px`;
+    for (let i = 0; i < list.children.length; i++) {
+      if (list.children[i].offsetHeight > 0) {
+        list.style.maxHeight = `${list.children[i].offsetHeight * list.dataset.maxHeight}px`;
+        return;
+      }
+    }
+
+    list.style.maxHeight = '300px';
   };
 
   select.addEventListener('keydown', setListMaxHeight);
