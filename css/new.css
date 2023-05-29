@@ -1124,6 +1124,7 @@ div.swiper-button-next::after {
 .heading--alter-2 {
   font-size: 24px;
   line-height: 1.2;
+  letter-spacing: 0;
 }
 @media (min-width: 768px) {
   .heading--alter-2 {
@@ -12973,7 +12974,12 @@ n-collection__link-2 {
 }
 
 .product-info__heading {
-  margin: 0 0 20px;
+  margin: 0 0 16px;
+}
+@media (min-width: 1280px) {
+  .product-info__heading {
+    margin-bottom: 20px;
+  }
 }
 
 .product-info__heading a {
@@ -12989,11 +12995,16 @@ n-collection__link-2 {
 }
 
 .product-info__list {
-  margin: 0 0 40px;
+  margin: 0 0 16px;
+}
+@media (min-width: 1280px) {
+  .product-info__list {
+    margin-bottom: 40px;
+  }
 }
 
 .product-info__price-wrapper {
-  margin: 0 0 20px;
+  margin: 0 0 24px;
   font: inherit;
 }
 
@@ -13001,7 +13012,7 @@ n-collection__link-2 {
   display: grid;
   row-gap: 10px;
 }
-@media (min-width: 768px) {
+@media (min-width: 375px) {
   .product-info__buttons {
     grid-auto-flow: column;
     -moz-column-gap: 11px;
@@ -13019,7 +13030,7 @@ n-collection__link-2 {
   padding-right: 18px;
   padding-left: 18px;
 }
-@media (min-width: 768px) {
+@media (min-width: 450px) {
   .product-info__button {
     min-width: 200px;
   }
