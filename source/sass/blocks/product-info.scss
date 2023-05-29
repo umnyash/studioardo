@@ -10,7 +10,11 @@
 }
 
 .product-info__heading {
-  margin: 0 0 20px;
+  margin: 0 0 16px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 20px;
+  }
 }
 
 .product-info__heading a {
@@ -26,11 +30,15 @@
 }
 
 .product-info__list {
-  margin: 0 0 40px;
+  margin: 0 0 16px;
+
+  @media #{$laptop-desktop} {
+    margin-bottom: 40px;
+  }
 }
 
 .product-info__price-wrapper {
-  margin: 0 0 20px;
+  margin: 0 0 24px;
   font: inherit;
 }
 
@@ -38,7 +46,7 @@
   display: grid;
   row-gap: 10px;
 
-  @media #{$tablet-desktop} {
+  @media #{$widemobile-desktop} {
     grid-auto-flow: column;
     column-gap: 11px;
     justify-content: start;
@@ -53,7 +61,7 @@
   padding-right: 18px;
   padding-left: 18px;
 
-  @media #{$tablet-desktop} {
+  @media (min-width: 450px) {
     min-width: 200px;
   }
 
