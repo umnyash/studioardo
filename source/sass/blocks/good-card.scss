@@ -564,3 +564,11 @@
     will-change: transform;
   }
 }
+
+.good-card__tabs-content {
+  margin-bottom: 27px;
+
+  @media #{$laptop-desktop} {
+    --clipbox-max-height: 180px;
+  }
+}

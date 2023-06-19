@@ -23,14 +23,14 @@
 }
 
 .clipbox--big {
-  --max-height: 190px;
+  --max-height: var(--clipbox-max-height, 190px);
 
   @media #{$widemobile-desktop} {
-    --max-height: 275px;
+    --max-height: var(--clipbox-max-height, 275px);
   }
 
   @media #{$tablet-desktop} {
-    --max-height: 400px;
+    --max-height: var(--clipbox-max-height, 400px);
   }
 }
 
