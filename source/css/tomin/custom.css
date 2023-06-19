@@ -3210,7 +3210,7 @@ input[type="range"]::-moz-range-thumb{
 }
 
 .c-filter__btn--submit:disabled {
-    background: #b5b5b5
+    background-color: #b5b5b5
 }
 
 @media (max-width: 980px) {
@@ -3784,3 +3784,63 @@ input[type="range"]::-moz-range-thumb{
 .n-subscribe__form.error input::-moz-placeholder          {color:#C5072B;}/* Firefox 19+ */
 .n-subscribe__form.error input:-moz-placeholder           {color:#C5072B;}/* Firefox 18- */
 .n-subscribe__form.error input:-ms-input-placeholder      {color:#C5072B;}
+
+.button.button--all-product{
+	margin-left:20px;
+	padding: 0 20px;
+}
+
+@media screen and (max-width: 991px) {
+	main.stone-main-page {margin-top: 5px;}
+}
+.old-news .pagination{
+	margin-bottom: 100px;
+}
+.brand-collections .category__item .cat-card {
+	background-color: #fff;
+}
+@media screen and (max-width: 768px) {
+	.old-news .pagination{
+		margin-bottom: 40px;
+	}
+}
+.good-card__labels div{
+	padding: 3px 6px;
+	border-radius: 3px;
+	color: #fff;
+	width: auto;
+	height: auto;
+	margin: 5px 3px 0 0;
+	background-color: #d92547;
+}
+.good-card__labels .card__label-sklad{
+	background-color: rgba(223,174,56,.6);
+}
+.good-card__labels .card__label-new{
+	background-color: rgba(39, 114, 225, 0.6);
+}
+.good-card__labels .card__label-big{
+	background-color: rgba(133, 133, 133, 0.6);
+}
+@media screen and (max-width: 1279px) {
+	.custom-form-2--order .form__actions {
+		position: sticky;
+		bottom: 0px;
+		width: 100%;
+	}
+	.orderBlock .b24-widget-button-wrapper{
+		bottom: 65px !important;
+		left: 0px;
+		right: auto !important;
+		display:none;
+	}
+	.orderBlock .go-top{
+		display:none;
+	}
+	.custom-form-2--order .form__actions{
+		background-color: #fff;
+	}
+}
+.characteristics--alter .characteristics__link.brand_characteristics{
+	color: #c5072b;
+}
