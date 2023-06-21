@@ -229,6 +229,11 @@ if (clipboxes) {
   let windowWidth = window.innerWidth;
 
   const setClipboxMode = (clipbox) => {
+    if (clipbox.classList.contains('clipbox--no-height')) {
+      clipbox.classList.add('clipbox--reduced');
+      clipbox.style.setProperty('--clipbox-max-height', clipbox.offsetHeight);
+    }
+
     const content = clipbox.querySelector('.clipbox__content');
 
     if (clipbox.classList.contains('clipbox--expanded')) {
@@ -247,24 +252,30 @@ if (clipboxes) {
     }
   };
 
-  clipboxes.forEach((clipbox) => {
-    clipbox.querySelector('.clipbox__toggler').addEventListener('click', () => {
-      clipbox.classList.toggle('clipbox--reduced');
-      clipbox.classList.toggle('clipbox--expanded');
+  window.addEventListener('load', () => {
+    clipboxes.forEach((clipbox) => {
+      clipbox.querySelector('.clipbox__toggler').addEventListener('click', () => {
+        clipbox.classList.toggle('clipbox--reduced');
+        clipbox.classList.toggle('clipbox--expanded');
+      });
+
+      setTimeout(() => {
+        setClipboxMode(clipbox);
+      }, 500);
     });
 
-    setClipboxMode(clipbox);
-  });
+    window.addEventListener('resize', () => {
+      if (windowWidth === window.innerWidth) {
+        return;
+      }
 
-  window.addEventListener('resize', () => {
-    if (windowWidth === window.innerWidth) {
-      return;
-    }
+      windowWidth = window.innerWidth;
 
-    windowWidth = window.innerWidth;
-
-    clipboxes.forEach((clipbox) => {
-      setClipboxMode(clipbox);
+      clipboxes.forEach((clipbox) => {
+        setTimeout(() => {
+          setClipboxMode(clipbox);
+        }, 500);
+      });
     });
   });
 }
@@ -1266,6 +1277,13 @@ const initSelect = (wrapper) => {
     }
     highlightSelectedOption();
   });
+
+  const choosenOption = control.querySelector('[selected]');
+
+  if (choosenOption) {
+    control.value = choosenOption.value;
+    control.dispatchEvent(changeEvent);
+  }
 };
 
 document.querySelectorAll('.n-select').forEach(initSelect);
@@ -1753,7 +1771,28 @@ document.querySelectorAll('.custom-form-2 .form__file-field-wrapper').forEach(in
 
 /* Слайдер категорий продуктов */
 
-const productCategoriesSlider = new Swiper('.product-categories__slider', {
+new Swiper('.product-categories__slider', {
+  spaceBetween: 14,
+  watchSlidesProgress: true,
+  loop: true,
+  breakpoints: {
+    364: {
+      slidesPerView: 'auto',
+    },
+    1280: {
+      slidesPerView: 4,
+      spaceBetween: 20,
+      loop: false,
+    },
+  },
+});
+
+/**/
+
+
+/* Слайдер категорий бренда */
+
+new Swiper('.brand-categories__slider', {
   spaceBetween: 14,
   watchSlidesProgress: true,
   loop: true,

@@ -1,8 +1,8 @@
 .clipbox {
-  --max-height: 205px;
+  --max-height: var(--clipbox-max-height, 205px);
 
   @media #{$tablet-desktop} {
-    --max-height: 400px;
+    --max-height: var(--clipbox-max-height, 400px);
   }
 }
 
@@ -174,5 +174,30 @@
 
   &::after {
     display: none;
+  }
+}
+
+.clipbox--no-height {
+  display: grid;
+
+  .clipbox__toggler {
+    z-index: 1;
+    margin-top: auto;
+  }
+
+  &.clipbox--reduced {
+    position: relative;
+    overflow: hidden;
+
+    .clipbox__content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+
+      &::after {
+        background-image: linear-gradient(to top, #ffffff 40px, rgba(255, 255, 255, 0.3), transparent);
+      }
+    }
   }
 }

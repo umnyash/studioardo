@@ -1,27 +1,96 @@
+.brand {
+  @media #{$desktop} {
+    padding-bottom: 73px;
+  };
+}
+
+.brand__inner {
+  @media (min-width: 992px) {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns: 1fr minmax(400px, 480px);
+    grid-template-areas:
+      "subtitle gallery"
+      "title    gallery"
+      "desc     gallery"
+      "buttons  gallery";
+    column-gap: 32px;
+    align-items: start;;
+  }
+
+  @media #{$desktop} {
+    column-gap: 68px;
+  }
+}
+
+.brand__subtitle {
+  @media (min-width: 992px) {
+    grid-area: subtitle;
+  };
+}
+
 .brand__title {
   @media (min-width: 992px) {
+    grid-area: title;
     font-size: 36px;
     line-height: 47px;
   }
 }
 
-.brand {
-  .info-coll__btns a {
-    @media #{$tablet-desktop} {
-      max-width: none;
-    }
-  }
+.brand__gallery {
+  margin: 0 0 20px;
+  max-width: 100%;
 
-  @media (min-width: 1200px) {
-    .info-coll__btns {
-      padding-left: 15px;
+  @media (min-width: 992px) {
+    grid-area: gallery;
+    margin-bottom: 0;
+  };
+}
+
+.brand__gallery .collection-img__carousel .item {
+  margin: 0;
+}
+
+.brand__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 32px;
+  gap: 12px 20px;
+
+  @media (min-width: 992px) {
+    grid-area: buttons;
+    margin: 32px 0 0;
+  };
+}
+
+.brand__buttons .button,
+.brand__buttons .button-2 {
+  flex-grow: 1;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.brand__desc {
+  @media (min-width: 992px) {
+    grid-area: desc;
+    align-self: stretch;
+  };
+}
+
+.brand__desc.clipbox--no-height {
+  --clipbox-max-height: none;
+
+  @media (max-width: 991px) {
+    .clipbox__content {
+      position: static;
     }
-    .button-2--with-icon--pdf {
-      min-width: 260px;
+
+    .clipbox__content::after {
+      display: none;
     }
-    .button-2--with-icon--play,
-    .button-2--with-icon--phone {
-      min-width: 280px;
+
+    .clipbox__toggler {
+      display: none;
     }
   }
 }
