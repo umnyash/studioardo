@@ -7095,18 +7095,17 @@ div.swiper-button-next::after {
   }
 }
 
-.brand__desc.clipbox--no-height {
-  --clipbox-max-height: none;
-}
 @media (max-width: 991px) {
+  .brand__desc.clipbox--no-height {
+    --clipbox-max-height: 240px !important;
+  }
   .brand__desc.clipbox--no-height .clipbox__content {
     position: static;
   }
-  .brand__desc.clipbox--no-height .clipbox__content::after {
-    display: none;
-  }
-  .brand__desc.clipbox--no-height .clipbox__toggler {
-    display: none;
+}
+@media (min-width: 992px) {
+  .brand__desc.clipbox--no-height {
+    --clipbox-max-height: none;
   }
 }
 
