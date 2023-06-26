@@ -1203,10 +1203,6 @@ const initSelect = (wrapper) => {
   };
 
   const changeValue = (index) => {
-    if (control.value === control.children[index].value) {
-      return;
-    }
-
     control.children[index].selected = true;
     control.dispatchEvent(changeEvent);
   };
@@ -1301,6 +1297,7 @@ const materialsSlider = new Swiper('.materials-slider', {
   },
   spaceBetween: 14,
   watchSlidesProgress: true,
+  speed: 0,
   breakpoints: {
     768: {
       spaceBetween: 30,
