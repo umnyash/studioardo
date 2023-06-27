@@ -1297,7 +1297,7 @@ const materialsSlider = new Swiper('.materials-slider', {
   },
   spaceBetween: 14,
   watchSlidesProgress: true,
-  speed: 0,
+  // speed: 0,
   breakpoints: {
     768: {
       spaceBetween: 30,
