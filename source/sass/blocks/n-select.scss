@@ -84,6 +84,10 @@
 .n-select__option {
   margin: 0;
   cursor: pointer;
+
+  &--hidden {
+    display: none !important;
+  }
 }
 
 .n-select__options--text {

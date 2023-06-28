@@ -1192,15 +1192,43 @@ const initSelect = (wrapper) => {
   select.addEventListener('keydown', setListMaxHeight);
   select.addEventListener('click', setListMaxHeight);
 
-  let currentOptionIndex = 0;
+  let currentOptionIndex = -1;
 
-  const getNextOptionIndex = () => {
+  const getNextOptionIndex2 = () => {
     return (currentOptionIndex + 1) % control.children.length;
   };
 
-  const getPrevOptionIndex = () => {
+  const getNextOptionIndex = () => {
+    let index = currentOptionIndex;
+
+    for (let i = 0; i < control.children.length; i++) {
+      index = (index + 1) % control.children.length;
+
+      if (!control.children[index].hasAttribute('hidden')) {
+        break;
+      }
+    };
+
+    return index;
+  };
+
+  const getPrevOptionIndex2 = () => {
     return (currentOptionIndex - 1 < 0) ? control.children.length - 1 : currentOptionIndex - 1;
   };
+
+  const getPrevOptionIndex = () => {
+    let index = currentOptionIndex;
+
+    for (let i = 0; i < control.children.length; i++) {
+      index = (index - 1 < 0) ? control.children.length - 1 : index - 1;
+
+      if (!control.children[index].hasAttribute('hidden')) {
+        break;
+      }
+    }
+
+    return index;
+  }
 
   const changeValue = (index) => {
     control.children[index].selected = true;
@@ -1269,7 +1297,7 @@ const initSelect = (wrapper) => {
     if (control.value) {
       currentOptionIndex = +control.querySelector(`option[value="${control.value}"]`).dataset.index;
     } else {
-      currentOptionIndex = 0;
+      currentOptionIndex = -1;
     }
     highlightSelectedOption();
   });
@@ -1326,29 +1354,46 @@ const initCalculationMaterialSection = (section) => {
     const sliderConnectedSelectName = slider.dataset.connectedSelect;
     const connectedSelect = section.querySelector(`select[name="${sliderConnectedSelectName}"]`);
 
+    const slides = slider.querySelectorAll('.materials-slider__item');
+    slides.forEach((slide, i) => slide.dataset.index = i);
+
     if (!connectedSelect) {
       return;
     }
 
     connectedSelect.addEventListener('change', () => {
-      let currentOptionIndex;
-
       if (connectedSelect.value) {
-        currentOptionIndex = connectedSelect.querySelector(`[value="${connectedSelect.value}"]`).dataset.index;
-      }
+        let realOptionIndex = -1;
 
-      materialsSlider.slideTo(currentOptionIndex, materialsSlider.params.speed, false);
+        for (let i = 0; i < connectedSelect.children.length; i++) {
+          if (!connectedSelect.children[i].hasAttribute('hidden')) {
+            realOptionIndex++;
+
+            if (connectedSelect.value === connectedSelect.children[i].value) {
+              break;
+            }
+          }
+        };
+
+        materialsSlider.slideTo(realOptionIndex, materialsSlider.params.speed, false);
+      }
     });
 
     materialsSlider.on('transitionEnd', () => {
-      const value = connectedSelect.querySelector(`option[data-index="${materialsSlider.realIndex}"]`).value;
+      const activeSlide = slider.querySelector('.swiper-slide-visible');
 
-         if (connectedSelect.value === value) {
+      if (activeSlide) {
+        const activeSlideOptionIndex = activeSlide.dataset.index;
+
+        const value = connectedSelect.querySelector(`option[data-index="${activeSlideOptionIndex}"]`).value;
+
+        if (connectedSelect.value === value) {
           return;
         }
 
         connectedSelect.value = value;
         connectedSelect.dispatchEvent(changeEvent);
+      }
     });
   }
 };
