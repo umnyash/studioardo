@@ -11,7 +11,7 @@
     <link href="css/style.min.css" rel="stylesheet">
     <link href="css/custom.min.css" rel="stylesheet">
     <link href="css/new.css" rel="stylesheet"> <!-- Новые стили -->
-    <title>Мозаика, цены зависящие от сложности</title>
+    <title>Мозаика, смена стоимости</title>
     <meta name="format-detection" content="telephone=no"/>
     <meta name="format-detection" content="address=no"/>
   </head>
@@ -235,7 +235,7 @@
           </ul>
         </div>
       </section>
-      <section class="mosaic-page__calculation calculation">
+      <section class="mosaic-page__calculation calculation calculation--mosaic">
         <div class="calculation__center">
           <div class="calculation__inner">
             <picture class="calculation__img-wrapper" aria-hidden="true">
@@ -263,10 +263,10 @@
                           </div>
                         </div>
                         <select class="n-select__control visually-hidden" name="type" tabindex="-1">
-                          <option data-index="0" value="art-panel">Художественное панно</option>
-                          <option data-index="1" value="matrix-panel">Матричное панно</option>
-                          <option data-index="2" value="stretch-mark">Мозаичная растяжка</option>
-                          <option data-index="3" value="mix">Мозаичный микс</option>
+                          <option data-index="0" value="Художественное панно" data-value="art-panel">Художественное панно</option>
+                          <option data-index="1" value="Матричное панно" data-value="matrix-panel">Матричное панно</option>
+                          <option data-index="2" value="Мозаичная растяжка" data-value="stretch-mark">Мозаичная растяжка</option>
+                          <option data-index="3" value="Мозаичный микс" data-value="mix">Мозаичный микс</option>
                         </select>
                       </div>
                       <div class="form__select n-select">
@@ -306,10 +306,10 @@
                           </div>
                         </div>
                         <select class="n-select__control visually-hidden" name="material" tabindex="-1">
-                          <option data-index="0" value="metallized">Металлизированная мозаика</option>
-                          <option data-index="1" value="glass">Стеклянная мозаика</option>
-                          <option data-index="2" value="stone">Каменная мозаика</option>
-                          <option data-index="3" value="smalt">Смальта</option>
+                          <option data-index="0" value="Металлизированная мозаика" data-value="metallized">Металлизированная мозаика</option>
+                          <option data-index="1" value="Стеклянная мозаика" data-value="glass">Стеклянная мозаика</option>
+                          <option data-index="2" value="Каменная мозаика" data-value="stone">Каменная мозаика</option>
+                          <option data-index="3" value="Смальта" data-value="smalt">Смальта</option>
                         </select>
                       </div>
                       <div class="form__select n-select">
@@ -342,9 +342,9 @@
                           </div>
                         </div>
                         <select class="n-select__control visually-hidden" name="difficulty" tabindex="-1">
-                          <option data-index="0" value="standard" data-metallized-cost="10" data-glass-cost="20" data-stone-cost="30" data-smalt-cost="40">Стандартная</option>
-                          <option data-index="1" value="medium" data-metallized-cost="100" data-glass-cost="200" data-stone-cost="300" data-smalt-cost="400">Средняя</option>
-                          <option data-index="2" value="high" data-metallized-cost="1000" data-glass-cost="2000" data-stone-cost="3000" data-smalt-cost="4000">Высокая</option>
+                          <option data-index="0" value="Стандартная сложность" data-value="standard" data-metallized-cost="10" data-glass-cost="20" data-stone-cost="30" data-smalt-cost="40">Стандартная</option>
+                          <option data-index="1" value="Средняя сложность" data-value="medium" data-metallized-cost="100" data-glass-cost="200" data-stone-cost="300" data-smalt-cost="400">Средняя</option>
+                          <option data-index="2" value="Высокая сложность" data-value="high" data-metallized-cost="1000" data-glass-cost="2000" data-stone-cost="3000" data-smalt-cost="4000">Высокая</option>
                         </select>
                       </div>
                       <fieldset class="form__section">
@@ -488,7 +488,7 @@
             <span class="visually-hidden">Закрыть.</span>
           </button>
           <div class="popup__content">
-            <div class="calculation-material">
+            <div class="calculation-material calculation-material--mosaic">
               <h2 class="calculation-material__heading">Рассчитайте стоимость вашего изделия прямо сейчас</h2>
               <div class="calculation-material__calculation">
                 <picture class="calculation-material__calculation-img-wrapper calculation-material__calculation-img-wrapper--cover" aria-hidden="true">
@@ -513,10 +513,10 @@
                               </div>
                             </div>
                             <select class="n-select__control visually-hidden" name="type" tabindex="-1">
-                              <option data-index="0" value="art-panel">Художественное панно</option>
-                              <option data-index="1" value="matrix-panel">Матричное панно</option>
-                              <option data-index="2" value="stretch-mark">Мозаичная растяжка</option>
-                              <option data-index="3" value="mix">Мозаичный микс</option>
+                              <option data-index="0" value="Художественное панно" data-value="art-panel">Художественное панно</option>
+                              <option data-index="1" value="Матричное панно" data-value="matrix-panel">Матричное панно</option>
+                              <option data-index="2" value="Мозаичная растяжка" data-value="stretch-mark">Мозаичная растяжка</option>
+                              <option data-index="3" value="Мозаичный микс" data-value="mix">Мозаичный микс</option>
                             </select>
                           </div>
                           <div class="form__select n-select">
@@ -556,10 +556,10 @@
                               </div>
                             </div>
                             <select class="n-select__control visually-hidden" name="material" tabindex="-1">
-                              <option data-index="0" value="metallized">Металлизированная мозаика</option>
-                              <option data-index="1" value="glass">Стеклянная мозаика</option>
-                              <option data-index="2" value="stone">Каменная мозаика</option>
-                              <option data-index="3" value="smalt">Смальта</option>
+                              <option data-index="0" value="Металлизированная мозаика" data-value="metallized">Металлизированная мозаика</option>
+                              <option data-index="1" value="Стеклянная мозаика" data-value="glass">Стеклянная мозаика</option>
+                              <option data-index="2" value="Каменная мозаика" data-value="stone">Каменная мозаика</option>
+                              <option data-index="3" value="Смальта" data-value="smalt">Смальта</option>
                             </select>
                           </div>
                           <div class="form__select n-select">
@@ -592,9 +592,9 @@
                               </div>
                             </div>
                             <select class="n-select__control visually-hidden" name="difficulty" tabindex="-1">
-                              <option data-index="0" value="standard" data-metallized-cost="10" data-glass-cost="20" data-stone-cost="30" data-smalt-cost="40">Стандартная</option>
-                              <option data-index="1" value="medium" data-metallized-cost="100" data-glass-cost="200" data-stone-cost="300" data-smalt-cost="400">Средняя</option>
-                              <option data-index="2" value="high" data-metallized-cost="1000" data-glass-cost="2000" data-stone-cost="3000" data-smalt-cost="4000">Высокая</option>
+                              <option data-index="0" value="Стандартная сложность" data-value="standard" data-metallized-cost="10" data-glass-cost="20" data-stone-cost="30" data-smalt-cost="40">Стандартная</option>
+                              <option data-index="1" value="Средняя сложность" data-value="medium" data-metallized-cost="100" data-glass-cost="200" data-stone-cost="300" data-smalt-cost="400">Средняя</option>
+                              <option data-index="2" value="Высокая сложность" data-value="high" data-metallized-cost="1000" data-glass-cost="2000" data-stone-cost="3000" data-smalt-cost="4000">Высокая</option>
                             </select>
                           </div>
                           <fieldset class="form__section">
@@ -866,98 +866,6 @@
       </div>
 
     </main>
-    <script>
-      {
-        const initDifficultySelect = (block) => {
-          // Внутри переданного блока находим форму калькуляции
-          const calculationFormElement = block.querySelector('.calculation-form');
-
-          // Внутри формы находи <select> "Сложность"
-          const difficultySelectElement = calculationFormElement.querySelector('.n-select__control[name="difficulty"]');
-
-          // Внутри формы находим и собираем элементы, в которых отображается цена материала
-          // Это элементы кастомного селекта "Материал"
-          const materialPreviewTextElements = calculationFormElement.querySelectorAll('.material-preview__text');
-
-          // Внутри формы находим и собираем теги <option>, относящиеся к <select> "Материал"
-          const materialSelectOptions = calculationFormElement.querySelectorAll('.n-select__control[name="material"] option');
-
-          // Внутри блока пробуем найти слайдер материалов
-          // Спойлер: в блоке, который показывается в попапе этот слайдер есть,
-          // а в блоке с формой, который перманентно отображается на странице – нет.
-          const materialsSlider = block.querySelector('.materials-slider');
-
-          // Объявим здесь переменную, в которой могли бы храниться элементы слайдера материалов,
-          // в которых отображается цена.
-          let materialsSliderPriceElements = null;
-
-          // Если ранее слайдер материалов обнаружился, то внутри него нужно найти
-          // и собрать элементы, в которых отображается цена.
-          // Используем для этого ранее созданную переменную materialsSliderPriceElements
-          if (materialsSlider) {
-            materialsSliderPriceElements = materialsSlider.querySelectorAll('.materials-slider__price');
-          }
-
-          // Создаём функцию-обработчик изменения значения селекта "Сложность"
-          const onDifficultySelectChange = () => {
-            // Когда значение изменилось, находим соответствующий элемент <option> по его атрибуту value,
-            // который равен одноименному свойству селекта
-            const selectedOptionElement = difficultySelectElement.querySelector(`[value="${difficultySelectElement.value}"]`);
-
-            // Если произошёл сброс селекта, путём задания ему значения '' – пустой строки,
-            // то никакого тега <option> с таким значением ('') мы не найдём.
-            // Поэтому ничего более делать не будем и завершаем функцию.
-            if (!selectedOptionElement) {
-              return;
-            }
-
-            // Если же значение селекта изменилолсь, не на пустую строку, а на значение
-            // одного из тегов <option>, который мы нашли и записали в переменную selectedOptionElement
-            // то пройдёмся циклом по всем тегам <option> селекта "Материал".
-            // Если в html-разметке нет ошибок, то количество таких тегов, должно быть равно
-            // количеству элементов li.n-select__option.material-preview
-            // и количеству слайдов, поэтому положимся на их количество.
-
-            // Итак, перебираем теги <option> селекта "Материал"
-            materialSelectOptions.forEach((option, index) => {
-              // У каждого <option> селекта "Материал" есть атрибут value с одним из значений:
-              // metallized, glass, stone, smalt
-              // А у каждого <option> селекта "Сложность" есть дата-атрибут, в своём названии,
-              // содержащий вышеперечисленные значения. Например:
-              // data-metallized-cost, data-glass-cost и т.д.
-              // Я специально так сделал.
-              // И в этих атрибутах хранится цена, которую будем получать.
-              const cost = selectedOptionElement.getAttribute(`data-${option.value}-cost`);
-
-              // Полученную цену вставим в элементы селекта "Материал"
-              materialPreviewTextElements[index].textContent = `от ${cost} ₽/м2`;
-
-              // И если ранее в блоке мы находили ещё и слайдер материалов,
-              if (materialsSlider) {
-
-                // то вставим цену и в слайды
-                materialsSliderPriceElements[index].textContent = cost;
-              }
-            })
-          };
-
-          // Функция готова!
-
-          // Добавим её в качестве обработчика изменения селекта "Сложность"
-          difficultySelectElement.addEventListener('change', onDifficultySelectChange);
-        };
-
-        // Находим все блоки calculation(это блоки с формой в общем потоке страницы)
-        // и инициализируем тамошний селект
-        document.querySelectorAll('.calculation').forEach(initDifficultySelect);
-
-        // Находим все блоки calculation-material (это те, которые в попапах)
-        // и инициализируем тамошний селект
-        document.querySelectorAll('.calculation-material').forEach(initDifficultySelect);
-
-        // Как-то так.
-      }
-    </script>
     <script src="js/swiper.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script> <!-- Новый скрипт -->
     <script src="https://www.youtube.com/iframe_api"></script> <!-- Для YouTube плеера -->
