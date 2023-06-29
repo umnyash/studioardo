@@ -1953,6 +1953,16 @@ const initMosaicCalculationForm = (block, data) => {
     return typeSelectedOptionElement ? typeSelectedOptionElement.dataset.value : defaultType;
   };
 
+  const getFirstAvailableValue = (options) => {
+    for (let i = 0; i < options.length; i++) {
+      if (!options[i].hasAttribute('hidden')) {
+        return options[i].value;
+      }
+    }
+
+    return '';
+  };
+
   const updateSlider = () => {
     const timerId = setInterval(() => {
       if (materialsSlider.update) {
@@ -1983,6 +1993,13 @@ const initMosaicCalculationForm = (block, data) => {
       } else {
         option.setAttribute('hidden', true);
         materialNSelectOptionElements[index].classList.add('n-select__option--hidden');
+
+        if (option.value === materialSelectElement.value) {
+          materialSelectElement.value = getFirstAvailableValue(materialSelectOptionElements);
+          setTimeout(() => {
+            materialSelectElement.dispatchEvent(changeEvent);
+          }, 0)
+        }
 
         if (materialsSliderElement) {
           materialsSlideElements[index].classList.add('materials-slider__item--hidden');
