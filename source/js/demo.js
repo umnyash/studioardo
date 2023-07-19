@@ -362,15 +362,119 @@ const MOSAIC_COST = Object.freeze({
 
 /**/
 
+/* Калькулятор мозаики. Смена вариантов материалов, а также их цен,
+в селекте и в слайдере в зависимости от типа изделия и сложности.
+Дублирующаяся функция для демонстрации. */
+
+const initMosaicCalculationFormForDemo = (block, data) => {
+  const calculationFormElement = block.querySelector('.calculation-form');
+  const typeSelectElement = calculationFormElement.querySelector('.n-select__control[name="type"]');
+  const defaultType = typeSelectElement.querySelector('option').dataset.value;
+
+  const difficultySelectElement = calculationFormElement.querySelector('.n-select__control[name="difficulty"]');
+
+  const materialSelectElement = calculationFormElement.querySelector('.n-select__control[name="material"]');
+  const materialSelectOptionElements = materialSelectElement.querySelectorAll('option');
+  const materialNSelectOptionElements = materialSelectElement.closest('.n-select').querySelectorAll('.n-select__option');
+
+  const materialsSliderElement = block.querySelector('.materials-slider');
+
+  let materialsSlideElements = null;
+
+  if (materialsSliderElement) {
+    materialsSlideElements = materialsSliderElement.querySelectorAll('.materials-slider__item');
+  }
+
+  const getSelectedOption = (selectElement) => selectElement.querySelector(`option[value="${selectElement.value}"]`);
+
+  const getDifficulty = () => {
+    const difficultySelectedOptionElement = getSelectedOption(difficultySelectElement);
+    return difficultySelectedOptionElement ? `${difficultySelectedOptionElement.dataset.value}Difficulty` : 'standardDifficulty';
+  };
+
+  const getType = () => {
+    const typeSelectedOptionElement = getSelectedOption(typeSelectElement);
+    return typeSelectedOptionElement ? typeSelectedOptionElement.dataset.value : defaultType;
+  };
+
+  const getFirstAvailableValue = (options) => {
+    for (let i = 0; i < options.length; i++) {
+      if (!options[i].hasAttribute('hidden')) {
+        return options[i].value;
+      }
+    }
+
+    return '';
+  };
+
+  const updateSlider = () => {
+    const timerId = setInterval(() => {
+      if (materialsSlider.update) {
+        materialsSlider.update();
+        clearTimeout(timerId);
+      }
+    }, 50);
+
+    setTimeout(() => {
+      clearTimeout(timerId);
+    }, 5000);
+  };
+
+  const changeMaterialsPrices = () => {
+    const materialsData = data[getDifficulty()][getType()];
+
+    materialSelectOptionElements.forEach((option, index) => {
+      if (option.dataset.value in materialsData) {
+        const cost = materialsData[option.dataset.value];
+        materialNSelectOptionElements[index].querySelector('.material-preview__text').textContent = `от ${cost} ₽/м2`;
+        option.removeAttribute('hidden');
+        materialNSelectOptionElements[index].classList.remove('n-select__option--hidden');
+
+        if (materialsSliderElement) {
+          const materialSlidePriceElement = materialsSlideElements[index].querySelector('.materials-slider__price');
+          if (materialSlidePriceElement) {
+            materialSlidePriceElement.textContent = cost;
+          }
+          materialsSlideElements[index].classList.remove('materials-slider__item--hidden');
+        }
+      } else {
+        option.setAttribute('hidden', true);
+        materialNSelectOptionElements[index].classList.add('n-select__option--hidden');
+
+        if (option.value === materialSelectElement.value) {
+          materialSelectElement.value = getFirstAvailableValue(materialSelectOptionElements);
+          setTimeout(() => {
+            materialSelectElement.dispatchEvent(changeEvent);
+          }, 0)
+        }
+
+        if (materialsSliderElement) {
+          materialsSlideElements[index].classList.add('materials-slider__item--hidden');
+        }
+      }
+    });
+
+    if (materialsSliderElement) {
+      updateSlider();
+    }
+  };
+
+  const onTypeSelectChange = changeMaterialsPrices;
+  const onDifficultySelectChange = changeMaterialsPrices;
+
+  typeSelectElement.addEventListener('change', onTypeSelectChange);
+  difficultySelectElement.addEventListener('change', onDifficultySelectChange);
+
+  changeMaterialsPrices();
+};
+
+/**/
+
 
 /* Инициализация калькуляторов мозаики с моковыми данными */
 
-document.querySelectorAll('.calculation--mosaic').forEach((block) => {
-  initMosaicCalculationForm(block, MOSAIC_COST);
-});
-
-document.querySelectorAll('.calculation-material--mosaic').forEach((block) => {
-  initMosaicCalculationForm(block, MOSAIC_COST);
+document.querySelectorAll('.calculation--mosaic, .calculation-material--mosaic').forEach((block) => {
+  initMosaicCalculationFormForDemo(block, MOSAIC_COST);
 });
 
 /**/

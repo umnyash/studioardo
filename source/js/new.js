@@ -169,6 +169,8 @@ if (popups) {
   const popupCalculationMaterialLinks = document.querySelectorAll('[data-modal-opener="calculation-material"]');
 
   if (materialsSection && popupCalculationMaterial) {
+    const materialSelect = popupCalculationMaterial.querySelector('select[name="material"]');
+
     materialsSection.addEventListener('click', (evt) => {
       evt.preventDefault();
       const materialLink = evt.target.closest('.material__link');
@@ -177,7 +179,9 @@ if (popups) {
         return;
       }
 
-      openCalculationMaterialPopup(materialLink.dataset.type, materialLink.dataset.material);
+      const material = materialLink.dataset.material;
+      const appropriateValue = materialSelect.querySelector(`option[data-material="${material}"]`)?.value;
+      openCalculationMaterialPopup(materialLink.dataset.type, appropriateValue);
     });
   }
 
@@ -1852,8 +1856,8 @@ new Swiper('.brand-categories__slider', {
 /**/
 
 /* Калькулятор мозаики. Смена вариантов материалов, а также их цен,
-в селекте и в слайдере в зависимости от типа изделия и сложности. */
-/* Тип принимаего объекта с данными описан в demo.js  */
+в селекте и в слайдере в зависимости от типа изделия и сложности.
+Тип принимаего объекта с данными описан в demo.js  */
 
 const initMosaicCalculationForm = (block, data) => {
   const calculationFormElement = block.querySelector('.calculation-form');
