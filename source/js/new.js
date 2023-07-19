@@ -1920,7 +1920,10 @@ const initMosaicCalculationForm = (block, data) => {
         materialNSelectOptionElements[index].classList.remove('n-select__option--hidden');
 
         if (materialsSliderElement) {
-          materialsSlideElements[index].querySelector('.materials-slider__price').textContent = cost;
+          const materialSlidePriceElement = materialsSlideElements[index].querySelector('.materials-slider__price');
+          if (materialSlidePriceElement) {
+            materialSlidePriceElement.textContent = cost;
+          }
           materialsSlideElements[index].classList.remove('materials-slider__item--hidden');
         }
       } else {
