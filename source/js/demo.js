@@ -292,3 +292,85 @@ document.querySelectorAll('.custom-form-2--calculation .form__body').forEach(ini
 
 /**/
 
+/* Данные по ценам мозаики в евро */
+
+const MOSAIC_COST = Object.freeze({
+  standardDifficulty: {
+    'mix': {
+      glass: 119.52,
+      metallized: 165.52
+    },
+    'stretch-mark': {
+      glass: 134.19,
+      metallized: 180.19
+    },
+    'matrix-panel': {
+      glass: 181.33,
+      metallized: 227.33,
+      stone: 368.33
+    },
+    'art-panel': {
+      glass: 589.90,
+      metallized: 635.90,
+      stone: 1085.95,
+      smalt: 1085.95
+    }
+  },
+  mediumDifficulty: {
+    'mix': {
+      glass: 123.71,
+      metallized: 169.71
+    },
+    'stretch-mark': {
+      glass: 139.43,
+      metallized: 185.43
+    },
+    'matrix-panel': {
+      glass: 212.76,
+      metallized: 258.76,
+      stone: 446.90
+    },
+    'art-panel': {
+      glass: 663.24,
+      metallized: 709.24,
+      stone: 1337.38,
+      smalt: 1337.38
+    }
+  },
+  highDifficulty: {
+    'mix': {
+      glass: 128.95,
+      metallized: 174.95
+    },
+    'stretch-mark': {
+      glass: 139.43,
+      metallized: 185.43
+    },
+    'matrix-panel': {
+      glass: 244.19,
+      metallized: 290.19,
+      stone: 494.05
+    },
+    'art-panel': {
+      glass: 946.10,
+      metallized: 992.10,
+      stone: 1819.29,
+      smalt: 1819.29
+    }
+  }
+});
+
+/**/
+
+
+/* Инициализация калькуляторов мозаики с моковыми данными */
+
+document.querySelectorAll('.calculation--mosaic').forEach((block) => {
+  initMosaicCalculationForm(block, MOSAIC_COST);
+});
+
+document.querySelectorAll('.calculation-material--mosaic').forEach((block) => {
+  initMosaicCalculationForm(block, MOSAIC_COST);
+});
+
+/**/
