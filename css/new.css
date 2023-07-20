@@ -264,6 +264,60 @@ div.swiper-button-next::after {
   }
 }
 
+.sort__left a {
+  /* padding-top: 4px; */
+  /* padding-bottom: 4px; */
+  font-size: 14px;
+  line-height: 14px;
+  /* font-weight: 700; */
+  background-color: #f8f8f8;
+  color: #333333;
+  transition: 0.1s linear;
+  border-radius: 3px;
+  padding-left: 19px;
+  margin: 0 2px;
+}
+
+.sort__left a:before {
+  left: 6px;
+}
+
+.sort__left a:hover {
+  color: #333333;
+  border: 1px solid #c8c8c8;
+}
+
+.sort__left a.active:hover {
+  color: #ffffff;
+}
+
+.sort__left a.active:before {
+  display: none;
+}
+
+.sort__left a.sort__new.active {
+  background-color: rgb(39, 114, 225);
+}
+
+.sort__left a.sort__sklad.active {
+  background-color: rgb(223, 174, 56);
+}
+
+.sort__left a.sort__hit.active {
+  background-color: rgb(41, 172, 38);
+}
+
+.sort__left a.active {
+  padding-right: 20px;
+  font-weight: normal;
+  padding-left: 10px;
+}
+
+.sort__left a.active:after {
+  position: absolute;
+  right: 6px;
+}
+
 @media (min-width: 1280px) {
   .page-page .s-popular {
     margin-bottom: -168px;
@@ -2104,7 +2158,7 @@ div.swiper-button-next::after {
     display: grid;
     padding: 0 15px;
     grid-template-columns: 1fr auto;
-    grid-template-areas: "class           class" "heading         heading" "gallery         gallery " "buttons-1       buttons-1" "price           social-actions" "buttons-2       buttons-2" "characteristics characteristics" "text            text ";
+    grid-template-areas: "class           class" "heading         heading" "gallery         gallery " "buttons-1       buttons-1" "buttons-2       buttons-2" "price           social-actions" "characteristics characteristics" "text            text ";
     align-items: start;
   }
 }
@@ -2114,7 +2168,7 @@ div.swiper-button-next::after {
     grid-template-columns: 740px 1fr auto;
     -moz-column-gap: 60px;
          column-gap: 60px;
-    grid-template-areas: "class     class           class" "heading   price           social-actions" "gallery   buttons-2       buttons-2" "gallery   characteristics characteristics" "gallery   text            text" "buttons-1 text            text" ".         text            text";
+    grid-template-areas: "class     class           class" "heading   price           social-actions" "gallery   buttons-1       buttons-1" "gallery   buttons-2       buttons-2" "gallery   characteristics characteristics" "gallery   text            text" ".         text            text";
   }
 }
 @media (min-width: 1510px) {
@@ -2215,6 +2269,7 @@ div.swiper-button-next::after {
 }
 
 .collection-card__gallery.collection-img {
+  position: relative;
   width: 100%;
   overflow-x: hidden;
   margin: 0 auto 15px;
@@ -2296,13 +2351,14 @@ div.swiper-button-next::after {
   .collection-card__buttons--1 {
     grid-area: buttons-1;
     grid-template-columns: 1fr 1fr 1fr;
-    margin-bottom: 27px;
+    margin: 11px 0 3px 0;
   }
 }
 @media (min-width: 1280px) {
   .collection-card__buttons--1 {
     max-width: 700px;
-    margin-top: 16px;
+    margin-top: 36px;
+    margin-bottom: 6px;
   }
 }
 @media (min-width: 1280px) {
@@ -2310,6 +2366,12 @@ div.swiper-button-next::after {
     font-family: "Roboto Condensed", "Arial", sans-serif;
     text-transform: none;
   }
+}
+
+.collection-card__buttons--1.twoGrid {
+  grid-area: buttons-1;
+  grid-template-columns: 1fr 1fr;
+  margin: 11px 0 3px 0;
 }
 
 @media (min-width: 375px) {
@@ -2320,12 +2382,12 @@ div.swiper-button-next::after {
 @media (min-width: 768px) {
   .collection-card__buttons--2 {
     grid-area: buttons-2;
-    margin: 11px 0 20px;
+    margin: 3px 0 20px;
   }
 }
 @media (min-width: 1280px) {
   .collection-card__buttons--2 {
-    margin-top: 36px;
+    margin-top: 6px;
     -moz-column-gap: 11px;
          column-gap: 11px;
   }
@@ -2380,7 +2442,7 @@ div.swiper-button-next::after {
 }
 
 .collection-card__characteristics {
-  margin: 0 0 16px;
+  margin: 0 0 6px;
 }
 @media (min-width: 768px) {
   .collection-card__characteristics {
@@ -4414,6 +4476,10 @@ div.swiper-button-next::after {
   grid-column: 1/3;
 }
 
+.good-card__buttons.twoGrid .good-card__submit {
+  grid-column: 1/2;
+}
+
 .good-card__features {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -4504,8 +4570,8 @@ div.swiper-button-next::after {
 
 .good-card__labels {
   position: absolute;
-  top: 15px;
-  right: 13px;
+  top: 10px;
+  left: 15px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
@@ -4514,6 +4580,10 @@ div.swiper-button-next::after {
   line-height: 21px;
   font-weight: 700;
   color: #ffffff;
+}
+
+.good-card__labels .card__label-discount {
+  font-weight: 700;
 }
 
 .good-card__label {
@@ -4542,15 +4612,6 @@ div.swiper-button-next::after {
     right: auto;
     transform: translateX(-50%);
     will-change: transform;
-  }
-}
-
-.good-card__tabs-content {
-  margin-bottom: 27px;
-}
-@media (min-width: 1280px) {
-  .good-card__tabs-content {
-    --clipbox-max-height: 180px;
   }
 }
 
@@ -7047,7 +7108,6 @@ div.swiper-button-next::after {
 
 @media (min-width: 992px) {
   .brand__title {
-    grid-area: title;
     font-size: 36px;
     line-height: 47px;
   }
@@ -8061,13 +8121,28 @@ div.swiper-button-next::after {
   background-color: #d92547;
 }
 .labels__item--new {
-  background-color: rgba(66, 189, 152, 0.6);
+  background-color: rgba(39, 114, 225, 0.6);
 }
 .labels__item--in-stock {
   background-color: rgba(223, 174, 56, 0.6);
 }
 .labels__item--large-format {
   background-color: rgba(133, 133, 133, 0.6);
+}
+
+.good-list__item:hover .good__labels-list li.labels__item--new,
+.n-collection-list__item:hover .n-collection__labels-list li.labels__item--new {
+  background-color: rgb(39, 114, 225);
+}
+
+.good-list__item:hover .good__labels-list li.labels__item--in-stock,
+.n-collection-list__item:hover .n-collection__labels-list li.labels__item--in-stock {
+  background-color: rgb(223, 174, 56);
+}
+
+.good-list__item:hover .good__labels-list li.labels__item--large-format,
+.n-collection-list__item:hover .n-collection__labels-list li.labels__item--large-format {
+  background-color: rgb(133, 133, 133);
 }
 
 .cart-header {
