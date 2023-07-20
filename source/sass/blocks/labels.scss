@@ -30,7 +30,7 @@
   }
 
   &--new {
-    background-color: rgba(66, 189, 152, 0.6);
+    background-color: rgba(39, 114, 225, 0.6);
   }
 
   &--in-stock {
@@ -40,6 +40,19 @@
   &--large-format {
     background-color: rgba(133, 133, 133, 0.6);
   }
+}
+
+.good-list__item:hover .good__labels-list li.labels__item--new,
+.n-collection-list__item:hover .n-collection__labels-list li.labels__item--new {
+  background-color: rgba(39, 114, 225, 1);
+}
+.good-list__item:hover .good__labels-list li.labels__item--in-stock,
+.n-collection-list__item:hover .n-collection__labels-list li.labels__item--in-stock {
+  background-color: rgba(223, 174, 56, 1);
+}
+.good-list__item:hover .good__labels-list li.labels__item--large-format,
+.n-collection-list__item:hover .n-collection__labels-list li.labels__item--large-format {
+  background-color: rgba(133, 133, 133, 1);
 }
 
 

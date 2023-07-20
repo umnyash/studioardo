@@ -15,8 +15,8 @@
       "heading         heading"
       "gallery         gallery "
       "buttons-1       buttons-1"
-      "price           social-actions"
       "buttons-2       buttons-2"
+      "price           social-actions"
       "characteristics characteristics"
       "text            text ";
     align-items: start;
@@ -29,10 +29,10 @@
     grid-template-areas:
       "class     class           class"
       "heading   price           social-actions"
+      "gallery   buttons-1       buttons-1"
       "gallery   buttons-2       buttons-2"
       "gallery   characteristics characteristics"
       "gallery   text            text"
-      "buttons-1 text            text"
       ".         text            text";
   }
 
@@ -126,6 +126,7 @@
 }
 
 .collection-card__gallery.collection-img {
+  position: relative;
   width: 100%;
   overflow-x: hidden;
   margin: 0 auto 15px;
@@ -204,12 +205,13 @@
   @media #{$tablet-desktop} {
     grid-area: buttons-1;
     grid-template-columns: 1fr 1fr 1fr;
-    margin-bottom: 27px;
+    margin: 11px 0 3px 0;
   }
 
   @media #{$laptop-desktop} {
     max-width: 700px;
-    margin-top: 16px;
+    margin-top: 36px;
+    margin-bottom: 6px;
   }
 
   .button-2 {
@@ -220,6 +222,12 @@
   }
 }
 
+.collection-card__buttons--1.twoGrid {
+  grid-area: buttons-1;
+  grid-template-columns: 1fr 1fr;
+  margin: 11px 0 3px 0;
+}
+
 .collection-card__buttons--2 {
   @media #{$widemobile-desktop} {
     grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
@@ -227,11 +235,11 @@
 
   @media #{$tablet-desktop} {
     grid-area: buttons-2;
-    margin: 11px 0 20px;
+    margin: 3px 0 20px;
   }
 
   @media #{$laptop-desktop} {
-    margin-top: 36px;
+    margin-top: 6px;
     column-gap: 11px;
   }
 
@@ -281,7 +289,7 @@
 }
 
 .collection-card__characteristics {
-  margin: 0 0 16px;
+  margin: 0 0 6px;
 
   @media #{$tablet-desktop} {
     grid-area: characteristics;

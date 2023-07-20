@@ -444,6 +444,10 @@
   grid-column: 1 / 3;
 }
 
+.good-card__buttons.twoGrid .good-card__submit{
+  grid-column: 1/2;
+}
+
 .good-card__features {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -524,8 +528,8 @@
 
 .good-card__labels {
   position: absolute;
-  top: 15px;
-  right: 13px;
+  top: 10px;
+  left: 15px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
@@ -534,6 +538,10 @@
   line-height: 21px;
   font-weight: 700;
   color: $text-color-secondary;
+}
+
+.good-card__labels .card__label-discount{
+  font-weight: 700;
 }
 
 .good-card__label {
@@ -562,13 +570,5 @@
     right: auto;
     transform: translateX(-50%);
     will-change: transform;
-  }
-}
-
-.good-card__tabs-content {
-  margin-bottom: 27px;
-
-  @media #{$laptop-desktop} {
-    --clipbox-max-height: 180px;
   }
 }
