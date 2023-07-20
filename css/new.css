@@ -2392,12 +2392,6 @@ div.swiper-button-next::after {
          column-gap: 11px;
   }
 }
-@media (min-width: 1510px) {
-  .collection-card__buttons--2 {
-    margin-top: 27px;
-    margin-bottom: 28px;
-  }
-}
 
 @media (min-width: 375px) {
   .collection-card__button--catalog {
