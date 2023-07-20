@@ -22,6 +22,37 @@ const Key = Object.freeze({
   ENTER: 'Enter'
 });
 
+
+/* Инициализация слайдера материалов */
+
+const materialsSlider = new Swiper('.materials-slider', {
+  slidesPerView: 1,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  speed: 300,
+  spaceBetween: 14,
+  watchSlidesProgress: true,
+  breakpoints: {
+    768: {
+      spaceBetween: 30,
+    },
+    960: {
+      spaceBetween: 50,
+    },
+    1280: {
+      spaceBetween: 60,
+    },
+    1510: {
+      spaceBetween: 90,
+    },
+  },
+});
+
+/* */
+
+
 let isPopupCalculationMaterialWasOpened = false;
 
 if (popups) {
@@ -47,6 +78,9 @@ if (popups) {
   };
 
   const openCalculationMaterialPopup = (type, material) => {
+    if (materialsSlider) {
+      materialsSlider.params.speed = 0;
+    }
     bodyWidth = document.body.clientWidth;
 
     const popup = document.querySelector('.popup--calculation-material');
@@ -62,7 +96,20 @@ if (popups) {
     typeSelect.value = type ? type : '';
     typeSelect.dispatchEvent(changeEvent);
 
-    materialSelect.value = material ? material : '';
+    let appropriateValue = '';
+
+    if (material) {
+      appropriateValue = materialSelect.querySelector(`option[data-material="${material}"]`)?.value;
+
+      if (appropriateValue) {
+        materialSelect.value = appropriateValue;
+      } else {
+        materialSelect.value = '';
+      }
+    } else {
+      materialSelect.value = '';
+    }
+    materialSelect.dispatchEvent(changeEvent);
 
     if (difficultySelect) {
       difficultySelect.value = '';
@@ -78,8 +125,6 @@ if (popups) {
       document.body.style.paddingRight = document.body.clientWidth - bodyWidth + 'px';
     }
 
-    materialSelect.dispatchEvent(changeEvent);
-
     if(!isPopupCalculationMaterialWasOpened) {
       setTimeout(() => {
         materialSelect.dispatchEvent(changeEvent);
@@ -87,6 +132,9 @@ if (popups) {
     }
 
     isPopupCalculationMaterialWasOpened = true;
+    if (materialsSlider) {
+      materialsSlider.params.speed = 300;
+    }
   };
 
   const closePopup = (popup) => {
@@ -179,9 +227,7 @@ if (popups) {
         return;
       }
 
-      const material = materialLink.dataset.material;
-      const appropriateValue = materialSelect.querySelector(`option[data-material="${material}"]`)?.value;
-      openCalculationMaterialPopup(materialLink.dataset.type, appropriateValue);
+      openCalculationMaterialPopup(materialLink.dataset.type, materialLink.dataset.material);
     });
   }
 
@@ -1317,35 +1363,6 @@ const initSelect = (wrapper) => {
 document.querySelectorAll('.n-select').forEach(initSelect);
 
 /**/
-
-
-/* Инициализация слайдера материалов */
-
-const materialsSlider = new Swiper('.materials-slider', {
-  slidesPerView: 1,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  spaceBetween: 14,
-  watchSlidesProgress: true,
-  breakpoints: {
-    768: {
-      spaceBetween: 30,
-    },
-    960: {
-      spaceBetween: 50,
-    },
-    1280: {
-      spaceBetween: 60,
-    },
-    1510: {
-      spaceBetween: 90,
-    },
-  },
-});
-
-/* */
 
 
 /* Связь селекта материалов и слайдера */
