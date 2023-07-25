@@ -77,7 +77,7 @@ if (popups) {
     }
   };
 
-  const openCalculationMaterialPopup = (type, material) => {
+  const openCalculationMaterialPopup = (type, material, materialItem) => {
     if (materialsSlider) {
       materialsSlider.params.speed = 0;
     }
@@ -98,14 +98,12 @@ if (popups) {
 
     let appropriateValue = '';
 
-    if (material) {
+    if (materialItem) {
+      appropriateValue = materialSelect.querySelector(`option[value="${materialItem}"]`)?.value;
+      materialSelect.value = appropriateValue || '';
+    } else if (material) {
       appropriateValue = materialSelect.querySelector(`option[data-material="${material}"]`)?.value;
-
-      if (appropriateValue) {
-        materialSelect.value = appropriateValue;
-      } else {
-        materialSelect.value = '';
-      }
+      materialSelect.value = appropriateValue || '';
     } else {
       materialSelect.value = '';
     }
@@ -227,7 +225,7 @@ if (popups) {
         return;
       }
 
-      openCalculationMaterialPopup(materialLink.dataset.type, materialLink.dataset.material);
+      openCalculationMaterialPopup(materialLink.dataset.type, materialLink.dataset.material, materialLink.dataset.materialItem);
     });
   }
 
@@ -235,7 +233,7 @@ if (popups) {
     popupCalculationMaterialLinks.forEach((link) => {
       link.addEventListener('click', (evt) => {
         evt.preventDefault();
-        openCalculationMaterialPopup(link.dataset.type, link.dataset.material);
+        openCalculationMaterialPopup(link.dataset.type, link.dataset.material, link.dataset.materialItem);
       })
     });
   }
