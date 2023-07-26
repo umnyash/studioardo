@@ -377,6 +377,8 @@ const initMosaicCalculationFormForDemo = (block, data) => {
   const materialSelectOptionElements = materialSelectElement.querySelectorAll('option');
   const materialNSelectOptionElements = materialSelectElement.closest('.n-select').querySelectorAll('.n-select__option');
 
+  const materialPriceElement = calculationFormElement.querySelector('[name="price-select"]');
+
   const materialsSliderElement = block.querySelector('.materials-slider');
 
   let materialsSlideElements = null;
@@ -396,6 +398,14 @@ const initMosaicCalculationFormForDemo = (block, data) => {
     const typeSelectedOptionElement = getSelectedOption(typeSelectElement);
     return typeSelectedOptionElement ? typeSelectedOptionElement.dataset.value : defaultType;
   };
+
+  const getMaterial = () => {
+    const materialSelectedOptionElement = getSelectedOption(materialSelectElement);
+    return materialSelectedOptionElement ? materialSelectedOptionElement.dataset.value : defaultType;
+  }
+
+  const getMaterialsData = () => data[getDifficulty()][getType()];
+  let materialsData = getMaterialsData();
 
   const getFirstAvailableValue = (options) => {
     for (let i = 0; i < options.length; i++) {
@@ -420,8 +430,12 @@ const initMosaicCalculationFormForDemo = (block, data) => {
     }, 5000);
   };
 
+  const setMaterialPriceValue = () => {
+    materialPriceElement.value = materialsData[getMaterial()] || '';
+  }
+
   const changeMaterialsPrices = () => {
-    const materialsData = data[getDifficulty()][getType()];
+    materialsData = getMaterialsData();
 
     materialSelectOptionElements.forEach((option, index) => {
       if (option.dataset.value in materialsData) {
@@ -454,6 +468,8 @@ const initMosaicCalculationFormForDemo = (block, data) => {
       }
     });
 
+    setMaterialPriceValue();
+
     if (materialsSliderElement) {
       updateSlider();
     }
@@ -461,9 +477,11 @@ const initMosaicCalculationFormForDemo = (block, data) => {
 
   const onTypeSelectChange = changeMaterialsPrices;
   const onDifficultySelectChange = changeMaterialsPrices;
+  const onMaterialSelectChange = setMaterialPriceValue;
 
   typeSelectElement.addEventListener('change', onTypeSelectChange);
   difficultySelectElement.addEventListener('change', onDifficultySelectChange);
+  materialSelectElement.addEventListener('change', onMaterialSelectChange);
 
   changeMaterialsPrices();
 };
