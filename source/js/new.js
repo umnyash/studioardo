@@ -850,8 +850,7 @@ if (anchor) {
 const nProductsItemSlider = document.querySelector('.n-products__item-slider');
 
 if (nProductsItemSlider) {
-  var swiper = new Swiper('.n-products__item-slider', {
-    cssMode: true,
+  new Swiper('.n-products__item-slider', {
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
@@ -868,10 +867,9 @@ if (nProductsItemSlider) {
 const materialsSwiper = document.querySelector('.materials__slider.swiper');
 
 if (materialsSwiper) {
-  var swiper = new Swiper('.materials__slider', {
+  new Swiper('.materials__slider', {
     slidesPerView: 'auto',
     spaceBetween: 10,
-    cssMode: true,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -892,10 +890,9 @@ if (materialsSwiper) {
 const materialsSwiperAlter = document.querySelector('.materials__slider--alter.swiper');
 
 if (materialsSwiperAlter) {
-  var swiper = new Swiper('.materials__slider--alter', {
+  new Swiper('.materials__slider--alter', {
     slidesPerView: 'auto',
     spaceBetween: 11,
-    cssMode: true,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
