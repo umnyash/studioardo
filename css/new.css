@@ -4565,7 +4565,7 @@ div.swiper-button-next::after {
 .good-card__labels {
   position: absolute;
   top: 10px;
-  right: 15px;
+  left: 15px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
