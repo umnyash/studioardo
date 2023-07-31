@@ -352,13 +352,20 @@
 }
 
 .good-card__select {
+  width: 100%;
   margin: 0 0 11px;
+
+  @media #{$widemobile-desktop} {
+    width: 50%;
+  }
 
   @media #{$tablet-desktop} {
     margin: 0 15px;
+    max-width: 240px;
   }
 
   @media #{$laptop-desktop} {
+    max-width: none;
     margin: 0 30px 12px 0;
   }
 }

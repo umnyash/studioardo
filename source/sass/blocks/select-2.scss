@@ -1,6 +1,5 @@
 .select-2 {
   position: relative;
-  width: 158px;
   font-family: $basic-font-family;
   font-size: 14px;
   line-height: 24px;
@@ -13,6 +12,7 @@
   border: 1px solid $select-2-button-border-color;
   border-radius: 3px;
   grid-template-columns: max-content 1fr auto;
+  column-gap: 9px;
   align-items: center;
   font: inherit;
   line-height: inherit;
@@ -32,9 +32,14 @@
 }
 
 .select-2__button-value {
+  justify-self: start;
+  max-width: 100%;
   font-size: 16px;
   line-height: 24px;
+  white-space: nowrap;
   color: $basic-text-color;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .select-2__options {
@@ -54,6 +59,7 @@
   will-change: transform;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  overflow-wrap: anywhere;
 
   &::-webkit-scrollbar {
     display: none;
