@@ -126,6 +126,10 @@
   }
 }
 
+.order-good-card__total-price-wrapper .overPrice {
+  color: $accent-color;
+}
+
 .order-good-card__price-info {
   justify-self: end;
   display: flex;
